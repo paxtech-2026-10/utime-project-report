@@ -233,184 +233,195 @@ Análisis de cantidad de commits realizados por semana.
 
 # Contenido
 
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+  - [TB1](#tb1)
+  - [TP](#tp)
+  - [TB2](#tb2)
+  - [TF](#tf)
+- [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
-
-- **Part I: As-Is Software Project**
-   - [Capítulo I: Introducción](#capítulo-i-introducción)
-      - [1.1. Startup Profile](#11-startup-profile)
-         - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
-         - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
-      - [1.2. Solution Profile](#12-solution-profile)
-         - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
-         - [1.2.2. Lean UX Process](#122-lean-ux-process)
-            - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-            - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-            - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
-            - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-      - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-
-   - [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
-      - [2.1. Competidores](#21-competidores)
-         - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-         - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-      - [2.2. Entrevistas](#22-entrevistas)
-         - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-         - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-         - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-      - [2.3. Needfinding](#23-needfinding)
-         - [2.3.1. User Personas](#231-user-personas)
-         - [2.3.2. User Task Matrix](#232-user-task-matrix)
-         - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-         - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-         - [2.3.5. As-is Scenario Mapping](#235-as-is-scenario-mapping)
-      - [2.4. Ubiquitous Language](#24-ubiquitous-language)
-
-   - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
-      - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
-      - [3.2. User Stories](#32-user-stories)
-      - [3.3. Product Backlog](#33-product-backlog)
-      - [3.4. Impact Mapping](#34-impact-mapping)
-
-   - [Capítulo IV: Product Design](#capítulo-iv-product-design)
-      - [4.1. Style Guidelines](#41-style-guidelines)
-         - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
-         - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
-         - [4.1.3. Mobile Style Guidelines](#413-mobile-style-guidelines)
-            - [4.1.3.1. iOS Mobile Style Guidelines](#4131-ios-mobile-style-guidelines)
-            - [4.1.3.2. Android Mobile Style Guidelines](#4132-android-mobile-style-guidelines)
-      - [4.2. Information Architecture](#42-information-architecture)
-         - [4.2.1. Organization Systems](#421-organization-systems)
-         - [4.2.2. Labeling Systems](#422-labeling-systems)
-         - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
-         - [4.2.4. Searching Systems](#424-searching-systems)
-         - [4.2.5. Navigation Systems](#425-navigation-systems)
-      - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
-         - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
-         - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
-      - [4.4. Mobile Applications UX/UI Design](#44-mobile-applications-uxui-design)
-         - [4.4.1. Mobile Applications Wireframes](#441-mobile-applications-wireframes)
-         - [4.4.2. Mobile Applications Wireflow Diagrams](#442-mobile-applications-wireflow-diagrams)
-         - [4.4.3. Mobile Applications Mock-ups](#443-mobile-applications-mock-ups)
-         - [4.4.4. Mobile Applications User Flow Diagrams](#444-mobile-applications-user-flow-diagrams)
-      - [4.5. Mobile Applications Prototyping](#45-mobile-applications-prototyping)
-         - [4.5.1. Android Mobile Applications Prototyping](#451-android-mobile-applications-prototyping)
-         - [4.5.2. iOS Mobile Applications Prototyping](#452-ios-mobile-applications-prototyping)
-      - [4.6. Web Applications UX/UI Design](#46-web-applications-uxui-design)
-         - [4.6.1. Web Applications Wireframes](#461-web-applications-wireframes)
-         - [4.6.2. Web Applications Wireflow Diagrams](#462-web-applications-wireflow-diagrams)
-         - [4.6.3. Web Applications Mock-ups](#463-web-applications-mock-ups)
-         - [4.6.4. Web Applications User Flow Diagrams](#464-web-applications-user-flow-diagrams)
-      - [4.7. Web Applications Prototyping](#47-web-applications-prototyping)
-      - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
-         - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
-         - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
-         - [4.8.3. Software Architecture Components Diagrams](#483-software-architecture-components-diagrams)
-      - [4.9. Software Object-Oriented Design](#49-software-object-oriented-design)
-         - [4.9.1. Class Diagrams](#491-class-diagrams)
-         - [4.9.2. Class Dictionary](#492-class-dictionary)
-      - [4.10. Database Design](#410-database-design)
-         - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
-
-   - [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
-      - [5.1. Software Configuration Management](#51-software-configuration-management)
-         - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
-         - [5.1.2. Source Code Management](#512-source-code-management)
-         - [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
-         - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
-      - [5.2. Product Implementation & Deployment](#52-product-implementation--deployment)
-         - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
-         - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
-         - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
-         - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
-         - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
-         - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
-         - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
-         - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
-      - [5.3. Video About-the-Product](#53-video-about-the-product)
-
-- **Part II: Verification, Validation & Pipeline**
-   - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
-      - [6.1. Testing Suites & Validation](#61-testing-suites--validation)
-         - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
-         - [6.1.2. Core Integration Tests](#612-core-integration-tests)
-         - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
-         - [6.1.4. Core System Tests](#614-core-system-tests)
-      - [6.2. Static testing & Verification](#62-static-testing--verification)
-         - [6.2.1. Static Code Analysis](#621-static-code-analysis)
-            - [6.2.1.1. Coding standard & Code conventions](#6211-coding-standard--code-conventions)
-            - [6.2.1.2. Code Quality & Code Security](#6212-code-quality--code-security)
-         - [6.2.2. Reviews](#622-reviews)
-      - [6.3. Validation Interviews](#63-validation-interviews)
-         - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
-         - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
-         - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
-      - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
-         - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
-            - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
-            - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
-            - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
-         - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
-            - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
-            - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
-            - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
-            - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
-
-   - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
-      - [7.1. Continuous Integration](#71-continuous-integration)
-         - [7.1.1. Tools and Practices](#711-tools-and-practices)
-         - [7.1.2. Build & Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
-      - [7.2. Continuous Delivery](#72-continuous-delivery)
-         - [7.2.1. Tools and Practices](#721-tools-and-practices)
-         - [7.2.2. Stages Deployment Pipeline Components](#722-stages-deployment-pipeline-components)
-      - [7.3. Continuous Deployment](#73-continuous-deployment)
-         - [7.3.1. Tools and Practices](#731-tools-and-practices)
-         - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
-      - [7.4. Continuous Monitoring](#74-continuous-monitoring)
-         - [7.4.1. Tools and Practices](#741-tools-and-practices)
-         - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
-         - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
-         - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
-
-- **Part III: Experiment-Driven Lifecycle**
-   - [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
-      - [8.1. Experiment Planning](#81-experiment-planning)
-         - [8.1.1. As-Is Summary](#811-as-is-summary)
-         - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
-         - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
-         - [8.1.4. Question Backlog](#814-question-backlog)
-         - [8.1.5. Experiment Cards](#815-experiment-cards)
-      - [8.2. Experiment Design](#82-experiment-design)
-         - [8.2.1. Hypotheses](#821-hypotheses)
-         - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
-         - [8.2.3. Measures](#823-measures)
-         - [8.2.4. Conditions](#824-conditions)
-         - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
-         - [8.2.6. Methods Selection](#826-methods-selection)
-         - [8.2.7. Data Analytics: Goals, KPIs and Metrics Selection](#827-data-analytics-goals-kpis-and-metrics-selection)
-         - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
-      - [8.3. Experimentation](#83-experimentation)
-         - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
-         - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
-         - [8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle](#833-pipeline-supported-experiment-driven-to-be-software-platform-lifecycle)
-            - [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs)
-            - [8.3.3.2. Implemented To-Be Landing Page Evidence](#8332-implemented-to-be-landing-page-evidence)
-            - [8.3.3.3. Implemented To-Be Frontend-Web Application Evidence](#8333-implemented-to-be-frontend-web-application-evidence)
-            - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
-            - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
-            - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
-         - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
-            - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevistas)
-            - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
-      - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
-         - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
-         - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
-      - [8.5. Continuous Learning](#85-continuous-learning)
-         - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
-      - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
-         - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
-
+- [Part I: As-Is Software Project](#part-i-as-is-software-project)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+      - [What (¿Qué?)](#what-qué)
+      - [When (¿Cuándo?)](#when-cuándo)
+      - [Where (¿Dónde?)](#where-dónde)
+      - [Who (¿Quién?)](#who-quién)
+      - [Why (¿Por qué?)](#why-por-qué)
+      - [How (¿Cómo?)](#how-cómo)
+      - [How much (¿Cuánto?)](#how-much-cuánto)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+        - [Business Assumptions](#business-assumptions)
+        - [User Assumptions](#user-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+  - [2.3. Needfinding](#23-needfinding)
+    - [2.3.1. User Personas](#231-user-personas)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+    - [2.3.5. As-is Scenario Mapping](#235-as-is-scenario-mapping)
+  - [2.4. Ubiquitous Language](#24-ubiquitous-language)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+  - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
+  - [3.2. User Stories](#32-user-stories)
+    - [3.2.1 User Stories](#321-user-stories)
+    - [3.2.2 Technical Stories](#322-technical-stories)
+    - [3.2.3 Spike Stories](#323-spike-stories)
+  - [3.3. Product Backlog](#33-product-backlog)
+  - [3.4. Impact Mapping](#34-impact-mapping)
+- [Capítulo IV: Product Design](#capítulo-iv-product-design)
+  - [4.1. Style Guidelines](#41-style-guidelines)
+    - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
+    - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
+    - [4.1.3. Mobile Style Guidelines](#413-mobile-style-guidelines)
+      - [4.1.3.1. iOS Mobile Style Guidelines](#4131-ios-mobile-style-guidelines)
+      - [4.1.3.2. Android Mobile Style Guidelines](#4132-android-mobile-style-guidelines)
+  - [4.2. Information Architecture](#42-information-architecture)
+    - [4.2.1. Organization Systems](#421-organization-systems)
+    - [4.2.2. Labeling Systems](#422-labeling-systems)
+    - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+    - [4.2.4. Searching Systems](#424-searching-systems)
+    - [4.2.5. Navigation Systems](#425-navigation-systems)
+  - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
+    - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
+    - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
+  - [4.4. Mobile Applications UX/UI Design](#44-mobile-applications-uxui-design)
+    - [4.4.1. Mobile Applications Wireframes](#441-mobile-applications-wireframes)
+    - [4.4.2. Mobile Applications Wireflow Diagrams](#442-mobile-applications-wireflow-diagrams)
+    - [4.4.3. Mobile Applications Mock-ups](#443-mobile-applications-mock-ups)
+    - [4.4.4. Mobile Applications User Flow Diagrams](#444-mobile-applications-user-flow-diagrams)
+  - [4.5. Mobile Applications Prototyping](#45-mobile-applications-prototyping)
+    - [4.5.1. Android Mobile Applications Prototyping](#451-android-mobile-applications-prototyping)
+    - [4.5.2. iOS Mobile Applications Prototyping](#452-ios-mobile-applications-prototyping)
+  - [4.6. Web Applications UX/UI Design](#46-web-applications-uxui-design)
+    - [4.6.1. Web Applications Wireframes](#461-web-applications-wireframes)
+    - [4.6.2. Web Applications Wireflow Diagrams](#462-web-applications-wireflow-diagrams)
+    - [4.6.3. Web Applications Mock-ups](#463-web-applications-mock-ups)
+    - [4.6.4. Web Applications User Flow Diagrams](#464-web-applications-user-flow-diagrams)
+  - [4.7. Web Applications Prototyping](#47-web-applications-prototyping)
+  - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
+    - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
+    - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
+    - [4.8.3. Software Architecture Components Diagrams](#483-software-architecture-components-diagrams)
+  - [4.9. Software Object-Oriented Design](#49-software-object-oriented-design)
+    - [4.9.1. Class Diagrams](#491-class-diagrams)
+    - [4.9.2. Class Dictionary](#492-class-dictionary)
+  - [4.10. Database Design](#410-database-design)
+    - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
+- [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
+  - [5.1. Software Configuration Management](#51-software-configuration-management)
+    - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
+    - [5.1.2. Source Code Management](#512-source-code-management)
+    - [5.1.3. Source Code Style Guide \& Conventions](#513-source-code-style-guide--conventions)
+    - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
+  - [5.2. Product Implementation \& Deployment](#52-product-implementation--deployment)
+    - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
+      - [Sprint #1](#sprint-1)
+    - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
+    - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
+    - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
+    - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
+    - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
+    - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
+    - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
+  - [5.3. Video About-the-Product](#53-video-about-the-product)
+- [Part II: Verification, Validation \& Pipeline](#part-ii-verification-validation--pipeline)
+- [Capítulo VI: Product Verification \& Validation](#capítulo-vi-product-verification--validation)
+  - [6.1. Testing Suites \& Validation](#61-testing-suites--validation)
+    - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
+    - [6.1.2. Core Integration Tests](#612-core-integration-tests)
+    - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+    - [6.1.4. Core System Tests](#614-core-system-tests)
+  - [6.2. Static testing \& Verification](#62-static-testing--verification)
+    - [6.2.1. Static Code Analysis](#621-static-code-analysis)
+      - [6.2.1.1. Coding standard \& Code conventions](#6211-coding-standard--code-conventions)
+      - [6.2.1.2. Code Quality \& Code Security](#6212-code-quality--code-security)
+    - [6.2.2. Reviews](#622-reviews)
+  - [6.3. Validation Interviews](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
+    - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
+      - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
+      - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
+      - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+    - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
+      - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
+      - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
+      - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+      - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
+- [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
+  - [7.1. Continuous Integration](#71-continuous-integration)
+    - [7.1.1. Tools and Practices](#711-tools-and-practices)
+    - [7.1.2. Build \& Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
+  - [7.2. Continuous Delivery](#72-continuous-delivery)
+    - [7.2.1. Tools and Practices](#721-tools-and-practices)
+    - [7.2.2. Stages Deployment Pipeline Components](#722-stages-deployment-pipeline-components)
+  - [7.3. Continuous Deployment](#73-continuous-deployment)
+    - [7.3.1. Tools and Practices](#731-tools-and-practices)
+    - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
+  - [7.4. Continuous Monitoring](#74-continuous-monitoring)
+    - [7.4.1. Tools and Practices](#741-tools-and-practices)
+    - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
+    - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
+    - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+- [Part III: Experiment-Driven Lifecycle](#part-iii-experiment-driven-lifecycle)
+- [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
+  - [8.1. Experiment Planning](#81-experiment-planning)
+    - [8.1.1. As-Is Summary](#811-as-is-summary)
+    - [8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims](#812-raw-material-assumptions-knowledge-gaps-ideas-claims)
+    - [8.1.3. Experiment-Ready Questions](#813-experiment-ready-questions)
+    - [8.1.4. Question Backlog](#814-question-backlog)
+    - [8.1.5. Experiment Cards](#815-experiment-cards)
+  - [8.2. Experiment Design](#82-experiment-design)
+    - [8.2.1. Hypotheses](#821-hypotheses)
+    - [8.2.2. Domain Business Metrics](#822-domain-business-metrics)
+    - [8.2.3. Measures](#823-measures)
+    - [8.2.4. Conditions](#824-conditions)
+    - [8.2.5. Scale Calculations and Decisions](#825-scale-calculations-and-decisions)
+    - [8.2.6. Methods Selection](#826-methods-selection)
+    - [8.2.7. Data Analytics: Goals, KPIs and Metrics Selection](#827-data-analytics-goals-kpis-and-metrics-selection)
+    - [8.2.8. Web and Mobile Tracking Plan](#828-web-and-mobile-tracking-plan)
+  - [8.3. Experimentation](#83-experimentation)
+    - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
+    - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
+    - [8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle](#833-pipeline-supported-experiment-driven-to-be-software-platform-lifecycle)
+      - [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs)
+      - [8.3.3.2. Implemented To-Be Landing Page Evidence](#8332-implemented-to-be-landing-page-evidence)
+      - [8.3.3.3. Implemented To-Be Frontend-Web Application Evidence](#8333-implemented-to-be-frontend-web-application-evidence)
+      - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
+      - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
+      - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
+    - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
+      - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevistas)
+      - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
+  - [8.4. Experiment Aftermath \& Analysis](#84-experiment-aftermath--analysis)
+    - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
+    - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
+  - [8.5. Continuous Learning](#85-continuous-learning)
+    - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
+  - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
+    - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 - [Conclusiones](#conclusiones)
-   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Video App Validation](#video-app-validation)
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
@@ -865,78 +876,229 @@ As-is Scenario — [Persona 2]
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-To-Be Scenario — [Persona 1]
+Segmento objetivo #1: Salones de belleza y barberías
 
-<img src="./assets/requirements/maps/to-be-scenario-maps/to-be-persona-1.png" alt="To-Be Scenario Persona 1" width="800">
+<img src="./assets/requirements/maps/to-be-scenario-maps/Tobe1.jpg" alt="Segmento objetivo #1: Salones de belleza y barberías" width="800">
 
 </div>
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-To-Be Scenario — [Persona 2]
+Segmento objetivo #2: Clientes de servicios de belleza
 
-<img src="./assets/requirements/maps/to-be-scenario-maps/to-be-persona-2.png" alt="To-Be Scenario Persona 2" width="800">
+<img src="./assets/requirements/maps/to-be-scenario-maps/Tobe2.jpg" alt="Segmento objetivo #2: Clientes de servicios de belleza" width="800">
 
 </div>
 
 ## 3.2. User Stories
 
+### 3.2.1 User Stories
+
+| **Epic/User Story ID** | **Título** | **Descripción** | **Criterios de Aceptación** | **Epic relacionada** |
+|------------------------|------------|-----------------|-----------------------------|----------------------|
+| EP01 | **Gestión y visualización de citas** | **Como** cliente, **quiero** poder agendar, modificar y ver mis citas, **para** organizarme mejor y aprovechar los servicios ofrecidos. | No Corresponde | No Corresponde |
+| US17 | Selección de salón | **Como** cliente, **quiero** buscar y seleccionar un salón de belleza/barbería, **para** elegir dónde agendar mi cita. | **Escenario 1: Búsqueda de salón disponible<br>Given el cliente desea agendar una cita**<br>**When** realiza la búsqueda de salones<br>**Then** el sistema muestra los disponibles.<br><br>**Escenario 2: Selección exitosa del salón deseado**<br>**Given** el cliente elige un salón<br>**When** realiza la selección<br>**Then** el sistema asocia ese salón a la futura cita. | EP09 |
+| US18 | Creación de citas | **Como** cliente, **quiero** poder agendar una cita según disponibilidad, **para** recibir el servicio deseado. | **Escenario 1: Registro correcto de cita nueva**<br>**Given** el cliente desea un servicio<br>**When** agenda una cita<br>**Then** el sistema la registra correctamente.<br><br>**Escenario 2: Verificación de disponibilidad antes de agendar**<br>**Given** el cliente selecciona una hora<br>**When** el sistema valida la disponibilidad<br>**Then** la cita es agendada si está libre. | EP09 |
+| US19 | Visualización de citas agendadas | **Como** cliente, **quiero** ver mis citas agendadas, **para** saber cuánto y dónde tengo una reserva. | **Escenario 1: Consulta de citas futuras**<br>**Given** el cliente tiene citas registradas<br>**When** accede a su historial<br>**Then** el sistema muestra las próximas citas.<br><br>**Escenario 2: Revisión de detalles de cita**<br>**Given** una cita está programada<br>**When** el cliente la consulta<br>**Then** el sistema muestra fecha, hora y lugar. | EP09 |
+| US20 | Gestión de modificaciones y cancelaciones de citas | **Como** cliente, **quiero** modificar o cancelar citas con anticipación, **para** reorganizar mis tiempos. | **Escenario 1: Modificación de cita antes de la fecha**<br>**Given** el cliente necesita cambiar una cita<br>**When** solicita el cambio<br>**Then** el sistema permite editar la cita.<br><br>**Escenario 2: Cancelación anticipada de una cita**<br>**Given** el cliente desea cancelar<br>**When** solicita la cancelación<br>**Then** el sistema elimina la cita correctamente. | EP09 |
+| US21 | Historial de modificaciones de citas | **Como** cliente, **quiero** ver los cambios realizados a mis citas, **para** tener un seguimiento completo de mis actividades. | **Escenario 1: Registro de cambios en una cita**<br>**Given** el cliente modifica una cita<br>**When** el cambio es confirmado<br>**Then** el sistema guarda el cambio en el historial.<br><br>**Escenario 2: Consulta de historial de cambios**<br>**Given** existen modificaciones previas<br>**When** el cliente revisa el historial<br>**Then** el sistema muestra las ediciones realizadas. | EP09 |
+| EP02 | **Gestión de negocio** | **Como** dueño/administrador, **quiero** gestionar mis servicios, personal y cuentas, **para** optimizar la operación de mi negocio. | No Corresponde | No Corresponde |
+| US22 | Administración de servicios ofrecidos | **Como** dueño/administrador, **quiero** agregar, editar o eliminar servicios, **para** mantener mi catálogo actualizado. | **Escenario 1: Registro de nuevo servicio**<br>**Given** el administrador desea añadir un servicio<br>**When** completa los datos necesarios<br>**Then** el sistema guarda el nuevo servicio.<br><br>**Escenario 2: Eliminación de servicio registrado**<br>**Given** un servicio ya no está disponible<br>**When** el administrador lo elimina<br>**Then** el sistema lo retira del catálogo. | EP10 |
+| US23 | Gestión de trabajadores | **Como** dueño/administrador, **quiero** añadir o quitar trabajadores, **para** organizar quién ofrece cada servicio. | **Escenario 1: Asignación de nuevo trabajador**<br>**Given** el administrador incorpora personal<br>**When** añade a un trabajador<br>**Then** el sistema lo registra correctamente.<br><br>**Escenario 2: Eliminación de trabajador inactivo**<br>**Given** un trabajador ya no colabora<br>**When** el administrador lo elimina<br>**Then** el sistema lo retira de la plantilla. | EP10 |
+| US24 | Gestión de cuentas bancarias | **Como** dueño/administrador, **quiero** registrar, modificar o eliminar cuentas bancarias, **para** administrar correctamente los pagos recibidos. | **Escenario 1: Registro de cuenta bancaria válida**<br>**Given** el administrador desea registrar una cuenta<br>**When** completa los datos<br>**Then** el sistema guarda la cuenta exitosamente.<br><br>**Escenario 2: Modificación de cuenta existente<br>Given hay una cuenta registrada**<br>**When** el administrador la edita<br>**Then** el sistema actualiza la información. | EP10 |
+| EP03 | **Gestión de horarios** | **Como** dueño/administrador, **quiero** gestionar el horario de mis trabajadores, **para** organizar si pueden o no realizar el servicio. | No Corresponde | No Corresponde |
+| US09 | Visualización de los horarios | **Como** dueño/administrador, **quiero** visualizar los horarios disponibles , **para** saber cuándo mis trabajadores puede aceptar citas. | **Escenario 1: Visualización correcta de horarios disponibles**<br>**Given** el administrador tiene horarios definidos<br>**When** accede a la consulta de disponibilidad<br>**Then** el sistema muestra los horarios de atención establecidos.<br><br>**Escenario 2: Visualización vacía sin horarios definidos**<br>**Given** no se ha configurado ningún horario<br>**When** el administrador consulta los horarios<br>**Then** el sistema informa que no hay disponibilidad registrada. | EP05 |
+| US10 | Configuración de los horarios | **Como** dueño/administrador, **quiero** configurar los horarios de atención de mis trabajadores, **para** definir sus días y horas disponibles. | **Escenario 1: Configuración exitosa de horarios**<br>**Given** el administrador ingresa intervalos válidos<br>**When** define el horario de atención<br>**Then** el sistema registra los nuevos horarios correctamente.<br><br>**Escenario 2: Fallo en la configuración por conflictos de horario**<br>**Given** el administrador ingresa horarios que se superponen o son inválidos<br>**When** intenta configurar la disponibilidad<br>**Then** el sistema impide el registro e informa el conflicto. | EP05 |
+| EP04 | **Gestión de subscripciones** | **Como** dueño/administrador, **quiero** conocer y contratar planes de suscripción, **para** acceder a beneficios adicionales de la plataforma. | No Corresponde | No Corresponde |
+| US11 | Visualización de beneficios de suscripción | **Como** dueño/administrador, **quiero** ver qué beneficios incluye cada plan, **para** elegir el más adecuado para mí. | **Escenario 1: Consulta exitosa de beneficios**<br>**Given** el administrador tiene una cuenta activa<br>**When** consulta los beneficios de los planes<br>**Then** el sistema muestra los beneficios disponibles en cada plan.<br><br>**Escenario 2: Validación de beneficios según plan**<br>**Given** el administrador accede al sistema<br>**When** verifica un plan específico<br>**Then** el sistema muestra solo los beneficios que corresponden a ese plan. | EP07 |
+| US12 | Visualización de precios | **Como** dueño/administrador, **quiero** ver los precios de cada plan, **para** tomar decisiones según mi presupuesto. | **Escenario 1: Visualización de precios de todos los planes**<br>**Given** el administrador desea conocer los planes<br>**When** accede a la información de precios<br>**Then** el sistema muestra los costos de cada plan disponible.<br><br>**Escenario 2: Consulta de precio por plan específico**<br>**Given** el administrador selecciona un plan<br>**When** consulta su precio<br>**Then** el sistema muestra el precio correspondiente a ese plan. | EP07 |
+| US13 | Estado y nivel de suscripción | **Como** dueño/administrador, **quiero** ver el estado de mi suscripción actual, **para** saber su está activa y cuándo expira. | **Escenario 1: Verificación de suscripción activa**<br>**Given** el administrador posee una suscripción<br>**When** accede a su estado actual<br>**Then** el sistema muestra si está activa y su nivel.<br><br>**Escenario 2: Visualización de fecha de expiración**<br>**Given** la suscripción del administrador está activa<br>**When** consulta la expiración<br>**Then** el sistema muestra la fecha de vencimiento. | EP07 |
+| US14 | Contratación de plan de suscripción | **Como** dueño/administrador, **quiero** contratar un plan, **para** activar sus beneficios en mi cuenta. | **Escenario 1: Activación de plan exitosamente**<br>**Given** el administrador elige un plan<br>**When** realiza la contratación<br>**Then** el sistema activa la suscripción correctamente.<br><br>**Escenario 2: Asociación de beneficios al contratar**<br>**Given** el plan es contratado<br>When se confirma la contratación<br>**Then** el sistema habilita los beneficios del plan. | EP07 |
+| EP05 | **Gestión de Pagos y Facturación** | **Como** usuario, **quiero** pagar y recibir facturas de manera clara y segura, **para** tener control sobre mis transacciones. | No Corresponde | No Corresponde |
+| US15 | Confirmación de pago | **Como** usuario, **quiero** recibir una confirmación inmediata al completar un pago, **para** asegurarme de que la transacción fue exitosa. | **Escenario 1: Confirmación inmediata tras pago válido**<br>**Given** el usuario realiza un pago<br>**When** completa la transacción<br>**Then** el sistema confirma que fue exitosa.<br><br>.**Escenario 2: Validación del estado del pago**<br>**Given** el usuario ha pagado<br>**When** consulta el estado<br>**Then** el sistema indica que el pago fue procesado correctamente. | EP08 |
+| US16 | Renovación automática de suscripción | **Como** dueño/administrador, **quiero** que mi plan se renueve automáticamente, **para** no tener que pagar manualmente cada vez. | **Escenario 1: Renovación automática sin errores**<br>**Given** el administrador tiene renovación automática activa<br>**When** llega la fecha programada<br>**Then** el sistema renueva la suscripción automáticamente.<br><br>**Escenario 2: Confirmación de renovación exitosa**<br>**Given** se ejecuta la renovación automática<br>**When** el sistema la procesa<br>**Then** se confirma al administrador que fue exitosa. | EP08 |
+| EP06 | **Registro de usuario** | **Como** nuevo usuario, **quiero** registrarme fácilmente en la plataforma, **para** poder acceder a sus funcionalidades. | No Corresponde | No Corresponde |
+| US01 | Registro de un cliente | **Como** cliente, **quiero** registrarme proporcionando mis datos personales, **para** crear una cuenta. | **Escenario 1: Registro exitoso de un cliente**<br>**Given** el cliente proporciona datos personales válidos<br>**When** solicita crear una cuenta<br>**Then** el sistema crea una cuenta y confirma el registro.<br><br>**Escenario 2: Registro fallido por datos incompletos**<br>**Given** el cliente no proporciona todos los datos requeridos<br>**When** intenta registrarse<br>**Then** el sistema impide el registro e informa la omisión. | EP01 |
+| US02 | Registro de un salón de belleza/barbería | **Como** dueño/administrador, **quiero** poder registrar mi negocio, **para** gestionar mis servicios en la plataforma. | **Escenario 1: Registro exitoso de un negocio**<br>**Given** el administrador proporciona información válida del negocio<br>**When** solicita registrar su salón o barbería<br>**Then** el sistema almacena los datos y confirma el registro del negocio.<br><br>**Escenario 2: Registro fallido por datos inválidos del negocio**<br>**Given** el administrador ingresa información inválida o incompleta<br>**When** intenta registrar el negocio<br>**Then** el sistema rechaza el registro e informa el problema. | EP01 |
+| EP07 | **Inicio de sesión** | **Como** usuario registrado, **quiero** iniciar sesión con mis credenciales, **para** acceder a mi cuenta de forma segura. | No Corresponde | No Corresponde |
+| US03 | Inicio de sesión del usuario | **Como** usuario, **quiero** iniciar sesión con mi correo y contraseña, **para** acceder a mi cuenta. | **Escenario 1: Inicio de sesión exitoso**<br>**Given** el usuario tiene una cuenta registrada<br>**When** proporciona credenciales correctas<br>**Then** el sistema permite el acceso a la cuenta.<br><br>**Escenario 2: Fallo en inicio de sesión por credenciales incorrectas**<br>**Given** el usuario proporciona credenciales inválidas<br>**When** intenta iniciar sesión<br>**Then** el sistema rechaza el acceso e informa el error. | EP02 |
+| US04 | Recuperación de contraseña | **Como** usuario, **quiero** recuperar el acceso a mi cuenta si olvido la contraseña, **para** poder usar la plataforma nuevamente. | **Escenario 1: Solicitud exitosa de recuperación de contraseña**<br>**Given** el usuario indica su información asociada a la cuenta<br>**When** solicita recuperar su contraseña<br>**Then** el sistema genera instrucciones de recuperación.<br><br>**Escenario 2: Solicitud fallida por información inválida**<br>**Given** el usuario proporciona información no registrada<br>**When** solicita recuperar su contraseña<br>**Then** el sistema informa que no puede completar la solicitud. | EP02 |
+| EP08 | **Cierre de sesión y eliminación de la cuenta** | **Como** usuario, **quiero** cerrar sesión o eliminar mi cuenta, **para** tener control sobre mi acceso y privacidad. | No Corresponde | No Corresponde |
+| US07 | Cierre de sesión | **Como** usuario, **quiero** poder cerrar sesión de forma segura, **para** proteger mis datos cuando no uso la app. | **Escenario 1: Cierre de sesión exitoso**<br>**Given** el usuario tiene una sesión activa<br>**When** solicita cerrar la sesión<br>**Then** el sistema finaliza la sesión y revoca el acceso.<br><br>**Escenario 2: Cierre de sesión sin sesión activa**<br>**Given** no hay una sesión iniciada<br>**When** el usuario intenta cerrar sesión<br>**Then** el sistema no realiza ninguna acción. | EP04 |
+| US08 | Eliminación de cuenta | **Como** usuario, **quiero** eliminar mi cuenta y datos personales, **para** dejar de utilizar la plataforma si así lo deseo. | **Escenario 1: Eliminación exitosa de cuenta**<br>**Given** el usuario está autenticado<br>**When** solicita eliminar su cuenta<br>**Then** el sistema elimina la cuenta y los datos asociados.<br><br>**Escenario 2: Fallo en la eliminación de cuenta por falta de autenticación**<br>**Given** el usuario no está autenticado<br>**When** intenta eliminar su cuenta<br>**Then** el sistema impide la eliminación e informa la necesidad de autenticarse. | EP04 |
+| EP09 | **Edición de perfil de usuario** | **Como** usuario, **quiero** editar los datos de mi perfil, **para** mantener mi información actualizada y personalizada según mi rol. | No Corresponde | No Corresponde |
+| US05 | Edición del perfil del cliente | **Como** cliente, **quiero** actualizar mi información personal, **para** mantener mis datos actualizados. | **Escenario 1: Edición exitosa del perfil**<br>**Given** el cliente accede a su información personal<br>**When** actualiza sus datos correctamente<br>**Then** el sistema guarda los cambios y confirma la actualización.<br><br>**Escenario 2: Fallo en edición por datos inválidos**<br>**Given** el cliente proporciona datos incorrectos<br>**When** intenta actualizar su perfil<br>**Then** el sistema rechaza la edición e informa el motivo. | EP03 |
+| US06 | Personalización del perfil del salón de belleza/barbería | **Como** dueño/administrador, **quiero** poder personalizar el perfil de mi salon de belleza/barbería con información relevante y estética, **para** atraer a más cliente. | **Escenario 1: Personalización exitosa del perfil del negocio**<br>**Given** el administrador accede a la configuración del negocio<br>**When** modifica los datos con información válida<br>**Then** el sistema actualiza el perfil del negocio.<br><br>**Escenario 2: Fallo en personalización por datos inválidos**<br>**Given** el administrador proporciona información no aceptada<br>**When** intenta modificar el perfil del negocio<br>**Then** el sistema impide la actualización e informa el error. | EP03 |
+| EP10 | **Gestión de notificaciones** | **Como** usuario, **quiero** recibir notificaciones personalizadas sobre mis citas, pagos y promociones, **para** estar siempre informado. | No Corresponde | No Corresponde |
+| US25 | Recepción de notificaciones del estado de la cita | **Como** cliente, **quiero** recibir notificaciones sobre confirmación, cancelación o modificación de citas, **para** estar al tanto de mis reservas. | **Escenario 1: Notificación por confirmación de cita**<br>**Given** el cliente agenda una cita<br>**When** esta es confirmada<br>**Then** el sistema envía una notificación.<br><br>**Escenario 2: Aviso por modificación de cita**<br>**Given** una cita es modificada<br>**When** se actualiza su estado<br>**Then** el cliente recibe una notificación del cambio. | EP11 |
+| US26 | Alertas por vencimiento o fallo de pago | **Como** usuario, **quiero** ser alertado si hay un problema con mi pago o si está por vencer mi suscripción, **para** tomar acciones a tiempo. | **Escenario 1: Alerta de vencimiento próximo**<br>**Given** la suscripción está por expirar<br>**When** se acerca la fecha límite<br>**Then** el sistema alerta al usuario<br><br>**Escenario 2: Notificación por fallo en el pago**<br>**Given** un pago no se concreta<br>**When** el sistema detecta el error<br>**Then** se notifica al usuario del problema. | EP11 |
+| US27 | Configuración de medios de notificación | **Como** usuario, **quiero** elegir si recibir notificaciones por correo, SMS o dentro de la plataforma, **para** tener un mejor control de mi información. | **Escenario 1: Selección del medio de notificación preferido**<br>**Given** el usuario quiere cambiar el medio de notificación<br>**When** accede a su configuración<br>**Then** el sistema permite elegir entre las opciones disponibles.<br><br>**Escenario 2: Confirmación de medio seleccionado**<br>**Given** el usuario elige un medio<br>**When** guarda los cambios<br>**Then** el sistema respeta la nueva configuración. | EP11 |
+| US28 | Recepción de notificaciones sobre promociones y descuentos | **Como** cliente, **quiero** recibir promociones y descuentos que me interesen, **para** aprovechar ofertas relevantes. | **Escenario 1: Envío de promoción activa**<br>**Given** hay una promoción vigente<br>**When** el sistema identifica usuarios interesados<br>**Then** se les envía la promoción correspondiente.<br><br>**Escenario 2: Recepción correcta de promoción configurada**<br>**Given** el cliente acepta recibir promociones<br>**When** se lanza una campaña<br>**Then** recibe la notificación correctamente. | EP11 |
+| EP11 | **Landing Page** | **Como** visitante, **quiero** ver una página inicial atractiva con toda la información relevante, **para** decidir si deseo registrarme o contactar. | No Corresponde | No Corresponde |
+| US29 | Visualización general de los servicios | **Como** visitante, **quiero** ver una vista general de los servicios ofrecidos, **para** entender qué tipo de atención puedo recibir. | **Escenario 1: Muestra de catálogo de servicios disponibles**<br>**Given** el visitante desea informarse<br>**When** accede al listado de servicios<br>**Then** el sistema muestra todos los servicios activos.<br><br>**Escenario 2: Visualización de detalles de servicio**<br>**Given** el visitante elige un servicio<br>**When** accede a la descripción<br>**Then** el sistema muestra la información detallada. | EP12 |
+| US30 | Visualización de beneficios | **Como** visitante, **quiero** ver los beneficios de usar la plataforma, **para** motivarme a registrarme. | **Escenario 1: Despliegue de beneficios por usar la plataforma**<br>**Given** el visitante quiere conocer ventajas<br>**When** accede a la sección correspondiente<br>**Then** el sistema muestra los beneficios disponibles.<br><br>**Escenario 2: Validación de beneficios antes del registro**<br>**Given** el visitante no está registrado<br>**When** consulta los beneficios<br>**Then** el sistema permite visualizar la información sin restricción. | EP12 |
+| US31 | Planes y precios | **Como** visitante, **quiero** ver los planes de suscripción y sus precios, **para** saber si se ajustan a mis necesidades. | **Escenario 1: Muestra general de planes y precios**<br>**Given** el visitante desea comparar opciones<br>**When** accede a la sección de planes<br>**Then** el sistema muestra los precios y características.**Escenario 2: Consulta de detalle de un plan específico**<br>**Given** el visitante selecciona un plan<br>**When** solicita más información<br>**Then** el sistema despliega los detalles y precio. | EP12 |
+| US32 | Testimonios | **Como** visitante, **quiero** leer testimonios de otros usuarios, **para** ganar confianza en la plataforma. | **Escenario 1: Visualización de testimonios disponibles**<br>**Given** el visitante está explorando la plataforma<br>**When** accede a testimonios<br>**Then** el sistema muestra los comentarios de otros usuarios.<br><br>**Escenario 2: Validación de experiencia positiva por testimonios**<br>**Given** los testimonios están activos<br>**When** el visitante los revisa<br>**Then** puede conocer opiniones reales de otros clientes. | EP12 |
+| US33 | Call to action | **Como** visitante, **quiero** encontrar botones de acción claros, **para** empezar a usar la plataforma fácilmente. | **Escenario 1: Visualización de opciones para iniciar uso**<br>**Given** el visitante quiere comenzar<br>**When** encuentra llamados a la acción<br>**Then** el sistema los muestra de manera clara.<br><br>**Escenario 2: Seguimiento del flujo tras clic en llamado**<br>**Given** el visitante acciona un botón<br>**When** se registra la interacción<br>**Then** el sistema lo redirige correctamente. | EP12 |
+| US34 | Contacto o soporte | **Como** visitante, **quiero** poder contactarme con el equipo o recibir soporte, **para** resolver dudas antes de registrarme. | **Escenario 1: Acceso a canal de contacto**<br>**Given** el visitante tiene una duda<br>**When** busca ayuda<br>**Then** el sistema le muestra opciones para contactarse.<br><br>**Escenario 2: Confirmación de recepción de mensaje de soporte**<br>**Given** el visitante envía una consulta<br>**When** el sistema la recibe<br>**Then** emite una confirmación automática. | EP12 |
+| US35 | Información sobre uTime | **Como** visitante, **quiero** poder acceder una sección que explique quiénes son los creadores, **para** tener confianza en la plataforma y su propósito. | **Escenario 1: Mostrar información sobre la startup**<br>**Given** que soy un visitante en la página principal<br>**When** hago clic en el enlace "About US" us del menú de navegación<br>**Then** se debe mostrar una sección con información sobre Pactech, incluyendo su misión, visión y propósito.<br><br>**Escenario 2: Visualizar los integrantes del equipo**<br>**Given** que estoy en la sección "About Us"<br>**When**visualizo la información de la empresa<br>**Then** debo poder ver a los integrantes de Paxtech. | EP12 |
+
+### 3.2.2 Technical Stories
+
+| **ID** | **Título** | **Descripción** | **Criterios de Aceptación** | **Epic Relacionado** |
+|--------|------------|-----------------|-----------------------------|----------------------|
+| TS01 | Encriptación de contraseñas | **Como** developer, **quiero** asegurar las contraseñas mediante hashing y salting, **para** proteger los datos de los usuarios. | **Escenario 1: Almacenamiento seguro al registrarse**<br>**Given** un nuevo usuario se registra<br>**When** se guarda su contraseña<br>**Then** la contraseña debe almacenarse en formato hash con salt.<br><br>**Escenario 2: Comparación segura al hacer login**<br>**Given** un usuario registrado intenta iniciar sesión<br>**When** el sistema compara la contraseña ingresada con la almacenada<br>**Then** debe usar el hash y salt para verificar la coincidencia. | EP06 |
+| TS02 | Actualización en tiempo real de horarios y citas | **Como** developer, **quiero** que los horarios y las citas se actualicen en tiempo real, **para** que los usuarios vean disponibilidad actualizada. | **Escenario 1: Horario actualizado sin recargar**<br>**Given** un horario es actualizado por el administrador<br>**When** otro usuario está viendo los horarios<br>**Then** los cambios se reflejan automáticamente.<br><br>**Escenario 2: Cita nueva visible en tiempo real**<br>**Given** un cliente agenda una cita<br>**When** la cita es confirmada<br>**Then** el nuevo horario se muestra en tiempo real en el panel del salón. | EP05/EP06 |
+| TS03 | Validaciones de formularios en frontend y backend | **Como** developer, **quiero** implementar validaciones robustas en formularios, **para** evitar datos erróneos o maliciosos. | **Escenario 1: Campo requerido vacío**<br>**Given** el usuario deja el campo "correo electrónico" vacío<br>**When** intenta enviar el formulario<br>**Then** el sistema muestra un mensaje de error.<br><br>**Escenario 2: Formato incorrecto en campo de teléfono**<br>**Given** el usuario escribe un teléfono no numérico<br>**When** intenta enviar el formulario<br>**Then** el sistema muestra un mensaje de validación. | Todas |
+| TS04 | Diseño responsive y accesible | **Como** developer, **quiero** aplicar diseño responsive y accesibilidad, **para** que el sitio funcione bien en cualquier dispositivo. | **Escenario 1: Visualización en smartphone**<br>**Given** el usuario accede desde un smartphone<br>**When** navega por el sitio<br>**Then** los elementos se ajustan correctamente.<br><br>**Escenario 2: Accesibilidad con lector de pantalla**<br>**Given** un usuario con discapacidad visual accede al sitio<br>**When** usa un lector de pantalla<br>**Then** los elementos clave tienen etiquetas accesibles. | Todas |
+| TS05 | Crear endpoint para registro de usuario | **Como** developer, **quiero** crear el endpoint POST /usuarios para registrar clientes y salones de belleza, **para** permitir su incorporación al sistema. | **Escenario 1: Registro exitoso de cliente**<br>**Given** un cliente envía una solicitud POST con datos válidos<br>**When** el endpoint procesa la petición<br>**Then** se registra y devuelve un token de autenticación.<br><br>**Escenario 2: Datos incompletos en el registro**<br>**Given** un usuario envía datos incompletos<br>**When** el backend valida la solicitud<br>**Then** devuelve un error 400 indicando campos faltantes. | EP06 |
+| TS06 | Crear endpoint de login con JWT | **Como** developer, **quiero** crear el endpoint POST /login con generación de JWT, **para** autenticar a los usuarios del sistema. | **Escenario 1: Login exitoso**<br>**Given** un usuario envía su correo y contraseña correctos<br>**When** se autentica correctamente<br>**Then** el sistema devuelve un JWT válido.<br><br>**Escenario 2: Login fallido**<br>**Given** un usuario intenta iniciar sesión con datos erróneos<br>**When** el sistema verifica las credenciales<br>**Then** devuelve un error 401. | EP07 |
+| TS07 | Crear endpoint para agendar citas | **Como** developer, **quiero** crear el endpoint POST /citas **para** que los usuarios puedan agendar una cita con un salón. | **Escenario 1: Cita agendada correctamente**<br>**Given** un cliente envía una solicitud con fecha y hora disponibles<br>**When** la solicitud es válida<br>**Then** la cita se crea y se confirma.<br><br>**Escenario 2: Horario no disponible**<br>**Given** un cliente intenta agendar en un horario ocupado<br>**When** envía la solicitud<br>**Then** el sistema responde con un error indicando indisponibilidad. | EP06 |
+| TS08 | Crear endpoint para gestionar horarios | **Como** developer, **quiero** crear los endpoints GET /horarios y PUT /horarios, **para** visualizar y actualizar los horarios del salón. | **Escenario 1: Visualización de horarios**<br>**Given** el administrador consulta el endpoint GET /horarios<br>**When** hay horarios configurados<br>**Then** el sistema devuelve la lista correctamente.<br><br>**Escenario 2: Actualización de horarios**<br>**Given** el administrador quiere cambiar su horario<br>**When** envía una solicitud PUT con los nuevos datos<br>**Then** el sistema actualiza la información. | EP09 |
+| TS09 | Crear endpoint de pagos | **Como** developer, **quiero** crear el endpoint POST /pagos **para** procesar pagos usando la pasarela integrada. | **Escenario 1: Pago procesado exitosamente**<br>**Given** el usuario quiere pagar una suscripción<br>**When** envía datos válidos a POST /pagos<br>**Then** el sistema procesa el pago y registra la transacción.<br><br>**Escenario 2: Pago rechazado**<br>**Given** el usuario envía un método de pago inválido<br>**When** se procesa la solicitud<br>**Then** el sistema devuelve un error con el motivo del fallo. | EP05 |
+| TS10 | Crear endpoints para suscripciones | **Como** developer, **quiero** implementar GET /suscripciones, POST /suscripciones, y PUT /suscripciones **para** gestionar los planes de los usuarios. | **Escenario 1: Consultar planes disponibles**<br>**Given** un usuario accede a GET /suscripciones<br>**When** el sistema recibe la solicitud<br>**Then** devuelve una lista de planes y beneficios.<br><br>**Escenario 2: Cambio de plan**<br>**Given** un usuario con plan activo quiere cambiar<br>**When** envía una solicitud PUT con el nuevo plan<br>**Then** el sistema actualiza la suscripción. | EP08 |
+| TS11 | Crear endpoint para recibir notificaciones | **Como** developer, **quiero** crear el endpoint POST /notificaciones **para** recibir y registrar eventos que generen alertas al usuario. | **Escenario 1: Notificación por cita creada**<br>**Given** un cliente agenda una cita<br>**When** el evento se genera<br>**Then** el sistema envía una notificación mediante POST /notificaciones.<br><br>**Escenario 2: Notificación por vencimiento de pago**<br>**Given** una suscripción está por vencer<br>**When** se detecta la proximidad de vencimiento<br>**Then** se genera y envía una notificación automática. | EP10 |
+| TS12 | Crear endpoints para gestión de proveedores | **Como** developer, **quiero** crear los endpoints GET /providers, GET /providers/{id}, y POST /providers, **para** manejar el registro y consulta de proveedores. | **Escenario 1: Registro de proveedor**<br>**Given** un proveedor envía una solicitud POST con datos válidos<br>**When** se valida la solicitud<br>**Then** se registra y devuelve una confirmación.<br><br>**Escenario 2: Visualización de todos los proveedores**<br>**Given** un usuario consulta el listado<br>**When** accede a GET /providers<br>**Then** recibe una lista completa.<br><br>**Escenario 3: Consulta por ID**<br>**Given** un proveedor registrado<br>**When** accede a GET /providers/{id}<br>**Then** recibe los datos correspondientes. | EP04 |
+| TS13 | Crear endpoints para perfil de proveedores | **Como** developer, **quiero** implementar los endpoints GET /providerProfile/{id} y POST /providerProfile, **para** gestionar los perfiles de proveedores. | **Escenario 1: Registro de perfil**<br>**Given** un nuevo proveedor envía una solicitud POST con datos válidos<br>**When** se valida y registra<br>**Then** se crea su perfil.<br><br>**Escenario 2: Visualización de perfil por ID**<br>**Given** un ID válido de proveedor<br>**When** se accede a GET /providerProfile/{id}<br>**Then** se devuelven sus datos. | EP04 |
+| TS14 | Crear endpoints para trabajadores | **Como** developer, **quiero** implementar GET /workers, GET /workers/{id} y POST /workers, **para** gestionar los trabajadores del sistema. | **Escenario 1: Registro de trabajador**<br>**Given** un salón registra un nuevo trabajador<br>**When** envía datos válidos<br>**Then** se guarda correctamente.<br><br>**Escenario 2: Listar trabajadores**<br>**Given** un usuario accede al sistema<br>**When** realiza una solicitud GET<br>**Then** recibe todos los trabajadores.<br><br>**Escenario 3: Consultar por ID**<br>**Given** un ID válido<br>**When** accede a GET /workers/{id}<br>**Then** recibe la información del trabajador. | EP04 |
+| TS15 | Crear endpoints para clientes | **Como** developer, **quiero** crear los endpoints GET /clients, GET /clients/{id} y POST /clients, **para** gestionar a los clientes del sistema. | **Escenario 1: Registro de cliente**<br>**Given** un cliente nuevo<br>**When** envía una solicitud POST con datos válidos<br>**Then** se registra correctamente.<br><br>**Escenario 2: Listado de clientes**<br>**Given** un administrador accede a GET /clients<br>**When** realiza la solicitud<br>**Then** ve todos los clientes.<br><br>**Escenario 3: Consulta individual**<br>**Given** un ID de cliente<br>**When** accede a GET /clients/{id}<br>**Then** recibe los datos correspondientes. | EP06 |
+| TS16 | Implementación de endpoints para gestión de reviews | **Como** developer, **quiero** implementar GET /reviews, GET /reviews/{id} y POST /reviews, **para** gestionar las reseñas de los clientes. | **Escenario 1: Listar todas las reviews**<br>**Given** un usuario accede a GET /reviews<br>**When** hay reseñas registradas<br>**Then** el sistema devuelve la lista completa.<br><br>**Escenario 2: Registrar nueva review**<br>**Given** un cliente envía una reseña válida<br>**When** se realiza POST /reviews<br>**Then** la reseña se almacena correctamente.<br><br>**Escenario 3: Consultar review por ID**<br>**Given** un ID de reseña válido<br>**When** se accede a GET /reviews/{id}<br>**Then** el sistema devuelve los datos de la reseña. | EP11 |
+| TS17 | Crear endpoints para servicios ofrecidos | **Como** developer, **quiero** implementar GET /services y POST /services, **para** registrar y consultar los servicios del salón. | **Escenario 1: Registro de nuevo servicio**<br>**Given** un salón desea ofrecer un nuevo servicio<br>**When** envía una solicitud POST válida<br>**Then** el servicio se registra.<br><br>**Escenario 2: Visualizar servicios**<br>**Given** un cliente explora servicios<br>**When** accede a GET /services<br>**Then** se listan todos los servicios registrados. | EP05 |
+| TS18 | Crear endpoints para gestión de usuarios | **Como** developer, **quiero** implementar GET /users, GET /users/{id}, **para** consultar la información general de usuarios registrados. | **Escenario 1: Ver todos los usuarios**<br>**Given** un administrador accede a GET /users<br>**When** hay usuarios registrados<br>**Then** se listan correctamente.<br><br>**Escenario 2: Ver usuario por ID**<br>**Given** un ID válido<br>**When** se accede a GET /users/{id}<br>**Then** se muestran los datos del usuario. | EP06 |
+
+### 3.2.3 Spike Stories
+
+Las Spike Stories de uTime son investigaciones técnicas que el equipo realiza antes de implementar integraciones con APIs externas. Estas historias permiten evaluar la viabilidad, riesgos y esfuerzo requerido para integrar servicios como Stripe e ImgBB en la plataforma.
+
 <table>
-  <thead>
-    <tr>
-      <th>Epic / Story ID</th>
-      <th>Título</th>
-      <th>Descripción</th>
-      <th>Criterios de aceptación</th>
-      <th>Relacionado con (Epic ID)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>EP01</td>
-      <td>[Título de épica]</td>
-      <td>[Descripción]</td>
-      <td>[Criterios]</td>
-      <td>—</td>
-    </tr>
-    <tr>
-      <td>US01</td>
-      <td>[Título de user story]</td>
-      <td>Como [rol], quiero [acción] para [beneficio].</td>
-      <td><b>Scenario 1:</b> [Contenido pendiente]<br><b>Scenario 2:</b> [Contenido pendiente]</td>
-      <td>EP01</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th colspan="2">Spike Story 1: Investigación de Integración de Stripe para Procesamiento de Pagos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Historia</b></td>
+<td><strong>Como</strong> equipo de desarrollo de uTime, <strong>quiero</strong> investigar y prototipar la integración de Stripe en nuestra aplicación móvil y backend, <strong>para que</strong> podamos entender las implicaciones técnicas, riesgos potenciales y esfuerzo requerido para la implementación completa de pagos en uTime.</td>
+</tr>
+<tr>
+<td><b>Criterio 1</b></td>
+<td><strong>Dado que</strong> el equipo necesita entender las capacidades de Stripe para el procesamiento de pagos en aplicaciones móviles, <strong>cuando</strong> el desarrollador revisa la documentación de la API de Stripe (Payments, Checkout, Mobile SDKs), <strong>entonces</strong> se debe documentar en un reporte compartido los productos y flujos de pago más adecuados para uTime.</td>
+</tr>
+<tr>
+<td><b>Criterio 2</b></td>
+<td><strong>Dado que</strong> la aplicación móvil necesita procesar pagos de manera segura, <strong>cuando</strong> el desarrollador evalúa la compatibilidad con Stripe Mobile SDKs para Android e iOS, <strong>entonces</strong> se debe documentar los requisitos de integración móvil, incluyendo componentes de UI específicos y lógica de negocio para manejo de tokens.</td>
+</tr>
+<tr>
+<td><b>Criterio 3</b></td>
+<td><strong>Dado que</strong> el backend necesita manejar la lógica de pagos y webhooks, <strong>cuando</strong> el desarrollador evalúa la compatibilidad con la librería Stripe para el backend, <strong>entonces</strong> se debe documentar los requisitos de integración backend, incluyendo configuración de endpoints REST y manejo de webhooks.</td>
+</tr>
+<tr>
+<td><b>Criterio 4</b></td>
+<td><strong>Dado que</strong> es necesario asegurar el procesamiento seguro de pagos, <strong>cuando</strong> el desarrollador analiza los riesgos de seguridad potenciales, <strong>entonces</strong> el reporte debe incluir un resumen de estos riesgos y las características de mitigación proporcionadas por Stripe.</td>
+</tr>
+<tr>
+<td><b>Criterio 5</b></td>
+<td><strong>Dado que</strong> la aplicación debe mantener un buen rendimiento durante el procesamiento de pagos, <strong>cuando</strong> el desarrollador evalúa el impacto de la integración de Stripe en el rendimiento, <strong>entonces</strong> se deben documentar los hallazgos, incluyendo cualquier cuello de botella potencial.</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<table>
+<thead>
+<tr>
+<th colspan="2">Spike Story 2: Investigación de Integración de ImgBB para Gestión de Imágenes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Historia</b></td>
+<td><strong>Como</strong> equipo de desarrollo de uTime, <strong>quiero</strong> investigar y prototipar la integración de ImgBB en nuestra aplicación móvil y backend, <strong>para que</strong> podamos entender las implicaciones técnicas, limitaciones y esfuerzo requerido para la implementación completa de gestión de imágenes de perfiles y servicios.</td>
+</tr>
+<tr>
+<td><b>Criterio 1</b></td>
+<td><strong>Dado que</strong> el equipo necesita entender las capacidades de ImgBB para el almacenamiento y gestión de imágenes, <strong>cuando</strong> el desarrollador revisa la documentación de la API de ImgBB (upload, delete, management), <strong>entonces</strong> se debe documentar en un reporte compartido los endpoints y funcionalidades más adecuados para uTime.</td>
+</tr>
+<tr>
+<td><b>Criterio 2</b></td>
+<td><strong>Dado que</strong> la aplicación móvil necesita subir y gestionar imágenes de perfiles y servicios, <strong>cuando</strong> el desarrollador evalúa la compatibilidad con las APIs de ImgBB para Android e iOS, <strong>entonces</strong> se debe documentar los requisitos de integración móvil, incluyendo manejo de archivos de imagen y compresión.</td>
+</tr>
+<tr>
+<td><b>Criterio 3</b></td>
+<td><strong>Dado que</strong> el backend necesita procesar y almacenar referencias de imágenes, <strong>cuando</strong> el desarrollador evalúa la integración con ImgBB desde el backend, <strong>entonces</strong> se debe documentar los requisitos de integración backend, incluyendo manejo de URLs de imágenes y validación.</td>
+</tr>
+<tr>
+<td><b>Criterio 4</b></td>
+<td><strong>Dado que</strong> es necesario entender las limitaciones del servicio gratuito de ImgBB, <strong>cuando</strong> el desarrollador analiza los límites de almacenamiento, ancho de banda y funcionalidades, <strong>entonces</strong> el reporte debe incluir un análisis de limitaciones y posibles costos de actualización.</td>
+</tr>
+<tr>
+<td><b>Criterio 5</b></td>
+<td><strong>Dado que</strong> la gestión de imágenes afecta directamente la experiencia del usuario, <strong>cuando</strong> el desarrollador evalúa el impacto de ImgBB en la velocidad de carga y calidad de imágenes, <strong>entonces</strong> se deben documentar los hallazgos sobre rendimiento y recomendaciones para optimización.</td>
+</tr>
+</tbody>
 </table>
 
 ## 3.3. Product Backlog
 
-<table>
-  <thead>
-    <tr>
-      <th># Orden</th>
-      <th>User Story Id</th>
-      <th>Título</th>
-      <th>Descripción</th>
-      <th>Story Points (1 / 2 / 3 / 5 / 8)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>US01</td>
-      <td>[Título]</td>
-      <td>[Descripción]</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+| **# Orden** | **User Story ID** | **Titulo** | **Descripción** | **Story Points** |
+|-------------|-------------------|------------|-----------------|------------------|
+| #1 | US29 | Visualización general de los servicios | **Como** visitante, **quiero** ver una vista general de los servicios ofrecidos, **para** entender qué tipo de atención puedo recibir. | 2 |
+| #2 | US30 | Visualización de beneficios | **Como** visitante, **quiero** ver los beneficios de usar la plataforma, **para** motivarme a registrarme. | 2 |
+| #3 | US31 | Planes y precios | **Como** visitante, **quiero** ver los planes de suscripción y sus precios, **para** saber si se ajustan a mis necesidades. | 2 |
+| #4 | US32 | Testimonios | **Como** visitante, **quiero** leer testimonios de otros usuarios, **para** ganar confianza en la plataforma. | 1 |
+| #5 | US33 | Call to action | **Como** visitante, **quiero** encontrar botones de acción claros, **para** empezar a usar la plataforma fácilmente. | 1 |
+| #6 | US34 | Contacto y Soporte | **Como** visitante, **quiero** poder contactarme con el equipo o recibir soporte, **para** resolver dudas antes de registrarme. | 2 |
+| #7 | US35 | Información sobre uTime | **Como** visitante, **quiero** poder acceder una sección que explique quiénes son los creadores, **para** tener confianza en la plataforma y su propósito. | 2 |
+| #8 | TS06 | Diseño responsive y accesible | **Como** developer, **quiero** aplicar diseño responsive y accesibilidad, **para** que el sitio funcione bien en cualquier dispositivo. | 3 |
+| #9 | TS05 | Validaciones de formularios en frontend y backend | **Como** developer, **quiero** implementar validaciones robustas en formularios, **para** evitar datos erróneos o maliciosos. | 3 |
+| #10 | US17 | Selección de salón | **Como** cliente, **quiero** buscar y seleccionar un salón de belleza/barbería, **para** elegir dónde agendar mi cita. | 3 |
+| #11 | TS09 | Crear endpoint para agendar citas | **Como** developer, **quiero** crear el endpoint POST /citas **para** que los usuarios puedan agendar una cita con un salón. | 3 |
+| #12 | US18 | Creación de citas | **Como** cliente, **quiero** poder agendar una cita según disponibilidad, **para** recibir el servicio deseado. | 5 |
+| #13 | TS04 | Actualización en tiempo real de horarios y citas | **Como** developer, **quiero** que los horarios y las citas se actualicen en tiempo real, **para** que los usuarios vean disponibilidad actualizada. | 5 |
+| #14 | US19 | Visualización de citas agendadas | **Como** cliente, **quiero** ver mis citas agendadas, **para** saber cuánto y dónde tengo una reserva. | 2 |
+| #15 | US20 | Modificación o cancelación de citas | **Como** cliente, **quiero** modificar o cancelar citas con anticipación, **para** reorganizar mis tiempos. | 3 |
+| #16 | US21 | Historial de modificaciones de citas | **Como** cliente, **quiero** ver los cambios realizados a mis citas, **para** tener un seguimiento completo de mis actividades. | 3 |
+| #17 | US25 | Recepción de notificaciones del estado de la cita | **Como** cliente, **quiero** recibir notificaciones sobre confirmación, cancelación o modificación de citas, **para** estar al tanto de mis reservas. | 2 |
+| #18 | TS13 | Crear endpoint para recibir notificaciones | **Como** developer, **quiero** crear el endpoint POST /notificaciones **para** recibir y registrar eventos que generen alertas al usuario. | 3 |
+| #19 | US27 | Configuración de medios de notificación | **Como** usuario, **quiero** elegir si recibir notificaciones por correo, SMS o dentro de la plataforma, **para** tener un mejor control de mi información. | 3 |
+| #20 | US28 | Notificaciones sobre promociones y descuentos | **Como** cliente, **quiero** recibir promociones y descuentos que me interesen, **para** aprovechar ofertas relevantes. | 2 |
+| #21 | TS10 | Crear endpoint para gestionar horarios | **Como** developer, **quiero** crear los endpoints GET /horarios y PUT /horarios, **para** visualizar y actualizar los horarios del salón. | 3 |
+| #22 | US22 | Administración de servicios ofrecidos | **Como** dueño/administrador, **quiero** agregar, editar o eliminar servicios, **para** mantener mi catálogo actualizado. | 3 |
+| #23 | US23 | Gestión de trabajadores | **Como** dueño/administrador, **quiero** añadir o quitar trabajadores, **para** organizar quién ofrece cada servicio. | 3 |
+| #24 | US10 | Configuración de los horarios | **Como** dueño/administrador, **quiero** configurar los horarios de atención de mis trabajadores, **para** definir sus días y horas disponibles. | 3 |
+| #25 | US09 | Visualización de los horarios | **Como** dueño/administrador, **quiero** visualizar los horarios disponibles , **para** saber cuándo mis trabajadores puede aceptar citas. | 2 |
+| #26 | TS11 | Crear endpoint de pagos | **Como** developer, **quiero** crear el endpoint POST /pagos **para** procesar pagos usando la pasarela integrada. | 3 |
+| #27 | TS01 | Integración con pasarela de pagos | **Como** developer, **quiero** integrar la plataforma con pasarelas de pago, **para** gestionar cobros de forma segura. | 5 |
+| #28 | US24 | Gestión de cuentas bancarias | **Como** dueño/administrador, **quiero** registrar, modificar o eliminar cuentas bancarias, **para** administrar correctamente los pagos recibidos. | 3 |
+| #29 | US14 | Contratación de plan de suscripción | **Como** dueño/administrador, **quiero** contratar un plan, **para** activar sus beneficios en mi cuenta. | 2 |
+| #30 | US11 | Visualización de beneficios de suscripción | **Como** dueño/administrador, **quiero** ver qué beneficios incluye cada plan, **para** elegir el más adecuado para mí. | 2 |
+| #31 | US12 | Visualización de precios | **Como** dueño/administrador, **quiero** ver los precios de cada plan, **para** tomar decisiones según mi presupuesto. | 2 |
+| #32 | US13 | Estado y nivel de suscripción | **Como** dueño/administrador, **quiero** ver el estado de mi suscripción actual, **para** saber su está activa y cuándo expira. | 2 |
+| #33 | TS12 | Crear endpoints para suscripciones | **Como** developer, **quiero** implementar GET /suscripciones, POST /suscripciones, y PUT /suscripciones **para** gestionar los planes de los usuarios. | 5 |
+| #34 | US15 | Confirmación de pago | **Como** usuario, **quiero** recibir una confirmación inmediata al completar un pago, **para** asegurarme de que la transacción fue exitosa. | 2 |
+| #35 | US16 | Renovación automática de suscripción | **Como** dueño/administrador, **quiero** que mi plan se renueve automáticamente, **para** no tener que pagar manualmente cada vez. | 3 |
+| #36 | US26 | Alertas por fallo de pago o vencimiento | **Como** usuario, **quiero** ser alertado si hay un problema con mi pago o si está por vencer mi suscripción, **para** tomar acciones a tiempo. | 2 |
+| #37 | US06 | Personalización del perfil del salón de belleza/barbería | **Como** dueño/administrador, **quiero** poder personalizar el perfil de mi salon de belleza/barbería con información relevante y estética, **para** atraer a más cliente. | 3 |
+| #38 | US05 | Edición del perfil del cliente | **Como** cliente, **quiero** actualizar mi información personal, **para** mantener mis datos actualizados. | 2 |
+| #39 | US08 | Eliminación de cuenta | **Como** usuario, **quiero** eliminar mi cuenta y datos personales, **para** dejar de utilizar la plataforma si así lo deseo. | 2 |
+| #40 | US07 | Cierre de sesión | **Como** usuario, **quiero** poder cerrar sesión de forma segura, **para** proteger mis datos cuando no uso la app. | 1 |
+| #41 | TS07 | Crear endpoint para registro de usuario | **Como** developer, **quiero** crear el endpoint POST /usuarios para registrar clientes y salones de belleza, **para** permitir su incorporación al sistema. | 3 |
+| #42 | US01 | Registro de un cliente | **Como** cliente, **quiero** registrarme proporcionando mis datos personales, **para** crear una cuenta. | 3 |
+| #43 | US02 | Registro de un salón de belleza/barbería | **Como** dueño/administrador, **quiero** poder registrar mi negocio, **para** gestionar mis servicios en la plataforma. | 3 |
+| #44 | TS08 | Crear endpoint de login con JWT | **Como** developer, **quiero** crear el endpoint POST /login con generación de JWT, **para** autenticar a los usuarios del sistema. | 3 |
+| #45 | US03 | Inicio de sesión del usuario | **Como** usuario, **quiero** iniciar sesión con mi correo y contraseña, **para** acceder a mi cuenta. | 2 |
+| #46 | US04 | Recuperación de contraseña | **Como** usuario, **quiero** recuperar el acceso a mi cuenta si olvido la contraseña, **para** poder usar la plataforma nuevamente. | 3 |
+| #47 | TS03 | Encriptación de contraseñas | **Como** developer, **quiero** asegurar las contraseñas mediante hashing y salting, **para** proteger los datos de los usuarios. | 3 |
+| #48 | TS02 | Implementación de autenticación con dos pasos (2FA) | **Como** developer, **quiero** añadir autenticación de dos factores, **para** mejorar la seguridad del inicio de sesión de los usuarios. | 5 |
+| #49 | TS06 | Diseño adaptable y accesible (Mobile) | **Como** developer, **quiero** aplicar diseño adaptable y accesibilidad, **para** que la app funcione bien en distintos dispositivos y pueda ser usada por todos los usuarios. | 3 |
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
 Product Backlog en Jira/Pivotal Tracker.
 
-![Product Backlog](./assets/images/screenshots/product-backlog.png)
+![Product Backlog](/assets/images/screenshots/product-backlog.png)
 
 </div>
 
@@ -944,9 +1106,17 @@ Product Backlog en Jira/Pivotal Tracker.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Impact Map del producto [PRODUCTO].
+Impact Mapping - Web
 
-<img src="./assets/requirements/maps/impact-maps/impact-map.png" alt="Impact Map" width="800">
+<img src="/assets/requirements/maps/impact-maps/impact-map-web.png" alt="Impact Mapping Web" width="800">
+
+</div>
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Impact Mapping - Mobile
+
+<img src=".\/assets/requirements/maps/impact-maps/impact-map-mobile.png" alt="Impact Mapping Mobile" width="800">
 
 </div>
 
