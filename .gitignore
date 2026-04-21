@@ -1,0 +1,29 @@
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Office temporales
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# PlantUML
+out/
+*.puml.bak
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Node (por si se agrega alguna herramienta)
+node_modules/
+
+# Claude Code local tooling (not part of the report)
+.claude/
+CLAUDE.md
