@@ -1223,19 +1223,15 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
 
 ### 2.3.3. User Journey Mapping
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+Para el segmento de los salones estilistas o barberos se consideró el momento desde que el cliente se contacta con la recepcionista hasta que el cliente haya terminado su cita y haya salido de salón. En la otra mano, para el segmento de los clientes de los salones se consideró desde que descubren el salón de manera online o por otra persona hasta que haya atendido la cita deseada.
 
-Journey Map — [Persona 1]
+![Journey mapping | Segmento objetivo #1](./assets/images/screenshots/journeymapping1.png)
 
-<img src="./assets/requirements/maps/journey-maps/journey-persona-1.png" alt="Journey Map Persona 1" width="800">
+<div style="page-break-before: always;"></div>
 
-</div>
+![Journey mapping | Segmento objetivo #2](./assets/images/screenshots/journeymapping2.png)
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-Journey Map — [Persona 2]
-
-<img src="./assets/requirements/maps/journey-maps/journey-persona-2.png" alt="Journey Map Persona 2" width="800">
+<div style="page-break-before: always;"></div>
 
 </div>
 
