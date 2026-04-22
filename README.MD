@@ -1237,39 +1237,36 @@ Para el segmento de los salones estilistas o barberos se consideró el momento d
 
 ### 2.3.4. Empathy Mapping
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Empathy Map — [Persona 1]
+**Segmento objetivo #1: Salones de belleza y barberías**
 
-<img src="./assets/requirements/maps/empathy-maps/empathy-persona-1.png" alt="Empathy Map Persona 1" width="800">
+<div align="center">
+
+<img src="assets/images/screenshots/Andrea_Mercedes_empathy_mapping.png" alt="empathy_mapping_1" />
+
+</div>
+
+<div style="page-break-before: always;"></div>
+
+**Segmento objetivo #2: Clientes de servicios de belleza**
+
+<div align="center">
+
+<img src="assets/images/screenshots/Camila_Cortez_empathy_mapping.png" alt="empathy_mapping_2" />
 
 </div>
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-Empathy Map — [Persona 2]
-
-<img src="./assets/requirements/maps/empathy-maps/empathy-persona-2.png" alt="Empathy Map Persona 2" width="800">
-
-</div>
+<div style="page-break-before: always;"></div>
 
 ### 2.3.5. As-is Scenario Mapping
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+Segmento objetivo #1: Salones de belleza y barberías
 
-As-is Scenario — [Persona 1]
+![As-is Scenario Mapping | Segmento objetivo #1](./assets/images/screenshots/Asis1.jpg)
 
-<img src="./assets/requirements/maps/as-is-scenario-maps/as-is-persona-1.png" alt="As-is Scenario Persona 1" width="800">
+Segmento objetivo #2: Clientes de servicios de belleza
 
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-As-is Scenario — [Persona 2]
-
-<img src="./assets/requirements/maps/as-is-scenario-maps/as-is-persona-2.png" alt="As-is Scenario Persona 2" width="800">
-
-</div>
+![As-is Scenario Mapping | Segmento objetivo #2](./assets/images/screenshots/Asis2.jpg)
 
 ## 2.4. Ubiquitous Language
 
