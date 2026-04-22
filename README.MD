@@ -1174,25 +1174,27 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
 
 ## 2.3. Needfinding
 
-[Contenido pendiente]
-
 ### 2.3.1. User Personas
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Segmento objetivo #1: Salones de belleza y barberías**
 
-User Persona — [Segmento 1]
+<div align="center">
 
-<img src="./assets/requirements/personas/persona-segmento-1.png" alt="User Persona Segmento 1" width="800">
+<img src="./assets/images/screenshots/Andrea_Mercedes_user_persona.png" alt="user_persona_1" />
+
+</div>
+
+<div style="page-break-before: always;"></div>
+
+**Segmento objetivo #2: Clientes de servicios de belleza**
+
+<div align="center">
+
+<img src="./assets/images/screenshots/Camila_Cortez_user_persona.png" alt="user_persona_2" />
 
 </div>
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-User Persona — [Segmento 2]
-
-<img src="./assets/requirements/personas/persona-segmento-2.png" alt="User Persona Segmento 2" width="800">
-
-</div>
+<div style="page-break-before: always;"></div>
 
 ### 2.3.2. User Task Matrix
 
