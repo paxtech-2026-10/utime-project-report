@@ -1198,9 +1198,28 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
 
 ### 2.3.2. User Task Matrix
 
-| Tarea | [Persona 1] — Frecuencia | [Persona 1] — Importancia | [Persona 2] — Frecuencia | [Persona 2] — Importancia |
-|-------|--------------------------|---------------------------|--------------------------|---------------------------|
-|       |                          |                           |                          |                           |
+| \*Tarea\*\*                                     | **Frecuencia (Andrea)** | **Importancia (Andrea)** | **Frecuencia (Camila)** | **Importancia (Camila)** |
+| ----------------------------------------------- | ----------------------- | ------------------------ | ----------------------- | ------------------------ |
+| Revisar la disponibilidad de la agenda          | Alta                    | Alta                     | Alta                    | Alta                     |
+| Agendar citas                                   | Alta                    | Alta                     | Media                   | Alta                     |
+| Escoger tratamiento                             | Nunca                   | Baja                     | Alta                    | Alta                     |
+| Responder llamadas de los clientes              | Alta                    | Alta                     | Nunca                   | Baja                     |
+| Ajustarse al tiempo que dura el tratamiento     | Media                   | Alta                     | Media                   | Media                    |
+| Alistar los utensilios de belleza de antemano   | Media                   | Media                    | Baja                    | Baja                     |
+| Ajustar agenda en fechas de alta demanda        | Baja                    | Alta                     | Baja                    | Media                    |
+| Gestionar cancelaciones                         | Alta                    | Alta                     | Baja                    | Baja                     |
+| Revisar cambios en la agenda                    | Alta                    | Alta                     | Alta                    | Alta                     |
+| Priorizar citas según fidelidad                 | Media                   | Alta                     | Nunca                   | Baja                     |
+| Escoger un estilista en específico para la cita | Media                   | Baja                     | Media                   | Media                    |
+| Colocar precio a los tratamientos               | Baja                    | Media                    | Baja                    | Media                    |
+| Planificar citas por WhatsApp                   | Alta                    | Alta                     | Alta                    | Alta                     |
+| Gestionar horarios de los estilistas            | Alta                    | Alta                     | Nunca                   | Baja                     |
+| Recordar a los clientes de sus citas            | Alta                    | Alta                     | Nunca                   | Media                    |
+| Llegar temprano al salón                        | Baja                    | Media                    | Alta                    | Alta                     |
+| Realizar el pago por el servicio                | Alta                    | Alta                     | Alta                    | Alta                     |
+| Pagar por medios electrónicos                   | Baja                    | Baja                     | Alta                    | Alta                     |
+
+<div style="page-break-before: always;"></div>
 
 ### 2.3.3. User Journey Mapping
 
