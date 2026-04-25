@@ -734,15 +734,45 @@ Lean UX Canvas del producto uTime.
 
 ## 1.3. Segmentos objetivo
 
-[Contenido pendiente — describir cada segmento objetivo con perfil demográfico, psicográfico y conductual.]
+Los segmentos objetivos son las personas o entidades a las cuales está destinada nuestra solución. A continuación se describen aquellos que abarca nuestra propuesta.
 
-**Segmento 1: [Nombre del segmento]**
+**Segmento 1: Salones de belleza y barberías**
 
-[Contenido pendiente]
+*Aspectos demográficos:*
 
-**Segmento 2: [Nombre del segmento]**
+- Rango de edad: mayores de 20 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: clases A y B (alta y media-alta).
 
-[Contenido pendiente]
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera.
+- Zona geográfica de residencia: urbana.
+- Departamento: Lima Metropolitana.
+
+*Aspectos psicográficos:*
+
+- Uso frecuente de medios de comunicación, tales como WhatsApp y llamadas telefónicas, para interactuar con los clientes.
+- Un día a día con la agenda apretada por las reservas de los clientes y poca flexibilidad.
+
+**Segmento 2: Clientes de servicios de belleza**
+
+*Aspectos demográficos:*
+
+- Rango de edad: mayores de 18 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: clases A, B y C (alta, media-alta y media).
+
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera.
+- Zona geográfica de residencia: urbana.
+- Departamento: Lima Metropolitana.
+
+*Aspectos psicográficos:*
+
+- Van frecuentemente a salones de belleza para estar a la moda o presentables para un evento importante.
+- Tienden a preferir tratarse con el mismo estilista o barbero debido a experiencias anteriores o por la técnica del especialista.
 
 <hr class="page-break">
 
