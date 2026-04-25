@@ -507,25 +507,29 @@ Análisis de cantidad de commits realizados por semana.
 
 # Capítulo I: Introducción
 
-[Contenido pendiente]
+En este capítulo se presenta la startup PaxTech, su equipo, el perfil de la solución uTime y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una **aplicación móvil** y una **aplicación web** complementarias, de modo que tanto profesionales del sector como sus clientes puedan acceder al servicio desde el dispositivo que prefieran.
 
 ## 1.1. Startup Profile
 
-[Contenido pendiente]
-
 ### 1.1.1. Descripción de la Startup
 
-[Contenido pendiente — incluir: nombre del startup, misión, visión, valores, propuesta de valor, lema/slogan y logotipo.]
+PaxTech es una startup tecnológica fundada por estudiantes de la Universidad Peruana de Ciencias Aplicadas, dedicada al desarrollo de soluciones digitales innovadoras para el sector de la belleza y el bienestar. Nos especializamos en crear herramientas que ayuden a estilistas, barberos, maquilladores y otros profesionales independientes a mejorar la eficiencia de sus servicios y optimizar la experiencia del cliente mediante tecnología accesible y escalable.
+
+Como empresa, buscamos aportar valor al rubro mediante aplicaciones móviles y web modernas que automaticen tareas cotidianas, mejoren la organización y fortalezcan la relación con los clientes. Nuestro portafolio de soluciones incluye productos diseñados específicamente para las necesidades del sector, como la gestión de citas en tiempo real, control de servicios, fidelización de clientes y más.
+
+**Misión:** Desarrollar y ofrecer soluciones tecnológicas de calidad que resuelvan los desafíos operativos del sector de la belleza y el bienestar, potenciando el crecimiento de profesionales independientes, salones de belleza, barberías y otros negocios del sector mediante innovación, automatización y accesibilidad digital.
+
+**Visión:** Consolidarnos como la startup tecnológica de referencia en Latinoamérica para el sector de la belleza, siendo reconocidos por ofrecer productos digitales innovadores que transforman la manera en que se gestionan los servicios, se atiende a los clientes y se impulsa el desarrollo profesional.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
 | <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
-| ![Foto 2](./assets/images/photos/integrante-2.png) | [APELLIDOS Y NOMBRES 2] | [CÓDIGO 2] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 3](./assets/images/photos/integrante-3.png) | [APELLIDOS Y NOMBRES 3] | [CÓDIGO 3] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 4](./assets/images/photos/integrante-4.png) | [APELLIDOS Y NOMBRES 4] | [CÓDIGO 4] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 5](./assets/images/photos/integrante-5.png) | [APELLIDOS Y NOMBRES 5] | [CÓDIGO 5] | [CARRERA] | [Contenido pendiente] |
+| <img src="./assets/images/photos/natalia-foto.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | [CÓDIGO 2] | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
+|  |  |  |  |  |
+| <img src="./assets/images/photos/gael-photo.jpg" alt="Eduardo Gael Rivera Sosa" width="200"> | Eduardo Gael Rivera Sosa | U202312222 | Ingeniería de Software | Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo. |
+|  |  |  |  |  |
 
 ## 1.2. Solution Profile
 
