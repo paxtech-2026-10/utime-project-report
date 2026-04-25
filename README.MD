@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <img src="./assets/logos/upc-logo.png" alt="UPC Logo" style="width: 250px; height: auto;">
+  <img src="./assets/logos/utime/logo-upc-png-transparente-1.png" alt="UPC Logo" style="width: 250px; height: auto;">
 </div>
 
 <h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
@@ -31,8 +31,8 @@
          <th>Yum Gonzales, Jorge Suin</th>
       </tr>
       <tr>
-         <td>[CÓDIGO 1]</td>
-         <td>[APELLIDOS Y NOMBRES 1]</td>
+         <td>U202312222</td>
+         <td>Rivera Sosa, Eduardo Gael</td>
       </tr>
       <tr>
          <td>[CÓDIGO 2]</td>
