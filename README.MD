@@ -464,37 +464,37 @@ Análisis de cantidad de commits realizados por semana.
   <tbody>
     <tr>
       <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
-      <td rowspan="5"><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>TB1:</b> Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables. <br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
       <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
-      <td rowspan="5"><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>TB1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
   </tbody>
 </table>
