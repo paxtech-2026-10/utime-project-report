@@ -71,14 +71,14 @@
 
 En esta sección se presenta un resumen de las actividades de colaboración realizadas para la elaboración del informe del proyecto.
 
-Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye el enlace para acceder al repositorio del reporte del proyecto. [Ver en GitHub]([URL-REPOSITORIO])
+Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye el enlace para acceder al repositorio del reporte del proyecto. [Ver en GitHub](https://github.com/paxtech-2026-10/utime-project-report)
 
 Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
 
 | Integrantes                  | Nombre en GitHub   |
 |------------------------------|--------------------|
 | Yum Gonzales, Jorge Suin    | `jsyumg`  |
-| [APELLIDOS Y NOMBRES 2]      | `[github-user-2]`  |
+| Rivera Sosa, Eduardo Gael     | `gael-rs`  |
 | [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
 | [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
 | [APELLIDOS Y NOMBRES 5]      | `[github-user-5]`  |
@@ -91,7 +91,7 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 - **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
 - **hotfix/fix-name:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
 
-## TB1
+## AV1
 
 **Tareas**
 
@@ -100,7 +100,7 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 | Integrantes                | Tarea asignada |
 |----------------------------|----------------|
 | Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
-| [APELLIDOS Y NOMBRES 2]    |                |
+| Eduardo Gael Rivera Sosa   |   Startup profile, Solution Profile, Segmento Objetivo, Entrevistas.             |
 | [APELLIDOS Y NOMBRES 3]    |                |
 | [APELLIDOS Y NOMBRES 4]    |                |
 | [APELLIDOS Y NOMBRES 5]    |                |
@@ -133,112 +133,10 @@ Análisis de cantidad de commits realizados por semana.
 
 </div>
 
-## TP
-
-**Tareas**
-
-| Integrantes                | Tarea asignada |
-|----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
-| [APELLIDOS Y NOMBRES 5]    |                |
-
-**GitHub Collaboration Insights**
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tp.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tp.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tp.png)
-
-</div>
-
-## TB2
-
-**Tareas**
-
-| Integrantes                | Tarea asignada |
-|----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
-| [APELLIDOS Y NOMBRES 5]    |                |
-
-**GitHub Collaboration Insights**
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tb2.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tb2.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tb2.png)
-
-</div>
-
-## TF
-
-**Tareas**
-
-| Integrantes                | Tarea asignada |
-|----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
-| [APELLIDOS Y NOMBRES 5]    |                |
-
-**GitHub Collaboration Insights**
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tf.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tf.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tf.png)
-
-</div>
-
-<hr class="page-break">
-
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
-  - [TB1](#tb1)
-  - [TP](#tp)
-  - [TB2](#tb2)
-  - [TF](#tf)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
