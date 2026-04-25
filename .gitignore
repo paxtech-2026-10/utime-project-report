@@ -27,3 +27,4 @@ node_modules/
 # Claude Code local tooling (not part of the report)
 .claude/
 CLAUDE.md
+Copy.md
