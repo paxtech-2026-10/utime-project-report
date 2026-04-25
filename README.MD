@@ -27,8 +27,8 @@
 <div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
-         <th>Código</th>
-         <th>Apellidos y Nombres</th>
+         <th>U202210838</th>
+         <th>Yum Gonzales, Jorge Suin</th>
       </tr>
       <tr>
          <td>[CÓDIGO 1]</td>
@@ -77,7 +77,7 @@ Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes
 
 | Integrantes                  | Nombre en GitHub   |
 |------------------------------|--------------------|
-| [APELLIDOS Y NOMBRES 1]      | `[github-user-1]`  |
+| Yum Gonzales, Jorge Suin    | `jsyumg`  |
 | [APELLIDOS Y NOMBRES 2]      | `[github-user-2]`  |
 | [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
 | [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
@@ -99,7 +99,7 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 
 | Integrantes                | Tarea asignada |
 |----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
+| Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
 | [APELLIDOS Y NOMBRES 2]    |                |
 | [APELLIDOS Y NOMBRES 3]    |                |
 | [APELLIDOS Y NOMBRES 4]    |                |
@@ -267,9 +267,31 @@ Análisis de cantidad de commits realizados por semana.
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+      - [Afrontando las fortalezas de nuestros competidores:](#afrontando-las-fortalezas-de-nuestros-competidores)
+      - [Comprendemos que nuestras fortalezas son:](#comprendemos-que-nuestras-fortalezas-son)
+      - [Estrategias](#estrategias)
+      - [Tácticas](#tácticas)
+      - [Afrontando las debilidades de nuestros competidores:](#afrontando-las-debilidades-de-nuestros-competidores)
+      - [Comprendemos que nuestras debilidades son:](#comprendemos-que-nuestras-debilidades-son)
+      - [Estrategias](#estrategias-1)
+      - [Tácticas](#tácticas-1)
+      - [Afrontando las oportunidades de nuestros competidores:](#afrontando-las-oportunidades-de-nuestros-competidores)
+      - [Comprendemos que nuestras oportunidades son:](#comprendemos-que-nuestras-oportunidades-son)
+      - [Estrategias](#estrategias-2)
+      - [Tácticas](#tácticas-2)
+      - [Afrontando las amenazas de nuestros competidores:](#afrontando-las-amenazas-de-nuestros-competidores)
+      - [Comprendemos que nuestras amenazas son:](#comprendemos-que-nuestras-amenazas-son)
+      - [Estrategias](#estrategias-3)
+      - [Tácticas](#tácticas-3)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías)
+        - [Datos del Entrevistado #1](#datos-del-entrevistado-1)
+        - [Datos del Entrevistado #2](#datos-del-entrevistado-2)
+    - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza)
+      - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
+      - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
@@ -441,12 +463,12 @@ Análisis de cantidad de commits realizados por semana.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="5"><strong>[Criterio 1 — por definir]</strong></td>
+      <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
       <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
       <td rowspan="5"><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 2]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>TB1:</b> Durante el desarrollo del TB1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables. <br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
       <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
@@ -458,12 +480,12 @@ Análisis de cantidad de commits realizados por semana.
       <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td rowspan="5"><strong>[Criterio 2 — por definir]</strong></td>
+      <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
       <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
       <td rowspan="5"><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 2]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>TB1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
       <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
