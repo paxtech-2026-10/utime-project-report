@@ -521,7 +521,7 @@ Análisis de cantidad de commits realizados por semana.
 
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
-| ![Foto 1](./assets/images/photos/integrante-1.png) | [APELLIDOS Y NOMBRES 1] | [CÓDIGO 1] | [CARRERA] | [Contenido pendiente] |
+| <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
 | ![Foto 2](./assets/images/photos/integrante-2.png) | [APELLIDOS Y NOMBRES 2] | [CÓDIGO 2] | [CARRERA] | [Contenido pendiente] |
 | ![Foto 3](./assets/images/photos/integrante-3.png) | [APELLIDOS Y NOMBRES 3] | [CÓDIGO 3] | [CARRERA] | [Contenido pendiente] |
 | ![Foto 4](./assets/images/photos/integrante-4.png) | [APELLIDOS Y NOMBRES 4] | [CÓDIGO 4] | [CARRERA] | [Contenido pendiente] |
