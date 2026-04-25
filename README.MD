@@ -465,7 +465,7 @@ Análisis de cantidad de commits realizados por semana.
     <tr>
       <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
       <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
-      <td rowspan="5"><b>AV1:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
       <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.</td>
@@ -474,7 +474,7 @@ Análisis de cantidad de commits realizados por semana.
       <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.</td>
     </tr>
     <tr>
       <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
@@ -482,7 +482,7 @@ Análisis de cantidad de commits realizados por semana.
     <tr>
       <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
       <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
-      <td rowspan="5"><b>AV1:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
       <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.</td>
@@ -491,7 +491,7 @@ Análisis de cantidad de commits realizados por semana.
       <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.</td>
     </tr>
     <tr>
       <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
