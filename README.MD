@@ -2316,16 +2316,48 @@ Diagrama de Provider Settings y Reviews - frontend
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La persistencia del sistema se implementa sobre **PostgreSQL** desplegado en **Neon** (servicio cloud serverless), siguiendo un enfoque de *database per bounded context*. A continuación se presenta el diagrama relacional consolidado seguido del detalle por cada bounded context (IAM, Profiles, Reservations, Services, Reviews, Workers).
 
-Diagrama de base de datos
+**Diagrama relacional consolidado**
 
-![bd](assets/images/bd/erd-diagram.png)
+<div align="center">
+  <img src="assets/images/bd/erd-diagram.png" alt="ERD consolidado uTime" width="800">
+</div>
 
-Diagrama de base de datos en PostgreSQL (Neon)
+**IAM Bounded Context**
 
-![bd](assets/images/bd/postgresql.png)
+<div align="center">
+  <img src="assets/images/bd/bd-iam.png" alt="BD IAM" width="700">
+</div>
 
+**Profiles Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-profiles.png" alt="BD Profiles" width="700">
+</div>
+
+**Reservations Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-reservations.png" alt="BD Reservations" width="700">
+</div>
+
+**Services Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-services.png" alt="BD Services" width="700">
+</div>
+
+**Reviews Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-reviews.png" alt="BD Reviews" width="700">
+</div>
+
+**Workers Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-workers.png" alt="BD Workers" width="700">
 </div>
 
 <hr class="page-break">
