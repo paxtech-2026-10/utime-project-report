@@ -2322,9 +2322,9 @@ Diagrama de base de datos
 
 ![bd](assets/images/bd/erd-diagram.png)
 
-Diagrama de base de datos en Mysql
+Diagrama de base de datos en PostgreSQL (Neon)
 
-![bd](assets/images/bd/mysql.png)
+![bd](assets/images/bd/postgresql.png)
 
 </div>
 
