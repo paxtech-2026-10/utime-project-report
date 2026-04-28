@@ -95,8 +95,8 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 |----------------------------|----------------|
 | Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
 | Eduardo Gael Rivera Sosa   |   Startup profile, Solution Profile, Segmento Objetivo, Entrevistas.             |
-| Sánchez Gonzales, Gabriel   | Style Guidelines, Information Architecture, Landing Page UI Design, Mobile Applications UX/UI Design, Mobile Applications Prototyping, Web Applications UX/UI Design,Web Applications Prototyping, Domain-Driven Software Architecture, Software Object-Oriented Design, Database Design               |
-| [APELLIDOS Y NOMBRES 4]    |                |
+| Gabriel Sánchez Gonzales   | Style Guidelines, Information Architecture, Landing Page UI Design, Mobile Applications UX/UI Design, Mobile Applications Prototyping, Web Applications UX/UI Design,Web Applications Prototyping, Domain-Driven Software Architecture, Software Object-Oriented Design, Database Design               |
+| Natalia Bertha Roman Cruz    | Análisis competitivo, estrategias y técnicas frente a competidores, diseño, registro y análsis de entrevistas, user personas, user task matrix, user journey mapping, empathy mapping, as is scenario mapping y ubiquitous language |
 | [APELLIDOS Y NOMBRES 5]    |                |
 
 **GitHub Collaboration Insights**
