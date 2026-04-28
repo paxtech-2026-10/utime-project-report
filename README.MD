@@ -2358,11 +2358,13 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 **Software Development**
 
 - **Landing Page:** **HTML5 + CSS3 + Bootstrap**, editada en **WebStorm** y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: <https://www.jetbrains.com/webstorm>
-- **Web Frontend (Aplicación Web):** **Angular** (TypeScript) sobre WebStorm, conforme a las wireframes y prototipos de §4.6 y §4.7. Su construcción inicia en el Sprint #2 y consume el backend Spring Boot mediante la Fake API durante el desarrollo. Ruta de referencia: <https://angular.dev>
-- **Mobile:** **Flutter (Dart)** como framework multiplataforma para construir desde un único codebase las aplicaciones nativas de **Android** e **iOS**, alineado con las guías de estilo descritas en 4.1.3.1 (HIG) y 4.1.3.2 (Material Design) y los prototipos de 4.5.1 y 4.5.2. Como IDE se utiliza **Android Studio** y la distribución se gestiona vía **Firebase App Distribution** durante el desarrollo. Ruta de referencia: <https://flutter.dev>
+- **Web Frontend (Aplicación Web):** **Angular** (TypeScript) sobre **WebStorm**, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Brinda al cliente y al administrador del salón el acceso desde navegador a los flujos de búsqueda, reserva, gestión de servicios y panel de control. Ruta de referencia: <https://angular.dev>
+- **Mobile App – Cliente:** **Flutter (Dart)** sobre **Android Studio** como IDE; codebase orientado a **Android 7.0 o superior**. Implementa los flujos del segmento de clientes (búsqueda de salones, reserva, pagos, perfil) descritos en §4.4. Ruta de referencia: <https://flutter.dev>
+- **Mobile App – Negocio (Salón/Barbería):** **Kotlin nativo** sobre **Android Studio**; codebase Android dedicado a la gestión del salón (agenda, miembros del equipo, servicios, suscripción) descrito en §4.4. Ruta de referencia: <https://kotlinlang.org>
 - **Backend / API:** **Spring Boot (Java)** sobre **IntelliJ IDEA Ultimate**. IntelliJ provee soporte avanzado para Java/Kotlin, frameworks modernos y herramientas integradas de base de datos. Ruta de referencia: <https://www.jetbrains.com/idea>
-- **Fake API (mocks):** **json-server** sobre **Node.js**, usado durante las primeras iteraciones para desbloquear el desarrollo del frontend móvil mientras el backend Spring Boot se construye.
-- **Base de datos:** **MySQL** gestionada en **Azure Database for MySQL — Flexible Server**, conforme al diagrama relacional de 4.10.1, con Spring Data JPA como capa de acceso. Ruta de referencia: <https://azure.microsoft.com/products/mysql>
+- **Fake API (mocks):** **json-server** sobre **Node.js**, usado durante las primeras iteraciones para desbloquear el desarrollo de la aplicación web y las aplicaciones móviles mientras el backend Spring Boot se construye.
+- **Base de datos:** **PostgreSQL** gestionada en **Neon** (servicio cloud serverless), con Spring Data JPA como capa de acceso, conforme al diagrama de despliegue del producto. Ruta de referencia: <https://neon.tech>
+- **Procesamiento de pagos:** **Stripe** como pasarela para suscripciones y pagos de reservas (en investigación dentro de la Spike Story 1 del backlog). Ruta de referencia: <https://stripe.com>
 
 **Software Deployment**
 
@@ -2370,8 +2372,8 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 - **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: <https://www.gitkraken.com>
 - **GitHub Pages** — hosting estático para desplegar la **Landing Page** y los frontends estáticos. Ruta de referencia: <https://pages.github.com>
 - **Render** — plataforma de despliegue para APIs y servicios durante las etapas de desarrollo y pruebas. Ruta de referencia: <https://render.com>
-- **Microsoft Azure** — plataforma cloud utilizada para desplegar y escalar el backend Spring Boot mediante **Azure App Service** + base de datos Azure Database for MySQL. La integración continua se automatiza con **GitHub Actions** apuntando al App Service. Ruta de referencia: <https://azure.microsoft.com>
-- **Firebase Hosting / App Distribution** — usado para distribuir builds internos de la aplicación móvil Flutter al equipo. Ruta de referencia: <https://firebase.google.com>
+- **Microsoft Azure** — plataforma cloud utilizada para desplegar y escalar el backend Spring Boot mediante **Azure App Service** + base de datos PostgreSQL en Neon. La integración continua se automatiza con **GitHub Actions** apuntando al App Service. Ruta de referencia: <https://azure.microsoft.com>
+- **Firebase App Distribution** — usado para distribuir builds internos de las aplicaciones móviles (Flutter del cliente y Kotlin nativo del negocio) al equipo de validación. Ruta de referencia: <https://firebase.google.com>
 
 **Software Documentation**
 
@@ -2391,8 +2393,8 @@ El proyecto sigue las convenciones del modelo **GitFlow** propuesto por Vincent 
 - Organización del equipo: <https://github.com/paxtech-2026-10>
 - Repositorio del informe (este documento): <https://github.com/paxtech-2026-10/utime-project-report>
 - Repositorio de la **Landing Page**: <https://github.com/paxtech-2026-10/Landing-Page>
-- Repositorio de la **Mobile App (Flutter — Android)**: <https://github.com/paxtech-2026-10/Mobile-App>
-- Repositorio de la **iOS Mobile App**: <https://github.com/paxtech-2026-10/Ios-Mobile-App>
+- Repositorio de la **Mobile App – Cliente (Flutter, Android)**: <https://github.com/paxtech-2026-10/Mobile-App>
+- Repositorio de la **Mobile App – Negocio (Kotlin nativo, Android)**: <https://github.com/paxtech-2026-10/Ios-Mobile-App>
 - Repositorio del **Backend Web Services (Spring Boot)**: <https://github.com/paxtech-2026-10/Web-Services>
 - Repositorio de la **Fake API**: <https://github.com/paxtech-2026-10/fake-api>
 - Repositorio de **Acceptance Tests (Cucumber + Gherkin)**: <https://github.com/paxtech-2026-10/Acceptance-Tests>
@@ -2459,9 +2461,11 @@ El despliegue del producto se realiza diferenciando los componentes estáticos d
 
 **Web Frontend (Angular):** build de producción con `ng build --configuration production` y publicación del artefacto resultante (carpeta `dist/`) en GitHub Pages o **Azure Static Web Apps** mediante GitHub Actions.
 
-**Mobile (Flutter):** build APK / IPA mediante `flutter build apk` / `flutter build ipa` y distribución interna al equipo a través de **Firebase App Distribution**.
+**Mobile App – Cliente (Flutter):** build APK mediante `flutter build apk` y distribución interna al equipo a través de **Firebase App Distribution** para validación funcional sobre Android 7.0+.
 
-**Backend (Spring Boot en Azure):** despliegue como **Azure App Service** con base de datos gestionada **Azure Database for MySQL**. Las variables de entorno (cadena de conexión, secretos JWT, claves externas) se configuran en el panel **Configuration → Application settings** del App Service. La integración continua se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega al App Service en cada push a `main`.
+**Mobile App – Negocio (Kotlin nativo):** build APK desde **Android Studio** (`./gradlew assembleRelease`) y distribución vía Firebase App Distribution al equipo de validación del segmento de salones.
+
+**Backend (Spring Boot en Azure):** despliegue como **Azure App Service** con base de datos gestionada **PostgreSQL en Neon**. Las variables de entorno (cadena de conexión, secretos JWT, claves externas) se configuran en el panel **Configuration → Application settings** del App Service. La integración continua se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega al App Service en cada push a `main`.
 
 **Mapeo de ambientes a ramas:**
 
@@ -2672,7 +2676,7 @@ El Proveedor garantiza un uptime objetivo del **99.5% mensual**, medido sobre lo
 
 **4. Seguridad y privacidad de datos**
 
-- Cifrado en tránsito mediante **TLS 1.2 o superior** y cifrado en reposo en la base de datos gestionada (**Azure Database for MySQL**).
+- Cifrado en tránsito mediante **TLS 1.2 o superior** y cifrado en reposo en la base de datos gestionada (**PostgreSQL en Neon**).
 - **Backups diarios** con retención de 30 días.
 - Cumplimiento con la **Ley de Protección de Datos Personales del Perú (Ley N° 29733)** y su reglamento.
 - Los datos del Cliente y de sus usuarios finales son de propiedad exclusiva del Cliente y no son comercializados a terceros.
@@ -2703,11 +2707,16 @@ El presente acuerdo tiene **vigencia mensual con renovación automática** mient
 
 <img src="./assets/ux-ui/evidences/mobile/mobile-evidence.png" alt="Mobile Evidence" width="400">
 
-[Repositorio Mobile-App (Flutter — Android)](https://github.com/paxtech-2026-10/Mobile-App) · [Repositorio Ios-Mobile-App](https://github.com/paxtech-2026-10/Ios-Mobile-App)
+[Repositorio Mobile-App (Flutter — Cliente)](https://github.com/paxtech-2026-10/Mobile-App) · [Repositorio Ios-Mobile-App (Kotlin nativo — Negocio)](https://github.com/paxtech-2026-10/Ios-Mobile-App)
 
 </div>
 
-La aplicación móvil de uTime se construye con **Flutter** desde un único codebase para cubrir tanto **Android** como **iOS**, replicando los flujos clave del producto (registro, búsqueda de profesionales, agendamiento, reseñas y pagos). La distribución de builds internos al equipo se realiza vía **Firebase App Distribution**. Su desarrollo intensivo arranca a partir del Sprint #2; la captura mostrada corresponde a la pantalla principal de la app conforme al prototipo aprobado en 4.5.
+uTime se distribuye con dos aplicaciones móviles nativas Android, una por cada segmento de usuario:
+
+- **App Cliente — Flutter (Dart):** cubre los flujos de búsqueda de salones, comparación de servicios y reseñas, agendamiento de cita, pagos y gestión de perfil descritos en §4.4 y §4.5. Se compila desde un único codebase para Android 7.0 o superior.
+- **App Negocio — Kotlin nativo:** orientada al dueño/administrador del salón. Cubre la creación del negocio, gestión de equipo, agenda diaria/semanal, administración de servicios (alta, edición, baja) y panel de notificaciones.
+
+Los mock-ups de iOS presentados en §4.5.2 corresponden al diseño visual de referencia; la implementación nativa para iOS queda fuera del alcance del ciclo actual y se evaluará en sprints posteriores. La distribución interna de builds se realiza mediante **Firebase App Distribution**. Su desarrollo intensivo arranca a partir del Sprint #2; la captura mostrada corresponde a la pantalla principal del cliente conforme al prototipo aprobado en §4.5.
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -2721,7 +2730,7 @@ La aplicación móvil de uTime se construye con **Flutter** desde un único code
 
 </div>
 
-El backend RESTful se construye con **Spring Boot** y persistencia en **MySQL (Azure Database for MySQL)**, conforme al diagrama relacional definido en §4.10.1, y se despliega como un **Azure App Service** automatizado mediante **GitHub Actions**. Durante el Sprint #1 se utiliza una **Fake API** basada en `json-server` para desbloquear el desarrollo del frontend móvil y de la aplicación web mientras se completan los bounded contexts del backend definitivo (IAM, Profiles, Workers, Services, Reservations, Reviews).
+El backend RESTful se construye con **Spring Boot** y persistencia en **PostgreSQL** gestionada en **Neon** (servicio cloud serverless), conforme al diagrama de despliegue. Se expone como un **Azure App Service** y se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega en cada push a `main`. Durante el Sprint #1 se utiliza una **Fake API** basada en `json-server` para desbloquear el desarrollo de la aplicación web (Angular) y de las aplicaciones móviles (Flutter y Kotlin nativo) mientras se completan los bounded contexts del backend definitivo: **IAM, Profiles, Workers, Services, Reservations y Reviews**. La integración de pagos se realizará mediante **Stripe** conforme a la Spike Story 1 del backlog.
 
 ### 5.2.7. RESTful API documentation
 
