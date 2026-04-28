@@ -73,9 +73,9 @@ Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes
 |------------------------------|--------------------|
 | Yum Gonzales, Jorge Suin    | `jsyumg`  |
 | Rivera Sosa, Eduardo Gael     | `gael-rs`  |
-| Roman Cruz, Natalia Bertha      | `natRC2005`  |
-| Sanchez Gonzales, Gabriel      | `yigabriel`  |
-| Oroncoy Almeyda, Alejandro Daniel      | `alejooroncoy`  |
+| [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
+| [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
+| [APELLIDOS Y NOMBRES 5]      | `[github-user-5]`  |
 
 Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas principales:
 
@@ -95,7 +95,7 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 |----------------------------|----------------|
 | Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
 | Eduardo Gael Rivera Sosa   |   Startup profile, Solution Profile, Segmento Objetivo, Entrevistas.             |
-| [APELLIDOS Y NOMBRES 3]    |                |
+| Sánchez Gonzales, Gabriel   | Style Guidelines, Information Architecture, Landing Page UI Design, Mobile Applications UX/UI Design, Mobile Applications Prototyping, Web Applications UX/UI Design,Web Applications Prototyping, Domain-Driven Software Architecture, Software Object-Oriented Design, Database Design               |
 | [APELLIDOS Y NOMBRES 4]    |                |
 | [APELLIDOS Y NOMBRES 5]    |                |
 
@@ -107,7 +107,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 
 Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tb1.png)
+![Insights - Network Graph](./assets/networkAv1.png)
 
 </div>
 
@@ -363,7 +363,7 @@ Análisis de cantidad de commits realizados por semana.
   <tbody>
     <tr>
       <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrolo de primer avance y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a onsumidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que realicé los cambios neesarios a los user personas, user matrix, user journey maps, empathy maps y as is scenarios. </td>
+      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -380,7 +380,7 @@ Análisis de cantidad de commits realizados por semana.
     </tr>
     <tr>
       <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue el revisar la información antes planteada de fotma en que podamos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconomiento de funcionalidades a implentar o necesidades a cubrir</td>
+      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
