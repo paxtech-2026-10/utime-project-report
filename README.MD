@@ -2572,7 +2572,7 @@ El equipo gestionó el backlog mediante **Trello**, dividiendo cada user story e
     <tr><td>T18</td><td>Estilo y responsive</td><td>Aplicar diseño responsive y estilos visuales.</td><td>2</td><td>Alejandro Oroncoy</td><td>Done</td></tr>
     <tr><td rowspan="2">US03</td><td rowspan="2">Inicio de sesión</td><td>T22</td><td>Formulario de login</td><td>Crear formulario para correo y contraseña.</td><td>2</td><td>Gael Rivera</td><td>Done</td></tr>
     <tr><td>T23</td><td>Diseño y feedback</td><td>Aplicar estilos y mostrar mensajes de error/éxito.</td><td>2</td><td>Gael Rivera</td><td>Done</td></tr>
-    <tr><td rowspan="3">US38</td><td rowspan="3">Información sobre uTime</td><td>T19</td><td>Redacción de contenido</td><td>Explicar quiénes son los creadores (PaxTech).</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
+    <tr><td rowspan="3">US35</td><td rowspan="3">Información sobre uTime y sus creadores</td><td>T19</td><td>Redacción de contenido</td><td>Explicar quiénes son los creadores (PaxTech).</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
     <tr><td>T20</td><td>Perfil del equipo</td><td>Mostrar integrantes de PaxTech.</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
     <tr><td>T21</td><td>Diseño de sección</td><td>Maquetar y aplicar estilos a la sección About Us.</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
   </tbody>
