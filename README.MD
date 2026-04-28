@@ -422,7 +422,7 @@ Como empresa, buscamos aportar valor al rubro mediante aplicaciones móviles y w
 |------|--------|--------|---------|--------------------------------------------|
 | <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
 | <img src="./assets/images/photos/natalia-photo.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | U202310148 | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
-|  |  |  |  |  |
+| <img src="./assets/images/photos/foto-gabriel.png" alt="Gabriel" width="200"> | Gabriel Sánchez Gonzales | U202310609 | Ingeniería de Software | Soy estudiante en la Universidad Peruana de Ciencias Aplicadas (UPC) cursando el 7mo ciclo de la carrera de Ingeniería de Software. Soy una persona comprometida con mi desarrollo académico y profesional. Con esa responsabilidad, aspiro a proveer soluciones tecnológicas a aquellos que las requieran para facilitar su área de trabajo. Junto con mi equipo de trabajo tendré la oportunidad de poner mis conocimientos y habilidades en el curso con el fin de disminuir la problemática identificada. |
 | <img src="./assets/images/photos/gael-photo.jpg" alt="Eduardo Gael Rivera Sosa" width="200"> | Eduardo Gael Rivera Sosa | U202312222 | Ingeniería de Software | Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo. |
 |  |  |  |  |  |
 
@@ -3202,9 +3202,17 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 
 # Bibliografía
 
-[Contenido pendiente — referencias en formato APA 7.]
-
-- [Autor, A. (Año). *Título*. Editorial / URL.]
+**Specialty Coffee Association (SCA).** (2022). *Annual Report: Certification and Professional Development Statistics*. [https://sca.coffee](https://sca.coffee)  
+**Euromonitor International.** (2023). *Coffee Shops Market in Latin America*. [https://www.euromonitor.com](https://www.euromonitor.com)  
+**Allied Market Research.** (2022). *Specialty Coffee Market by Product Type and Distribution Channel: Global Opportunity Analysis and Industry Forecast, 2021–2027*. [https://www.alliedmarketresearch.com](https://www.alliedmarketresearch.com)  
+**International Coffee Organization (ICO).** (2023). *World Coffee Consumption Statistics*. [https://www.ico.org](https://www.ico.org)  
+**Khononov, V.** (2022). *Learning Domain-Driven Design*. O’Reilly Media, Inc.[https://dl.ebooksworld.ir/books/Learning.Domain-](https://dl.ebooksworld.ir/books/Learning.Domain-)  
+[Driven.Design.9781098100131.EBooksWorld.ir.pdf](https://dl.ebooksworld.ir/books/Learning.Domain-)  
+**Evans, E.** (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Domain  
+Language.[https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)  
+**Teams, A** (s, f.). Angular material. Angular Material. [https://material.angular.dev/](https://material.angular.dev/)  
+**Vernon, V.** (2016). Domain-Driven Design Distilled. [https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/](https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/)  
+**Refactorización y patrones de diseño.** (s/f). Refactoring.guru. Recuperado el 27 de abril de 2026, de https://refactoring.guru/es
 
 <hr class="page-break">
 
