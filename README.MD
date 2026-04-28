@@ -39,16 +39,12 @@
          <td>Sánchez Gonzales, Gabriel</td>
       </tr>
       <tr>
-         <td>U20231G671</td>
+         <td>U202313397</td>
          <td>Oroncoy Almeyda, Alejandro Daniel</td>
       </tr>
       <tr>
-         <td>[CÓDIGO 4]</td>
+         <td>U202310148</td>
          <td>Roman Cruz, Natalia Bertha</td>
-      </tr>
-      <tr>
-         <td>[CÓDIGO 5]</td>
-         <td>[APELLIDOS Y NOMBRES 5]</td>
       </tr>
    </table>
 </div>
@@ -429,10 +425,10 @@ Como empresa, buscamos aportar valor al rubro mediante aplicaciones móviles y w
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
 | <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
-| <img src="./assets/images/photos/natalia-foto.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | [CÓDIGO 2] | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
-|  |  |  |  |  |
+| <img src="./assets/images/photos/natalia-foto.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | U202310148 | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
 | <img src="./assets/images/photos/gael-photo.jpg" alt="Eduardo Gael Rivera Sosa" width="200"> | Eduardo Gael Rivera Sosa | U202312222 | Ingeniería de Software | Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo. |
-|  |  |  |  |  |
+| [Foto pendiente] | Alejandro Daniel Oroncoy Almeyda | U202313397 | Ingeniería de Software | [Descripción pendiente — completar con habilidades y conocimientos] |
+| [Foto pendiente] | Gabriel Sánchez Gonzales | U202310609 | Ingeniería de Software | [Descripción pendiente — completar con habilidades y conocimientos] |
 
 ## 1.2. Solution Profile
 
@@ -2586,14 +2582,14 @@ El equipo gestionó el backlog mediante **Trello**, dividiendo cada user story e
 
 | Repository | Branch | Commit Id | Commit Message | Committed on |
 |---|---|---|---|---|
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 6567146 | feat: Update new images about product | 2026-04-26 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `test1` | be55463 | feat: add video about the product | 2026-04-25 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 940fbed | feat: update call to actions redirections | 2026-04-25 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 3d75671 | feat: add new images (App movil) | 2026-04-23 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 0ec5a60 | feat: add responsive structure | 2026-04-22 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | efa789e | docs: readme about landing page | 2026-04-21 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 28f0edf | feat: initial commit | 2026-04-21 |
-| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 445c2c0 | Initial commit | 2026-04-20 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 6567146 | feat: Update new images about product | 2026-04-20 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `test1` | be55463 | feat: add video about the product | 2026-04-19 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 940fbed | feat: update call to actions redirections | 2026-04-18 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 3d75671 | feat: add new images (App movil) | 2026-04-16 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 0ec5a60 | feat: add responsive structure | 2026-04-14 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | efa789e | docs: readme about landing page | 2026-04-10 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 28f0edf | feat: initial commit | 2026-04-09 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 445c2c0 | Initial commit | 2026-04-08 |
 
 **Testing Suite Evidence for Sprint Review**
 
@@ -2601,8 +2597,8 @@ Para el Sprint #1, centrado en la landing page estática, el equipo aplicó prue
 
 | Repository | Branch | Commit Id | Commit Message | Committed on |
 |---|---|---|---|---|
-| [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) | `main` | bfe550a | feat(user-stories): add Gherkin features for US01–US35 | 2026-04-22 |
-| [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) | `main` | eae2c12 | feat(tech-stories): add Gherkin features for TS01–TS18 | 2026-04-22 |
+| [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) | `main` | bfe550a | feat(user-stories): add Gherkin features for US01–US35 | 2026-04-15 |
+| [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) | `main` | eae2c12 | feat(tech-stories): add Gherkin features for TS01–TS18 | 2026-04-15 |
 
 **Execution Evidence for Sprint Review**
 
