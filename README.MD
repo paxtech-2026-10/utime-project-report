@@ -3462,10 +3462,25 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 
 # Anexos
 
-**Anexo A — [Título del anexo]**
+## AV1
 
-[Contenido pendiente]
+**Repositorios**
 
-**Anexo B — [Título del anexo]**
+- Informe del proyecto: <https://github.com/paxtech-2026-10/utime-project-report>
+- Landing Page (repositorio): <https://github.com/paxtech-2026-10/Landing-Page>
+- Landing Page (desplegada): <https://paxtech-2026-10.github.io/Landing-Page/>
+- Backend Web Services: <https://github.com/paxtech-2026-10/Web-Services>
+- Fake API: <https://github.com/paxtech-2026-10/fake-api>
+- Mobile App — Cliente (Flutter): <https://github.com/paxtech-2026-10/Mobile-App>
+- Mobile App — Negocio (Kotlin nativo): <https://github.com/paxtech-2026-10/Ios-Mobile-App>
+- Acceptance Tests (Cucumber + Gherkin): <https://github.com/paxtech-2026-10/Acceptance-Tests>
 
-[Contenido pendiente]
+**Herramientas de diseño y gestión**
+
+- Figma (UI design): <https://www.figma.com/design/2RXg2e7OWrAbqYfNcw2EVP/UTIME>
+- Figma (prototipo interactivo): <https://www.figma.com/proto/2RXg2e7OWrAbqYfNcw2EVP/UTIME>
+- Trello (Sprint Backlog): <https://trello.com/b/RdzY7vOJ>
+
+**Multimedia**
+
+- Video *About-the-Product*: <https://youtu.be/7odg_s3aRbs>
