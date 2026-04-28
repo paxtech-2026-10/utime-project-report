@@ -63,7 +63,7 @@
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-|         |       |       |                             |
+|    1    |   AV1   |  Gael Rivera <br><br> Natalia Roman<br><br> Jorge Yum<br><br> Gabriel Sánchez<br><br> Alejandro Oroncoy     |     - Capítulo I: Introducción<br><br> - Capítulo II: Requirements Elicitation & Analysis<br><br> - Capítulo III: Requirements Specification<br><br> - Capítulo IV: Product Design<br><br> - Capítulo V: Product Implementation                        |
 
 <hr class="page-break">
 
@@ -79,7 +79,7 @@ Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes
 |------------------------------|--------------------|
 | Yum Gonzales, Jorge Suin    | `jsyumg`  |
 | Rivera Sosa, Eduardo Gael     | `gael-rs`  |
-| [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
+| Sanchez Gonzales, Gabriel      | `yigabriel`  |
 | [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
 | [APELLIDOS Y NOMBRES 5]      | `[github-user-5]`  |
 
@@ -101,7 +101,7 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 |----------------------------|----------------|
 | Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
 | Eduardo Gael Rivera Sosa   |   Startup profile, Solution Profile, Segmento Objetivo, Entrevistas.             |
-| [APELLIDOS Y NOMBRES 3]    |                |
+| Sánchez Gonzales, Gabriel   | Style Guidelines, Information Architecture, Landing Page UI Design, Mobile Applications UX/UI Design, Mobile Applications Prototyping, Web Applications UX/UI Design,Web Applications Prototyping, Domain-Driven Software Architecture, Software Object-Oriented Design, Database Design               |
 | [APELLIDOS Y NOMBRES 4]    |                |
 | [APELLIDOS Y NOMBRES 5]    |                |
 
@@ -113,7 +113,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 
 Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tb1.png)
+![Insights - Network Graph](./assets/networkAv1.png)
 
 </div>
 
