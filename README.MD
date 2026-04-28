@@ -57,7 +57,7 @@
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0     | 26/04/2026 | Roman, Sanchez, Rivera, Oroncoy, Yum  | Capítulos I, II, III, IV y V |
+| 1.0     | 26/04/2026 | Roman, Sánchez, Rivera, Oroncoy, Yum  | Capítulos I, II, III, IV y V |
 
 <hr class="page-break">
 
@@ -74,7 +74,7 @@ Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes
 | Yum Gonzales, Jorge Suin    | `jsyumg`  |
 | Rivera Sosa, Eduardo Gael     | `gael-rs`  |
 | Roman Cruz, Natalia Bertha      | `natRC2005`  |
-| Sanchez Gonzales, Gabriel      | `yigabriel`  |
+| Sánchez Gonzales, Gabriel      | `yigabriel`  |
 | Oroncoy Almeyda, Alejandro Daniel      | `alejooroncoy`  |
 
 Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas principales:
