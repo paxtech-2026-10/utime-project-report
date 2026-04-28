@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <img src="./assets/logos/upc-logo.png" alt="UPC Logo" style="width: 250px; height: auto;">
+  <img src="./assets/logos/utime/logo-upc-png-transparente-1.png" alt="UPC Logo" style="width: 250px; height: auto;">
 </div>
 
 <h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
@@ -27,16 +27,16 @@
 <div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
-         <th>Código</th>
-         <th>Apellidos y Nombres</th>
+         <th>U202210838</th>
+         <th>Yum Gonzales, Jorge Suin</th>
+      </tr>
+      <tr>
+         <td>U202312222</td>
+         <td>Rivera Sosa, Eduardo Gael</td>
       </tr>
       <tr>
          <td>U202310609</td>
          <td>Sánchez Gonzales Gabriel</td>
-      </tr>
-      <tr>
-         <td>[CÓDIGO 2]</td>
-         <td>[APELLIDOS Y NOMBRES 2]</td>
       </tr>
       <tr>
          <td>[CÓDIGO 3]</td>
@@ -71,14 +71,14 @@
 
 En esta sección se presenta un resumen de las actividades de colaboración realizadas para la elaboración del informe del proyecto.
 
-Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye el enlace para acceder al repositorio del reporte del proyecto. [Ver en GitHub]([URL-REPOSITORIO])
+Se utilizó **GitHub** como plataforma de control de versiones y colaboración en equipo. Se incluye el enlace para acceder al repositorio del reporte del proyecto. [Ver en GitHub](https://github.com/paxtech-2026-10/utime-project-report)
 
 Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
 
 | Integrantes                  | Nombre en GitHub   |
 |------------------------------|--------------------|
-| [APELLIDOS Y NOMBRES 1]      | `[github-user-1]`  |
-| [APELLIDOS Y NOMBRES 2]      | `[github-user-2]`  |
+| Yum Gonzales, Jorge Suin    | `jsyumg`  |
+| Rivera Sosa, Eduardo Gael     | `gael-rs`  |
 | [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
 | [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
 | [APELLIDOS Y NOMBRES 5]      | `[github-user-5]`  |
@@ -91,7 +91,7 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 - **release/vX.X.X:** Rama creada para preparar versiones candidatas al reporte final, siguiendo *Semantic Versioning 2.0.0*. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
 - **hotfix/fix-name:** Rama utilizada para aplicar correcciones críticas directamente sobre `main`, asegurando la estabilidad de la versión publicada.
 
-## TB1
+## AV1
 
 **Tareas**
 
@@ -99,8 +99,8 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 
 | Integrantes                | Tarea asignada |
 |----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
+| Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
+| Eduardo Gael Rivera Sosa   |   Startup profile, Solution Profile, Segmento Objetivo, Entrevistas.             |
 | [APELLIDOS Y NOMBRES 3]    |                |
 | [APELLIDOS Y NOMBRES 4]    |                |
 | [APELLIDOS Y NOMBRES 5]    |                |
@@ -133,112 +133,11 @@ Análisis de cantidad de commits realizados por semana.
 
 </div>
 
-## TP
-
-**Tareas**
-
-| Integrantes                | Tarea asignada |
-|----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
-| [APELLIDOS Y NOMBRES 5]    |                |
-
-**GitHub Collaboration Insights**
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tp.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tp.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tp.png)
-
-</div>
-
-## TB2
-
-**Tareas**
-
-| Integrantes                | Tarea asignada |
-|----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
-| [APELLIDOS Y NOMBRES 5]    |                |
-
-**GitHub Collaboration Insights**
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tb2.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tb2.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tb2.png)
-
-</div>
-
-## TF
-
-**Tareas**
-
-| Integrantes                | Tarea asignada |
-|----------------------------|----------------|
-| [APELLIDOS Y NOMBRES 1]    |                |
-| [APELLIDOS Y NOMBRES 2]    |                |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
-| [APELLIDOS Y NOMBRES 5]    |                |
-
-**GitHub Collaboration Insights**
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tf.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tf.png)
-
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tf.png)
-
-</div>
-
-<hr class="page-break">
-
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
-  - [TB1](#tb1)
-  - [TP](#tp)
-  - [TB2](#tb2)
-  - [TF](#tf)
+  - [AV1](#av1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
@@ -249,15 +148,18 @@ Análisis de cantidad de commits realizados por semana.
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
       - [What (¿Qué?)](#what-qué)
-      - [When (¿Cuándo?)](#when-cuándo)
-      - [Where (¿Dónde?)](#where-dónde)
       - [Who (¿Quién?)](#who-quién)
+      - [Where (¿Dónde?)](#where-dónde)
+      - [When (¿Cuándo?)](#when-cuándo)
       - [Why (¿Por qué?)](#why-por-qué)
       - [How (¿Cómo?)](#how-cómo)
       - [How much (¿Cuánto?)](#how-much-cuánto)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+        - [Features](#features)
+        - [Business Outcomes](#business-outcomes)
+        - [User Benefits](#user-benefits)
         - [Business Assumptions](#business-assumptions)
         - [User Assumptions](#user-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
@@ -445,6 +347,8 @@ Análisis de cantidad de commits realizados por semana.
     - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+    - [Conclusiones](#conclusiones-1)
+    - [Recomendaciones](#recomendaciones)
 - [Video App Validation](#video-app-validation)
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
@@ -464,38 +368,38 @@ Análisis de cantidad de commits realizados por semana.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="5"><strong>[Criterio 1 — por definir]</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
-      <td rowspan="5"><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
+      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 2]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td rowspan="5"><strong>[Criterio 2 — por definir]</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
-      <td rowspan="5"><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
+      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 2]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 4]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.</td>
     </tr>
     <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>TB1:</b> [Contenido pendiente]<br><b>TP:</b> [Contenido pendiente]<br><b>TB2:</b> [Contenido pendiente]<br><b>TF:</b> [Contenido pendiente]</td>
+      <td><strong>[APELLIDOS Y NOMBRES 5]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
     </tr>
   </tbody>
 </table>
@@ -508,105 +412,272 @@ Análisis de cantidad de commits realizados por semana.
 
 # Capítulo I: Introducción
 
-[Contenido pendiente]
+En este capítulo se presenta la startup PaxTech, su equipo, el perfil de la solución uTime y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una **aplicación móvil** y una **aplicación web** complementarias, de modo que tanto profesionales del sector como sus clientes puedan acceder al servicio desde el dispositivo que prefieran.
 
 ## 1.1. Startup Profile
 
-[Contenido pendiente]
-
 ### 1.1.1. Descripción de la Startup
 
-[Contenido pendiente — incluir: nombre del startup, misión, visión, valores, propuesta de valor, lema/slogan y logotipo.]
+PaxTech es una startup tecnológica fundada por estudiantes de la Universidad Peruana de Ciencias Aplicadas, dedicada al desarrollo de soluciones digitales innovadoras para el sector de la belleza y el bienestar. Nos especializamos en crear herramientas que ayuden a estilistas, barberos, maquilladores y otros profesionales independientes a mejorar la eficiencia de sus servicios y optimizar la experiencia del cliente mediante tecnología accesible y escalable.
+
+Como empresa, buscamos aportar valor al rubro mediante aplicaciones móviles y web modernas que automaticen tareas cotidianas, mejoren la organización y fortalezcan la relación con los clientes. Nuestro portafolio de soluciones incluye productos diseñados específicamente para las necesidades del sector, como la gestión de citas en tiempo real, control de servicios, fidelización de clientes y más.
+
+**Misión:** Desarrollar y ofrecer soluciones tecnológicas de calidad que resuelvan los desafíos operativos del sector de la belleza y el bienestar, potenciando el crecimiento de profesionales independientes, salones de belleza, barberías y otros negocios del sector mediante innovación, automatización y accesibilidad digital.
+
+**Visión:** Consolidarnos como la startup tecnológica de referencia en Latinoamérica para el sector de la belleza, siendo reconocidos por ofrecer productos digitales innovadores que transforman la manera en que se gestionan los servicios, se atiende a los clientes y se impulsa el desarrollo profesional.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
-| ![Foto 1](./assets/images/photos/integrante-1.png) | [APELLIDOS Y NOMBRES 1] | [CÓDIGO 1] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 2](./assets/images/photos/integrante-2.png) | [APELLIDOS Y NOMBRES 2] | [CÓDIGO 2] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 3](./assets/images/photos/integrante-3.png) | [APELLIDOS Y NOMBRES 3] | [CÓDIGO 3] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 4](./assets/images/photos/integrante-4.png) | [APELLIDOS Y NOMBRES 4] | [CÓDIGO 4] | [CARRERA] | [Contenido pendiente] |
-| ![Foto 5](./assets/images/photos/integrante-5.png) | [APELLIDOS Y NOMBRES 5] | [CÓDIGO 5] | [CARRERA] | [Contenido pendiente] |
+| <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
+| <img src="./assets/images/photos/natalia-foto.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | [CÓDIGO 2] | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
+|  |  |  |  |  |
+| <img src="./assets/images/photos/gael-photo.jpg" alt="Eduardo Gael Rivera Sosa" width="200"> | Eduardo Gael Rivera Sosa | U202312222 | Ingeniería de Software | Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo. |
+|  |  |  |  |  |
 
 ## 1.2. Solution Profile
 
-[Contenido pendiente]
+uTime es una solución integral diseñada para optimizar la gestión de citas en el sector de la belleza mediante una plataforma digital conectada en tiempo real con clientes y profesionales. Esta innovadora herramienta permite a los estilistas gestionar su disponibilidad de manera eficiente, reducir cancelaciones y olvidos, y atraer nuevos clientes sin depender exclusivamente del boca a boca o la comunicación manual, accediendo tanto desde su dispositivo móvil como desde el navegador web.
 
 ### 1.2.1. Antecedentes y problemática
 
-[Contenido pendiente — aplicar framework de las 5W + 2H.]
+Según Lean Construction México, la técnica de las 5W's y 2H's facilita la creación y desarrollo de un plan de acción o estrategia detallada (Alvarez, 2020). A raíz de esto, resultará útil para nuestro contexto dado que nos permitirá entender y analizar a mayor profundidad las necesidades de los usuarios. Por ende, se recopiló información mediante esta técnica, la cual se presentará a continuación.
 
 #### What (¿Qué?)
 
-[Contenido pendiente]
+**¿Cuál es el problema?**
 
-#### When (¿Cuándo?)
+El problema principal es la falta de una herramienta eficiente para gestionar citas en tiempo real para estilistas y otros profesionales de la belleza, ya sea desde un dispositivo móvil o desde el navegador web. La mayoría de ellos aún dependen de WhatsApp, redes sociales o llamadas telefónicas, lo que genera desorden en la agenda, cancelaciones inesperadas y pérdida de tiempo administrativo. Según un informe de Araya et al. (2025), el 70% de las pymes en América Latina maneja el uso de datos y analítica en un nivel básico. Es decir, los profesionales independientes en América Latina prefieren gestionar sus citas manualmente, lo que puede derivar en errores, pérdidas económicas y dificultades para expandir su clientela. Esta dependencia de métodos informales es un síntoma claro de la brecha digital que afecta a los pequeños emprendedores, quienes a menudo carecen de las habilidades o la confianza para adoptar soluciones digitales más complejas (Verhoef et al., 2023).
 
-[Contenido pendiente]
+**¿Cuál es la relación con la persona en cuestión?**
 
-#### Where (¿Dónde?)
-
-[Contenido pendiente]
+uTime busca resolver este problema proporcionando aplicaciones móviles y web que permitan a los estilistas gestionar su disponibilidad, recibir pagos y fidelizar clientes. Al facilitar la organización y automatizar procesos clave, se mejora la eficiencia operativa y la experiencia del cliente. Según un estudio de Telefónica (2022), las pequeñas empresas que implementan soluciones digitales para la gestión de clientes aumentan su productividad hasta en un 25%.
 
 #### Who (¿Quién?)
 
-[Contenido pendiente]
+**¿Quiénes están involucrados?**
+
+Los principales involucrados son los estilistas y profesionales de la belleza —barberos, maquilladores, manicuristas, etc.— que están en búsqueda de una solución digital (móvil y web) que les permita automatizar y digitalizar la gestión de citas. Asimismo, están los clientes, que son las personas que buscan servicios de belleza y bienestar.
+
+**¿A quiénes le sucede el problema?**
+
+El problema afecta a todos los usuarios involucrados. En América Latina, se estima que más del 60% de los profesionales de este sector son trabajadores autónomos (Expo Belleza Fest, 2016). Por ende, los profesionales independientes del sector de la belleza trabajan sin el respaldo de un sistema de gestión digital, por lo que se ven perjudicados al no poder organizar sus agendas de manera eficaz y simplificada. Esto también afecta a los clientes, ya que la desorganización o la demora para verificar la disponibilidad de los estilistas puede ser un aspecto desalentador. La frustración del cliente surge de la falta de transparencia y conveniencia en los sistemas de reserva tradicionales, factores críticos que la investigación ha identificado como determinantes para la satisfacción (Li et al., 2023).
+
+#### Where (¿Dónde?)
+
+**¿En dónde ocurre el problema?**
+
+El problema ocurre en áreas urbanas del Perú donde estilistas y barberos aún gestionan su tiempo de manera informal —ya sea de forma física, mediante mensajes de texto o en redes sociales— generando desorden y posibles errores debido a la cantidad de entradas.
+
+**¿En dónde nos enfocaremos?**
+
+Nos enfocaremos en zonas urbanas del Perú con alta concentración de estilistas y barberos, especialmente en aquellas ciudades donde existe un acceso razonable a tecnología digital y conectividad, y donde los usuarios potenciales cuentan con los conocimientos básicos y los dispositivos (móviles o computadoras) necesarios para utilizar una aplicación móvil o web. El enfoque en la tecnología digital es clave, ya que puede actuar como un catalizador para reducir la brecha digital y fomentar la inclusión entre los pequeños emprendedores (Sey & Hafkin, 2023).
+
+#### When (¿Cuándo?)
+
+**¿Cuándo sucede el problema?**
+
+Actualmente, esto ocurre cada vez que un cliente de nuestro segmento requiere una cita y la hora y los datos de la misma son guardados de forma manual o informalmente.
+
+**¿Cuándo utiliza el cliente el producto?**
+
+Nuestros segmentos utilizarían el producto al recibir un deseo de cita: en primer lugar, se revisará si el horario solicitado y el estilista que se desea contratar están disponibles. En el caso de que así sea, se registra en el calendario digital.
 
 #### Why (¿Por qué?)
 
-[Contenido pendiente]
+**¿Cuál es la causa del problema?**
+
+Existen varias causas. En primer lugar, las personas que optan por registrar de manera manual o informal las citas que reciben lo hacen debido a la baja alfabetización digital, la confianza en sus métodos actuales o la falta de una opción que encaje con sus necesidades.
+
+El problema también está en la falta de opciones de calendario digital en tiempo real para nuestro segmento. Actualmente, aplicaciones como Google Calendar o Zoho ofrecen un servicio parecido; sin embargo, debido a su complejidad —causada tanto por falta como por exceso de características que no se centran en estilistas y barberos— no resultan opciones atractivas, lo que provoca que el usuario opte por escribir manualmente solamente la información necesaria. Este es un claro caso de desajuste entre la tarea y la tecnología (Task-Technology Fit); las herramientas genéricas no se adaptan a los flujos de trabajo y necesidades específicas de los profesionales de la belleza (Tarafdar et al., 2023).
 
 #### How (¿Cómo?)
 
-[Contenido pendiente]
+**¿En qué condiciones los clientes usan nuestro producto?**
+
+A través de cualquier dispositivo móvil o computadora con conexión a internet y con la tecnología suficiente, nuestras aplicaciones móvil y web proporcionarán de manera simple y concisa las herramientas necesarias para la gestión de las citas de los clientes y la activación de las notificaciones.
 
 #### How much (¿Cuánto?)
 
-[Contenido pendiente]
+**Estadísticas que sustentan la problemática.**
+
+Según Ochoa (2021), en una encuesta realizada en un salón de belleza llamado "Mónica Garcés", el 80% de encuestados argumenta que no recibe una atención adecuada respecto a la reservación de citas a un salón de belleza. Asimismo, el 20% desconoce dicho proceso. Por lo general, se suelen comunicar mediante vía telefónica con la dueña del local, y no se logra llevar un control o manejo adecuado de horarios.
+
+*Figura 1: Eficacia del proceso de agendamiento de turnos.*
+
+<div align="center">
+<img src="./assets/images/photos/HowMuch-1.png" alt="Eficacia del proceso de agendamiento de turnos" />
+</div>
+
+De acuerdo con los salones de belleza que operan en Tegucigalpa, el 53,3% de las mujeres esperan ser atendidas por orden de llegada en salones de belleza. Sin embargo, en su mayoría, estos servicios no cuentan con una herramienta digital que les permita administrar sus servicios de forma eficiente.
+
+*Figura 2: Reservación de citas.*
+
+<div align="center">
+<img src="./assets/images/photos/HowMuch-2.png" alt="Reservación de citas" />
+</div>
+
+Según el salón de belleza "Giselle Spa" de La Molina (2021), se realizó una encuesta a 205 clientes respecto a la calidad del servicio que ofrece el salón de belleza, e identificó que el 53,4% admiten que dicha calidad se manifiesta de forma regular, debido al poco interés que se percibe respecto a los cronogramas, la comunicación activa y la organización laboral.
+
+*Figura 3: Análisis descriptivo de la variable calidad de servicio.*
+
+<div align="center">
+<img src="./assets/images/photos/HowMuch-3.png" alt="Análisis descriptivo de la variable calidad de servicio" />
+</div>
+
+*Figura 4: Análisis porcentual de la variable calidad de servicio.*
+
+<div align="center">
+<img src="./assets/images/photos/HowMuch-4.png" alt="Análisis porcentual de la variable calidad de servicio" />
+</div>
 
 ### 1.2.2. Lean UX Process
 
-[Contenido pendiente]
+El enfoque de Lean UX se basa en la colaboración para crear productos de alta calidad, priorizando la optimización de la experiencia del usuario y la satisfacción del cliente sobre la perfección del diseño. Esta metodología permite obtener mejores resultados al integrar una comprensión profunda de la visión del negocio, lo que brinda flexibilidad en la combinación de ideas y eficiencia en la entrega de soluciones (Lean UX y Lean Startup: potencia experiencia y diseño de producto, 2023).
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-[Contenido pendiente]
+Nuestra solución uTime, conformada por una **aplicación móvil** y una **aplicación web** complementarias, está diseñada para optimizar la gestión de citas en el sector de la belleza, permitiendo a los profesionales independientes y negocios administrar su disponibilidad, atraer nuevos clientes y mejorar la experiencia del usuario a través de la digitalización de sus servicios. Hemos detectado que los profesionales de la belleza enfrentan dificultades para gestionar sus citas de manera eficiente, ya que dependen de llamadas, mensajes de WhatsApp y redes sociales, lo que genera desorden, pérdida de tiempo y cancelaciones de última hora. Además, la falta de una plataforma centralizada limita su crecimiento, ya que dependen principalmente del boca a boca para atraer nuevos clientes. Por otro lado, los clientes que buscan servicios de belleza suelen experimentar frustración al coordinar citas manualmente, ya que muchas veces enfrentan tiempos de espera prolongados, falta de información clara sobre la disponibilidad de los estilistas y dificultad para realizar pagos digitales o acceder a promociones personalizadas. ¿Cómo podemos ofrecer una solución digital integral —móvil y web— que permita a los profesionales de la belleza gestionar su agenda de manera eficiente, atraer nuevos clientes y mejorar la experiencia de reserva para los usuarios finales?
 
 #### 1.2.2.2. Lean UX Assumptions
 
+##### Features
+
+- Gestión de citas en línea (reservas, cancelaciones y reprogramaciones).
+- Recordatorios automáticos por notificaciones y mensajes.
+- Perfil profesional para estilistas y salones, con portafolio de trabajos.
+- Sistema de reseñas y valoraciones.
+- Integración con pagos digitales.
+- Sistema de promociones y fidelización (descuentos, membresías, paquetes de servicios).
+- Agenda inteligente con gestión de horarios y disponibilidad en tiempo real.
+
+##### Business Outcomes
+
+- Aumento en la adopción de las aplicaciones móvil y web por parte de estilistas y salones de belleza. Esperamos que un número creciente de profesionales del sector adopte uTime como su herramienta principal para la gestión de citas y la promoción de sus servicios.
+- Mayor retención de clientes gracias a la automatización de citas y promociones personalizadas. uTime incrementará la recurrencia de las reservas de los clientes y la lealtad de estos hacia los profesionales dentro de la plataforma.
+- Incremento de ingresos a través de suscripciones premium y comisiones por transacciones. Con el crecimiento de la base de usuarios, uTime espera un aumento en los ingresos recurrentes por planes premium, así como un mayor volumen de transacciones procesadas, fortaleciendo la rentabilidad del negocio.
+- Crecimiento de la comunidad activa. A través de alianzas estratégicas con academias de belleza, influencers del sector y marcas de productos cosméticos, construiremos una comunidad sólida y lograremos posicionar a uTime como la solución tecnológica más confiable y utilizada por estilistas y clientes.
+
+##### User Benefits
+
+Para los profesionales de la belleza:
+
+- Ahorro de tiempo al automatizar la gestión de citas.
+- Mayor exposición y captación de clientes a través de las aplicaciones móvil y web.
+- Reducción de cancelaciones gracias a los recordatorios automáticos.
+- Mayor seguridad en los pagos con integración de billeteras digitales o pasarela de pago.
+- Crecimiento profesional con la acumulación de reseñas y un perfil atractivo.
+
+Para los clientes:
+
+- Facilidad para encontrar y reservar servicios de belleza sin llamadas o esperas.
+- Mayor confianza al ver reseñas y valoraciones antes de reservar.
+- Seguridad en pagos digitales y opción de pagar en el momento.
+- Acceso a promociones exclusivas y recompensas por lealtad.
+
 ##### Business Assumptions
 
-[Contenido pendiente]
+- Creemos que los salones de belleza y barberías necesitan una herramienta digital para gestionar citas y atraer más clientes sin depender de redes sociales o el boca a boca.
+- Pensamos que los clientes buscan una manera más confiable y sencilla de encontrar servicios de belleza sin llamar o visitar múltiples lugares.
+- Asumimos que la automatización de citas y pagos reducirá la tasa de cancelaciones.
+- Estimamos que los estilistas estarían dispuestos a pagar por una suscripción premium si el servicio mejora su visibilidad y rentabilidad.
+- Creemos que la seguridad en los pagos es un factor clave para la adopción del producto.
+- Pensamos que las alianzas con marcas de belleza y salones ayudarán a escalar el negocio.
+- Esperamos que la integración con redes sociales aumente la captación de clientes y la visibilidad de los estilistas.
 
 ##### User Assumptions
 
-[Contenido pendiente]
+1. **¿Quién es el usuario?**
+   - Los usuarios de uTime son salones de belleza que deseen integrar nuestro producto. Asimismo, aquellos clientes que buscan servicios de peluquería, maquillaje y cuidado personal.
+
+2. **¿Dónde encaja nuestro producto en su trabajo o vida?**
+   - uTime se integra en la vida diaria de los usuarios al proporcionarles un medio de gestión de citas, procurando simplificar el proceso y optimizar el manejo de la disponibilidad de los salones de belleza, accesible tanto desde la aplicación móvil como desde el navegador web.
+
+3. **¿Qué problemas tiene nuestro producto y cómo se pueden resolver?**
+   - uTime enfrenta desafíos como la baja adopción por falta de confianza en la tecnología, dificultades en la personalización del sistema y preocupaciones sobre la seguridad de los pagos realizados en línea. Para resolver estos problemas, se podrían implementar tutoriales y soporte técnico personalizado, así como pruebas exhaustivas y actualizaciones constantes para corroborar la eficacia del producto. Asimismo, ofrecer opciones de pago flexible y garantía de seguridad en las transacciones. Estas acciones ayudarán a mejorar la experiencia del usuario y a aumentar la confianza en la plataforma.
+
+4. **¿Cuándo y cómo es usado nuestro producto?**
+   - uTime es utilizado por los usuarios en diversos momentos del día, dentro de la jornada laboral de los estilistas, dado que en cualquier momento del día los clientes pueden explorar opciones y agendar servicios. Los usuarios podrán acceder a uTime tanto desde la aplicación móvil como desde la aplicación web, permitiendo a los estilistas administrar su negocio en cualquier lugar y a los clientes agendar sus citas cuando deseen.
+
+5. **¿Qué características son importantes?**
+   - **Gestión de citas en tiempo real:** Permite a los estilistas administrar sus horarios de manera eficiente, evitando sobrecargas y asegurando disponibilidad precisa para los clientes. La interfaz intuitiva facilita la reserva y modificación de citas en pocos pasos, tanto en móvil como en web.
+   - **Sistema de pagos integrados y seguros:** Los clientes pueden pagar sus citas dentro de las aplicaciones con tarjeta de crédito, débito o billeteras digitales, asegurando una óptima experiencia.
+   - **Perfiles detallados de estilistas:** Cada salón cuenta con un perfil detallado que muestra la experiencia, especialidad, precios y disponibilidad de los estilistas. Los clientes pueden ver fotos de trabajos anteriores, leer reseñas y comparar opciones antes de reservar.
+   - **Reseñas y calificaciones verificadas:** Para promover la confianza entre los usuarios, los clientes solo pueden dejar reseñas después de haber completado una cita. Esto permite garantizar la autenticidad de las opiniones y que los estilistas con buen desempeño destaquen.
+   - **Herramientas de marketing digital:** Los estilistas pueden conectar sus perfiles de Instagram y TikTok para mostrar su trabajo y atraer más clientes. También se incluyen opciones para compartir reseñas y promociones en redes sociales directamente desde las aplicaciones.
+   - **Notificaciones y recordatorios automáticos:** Los usuarios reciben alertas de sus citas para reducir cancelaciones y olvidos. Además, los estilistas pueden enviar recordatorios personalizados y mensajes promocionales para fidelizar a sus clientes.
+
+6. **¿Cómo debe verse nuestro producto y cómo debe comportarse?**
+   - El producto uTime debe cumplir ciertos aspectos de diseño y funcionalidad para convertirse en un proyecto exitoso, de una manera que refleje su enfoque en el sector de la belleza, la optimización del tiempo y la innovación tecnológica. En cuanto a su apariencia, se señala lo siguiente:
+     - **Interfaz visualmente atractiva:** uTime debe contar con un diseño limpio y minimalista que facilite la navegación tanto para clientes como para estilistas. La combinación de colores debe transmitir confianza y elegancia, con una paleta que refleje profesionalismo y bienestar.
+     - **Diseño adaptable y responsivo:** Debe garantizar una experiencia consistente en cualquier smartphone, tableta o navegador web. La interfaz debe ser clara y optimizada para facilitar la reserva de citas con pocos pasos.
+   - En cuanto al comportamiento, uTime debe ser rápido, receptivo y confiable. Debido a esto, debe cumplir con los siguientes requisitos:
+     - **Interacción fluida y rápida:** uTime debe ser altamente responsivo, garantizando tiempos de carga mínimos y transiciones suaves entre secciones. Esto evitará disconformidad y frustraciones del cliente, mejorando así su experiencia en la plataforma.
+     - **Exploración intuitiva y eficiente:** Los clientes deben poder encontrar estilistas fácilmente mediante filtros avanzados como ubicación, especialidad, precios y reseñas. La interfaz debe permitir búsquedas rápidas y precisas.
+     - **Seguridad y confianza en transacciones:** Los pagos dentro de las aplicaciones deben ser seguros y confiables, con múltiples opciones de pago. Además, la política de cancelación y reembolso debe estar clara para evitar inconvenientes.
+     - **Sistema de notificaciones inteligentes:** Debe enviar recordatorios automáticos de citas, confirmaciones de pago, mensajes promocionales y alertas sobre cambios en la disponibilidad de los estilistas. Las notificaciones deben ser relevantes y evitar el spam.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-[Contenido pendiente]
+- Creemos que, al ofrecer una plataforma de gestión de citas fácil de usar y accesible desde cualquier smartphone, tableta o navegador web, los estilistas podrán optimizar la organización de sus agendas y minimizar cancelaciones o sobrecargas de trabajo. Sabremos que hemos tenido éxito cuando al menos el 80% de los estilistas activos utilicen el sistema de reservas en línea regularmente.
+- Creemos que, al implementar recordatorios automáticos para clientes y estilistas, reduciremos significativamente la cantidad de citas canceladas o reprogramadas en el último minuto. Sabremos que hemos tenido éxito cuando la tasa de cancelaciones tardías disminuya en al menos un 40% dentro de los primeros tres meses de uso.
+- Creemos que, al permitir a los clientes seleccionar su estilista preferido, ver disponibilidad en tiempo real y reservar con facilidad, aumentaremos la satisfacción y fidelización. Sabremos que hemos tenido éxito cuando al menos el 70% de los clientes regresen a agendar una nueva cita dentro de los primeros dos meses después de su primera reserva.
+- Creemos que, al integrar un sistema de reseñas y calificaciones para estilistas, se generará confianza en nuevos clientes y aumentará la retención de clientes recurrentes. Sabremos que hemos tenido éxito cuando al menos el 75% de los clientes califiquen su experiencia después de una cita.
+- Creemos que, al permitir la personalización de servicios y precios dentro de las aplicaciones, los estilistas podrán ofrecer paquetes más atractivos y competitivos. Sabremos que hemos tenido éxito cuando al menos el 50% de los estilistas utilicen funciones de personalización dentro del primer mes de uso.
+- Creemos que, al incluir un módulo de promociones y descuentos, los estilistas podrán aumentar la captación de nuevos clientes y fidelizar a los actuales. Sabremos que hemos tenido éxito cuando el número de reservas aumente en un 30% en comparación con el período previo a la implementación de esta funcionalidad.
 
 #### 1.2.2.4. Lean UX Canvas
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Lean UX Canvas del producto [PRODUCTO].
+Lean UX Canvas del producto uTime.
 
-![Lean UX Canvas](./assets/lean-ux/canvas/lean-ux-canvas.png)
+![Lean UX Canvas](./assets/images/photos/Final-lean-ux-canvas.png)
 
 </div>
 
 ## 1.3. Segmentos objetivo
 
-[Contenido pendiente — describir cada segmento objetivo con perfil demográfico, psicográfico y conductual.]
+Los segmentos objetivos son las personas o entidades a las cuales está destinada nuestra solución. A continuación se describen aquellos que abarca nuestra propuesta.
 
-**Segmento 1: [Nombre del segmento]**
+**Segmento 1: Salones de belleza y barberías**
 
-[Contenido pendiente]
+*Aspectos demográficos:*
 
-**Segmento 2: [Nombre del segmento]**
+- Rango de edad: mayores de 20 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: clases A y B (alta y media-alta).
 
-[Contenido pendiente]
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera.
+- Zona geográfica de residencia: urbana.
+- Departamento: Lima Metropolitana.
+
+*Aspectos psicográficos:*
+
+- Uso frecuente de medios de comunicación, tales como WhatsApp y llamadas telefónicas, para interactuar con los clientes.
+- Un día a día con la agenda apretada por las reservas de los clientes y poca flexibilidad.
+
+**Segmento 2: Clientes de servicios de belleza**
+
+*Aspectos demográficos:*
+
+- Rango de edad: mayores de 18 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: clases A, B y C (alta, media-alta y media).
+
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera.
+- Zona geográfica de residencia: urbana.
+- Departamento: Lima Metropolitana.
+
+*Aspectos psicográficos:*
+
+- Van frecuentemente a salones de belleza para estar a la moda o presentables para un evento importante.
+- Tienden a preferir tratarse con el mismo estilista o barbero debido a experiencias anteriores o por la técnica del especialista.
 
 <hr class="page-break">
 
@@ -3093,7 +3164,37 @@ Artefactos de la sesión de shareback.
 
 ## Conclusiones y recomendaciones
 
-[Contenido pendiente — conclusiones generales y recomendaciones.]
+A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado durante el AV1, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design) del informe.
+
+### Conclusiones
+
+El AV1 permitió consolidar la base estratégica, de producto y de diseño de uTime, estableciendo un descubrimiento de producto sólido sobre el cual construir las fases de implementación y validación.
+
+- Se identificó con éxito el **Startup Business Model** de PaxTech mediante el Startup Profile (misión, visión y perfiles del equipo) y el Solution Profile de uTime, alineando la propuesta de valor con las necesidades del sector de la belleza.
+- La aplicación del framework **5W+2H** permitió enmarcar la problemática del agendamiento manual de citas con datos cuantitativos del sector, evitando supuestos no sustentados.
+- El proceso **Lean UX** completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas) entregó un marco coherente para guiar las decisiones de producto desde el descubrimiento hasta el diseño.
+- La definición de dos segmentos objetivo claramente diferenciados (salones/barberías y clientes finales) permitió perfilar requisitos y experiencias específicas para cada lado del marketplace.
+- El **análisis competitivo** del Capítulo II evidenció oportunidades de diferenciación en gestión de citas en tiempo real, perfiles profesionales detallados y reseñas verificadas frente a soluciones genéricas como Google Calendar o redes sociales.
+- Las **entrevistas** y la fase de **Needfinding** (User Personas, Empathy Map, As-Is/To-Be Scenario Maps, Journey Maps y User Task Matrix) confirmaron las hipótesis Lean UX y aportaron evidencia cualitativa de los puntos de dolor de profesionales y clientes.
+- La definición del **Ubiquitous Language** estableció un vocabulario compartido entre negocio, producto e ingeniería que reducirá ambigüedades en la implementación posterior.
+- El **Product Backlog** priorizado, las User Stories con criterios de aceptación, el Impact Mapping y el To-Be Scenario Mapping del Capítulo III entregaron una especificación trazable desde objetivos de negocio hasta entregables técnicos.
+- El diseño UX/UI del Capítulo IV (Style Guidelines, Information Architecture, wireframes, mockups y prototipos) cubrió de forma consistente las **dos plataformas objetivo**, aplicación móvil y aplicación web, garantizando una experiencia coherente entre dispositivos.
+- La arquitectura **Domain-Driven Design**, junto con el diseño orientado a objetos y el modelo de base de datos, sentaron las bases técnicas necesarias para soportar la solución multiplataforma con escalabilidad y separación clara de bounded contexts.
+
+### Recomendaciones
+
+Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas posteriores, el equipo recomienda las siguientes acciones para las próximas fases del proyecto.
+
+- Validar empíricamente las **Hypothesis Statements** de Lean UX mediante experimentos cortos durante la implementación, en lugar de asumirlas resueltas con el diseño.
+- Ampliar la muestra de **entrevistas** con segmentos adicionales (estilistas independientes sin local, clientes ocasionales) para reducir sesgo y reforzar las personas existentes.
+- Mantener la **trazabilidad** Impact Map → User Story → criterio de aceptación → tarea de backlog en una herramienta única para evitar divergencias entre el informe y el desarrollo real.
+- Iterar los **prototipos móvil y web** con pruebas de usabilidad reales antes de pasar a implementación, priorizando los flujos críticos de reserva y gestión de agenda.
+- Tratar el **Ubiquitous Language** como un glosario vivo: versionarlo en el repositorio y actualizarlo cada vez que aparezca un término nuevo en entrevistas, historias de usuario o código.
+- Refinar las **User Stories** con criterios de aceptación en formato Given/When/Then antes de iniciar el sprint de implementación, para habilitar pruebas BDD desde el inicio.
+- Consolidar las **Style Guidelines** en un sistema de design tokens compartido entre la app móvil y la app web, evitando divergencias visuales entre ambas plataformas.
+- Configurar tempranamente la **integración continua** con linters, pruebas unitarias y validación de convenciones (Conventional Commits y GitFlow definidos en CLAUDE.md) para evitar deuda técnica acumulada.
+- Cuidar el **rendimiento en móvil** desde el diseño: limitar el peso de imágenes, planificar carga diferida y considerar conectividad intermitente, dado que muchos profesionales operan en zonas con red inestable.
+- Mantener sincronización del equipo mediante revisiones de pares, PRs pequeños y comunicación constante en los hitos del proyecto, asegurando que cada integrante avance según los criterios del Student Outcome (7.c1 y 7.c2).
 
 <hr class="page-break">
 
