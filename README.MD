@@ -38,7 +38,7 @@
       </tr>
       <tr>
          <td>U202310609</td>
-         <td>Sanchez Gonzales, Gabriel</td>
+         <td>Sánchez Gonzales, Gabriel</td>
       </tr>
       <tr>
          <td>U202313397</td>
@@ -422,9 +422,9 @@ Como empresa, buscamos aportar valor al rubro mediante aplicaciones móviles y w
 |------|--------|--------|---------|--------------------------------------------|
 | <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
 | <img src="./assets/images/photos/natalia-photo.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | U202310148 | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
-| <img src="./assets/images/photos/foto-gabriel.png" alt="Gabriel" width="200"> | Gabriel Sánchez Gonzales | U202310609 | Ingeniería de Software | Soy estudiante en la Universidad Peruana de Ciencias Aplicadas (UPC) cursando el 7mo ciclo de la carrera de Ingeniería de Software. Soy una persona comprometida con mi desarrollo académico y profesional. Con esa responsabilidad, aspiro a proveer soluciones tecnológicas a aquellos que las requieran para facilitar su área de trabajo. Junto con mi equipo de trabajo tendré la oportunidad de poner mis conocimientos y habilidades en el curso con el fin de disminuir la problemática identificada. |
 | <img src="./assets/images/photos/gael-photo.jpg" alt="Eduardo Gael Rivera Sosa" width="200"> | Eduardo Gael Rivera Sosa | U202312222 | Ingeniería de Software | Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo. |
-|  |  |  |  |  |
+| <img src="./assets/images/photos/foto-gabriel.png" alt="Gabriel Sánchez Gonzales" width="200"> | Gabriel Sánchez Gonzales | U202310609 | Ingeniería de Software | Soy estudiante en la Universidad Peruana de Ciencias Aplicadas (UPC) cursando el 7mo ciclo de la carrera de Ingeniería de Software. Soy una persona comprometida con mi desarrollo académico y profesional. Con esa responsabilidad, aspiro a proveer soluciones tecnológicas a aquellos que las requieran para facilitar su área de trabajo. Junto con mi equipo de trabajo tendré la oportunidad de poner mis conocimientos y habilidades en el curso con el fin de disminuir la problemática identificada. |
+| [Foto pendiente] | Alejandro Daniel Oroncoy Almeyda | U202313397 | Ingeniería de Software | [Descripción pendiente — completar con habilidades y conocimientos] |
 
 ## 1.2. Solution Profile
 
@@ -2308,72 +2308,196 @@ Diagrama de Provider Settings y Reviews - frontend
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La persistencia del sistema se implementa sobre **PostgreSQL** desplegado en **Neon** (servicio cloud serverless), siguiendo un enfoque de *database per bounded context*. A continuación se presenta el diagrama relacional consolidado seguido del detalle por cada bounded context (IAM, Profiles, Reservations, Services, Reviews, Workers).
 
-Diagrama de base de datos
+**Diagrama relacional consolidado**
 
-![bd](assets/images/bd/erd-diagram.png)
+<div align="center">
+  <img src="assets/images/bd/erd-diagram.png" alt="ERD consolidado uTime" width="800">
+</div>
 
-Diagrama de base de datos en Mysql
+**IAM Bounded Context**
 
-![bd](assets/images/bd/mysql.png)
+<div align="center">
+  <img src="assets/images/bd/bd-iam.png" alt="BD IAM" width="700">
+</div>
 
+**Profiles Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-profiles.png" alt="BD Profiles" width="700">
+</div>
+
+**Reservations Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-reservations.png" alt="BD Reservations" width="700">
+</div>
+
+**Services Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-services.png" alt="BD Services" width="700">
+</div>
+
+**Reviews Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-reviews.png" alt="BD Reviews" width="700">
+</div>
+
+**Workers Bounded Context**
+
+<div align="center">
+  <img src="assets/images/bd/bd-workers.png" alt="BD Workers" width="700">
 </div>
 
 <hr class="page-break">
 
 # Capítulo V: Product Implementation
 
-[Contenido pendiente]
+En este capítulo se describe la implementación del producto **uTime** por parte de la startup **PaxTech**, abarcando la configuración del entorno de desarrollo, la gestión del código fuente, las convenciones de estilo, la configuración de despliegue y las evidencias de ejecución del Sprint #1, así como los acuerdos de servicio y los enlaces a los productos desplegados.
 
 ## 5.1. Software Configuration Management
 
+El equipo ha establecido el siguiente conjunto de herramientas para asegurar una configuración de entorno de desarrollo unificada, que permita una colaboración efectiva y el cumplimiento de los objetivos del proyecto. Estas herramientas cubren las diferentes actividades del ciclo de vida del producto digital.
+
 ### 5.1.1. Software Development Environment Configuration
 
-**Project Management:** [herramienta — Jira / Pivotal Tracker]  
-**Requirements Management:** [herramienta]  
-**Product UX/UI Design:** [herramienta — Figma / Lucidchart]  
-**Software Development:**
-- Web Frontend: [stack tecnológico]
-- Mobile: [stack tecnológico]
-- Backend / API: [stack tecnológico]
-- Base de datos: [motor]
+**Project Management**
 
-**Software Deployment:** [plataforma — AWS / Azure / Vercel / Netlify]  
-**Software Documentation:** [herramienta — Swagger / Postman / Redoc]
+- **Pivotal Tracker** — herramienta principal para la gestión ágil del proyecto. Permite planificar, organizar y hacer seguimiento del avance de las historias de usuario, tareas y bugs mediante un enfoque basado en historias y priorización colaborativa. Ruta de referencia: <https://www.pivotaltracker.com>
+- **Discord** — plataforma para la comunicación en tiempo real entre los miembros del equipo. A través de canales organizados por temas y funciones se realizan reuniones, coordinación diaria y soporte instantáneo durante todo el desarrollo. Ruta de referencia: <https://discord.com>
+
+**Requirements Management**
+
+- **GitHub Issues** — usado para registrar, etiquetar y dar trazabilidad a los requerimientos funcionales y no funcionales junto con los bugs y mejoras detectadas durante el desarrollo. Ruta de referencia: <https://github.com>
+
+**Product UX/UI Design**
+
+- **Figma** — herramienta principal para el diseño de interfaces gráficas (UI) y la experiencia de usuario (UX). Permite que varios miembros colaboren simultáneamente en prototipos interactivos, estructuras visuales y pruebas de diseño. Ruta de referencia: <https://www.figma.com>
+- **UXPressia** — complementa el trabajo de UX al permitir la creación y documentación de User Personas, Customer Journey Maps y Empathy Maps, alineando las decisiones de diseño con las necesidades del usuario. Ruta de referencia: <https://uxpressia.com>
+- **Trello** — facilita la organización visual de tareas, ideas y flujos de trabajo mediante tableros, listas y tarjetas. Permite priorizar funcionalidades centradas en el usuario y dar seguimiento al progreso. Ruta de referencia: <https://trello.com>
+
+**Software Development**
+
+- **Landing Page:** **HTML5 + CSS3 + Bootstrap**, editada en **WebStorm** y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: <https://www.jetbrains.com/webstorm>
+- **Web Frontend (Aplicación Web):** **Angular** (TypeScript) sobre **WebStorm**, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Brinda al cliente y al administrador del salón el acceso desde navegador a los flujos de búsqueda, reserva, gestión de servicios y panel de control. Ruta de referencia: <https://angular.dev>
+- **Mobile App – Cliente:** **Flutter (Dart)** sobre **Android Studio** como IDE; codebase orientado a **Android 7.0 o superior**. Implementa los flujos del segmento de clientes (búsqueda de salones, reserva, pagos, perfil) descritos en §4.4. Ruta de referencia: <https://flutter.dev>
+- **Mobile App – Negocio (Salón/Barbería):** **Kotlin nativo** sobre **Android Studio**; codebase Android dedicado a la gestión del salón (agenda, miembros del equipo, servicios, suscripción) descrito en §4.4. Ruta de referencia: <https://kotlinlang.org>
+- **Backend / API:** **Spring Boot (Java)** sobre **IntelliJ IDEA Ultimate**. IntelliJ provee soporte avanzado para Java/Kotlin, frameworks modernos y herramientas integradas de base de datos. Ruta de referencia: <https://www.jetbrains.com/idea>
+- **Fake API (mocks):** **json-server** sobre **Node.js**, usado durante las primeras iteraciones para desbloquear el desarrollo de la aplicación web y las aplicaciones móviles mientras el backend Spring Boot se construye.
+- **Base de datos:** **PostgreSQL** gestionada en **Neon** (servicio cloud serverless), con Spring Data JPA como capa de acceso, conforme al diagrama de despliegue del producto. Ruta de referencia: <https://neon.tech>
+- **Procesamiento de pagos:** **Stripe** como pasarela para suscripciones y pagos de reservas (en investigación dentro de la Spike Story 1 del backlog). Ruta de referencia: <https://stripe.com>
+
+**Software Deployment**
+
+- **Git** — sistema de control de versiones para gestionar el historial de cambios. Ruta de referencia: <https://git-scm.com>
+- **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: <https://www.gitkraken.com>
+- **GitHub Pages** — hosting estático para desplegar la **Landing Page** y los frontends estáticos. Ruta de referencia: <https://pages.github.com>
+- **Render** — plataforma de despliegue para APIs y servicios durante las etapas de desarrollo y pruebas. Ruta de referencia: <https://render.com>
+- **Microsoft Azure** — plataforma cloud utilizada para desplegar y escalar el backend Spring Boot mediante **Azure App Service** + base de datos PostgreSQL en Neon. La integración continua se automatiza con **GitHub Actions** apuntando al App Service. Ruta de referencia: <https://azure.microsoft.com>
+- **Firebase App Distribution** — usado para distribuir builds internos de las aplicaciones móviles (Flutter del cliente y Kotlin nativo del negocio) al equipo de validación. Ruta de referencia: <https://firebase.google.com>
+
+**Software Documentation**
+
+- **GitHub** — repositorio remoto centralizado, revisiones por Pull Request, registro de incidencias y documentación viva del proyecto. Ruta de referencia: <https://github.com>
+- **Swagger / OpenAPI** — para documentar de forma interactiva los endpoints del backend RESTful.
+
+**Software Testing**
+
+- **Gherkin (Cucumber)** — sistema de etiquetado para describir los criterios de aceptación de las historias de usuario bajo el enfoque BDD. Ruta de referencia: <https://cucumber.io/docs/gherkin/>
 
 ### 5.1.2. Source Code Management
 
-Se utiliza **GitHub** con flujo de trabajo **GitFlow**. Convenciones de ramas:
+El proyecto sigue las convenciones del modelo **GitFlow** propuesto por Vincent Driessen en *"A successful Git branching model"*, utilizando **GitHub** como plataforma de control de versiones y colaboración. El proyecto se segmentó en sprints de dos semanas para facilitar entregas incrementales.
 
-- `main`
-- `develop`
-- `feature/<feature-name>`
-- `release/vX.X.X`
-- `hotfix/<fix-name>`
+**Repositorios de GitHub (organización paxtech-2026-10):**
 
-**Convenciones de commits (Conventional Commits):**
+- Organización del equipo: <https://github.com/paxtech-2026-10>
+- Repositorio del informe (este documento): <https://github.com/paxtech-2026-10/utime-project-report>
+- Repositorio de la **Landing Page**: <https://github.com/paxtech-2026-10/Landing-Page>
+- Repositorio de la **Mobile App – Cliente (Flutter, Android)**: <https://github.com/paxtech-2026-10/Mobile-App>
+- Repositorio de la **Mobile App – Negocio (Kotlin nativo, Android)**: <https://github.com/paxtech-2026-10/Ios-Mobile-App>
+- Repositorio del **Backend Web Services (Spring Boot)**: <https://github.com/paxtech-2026-10/Web-Services>
+- Repositorio de la **Fake API**: <https://github.com/paxtech-2026-10/fake-api>
+- Repositorio de **Acceptance Tests (Cucumber + Gherkin)**: <https://github.com/paxtech-2026-10/Acceptance-Tests>
+
+**Flujo GitFlow:**
+
+<div align="center">
+  <img src="./assets/devops/GitFlowDiagram.svg" alt="GitFlow Diagram" width="700">
+</div>
+
+**Estructura de branches:**
+
+1. **`main`** — rama principal con versiones estables y finales del producto. Solo recibe cambios previamente probados y verificados.
+2. **`develop`** — rama de integración del trabajo continuo del equipo; punto de partida de todas las features.
+3. **`feature/<nombre>`** — una rama por funcionalidad. Al completarse se fusiona contra `develop` mediante Pull Request.
+4. **`release/vX.Y.Z`** — instancia de `develop` próxima a integrarse en `main`. Sigue Semantic Versioning.
+5. **`hotfix/<nombre>`** — corrección puntual de errores detectados en `main` que afecten significativamente la experiencia de usuario.
+
+**Versionamiento semántico:** Para nombrar las *Releases* se aplica **Semantic Versioning 2.0.0** (`MAJOR.MINOR.PATCH`).
+
+**Convenciones de Commits (Conventional Commits):**
 
 ```
-<tipo>(<alcance>): <resumen ≤ 72 caracteres>
+<tipo>(<alcance opcional>): <resumen ≤ 72 caracteres>
 ```
 
-Tipos: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+Tipos permitidos: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `perf`, `build`, `ci`.
 
 ### 5.1.3. Source Code Style Guide & Conventions
 
-[Contenido pendiente — estilos por tecnología.]
+- **HTML:**
+  1. Cerrar todos los elementos.
+  2. Usar minúsculas para nombres de elementos y atributos para mantener legibilidad.
+  3. Usar comillas dobles cuando los atributos contengan espacios.
+  4. Especificar `alt`, `width` y `height` en imágenes para accesibilidad: `<img src="abc.png" alt="image name" width="128" height="128">`.
 
-- **HTML:** [Guía referenciada]
-- **CSS:** [Guía referenciada]
-- **JavaScript / TypeScript:** [Guía referenciada]
-- **[Framework frontend]:** [Guía referenciada]
-- **[Framework backend]:** [Guía referenciada]
-- **Gherkin:** [Convenciones]
+- **CSS:**
+  1. Nombres de clases breves y autodescriptivos.
+  2. Separar nombres de clases e IDs con guiones (`#video-id`, `.hero-shadow`).
+  3. No especificar la unidad de medida cuando el valor es `0`.
+  4. Separar declaraciones y selectores en líneas distintas para favorecer la legibilidad.
+
+- **JavaScript (Landing):** se siguen las guías de Airbnb JavaScript Style Guide. Uso de `camelCase` para variables y funciones, `PascalCase` para clases, e `kebab-case` para nombres de archivos. La landing utiliza Bootstrap 5 como base de componentes y grid.
+
+- **TypeScript (Angular Web App):** se sigue la **Angular Style Guide oficial**. `kebab-case` para selectores y archivos, `PascalCase` para clases y componentes, `camelCase` para identificadores. Linter `@angular-eslint` con configuración `recommended`.
+
+- **Dart (Flutter):** se sigue la **Effective Dart Style Guide** de la documentación oficial. Nombres de clases en `PascalCase`, identificadores en `camelCase`, archivos y carpetas en `snake_case`. Linter `flutter_lints` activado por defecto.
+
+- **Java (Spring Boot):** se aplica la **Google Java Style Guide**. Indentación de 4 espacios, nombres de clases en `PascalCase`, métodos y variables en `camelCase`, paquetes en minúsculas.
+
+- **Gherkin:** lenguaje específico de dominio para BDD. Se utilizan saltos de línea para separar escenarios y las palabras clave **`Given`**, **`When`**, **`Then`** y **`And`** para estructurar cada criterio de aceptación.
 
 ### 5.1.4. Software Deployment Configuration
 
-[Contenido pendiente — describir pipeline, ambientes, variables.]
+El despliegue del producto se realiza diferenciando los componentes estáticos de los servicios backend.
+
+**Landing Page (GitHub Pages):**
+
+1. Mantener una carpeta `docs/` que aloje los archivos públicos de la landing.
+2. Asegurar la nomenclatura `index.html`, `style.css` y una carpeta `img/` con los recursos.
+3. Cargar los archivos al repositorio mediante commits a la rama de despliegue (típicamente `main`).
+4. En GitHub: **Settings > Pages** y seleccionar la rama (`main`) y la carpeta `/docs` como fuente.
+5. Esperar la verificación de GitHub. Una vez completado, se obtiene una URL pública del tipo `https://<org>.github.io/<repo>/`.
+
+**Web Frontend (Angular):** build de producción con `ng build --configuration production` y publicación del artefacto resultante (carpeta `dist/`) en GitHub Pages o **Azure Static Web Apps** mediante GitHub Actions.
+
+**Mobile App – Cliente (Flutter):** build APK mediante `flutter build apk` y distribución interna al equipo a través de **Firebase App Distribution** para validación funcional sobre Android 7.0+.
+
+**Mobile App – Negocio (Kotlin nativo):** build APK desde **Android Studio** (`./gradlew assembleRelease`) y distribución vía Firebase App Distribution al equipo de validación del segmento de salones.
+
+**Backend (Spring Boot en Azure):** despliegue como **Azure App Service** con base de datos gestionada **PostgreSQL en Neon**. Las variables de entorno (cadena de conexión, secretos JWT, claves externas) se configuran en el panel **Configuration → Application settings** del App Service. La integración continua se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega al App Service en cada push a `main`.
+
+**Mapeo de ambientes a ramas:**
+
+| Ambiente | Rama | Plataforma |
+|---|---|---|
+| Producción | `main` | GitHub Pages + Azure App Service |
+| Staging / Integración | `develop` | Render / Azure (slot de staging) |
+| Feature preview | `feature/*` | Local + Render (opcional) |
 
 ## 5.2. Product Implementation & Deployment
 
@@ -2383,190 +2507,292 @@ Tipos: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
 
 **Sprint Planning Background**
 
+Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tiempo en el que el equipo desarrolla todo el trabajo necesario para alcanzar el objetivo final del proyecto, denominado *Product Goal* (Schwaber & Sutherland, 2020). El Sprint #1 tiene como meta **elaborar una landing page atractiva para uTime que capte la atención de los usuarios visitantes y comunique con claridad los principales beneficios ofrecidos por el producto**.
+
 | Campo | Detalle |
 |-------|---------|
-| Date | [Fecha] |
-| Time | [Hora] |
-| Location | [Ubicación / modalidad] |
-| Prepared By | [APELLIDOS Y NOMBRES] |
-| Attendees | [Lista de asistentes] |
-| Sprint N°1 Review Summary | [Contenido pendiente] |
-| Sprint N°1 Retrospective Summary | [Contenido pendiente] |
-| Sprint Goal & User Stories | [Contenido pendiente] |
-| Sprint N°1 Velocity | [Story Points] |
-| Sum of Story Points | [Total] |
+| Date | 2026-04-07 |
+| Time | 09:00 PM |
+| Location | Reunión virtual mediante Discord |
+| Prepared By | Oroncoy Almeyda, Alejandro Daniel |
+| Attendees | Alejandro Oroncoy, Jorge Yum, Gael Rivera, Natalia Roman y Gabriel Sánchez |
+| Sprint N°1 Review Summary | Primer sprint del proyecto; no existe revisión previa. |
+| Sprint N°1 Retrospective Summary | Al ser el primer sprint no se cuenta con retrospectiva previa. La retroalimentación y oportunidades de mejora se evaluarán al cierre del sprint. |
+| Sprint Goal | **Our focus is on** delivering a functional and engaging landing page for uTime. **We believe it delivers** a clear value proposition and generates user interest and trust in potential customers. **This will be confirmed when** visitors can access the site and interact with all key landing-page sections (services overview, benefits, pricing, testimonials, CTA's and support) on both desktop and mobile devices. |
+| Sprint N°1 Velocity | 13 |
+| Sum of Story Points | 13 |
+
+**Aspect Leaders and Collaborators (LACX)**
+
+Para mejorar la organización y la comunicación se elaboró la matriz **Leadership and Collaboration Matrix (LACX)**, donde se define quién asume el rol de Líder (**L**) y quiénes participan como Colaboradores (**C**) en cada aspecto clave de la landing page.
+
+| Team Member | Servicios | Beneficios | Planes y Precios | Responsive | Soporte | Testimonios | CTA's |
+|---|---|---|---|---|---|---|---|
+| Yum Gonzales, Jorge Suin | C | C | C | C | L | C | L |
+| Rivera Sosa, Eduardo Gael | C | C | C | L | C | L | C |
+| Roman Cruz, Natalia Bertha | L | C | C | C | C | C | C |
+| Alejandro Oroncoy | C | L | C | C | C | C | C |
+| Gabriel Sánchez | C | C | L | C | C | C | C |
 
 **Sprint Backlog #1**
 
+El equipo gestionó el backlog mediante **Trello**, dividiendo cada user story en tareas manejables y asignándolas según las habilidades de cada integrante. El objetivo del sprint es construir la landing page en su totalidad, logrando que sea atractiva y funcional.
+
 <table>
   <thead>
+    <tr><th colspan="8">Sprint # 1</th></tr>
+    <tr><th colspan="2">User Story</th><th colspan="6">Work-Item / Task</th></tr>
     <tr>
-      <th colspan="8">Sprint # 1</th>
-    </tr>
-    <tr>
-      <th colspan="2">User Story</th>
-      <th colspan="6">Work-Item / Task</th>
-    </tr>
-    <tr>
-      <th>Id</th>
-      <th>Título</th>
-      <th>Id</th>
-      <th>Título</th>
-      <th>Descripción</th>
-      <th>Estimación (hrs)</th>
-      <th>Asignado a</th>
-      <th>Estado (To-do / In-Process / To-Review / Done)</th>
+      <th>Id</th><th>Título</th>
+      <th>Id</th><th>Título</th><th>Descripción</th>
+      <th>Estimación (hrs)</th><th>Asignado a</th><th>Estado</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>US01</td>
-      <td>[Título]</td>
-      <td>T001</td>
-      <td>[Título tarea]</td>
-      <td>[Descripción]</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    <tr><td rowspan="3">US29</td><td rowspan="3">Visualización general de los servicios</td><td>T1</td><td>Redacción de contenido</td><td>Redactar los textos que describen los servicios ofrecidos.</td><td>2</td><td>Natalia Roman</td><td>Done</td></tr>
+    <tr><td>T2</td><td>Maquetación inicial</td><td>Implementar estructuras básicas en HTML/CSS.</td><td>2</td><td>Natalia Roman</td><td>Done</td></tr>
+    <tr><td>T3</td><td>Estilización</td><td>Aplicar estilos CSS según el diseño aprobado.</td><td>2</td><td>Natalia Roman</td><td>Done</td></tr>
+    <tr><td rowspan="2">US30</td><td rowspan="2">Visualización de beneficios</td><td>T4</td><td>Redacción de beneficios</td><td>Redactar los beneficios principales de la plataforma.</td><td>2</td><td>Alejandro Oroncoy</td><td>Done</td></tr>
+    <tr><td>T5</td><td>Diseño gráfico</td><td>Utilizar íconos o elementos visuales para los beneficios.</td><td>1.5</td><td>Alejandro Oroncoy</td><td>Done</td></tr>
+    <tr><td rowspan="2">US31</td><td rowspan="2">Planes y precios</td><td>T6</td><td>Redacción de contenido</td><td>Redacción de los planes y precios para mostrar.</td><td>1</td><td>Jorge Yum</td><td>Done</td></tr>
+    <tr><td>T7</td><td>Implementación UI</td><td>Codificar la sección de precios y planes.</td><td>2</td><td>Jorge Yum</td><td>Done</td></tr>
+    <tr><td>TS06</td><td>Diseño responsive y accesible</td><td>T8</td><td>Diseño responsive</td><td>Ajustar estilos para móviles y tablets.</td><td>2.5</td><td>Natalia Roman</td><td>Done</td></tr>
+    <tr><td rowspan="2">US32</td><td rowspan="2">Testimonios</td><td>T9</td><td>Recolección de testimonios</td><td>Buscar testimonios de usuarios anteriores.</td><td>1</td><td>Gael Rivera</td><td>Done</td></tr>
+    <tr><td>T10</td><td>Codificación de la sección</td><td>Codificar la sección de testimonios en la landing page.</td><td>2</td><td>Gael Rivera</td><td>Done</td></tr>
+    <tr><td rowspan="2">US33</td><td rowspan="2">Call to Action</td><td>T11</td><td>Diseño de botones CTA</td><td>Diseñar visualmente los botones de llamada a la acción.</td><td>0.5</td><td>Jorge Yum</td><td>Done</td></tr>
+    <tr><td>T12</td><td>Implementación de botones</td><td>Añadir los botones CTA en secciones clave.</td><td>1</td><td>Jorge Yum</td><td>Done</td></tr>
+    <tr><td rowspan="2">US34</td><td rowspan="2">Contacto y soporte</td><td>T13</td><td>Mensaje de contacto</td><td>Escribir el texto base para contacto.</td><td>0.5</td><td>Gabriel Sánchez</td><td>Done</td></tr>
+    <tr><td>T14</td><td>Maquetación del formulario</td><td>Implementar el formulario de contacto.</td><td>1.5</td><td>Gabriel Sánchez</td><td>Done</td></tr>
+    <tr><td rowspan="3">US01</td><td rowspan="3">Registro de un cliente</td><td>T16</td><td>Maquetado del formulario</td><td>Crear el formulario con campos como nombre, correo y contraseña.</td><td>3</td><td>Alejandro Oroncoy</td><td>Done</td></tr>
+    <tr><td>T17</td><td>Validación de campos</td><td>Validar que los campos del formulario estén correctamente llenados.</td><td>2</td><td>Alejandro Oroncoy</td><td>Done</td></tr>
+    <tr><td>T18</td><td>Estilo y responsive</td><td>Aplicar diseño responsive y estilos visuales.</td><td>2</td><td>Alejandro Oroncoy</td><td>Done</td></tr>
+    <tr><td rowspan="2">US03</td><td rowspan="2">Inicio de sesión</td><td>T22</td><td>Formulario de login</td><td>Crear formulario para correo y contraseña.</td><td>2</td><td>Gael Rivera</td><td>Done</td></tr>
+    <tr><td>T23</td><td>Diseño y feedback</td><td>Aplicar estilos y mostrar mensajes de error/éxito.</td><td>2</td><td>Gael Rivera</td><td>Done</td></tr>
+    <tr><td rowspan="3">US35</td><td rowspan="3">Información sobre uTime y sus creadores</td><td>T19</td><td>Redacción de contenido</td><td>Explicar quiénes son los creadores (PaxTech).</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
+    <tr><td>T20</td><td>Perfil del equipo</td><td>Mostrar integrantes de PaxTech.</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
+    <tr><td>T21</td><td>Diseño de sección</td><td>Maquetar y aplicar estilos a la sección About Us.</td><td>2</td><td>Gabriel Sánchez</td><td>Done</td></tr>
   </tbody>
 </table>
 
 **Development Evidence for Sprint Review**
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
-|------------|--------|-----------|----------------|---------------------|---------------------|
-|            |        |           |                |                     |                     |
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+|---|---|---|---|---|
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 6567146 | feat: Update new images about product | 2026-04-20 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `test1` | be55463 | feat: add video about the product | 2026-04-19 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 940fbed | feat: update call to actions redirections | 2026-04-18 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 3d75671 | feat: add new images (App movil) | 2026-04-16 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 0ec5a60 | feat: add responsive structure | 2026-04-14 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | efa789e | docs: readme about landing page | 2026-04-10 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 28f0edf | feat: initial commit | 2026-04-09 |
+| [Landing-Page](https://github.com/paxtech-2026-10/Landing-Page) | `main` | 445c2c0 | Initial commit | 2026-04-08 |
 
 **Testing Suite Evidence for Sprint Review**
 
-| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
-|------------|--------|-----------|----------------|---------------------|
-|            |        |           |                |                     |
+Para el Sprint #1, centrado en la landing page estática, el equipo aplicó pruebas manuales de diseño responsive y validación de formularios sobre Chrome y Firefox (desktop + mobile). La suite formal de pruebas automatizadas (Cucumber + Gherkin) ya está esqueletada en el repositorio [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) con los features de US01–US35 y TS01–TS18, y se conectará a la app móvil Flutter y al backend Spring Boot a partir del Sprint #2.
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+|---|---|---|---|---|
+| [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) | `main` | bfe550a | feat(user-stories): add Gherkin features for US01–US35 | 2026-04-15 |
+| [Acceptance-Tests](https://github.com/paxtech-2026-10/Acceptance-Tests) | `main` | eae2c12 | feat(tech-stories): add Gherkin features for TS01–TS18 | 2026-04-15 |
 
 **Execution Evidence for Sprint Review**
 
-[Contenido pendiente — capturas y descripción de funcionalidades entregadas.]
+En el Sprint #1 se logró el desarrollo completo de la landing page. A continuación se muestran las secciones implementadas:
+
+- **Home:** primera vista al ingresar; presenta la propuesta de valor de uTime y CTA principal.
+
+  <div align="center"><img src="./assets/sprint1/execution/home.png" alt="Home" width="700"></div>
+
+- **Planes y precios:** sección con los planes Free / Pro / Business para los profesionales del sector belleza.
+
+  <div align="center"><img src="./assets/sprint1/execution/planes.png" alt="Planes" width="700"></div>
+
+- **Contact Us:** formulario de contacto y soporte para consultas previas al registro.
+
+  <div align="center"><img src="./assets/sprint1/execution/contact-us.png" alt="Contact Us" width="700"></div>
+
+- **Register:** formulario diferenciado para clientes y para salones/barberías.
+
+  <div align="center"><img src="./assets/sprint1/execution/register.png" alt="Register" width="700"></div>
+
+- **Sign In:** acceso de usuarios registrados.
+
+  <div align="center"><img src="./assets/sprint1/execution/sign-in.png" alt="Sign In" width="700"></div>
+
+- **About Us:** información acerca de PaxTech y su equipo.
+
+  <div align="center"><img src="./assets/sprint1/execution/about-us.png" alt="About Us" width="700"></div>
 
 **Services Documentation Evidence for Sprint Review**
 
+El Sprint #1 se enfoca en la landing page estática, por lo que aún no expone endpoints REST propios. Los servicios consumidos son únicamente los de **GitHub Pages** para el hosting estático y un endpoint de prueba para el formulario de contacto que será reemplazado por el backend Spring Boot a partir del Sprint #2.
+
 | Endpoint | HTTP Method | Description | Request Body | Response |
-|----------|-------------|-------------|--------------|----------|
-|          |             |             |              |          |
+|---|---|---|---|---|
+| `/contact` (mock) | POST | Envía el formulario de contacto a un servicio de prueba. | `{ name, email, message }` | `{ status: "ok" }` |
 
 **Software Deployment Evidence for Sprint Review**
 
-[Contenido pendiente — URLs de ambientes, capturas de deployment.]
+La landing page fue publicada en **GitHub Pages** desde el repositorio `paxtech-2026-10/Landing-Page` y se encuentra accesible públicamente en la siguiente URL:
+
+- **Landing Page (live):** <https://paxtech-2026-10.github.io/Landing-Page/>
+- **Repositorio:** <https://github.com/paxtech-2026-10/Landing-Page>
+
+El despliegue automático se realiza al hacer push a `main` con la carpeta `/docs` configurada como fuente en *Settings → Pages*.
 
 **Team Collaboration Insights during Sprint**
 
-[Contenido pendiente — métricas de GitHub, capturas.]
+Durante el Sprint #1 el equipo mantuvo una colaboración constante. La distribución de commits y el grafo de red de GitHub muestran la participación de cada integrante en las distintas features (`feature/sign-in`, `feature/register`, `feature/contact-us`, `feature/about-us`, `feature/pricing`, `feature/indexChanges`).
+
+<div align="center">
+  <img src="./assets/sprint1/insights/networkgraph-sprint1.png" alt="Network Graph Sprint 1" width="700">
+  <br><br>
+  <img src="./assets/sprint1/insights/contributors-sprint1.png" alt="Contributors Sprint 1" width="700">
+</div>
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<div align="center">
 
-Landing Page desplegada — [PRODUCTO]
+**Landing Page desplegada — uTime**
 
 <img src="./assets/ux-ui/evidences/landing/landing-evidence.png" alt="Landing Evidence" width="800">
 
-[URL de la Landing Page desplegada]([URL-LANDING])
+[Acceder a la Landing Page de uTime](https://paxtech-2026-10.github.io/Landing-Page/) · [Repositorio](https://github.com/paxtech-2026-10/Landing-Page)
 
 </div>
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<div align="center">
 
-Aplicación Web desplegada — [PRODUCTO]
+**Aplicación Web — uTime (preview del flujo de reserva)**
 
 <img src="./assets/ux-ui/evidences/frontend-web/frontend-evidence.png" alt="Frontend Evidence" width="800">
 
-[URL de la aplicación web desplegada]([URL-FRONTEND])
+[Repositorio Frontend Web (en planificación, Sprint #2)](https://github.com/paxtech-2026-10)
 
 </div>
+
+La **aplicación web** de uTime se construirá con **Angular**, conforme a los wireframes (§4.6.1), wireflows (§4.6.2), mock-ups (§4.6.3) y user-flows (§4.6.4) aprobados en el Capítulo IV. Su flujo principal —selección de estilista → selección de fecha y hora → selección de método de pago— sigue la guía de estilo web detallada en §4.1.2. Para el Sprint #1 se entrega como evidencia la maqueta navegable basada en los mock-ups del Capítulo IV; el desarrollo Angular completo y su despliegue arrancan en el Sprint #2 consumiendo la Fake API y posteriormente el backend Spring Boot.
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
-**Acuerdo de Nivel de Servicio (SLA) entre [STARTUP] y el Cliente**
+**Acuerdo de Nivel de Servicio (SLA) entre PaxTech y el Cliente**
 
-Este documento establece los términos del Acuerdo de Servicio (SaaS Agreement) entre **[STARTUP]** (en adelante, "el Proveedor") y el Cliente suscriptor del servicio **[PRODUCTO]**.
+Este documento establece los términos del Acuerdo de Servicio (*SaaS Agreement*) entre **PaxTech** (en adelante, "el Proveedor") y el Cliente suscriptor del servicio **uTime**.
 
 **1. Objeto del acuerdo**
 
-[Contenido pendiente]
+PaxTech provee al Cliente acceso a la plataforma **uTime**, una solución *Software as a Service* (web y móvil) para la gestión de citas en el sector de la belleza, que permite a profesionales independientes y salones administrar disponibilidad, atender reservas y procesar pagos digitales de sus clientes finales.
 
 **2. Disponibilidad del servicio**
 
-[Contenido pendiente — uptime target, horarios de mantenimiento]
+El Proveedor garantiza un uptime objetivo del **99.5% mensual**, medido sobre los servicios productivos desplegados en Microsoft Azure. Las ventanas de mantenimiento programado se realizan los **domingos entre 02:00 y 04:00 (GMT-5)** y se notifican con al menos **48 horas** de anticipación al correo de contacto registrado.
 
 **3. Soporte técnico**
 
-[Contenido pendiente — canales, tiempos de respuesta]
+- **Canales:** correo electrónico (`soporte@uTime.pe`) y chat in-app dentro del panel del Cliente.
+- **Horario:** lunes a viernes de 09:00 a 18:00 (GMT-5).
+- **Tiempo de primera respuesta:** 24 horas hábiles.
+- **Severidad alta (servicio inoperante):** primera respuesta en 4 horas hábiles y plan de mitigación en 8 horas.
 
 **4. Seguridad y privacidad de datos**
 
-[Contenido pendiente]
+- Cifrado en tránsito mediante **TLS 1.2 o superior** y cifrado en reposo en la base de datos gestionada (**PostgreSQL en Neon**).
+- **Backups diarios** con retención de 30 días.
+- Cumplimiento con la **Ley de Protección de Datos Personales del Perú (Ley N° 29733)** y su reglamento.
+- Los datos del Cliente y de sus usuarios finales son de propiedad exclusiva del Cliente y no son comercializados a terceros.
 
 **5. Planes y precios**
 
-[Contenido pendiente]
+| Plan | Audiencia | Precio referencial | Características clave |
+|---|---|---|---|
+| Free | Profesional independiente | S/ 0 | Hasta 30 reservas/mes, gestión de calendario básica. |
+| Pro | Salones pequeños | S/ 49 / mes | Reservas ilimitadas, dashboard de métricas, soporte por chat. |
+| Business | Cadenas / multi-sede | S/ 149 / mes | Multi-sucursal, reportes avanzados, soporte prioritario y SLA reforzado. |
+
+Los precios definitivos serán los publicados en la sección de planes de la landing page de uTime.
 
 **6. Condiciones de cancelación y reembolso**
 
-[Contenido pendiente]
+El Cliente podrá cancelar la suscripción en cualquier momento desde su panel de cuenta. En caso de cancelación durante los **primeros 30 días** desde la contratación de un plan pago, se aplicará un reembolso prorrateado por los días no consumidos. Posterior a ese plazo, no se realizan reembolsos por el periodo en curso, pero el servicio se mantiene activo hasta el final del ciclo facturado.
 
 **7. Vigencia**
 
-[Contenido pendiente]
+El presente acuerdo tiene **vigencia mensual con renovación automática** mientras el Cliente mantenga al día sus obligaciones de pago. Cualquiera de las partes podrá terminar el acuerdo notificándolo con **15 días de anticipación** antes del cierre del ciclo de facturación vigente.
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<div align="center">
 
-Aplicación Mobile — [PRODUCTO]
+**Aplicación Mobile — uTime**
 
-<img src="./assets/ux-ui/evidences/mobile/mobile-evidence.png" alt="Mobile Evidence" width="800">
+<img src="./assets/ux-ui/evidences/mobile/mobile-evidence.png" alt="Mobile Evidence" width="400">
+
+[Repositorio Mobile-App (Flutter — Cliente)](https://github.com/paxtech-2026-10/Mobile-App) · [Repositorio Ios-Mobile-App (Kotlin nativo — Negocio)](https://github.com/paxtech-2026-10/Ios-Mobile-App)
 
 </div>
+
+uTime se distribuye con dos aplicaciones móviles nativas Android, una por cada segmento de usuario:
+
+- **App Cliente — Flutter (Dart):** cubre los flujos de búsqueda de salones, comparación de servicios y reseñas, agendamiento de cita, pagos y gestión de perfil descritos en §4.4 y §4.5. Se compila desde un único codebase para Android 7.0 o superior.
+- **App Negocio — Kotlin nativo:** orientada al dueño/administrador del salón. Cubre la creación del negocio, gestión de equipo, agenda diaria/semanal, administración de servicios (alta, edición, baja) y panel de notificaciones.
+
+Los mock-ups de iOS presentados en §4.5.2 corresponden al diseño visual de referencia; la implementación nativa para iOS queda fuera del alcance del ciclo actual y se evaluará en sprints posteriores. La distribución interna de builds se realiza mediante **Firebase App Distribution**. Su desarrollo intensivo arranca a partir del Sprint #2; la captura mostrada corresponde a la pantalla principal del cliente conforme al prototipo aprobado en §4.5.
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<div align="center">
 
-Backend desplegado — [PRODUCTO]
+**Backend desplegado — uTime**
 
 <img src="./assets/ux-ui/evidences/backend/backend-evidence.png" alt="Backend Evidence" width="800">
 
-[URL del backend desplegado]([URL-BACKEND])
+[Repositorio del Backend Web Services (Spring Boot)](https://github.com/paxtech-2026-10/Web-Services) · [Repositorio Fake API](https://github.com/paxtech-2026-10/fake-api)
 
 </div>
+
+El backend RESTful se construye con **Spring Boot** y persistencia en **PostgreSQL** gestionada en **Neon** (servicio cloud serverless), conforme al diagrama de despliegue. Se expone como un **Azure App Service** y se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega en cada push a `main`. Durante el Sprint #1 se utiliza una **Fake API** basada en `json-server` para desbloquear el desarrollo de la aplicación web (Angular) y de las aplicaciones móviles (Flutter y Kotlin nativo) mientras se completan los bounded contexts del backend definitivo: **IAM, Profiles, Workers, Services, Reservations y Reviews**. La integración de pagos se realizará mediante **Stripe** conforme a la Spike Story 1 del backlog.
 
 ### 5.2.7. RESTful API documentation
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<div align="center">
 
-Documentación OpenAPI / Swagger.
+**Documentación OpenAPI / Swagger**
 
 <img src="./assets/ux-ui/evidences/api-docs/api-docs.png" alt="API Docs" width="800">
 
-[Ver documentación de la API]([URL-SWAGGER])
+[Repositorio del Backend Web Services](https://github.com/paxtech-2026-10/Web-Services)
 
 </div>
+
+La documentación interactiva de la API se genera automáticamente con **springdoc-openapi** y se publica en la ruta `/swagger-ui.html` del servicio backend. Allí se pueden inspeccionar los recursos de Workers, Provider Profiles, Reservations, Services y Reviews, así como ejecutar peticiones de prueba contra cada endpoint.
 
 ### 5.2.8. Team Collaboration Insights
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<div align="center">
 
-Actividad de commits del equipo.
+**Actividad de commits del equipo**
 
-![Commits Implementation](./assets/images/screenshots/implementation-commits.png)
+<img src="./assets/images/screenshots/implementation-commits.png" alt="Commits Implementation" width="800">
 
 </div>
 
+A lo largo del Sprint #1 el equipo mantuvo un ritmo de commits constante con buena distribución entre integrantes. Las features fueron desarrolladas en paralelo y consolidadas en `develop` mediante Pull Requests revisados por al menos un compañero antes del merge, siguiendo el flujo GitFlow descrito en la sección 5.1.2.
+
 ## 5.3. Video About-the-Product
 
-[URL del video About-the-Product]([URL-VIDEO-PRODUCTO])
+En el video *About-the-Product* se presenta **uTime** mostrando sus características principales, funcionalidades y el valor que ofrece a los usuarios. El video incluye una demostración de la aplicación móvil, destacando las funcionalidades clave como la búsqueda de salones, reserva de citas, gestión de perfil y la experiencia de usuario completa que ofrece la plataforma.
+
+<div align="center">
+
+<img src="./assets/videos/video-product.jpg" alt="Video About the Product" width="700">
+
+[Ver Video About-the-Product en YouTube](https://youtu.be/7odg_s3aRbs)
+
+</div>
 
 <hr class="page-break">
 
