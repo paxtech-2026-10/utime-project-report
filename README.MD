@@ -8,19 +8,17 @@
 
 <h4 style="text-align: center"> Periodo: 202610 </h4>
 
-<h4 style="text-align: center"> [CÓDIGO-CURSO] | [NOMBRE-CURSO] </h4>
+<h4 style="text-align: center"> 1ASI0732 | Diseño de Experimentos de Ingeniería de Software </h4>
 
-<h4 style="text-align: center"> NRC: [NRC] </h4>
+<h4 style="text-align: center"> NRC: 10253 </h4>
 
-<h4 style="text-align: center"> Sección: [SECCIÓN] </h4>
-
-<h4 style="text-align: center"> Docente: [DOCENTE] </h4>
+<h4 style="text-align: center"> Docente: Juan Carlos Tinoco Licas </h4>
 
 <h3 style="text-align: center;"> Informe del Trabajo Final </h3>
 
-<h4 style="text-align: center"> Startup: [STARTUP] </h4>
+<h4 style="text-align: center"> Startup: PaxTech </h4>
 
-<h4 style="text-align: center"> Producto: [PRODUCTO] </h4>
+<h4 style="text-align: center"> Producto: uTime </h4>
 
 <h4 style="text-align: center">Integrantes:</h4>
 
@@ -35,16 +33,16 @@
          <td>Rivera Sosa, Eduardo Gael</td>
       </tr>
       <tr>
+         <td>U202310148</td>
+         <td>Roman Cruz, Natalia Bertha</td>
+      </tr>
+      <tr>
          <td>U202310609</td>
          <td>Sánchez Gonzales, Gabriel</td>
       </tr>
       <tr>
          <td>U202313397</td>
          <td>Oroncoy Almeyda, Alejandro Daniel</td>
-      </tr>
-      <tr>
-         <td>U202310148</td>
-         <td>Roman Cruz, Natalia Bertha</td>
       </tr>
    </table>
 </div>
@@ -59,7 +57,7 @@
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-|         |       |       |                             |
+| 1.0     | 26/04/2026 | Roman, Sanchez, Rivera, Oroncoy, Yum  | Capítulos I, II, III, IV y V |
 
 <hr class="page-break">
 
@@ -75,9 +73,9 @@ Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes
 |------------------------------|--------------------|
 | Yum Gonzales, Jorge Suin    | `jsyumg`  |
 | Rivera Sosa, Eduardo Gael     | `gael-rs`  |
-| [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
-| [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
-| [APELLIDOS Y NOMBRES 5]      | `[github-user-5]`  |
+| Roman Cruz, Natalia Bertha      | `natRC2005`  |
+| Sanchez Gonzales, Gabriel      | `yigabriel`  |
+| Oroncoy Almeyda, Alejandro Daniel      | `alejooroncoy`  |
 
 Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas principales:
 
@@ -97,8 +95,8 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 |----------------------------|----------------|
 | Jorge Suin Yum Gonzales    | To-Be Scenario Mapping, User Stories, Product Backlog y Impact Mapping |
 | Eduardo Gael Rivera Sosa   |   Startup profile, Solution Profile, Segmento Objetivo, Entrevistas.             |
-| [APELLIDOS Y NOMBRES 3]    |                |
-| [APELLIDOS Y NOMBRES 4]    |                |
+| Gabriel Sánchez Gonzales   | Style Guidelines, Information Architecture, Landing Page UI Design, Mobile Applications UX/UI Design, Mobile Applications Prototyping, Web Applications UX/UI Design,Web Applications Prototyping, Domain-Driven Software Architecture, Software Object-Oriented Design, Database Design               |
+| Natalia Bertha Roman Cruz    | Análisis competitivo, estrategias y técnicas frente a competidores, diseño, registro y análsis de entrevistas, user personas, user task matrix, user journey mapping, empathy mapping, as is scenario mapping y ubiquitous language |
 | [APELLIDOS Y NOMBRES 5]    |                |
 
 **GitHub Collaboration Insights**
@@ -109,7 +107,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 
 Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 
-![Insights - Network Graph](./assets/images/screenshots/insights-network-graph-tb1.png)
+![Insights - Network Graph](./assets/networkAv1.png)
 
 </div>
 
@@ -133,10 +131,7 @@ Análisis de cantidad de commits realizados por semana.
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
-  - [TB1](#tb1)
-  - [TP](#tp)
-  - [TB2](#tb2)
-  - [TF](#tf)
+  - [AV1](#av1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
@@ -147,15 +142,18 @@ Análisis de cantidad de commits realizados por semana.
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
       - [What (¿Qué?)](#what-qué)
-      - [When (¿Cuándo?)](#when-cuándo)
-      - [Where (¿Dónde?)](#where-dónde)
       - [Who (¿Quién?)](#who-quién)
+      - [Where (¿Dónde?)](#where-dónde)
+      - [When (¿Cuándo?)](#when-cuándo)
       - [Why (¿Por qué?)](#why-por-qué)
       - [How (¿Cómo?)](#how-cómo)
       - [How much (¿Cuánto?)](#how-much-cuánto)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+        - [Features](#features)
+        - [Business Outcomes](#business-outcomes)
+        - [User Benefits](#user-benefits)
         - [Business Assumptions](#business-assumptions)
         - [User Assumptions](#user-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
@@ -343,6 +341,8 @@ Análisis de cantidad de commits realizados por semana.
     - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+    - [Conclusiones](#conclusiones-1)
+    - [Recomendaciones](#recomendaciones)
 - [Video App Validation](#video-app-validation)
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
@@ -363,15 +363,13 @@ Análisis de cantidad de commits realizados por semana.
   <tbody>
     <tr>
       <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrolo de primer avance y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a onsumidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que realicé los cambios neesarios a los user personas, user matrix, user journey maps, empathy maps y as is scenarios. </td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
       <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.</td>
     </tr>
-    <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
-    </tr>
+     <td><strong>Sanchez Gonzales Gabriel</strong><br><b>AV1:</b> Durante este avance desarrollé múltiples entregables como Style Guidelines (web y mobile), Information Architecture (organization, labeling, navigation y searching systems), diseño UX/UI (wireframes, mockups, prototipos) tanto para web como mobile (iOS y Android), además de artefactos de arquitectura de software como Domain-Driven Design, diagramas de contexto, contenedores y componentes, junto con diseño orientado a objetos y modelado de base de datos.</td>
     <tr>
       <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.</td>
     </tr>
@@ -380,15 +378,13 @@ Análisis de cantidad de commits realizados por semana.
     </tr>
     <tr>
       <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue el revisar la información antes planteada de fotma en que podamos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconomiento de funcionalidades a implentar o necesidades a cubrir</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
       <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.</td>
     </tr>
-    <tr>
-      <td><strong>[APELLIDOS Y NOMBRES 3]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
-    </tr>
+    <td><strong>Sanchez Gonzales Gabriel</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.</td>
     <tr>
       <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.</td>
     </tr>
