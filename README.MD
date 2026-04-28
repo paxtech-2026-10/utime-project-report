@@ -2357,11 +2357,12 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 
 **Software Development**
 
-- **Landing Page (Web estática):** **HTML5 + CSS3 + Bootstrap**, editada en **WebStorm** y desplegada en GitHub Pages. Es la presencia web del producto durante el ciclo. Ruta de referencia: <https://www.jetbrains.com/webstorm>
+- **Landing Page:** **HTML5 + CSS3 + Bootstrap**, editada en **WebStorm** y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: <https://www.jetbrains.com/webstorm>
+- **Web Frontend (Aplicación Web):** **Angular** (TypeScript) sobre WebStorm, conforme a las wireframes y prototipos de §4.6 y §4.7. Su construcción inicia en el Sprint #2 y consume el backend Spring Boot mediante la Fake API durante el desarrollo. Ruta de referencia: <https://angular.dev>
 - **Mobile:** **Flutter (Dart)** como framework multiplataforma para construir desde un único codebase las aplicaciones nativas de **Android** e **iOS**, alineado con las guías de estilo descritas en 4.1.3.1 (HIG) y 4.1.3.2 (Material Design) y los prototipos de 4.5.1 y 4.5.2. Como IDE se utiliza **Android Studio** y la distribución se gestiona vía **Firebase App Distribution** durante el desarrollo. Ruta de referencia: <https://flutter.dev>
 - **Backend / API:** **Spring Boot (Java)** sobre **IntelliJ IDEA Ultimate**. IntelliJ provee soporte avanzado para Java/Kotlin, frameworks modernos y herramientas integradas de base de datos. Ruta de referencia: <https://www.jetbrains.com/idea>
 - **Fake API (mocks):** **json-server** sobre **Node.js**, usado durante las primeras iteraciones para desbloquear el desarrollo del frontend móvil mientras el backend Spring Boot se construye.
-- **Base de datos:** **PostgreSQL** gestionada en **Neon** para los servicios desplegados, con Spring Data JPA como capa de acceso. Ruta de referencia: <https://neon.tech>
+- **Base de datos:** **MySQL** gestionada en **Azure Database for MySQL — Flexible Server**, conforme al diagrama relacional de 4.10.1, con Spring Data JPA como capa de acceso. Ruta de referencia: <https://azure.microsoft.com/products/mysql>
 
 **Software Deployment**
 
@@ -2369,7 +2370,7 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 - **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: <https://www.gitkraken.com>
 - **GitHub Pages** — hosting estático para desplegar la **Landing Page** y los frontends estáticos. Ruta de referencia: <https://pages.github.com>
 - **Render** — plataforma de despliegue para APIs y servicios durante las etapas de desarrollo y pruebas. Ruta de referencia: <https://render.com>
-- **Microsoft Azure** — plataforma cloud utilizada para desplegar y escalar el backend Spring Boot mediante **Azure App Service** + base de datos PostgreSQL en Neon. La integración continua se automatiza con **GitHub Actions** apuntando al App Service. Ruta de referencia: <https://azure.microsoft.com>
+- **Microsoft Azure** — plataforma cloud utilizada para desplegar y escalar el backend Spring Boot mediante **Azure App Service** + base de datos Azure Database for MySQL. La integración continua se automatiza con **GitHub Actions** apuntando al App Service. Ruta de referencia: <https://azure.microsoft.com>
 - **Firebase Hosting / App Distribution** — usado para distribuir builds internos de la aplicación móvil Flutter al equipo. Ruta de referencia: <https://firebase.google.com>
 
 **Software Documentation**
@@ -2436,6 +2437,8 @@ Tipos permitidos: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `
 
 - **JavaScript (Landing):** se siguen las guías de Airbnb JavaScript Style Guide. Uso de `camelCase` para variables y funciones, `PascalCase` para clases, e `kebab-case` para nombres de archivos. La landing utiliza Bootstrap 5 como base de componentes y grid.
 
+- **TypeScript (Angular Web App):** se sigue la **Angular Style Guide oficial**. `kebab-case` para selectores y archivos, `PascalCase` para clases y componentes, `camelCase` para identificadores. Linter `@angular-eslint` con configuración `recommended`.
+
 - **Dart (Flutter):** se sigue la **Effective Dart Style Guide** de la documentación oficial. Nombres de clases en `PascalCase`, identificadores en `camelCase`, archivos y carpetas en `snake_case`. Linter `flutter_lints` activado por defecto.
 
 - **Java (Spring Boot):** se aplica la **Google Java Style Guide**. Indentación de 4 espacios, nombres de clases en `PascalCase`, métodos y variables en `camelCase`, paquetes en minúsculas.
@@ -2454,9 +2457,11 @@ El despliegue del producto se realiza diferenciando los componentes estáticos d
 4. En GitHub: **Settings > Pages** y seleccionar la rama (`main`) y la carpeta `/docs` como fuente.
 5. Esperar la verificación de GitHub. Una vez completado, se obtiene una URL pública del tipo `https://<org>.github.io/<repo>/`.
 
+**Web Frontend (Angular):** build de producción con `ng build --configuration production` y publicación del artefacto resultante (carpeta `dist/`) en GitHub Pages o **Azure Static Web Apps** mediante GitHub Actions.
+
 **Mobile (Flutter):** build APK / IPA mediante `flutter build apk` / `flutter build ipa` y distribución interna al equipo a través de **Firebase App Distribution**.
 
-**Backend (Spring Boot en Azure):** despliegue como **Azure App Service** con base de datos gestionada **PostgreSQL en Neon**. Las variables de entorno (cadena de conexión, secretos JWT, claves externas) se configuran en el panel **Configuration → Application settings** del App Service. La integración continua se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega al App Service en cada push a `main`.
+**Backend (Spring Boot en Azure):** despliegue como **Azure App Service** con base de datos gestionada **Azure Database for MySQL**. Las variables de entorno (cadena de conexión, secretos JWT, claves externas) se configuran en el panel **Configuration → Application settings** del App Service. La integración continua se automatiza mediante **GitHub Actions** que ejecuta tests, construye el JAR y despliega al App Service en cada push a `main`.
 
 **Mapeo de ambientes a ramas:**
 
@@ -2634,15 +2639,15 @@ Durante el Sprint #1 el equipo mantuvo una colaboración constante. La distribuc
 
 <div align="center">
 
-**Frontend Web — uTime (extensión informativa de la landing)**
+**Aplicación Web — uTime (preview del flujo de reserva)**
 
 <img src="./assets/ux-ui/evidences/frontend-web/frontend-evidence.png" alt="Frontend Evidence" width="800">
 
-[Acceder al sitio web](https://paxtech-2026-10.github.io/Landing-Page/) · [Repositorio](https://github.com/paxtech-2026-10/Landing-Page)
+[Repositorio Frontend Web (en planificación, Sprint #2)](https://github.com/paxtech-2026-10)
 
 </div>
 
-Para el alcance del Sprint #1, la presencia web del producto se concentra en la **Landing Page** (HTML5 + CSS3 + Bootstrap), que ofrece tanto la vitrina comercial como las secciones informativas (planes, contacto, registro y about-us). No se desarrolla una *single-page application* Angular separada; las vistas administrativas y operativas se delegan a la **aplicación móvil Flutter** descrita en 5.2.5, alineado con la priorización mobile-first del producto.
+La **aplicación web** de uTime se construirá con **Angular**, conforme a los wireframes (§4.6.1), wireflows (§4.6.2), mock-ups (§4.6.3) y user-flows (§4.6.4) aprobados en el Capítulo IV. Su flujo principal —selección de estilista → selección de fecha y hora → selección de método de pago— sigue la guía de estilo web detallada en §4.1.2. Para el Sprint #1 se entrega como evidencia la maqueta navegable basada en los mock-ups del Capítulo IV; el desarrollo Angular completo y su despliegue arrancan en el Sprint #2 consumiendo la Fake API y posteriormente el backend Spring Boot.
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -2667,7 +2672,7 @@ El Proveedor garantiza un uptime objetivo del **99.5% mensual**, medido sobre lo
 
 **4. Seguridad y privacidad de datos**
 
-- Cifrado en tránsito mediante **TLS 1.2 o superior** y cifrado en reposo en la base de datos gestionada (**PostgreSQL en Neon**).
+- Cifrado en tránsito mediante **TLS 1.2 o superior** y cifrado en reposo en la base de datos gestionada (**Azure Database for MySQL**).
 - **Backups diarios** con retención de 30 días.
 - Cumplimiento con la **Ley de Protección de Datos Personales del Perú (Ley N° 29733)** y su reglamento.
 - Los datos del Cliente y de sus usuarios finales son de propiedad exclusiva del Cliente y no son comercializados a terceros.
@@ -2716,7 +2721,7 @@ La aplicación móvil de uTime se construye con **Flutter** desde un único code
 
 </div>
 
-El backend RESTful se construye con **Spring Boot** y persistencia en **PostgreSQL (Neon)**, y se despliega como un **Azure App Service** automatizado mediante **GitHub Actions**. Durante el Sprint #1 se utiliza una **Fake API** basada en `json-server` para desbloquear el desarrollo del frontend móvil mientras se completan los bounded contexts del backend definitivo (IAM, Profiles, Workers, Services, Reservations, Reviews).
+El backend RESTful se construye con **Spring Boot** y persistencia en **MySQL (Azure Database for MySQL)**, conforme al diagrama relacional definido en §4.10.1, y se despliega como un **Azure App Service** automatizado mediante **GitHub Actions**. Durante el Sprint #1 se utiliza una **Fake API** basada en `json-server` para desbloquear el desarrollo del frontend móvil y de la aplicación web mientras se completan los bounded contexts del backend definitivo (IAM, Profiles, Workers, Services, Reservations, Reviews).
 
 ### 5.2.7. RESTful API documentation
 
