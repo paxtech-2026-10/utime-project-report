@@ -3202,17 +3202,7 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 
 # Bibliografía
 
-**Specialty Coffee Association (SCA).** (2022). *Annual Report: Certification and Professional Development Statistics*. [https://sca.coffee](https://sca.coffee)  
-**Euromonitor International.** (2023). *Coffee Shops Market in Latin America*. [https://www.euromonitor.com](https://www.euromonitor.com)  
-**Allied Market Research.** (2022). *Specialty Coffee Market by Product Type and Distribution Channel: Global Opportunity Analysis and Industry Forecast, 2021–2027*. [https://www.alliedmarketresearch.com](https://www.alliedmarketresearch.com)  
-**International Coffee Organization (ICO).** (2023). *World Coffee Consumption Statistics*. [https://www.ico.org](https://www.ico.org)  
-**Khononov, V.** (2022). *Learning Domain-Driven Design*. O’Reilly Media, Inc.[https://dl.ebooksworld.ir/books/Learning.Domain-](https://dl.ebooksworld.ir/books/Learning.Domain-)  
-[Driven.Design.9781098100131.EBooksWorld.ir.pdf](https://dl.ebooksworld.ir/books/Learning.Domain-)  
-**Evans, E.** (2003). *Domain-Driven Design: Tackling Complexity in the Heart of Software*. Domain  
-Language.[https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)  
-**Teams, A** (s, f.). Angular material. Angular Material. [https://material.angular.dev/](https://material.angular.dev/)  
-**Vernon, V.** (2016). Domain-Driven Design Distilled. [https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/](https://www.oreilly.com/library/view/domain-driven-design-distilled/9780134434964/)  
-**Refactorización y patrones de diseño.** (s/f). Refactoring.guru. Recuperado el 27 de abril de 2026, de https://refactoring.guru/es
+
 
 <hr class="page-break">
 
