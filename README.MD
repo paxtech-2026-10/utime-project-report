@@ -8,19 +8,17 @@
 
 <h4 style="text-align: center"> Periodo: 202610 </h4>
 
-<h4 style="text-align: center"> [CÓDIGO-CURSO] | [NOMBRE-CURSO] </h4>
+<h4 style="text-align: center"> 1ASI0732 | Diseño de Experimentos de Ingeniería de Software </h4>
 
-<h4 style="text-align: center"> NRC: [NRC] </h4>
+<h4 style="text-align: center"> NRC: 10253 </h4>
 
-<h4 style="text-align: center"> Sección: [SECCIÓN] </h4>
-
-<h4 style="text-align: center"> Docente: [DOCENTE] </h4>
+<h4 style="text-align: center"> Docente: Juan Carlos Tinoco Licas </h4>
 
 <h3 style="text-align: center;"> Informe del Trabajo Final </h3>
 
-<h4 style="text-align: center"> Startup: [STARTUP] </h4>
+<h4 style="text-align: center"> Startup: PaxTech </h4>
 
-<h4 style="text-align: center"> Producto: [PRODUCTO] </h4>
+<h4 style="text-align: center"> Producto: uTime </h4>
 
 <h4 style="text-align: center">Integrantes:</h4>
 
@@ -35,20 +33,16 @@
          <td>Rivera Sosa, Eduardo Gael</td>
       </tr>
       <tr>
-         <td>[CÓDIGO 2]</td>
-         <td>[APELLIDOS Y NOMBRES 2]</td>
+         <td>U202310148</td>
+         <td>Roman Cruz, Natalia Bertha</td>
       </tr>
       <tr>
-         <td>[CÓDIGO 3]</td>
-         <td>[APELLIDOS Y NOMBRES 3]</td>
+         <td>U202310609</td>
+         <td>Sanchez Gonzales, Gabriel</td>
       </tr>
       <tr>
-         <td>[CÓDIGO 4]</td>
-         <td>[APELLIDOS Y NOMBRES 4]</td>
-      </tr>
-      <tr>
-         <td>[CÓDIGO 5]</td>
-         <td>[APELLIDOS Y NOMBRES 5]</td>
+         <td>U202313397</td>
+         <td>Oroncoy Almeyda, Alejandro Daniel</td>
       </tr>
    </table>
 </div>
@@ -63,7 +57,7 @@
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-|         |       |       |                             |
+| 1.0     | 26/04/2026 | Roman, Sanchez, Rivera, Oroncoy, Yum  | Capítulos I, II, III, IV y V |
 
 <hr class="page-break">
 
@@ -79,9 +73,9 @@ Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes
 |------------------------------|--------------------|
 | Yum Gonzales, Jorge Suin    | `jsyumg`  |
 | Rivera Sosa, Eduardo Gael     | `gael-rs`  |
-| [APELLIDOS Y NOMBRES 3]      | `[github-user-3]`  |
-| [APELLIDOS Y NOMBRES 4]      | `[github-user-4]`  |
-| [APELLIDOS Y NOMBRES 5]      | `[github-user-5]`  |
+| Roman Cruz, Natalia Bertha      | `natRC2005`  |
+| Sanchez Gonzales, Gabriel      | `yigabriel`  |
+| Oroncoy Almeyda, Alejandro Daniel      | `alejooroncoy`  |
 
 Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas principales:
 
@@ -362,7 +356,7 @@ Análisis de cantidad de commits realizados por semana.
   <tbody>
     <tr>
       <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrolo de primer avance y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a onsumidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que realicé los cambios neesarios a los user personas, user matrix, user journey maps, empathy maps y as is scenarios. </td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -379,7 +373,7 @@ Análisis de cantidad de commits realizados por semana.
     </tr>
     <tr>
       <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
-      <td><strong>[APELLIDOS Y NOMBRES 1]</strong><br><b>AV1:</b> [Contenido pendiente]</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue el revisar la información antes planteada de fotma en que podamos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconomiento de funcionalidades a implentar o necesidades a cubrir</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -424,7 +418,7 @@ Como empresa, buscamos aportar valor al rubro mediante aplicaciones móviles y w
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
 | <img src="./assets/images/photos/jorge-foto.png" alt="Jorge Suin Yum Gonzales" width="200"> | Jorge Suin Yum Gonzales | U202210838 | Ingeniería de Software | Soy estudiante del 7° ciclo con 20 años. Tengo experiencia con diferentes lenguajes de programación y desarrollo de aplicaciones web en diversos frameworks, tanto en frontend como en backend. Soy una persona responsable y puntual, cualidades que aplico al trabajar de manera colaborativa con los integrantes de nuestro equipo. |
-| <img src="./assets/images/photos/natalia-foto.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | [CÓDIGO 2] | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
+| <img src="./assets/images/photos/natalia-foto.png" alt="Natalia Bertha Roman Cruz" width="200"> | Natalia Bertha Roman Cruz | U202310148 | Ingeniería de Software | Soy estudiante de la carrera de Ingeniería de Software y tengo 19 años. Me considero una persona dedicada y organizada, que se esfuerza por alcanzar sus logros. Dentro de este proyecto, me interesa poder aportar en gran parte en la codificación de las ideas planteadas. Espero que el equipo logre su objetivo y aprendamos lo más posible en el proceso. |
 |  |  |  |  |  |
 | <img src="./assets/images/photos/gael-photo.jpg" alt="Eduardo Gael Rivera Sosa" width="200"> | Eduardo Gael Rivera Sosa | U202312222 | Ingeniería de Software | Soy Gael, desarrollador Full Stack con enfoque en IA. Me gusta construir productos que realmente funcionen y aprender rápido lo que sea necesario para lograrlo. Soy proactivo, me adapto bien al trabajo en equipo y disfruto resolver problemas desde la raíz. Cuando algo se puede hacer mejor, lo digo. |
 |  |  |  |  |  |
