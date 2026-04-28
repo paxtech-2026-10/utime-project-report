@@ -113,17 +113,9 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Análisis de líneas de código añadidas por contribuyente.
+![alt text](./assets/image.png)
 
-![Insights - Contributors](./assets/images/screenshots/insights-contributor-tb1.png)
 
-</div>
-
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-Análisis de cantidad de commits realizados por semana.
-
-![Insights - Commits](./assets/images/screenshots/insights-commits-tb1.png)
 
 </div>
 
@@ -347,6 +339,7 @@ Análisis de cantidad de commits realizados por semana.
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [AV1](#av1-1)
 
 <hr class="page-break">
 
