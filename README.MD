@@ -257,6 +257,12 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 - [Capítulo VI: Product Verification \& Validation](#capítulo-vi-product-verification--validation)
   - [6.1. Testing Suites \& Validation](#61-testing-suites--validation)
     - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
+      - [6.1.1.1. Services Bounded Context](#6111-services-bounded-context)
+        - [6.1.1.1.1. Backend — Spring Boot](#61111-backend--spring-boot)
+        - [6.1.1.1.2. Mobile App — Flutter (iOS Mobile App)](#61112-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.1.3. Mobile App — Android (Kotlin)](#61113-mobile-app--android-kotlin)
+        - [6.1.1.1.4. Frontend Web — Angular](#61114-frontend-web--angular)
+        - [6.1.1.1.5. Resumen agregado (Services)](#61115-resumen-agregado-services)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
     - [6.1.4. Core System Tests](#614-core-system-tests)
@@ -695,7 +701,7 @@ El análisis competitivo es una herramienta clave para la toma de decisiones est
     </td>
     <td colspan="1" align="center">
     <p><b>Salon Pro</b></p>
-    <img src="https://i.imgur.com/WKnzVAz.png" alt="Salon Pro Logo" width="80">
+    <img src="https://i.imgur.com/WKnzVAz.png" alt="Salon Pro Logo" width="60">
     </td>
     <td colspan="1" align="center">
     <p><b>Beauty Salon</b></p>
@@ -2805,16 +2811,230 @@ En el video *About-the-Product* se presenta **uTime** mostrando sus característ
 
 ### 6.1.1. Core Entities Unit Tests
 
-**Framework:** [JUnit / Jest / PyTest / etc.]
+Los tests unitarios del proyecto se organizan por **bounded context**. Cada bounded context agrupa los tests de las plataformas que lo implementan (backend Spring Boot, app móvil Flutter para iOS, app móvil Android nativa y frontend web Angular). Cada test sigue la estructura **AAA** (Arrange / Act / Assert) y aísla las dependencias externas mediante mocks o fakes para que cada caso verifique únicamente la unidad bajo prueba.
 
-```
-// Ejemplo de test unitario
-// [Contenido pendiente]
+#### 6.1.1.1. Services Bounded Context
+
+Cobertura del bounded context **Services**: 47 tests distribuidos en 6 archivos (15 backend, 16 Flutter, 9 Android, 7 Angular).
+
+Durante la elaboración del set de tests del backend se descubrieron y corrigieron **dos bugs** en la lógica del bounded context:
+
+1. **`ServiceQueryServiceImpl#handle(GetServicesBySalonIdQuery)`** validaba la existencia del Provider consultando `serviceRepository.existsById(providerId)`, lo cual verifica si existe un *Service* con esa PK en lugar de verificar la existencia del *Provider*. Se corrigió delegando la validación al ACL `ProviderContextFacade` del bounded context Profiles.
+2. **`ServiceCommandServiceImpl#handle(UpdateServiceCommand)`** envolvía cualquier excepción de persistencia como `IllegalArgumentException`, ocultando la causa raíz y degradando un fallo de infraestructura (5xx) a un error de cliente (4xx). Se corrigió eliminando el `try/catch` redundante y dejando que las excepciones de JPA propaguen al manejador global.
+
+##### 6.1.1.1.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 + Mockito + AssertJ (incluidos en `spring-boot-starter-test`).
+
+**Ubicación:** `src/test/java/com/paxtech/utime/platform/services/application/internal/`
+
+```java
+@ExtendWith(MockitoExtension.class)
+class ServiceQueryServiceImplTest {
+
+    @Mock private ServiceRepository serviceRepository;
+    @Mock private ProviderContextFacade providerContextFacade;
+    @InjectMocks private ServiceQueryServiceImpl serviceQueryService;
+
+    @Test
+    @DisplayName("handle(GetBySalonId): throws SalonNotFoundException when the provider does not exist")
+    void handleGetBySalonId_throwsSalonNotFound_whenProviderDoesNotExist() {
+        // Arrange
+        var providerId = new ProviderId(5L);
+        when(providerContextFacade.fetchProviderById(5L)).thenReturn(Optional.empty());
+
+        // Act + Assert
+        assertThatThrownBy(() -> serviceQueryService.handle(new GetServicesBySalonIdQuery(providerId)))
+                .isInstanceOf(SalonNotFoundException.class)
+                .hasMessageContaining("5");
+    }
+}
 ```
 
 | Test ID | Entidad | Método probado | Resultado esperado | Estado |
 |---------|---------|----------------|--------------------|--------|
-|         |         |                |                    |        |
+| BE-CMD-01 | `ServiceCommandServiceImpl` | `handle(CreateServiceCommand)` con nombre único | Persiste el Service y retorna `Optional` no vacío | Passed |
+| BE-CMD-02 | `ServiceCommandServiceImpl` | `handle(CreateServiceCommand)` con nombre duplicado por provider | Lanza `IllegalArgumentException` con mensaje "already exists" | Passed |
+| BE-CMD-03 | `ServiceCommandServiceImpl` | `handle(DeleteServiceCommand)` cuando el id existe | Invoca `deleteById` sobre el repositorio | Passed |
+| BE-CMD-04 | `ServiceCommandServiceImpl` | `handle(DeleteServiceCommand)` cuando el id no existe | Lanza `IllegalArgumentException` con mensaje "does not exist" | Passed |
+| BE-CMD-05 | `ServiceCommandServiceImpl` | `handle(DeleteServiceCommand)` cuando el repositorio falla | Envuelve la excepción en `IllegalArgumentException` con mensaje "Error while deleting service" | Passed |
+| BE-CMD-06 | `ServiceCommandServiceImpl` | `handle(UpdateServiceCommand)` happy path | Actualiza name/duration/price y deja status/providerId intactos | Passed |
+| BE-CMD-07 | `ServiceCommandServiceImpl` | `handle(UpdateServiceCommand)` cuando el id no existe | Lanza `IllegalArgumentException` y no llama a `save` | Passed |
+| BE-CMD-08 | `ServiceCommandServiceImpl` | `handle(UpdateServiceCommand)` cuando `save` falla | Propaga la excepción original sin enmascararla | Passed |
+| BE-QRY-01 | `ServiceQueryServiceImpl` | `handle(GetAllServicesQuery)` con datos | Retorna la lista completa del repositorio | Passed |
+| BE-QRY-02 | `ServiceQueryServiceImpl` | `handle(GetAllServicesQuery)` sin datos | Retorna lista vacía | Passed |
+| BE-QRY-03 | `ServiceQueryServiceImpl` | `handle(GetServiceByIdQuery)` cuando el Service existe | Retorna `Optional` con el Service | Passed |
+| BE-QRY-04 | `ServiceQueryServiceImpl` | `handle(GetServiceByIdQuery)` cuando no existe | Retorna `Optional.empty()` | Passed |
+| BE-QRY-05 | `ServiceQueryServiceImpl` | `handle(GetServicesBySalonIdQuery)` con provider existente | Retorna los Services filtrados por providerId | Passed |
+| BE-QRY-06 | `ServiceQueryServiceImpl` | `handle(GetServicesBySalonIdQuery)` con provider sin Services | Retorna lista vacía | Passed |
+| BE-QRY-07 | `ServiceQueryServiceImpl` | `handle(GetServicesBySalonIdQuery)` con provider inexistente | Lanza `SalonNotFoundException` (validación vía `ProviderContextFacade`) | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./mvnw -Dtest='ServiceCommandServiceImplTest,ServiceQueryServiceImplTest' test
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/services/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Services en Spring Boot" width="900">
+</div>
+
+##### 6.1.1.1.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
+
+**Ubicación:** `test/features/service/domain/service_test.dart`
+
+```dart
+test('returns status=true for the string "active" in any case', () {
+  // Arrange
+  final json = {
+    'id': 1, 'name': 'Haircut', 'duration': 30,
+    'price': 50.0, 'providerId': 7, 'status': 'Active',
+  };
+
+  // Act
+  final service = Service.fromJson(json);
+
+  // Assert
+  expect(service.status, isTrue);
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| FL-01 | `Service` | `fromJson` con `status: true` (bool) | `status == true` | Passed |
+| FL-02 | `Service` | `fromJson` con `status: false` (bool) | `status == false` | Passed |
+| FL-03 | `Service` | `fromJson` con `status: 0` (num) | `status == false` | Passed |
+| FL-04 | `Service` | `fromJson` con `status: 1` (num no-cero) | `status == true` | Passed |
+| FL-05 | `Service` | `fromJson` con `status: "TRUE"` (string) | `status == true` (case-insensitive) | Passed |
+| FL-06 | `Service` | `fromJson` con `status: "Active"` (string) | `status == true` | Passed |
+| FL-07 | `Service` | `fromJson` con `status: "inactive"` (string) | `status == false` | Passed |
+| FL-08 | `Service` | `fromJson` sin el campo `status` | Default `status == true` | Passed |
+| FL-09 | `Service` | `fromJson` con `status: null` | Default `status == true` | Passed |
+| FL-10 | `Service` | `fromJson` con `name: null` | `name == ''` | Passed |
+| FL-11 | `Service` | `fromJson` con duration/price/providerId nulos | Defaults numéricos a 0 | Passed |
+| FL-12 | `Service` | `fromJson` con tipos numéricos mixtos (int↔double) | Coerción correcta a int/double | Passed |
+| FL-13 | `Service` | Roundtrip `toJson` → `fromJson` | Entidad preservada campo por campo | Passed |
+| FL-14 | `ServiceRequest` | `toJson` con `status` y `providerId` nulos | JSON omite ambos campos | Passed |
+| FL-15 | `ServiceRequest` | `toJson` con `status` y `providerId` presentes | JSON incluye ambos campos | Passed |
+| FL-16 | `ServiceRequest` | `fromService(Service)` | Copia todos los campos del Service de origen | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/service/domain/service_test.dart
+```
+
+##### 6.1.1.1.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 + `kotlinx-coroutines-core` (`runBlocking` para suspend functions). Sin librería de mocks: se usa una implementación fake de `ServiceService`.
+
+**Ubicación:** `app/src/test/java/com/paxtech/mobileapp/features/services/data/service/ServiceRepositoryImplTest.kt`
+
+```kotlin
+@Test
+fun `searchService returns matching services case-insensitively`() = runBlocking {
+    // Arrange
+    val payload = listOf(
+        dto(id = 1, name = "Haircut", providerId = 1),
+        dto(id = 2, name = "MANICURE", providerId = 1),
+        dto(id = 3, name = "Pedicure", providerId = 2)
+    )
+    val repo = ServiceRepositoryImpl(FakeServiceService(Response.success(payload)))
+
+    // Act
+    val result = repo.searchService("cure")
+
+    // Assert
+    assertEquals(2, result.size)
+    assertTrue(result.any { it.name == "MANICURE" })
+    assertTrue(result.any { it.name == "Pedicure" })
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| AN-01 | `ServiceRepositoryImpl` | `searchService` con coincidencias | Retorna los Services filtrados case-insensitive | Passed |
+| AN-02 | `ServiceRepositoryImpl` | `searchService` con query vacío | Retorna toda la lista (substring de "" matchea todo) | Passed |
+| AN-03 | `ServiceRepositoryImpl` | `searchService` sin coincidencias | Retorna lista vacía | Passed |
+| AN-04 | `ServiceRepositoryImpl` | `searchService` con respuesta HTTP 5xx | Retorna lista vacía sin lanzar excepción | Passed |
+| AN-05 | `ServiceRepositoryImpl` | `searchService` con body null | Retorna lista vacía | Passed |
+| AN-06 | `ServiceRepositoryImpl` | `searchService` mapeo DTO→domain | Cada campo (id/name/duration/price/providerId) se mapea correctamente | Passed |
+| AN-07 | `ServiceRepositoryImpl` | `getServiceByProviderId` con coincidencias | Retorna solo los Services cuyo `providerId` matchea | Passed |
+| AN-08 | `ServiceRepositoryImpl` | `getServiceByProviderId` sin coincidencias | Retorna lista vacía | Passed |
+| AN-09 | `ServiceRepositoryImpl` | `getServiceByProviderId` con respuesta HTTP 5xx | Retorna lista vacía sin lanzar excepción | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew :app:testDebugUnitTest --tests "com.paxtech.mobileapp.features.services.data.service.ServiceRepositoryImplTest" -Pandroid.overridePathCheck=true
+```
+
+> El flag `-Pandroid.overridePathCheck=true` es necesario porque la ruta del proyecto contiene caracteres no-ASCII ("Diseño") que AGP 8.13 bloquea por defecto en Windows.
+
+##### 6.1.1.1.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (configuración por defecto del workspace de Angular CLI 19).
+
+**Ubicación:** `src/app/services/services/` (co-localizados con el código de producción según convención de Angular).
+
+```typescript
+it('emits a generic error after retrying twice when the backend keeps failing', () => {
+  // Arrange
+  // BaseService.getAll() pipes retry(2) before catchError; three failures must be flushed.
+  let capturedError: Error | undefined;
+
+  // Act
+  service.getServices().subscribe({
+    next: () => fail('expected an error, got a value'),
+    error: err => (capturedError = err)
+  });
+  for (let attempt = 0; attempt < 3; attempt++) {
+    httpMock.expectOne(expectedUrl).flush(null, { status: 500, statusText: 'Internal Server Error' });
+  }
+
+  // Assert
+  expect(capturedError).toBeDefined();
+  expect(capturedError!.message).toContain('Something bad happened');
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WEB-01 | `ServiceAssembler` | `toEntityFromResource` con response completa | Mapea todos los campos al Service de dominio | Passed |
+| WEB-02 | `ServiceAssembler` | `toEntityFromResource` no leak de referencia | Retorna un objeto distinto al input | Passed |
+| WEB-03 | `ServiceAssembler` | `toEntitiesFromResponse` con array vacío | Retorna array vacío | Passed |
+| WEB-04 | `ServiceAssembler` | `toEntitiesFromResponse` con N elementos | Mapea cada elemento preservando el orden | Passed |
+| WEB-05 | `ServiceApiService` | `getServices()` happy path | GET a `/services` y mapeo vía `ServiceAssembler` | Passed |
+| WEB-06 | `ServiceApiService` | `getServices()` con backend vacío | Retorna array vacío | Passed |
+| WEB-07 | `ServiceApiService` | `getServices()` con `retry(2)` agotado | Tras 3 fallos consecutivos emite error genérico de `BaseService.handleError` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+ng test --configuration=services-only
+```
+
+> La configuración `services-only` está definida en `angular.json` → `architect.test.configurations` y restringe el bundle de Karma a los dos archivos de test del bounded context Services. Esto evita que los 71 fallos preexistentes en otros bounded contexts (scaffolds de `ng generate` sin configuración real de TestBed) bloqueen la verificación de la suite que nos compete.
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/services/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context Services en Karma y Jasmine" width="900">
+</div>
+
+##### 6.1.1.1.5. Resumen agregado (Services)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 + Mockito + AssertJ | 15 | 2 |
+| Mobile (Flutter / iOS) | flutter_test | 16 | 1 |
+| Mobile (Android / Kotlin) | JUnit 4 | 9 | 1 |
+| Frontend Web (Angular) | Karma + Jasmine | 7 | 2 |
+| **Total bounded context Services** | | **47** | **6** |
 
 ### 6.1.2. Core Integration Tests
 
