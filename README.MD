@@ -265,6 +265,7 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
         - [6.1.1.1.5. Resumen agregado (Services)](#61115-resumen-agregado-services)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+      - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
     - [6.1.4. Core System Tests](#614-core-system-tests)
   - [6.2. Static testing \& Verification](#62-static-testing--verification)
     - [6.2.1. Static Code Analysis](#621-static-code-analysis)
@@ -3051,24 +3052,140 @@ ng test --configuration=services-only
 
 ### 6.1.3. Core Behavior-Driven Development
 
-**Framework:** [Cucumber / SpecFlow / Behave]
+#### 6.1.3.1. Services Bounded Context
+
+Para el bounded context **Services**, se aplicó Behavior-Driven Development (BDD) a partir de la user story **US22 - Administración de servicios ofrecidos**, definida en el Product Backlog:
+
+> **Como** dueño/administrador, **quiero** agregar, editar o eliminar servicios, **para** mantener mi catálogo actualizado.
+
+Los escenarios automatizados corresponden a los dos criterios de aceptación definidos para **US22**: **"Registro de nuevo servicio"** y **"Eliminación de servicio registrado"**. Se eligieron porque cubren el comportamiento central del bounded context Services: mantener actualizado el catálogo del proveedor desde la interfaz web.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript)
+
+**Ubicación en el repositorio Frontend-Web-Applications:**
+
+- `e2e-bdd/features/services.feature`
+- `e2e-bdd/steps/services.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: Services
 
 ```gherkin
-Feature: [Nombre de la feature]
+# language: es
+@services @US22
+Característica: Administración de servicios ofrecidos
+  Como dueño o administrador
+  Quiero agregar, editar o eliminar servicios
+  Para mantener mi catálogo actualizado
 
-  Scenario: [Nombre del escenario]
-    Given [precondición]
-    When [acción]
-    Then [resultado esperado]
+  Escenario: Registro de nuevo servicio
+    Dado que el administrador proveedor está autenticado
+    Y se encuentra en la página de servicios
+    Cuando completa los datos necesarios para registrar un servicio llamado "Corte BDD" con duración 45 y precio 80
+    Entonces el sistema guarda el nuevo servicio
+    Y el servicio registrado aparece en el catálogo de servicios
+
+  Escenario: Eliminación de servicio registrado
+    Dado que el administrador proveedor está autenticado
+    Y tiene un servicio registrado llamado "Servicio BDD" en el catálogo
+    Y se encuentra en la página de servicios
+    Cuando elimina el servicio registrado del catálogo
+    Entonces el sistema retira el servicio del catálogo
+    Y el servicio eliminado ya no aparece en la página de servicios
 ```
+
+#### Step definition example
+
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions. Estos pasos usan Playwright para interactuar con la aplicación web real y verificar el comportamiento observable.
+
+```typescript
+When(
+  'completa los datos necesarios para registrar un servicio llamado {string} con duración {int} y precio {int}',
+  async function (serviceName: string, duration: number, price: number) {
+    this.registeredServiceName = `${serviceName} ${Date.now()}`;
+
+    await this.page.getByLabel(/Create first service|Add new service/i).click();
+
+    const dialog = this.page.getByRole('dialog', { name: 'New Service' });
+    await expect(dialog).toBeVisible();
+
+    const createServiceResponse = this.page.waitForResponse(response =>
+      new URL(response.url()).pathname === '/api/v1/services'
+      && response.request().method() === 'POST'
+    );
+
+    await dialog.getByRole('textbox', { name: 'Service name' }).fill(this.registeredServiceName);
+    await dialog.getByRole('spinbutton', { name: 'Duration in minutes' }).fill(String(duration));
+    await dialog.getByRole('spinbutton', { name: 'Price' }).fill(String(price));
+    await dialog.getByRole('button', { name: 'Create service' }).click();
+
+    this.serviceCreationStatus = (await createServiceResponse).status();
+  }
+);
+```
+
+#### Execution evidence
+
+Se ejecutaron los escenarios BDD contra la aplicación web Angular y el backend Spring Boot en ambiente local. Las pruebas abrieron la interfaz real con Playwright, autenticaron un proveedor de prueba, crearon un servicio desde la página de servicios, eliminaron un servicio existente y verificaron las respuestas de backend esperadas para `POST /api/v1/services` y `DELETE /api/v1/services/{id}`.
+
+Comando ejecutado:
+
+```powershell
+npm run bdd:services
+```
+
+Resultado:
+
+```text
+> frontend-web-applications@0.0.0 bdd:services
+> cucumber-js e2e-bdd/features/services.feature --tags @services
+
+...............
+
+2 scenarios (2 passed)
+11 steps (11 passed)
+0m03.052s (executing steps: 0m03.036s)
+```
+
+La ejecución confirma que la especificación BDD no solo está enlazada con step definitions, sino que valida el comportamiento real del sistema desde la interfaz del proveedor.
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
+|------------|-----------------|---------------|---------|--------|
+| US22 | Services | Registro de nuevo servicio | `e2e-bdd/features/services.feature` | Passed |
+| US22 | Services | Eliminación de servicio registrado | `e2e-bdd/features/services.feature` | Passed |
 
 ### 6.1.4. Core System Tests
 
-**Framework:** [Selenium / Cypress / Playwright]
+**Framework:** Playwright (TypeScript) — `e2e/` — Chromium
 
 | Test ID | Flujo de usuario | Navegador / Dispositivo | Resultado esperado | Estado |
 |---------|------------------|-------------------------|--------------------|--------|
-|         |                  |                         |                    |        |
+| SYS-01 | El proveedor inicia sesión con email y contraseña válidos desde `/iam/login` | Chromium (desktop) | Redirección a `/provider/homeProvider`; `providerId` almacenado en `localStorage` | ✅ Pasa |
+| SYS-02 | El proveedor crea un servicio desde la página `/provider/services` usando el diálogo "New Service" | Chromium (desktop) | El nuevo servicio aparece en la tabla de servicios | ✅ Pasa |
+| SYS-03 | El proveedor crea un miembro del personal (worker) desde el dashboard del proveedor | Chromium (desktop) | El worker creado aparece en la lista con nombre y especialización | ✅ Pasa |
+| SYS-04 | El cliente realiza una reserva completa: elige salón → servicio → worker → slot de calendario → confirma | Chromium (desktop) | La reserva y el pago se crean en el backend con los datos correctos; la UI redirige a la pantalla de pago con el enlace de Stripe | ✅ Pasa |
+| SYS-05 | El cliente se registra desde `/iam/register` con nombre, apellido, email y contraseña | Chromium (desktop) | Aparece snackbar "Account created successfully!" y la página redirige a `/iam/login` | ✅ Pasa |
+| SYS-06 | El proveedor elimina un servicio existente desde `/provider/services` | Chromium (desktop) | El endpoint `DELETE /api/v1/services/{id}` retorna 200; tras recargar la página el servicio ya no aparece en la tabla | ✅ Pasa |
+| SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | ✅ Pasa |
+| SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | ✅ Pasa |
+
+**Evidencia de ejecución — log completo (06/05/2026):**
+
+```
+Running 8 tests using 1 worker
+
+  ok 1 [chromium] › e2e\authentication.system.spec.ts:4:5 › SYS-01 provider signs in through the login page (2.7s)
+  ok 2 [chromium] › e2e\provider-views-reservation.system.spec.ts:13:5 › SYS-08 provider sees client reservation on the dashboard with all related data (1.1s)
+  ok 3 [chromium] › e2e\register.system.spec.ts:3:5 › SYS-05 client registers through the register page (4.4s)
+  ok 4 [chromium] › e2e\reservations.system.spec.ts:11:5 › SYS-04 client creates a reservation and reaches Stripe payment step (1.3s)
+  ok 5 [chromium] › e2e\salon-browse.system.spec.ts:9:5 › SYS-07 client navigates to salon detail from the client dashboard (1.1s)
+  ok 6 [chromium] › e2e\services.system.spec.ts:5:5 › SYS-02 provider creates a service from the services page (1.2s)
+  ok 7 [chromium] › e2e\services.system.spec.ts:24:5 › SYS-06 provider deletes a service from the services page (1.6s)
+  ok 8 [chromium] › e2e\workers.system.spec.ts:5:5 › SYS-03 provider creates a staff member from the dashboard (1.3s)
+
+  8 passed (23.4s)
+```
 
 ## 6.2. Static testing & Verification
 
