@@ -3169,6 +3169,7 @@ La ejecución confirma que la especificación BDD no solo está enlazada con ste
 | SYS-06 | El proveedor elimina un servicio existente desde `/provider/services` | Chromium (desktop) | El endpoint `DELETE /api/v1/services/{id}` retorna 200; tras recargar la página el servicio ya no aparece en la tabla | ✅ Pasa |
 | SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | ✅ Pasa |
 | SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | ✅ Pasa |
+| SYS-09 | El proveedor se registra desde la web ingresando una dirección y el cliente visualiza los salones ordenados por distancia desde su ubicación | Chromium (desktop con geolocalización simulada) | La dirección se transforma a coordenadas mediante geocoding y se guarda en `provider-profiles` como `dirección\|lat,lng`; el salón más cercano aparece antes que uno lejano y muestra distancia calculada | ✅ Pasa |
 
 **Evidencia de ejecución — log completo (06/05/2026):**
 
@@ -3185,6 +3186,16 @@ Running 8 tests using 1 worker
   ok 8 [chromium] › e2e\workers.system.spec.ts:5:5 › SYS-03 provider creates a staff member from the dashboard (1.3s)
 
   8 passed (23.4s)
+```
+
+**Evidencia adicional — SYS-09 (06/05/2026):**
+
+```
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\provider-address-distance.system.spec.ts:10:5 › SYS-09 provider registers with address and client sees salons ordered by distance (5.5s)
+
+  1 passed (7.3s)
 ```
 
 ## 6.2. Static testing & Verification
