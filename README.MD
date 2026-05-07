@@ -2806,8 +2806,6 @@ En el video *About-the-Product* se presenta **uTime** mostrando sus característ
 
 # Capítulo VI: Product Verification & Validation
 
-[Contenido pendiente]
-
 ## 6.1. Testing Suites & Validation
 
 ### 6.1.1. Core Entities Unit Tests
@@ -3036,6 +3034,366 @@ ng test --configuration=services-only
 | Mobile (Android / Kotlin) | JUnit 4 | 9 | 1 |
 | Frontend Web (Angular) | Karma + Jasmine | 7 | 2 |
 | **Total bounded context Services** | | **47** | **6** |
+
+#### 6.1.1.2. Workers Bounded Context
+
+Cobertura del bounded context **Workers**: 37 tests distribuidos en 11 archivos (14 backend, 13 Flutter, 3 Android, 7 Angular).
+
+Durante la elaboración del set de tests del bounded context Workers no se identificaron bugs funcionales adicionales en la lógica implementada.
+
+##### 6.1.1.2.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 + Mockito + AssertJ (incluidos en `spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/workers/application/internal/commandservices/WorkerCommandServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/workers/application/internal/queryservices/WorkerQueryServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/workers/domain/model/aggregates/WorkerTest.java`
+
+```java
+@ExtendWith(MockitoExtension.class)
+class WorkerCommandServiceImplTest {
+
+    @Mock
+    WorkerRepository workerRepository;
+
+    @Mock
+    ProviderContextFacade providerContextFacade;
+
+    @InjectMocks
+    WorkerCommandServiceImpl workerCommandService;
+
+    private CreateWorkerCommand validCreateCommand;
+
+    @BeforeEach
+    void setUp() {
+        validCreateCommand = new CreateWorkerCommand(
+                "Ana",
+                "Estilista",
+                "https://paxtech.examplea.jpg",
+                10L
+        );
+    }
+
+    @Test
+    void createWorkerOkTest() {
+        // Arrange
+        when(workerRepository.existsByNameAndProviderId(any(WorkerName.class), any(ProviderId.class)))
+                .thenReturn(false);
+        when(providerContextFacade.fetchProviderById(10L)).thenReturn(Optional.of(mock(Provider.class)));
+
+        // Act
+        Optional<Worker> result = workerCommandService.handle(validCreateCommand);
+
+        // Assert
+        assertThat(result).isPresent();
+        ArgumentCaptor<Worker> captor = ArgumentCaptor.forClass(Worker.class);
+        verify(workerRepository).save(captor.capture());
+        Worker saved = captor.getValue();
+        assertThat(saved.getName()).isEqualTo("Ana");
+        assertThat(saved.getSalonId()).isEqualTo(10L);
+    }
+
+    @Test
+    void createWorkerDuplicateTest() {
+        // Arrange
+        when(workerRepository.existsByNameAndProviderId(any(WorkerName.class), any(ProviderId.class)))
+                .thenReturn(true);
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(validCreateCommand))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("already exists");
+
+        verify(workerRepository, never()).save(any());
+        verify(providerContextFacade, never()).fetchProviderById(any());
+    }
+
+    @Test
+    void createWorkerMissingProviderTest() {
+        // Arrange
+        when(workerRepository.existsByNameAndProviderId(any(WorkerName.class), any(ProviderId.class)))
+                .thenReturn(false);
+        when(providerContextFacade.fetchProviderById(10L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(validCreateCommand))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Provider");
+
+        verify(workerRepository, never()).save(any());
+    }
+
+    @Test
+    void updateWorkerOkTest() {
+        // Arrange
+        Worker existing = new Worker(validCreateCommand);
+        UpdateWorkerCommand command = new UpdateWorkerCommand(1L, "Nuevo", "Barbero", "https://paxtech.examplen.jpg", 10L);
+        when(workerRepository.findById(1L)).thenReturn(Optional.of(existing));
+        when(workerRepository.save(any(Worker.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        // Act
+        Optional<Worker> result = workerCommandService.handle(command);
+
+        // Assert
+        assertThat(result).isPresent();
+        assertThat(result.get().getName()).isEqualTo("Nuevo");
+        assertThat(result.get().getSpecialization()).isEqualTo("Barbero");
+        verify(workerRepository).save(any(Worker.class));
+    }
+
+    @Test
+    void updateWorkerNotFoundTest() {
+        // Arrange
+        UpdateWorkerCommand command = new UpdateWorkerCommand(99L, "X", "Y", "https://paxtech.examplez.jpg", 1L);
+        when(workerRepository.findById(99L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(command))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("not found");
+
+        verify(workerRepository, never()).save(any());
+    }
+
+    @Test
+    void deleteWorkerOkTest() {
+        // Arrange
+        DeleteWorkerCommand command = new DeleteWorkerCommand(5L);
+        when(workerRepository.existsById(5L)).thenReturn(true);
+
+        // Act
+        workerCommandService.handle(command);
+
+        // Assert
+        verify(workerRepository).deleteById(5L);
+    }
+
+    @Test
+    void deleteWorkerNotFoundTest() {
+        // Arrange
+        DeleteWorkerCommand command = new DeleteWorkerCommand(5L);
+        when(workerRepository.existsById(5L)).thenReturn(false);
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(command))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("not found");
+
+        verify(workerRepository, never()).deleteById(any());
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-BE-01 | `WorkerCommandServiceImpl` | `handle(CreateWorkerCommand)` happy path | Crea worker válido y persiste con `save` | Passed |
+| WRK-BE-02 | `WorkerCommandServiceImpl` | `handle(CreateWorkerCommand)` duplicado | Lanza `IllegalArgumentException` y no persiste | Passed |
+| WRK-BE-03 | `WorkerCommandServiceImpl` | `handle(CreateWorkerCommand)` provider inexistente | Lanza `IllegalArgumentException` y no persiste | Passed |
+| WRK-BE-04 | `WorkerCommandServiceImpl` | `handle(UpdateWorkerCommand)` happy path | Actualiza datos del worker y persiste cambios | Passed |
+| WRK-BE-05 | `WorkerCommandServiceImpl` | `handle(UpdateWorkerCommand)` worker inexistente | Lanza `IllegalArgumentException` y no persiste | Passed |
+| WRK-BE-06 | `WorkerCommandServiceImpl` | `handle(DeleteWorkerCommand)` happy path | Elimina worker con `deleteById` | Passed |
+| WRK-BE-07 | `WorkerCommandServiceImpl` | `handle(DeleteWorkerCommand)` worker inexistente | Lanza `IllegalArgumentException` y no elimina | Passed |
+| WRK-BE-08 | `WorkerQueryServiceImpl` | `handle(GetWorkersBySalonIdQuery)` | Retorna lista filtrada por providerId | Passed |
+| WRK-BE-09 | `WorkerQueryServiceImpl` | `handle(GetWorkerByIdQuery)` | Retorna `Optional` con worker cuando existe | Passed |
+| WRK-BE-10 | `WorkerQueryServiceImpl` | `handle(GetAllWorkersQuery)` | Retorna la lista completa de workers | Passed |
+| WRK-BE-11 | `Worker` (aggregate) | constructor por value objects | Inicializa correctamente name/specialization/photoUrl/providerId | Passed |
+| WRK-BE-12 | `Worker` (aggregate) | constructor por `CreateWorkerCommand` | Mapea correctamente campos del command al aggregate | Passed |
+| WRK-BE-13 | `Worker` (aggregate) | `updateInformation` | Actualiza atributos y retorna la misma instancia (`this`) | Passed |
+| WRK-BE-14 | `Worker` (aggregate) | validación de comando inválido | Lanza `IllegalArgumentException` cuando `name` es inválido | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew test \
+  --tests "com.paxtech.utime.platform.workers.application.internal.commandservices.WorkerCommandServiceImplTest" \
+  --tests "com.paxtech.utime.platform.workers.application.internal.queryservices.WorkerQueryServiceImplTest" \
+  --tests "com.paxtech.utime.platform.workers.domain.model.aggregates.WorkerTest"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/workers/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Workers en Spring Boot" width="900">
+</div>
+
+##### 6.1.1.2.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` + `bloc_test` + `mocktail`.
+
+**Ubicación en `Ios-Mobile-App`:**
+
+- `test/features/team/domain/worker_test.dart`
+- `test/features/team/presentation/blocs/workers_bloc_test.dart`
+
+```dart
+blocTest<WorkersBloc, WorkersState>(
+  'LoadWorkers filtra por providerId y ordena alfabeticamente',
+  build: () {
+    when(() => teamService.getWorkers()).thenAnswer(
+      (_) async => const <Worker>[
+        Worker(id: 1, name: 'zeta', specialization: 'S1', photoUrl: '', providerId: 2),
+        Worker(id: 2, name: 'alpha', specialization: 'S2', photoUrl: '', providerId: 2),
+        Worker(id: 3, name: 'otro', specialization: 'S3', photoUrl: '', providerId: 7),
+      ],
+    );
+    when(() => onboardingService.getUserId()).thenAnswer((_) async => 44);
+    when(() => onboardingService.getJwtToken()).thenAnswer((_) async => 'jwt');
+    when(
+      () => authService.getProviderByUserId(userId: 44, token: 'jwt'),
+    ).thenAnswer((_) async => ProviderResponse(id: 2, companyName: 'Acme', userId: 44));
+    return buildBloc();
+  },
+  act: (bloc) => bloc.add(const LoadWorkers()),
+  expect: () => <Matcher>[
+    isA<WorkersState>().having((s) => s.status, 'status', WorkersStatus.loading),
+    isA<WorkersState>()
+        .having((s) => s.status, 'status', WorkersStatus.success)
+        .having((s) => s.workers.map((w) => w.name).toList(), 'names', <String>['alpha', 'zeta']),
+  ],
+);
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-FL-01 | `Worker` | `fromJson` con payload completo | Mapea `id/name/specialization/photoUrl/providerId` correctamente | Passed |
+| WRK-FL-02 | `Worker` | `fromJson` con campos opcionales ausentes | Aplica defaults (`''` y `0`) | Passed |
+| WRK-FL-03 | `Worker` | `copyWith` parcial | Actualiza solo campos enviados y preserva el resto | Passed |
+| WRK-FL-04 | `Worker` | `toJson` | Serializa todos los campos correctamente | Passed |
+| WRK-FL-05 | `WorkerRequest` | `fromWorker` con `photoUrl` vacía | Asigna URL por defecto (`https://example.com`) | Passed |
+| WRK-FL-06 | `WorkerRequest` | `toJson` con `photoUrl` vacía/espacios | Normaliza a URL por defecto | Passed |
+| WRK-FL-07 | `WorkerRequest` | `toJson` con `photoUrl` válida con espacios | Recorta espacios y conserva URL válida | Passed |
+| WRK-FL-08 | `WorkersBloc` | `LoadWorkers` con provider resuelto | Filtra por `providerId` y ordena workers alfabéticamente | Passed |
+| WRK-FL-09 | `WorkersBloc` | `LoadWorkers` sin `userId` | Retorna lista vacía y evita llamada a `getProviderByUserId` | Passed |
+| WRK-FL-10 | `WorkersBloc` | `LoadWorkers` con error en servicio | Emite estado `failure` con mensaje de error | Passed |
+| WRK-FL-11 | `WorkersBloc` | `CreateWorkerRequested` | Crea worker, lo inserta en estado y ordena lista | Passed |
+| WRK-FL-12 | `WorkersBloc` | `UpdateWorkerRequested` | Reemplaza worker actualizado y mantiene orden alfabético | Passed |
+| WRK-FL-13 | `WorkersBloc` | `DeleteWorkerRequested` | Elimina worker por id y limpia `deletingWorkerId` al finalizar | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/team/domain/worker_test.dart test/features/team/presentation/blocs/workers_bloc_test.dart
+```
+
+##### 6.1.1.2.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 + `kotlin.test` + `kotlinx-coroutines-core` (`runBlocking`), usando fake de `WorkerService` (sin libreria de mocks).
+
+**Ubicación:** `app/src/test/java/com/paxtech/mobileapp/features/clientDashboard/data/repository/WorkerRepositoryImplTest.kt`
+
+```kotlin
+@Test
+fun getAllWorkersWhenResponseIsSuccessful() = runBlocking {
+    val dtos = listOf(
+        WorkerDto(
+            id = 1L,
+            name = "Ana Lopez",
+            specialization = "Maquillista",
+            photoUrl = "https://example.com/ana.jpg",
+            providerId = 10L
+        ),
+        WorkerDto(
+            id = 2L,
+            name = "Luis Perez",
+            specialization = null,
+            photoUrl = null,
+            providerId = 20L
+        )
+    )
+    val repository = WorkerRepositoryImpl(FakeWorkerService(allWorkersResponse = Response.success(dtos)))
+
+    val result = repository.getAllWorkers()
+
+    assertTrue(result.isSuccess)
+    assertEquals(
+        listOf(
+            Worker(1L, "Ana Lopez", "Maquillista", "https://example.com/ana.jpg", 10L),
+            Worker(2L, "Luis Perez", null, null, 20L)
+        ),
+        result.getOrNull()
+    )
+}
+```
+
+| Test ID | Entidad | Metodo probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-AN-01 | `WorkerRepositoryImpl` | `getAllWorkers()` con respuesta HTTP 200 y payload valido | Retorna `Result.success` y mapea DTO -> dominio correctamente | Passed |
+| WRK-AN-02 | `WorkerRepositoryImpl` | `getAllWorkers()` con respuesta HTTP no exitosa (404) | Retorna `Result.failure` con mensaje `HTTP 404` | Passed |
+| WRK-AN-03 | `WorkerRepositoryImpl` | `getAllWorkers()` cuando el servicio lanza excepcion de red | Retorna `Result.failure` propagando `IOException` | Passed |
+
+**Comando de ejecucion:**
+
+```bash
+./gradlew :app:testDebugUnitTest --tests "com.paxtech.mobileapp.features.clientDashboard.data.repository.WorkerRepositoryImplTest" -Pandroid.overridePathCheck=true
+```
+
+##### 6.1.1.2.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (Angular TestBed + HttpClientTestingModule).
+
+**Ubicacion en `Frontend-Web-Application`:**
+
+- `src/app/dashboard/models/worker.entity.spec.ts`
+- `src/app/dashboard/services/worker.assembler.spec.ts`
+- `src/app/dashboard/services/worker-api.service.spec.ts`
+- `src/app/dashboard/components/staff-item/staff-item.component.spec.ts`
+- `src/app/dashboard/components/staff-list/staff-list.component.spec.ts`
+
+```typescript
+it('should fetch workers from api and map response', () => {
+  const response: WorkerResource[] = [
+    {
+      id: 1,
+      name: 'Andrea',
+      specialization: 'Nails',
+      photoUrl: 'https://example.com/a.jpg',
+      providerId: 3
+    }
+  ];
+
+  service.getWorkers().subscribe((workers) => {
+    expect(workers).toEqual(response);
+  });
+
+  const req = httpMock.expectOne(`${environment.serverBaseUrl}/workers`);
+  expect(req.request.method).toBe('GET');
+  req.flush(response);
+});
+```
+
+| Test ID | Entidad | Metodo probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-WEB-01 | `Worker` | constructor por defecto | Inicializa `id/providerId` en `0` y strings en `''` | Passed |
+| WRK-WEB-02 | `WorkerAssembler` | `toEntityFromResource` | Mapea un `WorkerResource` a entidad `Worker` sin perdida de campos | Passed |
+| WRK-WEB-03 | `WorkerAssembler` | `toEntitiesFromResponse` | Mapea lista de resources preservando cantidad y contenido | Passed |
+| WRK-WEB-04 | `WorkerApiService` | instancia del servicio | Se crea correctamente en TestBed | Passed |
+| WRK-WEB-05 | `WorkerApiService` | `getWorkers()` | Ejecuta `GET /workers` y retorna respuesta mapeada | Passed |
+| WRK-WEB-06 | `StaffItemComponent` | render de worker | Muestra nombre, especializacion e imagen del worker | Passed |
+| WRK-WEB-07 | `StaffListComponent` | render de lista | Renderiza un `app-staff-item` por cada worker recibido | Passed |
+
+**Comando de ejecucion:**
+
+```bash
+ng test --include="src/app/dashboard/models/worker.entity.spec.ts" --include="src/app/dashboard/services/worker.assembler.spec.ts" --include="src/app/dashboard/services/worker-api.service.spec.ts" --include="src/app/dashboard/components/staff-item/staff-item.component.spec.ts" --include="src/app/dashboard/components/staff-list/staff-list.component.spec.ts"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/workers/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context Workers en Karma y Jasmine" width="900">
+</div>
+
+##### 6.1.1.2.5. Resumen agregado (Workers)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 + Mockito + AssertJ | 14 | 3 |
+| Mobile (Flutter / iOS) | flutter_test + bloc_test + mocktail | 13 | 2 |
+| Mobile (Android / Kotlin) | JUnit 4 + kotlin.test | 3 | 1 |
+| Frontend Web (Angular) | Karma + Jasmine | 7 | 5 |
+| **Total bounded context Workers** | | **37** | **11** |
 
 ### 6.1.2. Core Integration Tests
 
