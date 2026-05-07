@@ -3409,15 +3409,15 @@ Un hallazgo relevante que los tests documentan explícitamente: el `ServiceContr
 
 | Test ID | Componentes integrados | Escenario | Resultado esperado | Estado |
 |---------|------------------------|-----------|--------------------|--------|
-| IT-SVC-01 | Controller → CommandService → Repository | `POST /api/v1/services` con datos válidos | 201 Created; body con `id`, `name`, `duration`, `price`, `providerId` | ✅ Pasa |
-| IT-SVC-02 | Controller → CommandService → Repository | `POST /api/v1/services` con mismo nombre para providers distintos | Ambas peticiones devuelven 201 | ✅ Pasa |
-| IT-SVC-03 | Controller → CommandService → Repository | `POST /api/v1/services` con nombre duplicado para el mismo provider | `IllegalArgumentException` ("already exists") — HTTP 500 en producción | ✅ Pasa |
-| IT-SVC-04 | Controller → QueryService → Repository | `GET /api/v1/services` sin datos previos | 200 OK con array vacío `[]` | ✅ Pasa |
-| IT-SVC-05 | Controller → QueryService → Repository | `GET /api/v1/services` tras crear dos servicios | 200 OK con los dos servicios en el array | ✅ Pasa |
-| IT-SVC-06 | Controller → CommandService → Repository | `PUT /api/v1/services/{id}` sobre servicio existente | 200 OK con nombre, duración y precio actualizados | ✅ Pasa |
-| IT-SVC-07 | Controller → CommandService → Repository | `PUT /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | ✅ Pasa |
-| IT-SVC-08 | Controller → CommandService → Repository | `DELETE /api/v1/services/{id}` sobre servicio existente | 200 OK; GET subsecuente devuelve array vacío | ✅ Pasa |
-| IT-SVC-09 | Controller → CommandService → Repository | `DELETE /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | ✅ Pasa |
+| IT-SVC-01 | Controller → CommandService → Repository | `POST /api/v1/services` con datos válidos | 201 Created; body con `id`, `name`, `duration`, `price`, `providerId` | Pasa |
+| IT-SVC-02 | Controller → CommandService → Repository | `POST /api/v1/services` con mismo nombre para providers distintos | Ambas peticiones devuelven 201 | Pasa |
+| IT-SVC-03 | Controller → CommandService → Repository | `POST /api/v1/services` con nombre duplicado para el mismo provider | `IllegalArgumentException` ("already exists") — HTTP 500 en producción | Pasa |
+| IT-SVC-04 | Controller → QueryService → Repository | `GET /api/v1/services` sin datos previos | 200 OK con array vacío `[]` | Pasa |
+| IT-SVC-05 | Controller → QueryService → Repository | `GET /api/v1/services` tras crear dos servicios | 200 OK con los dos servicios en el array | Pasa |
+| IT-SVC-06 | Controller → CommandService → Repository | `PUT /api/v1/services/{id}` sobre servicio existente | 200 OK con nombre, duración y precio actualizados | Pasa |
+| IT-SVC-07 | Controller → CommandService → Repository | `PUT /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | Pasa |
+| IT-SVC-08 | Controller → CommandService → Repository | `DELETE /api/v1/services/{id}` sobre servicio existente | 200 OK; GET subsecuente devuelve array vacío | Pasa |
+| IT-SVC-09 | Controller → CommandService → Repository | `DELETE /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | Pasa |
 
 **Evidencia de ejecución — log completo (07/05/2026):**
 
@@ -3432,6 +3432,70 @@ Un hallazgo relevante que los tests documentan explícitamente: el `ServiceContr
 ```bash
 ./mvnw test -Dtest="ServiceControllerIT"
 ```
+
+#### Bounded Context: Workers
+
+**Frameworks y suites consideradas:**
+
+- **Backend (Spring Boot):** `SpringBootTest + MockMvc + H2` (`WorkersControllerIntegrationTest`) y `DataJpaTest + H2` (`WorkerCommandServiceImplIntegrationTest`, `WorkerQueryServiceImplIntegrationTest`).
+- **Mobile Android (Kotlin):** `MockWebServer + Retrofit real + Gson` (`WorkerRepositoryImplIntegrationTest`).
+- **Frontend Web (Angular):** Karma + Jasmine en specs de integración de flujo de workers (`*.workers.integration.spec.ts`).
+
+Las pruebas de integración del bounded context **Workers** validan el comportamiento extremo a extremo por capas: HTTP/controller en backend, persistencia real con H2 en servicios de aplicación, consumo HTTP real simulado en Android mediante `MockWebServer`, e integración de componentes + servicios en Angular con render de `staff-list/staff-item`.
+
+| Test ID | Plataforma | Componentes integrados | Escenario | Resultado esperado | Estado |
+|---------|------------|------------------------|-----------|--------------------|--------|
+| IT-WRK-BE-01 | Backend | `WorkersController` -> CommandService -> Repository | `POST /api/v1/workers` con payload válido | 201 Created con `name` y `providerId` correctos | Pasa |
+| IT-WRK-BE-02 | Backend | `WorkersController` -> QueryService -> Repository | `GET /api/v1/workers/{id}` con worker existente | 200 OK con worker persistido | Pasa |
+| IT-WRK-BE-03 | Backend | `WorkersController` -> CommandService -> Repository | `PUT /api/v1/workers/{id}` sobre worker existente | 200 OK con datos actualizados | Pasa |
+| IT-WRK-BE-04 | Backend | `WorkersController` -> CommandService -> Repository | `DELETE /api/v1/workers/{id}` sobre worker existente | 200 OK y eliminación efectiva | Pasa |
+| IT-WRK-BE-05 | Backend | Spring Security -> `WorkersController` | acceso sin autenticación a `/api/v1/workers` | 401 Unauthorized | Pasa |
+| IT-WRK-BE-06 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | creación de worker desde command service | Persiste registro y retorna `Optional` presente | Pasa |
+| IT-WRK-BE-07 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | actualización de worker existente | Cambios persistidos en nombre/especialización/providerId | Pasa |
+| IT-WRK-BE-08 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | eliminación de worker existente | Worker ya no existe en repositorio | Pasa |
+| IT-WRK-BE-09 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | creación duplicada por nombre/provider | Lanza `IllegalArgumentException` (`already exists`) | Pasa |
+| IT-WRK-BE-10 | Backend | `WorkerQueryServiceImpl` + Repository (H2) | consulta por `providerId` | Retorna solo workers del provider consultado | Pasa |
+| IT-WRK-BE-11 | Backend | `WorkerQueryServiceImpl` + Repository (H2) | consulta por `id` | Retorna `Optional` con worker existente | Pasa |
+| IT-WRK-BE-12 | Backend | `WorkerQueryServiceImpl` + Repository (H2) | consulta global (`GetAllWorkersQuery`) | Retorna lista con workers persistidos | Pasa |
+| IT-WRK-AN-01 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | respuesta HTTP 200 con JSON válido | `Result.success` con mapeo correcto de lista | Pasa |
+| IT-WRK-AN-02 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | respuesta HTTP 200 con `[]` | `Result.success` con lista vacía | Pasa |
+| IT-WRK-AN-03 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | respuesta HTTP 500 | `Result.failure` con mensaje `HTTP 500` | Pasa |
+| IT-WRK-AN-04 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | payload JSON malformado | `Result.failure` con excepción de parseo | Pasa |
+| IT-WRK-WEB-01 | Frontend Web | `ProfessionalDashboardComponent` + `WorkerApiService` + `StaffListComponent` | carga workers del provider autenticado | filtra por provider y renderiza 2 `app-staff-item` | Pasa |
+| IT-WRK-WEB-02 | Frontend Web | `AppointmentMakerComponent` + `WorkerApiService` + `StaffListComponent` | carga workers en flujo de reserva | selecciona worker inicial y renderiza lista completa | Pasa |
+
+**Comandos de ejecución:**
+
+```bash
+# Backend (Web-Services)
+./mvnw test -Dtest="WorkersControllerIntegrationTest,WorkerCommandServiceImplIntegrationTest,WorkerQueryServiceImplIntegrationTest"
+
+# Mobile Android (Mobile-App)
+./gradlew :app:testDebugUnitTest --tests "com.paxtech.mobileapp.features.clientDashboard.data.repository.WorkerRepositoryImplIntegrationTest" -Pandroid.overridePathCheck=true
+
+# Frontend Web (Frontend-Web-Application)
+ng test --include="src/app/dashboard/pages/professional-dashboard/professional-dashboard.workers.integration.spec.ts" --include="src/app/appointments/pages/appointment-maker/appointment-maker.workers.integration.spec.ts"
+```
+
+**Evidencia de ejecución — log completo (07/05/2026):**
+
+**Backend (Spring Boot):**
+
+<div align="center">
+  <img src="./assets/testing/integration/workers/backend-springboot-integration-tests.png" alt="Ejecución de integration tests backend del bounded context Workers en Spring Boot" width="900">
+</div>
+
+**Mobile Android (Kotlin):**
+
+<div align="center">
+  <img src="./assets/testing/integration/workers/mobile-android-integration-tests.png" alt="Ejecución de integration tests Android del bounded context Workers" width="900">
+</div>
+
+**Frontend Web (Angular):**
+
+<div align="center">
+  <img src="./assets/testing/integration/workers/frontend-angular-integration-tests.png" alt="Ejecución de integration tests frontend del bounded context Workers en Angular" width="900">
+</div>
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -3546,15 +3610,15 @@ La ejecución confirma que la especificación BDD no solo está enlazada con ste
 
 | Test ID | Flujo de usuario | Navegador / Dispositivo | Resultado esperado | Estado |
 |---------|------------------|-------------------------|--------------------|--------|
-| SYS-01 | El proveedor inicia sesión con email y contraseña válidos desde `/iam/login` | Chromium (desktop) | Redirección a `/provider/homeProvider`; `providerId` almacenado en `localStorage` | ✅ Pasa |
-| SYS-02 | El proveedor crea un servicio desde la página `/provider/services` usando el diálogo "New Service" | Chromium (desktop) | El nuevo servicio aparece en la tabla de servicios | ✅ Pasa |
-| SYS-03 | El proveedor crea un miembro del personal (worker) desde el dashboard del proveedor | Chromium (desktop) | El worker creado aparece en la lista con nombre y especialización | ✅ Pasa |
-| SYS-04 | El cliente realiza una reserva completa: elige salón → servicio → worker → slot de calendario → confirma | Chromium (desktop) | La reserva y el pago se crean en el backend con los datos correctos; la UI redirige a la pantalla de pago con el enlace de Stripe | ✅ Pasa |
-| SYS-05 | El cliente se registra desde `/iam/register` con nombre, apellido, email y contraseña | Chromium (desktop) | Aparece snackbar "Account created successfully!" y la página redirige a `/iam/login` | ✅ Pasa |
-| SYS-06 | El proveedor elimina un servicio existente desde `/provider/services` | Chromium (desktop) | El endpoint `DELETE /api/v1/services/{id}` retorna 200; tras recargar la página el servicio ya no aparece en la tabla | ✅ Pasa |
-| SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | ✅ Pasa |
-| SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | ✅ Pasa |
-| SYS-09 | El proveedor se registra desde la web ingresando una dirección y el cliente visualiza los salones ordenados por distancia desde su ubicación | Chromium (desktop con geolocalización simulada) | La dirección se transforma a coordenadas mediante geocoding y se guarda en `provider-profiles` como `dirección\|lat,lng`; el salón más cercano aparece antes que uno lejano y muestra distancia calculada | ✅ Pasa |
+| SYS-01 | El proveedor inicia sesión con email y contraseña válidos desde `/iam/login` | Chromium (desktop) | Redirección a `/provider/homeProvider`; `providerId` almacenado en `localStorage` | Pasa |
+| SYS-02 | El proveedor crea un servicio desde la página `/provider/services` usando el diálogo "New Service" | Chromium (desktop) | El nuevo servicio aparece en la tabla de servicios | Pasa |
+| SYS-03 | El proveedor crea un miembro del personal (worker) desde el dashboard del proveedor | Chromium (desktop) | El worker creado aparece en la lista con nombre y especialización | Pasa |
+| SYS-04 | El cliente realiza una reserva completa: elige salón → servicio → worker → slot de calendario → confirma | Chromium (desktop) | La reserva y el pago se crean en el backend con los datos correctos; la UI redirige a la pantalla de pago con el enlace de Stripe | Pasa |
+| SYS-05 | El cliente se registra desde `/iam/register` con nombre, apellido, email y contraseña | Chromium (desktop) | Aparece snackbar "Account created successfully!" y la página redirige a `/iam/login` | Pasa |
+| SYS-06 | El proveedor elimina un servicio existente desde `/provider/services` | Chromium (desktop) | El endpoint `DELETE /api/v1/services/{id}` retorna 200; tras recargar la página el servicio ya no aparece en la tabla | Pasa |
+| SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | Pasa |
+| SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | Pasa |
+| SYS-09 | El proveedor se registra desde la web ingresando una dirección y el cliente visualiza los salones ordenados por distancia desde su ubicación | Chromium (desktop con geolocalización simulada) | La dirección se transforma a coordenadas mediante geocoding y se guarda en `provider-profiles` como `dirección\|lat,lng`; el salón más cercano aparece antes que uno lejano y muestra distancia calculada | Pasa |
 
 **Evidencia de ejecución — log completo (06/05/2026):**
 
@@ -3599,12 +3663,12 @@ Las pruebas se ejecutan contra el backend real desplegado en Azure (`https://pax
 
 | Test ID | Flujo de usuario | Plataforma | Resultado esperado | Estado |
 |---------|-----------------|------------|--------------------|--------|
-| SYS-FL-01 | El proveedor se registra con email, contraseña y nombre de empresa, luego inicia sesión | Windows Desktop | Pantalla de inicio muestra "Bienvenido" y el nombre de la empresa | ✅ Pasa |
-| SYS-FL-02 | El proveedor crea un servicio desde la pestaña "Servicios" usando el formulario de nuevo servicio | Windows Desktop | El servicio aparece en la lista de servicios | ✅ Pasa |
-| SYS-FL-03 | El proveedor crea un trabajador desde la pestaña "Trabajadores" con nombre y especialización | Windows Desktop | El trabajador aparece en la lista del equipo | ✅ Pasa |
-| SYS-FL-06 | El proveedor elimina un servicio creado previamente por API | Windows Desktop | El servicio desaparece de la lista tras confirmar la eliminación | ✅ Pasa |
-| SYS-FL-08 | El proveedor visualiza en el calendario la reserva de un cliente creada por API | Windows Desktop | El nombre del servicio aparece en el calendario | ✅ Pasa |
-| SYS-FL-09 | El proveedor navega al formulario de edición de ubicación desde su perfil | Windows Desktop | La pantalla "Editar ubicación" carga con el botón "Cambiar ubicación" visible | ✅ Pasa |
+| SYS-FL-01 | El proveedor se registra con email, contraseña y nombre de empresa, luego inicia sesión | Windows Desktop | Pantalla de inicio muestra "Bienvenido" y el nombre de la empresa | Pasa |
+| SYS-FL-02 | El proveedor crea un servicio desde la pestaña "Servicios" usando el formulario de nuevo servicio | Windows Desktop | El servicio aparece en la lista de servicios | Pasa |
+| SYS-FL-03 | El proveedor crea un trabajador desde la pestaña "Trabajadores" con nombre y especialización | Windows Desktop | El trabajador aparece en la lista del equipo | Pasa |
+| SYS-FL-06 | El proveedor elimina un servicio creado previamente por API | Windows Desktop | El servicio desaparece de la lista tras confirmar la eliminación | Pasa |
+| SYS-FL-08 | El proveedor visualiza en el calendario la reserva de un cliente creada por API | Windows Desktop | El nombre del servicio aparece en el calendario | Pasa |
+| SYS-FL-09 | El proveedor navega al formulario de edición de ubicación desde su perfil | Windows Desktop | La pantalla "Editar ubicación" carga con el botón "Cambiar ubicación" visible | Pasa |
 
 **Evidencia de ejecución — log completo (07/05/2026):**
 
