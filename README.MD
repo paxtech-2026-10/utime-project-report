@@ -267,6 +267,8 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
     - [6.1.4. Core System Tests](#614-core-system-tests)
+      - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
+      - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integrationtest)
   - [6.2. Static testing \& Verification](#62-static-testing--verification)
     - [6.2.1. Static Code Analysis](#621-static-code-analysis)
       - [6.2.1.1. Coding standard \& Code conventions](#6211-coding-standard--code-conventions)
@@ -3039,16 +3041,39 @@ ng test --configuration=services-only
 
 ### 6.1.2. Core Integration Tests
 
-**Framework:** [herramienta]
+#### Bounded Context: Services
 
-```
-// Ejemplo de test de integración
-// [Contenido pendiente]
-```
+**Framework:** Spring Boot Test + MockMvc + H2 (in-memory) — `src/test/java/.../services/interfaces/rest/ServiceControllerIT.java`
+
+Las pruebas ejercen la pila completa **HTTP → Spring Security → Controller → Service → Repository → H2** sin ningún mock. La base de datos H2 reemplaza a PostgreSQL durante los tests mediante `src/test/resources/application.properties`; Flyway se deshabilita y Hibernate crea/destruye el esquema en cada ejecución (`ddl-auto=create-drop`). Los endpoints de servicios son `permitAll()` en `WebSecurityConfiguration`, por lo que no se requiere token JWT.
+
+Un hallazgo relevante que los tests documentan explícitamente: el `ServiceController` no tiene `@ExceptionHandler` ni existe un `@ControllerAdvice` global. Cuando el servicio lanza `IllegalArgumentException` por violaciones de regla de negocio (nombre duplicado, ID inexistente), MockMvc relanza la excepción en lugar de producir una respuesta HTTP — lo que equivale a HTTP 500 en el servidor real. Los tres tests de error validan esta cadena de excepción.
 
 | Test ID | Componentes integrados | Escenario | Resultado esperado | Estado |
 |---------|------------------------|-----------|--------------------|--------|
-|         |                        |           |                    |        |
+| IT-SVC-01 | Controller → CommandService → Repository | `POST /api/v1/services` con datos válidos | 201 Created; body con `id`, `name`, `duration`, `price`, `providerId` | ✅ Pasa |
+| IT-SVC-02 | Controller → CommandService → Repository | `POST /api/v1/services` con mismo nombre para providers distintos | Ambas peticiones devuelven 201 | ✅ Pasa |
+| IT-SVC-03 | Controller → CommandService → Repository | `POST /api/v1/services` con nombre duplicado para el mismo provider | `IllegalArgumentException` ("already exists") — HTTP 500 en producción | ✅ Pasa |
+| IT-SVC-04 | Controller → QueryService → Repository | `GET /api/v1/services` sin datos previos | 200 OK con array vacío `[]` | ✅ Pasa |
+| IT-SVC-05 | Controller → QueryService → Repository | `GET /api/v1/services` tras crear dos servicios | 200 OK con los dos servicios en el array | ✅ Pasa |
+| IT-SVC-06 | Controller → CommandService → Repository | `PUT /api/v1/services/{id}` sobre servicio existente | 200 OK con nombre, duración y precio actualizados | ✅ Pasa |
+| IT-SVC-07 | Controller → CommandService → Repository | `PUT /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | ✅ Pasa |
+| IT-SVC-08 | Controller → CommandService → Repository | `DELETE /api/v1/services/{id}` sobre servicio existente | 200 OK; GET subsecuente devuelve array vacío | ✅ Pasa |
+| IT-SVC-09 | Controller → CommandService → Repository | `DELETE /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | ✅ Pasa |
+
+**Evidencia de ejecución — log completo (07/05/2026):**
+
+```
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.42 s
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+```
+
+**Comando de ejecución:**
+
+```bash
+./mvnw test -Dtest="ServiceControllerIT"
+```
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -3157,6 +3182,8 @@ La ejecución confirma que la especificación BDD no solo está enlazada con ste
 
 ### 6.1.4. Core System Tests
 
+#### 6.1.4.1. Aplicación Web (Playwright)
+
 **Framework:** Playwright (TypeScript) — `e2e/` — Chromium
 
 | Test ID | Flujo de usuario | Navegador / Dispositivo | Resultado esperado | Estado |
@@ -3196,6 +3223,52 @@ Running 1 test using 1 worker
   ok 1 [chromium] › e2e\provider-address-distance.system.spec.ts:10:5 › SYS-09 provider registers with address and client sees salons ordered by distance (5.5s)
 
   1 passed (7.3s)
+```
+
+---
+
+#### 6.1.4.2. Aplicación Móvil Flutter (integration_test)
+
+**Framework:** Flutter `integration_test` (Dart) — `integration_test/` — Windows Desktop
+
+Las pruebas se ejecutan contra el backend real desplegado en Azure (`https://paxtech.azurewebsites.net/api/v1`). Cada test que no requiere el flujo de registro/login inyecta la sesión directamente en `SharedPreferences` (token JWT, `user_id`, `provider_id`, `provider_id`, `company_name`) para evitar pasos redundantes de UI. Los tests que sí validan el flujo completo (SYS-FL-01/02/03) pasan por el formulario de registro → login → home.
+
+**Decisiones técnicas:**
+
+- `IndexedStack` en `MainPage` renderiza todas las pestañas simultáneamente; los ítems de navegación se buscan dentro de `CustomBottomNavbar` usando `find.descendant` para evitar colisiones con los `_StatCard` del home (que comparten texto "Servicios" / "Trabajadores").
+- Se añadió `heroTag: null` a los tres `FloatingActionButton` de las páginas de servicios, trabajadores y descuentos, ya que con `IndexedStack` todos están en el árbol de widgets al mismo tiempo y comparten el `heroTag` por defecto (`'Fab Hero'`), lo que causaba un error de animación Hero al navegar.
+- Se usa `pumpUntilVisible` con `pump(250 ms)` discretos en lugar de `pumpAndSettle` en páginas con `CircularProgressIndicator`, para evitar que el helper espere indefinidamente una animación continua.
+
+| Test ID | Flujo de usuario | Plataforma | Resultado esperado | Estado |
+|---------|-----------------|------------|--------------------|--------|
+| SYS-FL-01 | El proveedor se registra con email, contraseña y nombre de empresa, luego inicia sesión | Windows Desktop | Pantalla de inicio muestra "Bienvenido" y el nombre de la empresa | ✅ Pasa |
+| SYS-FL-02 | El proveedor crea un servicio desde la pestaña "Servicios" usando el formulario de nuevo servicio | Windows Desktop | El servicio aparece en la lista de servicios | ✅ Pasa |
+| SYS-FL-03 | El proveedor crea un trabajador desde la pestaña "Trabajadores" con nombre y especialización | Windows Desktop | El trabajador aparece en la lista del equipo | ✅ Pasa |
+| SYS-FL-06 | El proveedor elimina un servicio creado previamente por API | Windows Desktop | El servicio desaparece de la lista tras confirmar la eliminación | ✅ Pasa |
+| SYS-FL-08 | El proveedor visualiza en el calendario la reserva de un cliente creada por API | Windows Desktop | El nombre del servicio aparece en el calendario | ✅ Pasa |
+| SYS-FL-09 | El proveedor navega al formulario de edición de ubicación desde su perfil | Windows Desktop | La pantalla "Editar ubicación" carga con el botón "Cambiar ubicación" visible | ✅ Pasa |
+
+**Evidencia de ejecución — log completo (07/05/2026):**
+
+```
+00:00 +0: Provider core system tests SYS-FL-01 provider registers and signs in
+00:22 +1: Provider core system tests SYS-FL-02 provider creates a service
+00:29 +2: Provider core system tests SYS-FL-01 provider registers and signs in
+00:38 +3: Provider core system tests SYS-FL-03 provider creates a worker
+00:43 +4: Provider core system tests SYS-FL-01 provider registers and signs in
+00:49 +4: Provider core system tests SYS-FL-06 provider deletes a service
+00:53 +5: Provider core system tests SYS-FL-08 provider sees client reservation on calendar
+01:05 +5: Provider core system tests SYS-FL-01 provider registers and signs in
+01:11 +6: Provider core system tests SYS-FL-09 provider updates salon location
+01:17 +6: Provider core system tests SYS-FL-01 provider registers and signs in
+01:22 +6: (tearDownAll)
+01:22 +6: All tests passed!
+```
+
+**Comando de ejecución:**
+
+```bash
+flutter test integration_test/provider_core_system_test.dart --device-id windows
 ```
 
 ## 6.2. Static testing & Verification
