@@ -3867,19 +3867,36 @@ Pipeline de CI — Build & Test.
 
 ## 7.2. Continuous Delivery
 
+El Continuous Delivery es una práctica de DevOps que automatiza el proceso con el que se prepara y presenta el producto de software de manera confiable y eficiente. Su objetivo principal es garantizar que la aplicación siempre se encuentre en un estado listo para ser desplegado mediante procesos automatizados que incluyen compilación, validación y despliegue.
+
+Para este proyecto, estamos utilizando GitHub Actions junto con Microsoft Azure para el proceso mencionado. El pipeline automatiza la compilación de la aplicación, la generación de artefactos y el despliegue automático hacia el entorno cloud cada vez que se realizan cambios en la rama principal del repositorio. Así, se reduce la intervención manual y los errores de despliegue.
+
 ### 7.2.1. Tools and Practices
 
-[Contenido pendiente — entrega continua a staging, artifact registry.]
+Las herramientas que estamos utilizando son:
+
+- __GitHub__: Esta herramienta se usa para mantener el control de versiones ordenado así como para lograr que todo el equipo pueda estar al día con el código trabajado y pueda añadir sus cambios sin dificultades.
+- __GitHub Actions__: Esta herramienta se emplea para la automatización del pipeline en esta sección, lo que contempla los procesos de compilación, generación de artefacos y, finalmente, despliegue.
+- __Microsoft Azure__: Se utiliza como la plataforma de despliegue en donde la aplicación queda alojada.
+
+Por el lado de las prácticas, estamos considerando:
+
+- __Automated Build Process__: La aplicación se compila automáticamente cada vez que se detectan cambios en la rama main del repositorio.
+- __Artifact Management__: Una vez que se genera el archivo JAR de la aplicación, este se almacena para ser utilizado en la etapa de despliegue.
+- __Automated Deployment__: Depués de que se verificó que la compilación no presenta problemas, la aplicación es automáticamente desplegada al entorno cloud de Azure.
+- __Version Control Integration__: Dado que el pipeline se encuentra integrado con Github, se logra automatizar el proceso de despliegue directamente al oírse un evento en el repositorio.  
+- __Continuous Validation__: El contar con un flujo automatizado, además de los tests implementados, ayuda a asegurar que la aplicación no presente problemas al momento de ser desplegada.
 
 ### 7.2.2. Stages Deployment Pipeline Components
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+El pipeline de Continuous Delivery está compuesto por múltiples etapas automatizadas que permiten integrar, empaquetar y desplegar la aplicación de manera eficiente. A continuación, se presentan los pasos que se siguen junto a la herramienta que utilizan:
 
-Pipeline de CD — Staging.
-
-<img src="./assets/devops/cd/cd-pipeline.png" alt="CD Pipeline" width="800">
-
-</div>
+- __Source Stage - GitHub__: Cuando se agrega código a la rama main del repositorio, GutHub lo detecta y se activa el pipeline configurado GitHub Actions.
+- __Workflow Trigger Stage - GitHub Actions__: Ya activado el pipeline, GitHub Actions se encarga de ejecutar el workflow definido para automarizar la integración y el despliegue.
+- __Repository Checkout Stage - GitHub Actions__: Aquí, se descarga una copia completa del repositorio dentro del entorno virtual de ejecución de forma en que las siguientes etapas logres acceder al código fuente.
+- __Build Stage - Maven__: En esta parte, el proyecto se compila utilizando Maven y el comando `mvn clean install`. Mientras tanto, se descargan las dependencias, el código es compilado y se genera el archivo JAR del proyecyo para almacenarlo como un artefacto
+- __Deplyment Stage - Microsoft Azure__: Se realiza el ingreso a Azure y se descarga el aetefacto. Luego, este es automáticamente desplegado en el entorno de ejecución.
+- __Validation Stage__: Una vez que el despliegue se completa, GitHub Actions se encarga de registrar logs y el estado de ejecución a modo de historial. Así, es más sencillo detectar posibles errores.
 
 ## 7.3. Continuous Deployment
 
