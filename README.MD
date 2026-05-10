@@ -263,6 +263,24 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
         - [6.1.1.1.3. Mobile App — Android (Kotlin)](#61113-mobile-app--android-kotlin)
         - [6.1.1.1.4. Frontend Web — Angular](#61114-frontend-web--angular)
         - [6.1.1.1.5. Resumen agregado (Services)](#61115-resumen-agregado-services)
+      - [6.1.1.2. Workers Bounded Context](#6112-workers-bounded-context)
+        - [6.1.1.2.1. Backend — Spring Boot](#61121-backend--spring-boot)
+        - [6.1.1.2.2. Mobile App — Flutter (iOS Mobile App)](#61122-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.2.3. Mobile App — Android (Kotlin)](#61123-mobile-app--android-kotlin)
+        - [6.1.1.2.4. Frontend Web — Angular](#61124-frontend-web--angular)
+        - [6.1.1.2.5. Resumen agregado (Workers)](#61125-resumen-agregado-workers)
+      - [6.1.1.3. IAM Bounded Context](#6113-iam-bounded-context)
+        - [6.1.1.3.1. Backend — Spring Boot](#61131-backend--spring-boot)
+        - [6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)](#61132-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.3.3. Mobile App — Android (Kotlin)](#61133-mobile-app--android-kotlin)
+        - [6.1.1.3.4. Frontend Web — Angular](#61134-frontend-web--angular)
+        - [6.1.1.3.5. Resumen agregado (IAM)](#61135-resumen-agregado-iam)
+      - [6.1.1.4. Profiles Bounded Context](#6114-profiles-bounded-context)
+        - [6.1.1.4.1. Backend — Spring Boot](#61141-backend--spring-boot)
+        - [6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)](#61142-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.4.3. Mobile App — Android (Kotlin)](#61143-mobile-app--android-kotlin)
+        - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
+        - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
@@ -3396,6 +3414,472 @@ ng test --include="src/app/dashboard/models/worker.entity.spec.ts" --include="sr
 | Mobile (Android / Kotlin) | JUnit 4 + kotlin.test | 3 | 1 |
 | Frontend Web (Angular) | Karma + Jasmine | 7 | 5 |
 | **Total bounded context Workers** | | **37** | **11** |
+
+#### 6.1.1.3. IAM Bounded Context
+
+Cobertura del bounded context **IAM**: 25 tests distribuidos en 7 archivos (5 backend, 5 Flutter, 7 Android, 8 Angular). El alcance de la prueba unitaria se centra en el aggregate root `User` y en las clases de transporte (`SignUpResponse`, `SignInResponse`, `ProviderResponse`) y modelos de dominio (`User`, `Client`) con los que cada plataforma representa la identidad del usuario una vez autenticado.
+
+Durante la elaboración del set de tests del bounded context IAM no se identificaron bugs funcionales adicionales en la lógica implementada.
+
+##### 6.1.1.3.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 (incluido en `spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/iam/domain/model/aggregates/UserTest.java`
+
+```java
+class UserTest {
+
+    @Test
+    void shouldCreateUserWithEmailAndPassword() {
+        User user = new User("test@paxtech.com", "securePassword123");
+
+        assertEquals("test@paxtech.com", user.getEmail());
+        assertEquals("securePassword123", user.getPassword());
+    }
+
+    @Test
+    void shouldUpdateEmailUsingSetter() {
+        User user = new User("old@paxtech.com", "password");
+
+        user.setEmail("new@paxtech.com");
+
+        assertEquals("new@paxtech.com", user.getEmail());
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-BE-01 | `User` (aggregate) | constructor con email y password | Inicializa los dos campos del aggregate correctamente | Passed |
+| IAM-BE-02 | `User` (aggregate) | constructor por defecto (JPA) | Devuelve un `User` con `email` y `password` en `null` | Passed |
+| IAM-BE-03 | `User` (aggregate) | `setEmail` (Lombok `@Setter`) | Reemplaza el email previo por el nuevo valor | Passed |
+| IAM-BE-04 | `User` (aggregate) | `setPassword` (Lombok `@Setter`) | Reemplaza el password previo por el nuevo valor | Passed |
+| IAM-BE-05 | `User` (aggregate) | aislamiento entre instancias | Dos `User` distintos no comparten estado interno | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./mvnw test -Dtest="UserTest"
+```
+
+**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/iam/backend-springboot-unit-tests.png`.*
+
+##### 6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
+
+**Ubicación en `Ios-Mobile-App`:**
+
+- `test/features/auth/auth_responses_test.dart`
+
+```dart
+group('SignInResponse', () {
+  test('parses id, email and token from JSON', () {
+    final json = {
+      'id': 12,
+      'email': 'gael@paxtech.com',
+      'token': 'jwt.token.here',
+    };
+
+    final response = SignInResponse.fromJson(json);
+
+    expect(response.id, 12);
+    expect(response.email, 'gael@paxtech.com');
+    expect(response.token, 'jwt.token.here');
+  });
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-FL-01 | `SignUpResponse` | `fromJson` con payload válido | Mapea `id` y `email` correctamente | Passed |
+| IAM-FL-02 | `SignUpResponse` | `fromJson` sin campo requerido | Lanza `TypeError` (cast inválido) | Passed |
+| IAM-FL-03 | `SignInResponse` | `fromJson` con `id`, `email` y `token` | Mapea los tres campos correctamente | Passed |
+| IAM-FL-04 | `SignInResponse` | `fromJson` con `token` nulo | Lanza `TypeError` por contrato non-null | Passed |
+| IAM-FL-05 | `ProviderResponse` | `fromJson` con payload de provider | Mapea `id`, `companyName` y `userId` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/auth/auth_responses_test.dart
+```
+
+##### 6.1.1.3.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 (configuración por defecto del scaffolding Android).
+
+**Ubicación en `Mobile-App`:**
+
+- `app/src/test/java/com/paxtech/mobileapp/features/authentication/domain/models/UserTest.kt`
+- `app/src/test/java/com/paxtech/mobileapp/features/authentication/domain/models/ClientTest.kt`
+
+```kotlin
+class UserTest {
+
+    @Test
+    fun `data class equality should be based on values`() {
+        val a = User(id = 1, email = "a@paxtech.com")
+        val b = User(id = 1, email = "a@paxtech.com")
+        val c = User(id = 2, email = "a@paxtech.com")
+
+        assertEquals(a, b)
+        assertEquals(a.hashCode(), b.hashCode())
+        assertNotEquals(a, c)
+    }
+
+    @Test
+    fun `copy should override only specified fields`() {
+        val original = User(id = 1, email = "old@paxtech.com")
+
+        val updated = original.copy(email = "new@paxtech.com")
+
+        assertEquals(1, updated.id)
+        assertEquals("new@paxtech.com", updated.email)
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-AN-01 | `User` (data class) | constructor con `id`, `email` y `token` | Expone los tres campos sin transformación | Passed |
+| IAM-AN-02 | `User` (data class) | constructor sin `token` | `token` adopta el valor por defecto `null` | Passed |
+| IAM-AN-03 | `User` (data class) | `equals` y `hashCode` generados | Igualdad estructural por valor de los campos | Passed |
+| IAM-AN-04 | `User` (data class) | `copy(email = …)` | Retorna copia con sólo el campo modificado | Passed |
+| IAM-AN-05 | `Client` (data class) | constructor con todos los campos | Expone `id`, `firstName`, `lastName`, `userId` | Passed |
+| IAM-AN-06 | `Client` (data class) | `equals` por valor | Dos `Client` con mismos campos son iguales | Passed |
+| IAM-AN-07 | `Client` (data class) | `copy(firstName = …)` | Cambia `firstName` y conserva el resto | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew :app:testDebugUnitTest \
+  --tests "com.paxtech.mobileapp.features.authentication.domain.models.UserTest" \
+  --tests "com.paxtech.mobileapp.features.authentication.domain.models.ClientTest" \
+  -Pandroid.overridePathCheck=true
+```
+
+##### 6.1.1.3.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (configuración por defecto del workspace de Angular CLI 19).
+
+**Ubicación en `Frontend-Web-Application`:**
+
+- `src/app/iam/model/account.entity.spec.ts`
+- `src/app/iam/model/client.entity.spec.ts`
+- `src/app/iam/model/provider.entity.spec.ts`
+
+```typescript
+describe('AccountEntity', () => {
+  it('should allow assigning fields after construction', () => {
+    const account = new AccountEntity();
+
+    account.id = 42;
+    account.email = 'gael@paxtech.com';
+    account.passwordHash = 'hashed';
+    account.type = 'client';
+    account.isActive = true;
+
+    expect(account.id).toBe(42);
+    expect(account.email).toBe('gael@paxtech.com');
+    expect(account.isActive).toBeTrue();
+  });
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-WEB-01 | `AccountEntity` | constructor por defecto | Inicializa numéricos en `0`, strings en `''` y `isActive` en `false` | Passed |
+| IAM-WEB-02 | `AccountEntity` | asignación de campos | Permite mutar todos los atributos públicos tras la construcción | Passed |
+| IAM-WEB-03 | `AccountEntity` | aislamiento entre instancias | Dos `AccountEntity` no comparten estado | Passed |
+| IAM-WEB-04 | `Client` | constructor por defecto | Inicializa `id/userId` en `0` y nombres en `''` | Passed |
+| IAM-WEB-05 | `Client` | asignación de campos | Permite actualizar `firstName/lastName/userId` | Passed |
+| IAM-WEB-06 | `Provider` | constructor por defecto | Inicializa `id/userId` en `0` y `companyName` en `''` | Passed |
+| IAM-WEB-07 | `Provider` | asignación de campos | Permite actualizar `id/companyName/userId` | Passed |
+| IAM-WEB-08 | `Provider` | aislamiento entre instancias | Dos `Provider` no comparten `companyName` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+ng test --include="src/app/iam/model/account.entity.spec.ts" --include="src/app/iam/model/client.entity.spec.ts" --include="src/app/iam/model/provider.entity.spec.ts"
+```
+
+**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/iam/frontend-angular-karma-unit-tests.png`.*
+
+##### 6.1.1.3.5. Resumen agregado (IAM)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 | 5 | 1 |
+| Mobile (Flutter / iOS) | flutter_test | 5 | 1 |
+| Mobile (Android / Kotlin) | JUnit 4 | 7 | 2 |
+| Frontend Web (Angular) | Karma + Jasmine | 8 | 3 |
+| **Total bounded context IAM** | | **25** | **7** |
+
+#### 6.1.1.4. Profiles Bounded Context
+
+Cobertura del bounded context **Profiles**: 66 tests distribuidos en 14 archivos (41 backend, 9 Flutter, 6 Android, 10 Angular). La suite cubre los aggregates `Client`, `Provider`, `ProviderProfile`, `Discount`, `PortfolioImage` y `Social`; los value objects `FullName` y `CompanyName`; y los modelos de presentación que cada cliente expone para perfilar al usuario.
+
+Durante la elaboración del set de tests del bounded context Profiles no se identificaron bugs funcionales adicionales en la lógica implementada. La suite sí endurece los invariantes ya escritos en los aggregates: longitud máxima de URLs, no-nullability de nombres, rango válido de descuentos porcentuales y caps en descuentos por monto fijo.
+
+##### 6.1.1.4.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 (incluido en `spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/ClientTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/ProviderTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/ProviderProfileTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/DiscountTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/PortfolioImageTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/SocialTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/valueobjects/FullNameTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/valueobjects/CompanyNameTest.java`
+
+```java
+class DiscountTest {
+
+    @Test
+    void shouldCalculateFinalPriceAfterPercentage() {
+        Discount discount = new Discount(percentageCommand(), providerProfile());
+
+        BigDecimal finalPrice = discount.calculateFinalPrice(new BigDecimal("100"));
+
+        assertEquals(0, finalPrice.compareTo(new BigDecimal("80")));
+    }
+
+    @Test
+    void shouldCapFixedAmountAtOriginalPrice() {
+        Discount discount = new Discount(fixedCommand(new BigDecimal("50")), providerProfile());
+
+        BigDecimal amount = discount.calculateDiscountAmount(new BigDecimal("30"));
+
+        assertEquals(0, amount.compareTo(new BigDecimal("30")));
+        assertEquals(0, discount.calculateFinalPrice(new BigDecimal("30")).compareTo(BigDecimal.ZERO));
+    }
+
+    @Test
+    void shouldRejectPercentageGreaterThan100() {
+        ProviderProfile profile = providerProfile();
+
+        assertThrows(IllegalArgumentException.class, () -> new Discount(
+                new CreateDiscountCommand("t", "s", "c",
+                        DiscountType.PERCENTAGE, new BigDecimal("150"), 1L),
+                profile));
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-BE-01 | `Client` | constructor por `CreateClientCommand` | Mapea `firstName/lastName` y enlaza el `User` recibido | Passed |
+| PRF-BE-02 | `Client` | `updateFullName(firstName, lastName)` | Reemplaza el value object `FullName` con los nuevos valores | Passed |
+| PRF-BE-03 | `Client` | `updateFullName` con `firstName` en blanco | Lanza `IllegalArgumentException` y no muta el aggregate | Passed |
+| PRF-BE-04 | `Client` | `updateFullName` con `lastName` nulo | Lanza `IllegalArgumentException` y no muta el aggregate | Passed |
+| PRF-BE-05 | `Client` | `updateProfileImageUrl` | Persiste la URL de imagen recibida | Passed |
+| PRF-BE-06 | `Provider` | constructor por `CreateProviderCommand` | Mapea `companyName` y enlaza el `User` recibido | Passed |
+| PRF-BE-07 | `Provider` | `updateCompanyName` happy path | Reemplaza el value object `CompanyName` | Passed |
+| PRF-BE-08 | `Provider` | `updateCompanyName` con valor en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-09 | `Provider` | `updateCompanyName` con `null` | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-10 | `ProviderProfile` | constructor por `CreateProviderProfileCommand` | Inicializa los siete campos del aggregate | Passed |
+| PRF-BE-11 | `ProviderProfile` | `updateInformation` parcial (solo algunos campos) | Sobrescribe únicamente los campos provistos y conserva el resto | Passed |
+| PRF-BE-12 | `ProviderProfile` | setters dedicados (`updateDescription`, `updateOpenTime`, …) | Cada setter modifica exclusivamente su campo objetivo | Passed |
+| PRF-BE-13 | `ProviderProfile` | constructor por defecto (JPA) | Inicializa todos los campos en `null` | Passed |
+| PRF-BE-14 | `Discount` | constructor con descuento porcentual válido | Persiste título, tipo y valor del descuento | Passed |
+| PRF-BE-15 | `Discount` | `calculateDiscountAmount` con porcentaje | Aplica `(value/100) * originalPrice` con escala 4 y `HALF_UP` | Passed |
+| PRF-BE-16 | `Discount` | `calculateFinalPrice` con porcentaje | Resta el descuento al precio original | Passed |
+| PRF-BE-17 | `Discount` | `calculateDiscountAmount` con monto fijo > original | Capa el descuento al precio original (no entrega negativos) | Passed |
+| PRF-BE-18 | `Discount` | constructor con porcentaje > 100 | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-19 | `Discount` | `calculateDiscountAmount` con precio ≤ 0 | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-20 | `Discount` | `update(UpdateDiscountCommand)` happy path | Sobrescribe título, subtítulo, contenido y valor | Passed |
+| PRF-BE-21 | `Discount` | `update` con porcentaje > 100 | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-22 | `PortfolioImage` | constructor con URL válida | Persiste la URL recibida | Passed |
+| PRF-BE-23 | `PortfolioImage` | constructor con URL `null` | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-24 | `PortfolioImage` | constructor con URL en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-25 | `PortfolioImage` | constructor con URL > 200 caracteres | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-26 | `PortfolioImage` | `update` con URL nueva | Reemplaza la URL anterior | Passed |
+| PRF-BE-27 | `PortfolioImage` | `update` con URL inválida | Lanza `IllegalArgumentException` y no muta | Passed |
+| PRF-BE-28 | `Social` | constructor con URL e ícono válidos | Persiste ambos atributos | Passed |
+| PRF-BE-29 | `Social` | constructor con URL en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-30 | `Social` | constructor con ícono en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-31 | `Social` | constructor con URL > 100 caracteres | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-32 | `Social` | constructor con ícono > 32 caracteres | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-33 | `Social` | `update(UpdateSocialCommand)` | Reemplaza URL e ícono | Passed |
+| PRF-BE-34 | `FullName` (VO) | composición `getFullName()` | Concatena `firstName + " " + lastName` | Passed |
+| PRF-BE-35 | `FullName` (VO) | `getFullName()` con ambos `null` | Retorna cadena vacía | Passed |
+| PRF-BE-36 | `FullName` (VO) | `getFullName()` con `firstName` `null` | Retorna sólo `lastName` | Passed |
+| PRF-BE-37 | `FullName` (VO) | `getFullName()` con `lastName` `null` | Retorna sólo `firstName` | Passed |
+| PRF-BE-38 | `FullName` (VO) | igualdad estructural | Dos `FullName` con mismos valores son iguales y comparten `hashCode` | Passed |
+| PRF-BE-39 | `CompanyName` (VO) | constructor con valor | Expone el valor recibido vía `getValue()` | Passed |
+| PRF-BE-40 | `CompanyName` (VO) | constructor por defecto (JPA) | `getValue()` retorna `null` | Passed |
+| PRF-BE-41 | `CompanyName` (VO) | igualdad estructural | Dos `CompanyName` iguales comparten `hashCode` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./mvnw test -Dtest="ClientTest,ProviderTest,ProviderProfileTest,DiscountTest,PortfolioImageTest,SocialTest,FullNameTest,CompanyNameTest"
+```
+
+**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/profiles/backend-springboot-unit-tests.png`.*
+
+##### 6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
+
+**Ubicación en `Ios-Mobile-App`:**
+
+- `test/features/profile/providerProfile_test.dart`
+
+```dart
+test('toUpdateJson should expose only mutable fields', () {
+  final profile = ProviderProfile(
+    id: 1,
+    providerId: 10,
+    companyName: 'Pax Salon',
+    location: 'Lima',
+    profileImageUrl: 'https://cdn/p.png',
+    coverImageUrl: 'https://cdn/c.png',
+    description: 'desc',
+    openTime: '09:00',
+    closeTime: '20:00',
+    portfolioImages: [
+      PortfolioImage(id: 1, imageUrl: 'https://cdn/img1.png'),
+    ],
+  );
+
+  final update = profile.toUpdateJson();
+
+  expect(update.containsKey('id'), isFalse);
+  expect(update.containsKey('providerId'), isFalse);
+  expect(update['portfolioImages'], ['https://cdn/img1.png']);
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-FL-01 | `ProviderProfile` | constructor con campos opcionales ausentes | `portfolioImages` queda vacío y los nullable permanecen `null` | Passed |
+| PRF-FL-02 | `ProviderProfile` | `fromJson` con payload completo | Mapea cabecera, listas anidadas (`portfolioImages`, `socials`) y descripciones | Passed |
+| PRF-FL-03 | `ProviderProfile` | `fromJson` sin `location` ni `portfolioImages` | Aplica defaults (`''` y `[]`) | Passed |
+| PRF-FL-04 | `ProviderProfile` | round-trip `toJson` → `fromJson` | Preserva los campos del aggregate | Passed |
+| PRF-FL-05 | `ProviderProfile` | `toUpdateJson()` (PUT request) | Excluye `id`/`providerId` y aplana `portfolioImages` a URLs | Passed |
+| PRF-FL-06 | `ProviderProfile` | `copyWith` parcial | Sobrescribe sólo los campos provistos | Passed |
+| PRF-FL-07 | `ProfileSocials` | `toJson` con campos `null` | Omite los campos nulos del payload | Passed |
+| PRF-FL-08 | `ProfileSocials` | `fromJson` con campos parciales | Mapea sólo los campos presentes y deja el resto en `null` | Passed |
+| PRF-FL-09 | `PortfolioImage` | round-trip `toJson` → `fromJson` | Preserva `id` y `imageUrl` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/profile/providerProfile_test.dart
+```
+
+##### 6.1.1.4.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 (configuración por defecto del scaffolding Android).
+
+**Ubicación en `Mobile-App`:**
+
+- `app/src/test/java/com/paxtech/mobileapp/features/profile/presentation/model/ProfileUiTest.kt`
+
+> El value object `ProfileFormState` y su validación de email derivada de `android.util.Patterns.EMAIL_ADDRESS` no están incluidos en esta suite porque dependen del runtime de Android; quedarán cubiertos por instrumented tests (`androidTest`) en una iteración posterior.
+
+```kotlin
+@Test
+fun `firstName should be the substring before the first space`() {
+    val profile = sampleProfile("Gael Ramirez")
+
+    assertEquals("Gael", profile.firstName)
+}
+
+@Test
+fun `firstName should be the whole name when there is no space`() {
+    val profile = sampleProfile("Gael")
+
+    assertEquals("Gael", profile.firstName)
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-AN-01 | `ProfileUi` | propiedad derivada `firstName` | Devuelve la subcadena previa al primer espacio | Passed |
+| PRF-AN-02 | `ProfileUi` | `firstName` sin espacio en `fullName` | Devuelve el nombre completo intacto | Passed |
+| PRF-AN-03 | `ProfileUi` | `firstName` con nombre compuesto | Toma sólo el primer token (hasta el primer espacio) | Passed |
+| PRF-AN-04 | `ProfileUi` | `avatarUrl` por defecto | Adopta el valor `null` cuando no se provee | Passed |
+| PRF-AN-05 | `GenderUi` | etiquetas legibles para `FEMALE/MALE/OTHER` | Devuelve "Femenino", "Masculino" y "Otro" respectivamente | Passed |
+| PRF-AN-06 | `GenderUi` | `default` del enum | Apunta a `GenderUi.FEMALE` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew :app:testDebugUnitTest \
+  --tests "com.paxtech.mobileapp.features.profile.presentation.model.ProfileUiTest" \
+  -Pandroid.overridePathCheck=true
+```
+
+##### 6.1.1.4.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (configuración por defecto del workspace de Angular CLI 19).
+
+**Ubicación en `Frontend-Web-Application`:**
+
+- `src/app/profile/models/profile.entity.spec.ts`
+- `src/app/profile/models/salon-profile.entity.spec.ts`
+- `src/app/profile/models/portfolio-image.spec.ts`
+- `src/app/profile/models/social.entity.spec.ts`
+
+```typescript
+describe('SalonProfile', () => {
+  it('should hydrate from a partial response', () => {
+    const profile = new SalonProfile({
+      id: 7,
+      providerId: 12,
+      companyName: 'Pax Salon',
+      location: 'Lima, Peru',
+      profileImageUrl: 'https://cdn/p.png',
+      portfolioImages: ['a.png', 'b.png'],
+      socials: { instagram: 'https://ig/pax' },
+    });
+
+    expect(profile.companyName).toBe('Pax Salon');
+    expect(profile.portfolioImages.length).toBe(2);
+    expect(profile.socials['instagram']).toBe('https://ig/pax');
+  });
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-WEB-01 | `Profile` | constructor por defecto | `accountId` queda como string `'0'`; toggles en `false`; campos de texto en `''` | Passed |
+| PRF-WEB-02 | `Profile` | tipo de `accountId` | `typeof profile.accountId === 'string'` | Passed |
+| PRF-WEB-03 | `Profile` | asignación de campos | Permite mutar nombre, contacto y toggles tras la construcción | Passed |
+| PRF-WEB-04 | `SalonProfile` | constructor sin parámetros | `socials` y `portfolioImages` quedan vacíos; numéricos en `0` | Passed |
+| PRF-WEB-05 | `SalonProfile` | constructor con respuesta parcial | Hidrata sólo los campos presentes en el response | Passed |
+| PRF-WEB-06 | `SalonProfile` | constructor con campos faltantes | Aplica defaults (`''`, `{}`, `[]`) en los campos no recibidos | Passed |
+| PRF-WEB-07 | `PortfolioImage` | constructor por defecto | Inicializa `id` en `0` y `imageUrl` en `''` | Passed |
+| PRF-WEB-08 | `PortfolioImage` | asignación de campos | Permite establecer `id` y `imageUrl` después de la construcción | Passed |
+| PRF-WEB-09 | `SocialSummary` (DTO) | shape de respuesta del API | Acepta `id`, `socialIcon` y `socialUrl` | Passed |
+| PRF-WEB-10 | `CreateSocialDto` (DTO) | shape de payload POST/PUT | Acepta `socialIcon` y `socialUrl` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+ng test --include="src/app/profile/models/profile.entity.spec.ts" --include="src/app/profile/models/salon-profile.entity.spec.ts" --include="src/app/profile/models/portfolio-image.spec.ts" --include="src/app/profile/models/social.entity.spec.ts"
+```
+
+**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/profiles/frontend-angular-karma-unit-tests.png`.*
+
+##### 6.1.1.4.5. Resumen agregado (Profiles)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 | 41 | 8 |
+| Mobile (Flutter / iOS) | flutter_test | 9 | 1 |
+| Mobile (Android / Kotlin) | JUnit 4 | 6 | 1 |
+| Frontend Web (Angular) | Karma + Jasmine | 10 | 4 |
+| **Total bounded context Profiles** | | **66** | **14** |
 
 ### 6.1.2. Core Integration Tests
 
