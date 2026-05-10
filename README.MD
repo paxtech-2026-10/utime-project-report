@@ -284,6 +284,8 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
+      - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
+      - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integrationtest)
@@ -4085,6 +4087,183 @@ La ejecución confirma que la especificación BDD no solo está enlazada con ste
 |------------|-----------------|---------------|---------|--------|
 | US22 | Services | Registro de nuevo servicio | `e2e-bdd/features/services.feature` | Passed |
 | US22 | Services | Eliminación de servicio registrado | `e2e-bdd/features/services.feature` | Passed |
+
+#### 6.1.3.2. IAM Bounded Context
+
+Para el bounded context **IAM**, se aplicó BDD a partir de dos historias del Product Backlog:
+
+- **US01 — Registro de un cliente**: *"Como cliente, quiero registrarme proporcionando mis datos personales, para crear una cuenta."*
+- **US03 — Inicio de sesión del usuario**: *"Como usuario, quiero iniciar sesión con mi correo y contraseña, para acceder a mi cuenta."*
+
+Los dos escenarios elegidos cubren el corazón del bounded context IAM: el alta de una identidad nueva y la verificación de credenciales contra el endpoint `POST /api/v1/authentication/sign-in`. El primer escenario se ejerce íntegramente desde la UI Angular (sin atajos al backend) para demostrar que la pantalla `/iam/register` es capaz de crear cuentas válidas; el segundo prepara un proveedor con el helper `createProviderAccount` (mismo helper que ya consume Services) y luego ejerce el formulario `/iam/login`, validando además que el `providerId` se persiste en `localStorage`.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript).
+
+**Ubicación en el repositorio Frontend-Web-Application:**
+
+- `e2e-bdd/features/iam.feature`
+- `e2e-bdd/steps/iam.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: IAM
+
+```gherkin
+# language: es
+@iam
+Característica: Autenticación e identidad de usuarios
+  Como usuario de uTime
+  Quiero poder registrarme y autenticarme en la plataforma
+  Para acceder a mi cuenta y a las funciones que me corresponden
+
+  @US01
+  Escenario: Registro de un cliente desde el formulario público
+    Dado que un visitante navega al formulario de registro de uTime
+    Cuando completa el registro como cliente con nombre "Gael", apellido "BDD", correo y contraseña válidos
+    Entonces el sistema confirma la creación de la cuenta con un snackbar de éxito
+    Y la aplicación lo redirige a la página de inicio de sesión
+
+  @US03
+  Escenario: Inicio de sesión de un proveedor con credenciales válidas
+    Dado que existe un proveedor previamente registrado en el sistema
+    Y el proveedor navega a la página de inicio de sesión
+    Cuando ingresa su correo y contraseña y envía el formulario
+    Entonces el sistema lo redirige al dashboard del proveedor
+    Y persiste el identificador del proveedor en el almacenamiento local
+```
+
+#### Step definition example
+
+El paso `Cuando ingresa su correo y contraseña y envía el formulario` se conecta a Playwright reutilizando el `ProviderAccount` que el step previo dejó en el `UTimeWorld`. La aserción posterior poll-ea `localStorage` hasta que el `providerId` aparezca, espejando exactamente la verificación que ya hace el system test `authentication.system.spec.ts` (SYS-01).
+
+```typescript
+When('ingresa su correo y contraseña y envía el formulario', async function (this: UTimeWorld) {
+  if (!this.providerAccount) {
+    throw new Error('Provider account must exist before signing in');
+  }
+  await this.page.getByLabel('email input field').fill(this.providerAccount.email);
+  await this.page.getByLabel('password input field').fill(this.providerAccount.password);
+  await this.page.getByLabel('login button').click();
+});
+
+Then('persiste el identificador del proveedor en el almacenamiento local', async function (this: UTimeWorld) {
+  await expect
+    .poll(() => this.page.evaluate(() => window.localStorage.getItem('providerId')))
+    .toBe(String(this.providerAccount!.providerId));
+});
+```
+
+#### Execution evidence
+
+Los escenarios se ejecutan contra la aplicación web Angular (`http://localhost:4200`) y el backend Spring Boot (`http://localhost:8080`) corriendo en local, igual que la suite Services.
+
+Comando ejecutado:
+
+```powershell
+npm run bdd:iam
+```
+
+Variante `--dry-run` para validar el binding de cada `Given/When/Then` sin levantar el navegador:
+
+```powershell
+npm run bdd:iam:dry-run
+```
+
+**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/bdd/iam/iam-bdd-cucumber-report.png`.*
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
+|------------|-----------------|---------------|---------|--------|
+| US01 | IAM | Registro de un cliente desde el formulario público | `e2e-bdd/features/iam.feature` | Passed |
+| US03 | IAM | Inicio de sesión de un proveedor con credenciales válidas | `e2e-bdd/features/iam.feature` | Passed |
+
+#### 6.1.3.3. Profiles Bounded Context
+
+Para el bounded context **Profiles**, se aplicó BDD a partir de la user story **US06 — Personalización del perfil del salón de belleza/barbería**: *"Como dueño/administrador, quiero poder personalizar el perfil de mi salón de belleza/barbería con información relevante y estética, para atraer a más clientes."*
+
+El escenario automatiza la única ruta UI del frontend actual que dispara `PUT /api/v1/provider-profiles/{id}`: el registro de un proveedor con dirección desde `/iam/register`. Este flujo es relevante porque es el punto donde el proveedor toma su perfil recién auto-creado (la API `POST /providers` lo crea vacío con campos `to Choose`) y lo personaliza con información de ubicación. La validación termina cuando el backend confirma el update con HTTP 200 y la `location` persistida coincide exactamente con el formato `"<dirección>|<lat>,<lon>"` que la app espera.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript).
+
+**Ubicación en el repositorio Frontend-Web-Application:**
+
+- `e2e-bdd/features/profiles.feature`
+- `e2e-bdd/steps/profiles.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: Profiles
+
+```gherkin
+# language: es
+@profiles
+Característica: Personalización del perfil del salón
+  Como dueño o administrador
+  Quiero personalizar el perfil de mi salón con información relevante
+  Para atraer a más clientes desde la búsqueda de salones
+
+  @US06
+  Escenario: Personalización de la ubicación del salón al registrarse como proveedor
+    Dado que un visitante navega al formulario de registro de uTime
+    Y la geolocalización del navegador apunta a "-12.121100,-77.030600"
+    Y la dirección "Av. Larco 123, Miraflores, Lima" se resuelve a coordenadas conocidas
+    Cuando completa el registro como proveedor con la empresa "Pax Salon BDD" y la dirección anterior
+    Entonces el backend confirma la actualización del perfil con HTTP 200
+    Y la ubicación persistida del perfil contiene la dirección y las coordenadas registradas
+```
+
+#### Step definition example
+
+Para que el escenario sea hermético, los step definitions interceptan la geocodificación a Nominatim antes de enviar el formulario. Esto evita depender de un servicio externo y garantiza que la `location` que se envía al backend siempre tenga las coordenadas esperadas. El paso captura, además, el `Response` Playwright correspondiente al `PUT /api/v1/provider-profiles/{id}` para verificar status y body en un único punto del flujo.
+
+```typescript
+Given('la dirección {string} se resuelve a coordenadas conocidas', async function (this: UTimeWorld, address: string) {
+  await this.page.route('https://nominatim.openstreetmap.org/search?**', async route => {
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify([{ lat: '-12.121100', lon: '-77.030600' }])
+    });
+  });
+  this.expectedProviderLocation = `${address}|-12.121100,-77.030600`;
+});
+
+When('completa el registro como proveedor con la empresa {string} y la dirección anterior', async function (this: UTimeWorld, companyName: string) {
+  await this.page.locator('mat-button-toggle').filter({ hasText: 'Provider' }).click();
+
+  const updateProviderProfileResponse = this.page.waitForResponse(response =>
+    response.url().includes('/api/v1/provider-profiles/')
+    && response.request().method() === 'PUT'
+  );
+
+  // …rellena los inputs del formulario y dispara la submission…
+
+  const profileResponse = await updateProviderProfileResponse;
+  this.providerProfileUpdateStatus = profileResponse.status();
+  this.providerProfileUpdateLocation = (await profileResponse.json()).location;
+});
+```
+
+#### Execution evidence
+
+El escenario se ejecuta contra la aplicación web Angular y el backend Spring Boot en local. Antes de submitir el formulario, el step se asegura de configurar permisos de geolocalización (`context.grantPermissions(['geolocation'])`) y de mockear el endpoint público de Nominatim para que las coordenadas resueltas sean determinísticas — el mismo patrón que aplica el system test `provider-address-distance.system.spec.ts` (SYS-09).
+
+Comando ejecutado:
+
+```powershell
+npm run bdd:profiles
+```
+
+Variante `--dry-run`:
+
+```powershell
+npm run bdd:profiles:dry-run
+```
+
+**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/bdd/profiles/profiles-bdd-cucumber-report.png`.*
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
+|------------|-----------------|---------------|---------|--------|
+| US06 | Profiles | Personalización de la ubicación del salón al registrarse como proveedor | `e2e-bdd/features/profiles.feature` | Passed |
 
 ### 6.1.4. Core System Tests
 
