@@ -3467,7 +3467,11 @@ class UserTest {
 ./mvnw test -Dtest="UserTest"
 ```
 
-**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/iam/backend-springboot-unit-tests.png`.*
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/iam/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context IAM en Spring Boot" width="900">
+</div>
 
 ##### 6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)
 
@@ -3608,7 +3612,11 @@ describe('AccountEntity', () => {
 ng test --include="src/app/iam/model/account.entity.spec.ts" --include="src/app/iam/model/client.entity.spec.ts" --include="src/app/iam/model/provider.entity.spec.ts"
 ```
 
-**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/iam/frontend-angular-karma-unit-tests.png`.*
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/iam/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context IAM en Karma y Jasmine" width="900">
+</div>
 
 ##### 6.1.1.3.5. Resumen agregado (IAM)
 
@@ -3725,7 +3733,11 @@ class DiscountTest {
 ./mvnw test -Dtest="ClientTest,ProviderTest,ProviderProfileTest,DiscountTest,PortfolioImageTest,SocialTest,FullNameTest,CompanyNameTest"
 ```
 
-**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/profiles/backend-springboot-unit-tests.png`.*
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/profiles/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Profiles en Spring Boot" width="900">
+</div>
 
 ##### 6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)
 
@@ -3871,7 +3883,11 @@ describe('SalonProfile', () => {
 ng test --include="src/app/profile/models/profile.entity.spec.ts" --include="src/app/profile/models/salon-profile.entity.spec.ts" --include="src/app/profile/models/portfolio-image.spec.ts" --include="src/app/profile/models/social.entity.spec.ts"
 ```
 
-**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/unit/profiles/frontend-angular-karma-unit-tests.png`.*
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/profiles/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context Profiles en Karma y Jasmine" width="900">
+</div>
 
 ##### 6.1.1.4.5. Resumen agregado (Profiles)
 
@@ -4169,12 +4185,20 @@ Variante `--dry-run` para validar el binding de cada `Given/When/Then` sin levan
 npm run bdd:iam:dry-run
 ```
 
-**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/bdd/iam/iam-bdd-cucumber-report.png`.*
+**Evidencia de validación de bindings (dry-run de Cucumber):**
 
-| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
-|------------|-----------------|---------------|---------|--------|
-| US01 | IAM | Registro de un cliente desde el formulario público | `e2e-bdd/features/iam.feature` | Passed |
-| US03 | IAM | Inicio de sesión de un proveedor con credenciales válidas | `e2e-bdd/features/iam.feature` | Passed |
+El `--dry-run` carga el feature file y los step definitions y valida que cada `Given/When/Then` tenga su step definition correspondiente sin ejecutar Playwright contra la app real. Es la verificación más rápida de que el contrato entre Gherkin y TypeScript está intacto. Cucumber reporta los steps como *skipped* porque `--dry-run` los salta deliberadamente; un step que faltara en el código aparecería como *undefined*, no como *skipped*.
+
+<div align="center">
+  <img src="./assets/testing/bdd/iam/iam-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature IAM (US01 y US03)" width="900">
+</div>
+
+> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:iam`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
+|------------|-----------------|---------------|---------|-----------------|
+| US01 | IAM | Registro de un cliente desde el formulario público | `e2e-bdd/features/iam.feature` | Validados (dry-run) |
+| US03 | IAM | Inicio de sesión de un proveedor con credenciales válidas | `e2e-bdd/features/iam.feature` | Validados (dry-run) |
 
 #### 6.1.3.3. Profiles Bounded Context
 
@@ -4259,11 +4283,19 @@ Variante `--dry-run`:
 npm run bdd:profiles:dry-run
 ```
 
-**Evidencia de ejecución:** *Pendiente — se adjuntará captura tras ejecutar la suite en `assets/testing/bdd/profiles/profiles-bdd-cucumber-report.png`.*
+**Evidencia de validación de bindings (dry-run de Cucumber):**
 
-| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
-|------------|-----------------|---------------|---------|--------|
-| US06 | Profiles | Personalización de la ubicación del salón al registrarse como proveedor | `e2e-bdd/features/profiles.feature` | Passed |
+Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario tienen step definition asociada. La salida de Cucumber reporta `1 scenario (1 skipped)` y `6 steps (6 skipped)` — el conteo coincide con el feature, lo que descarta steps faltantes o con regex/strings desalineados respecto al gherkin.
+
+<div align="center">
+  <img src="./assets/testing/bdd/profiles/profiles-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature Profiles (US06)" width="900">
+</div>
+
+> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:profiles`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
+|------------|-----------------|---------------|---------|-----------------|
+| US06 | Profiles | Personalización de la ubicación del salón al registrarse como proveedor | `e2e-bdd/features/profiles.feature` | Validados (dry-run) |
 
 ### 6.1.4. Core System Tests
 
@@ -4647,13 +4679,11 @@ jobs:
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Pipeline de CI — Build & Test.
+Pipeline de CI — Build & Test (run del workflow `Build and deploy JAR app to Azure Web App - paxtech` con los jobs `build` y `deploy` encadenados).
 
 <img src="./assets/devops/ci/ci-pipeline.png" alt="CI Pipeline" width="800">
 
 </div>
-
-> **Evidencia visual:** *Pendiente — se adjuntará captura del run más reciente del workflow `Build and deploy JAR app to Azure Web App - paxtech` en la ruta `assets/devops/ci/ci-pipeline.png`.*
 
 ## 7.2. Continuous Delivery
 
