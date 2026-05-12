@@ -4690,19 +4690,50 @@ El pipeline de Continuous Delivery está compuesto por múltiples etapas automat
 
 ## 7.3. Continuous Deployment
 
+Continuous Deployment es la práctica que cierra el ciclo DevOps al llevar automáticamente a producción cada cambio que supera los controles de calidad establecidos en las fases anteriores. A diferencia de un modelo de despliegue completamente automatizado, el proyecto uTime adopta un modelo de despliegue supervisado semi-automatizado: la automatización ejecuta el despliegue, pero la puerta de entrada a producción es siempre una revisión humana materializada en un Pull Request aprobado mediante GitHub. Este diseño es coherente con el tamaño del equipo y con el estado actual del producto.
+
 ### 7.3.1. Tools and Practices
 
-[Contenido pendiente — despliegue automático a producción, estrategias blue/green, canary, feature flags.]
+Las herramientas que participan directamente en el proceso de despliegue continuo son las mismas establecidas en las secciones 7.1 y 7.2, dado que el pipeline es único y continuo:
+
+GitHub actúa como sistema de control de versiones y como mecanismo de control de despliegue. Las reglas de protección de ramas impiden que cualquier commit llegue a main sin haber pasado por un Pull Request aprobado por al menos un integrante del equipo. Este requisito convierte el proceso de revisión en la única compuerta manual del ciclo de despliegue.
+GitHub Actions detecta cada push sobre main y dispara automáticamente el workflow que ejecuta la compilación, la suite de pruebas y, si ambas fases concluyen sin errores, el despliegue del artefacto JAR resultante.
+Microsoft Azure recibe el artefacto publicado por el job deploy del workflow y lo ejecuta en el slot Production del Azure Web App paxtech, sin intervención manual adicional por parte del equipo.
+
+Las prácticas aplicadas en esta fase son:
+
+- Despliegue supervisado por PR: ningún cambio alcanza producción sin una revisión explícita. Los merges a main provienen exclusivamente de ramas develop/* o hotfix/*, conforme a la convención GitFlow simplificada.
+- Despliegue sin recompilación: l artefacto que se despliega en producción es el mismo JAR generado y validado por el job build. No se produce ninguna compilación adicional en el job de despliegue, lo que garantiza que el binario en producción es exactamente el que pasó los 75 tests unitarios del backend.
+- Trazabilidad de releases: cada despliegue asociado a un milestone del proyecto queda etiquetado en main. Esto permite identificar con precisión qué versión está activa en producción en cada momento.
 
 ### 7.3.2. Production Deployment Pipeline Components
 
+El pipeline de producción no constituye un workflow independiente, sino la segunda mitad del workflow main_paxtech.yml descrito en 7.1.2. Su ejecución queda condicionada a que el job build finalice con estado success, lo que en la práctica significa que ningún despliegue a producción ocurre si la compilación o algún test falla.
+El flujo completo desde el desarrollo hasta producción sigue la siguiente secuencia:
+
+Un integrante trabaja sobre una rama feature/* y, una vez completo el cambio, abre un Pull Request hacia develop.
+El PR es revisado y aprobado por al menos un integrante distinto al autor; sólo entonces se fusiona en develop.
+Cuando el equipo considera que develop está en condiciones de publicarse, se abre una rama release/* y se crea un Pull Request hacia main.
+Tras la aprobación del PR de release, el merge a main dispara el workflow de GitHub Actions.
+El job build compila el proyecto con mvn clean install, ejecuta la suite de tests y sube el JAR resultante como artefacto del run.
+El job deploy, condicionado por needs: build, descarga el JAR, se autentica contra Azure mediante OIDC y publica el artefacto en el slot Production del Azure Web App paxtech.
+
+La siguiente tabla resume los componentes del pipeline de producción y su responsabilidad dentro del modelo de despliegue supervisado:
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Pipeline de Deployment a Producción.
-
-<img src="./assets/devops/deployment/deployment-pipeline.png" alt="Deployment Pipeline" width="800">
+| Componente | Herramienta | Responsabilidad en el despliegue |
+| ----- | ----- | ----- |
+| Protección de rama `main` | GitHub | Impide merges directos; exige PR aprobado como única compuerta manual. |
+| Disparador del workflow | GitHub Actions (`push` a `main`) | Inicia el pipeline automáticamente al detectar el merge aprobado. |
+| Validación previa al despliegue | Maven (`mvn clean install`) | Ejecuta los 75 tests unitarios; un fallo aborta el despliegue. |
+| Publicación del artefacto | GitHub Actions Artifacts | Garantiza que el binario desplegado es idéntico al validado. |
+| Autenticación cloud | Azure Login (OIDC) | Autentica sin contraseña almacenada, usando secretos cifrados de GitHub. |
+| Despliegue en producción | Azure Web App (`paxtech`, slot `Production`) | Recibe y ejecuta el JAR sin intervención manual del equipo. |
 
 </div>
+
+Este modelo reduce significativamente el esfuerzo manual de despliegue respecto a un proceso manual. Una vez aprobado el PR, el equipo no necesita intervenir para que el cambio llegue a producción. Al mismo tiempo, la obligatoriedad de la revisión humana antes del merge preserva un nivel de supervisión adecuado para la fase actual del producto, donde el equipo prioriza la estabilidad del API backend que consumen las tres aplicaciones cliente.
 
 ## 7.4. Continuous Monitoring
 
