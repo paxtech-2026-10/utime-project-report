@@ -4726,31 +4726,39 @@ Continuous Deployment es la práctica que cierra el ciclo DevOps al llevar autom
 
 Las herramientas que participan directamente en el proceso de despliegue continuo son las mismas establecidas en las secciones 7.1 y 7.2, dado que el pipeline es único y continuo:
 
-GitHub actúa como sistema de control de versiones y como mecanismo de control de despliegue. Las reglas de protección de ramas impiden que cualquier commit llegue a main sin haber pasado por un Pull Request aprobado por al menos un integrante del equipo. Este requisito convierte el proceso de revisión en la única compuerta manual del ciclo de despliegue.
-GitHub Actions detecta cada push sobre main y dispara automáticamente el workflow que ejecuta la compilación, la suite de pruebas y, si ambas fases concluyen sin errores, el despliegue del artefacto JAR resultante.
+GitHub actúa como sistema de control de versiones y como mecanismo de control del flujo de despliegue. Las reglas de protección de ramas impiden que cualquier commit llegue a main sin haber pasado por un Pull Request aprobado por al menos un integrante del equipo. Este requisito convierte el proceso de revisión en la única compuerta manual del ciclo de despliegue.
+
+GitHub Actions implementa el pipeline de integración y despliegue continuo. Cada push o merge hacia main dispara automáticamente el workflow definido en el repositorio. Este pipeline ejecuta la fase de build, la ejecución de pruebas unitarias y, si ambas etapas finalizan correctamente, continúa con la generación del artefacto JAR y su posterior despliegue. De esta manera, el pipeline asegura que ningún cambio llegue a producción sin haber sido validado previamente por el proceso automatizado.
+
 Microsoft Azure recibe el artefacto publicado por el job deploy del workflow y lo ejecuta en el slot Production del Azure Web App paxtech, sin intervención manual adicional por parte del equipo.
 
 Las prácticas aplicadas en esta fase son:
 
-- Despliegue supervisado por PR: ningún cambio alcanza producción sin una revisión explícita. Los merges a main provienen exclusivamente de ramas develop/* o hotfix/*, conforme a la convención GitFlow simplificada.
-- Despliegue sin recompilación: l artefacto que se despliega en producción es el mismo JAR generado y validado por el job build. No se produce ninguna compilación adicional en el job de despliegue, lo que garantiza que el binario en producción es exactamente el que pasó los 75 tests unitarios del backend.
-- Trazabilidad de releases: cada despliegue asociado a un milestone del proyecto queda etiquetado en main. Esto permite identificar con precisión qué versión está activa en producción en cada momento.
+- Despliegue supervisado por PR: ningún cambio alcanza producción sin una revisión explícita. Los merges a main provienen exclusivamente de ramas develop/* o hotfix/*, conforme a la convención GitFlow simplificada.  
+- Despliegue automatizado por pipeline: el pipeline en GitHub Actions se encarga de ejecutar automáticamente la compilación, pruebas y despliegue cada vez que se actualiza main, eliminando intervenciones manuales en el proceso de release.  
+- Despliegue sin recompilación: el artefacto que se despliega en producción es el mismo JAR generado y validado por el job build. No se produce ninguna compilación adicional en el job de despliegue, lo que garantiza que el binario en producción es exactamente el que pasó los 75 tests unitarios del backend.  
+- Trazabilidad de releases: cada despliegue asociado a un milestone del proyecto queda etiquetado en main. Esto permite identificar con precisión qué versión está activa en producción en cada momento.  
+
+---
 
 ### 7.3.2. Production Deployment Pipeline Components
 
 El pipeline de producción no constituye un workflow independiente, sino la segunda mitad del workflow main_paxtech.yml descrito en 7.1.2. Su ejecución queda condicionada a que el job build finalice con estado success, lo que en la práctica significa que ningún despliegue a producción ocurre si la compilación o algún test falla.
+
 El flujo completo desde el desarrollo hasta producción sigue la siguiente secuencia:
 
-Un integrante trabaja sobre una rama feature/* y, una vez completo el cambio, abre un Pull Request hacia develop.
-El PR es revisado y aprobado por al menos un integrante distinto al autor; sólo entonces se fusiona en develop.
-Cuando el equipo considera que develop está en condiciones de publicarse, se abre una rama release/* y se crea un Pull Request hacia main.
-Tras la aprobación del PR de release, el merge a main dispara el workflow de GitHub Actions.
-El job build compila el proyecto con mvn clean install, ejecuta la suite de tests y sube el JAR resultante como artefacto del run.
+Un integrante trabaja sobre una rama feature/* y, una vez completado el cambio, abre un Pull Request hacia develop.  
+El PR es revisado y aprobado por al menos un integrante distinto al autor; solo entonces se fusiona en develop.  
+Cuando el equipo considera que develop está en condiciones de publicarse, se abre una rama release/* y se crea un Pull Request hacia main.  
+Tras la aprobación del PR de release, el merge a main dispara el pipeline en GitHub Actions.  
+El job build compila el proyecto con mvn clean install, ejecuta la suite de tests y genera el JAR resultante como artefacto del run.  
 El job deploy, condicionado por needs: build, descarga el JAR, se autentica contra Azure mediante OIDC y publica el artefacto en el slot Production del Azure Web App paxtech.
 
 La siguiente tabla resume los componentes del pipeline de producción y su responsabilidad dentro del modelo de despliegue supervisado:
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+La siguiente tabla resume los componentes del pipeline de producción y su responsabilidad dentro del modelo de despliegue supervisado:
 
 | Componente | Herramienta | Responsabilidad en el despliegue |
 | ----- | ----- | ----- |
