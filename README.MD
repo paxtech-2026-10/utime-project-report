@@ -263,9 +263,32 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
         - [6.1.1.1.3. Mobile App — Android (Kotlin)](#61113-mobile-app--android-kotlin)
         - [6.1.1.1.4. Frontend Web — Angular](#61114-frontend-web--angular)
         - [6.1.1.1.5. Resumen agregado (Services)](#61115-resumen-agregado-services)
+      - [6.1.1.2. Workers Bounded Context](#6112-workers-bounded-context)
+        - [6.1.1.2.1. Backend — Spring Boot](#61121-backend--spring-boot)
+        - [6.1.1.2.2. Mobile App — Flutter (iOS Mobile App)](#61122-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.2.3. Mobile App — Android (Kotlin)](#61123-mobile-app--android-kotlin)
+        - [6.1.1.2.4. Frontend Web — Angular](#61124-frontend-web--angular)
+        - [6.1.1.2.5. Resumen agregado (Workers)](#61125-resumen-agregado-workers)
+      - [6.1.1.3. IAM Bounded Context](#6113-iam-bounded-context)
+        - [6.1.1.3.1. Backend — Spring Boot](#61131-backend--spring-boot)
+        - [6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)](#61132-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.3.3. Mobile App — Android (Kotlin)](#61133-mobile-app--android-kotlin)
+        - [6.1.1.3.4. Frontend Web — Angular](#61134-frontend-web--angular)
+        - [6.1.1.3.5. Resumen agregado (IAM)](#61135-resumen-agregado-iam)
+      - [6.1.1.4. Profiles Bounded Context](#6114-profiles-bounded-context)
+        - [6.1.1.4.1. Backend — Spring Boot](#61141-backend--spring-boot)
+        - [6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)](#61142-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.4.3. Mobile App — Android (Kotlin)](#61143-mobile-app--android-kotlin)
+        - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
+        - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+      - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
+      - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
+      - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
     - [6.1.4. Core System Tests](#614-core-system-tests)
+      - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
+      - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integrationtest)
   - [6.2. Static testing \& Verification](#62-static-testing--verification)
     - [6.2.1. Static Code Analysis](#621-static-code-analysis)
       - [6.2.1.1. Coding standard \& Code conventions](#6211-coding-standard--code-conventions)
@@ -366,13 +389,13 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
-      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context Services. Diseñé y documenté pruebas unitarias para backend Spring Boot, Flutter, Android Kotlin y Angular, alcanzando 47 tests en 6 archivos. Además, implementé integration tests con Spring Boot Test, MockMvc y H2 para validar la integración entre controlador, servicios, repositorio y persistencia. También elaboré escenarios BDD para la US22 - Administración de servicios ofrecidos con Gherkin, Cucumber.js y Playwright, y participé en Core System Tests para verificar flujos reales como la creación y eliminación de servicios.</td>
     </tr>
     <tr>
       <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Durante este avance desarrollé múltiples entregables como Style Guidelines (web y mobile), Information Architecture (organization, labeling, navigation y searching systems), diseño UX/UI (wireframes, mockups, prototipos) tanto para web como mobile (iOS y Android), además de artefactos de arquitectura de software como Domain-Driven Design, diagramas de contexto, contenedores y componentes, junto con diseño orientado a objetos y modelado de base de datos.</td>
     </tr>
     <tr>
-      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en los bounded contexts IAM y Profiles, y documenté la integración continua del producto. Diseñé pruebas unitarias para los cuatro stacks (Spring Boot con JUnit 5, Angular con Karma + Jasmine, Android Kotlin con JUnit 4 y Flutter con flutter_test), totalizando 25 tests para IAM y 66 tests para Profiles distribuidos en 21 archivos. Elaboré escenarios BDD con Gherkin, Cucumber.js y Playwright en TypeScript para las US01 (registro de cliente), US03 (inicio de sesión) y US06 (personalización del perfil del salón), reutilizando los helpers de <code>e2e/support</code> ya existentes. Finalmente documenté la sección 7.1 del Capítulo VII describiendo el workflow de GitHub Actions del backend que compila con Maven y despliega a Azure App Service, detallando sus triggers, jobs, steps y prácticas de aislamiento, fail-fast y reproducibilidad.</td>
     </tr>
     <tr>
       <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conceptos de ingeniería de software relacionados con la implementación, despliegue y configuración del producto en el Capítulo V. Apliqué Software Configuration Management con el conjunto de herramientas del ciclo de vida (Pivotal Tracker, Discord, Figma, UXPressia, Trello, WebStorm, IntelliJ IDEA, Android Studio, Git, GitKraken, Render, GitHub Pages, Azure y Firebase), formalicé el flujo GitFlow y las convenciones de Conventional Commits, y documenté las guías de estilo por tecnología (HTML, CSS, JavaScript/Bootstrap, TypeScript/Angular, Dart/Flutter, Java/Spring Boot y Gherkin). Estructuré el Sprint #1 con su Sprint Planning Background, matriz LACX, Sprint Backlog (US01, US03, US29–US35, TS06), Development y Execution Evidence, y los Team Collaboration Insights, y articulé el Acuerdo de Servicio SaaS (SLA) entre PaxTech y el Cliente. Asimismo, alineé la decisión de persistencia de §4.10.1 a PostgreSQL desplegado en Neon, conforme al diagrama de despliegue del producto. </td>
@@ -383,13 +406,13 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
-      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al profundizar en distintos niveles de testing para un producto multiplataforma. Para completar las pruebas de Services fue necesario aplicar JUnit 5, Mockito, AssertJ, Spring Boot Test, MockMvc, H2, flutter_test, JUnit 4, Karma, Jasmine, Cucumber.js, Gherkin y Playwright. Este trabajo me permitió comprender la importancia de validar unidades, integración entre capas, comportamiento BDD y flujos completos de usuario, además de reforzar la mejora continua a partir de hallazgos como errores de validación del provider y manejo de excepciones.</td>
     </tr>
     <tr>
       <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.</td>
     </tr>
     <tr>
-      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al cubrir los cuatro stacks del producto en una misma entrega de testing y al documentar el pipeline de CI/CD. Para los unit tests fue necesario aplicar JUnit 5, Karma + Jasmine sobre Angular 19, JUnit 4 sobre Kotlin/Compose y flutter_test, además de patrones DDD aplicados a aggregates (User, Client, Provider, ProviderProfile, Discount, PortfolioImage, Social) y value objects (FullName, CompanyName). Para BDD profundicé en Cucumber.js, Gherkin en español, Playwright y la convención de step definitions reutilizables que ya seguía el bounded context Services. Para CI estudié los triggers de GitHub Actions, la autenticación OIDC contra Azure y el flujo de artifacts entre jobs. Este trabajo evidenció que mantener consistencia entre cuatro stacks distintos exige aprender de forma continua las particularidades de cada herramienta y converger en una misma convención de testing, naming y trazabilidad.</td>
     </tr>
     <tr>
       <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al construir el Capítulo V partiendo de dos reportes base (UPC-PaxTech/uTime y PaxTech-1807/Final-Report), lo que exigió comparar arquitecturas, decisiones de stack y patrones de despliegue distintos para destilar la solución más coherente con nuestro producto. Investigué y verifiqué el diagrama de despliegue real (Flutter Cliente + Kotlin Negocio sobre Android, Spring Boot en Azure App Service, PostgreSQL en Neon y Stripe para pagos), prácticas de GitFlow y Conventional Commits, configuración de GitHub Pages, automatización con GitHub Actions, distribución de builds con Firebase App Distribution, documentación de APIs con springdoc-openapi y bounded contexts (IAM, Profiles, Reservations, Services, Reviews, Workers). Este proceso evidenció que la implementación de un producto digital exige actualización continua de tecnologías, mejor gestión de la trazabilidad entre artefactos del informe y disciplina para alinear decisiones técnicas entre capítulos. </td>
@@ -2805,8 +2828,6 @@ En el video *About-the-Product* se presenta **uTime** mostrando sus característ
 
 # Capítulo VI: Product Verification & Validation
 
-[Contenido pendiente]
-
 ## 6.1. Testing Suites & Validation
 
 ### 6.1.1. Core Entities Unit Tests
@@ -3036,39 +3057,1336 @@ ng test --configuration=services-only
 | Frontend Web (Angular) | Karma + Jasmine | 7 | 2 |
 | **Total bounded context Services** | | **47** | **6** |
 
+#### 6.1.1.2. Workers Bounded Context
+
+Cobertura del bounded context **Workers**: 37 tests distribuidos en 11 archivos (14 backend, 13 Flutter, 3 Android, 7 Angular).
+
+Durante la elaboración del set de tests del bounded context Workers no se identificaron bugs funcionales adicionales en la lógica implementada.
+
+##### 6.1.1.2.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 + Mockito + AssertJ (incluidos en `spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/workers/application/internal/commandservices/WorkerCommandServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/workers/application/internal/queryservices/WorkerQueryServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/workers/domain/model/aggregates/WorkerTest.java`
+
+```java
+@ExtendWith(MockitoExtension.class)
+class WorkerCommandServiceImplTest {
+
+    @Mock
+    WorkerRepository workerRepository;
+
+    @Mock
+    ProviderContextFacade providerContextFacade;
+
+    @InjectMocks
+    WorkerCommandServiceImpl workerCommandService;
+
+    private CreateWorkerCommand validCreateCommand;
+
+    @BeforeEach
+    void setUp() {
+        validCreateCommand = new CreateWorkerCommand(
+                "Ana",
+                "Estilista",
+                "https://paxtech.examplea.jpg",
+                10L
+        );
+    }
+
+    @Test
+    void createWorkerOkTest() {
+        // Arrange
+        when(workerRepository.existsByNameAndProviderId(any(WorkerName.class), any(ProviderId.class)))
+                .thenReturn(false);
+        when(providerContextFacade.fetchProviderById(10L)).thenReturn(Optional.of(mock(Provider.class)));
+
+        // Act
+        Optional<Worker> result = workerCommandService.handle(validCreateCommand);
+
+        // Assert
+        assertThat(result).isPresent();
+        ArgumentCaptor<Worker> captor = ArgumentCaptor.forClass(Worker.class);
+        verify(workerRepository).save(captor.capture());
+        Worker saved = captor.getValue();
+        assertThat(saved.getName()).isEqualTo("Ana");
+        assertThat(saved.getSalonId()).isEqualTo(10L);
+    }
+
+    @Test
+    void createWorkerDuplicateTest() {
+        // Arrange
+        when(workerRepository.existsByNameAndProviderId(any(WorkerName.class), any(ProviderId.class)))
+                .thenReturn(true);
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(validCreateCommand))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("already exists");
+
+        verify(workerRepository, never()).save(any());
+        verify(providerContextFacade, never()).fetchProviderById(any());
+    }
+
+    @Test
+    void createWorkerMissingProviderTest() {
+        // Arrange
+        when(workerRepository.existsByNameAndProviderId(any(WorkerName.class), any(ProviderId.class)))
+                .thenReturn(false);
+        when(providerContextFacade.fetchProviderById(10L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(validCreateCommand))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("Provider");
+
+        verify(workerRepository, never()).save(any());
+    }
+
+    @Test
+    void updateWorkerOkTest() {
+        // Arrange
+        Worker existing = new Worker(validCreateCommand);
+        UpdateWorkerCommand command = new UpdateWorkerCommand(1L, "Nuevo", "Barbero", "https://paxtech.examplen.jpg", 10L);
+        when(workerRepository.findById(1L)).thenReturn(Optional.of(existing));
+        when(workerRepository.save(any(Worker.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        // Act
+        Optional<Worker> result = workerCommandService.handle(command);
+
+        // Assert
+        assertThat(result).isPresent();
+        assertThat(result.get().getName()).isEqualTo("Nuevo");
+        assertThat(result.get().getSpecialization()).isEqualTo("Barbero");
+        verify(workerRepository).save(any(Worker.class));
+    }
+
+    @Test
+    void updateWorkerNotFoundTest() {
+        // Arrange
+        UpdateWorkerCommand command = new UpdateWorkerCommand(99L, "X", "Y", "https://paxtech.examplez.jpg", 1L);
+        when(workerRepository.findById(99L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(command))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("not found");
+
+        verify(workerRepository, never()).save(any());
+    }
+
+    @Test
+    void deleteWorkerOkTest() {
+        // Arrange
+        DeleteWorkerCommand command = new DeleteWorkerCommand(5L);
+        when(workerRepository.existsById(5L)).thenReturn(true);
+
+        // Act
+        workerCommandService.handle(command);
+
+        // Assert
+        verify(workerRepository).deleteById(5L);
+    }
+
+    @Test
+    void deleteWorkerNotFoundTest() {
+        // Arrange
+        DeleteWorkerCommand command = new DeleteWorkerCommand(5L);
+        when(workerRepository.existsById(5L)).thenReturn(false);
+
+        // Act & Assert
+        assertThatThrownBy(() -> workerCommandService.handle(command))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("not found");
+
+        verify(workerRepository, never()).deleteById(any());
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-BE-01 | `WorkerCommandServiceImpl` | `handle(CreateWorkerCommand)` happy path | Crea worker válido y persiste con `save` | Passed |
+| WRK-BE-02 | `WorkerCommandServiceImpl` | `handle(CreateWorkerCommand)` duplicado | Lanza `IllegalArgumentException` y no persiste | Passed |
+| WRK-BE-03 | `WorkerCommandServiceImpl` | `handle(CreateWorkerCommand)` provider inexistente | Lanza `IllegalArgumentException` y no persiste | Passed |
+| WRK-BE-04 | `WorkerCommandServiceImpl` | `handle(UpdateWorkerCommand)` happy path | Actualiza datos del worker y persiste cambios | Passed |
+| WRK-BE-05 | `WorkerCommandServiceImpl` | `handle(UpdateWorkerCommand)` worker inexistente | Lanza `IllegalArgumentException` y no persiste | Passed |
+| WRK-BE-06 | `WorkerCommandServiceImpl` | `handle(DeleteWorkerCommand)` happy path | Elimina worker con `deleteById` | Passed |
+| WRK-BE-07 | `WorkerCommandServiceImpl` | `handle(DeleteWorkerCommand)` worker inexistente | Lanza `IllegalArgumentException` y no elimina | Passed |
+| WRK-BE-08 | `WorkerQueryServiceImpl` | `handle(GetWorkersBySalonIdQuery)` | Retorna lista filtrada por providerId | Passed |
+| WRK-BE-09 | `WorkerQueryServiceImpl` | `handle(GetWorkerByIdQuery)` | Retorna `Optional` con worker cuando existe | Passed |
+| WRK-BE-10 | `WorkerQueryServiceImpl` | `handle(GetAllWorkersQuery)` | Retorna la lista completa de workers | Passed |
+| WRK-BE-11 | `Worker` (aggregate) | constructor por value objects | Inicializa correctamente name/specialization/photoUrl/providerId | Passed |
+| WRK-BE-12 | `Worker` (aggregate) | constructor por `CreateWorkerCommand` | Mapea correctamente campos del command al aggregate | Passed |
+| WRK-BE-13 | `Worker` (aggregate) | `updateInformation` | Actualiza atributos y retorna la misma instancia (`this`) | Passed |
+| WRK-BE-14 | `Worker` (aggregate) | validación de comando inválido | Lanza `IllegalArgumentException` cuando `name` es inválido | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew test \
+  --tests "com.paxtech.utime.platform.workers.application.internal.commandservices.WorkerCommandServiceImplTest" \
+  --tests "com.paxtech.utime.platform.workers.application.internal.queryservices.WorkerQueryServiceImplTest" \
+  --tests "com.paxtech.utime.platform.workers.domain.model.aggregates.WorkerTest"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/workers/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Workers en Spring Boot" width="900">
+</div>
+
+##### 6.1.1.2.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` + `bloc_test` + `mocktail`.
+
+**Ubicación en `Ios-Mobile-App`:**
+
+- `test/features/team/domain/worker_test.dart`
+- `test/features/team/presentation/blocs/workers_bloc_test.dart`
+
+```dart
+blocTest<WorkersBloc, WorkersState>(
+  'LoadWorkers filtra por providerId y ordena alfabeticamente',
+  build: () {
+    when(() => teamService.getWorkers()).thenAnswer(
+      (_) async => const <Worker>[
+        Worker(id: 1, name: 'zeta', specialization: 'S1', photoUrl: '', providerId: 2),
+        Worker(id: 2, name: 'alpha', specialization: 'S2', photoUrl: '', providerId: 2),
+        Worker(id: 3, name: 'otro', specialization: 'S3', photoUrl: '', providerId: 7),
+      ],
+    );
+    when(() => onboardingService.getUserId()).thenAnswer((_) async => 44);
+    when(() => onboardingService.getJwtToken()).thenAnswer((_) async => 'jwt');
+    when(
+      () => authService.getProviderByUserId(userId: 44, token: 'jwt'),
+    ).thenAnswer((_) async => ProviderResponse(id: 2, companyName: 'Acme', userId: 44));
+    return buildBloc();
+  },
+  act: (bloc) => bloc.add(const LoadWorkers()),
+  expect: () => <Matcher>[
+    isA<WorkersState>().having((s) => s.status, 'status', WorkersStatus.loading),
+    isA<WorkersState>()
+        .having((s) => s.status, 'status', WorkersStatus.success)
+        .having((s) => s.workers.map((w) => w.name).toList(), 'names', <String>['alpha', 'zeta']),
+  ],
+);
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-FL-01 | `Worker` | `fromJson` con payload completo | Mapea `id/name/specialization/photoUrl/providerId` correctamente | Passed |
+| WRK-FL-02 | `Worker` | `fromJson` con campos opcionales ausentes | Aplica defaults (`''` y `0`) | Passed |
+| WRK-FL-03 | `Worker` | `copyWith` parcial | Actualiza solo campos enviados y preserva el resto | Passed |
+| WRK-FL-04 | `Worker` | `toJson` | Serializa todos los campos correctamente | Passed |
+| WRK-FL-05 | `WorkerRequest` | `fromWorker` con `photoUrl` vacía | Asigna URL por defecto (`https://example.com`) | Passed |
+| WRK-FL-06 | `WorkerRequest` | `toJson` con `photoUrl` vacía/espacios | Normaliza a URL por defecto | Passed |
+| WRK-FL-07 | `WorkerRequest` | `toJson` con `photoUrl` válida con espacios | Recorta espacios y conserva URL válida | Passed |
+| WRK-FL-08 | `WorkersBloc` | `LoadWorkers` con provider resuelto | Filtra por `providerId` y ordena workers alfabéticamente | Passed |
+| WRK-FL-09 | `WorkersBloc` | `LoadWorkers` sin `userId` | Retorna lista vacía y evita llamada a `getProviderByUserId` | Passed |
+| WRK-FL-10 | `WorkersBloc` | `LoadWorkers` con error en servicio | Emite estado `failure` con mensaje de error | Passed |
+| WRK-FL-11 | `WorkersBloc` | `CreateWorkerRequested` | Crea worker, lo inserta en estado y ordena lista | Passed |
+| WRK-FL-12 | `WorkersBloc` | `UpdateWorkerRequested` | Reemplaza worker actualizado y mantiene orden alfabético | Passed |
+| WRK-FL-13 | `WorkersBloc` | `DeleteWorkerRequested` | Elimina worker por id y limpia `deletingWorkerId` al finalizar | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/team/domain/worker_test.dart test/features/team/presentation/blocs/workers_bloc_test.dart
+```
+
+##### 6.1.1.2.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 + `kotlin.test` + `kotlinx-coroutines-core` (`runBlocking`), usando fake de `WorkerService` (sin libreria de mocks).
+
+**Ubicación:** `app/src/test/java/com/paxtech/mobileapp/features/clientDashboard/data/repository/WorkerRepositoryImplTest.kt`
+
+```kotlin
+@Test
+fun getAllWorkersWhenResponseIsSuccessful() = runBlocking {
+    val dtos = listOf(
+        WorkerDto(
+            id = 1L,
+            name = "Ana Lopez",
+            specialization = "Maquillista",
+            photoUrl = "https://example.com/ana.jpg",
+            providerId = 10L
+        ),
+        WorkerDto(
+            id = 2L,
+            name = "Luis Perez",
+            specialization = null,
+            photoUrl = null,
+            providerId = 20L
+        )
+    )
+    val repository = WorkerRepositoryImpl(FakeWorkerService(allWorkersResponse = Response.success(dtos)))
+
+    val result = repository.getAllWorkers()
+
+    assertTrue(result.isSuccess)
+    assertEquals(
+        listOf(
+            Worker(1L, "Ana Lopez", "Maquillista", "https://example.com/ana.jpg", 10L),
+            Worker(2L, "Luis Perez", null, null, 20L)
+        ),
+        result.getOrNull()
+    )
+}
+```
+
+| Test ID | Entidad | Metodo probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-AN-01 | `WorkerRepositoryImpl` | `getAllWorkers()` con respuesta HTTP 200 y payload valido | Retorna `Result.success` y mapea DTO -> dominio correctamente | Passed |
+| WRK-AN-02 | `WorkerRepositoryImpl` | `getAllWorkers()` con respuesta HTTP no exitosa (404) | Retorna `Result.failure` con mensaje `HTTP 404` | Passed |
+| WRK-AN-03 | `WorkerRepositoryImpl` | `getAllWorkers()` cuando el servicio lanza excepcion de red | Retorna `Result.failure` propagando `IOException` | Passed |
+
+**Comando de ejecucion:**
+
+```bash
+./gradlew :app:testDebugUnitTest --tests "com.paxtech.mobileapp.features.clientDashboard.data.repository.WorkerRepositoryImplTest" -Pandroid.overridePathCheck=true
+```
+
+##### 6.1.1.2.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (Angular TestBed + HttpClientTestingModule).
+
+**Ubicacion en `Frontend-Web-Application`:**
+
+- `src/app/dashboard/models/worker.entity.spec.ts`
+- `src/app/dashboard/services/worker.assembler.spec.ts`
+- `src/app/dashboard/services/worker-api.service.spec.ts`
+- `src/app/dashboard/components/staff-item/staff-item.component.spec.ts`
+- `src/app/dashboard/components/staff-list/staff-list.component.spec.ts`
+
+```typescript
+it('should fetch workers from api and map response', () => {
+  const response: WorkerResource[] = [
+    {
+      id: 1,
+      name: 'Andrea',
+      specialization: 'Nails',
+      photoUrl: 'https://example.com/a.jpg',
+      providerId: 3
+    }
+  ];
+
+  service.getWorkers().subscribe((workers) => {
+    expect(workers).toEqual(response);
+  });
+
+  const req = httpMock.expectOne(`${environment.serverBaseUrl}/workers`);
+  expect(req.request.method).toBe('GET');
+  req.flush(response);
+});
+```
+
+| Test ID | Entidad | Metodo probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| WRK-WEB-01 | `Worker` | constructor por defecto | Inicializa `id/providerId` en `0` y strings en `''` | Passed |
+| WRK-WEB-02 | `WorkerAssembler` | `toEntityFromResource` | Mapea un `WorkerResource` a entidad `Worker` sin perdida de campos | Passed |
+| WRK-WEB-03 | `WorkerAssembler` | `toEntitiesFromResponse` | Mapea lista de resources preservando cantidad y contenido | Passed |
+| WRK-WEB-04 | `WorkerApiService` | instancia del servicio | Se crea correctamente en TestBed | Passed |
+| WRK-WEB-05 | `WorkerApiService` | `getWorkers()` | Ejecuta `GET /workers` y retorna respuesta mapeada | Passed |
+| WRK-WEB-06 | `StaffItemComponent` | render de worker | Muestra nombre, especializacion e imagen del worker | Passed |
+| WRK-WEB-07 | `StaffListComponent` | render de lista | Renderiza un `app-staff-item` por cada worker recibido | Passed |
+
+**Comando de ejecucion:**
+
+```bash
+ng test --include="src/app/dashboard/models/worker.entity.spec.ts" --include="src/app/dashboard/services/worker.assembler.spec.ts" --include="src/app/dashboard/services/worker-api.service.spec.ts" --include="src/app/dashboard/components/staff-item/staff-item.component.spec.ts" --include="src/app/dashboard/components/staff-list/staff-list.component.spec.ts"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/workers/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context Workers en Karma y Jasmine" width="900">
+</div>
+
+##### 6.1.1.2.5. Resumen agregado (Workers)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 + Mockito + AssertJ | 14 | 3 |
+| Mobile (Flutter / iOS) | flutter_test + bloc_test + mocktail | 13 | 2 |
+| Mobile (Android / Kotlin) | JUnit 4 + kotlin.test | 3 | 1 |
+| Frontend Web (Angular) | Karma + Jasmine | 7 | 5 |
+| **Total bounded context Workers** | | **37** | **11** |
+
+#### 6.1.1.3. IAM Bounded Context
+
+Cobertura del bounded context **IAM**: 25 tests distribuidos en 7 archivos (5 backend, 5 Flutter, 7 Android, 8 Angular). El alcance de la prueba unitaria se centra en el aggregate root `User` y en las clases de transporte (`SignUpResponse`, `SignInResponse`, `ProviderResponse`) y modelos de dominio (`User`, `Client`) con los que cada plataforma representa la identidad del usuario una vez autenticado.
+
+Durante la elaboración del set de tests del bounded context IAM no se identificaron bugs funcionales adicionales en la lógica implementada.
+
+##### 6.1.1.3.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 (incluido en `spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/iam/domain/model/aggregates/UserTest.java`
+
+```java
+class UserTest {
+
+    @Test
+    void shouldCreateUserWithEmailAndPassword() {
+        User user = new User("test@paxtech.com", "securePassword123");
+
+        assertEquals("test@paxtech.com", user.getEmail());
+        assertEquals("securePassword123", user.getPassword());
+    }
+
+    @Test
+    void shouldUpdateEmailUsingSetter() {
+        User user = new User("old@paxtech.com", "password");
+
+        user.setEmail("new@paxtech.com");
+
+        assertEquals("new@paxtech.com", user.getEmail());
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-BE-01 | `User` (aggregate) | constructor con email y password | Inicializa los dos campos del aggregate correctamente | Passed |
+| IAM-BE-02 | `User` (aggregate) | constructor por defecto (JPA) | Devuelve un `User` con `email` y `password` en `null` | Passed |
+| IAM-BE-03 | `User` (aggregate) | `setEmail` (Lombok `@Setter`) | Reemplaza el email previo por el nuevo valor | Passed |
+| IAM-BE-04 | `User` (aggregate) | `setPassword` (Lombok `@Setter`) | Reemplaza el password previo por el nuevo valor | Passed |
+| IAM-BE-05 | `User` (aggregate) | aislamiento entre instancias | Dos `User` distintos no comparten estado interno | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./mvnw test -Dtest="UserTest"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/iam/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context IAM en Spring Boot" width="900">
+</div>
+
+##### 6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
+
+**Ubicación en `Ios-Mobile-App`:**
+
+- `test/features/auth/auth_responses_test.dart`
+
+```dart
+group('SignInResponse', () {
+  test('parses id, email and token from JSON', () {
+    final json = {
+      'id': 12,
+      'email': 'gael@paxtech.com',
+      'token': 'jwt.token.here',
+    };
+
+    final response = SignInResponse.fromJson(json);
+
+    expect(response.id, 12);
+    expect(response.email, 'gael@paxtech.com');
+    expect(response.token, 'jwt.token.here');
+  });
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-FL-01 | `SignUpResponse` | `fromJson` con payload válido | Mapea `id` y `email` correctamente | Passed |
+| IAM-FL-02 | `SignUpResponse` | `fromJson` sin campo requerido | Lanza `TypeError` (cast inválido) | Passed |
+| IAM-FL-03 | `SignInResponse` | `fromJson` con `id`, `email` y `token` | Mapea los tres campos correctamente | Passed |
+| IAM-FL-04 | `SignInResponse` | `fromJson` con `token` nulo | Lanza `TypeError` por contrato non-null | Passed |
+| IAM-FL-05 | `ProviderResponse` | `fromJson` con payload de provider | Mapea `id`, `companyName` y `userId` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/auth/auth_responses_test.dart
+```
+
+##### 6.1.1.3.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 (configuración por defecto del scaffolding Android).
+
+**Ubicación en `Mobile-App`:**
+
+- `app/src/test/java/com/paxtech/mobileapp/features/authentication/domain/models/UserTest.kt`
+- `app/src/test/java/com/paxtech/mobileapp/features/authentication/domain/models/ClientTest.kt`
+
+```kotlin
+class UserTest {
+
+    @Test
+    fun `data class equality should be based on values`() {
+        val a = User(id = 1, email = "a@paxtech.com")
+        val b = User(id = 1, email = "a@paxtech.com")
+        val c = User(id = 2, email = "a@paxtech.com")
+
+        assertEquals(a, b)
+        assertEquals(a.hashCode(), b.hashCode())
+        assertNotEquals(a, c)
+    }
+
+    @Test
+    fun `copy should override only specified fields`() {
+        val original = User(id = 1, email = "old@paxtech.com")
+
+        val updated = original.copy(email = "new@paxtech.com")
+
+        assertEquals(1, updated.id)
+        assertEquals("new@paxtech.com", updated.email)
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-AN-01 | `User` (data class) | constructor con `id`, `email` y `token` | Expone los tres campos sin transformación | Passed |
+| IAM-AN-02 | `User` (data class) | constructor sin `token` | `token` adopta el valor por defecto `null` | Passed |
+| IAM-AN-03 | `User` (data class) | `equals` y `hashCode` generados | Igualdad estructural por valor de los campos | Passed |
+| IAM-AN-04 | `User` (data class) | `copy(email = …)` | Retorna copia con sólo el campo modificado | Passed |
+| IAM-AN-05 | `Client` (data class) | constructor con todos los campos | Expone `id`, `firstName`, `lastName`, `userId` | Passed |
+| IAM-AN-06 | `Client` (data class) | `equals` por valor | Dos `Client` con mismos campos son iguales | Passed |
+| IAM-AN-07 | `Client` (data class) | `copy(firstName = …)` | Cambia `firstName` y conserva el resto | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew :app:testDebugUnitTest \
+  --tests "com.paxtech.mobileapp.features.authentication.domain.models.UserTest" \
+  --tests "com.paxtech.mobileapp.features.authentication.domain.models.ClientTest" \
+  -Pandroid.overridePathCheck=true
+```
+
+##### 6.1.1.3.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (configuración por defecto del workspace de Angular CLI 19).
+
+**Ubicación en `Frontend-Web-Application`:**
+
+- `src/app/iam/model/account.entity.spec.ts`
+- `src/app/iam/model/client.entity.spec.ts`
+- `src/app/iam/model/provider.entity.spec.ts`
+
+```typescript
+describe('AccountEntity', () => {
+  it('should allow assigning fields after construction', () => {
+    const account = new AccountEntity();
+
+    account.id = 42;
+    account.email = 'gael@paxtech.com';
+    account.passwordHash = 'hashed';
+    account.type = 'client';
+    account.isActive = true;
+
+    expect(account.id).toBe(42);
+    expect(account.email).toBe('gael@paxtech.com');
+    expect(account.isActive).toBeTrue();
+  });
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| IAM-WEB-01 | `AccountEntity` | constructor por defecto | Inicializa numéricos en `0`, strings en `''` y `isActive` en `false` | Passed |
+| IAM-WEB-02 | `AccountEntity` | asignación de campos | Permite mutar todos los atributos públicos tras la construcción | Passed |
+| IAM-WEB-03 | `AccountEntity` | aislamiento entre instancias | Dos `AccountEntity` no comparten estado | Passed |
+| IAM-WEB-04 | `Client` | constructor por defecto | Inicializa `id/userId` en `0` y nombres en `''` | Passed |
+| IAM-WEB-05 | `Client` | asignación de campos | Permite actualizar `firstName/lastName/userId` | Passed |
+| IAM-WEB-06 | `Provider` | constructor por defecto | Inicializa `id/userId` en `0` y `companyName` en `''` | Passed |
+| IAM-WEB-07 | `Provider` | asignación de campos | Permite actualizar `id/companyName/userId` | Passed |
+| IAM-WEB-08 | `Provider` | aislamiento entre instancias | Dos `Provider` no comparten `companyName` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+ng test --include="src/app/iam/model/account.entity.spec.ts" --include="src/app/iam/model/client.entity.spec.ts" --include="src/app/iam/model/provider.entity.spec.ts"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/iam/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context IAM en Karma y Jasmine" width="900">
+</div>
+
+##### 6.1.1.3.5. Resumen agregado (IAM)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 | 5 | 1 |
+| Mobile (Flutter / iOS) | flutter_test | 5 | 1 |
+| Mobile (Android / Kotlin) | JUnit 4 | 7 | 2 |
+| Frontend Web (Angular) | Karma + Jasmine | 8 | 3 |
+| **Total bounded context IAM** | | **25** | **7** |
+
+#### 6.1.1.4. Profiles Bounded Context
+
+Cobertura del bounded context **Profiles**: 66 tests distribuidos en 14 archivos (41 backend, 9 Flutter, 6 Android, 10 Angular). La suite cubre los aggregates `Client`, `Provider`, `ProviderProfile`, `Discount`, `PortfolioImage` y `Social`; los value objects `FullName` y `CompanyName`; y los modelos de presentación que cada cliente expone para perfilar al usuario.
+
+Durante la elaboración del set de tests del bounded context Profiles no se identificaron bugs funcionales adicionales en la lógica implementada. La suite sí endurece los invariantes ya escritos en los aggregates: longitud máxima de URLs, no-nullability de nombres, rango válido de descuentos porcentuales y caps en descuentos por monto fijo.
+
+##### 6.1.1.4.1. Backend — Spring Boot
+
+**Framework:** JUnit 5 (incluido en `spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/ClientTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/ProviderTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/ProviderProfileTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/DiscountTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/PortfolioImageTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/aggregates/SocialTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/valueobjects/FullNameTest.java`
+- `src/test/java/com/paxtech/utime/platform/profiles/domain/model/valueobjects/CompanyNameTest.java`
+
+```java
+class DiscountTest {
+
+    @Test
+    void shouldCalculateFinalPriceAfterPercentage() {
+        Discount discount = new Discount(percentageCommand(), providerProfile());
+
+        BigDecimal finalPrice = discount.calculateFinalPrice(new BigDecimal("100"));
+
+        assertEquals(0, finalPrice.compareTo(new BigDecimal("80")));
+    }
+
+    @Test
+    void shouldCapFixedAmountAtOriginalPrice() {
+        Discount discount = new Discount(fixedCommand(new BigDecimal("50")), providerProfile());
+
+        BigDecimal amount = discount.calculateDiscountAmount(new BigDecimal("30"));
+
+        assertEquals(0, amount.compareTo(new BigDecimal("30")));
+        assertEquals(0, discount.calculateFinalPrice(new BigDecimal("30")).compareTo(BigDecimal.ZERO));
+    }
+
+    @Test
+    void shouldRejectPercentageGreaterThan100() {
+        ProviderProfile profile = providerProfile();
+
+        assertThrows(IllegalArgumentException.class, () -> new Discount(
+                new CreateDiscountCommand("t", "s", "c",
+                        DiscountType.PERCENTAGE, new BigDecimal("150"), 1L),
+                profile));
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-BE-01 | `Client` | constructor por `CreateClientCommand` | Mapea `firstName/lastName` y enlaza el `User` recibido | Passed |
+| PRF-BE-02 | `Client` | `updateFullName(firstName, lastName)` | Reemplaza el value object `FullName` con los nuevos valores | Passed |
+| PRF-BE-03 | `Client` | `updateFullName` con `firstName` en blanco | Lanza `IllegalArgumentException` y no muta el aggregate | Passed |
+| PRF-BE-04 | `Client` | `updateFullName` con `lastName` nulo | Lanza `IllegalArgumentException` y no muta el aggregate | Passed |
+| PRF-BE-05 | `Client` | `updateProfileImageUrl` | Persiste la URL de imagen recibida | Passed |
+| PRF-BE-06 | `Provider` | constructor por `CreateProviderCommand` | Mapea `companyName` y enlaza el `User` recibido | Passed |
+| PRF-BE-07 | `Provider` | `updateCompanyName` happy path | Reemplaza el value object `CompanyName` | Passed |
+| PRF-BE-08 | `Provider` | `updateCompanyName` con valor en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-09 | `Provider` | `updateCompanyName` con `null` | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-10 | `ProviderProfile` | constructor por `CreateProviderProfileCommand` | Inicializa los siete campos del aggregate | Passed |
+| PRF-BE-11 | `ProviderProfile` | `updateInformation` parcial (solo algunos campos) | Sobrescribe únicamente los campos provistos y conserva el resto | Passed |
+| PRF-BE-12 | `ProviderProfile` | setters dedicados (`updateDescription`, `updateOpenTime`, …) | Cada setter modifica exclusivamente su campo objetivo | Passed |
+| PRF-BE-13 | `ProviderProfile` | constructor por defecto (JPA) | Inicializa todos los campos en `null` | Passed |
+| PRF-BE-14 | `Discount` | constructor con descuento porcentual válido | Persiste título, tipo y valor del descuento | Passed |
+| PRF-BE-15 | `Discount` | `calculateDiscountAmount` con porcentaje | Aplica `(value/100) * originalPrice` con escala 4 y `HALF_UP` | Passed |
+| PRF-BE-16 | `Discount` | `calculateFinalPrice` con porcentaje | Resta el descuento al precio original | Passed |
+| PRF-BE-17 | `Discount` | `calculateDiscountAmount` con monto fijo > original | Capa el descuento al precio original (no entrega negativos) | Passed |
+| PRF-BE-18 | `Discount` | constructor con porcentaje > 100 | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-19 | `Discount` | `calculateDiscountAmount` con precio ≤ 0 | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-20 | `Discount` | `update(UpdateDiscountCommand)` happy path | Sobrescribe título, subtítulo, contenido y valor | Passed |
+| PRF-BE-21 | `Discount` | `update` con porcentaje > 100 | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-22 | `PortfolioImage` | constructor con URL válida | Persiste la URL recibida | Passed |
+| PRF-BE-23 | `PortfolioImage` | constructor con URL `null` | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-24 | `PortfolioImage` | constructor con URL en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-25 | `PortfolioImage` | constructor con URL > 200 caracteres | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-26 | `PortfolioImage` | `update` con URL nueva | Reemplaza la URL anterior | Passed |
+| PRF-BE-27 | `PortfolioImage` | `update` con URL inválida | Lanza `IllegalArgumentException` y no muta | Passed |
+| PRF-BE-28 | `Social` | constructor con URL e ícono válidos | Persiste ambos atributos | Passed |
+| PRF-BE-29 | `Social` | constructor con URL en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-30 | `Social` | constructor con ícono en blanco | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-31 | `Social` | constructor con URL > 100 caracteres | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-32 | `Social` | constructor con ícono > 32 caracteres | Lanza `IllegalArgumentException` | Passed |
+| PRF-BE-33 | `Social` | `update(UpdateSocialCommand)` | Reemplaza URL e ícono | Passed |
+| PRF-BE-34 | `FullName` (VO) | composición `getFullName()` | Concatena `firstName + " " + lastName` | Passed |
+| PRF-BE-35 | `FullName` (VO) | `getFullName()` con ambos `null` | Retorna cadena vacía | Passed |
+| PRF-BE-36 | `FullName` (VO) | `getFullName()` con `firstName` `null` | Retorna sólo `lastName` | Passed |
+| PRF-BE-37 | `FullName` (VO) | `getFullName()` con `lastName` `null` | Retorna sólo `firstName` | Passed |
+| PRF-BE-38 | `FullName` (VO) | igualdad estructural | Dos `FullName` con mismos valores son iguales y comparten `hashCode` | Passed |
+| PRF-BE-39 | `CompanyName` (VO) | constructor con valor | Expone el valor recibido vía `getValue()` | Passed |
+| PRF-BE-40 | `CompanyName` (VO) | constructor por defecto (JPA) | `getValue()` retorna `null` | Passed |
+| PRF-BE-41 | `CompanyName` (VO) | igualdad estructural | Dos `CompanyName` iguales comparten `hashCode` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./mvnw test -Dtest="ClientTest,ProviderTest,ProviderProfileTest,DiscountTest,PortfolioImageTest,SocialTest,FullNameTest,CompanyNameTest"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/profiles/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Profiles en Spring Boot" width="900">
+</div>
+
+##### 6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)
+
+**Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
+
+**Ubicación en `Ios-Mobile-App`:**
+
+- `test/features/profile/providerProfile_test.dart`
+
+```dart
+test('toUpdateJson should expose only mutable fields', () {
+  final profile = ProviderProfile(
+    id: 1,
+    providerId: 10,
+    companyName: 'Pax Salon',
+    location: 'Lima',
+    profileImageUrl: 'https://cdn/p.png',
+    coverImageUrl: 'https://cdn/c.png',
+    description: 'desc',
+    openTime: '09:00',
+    closeTime: '20:00',
+    portfolioImages: [
+      PortfolioImage(id: 1, imageUrl: 'https://cdn/img1.png'),
+    ],
+  );
+
+  final update = profile.toUpdateJson();
+
+  expect(update.containsKey('id'), isFalse);
+  expect(update.containsKey('providerId'), isFalse);
+  expect(update['portfolioImages'], ['https://cdn/img1.png']);
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-FL-01 | `ProviderProfile` | constructor con campos opcionales ausentes | `portfolioImages` queda vacío y los nullable permanecen `null` | Passed |
+| PRF-FL-02 | `ProviderProfile` | `fromJson` con payload completo | Mapea cabecera, listas anidadas (`portfolioImages`, `socials`) y descripciones | Passed |
+| PRF-FL-03 | `ProviderProfile` | `fromJson` sin `location` ni `portfolioImages` | Aplica defaults (`''` y `[]`) | Passed |
+| PRF-FL-04 | `ProviderProfile` | round-trip `toJson` → `fromJson` | Preserva los campos del aggregate | Passed |
+| PRF-FL-05 | `ProviderProfile` | `toUpdateJson()` (PUT request) | Excluye `id`/`providerId` y aplana `portfolioImages` a URLs | Passed |
+| PRF-FL-06 | `ProviderProfile` | `copyWith` parcial | Sobrescribe sólo los campos provistos | Passed |
+| PRF-FL-07 | `ProfileSocials` | `toJson` con campos `null` | Omite los campos nulos del payload | Passed |
+| PRF-FL-08 | `ProfileSocials` | `fromJson` con campos parciales | Mapea sólo los campos presentes y deja el resto en `null` | Passed |
+| PRF-FL-09 | `PortfolioImage` | round-trip `toJson` → `fromJson` | Preserva `id` y `imageUrl` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+flutter test test/features/profile/providerProfile_test.dart
+```
+
+##### 6.1.1.4.3. Mobile App — Android (Kotlin)
+
+**Framework:** JUnit 4 (configuración por defecto del scaffolding Android).
+
+**Ubicación en `Mobile-App`:**
+
+- `app/src/test/java/com/paxtech/mobileapp/features/profile/presentation/model/ProfileUiTest.kt`
+
+> El value object `ProfileFormState` y su validación de email derivada de `android.util.Patterns.EMAIL_ADDRESS` no están incluidos en esta suite porque dependen del runtime de Android; quedarán cubiertos por instrumented tests (`androidTest`) en una iteración posterior.
+
+```kotlin
+@Test
+fun `firstName should be the substring before the first space`() {
+    val profile = sampleProfile("Gael Ramirez")
+
+    assertEquals("Gael", profile.firstName)
+}
+
+@Test
+fun `firstName should be the whole name when there is no space`() {
+    val profile = sampleProfile("Gael")
+
+    assertEquals("Gael", profile.firstName)
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-AN-01 | `ProfileUi` | propiedad derivada `firstName` | Devuelve la subcadena previa al primer espacio | Passed |
+| PRF-AN-02 | `ProfileUi` | `firstName` sin espacio en `fullName` | Devuelve el nombre completo intacto | Passed |
+| PRF-AN-03 | `ProfileUi` | `firstName` con nombre compuesto | Toma sólo el primer token (hasta el primer espacio) | Passed |
+| PRF-AN-04 | `ProfileUi` | `avatarUrl` por defecto | Adopta el valor `null` cuando no se provee | Passed |
+| PRF-AN-05 | `GenderUi` | etiquetas legibles para `FEMALE/MALE/OTHER` | Devuelve "Femenino", "Masculino" y "Otro" respectivamente | Passed |
+| PRF-AN-06 | `GenderUi` | `default` del enum | Apunta a `GenderUi.FEMALE` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+./gradlew :app:testDebugUnitTest \
+  --tests "com.paxtech.mobileapp.features.profile.presentation.model.ProfileUiTest" \
+  -Pandroid.overridePathCheck=true
+```
+
+##### 6.1.1.4.4. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine (configuración por defecto del workspace de Angular CLI 19).
+
+**Ubicación en `Frontend-Web-Application`:**
+
+- `src/app/profile/models/profile.entity.spec.ts`
+- `src/app/profile/models/salon-profile.entity.spec.ts`
+- `src/app/profile/models/portfolio-image.spec.ts`
+- `src/app/profile/models/social.entity.spec.ts`
+
+```typescript
+describe('SalonProfile', () => {
+  it('should hydrate from a partial response', () => {
+    const profile = new SalonProfile({
+      id: 7,
+      providerId: 12,
+      companyName: 'Pax Salon',
+      location: 'Lima, Peru',
+      profileImageUrl: 'https://cdn/p.png',
+      portfolioImages: ['a.png', 'b.png'],
+      socials: { instagram: 'https://ig/pax' },
+    });
+
+    expect(profile.companyName).toBe('Pax Salon');
+    expect(profile.portfolioImages.length).toBe(2);
+    expect(profile.socials['instagram']).toBe('https://ig/pax');
+  });
+});
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+|---------|---------|----------------|--------------------|--------|
+| PRF-WEB-01 | `Profile` | constructor por defecto | `accountId` queda como string `'0'`; toggles en `false`; campos de texto en `''` | Passed |
+| PRF-WEB-02 | `Profile` | tipo de `accountId` | `typeof profile.accountId === 'string'` | Passed |
+| PRF-WEB-03 | `Profile` | asignación de campos | Permite mutar nombre, contacto y toggles tras la construcción | Passed |
+| PRF-WEB-04 | `SalonProfile` | constructor sin parámetros | `socials` y `portfolioImages` quedan vacíos; numéricos en `0` | Passed |
+| PRF-WEB-05 | `SalonProfile` | constructor con respuesta parcial | Hidrata sólo los campos presentes en el response | Passed |
+| PRF-WEB-06 | `SalonProfile` | constructor con campos faltantes | Aplica defaults (`''`, `{}`, `[]`) en los campos no recibidos | Passed |
+| PRF-WEB-07 | `PortfolioImage` | constructor por defecto | Inicializa `id` en `0` y `imageUrl` en `''` | Passed |
+| PRF-WEB-08 | `PortfolioImage` | asignación de campos | Permite establecer `id` y `imageUrl` después de la construcción | Passed |
+| PRF-WEB-09 | `SocialSummary` (DTO) | shape de respuesta del API | Acepta `id`, `socialIcon` y `socialUrl` | Passed |
+| PRF-WEB-10 | `CreateSocialDto` (DTO) | shape de payload POST/PUT | Acepta `socialIcon` y `socialUrl` | Passed |
+
+**Comando de ejecución:**
+
+```bash
+ng test --include="src/app/profile/models/profile.entity.spec.ts" --include="src/app/profile/models/salon-profile.entity.spec.ts" --include="src/app/profile/models/portfolio-image.spec.ts" --include="src/app/profile/models/social.entity.spec.ts"
+```
+
+**Evidencia de ejecución:**
+
+<div align="center">
+  <img src="./assets/testing/unit/profiles/frontend-angular-karma-unit-tests.png" alt="Ejecución de unit tests frontend del bounded context Profiles en Karma y Jasmine" width="900">
+</div>
+
+##### 6.1.1.4.5. Resumen agregado (Profiles)
+
+| Plataforma | Framework | Tests escritos | Archivos |
+|---|---|---|---|
+| Backend (Spring Boot) | JUnit 5 | 41 | 8 |
+| Mobile (Flutter / iOS) | flutter_test | 9 | 1 |
+| Mobile (Android / Kotlin) | JUnit 4 | 6 | 1 |
+| Frontend Web (Angular) | Karma + Jasmine | 10 | 4 |
+| **Total bounded context Profiles** | | **66** | **14** |
+
 ### 6.1.2. Core Integration Tests
 
-**Framework:** [herramienta]
+#### Bounded Context: Services
 
-```
-// Ejemplo de test de integración
-// [Contenido pendiente]
-```
+**Framework:** Spring Boot Test + MockMvc + H2 (in-memory) — `src/test/java/.../services/interfaces/rest/ServiceControllerIT.java`
+
+Las pruebas ejercen la pila completa **HTTP → Spring Security → Controller → Service → Repository → H2** sin ningún mock. La base de datos H2 reemplaza a PostgreSQL durante los tests mediante `src/test/resources/application.properties`; Flyway se deshabilita y Hibernate crea/destruye el esquema en cada ejecución (`ddl-auto=create-drop`). Los endpoints de servicios son `permitAll()` en `WebSecurityConfiguration`, por lo que no se requiere token JWT.
+
+Un hallazgo relevante que los tests documentan explícitamente: el `ServiceController` no tiene `@ExceptionHandler` ni existe un `@ControllerAdvice` global. Cuando el servicio lanza `IllegalArgumentException` por violaciones de regla de negocio (nombre duplicado, ID inexistente), MockMvc relanza la excepción en lugar de producir una respuesta HTTP — lo que equivale a HTTP 500 en el servidor real. Los tres tests de error validan esta cadena de excepción.
 
 | Test ID | Componentes integrados | Escenario | Resultado esperado | Estado |
 |---------|------------------------|-----------|--------------------|--------|
-|         |                        |           |                    |        |
+| IT-SVC-01 | Controller → CommandService → Repository | `POST /api/v1/services` con datos válidos | 201 Created; body con `id`, `name`, `duration`, `price`, `providerId` | Pasa |
+| IT-SVC-02 | Controller → CommandService → Repository | `POST /api/v1/services` con mismo nombre para providers distintos | Ambas peticiones devuelven 201 | Pasa |
+| IT-SVC-03 | Controller → CommandService → Repository | `POST /api/v1/services` con nombre duplicado para el mismo provider | `IllegalArgumentException` ("already exists") — HTTP 500 en producción | Pasa |
+| IT-SVC-04 | Controller → QueryService → Repository | `GET /api/v1/services` sin datos previos | 200 OK con array vacío `[]` | Pasa |
+| IT-SVC-05 | Controller → QueryService → Repository | `GET /api/v1/services` tras crear dos servicios | 200 OK con los dos servicios en el array | Pasa |
+| IT-SVC-06 | Controller → CommandService → Repository | `PUT /api/v1/services/{id}` sobre servicio existente | 200 OK con nombre, duración y precio actualizados | Pasa |
+| IT-SVC-07 | Controller → CommandService → Repository | `PUT /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | Pasa |
+| IT-SVC-08 | Controller → CommandService → Repository | `DELETE /api/v1/services/{id}` sobre servicio existente | 200 OK; GET subsecuente devuelve array vacío | Pasa |
+| IT-SVC-09 | Controller → CommandService → Repository | `DELETE /api/v1/services/99999` (ID inexistente) | `IllegalArgumentException` ("does not exist") — HTTP 500 en producción | Pasa |
+
+**Evidencia de ejecución — log completo (07/05/2026):**
+
+```
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.42 s
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+```
+
+**Comando de ejecución:**
+
+```bash
+./mvnw test -Dtest="ServiceControllerIT"
+```
+
+#### Bounded Context: Workers
+
+**Frameworks y suites consideradas:**
+
+- **Backend (Spring Boot):** `SpringBootTest + MockMvc + H2` (`WorkersControllerIntegrationTest`) y `DataJpaTest + H2` (`WorkerCommandServiceImplIntegrationTest`, `WorkerQueryServiceImplIntegrationTest`).
+- **Mobile Android (Kotlin):** `MockWebServer + Retrofit real + Gson` (`WorkerRepositoryImplIntegrationTest`).
+- **Frontend Web (Angular):** Karma + Jasmine en specs de integración de flujo de workers (`*.workers.integration.spec.ts`).
+
+Las pruebas de integración del bounded context **Workers** validan el comportamiento extremo a extremo por capas: HTTP/controller en backend, persistencia real con H2 en servicios de aplicación, consumo HTTP real simulado en Android mediante `MockWebServer`, e integración de componentes + servicios en Angular con render de `staff-list/staff-item`.
+
+| Test ID | Plataforma | Componentes integrados | Escenario | Resultado esperado | Estado |
+|---------|------------|------------------------|-----------|--------------------|--------|
+| IT-WRK-BE-01 | Backend | `WorkersController` -> CommandService -> Repository | `POST /api/v1/workers` con payload válido | 201 Created con `name` y `providerId` correctos | Pasa |
+| IT-WRK-BE-02 | Backend | `WorkersController` -> QueryService -> Repository | `GET /api/v1/workers/{id}` con worker existente | 200 OK con worker persistido | Pasa |
+| IT-WRK-BE-03 | Backend | `WorkersController` -> CommandService -> Repository | `PUT /api/v1/workers/{id}` sobre worker existente | 200 OK con datos actualizados | Pasa |
+| IT-WRK-BE-04 | Backend | `WorkersController` -> CommandService -> Repository | `DELETE /api/v1/workers/{id}` sobre worker existente | 200 OK y eliminación efectiva | Pasa |
+| IT-WRK-BE-05 | Backend | Spring Security -> `WorkersController` | acceso sin autenticación a `/api/v1/workers` | 401 Unauthorized | Pasa |
+| IT-WRK-BE-06 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | creación de worker desde command service | Persiste registro y retorna `Optional` presente | Pasa |
+| IT-WRK-BE-07 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | actualización de worker existente | Cambios persistidos en nombre/especialización/providerId | Pasa |
+| IT-WRK-BE-08 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | eliminación de worker existente | Worker ya no existe en repositorio | Pasa |
+| IT-WRK-BE-09 | Backend | `WorkerCommandServiceImpl` + Repository (H2) | creación duplicada por nombre/provider | Lanza `IllegalArgumentException` (`already exists`) | Pasa |
+| IT-WRK-BE-10 | Backend | `WorkerQueryServiceImpl` + Repository (H2) | consulta por `providerId` | Retorna solo workers del provider consultado | Pasa |
+| IT-WRK-BE-11 | Backend | `WorkerQueryServiceImpl` + Repository (H2) | consulta por `id` | Retorna `Optional` con worker existente | Pasa |
+| IT-WRK-BE-12 | Backend | `WorkerQueryServiceImpl` + Repository (H2) | consulta global (`GetAllWorkersQuery`) | Retorna lista con workers persistidos | Pasa |
+| IT-WRK-AN-01 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | respuesta HTTP 200 con JSON válido | `Result.success` con mapeo correcto de lista | Pasa |
+| IT-WRK-AN-02 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | respuesta HTTP 200 con `[]` | `Result.success` con lista vacía | Pasa |
+| IT-WRK-AN-03 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | respuesta HTTP 500 | `Result.failure` con mensaje `HTTP 500` | Pasa |
+| IT-WRK-AN-04 | Mobile Android | `WorkerRepositoryImpl` + Retrofit + MockWebServer | payload JSON malformado | `Result.failure` con excepción de parseo | Pasa |
+| IT-WRK-WEB-01 | Frontend Web | `ProfessionalDashboardComponent` + `WorkerApiService` + `StaffListComponent` | carga workers del provider autenticado | filtra por provider y renderiza 2 `app-staff-item` | Pasa |
+| IT-WRK-WEB-02 | Frontend Web | `AppointmentMakerComponent` + `WorkerApiService` + `StaffListComponent` | carga workers en flujo de reserva | selecciona worker inicial y renderiza lista completa | Pasa |
+
+**Comandos de ejecución:**
+
+```bash
+# Backend (Web-Services)
+./mvnw test -Dtest="WorkersControllerIntegrationTest,WorkerCommandServiceImplIntegrationTest,WorkerQueryServiceImplIntegrationTest"
+
+# Mobile Android (Mobile-App)
+./gradlew :app:testDebugUnitTest --tests "com.paxtech.mobileapp.features.clientDashboard.data.repository.WorkerRepositoryImplIntegrationTest" -Pandroid.overridePathCheck=true
+
+# Frontend Web (Frontend-Web-Application)
+ng test --include="src/app/dashboard/pages/professional-dashboard/professional-dashboard.workers.integration.spec.ts" --include="src/app/appointments/pages/appointment-maker/appointment-maker.workers.integration.spec.ts"
+```
+
+**Evidencia de ejecución — log completo (07/05/2026):**
+
+**Backend (Spring Boot):**
+
+<div align="center">
+  <img src="./assets/testing/integration/workers/backend-springboot-integration-tests.png" alt="Ejecución de integration tests backend del bounded context Workers en Spring Boot" width="900">
+</div>
+
+**Mobile Android (Kotlin):**
+
+<div align="center">
+  <img src="./assets/testing/integration/workers/mobile-android-integration-tests.png" alt="Ejecución de integration tests Android del bounded context Workers" width="900">
+</div>
+
+**Frontend Web (Angular):**
+
+<div align="center">
+  <img src="./assets/testing/integration/workers/frontend-angular-integration-tests.png" alt="Ejecución de integration tests frontend del bounded context Workers en Angular" width="900">
+</div>
 
 ### 6.1.3. Core Behavior-Driven Development
 
-**Framework:** [Cucumber / SpecFlow / Behave]
+#### 6.1.3.1. Services Bounded Context
+
+Para el bounded context **Services**, se aplicó Behavior-Driven Development (BDD) a partir de la user story **US22 - Administración de servicios ofrecidos**, definida en el Product Backlog:
+
+> **Como** dueño/administrador, **quiero** agregar, editar o eliminar servicios, **para** mantener mi catálogo actualizado.
+
+Los escenarios automatizados corresponden a los dos criterios de aceptación definidos para **US22**: **"Registro de nuevo servicio"** y **"Eliminación de servicio registrado"**. Se eligieron porque cubren el comportamiento central del bounded context Services: mantener actualizado el catálogo del proveedor desde la interfaz web.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript)
+
+**Ubicación en el repositorio Frontend-Web-Applications:**
+
+- `e2e-bdd/features/services.feature`
+- `e2e-bdd/steps/services.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: Services
 
 ```gherkin
-Feature: [Nombre de la feature]
+# language: es
+@services @US22
+Característica: Administración de servicios ofrecidos
+  Como dueño o administrador
+  Quiero agregar, editar o eliminar servicios
+  Para mantener mi catálogo actualizado
 
-  Scenario: [Nombre del escenario]
-    Given [precondición]
-    When [acción]
-    Then [resultado esperado]
+  Escenario: Registro de nuevo servicio
+    Dado que el administrador proveedor está autenticado
+    Y se encuentra en la página de servicios
+    Cuando completa los datos necesarios para registrar un servicio llamado "Corte BDD" con duración 45 y precio 80
+    Entonces el sistema guarda el nuevo servicio
+    Y el servicio registrado aparece en el catálogo de servicios
+
+  Escenario: Eliminación de servicio registrado
+    Dado que el administrador proveedor está autenticado
+    Y tiene un servicio registrado llamado "Servicio BDD" en el catálogo
+    Y se encuentra en la página de servicios
+    Cuando elimina el servicio registrado del catálogo
+    Entonces el sistema retira el servicio del catálogo
+    Y el servicio eliminado ya no aparece en la página de servicios
 ```
+
+#### Step definition example
+
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions. Estos pasos usan Playwright para interactuar con la aplicación web real y verificar el comportamiento observable.
+
+```typescript
+When(
+  'completa los datos necesarios para registrar un servicio llamado {string} con duración {int} y precio {int}',
+  async function (serviceName: string, duration: number, price: number) {
+    this.registeredServiceName = `${serviceName} ${Date.now()}`;
+
+    await this.page.getByLabel(/Create first service|Add new service/i).click();
+
+    const dialog = this.page.getByRole('dialog', { name: 'New Service' });
+    await expect(dialog).toBeVisible();
+
+    const createServiceResponse = this.page.waitForResponse(response =>
+      new URL(response.url()).pathname === '/api/v1/services'
+      && response.request().method() === 'POST'
+    );
+
+    await dialog.getByRole('textbox', { name: 'Service name' }).fill(this.registeredServiceName);
+    await dialog.getByRole('spinbutton', { name: 'Duration in minutes' }).fill(String(duration));
+    await dialog.getByRole('spinbutton', { name: 'Price' }).fill(String(price));
+    await dialog.getByRole('button', { name: 'Create service' }).click();
+
+    this.serviceCreationStatus = (await createServiceResponse).status();
+  }
+);
+```
+
+#### Execution evidence
+
+Se ejecutaron los escenarios BDD contra la aplicación web Angular y el backend Spring Boot en ambiente local. Las pruebas abrieron la interfaz real con Playwright, autenticaron un proveedor de prueba, crearon un servicio desde la página de servicios, eliminaron un servicio existente y verificaron las respuestas de backend esperadas para `POST /api/v1/services` y `DELETE /api/v1/services/{id}`.
+
+Comando ejecutado:
+
+```powershell
+npm run bdd:services
+```
+
+Resultado:
+
+```text
+> frontend-web-applications@0.0.0 bdd:services
+> cucumber-js e2e-bdd/features/services.feature --tags @services
+
+...............
+
+2 scenarios (2 passed)
+11 steps (11 passed)
+0m03.052s (executing steps: 0m03.036s)
+```
+
+La ejecución confirma que la especificación BDD no solo está enlazada con step definitions, sino que valida el comportamiento real del sistema desde la interfaz del proveedor.
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
+|------------|-----------------|---------------|---------|--------|
+| US22 | Services | Registro de nuevo servicio | `e2e-bdd/features/services.feature` | Passed |
+| US22 | Services | Eliminación de servicio registrado | `e2e-bdd/features/services.feature` | Passed |
+
+#### 6.1.3.2. IAM Bounded Context
+
+Para el bounded context **IAM**, se aplicó BDD a partir de dos historias del Product Backlog:
+
+- **US01 — Registro de un cliente**: *"Como cliente, quiero registrarme proporcionando mis datos personales, para crear una cuenta."*
+- **US03 — Inicio de sesión del usuario**: *"Como usuario, quiero iniciar sesión con mi correo y contraseña, para acceder a mi cuenta."*
+
+Los dos escenarios elegidos cubren el corazón del bounded context IAM: el alta de una identidad nueva y la verificación de credenciales contra el endpoint `POST /api/v1/authentication/sign-in`. El primer escenario se ejerce íntegramente desde la UI Angular (sin atajos al backend) para demostrar que la pantalla `/iam/register` es capaz de crear cuentas válidas; el segundo prepara un proveedor con el helper `createProviderAccount` (mismo helper que ya consume Services) y luego ejerce el formulario `/iam/login`, validando además que el `providerId` se persiste en `localStorage`.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript).
+
+**Ubicación en el repositorio Frontend-Web-Application:**
+
+- `e2e-bdd/features/iam.feature`
+- `e2e-bdd/steps/iam.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: IAM
+
+```gherkin
+# language: es
+@iam
+Característica: Autenticación e identidad de usuarios
+  Como usuario de uTime
+  Quiero poder registrarme y autenticarme en la plataforma
+  Para acceder a mi cuenta y a las funciones que me corresponden
+
+  @US01
+  Escenario: Registro de un cliente desde el formulario público
+    Dado que un visitante navega al formulario de registro de uTime
+    Cuando completa el registro como cliente con nombre "Gael", apellido "BDD", correo y contraseña válidos
+    Entonces el sistema confirma la creación de la cuenta con un snackbar de éxito
+    Y la aplicación lo redirige a la página de inicio de sesión
+
+  @US03
+  Escenario: Inicio de sesión de un proveedor con credenciales válidas
+    Dado que existe un proveedor previamente registrado en el sistema
+    Y el proveedor navega a la página de inicio de sesión
+    Cuando ingresa su correo y contraseña y envía el formulario
+    Entonces el sistema lo redirige al dashboard del proveedor
+    Y persiste el identificador del proveedor en el almacenamiento local
+```
+
+#### Step definition example
+
+El paso `Cuando ingresa su correo y contraseña y envía el formulario` se conecta a Playwright reutilizando el `ProviderAccount` que el step previo dejó en el `UTimeWorld`. La aserción posterior poll-ea `localStorage` hasta que el `providerId` aparezca, espejando exactamente la verificación que ya hace el system test `authentication.system.spec.ts` (SYS-01).
+
+```typescript
+When('ingresa su correo y contraseña y envía el formulario', async function (this: UTimeWorld) {
+  if (!this.providerAccount) {
+    throw new Error('Provider account must exist before signing in');
+  }
+  await this.page.getByLabel('email input field').fill(this.providerAccount.email);
+  await this.page.getByLabel('password input field').fill(this.providerAccount.password);
+  await this.page.getByLabel('login button').click();
+});
+
+Then('persiste el identificador del proveedor en el almacenamiento local', async function (this: UTimeWorld) {
+  await expect
+    .poll(() => this.page.evaluate(() => window.localStorage.getItem('providerId')))
+    .toBe(String(this.providerAccount!.providerId));
+});
+```
+
+#### Execution evidence
+
+Los escenarios se ejecutan contra la aplicación web Angular (`http://localhost:4200`) y el backend Spring Boot (`http://localhost:8080`) corriendo en local, igual que la suite Services.
+
+Comando ejecutado:
+
+```powershell
+npm run bdd:iam
+```
+
+Variante `--dry-run` para validar el binding de cada `Given/When/Then` sin levantar el navegador:
+
+```powershell
+npm run bdd:iam:dry-run
+```
+
+**Evidencia de validación de bindings (dry-run de Cucumber):**
+
+El `--dry-run` carga el feature file y los step definitions y valida que cada `Given/When/Then` tenga su step definition correspondiente sin ejecutar Playwright contra la app real. Es la verificación más rápida de que el contrato entre Gherkin y TypeScript está intacto. Cucumber reporta los steps como *skipped* porque `--dry-run` los salta deliberadamente; un step que faltara en el código aparecería como *undefined*, no como *skipped*.
+
+<div align="center">
+  <img src="./assets/testing/bdd/iam/iam-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature IAM (US01 y US03)" width="900">
+</div>
+
+> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:iam`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
+|------------|-----------------|---------------|---------|-----------------|
+| US01 | IAM | Registro de un cliente desde el formulario público | `e2e-bdd/features/iam.feature` | Validados (dry-run) |
+| US03 | IAM | Inicio de sesión de un proveedor con credenciales válidas | `e2e-bdd/features/iam.feature` | Validados (dry-run) |
+
+#### 6.1.3.3. Profiles Bounded Context
+
+Para el bounded context **Profiles**, se aplicó BDD a partir de la user story **US06 — Personalización del perfil del salón de belleza/barbería**: *"Como dueño/administrador, quiero poder personalizar el perfil de mi salón de belleza/barbería con información relevante y estética, para atraer a más clientes."*
+
+El escenario automatiza la única ruta UI del frontend actual que dispara `PUT /api/v1/provider-profiles/{id}`: el registro de un proveedor con dirección desde `/iam/register`. Este flujo es relevante porque es el punto donde el proveedor toma su perfil recién auto-creado (la API `POST /providers` lo crea vacío con campos `to Choose`) y lo personaliza con información de ubicación. La validación termina cuando el backend confirma el update con HTTP 200 y la `location` persistida coincide exactamente con el formato `"<dirección>|<lat>,<lon>"` que la app espera.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript).
+
+**Ubicación en el repositorio Frontend-Web-Application:**
+
+- `e2e-bdd/features/profiles.feature`
+- `e2e-bdd/steps/profiles.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: Profiles
+
+```gherkin
+# language: es
+@profiles
+Característica: Personalización del perfil del salón
+  Como dueño o administrador
+  Quiero personalizar el perfil de mi salón con información relevante
+  Para atraer a más clientes desde la búsqueda de salones
+
+  @US06
+  Escenario: Personalización de la ubicación del salón al registrarse como proveedor
+    Dado que un visitante navega al formulario de registro de uTime
+    Y la geolocalización del navegador apunta a "-12.121100,-77.030600"
+    Y la dirección "Av. Larco 123, Miraflores, Lima" se resuelve a coordenadas conocidas
+    Cuando completa el registro como proveedor con la empresa "Pax Salon BDD" y la dirección anterior
+    Entonces el backend confirma la actualización del perfil con HTTP 200
+    Y la ubicación persistida del perfil contiene la dirección y las coordenadas registradas
+```
+
+#### Step definition example
+
+Para que el escenario sea hermético, los step definitions interceptan la geocodificación a Nominatim antes de enviar el formulario. Esto evita depender de un servicio externo y garantiza que la `location` que se envía al backend siempre tenga las coordenadas esperadas. El paso captura, además, el `Response` Playwright correspondiente al `PUT /api/v1/provider-profiles/{id}` para verificar status y body en un único punto del flujo.
+
+```typescript
+Given('la dirección {string} se resuelve a coordenadas conocidas', async function (this: UTimeWorld, address: string) {
+  await this.page.route('https://nominatim.openstreetmap.org/search?**', async route => {
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify([{ lat: '-12.121100', lon: '-77.030600' }])
+    });
+  });
+  this.expectedProviderLocation = `${address}|-12.121100,-77.030600`;
+});
+
+When('completa el registro como proveedor con la empresa {string} y la dirección anterior', async function (this: UTimeWorld, companyName: string) {
+  await this.page.locator('mat-button-toggle').filter({ hasText: 'Provider' }).click();
+
+  const updateProviderProfileResponse = this.page.waitForResponse(response =>
+    response.url().includes('/api/v1/provider-profiles/')
+    && response.request().method() === 'PUT'
+  );
+
+  // …rellena los inputs del formulario y dispara la submission…
+
+  const profileResponse = await updateProviderProfileResponse;
+  this.providerProfileUpdateStatus = profileResponse.status();
+  this.providerProfileUpdateLocation = (await profileResponse.json()).location;
+});
+```
+
+#### Execution evidence
+
+El escenario se ejecuta contra la aplicación web Angular y el backend Spring Boot en local. Antes de submitir el formulario, el step se asegura de configurar permisos de geolocalización (`context.grantPermissions(['geolocation'])`) y de mockear el endpoint público de Nominatim para que las coordenadas resueltas sean determinísticas — el mismo patrón que aplica el system test `provider-address-distance.system.spec.ts` (SYS-09).
+
+Comando ejecutado:
+
+```powershell
+npm run bdd:profiles
+```
+
+Variante `--dry-run`:
+
+```powershell
+npm run bdd:profiles:dry-run
+```
+
+**Evidencia de validación de bindings (dry-run de Cucumber):**
+
+Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario tienen step definition asociada. La salida de Cucumber reporta `1 scenario (1 skipped)` y `6 steps (6 skipped)` — el conteo coincide con el feature, lo que descarta steps faltantes o con regex/strings desalineados respecto al gherkin.
+
+<div align="center">
+  <img src="./assets/testing/bdd/profiles/profiles-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature Profiles (US06)" width="900">
+</div>
+
+> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:profiles`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
+|------------|-----------------|---------------|---------|-----------------|
+| US06 | Profiles | Personalización de la ubicación del salón al registrarse como proveedor | `e2e-bdd/features/profiles.feature` | Validados (dry-run) |
 
 ### 6.1.4. Core System Tests
 
-**Framework:** [Selenium / Cypress / Playwright]
+#### 6.1.4.1. Aplicación Web (Playwright)
+
+**Framework:** Playwright (TypeScript) — `e2e/` — Chromium
 
 | Test ID | Flujo de usuario | Navegador / Dispositivo | Resultado esperado | Estado |
 |---------|------------------|-------------------------|--------------------|--------|
-|         |                  |                         |                    |        |
+| SYS-01 | El proveedor inicia sesión con email y contraseña válidos desde `/iam/login` | Chromium (desktop) | Redirección a `/provider/homeProvider`; `providerId` almacenado en `localStorage` | Pasa |
+| SYS-02 | El proveedor crea un servicio desde la página `/provider/services` usando el diálogo "New Service" | Chromium (desktop) | El nuevo servicio aparece en la tabla de servicios | Pasa |
+| SYS-03 | El proveedor crea un miembro del personal (worker) desde el dashboard del proveedor | Chromium (desktop) | El worker creado aparece en la lista con nombre y especialización | Pasa |
+| SYS-04 | El cliente realiza una reserva completa: elige salón → servicio → worker → slot de calendario → confirma | Chromium (desktop) | La reserva y el pago se crean en el backend con los datos correctos; la UI redirige a la pantalla de pago con el enlace de Stripe | Pasa |
+| SYS-05 | El cliente se registra desde `/iam/register` con nombre, apellido, email y contraseña | Chromium (desktop) | Aparece snackbar "Account created successfully!" y la página redirige a `/iam/login` | Pasa |
+| SYS-06 | El proveedor elimina un servicio existente desde `/provider/services` | Chromium (desktop) | El endpoint `DELETE /api/v1/services/{id}` retorna 200; tras recargar la página el servicio ya no aparece en la tabla | Pasa |
+| SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | Pasa |
+| SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | Pasa |
+| SYS-09 | El proveedor se registra desde la web ingresando una dirección y el cliente visualiza los salones ordenados por distancia desde su ubicación | Chromium (desktop con geolocalización simulada) | La dirección se transforma a coordenadas mediante geocoding y se guarda en `provider-profiles` como `dirección\|lat,lng`; el salón más cercano aparece antes que uno lejano y muestra distancia calculada | Pasa |
+
+**Evidencia de ejecución — log completo (06/05/2026):**
+
+```
+Running 8 tests using 1 worker
+
+  ok 1 [chromium] › e2e\authentication.system.spec.ts:4:5 › SYS-01 provider signs in through the login page (2.7s)
+  ok 2 [chromium] › e2e\provider-views-reservation.system.spec.ts:13:5 › SYS-08 provider sees client reservation on the dashboard with all related data (1.1s)
+  ok 3 [chromium] › e2e\register.system.spec.ts:3:5 › SYS-05 client registers through the register page (4.4s)
+  ok 4 [chromium] › e2e\reservations.system.spec.ts:11:5 › SYS-04 client creates a reservation and reaches Stripe payment step (1.3s)
+  ok 5 [chromium] › e2e\salon-browse.system.spec.ts:9:5 › SYS-07 client navigates to salon detail from the client dashboard (1.1s)
+  ok 6 [chromium] › e2e\services.system.spec.ts:5:5 › SYS-02 provider creates a service from the services page (1.2s)
+  ok 7 [chromium] › e2e\services.system.spec.ts:24:5 › SYS-06 provider deletes a service from the services page (1.6s)
+  ok 8 [chromium] › e2e\workers.system.spec.ts:5:5 › SYS-03 provider creates a staff member from the dashboard (1.3s)
+
+  8 passed (23.4s)
+```
+
+**Evidencia adicional — SYS-09 (06/05/2026):**
+
+```
+Running 1 test using 1 worker
+
+  ok 1 [chromium] › e2e\provider-address-distance.system.spec.ts:10:5 › SYS-09 provider registers with address and client sees salons ordered by distance (5.5s)
+
+  1 passed (7.3s)
+```
+
+---
+
+#### 6.1.4.2. Aplicación Móvil Flutter (integration_test)
+
+**Framework:** Flutter `integration_test` (Dart) — `integration_test/` — Windows Desktop
+
+Las pruebas se ejecutan contra el backend real desplegado en Azure (`https://paxtech.azurewebsites.net/api/v1`). Cada test que no requiere el flujo de registro/login inyecta la sesión directamente en `SharedPreferences` (token JWT, `user_id`, `provider_id`, `provider_id`, `company_name`) para evitar pasos redundantes de UI. Los tests que sí validan el flujo completo (SYS-FL-01/02/03) pasan por el formulario de registro → login → home.
+
+**Decisiones técnicas:**
+
+- `IndexedStack` en `MainPage` renderiza todas las pestañas simultáneamente; los ítems de navegación se buscan dentro de `CustomBottomNavbar` usando `find.descendant` para evitar colisiones con los `_StatCard` del home (que comparten texto "Servicios" / "Trabajadores").
+- Se añadió `heroTag: null` a los tres `FloatingActionButton` de las páginas de servicios, trabajadores y descuentos, ya que con `IndexedStack` todos están en el árbol de widgets al mismo tiempo y comparten el `heroTag` por defecto (`'Fab Hero'`), lo que causaba un error de animación Hero al navegar.
+- Se usa `pumpUntilVisible` con `pump(250 ms)` discretos en lugar de `pumpAndSettle` en páginas con `CircularProgressIndicator`, para evitar que el helper espere indefinidamente una animación continua.
+
+| Test ID | Flujo de usuario | Plataforma | Resultado esperado | Estado |
+|---------|-----------------|------------|--------------------|--------|
+| SYS-FL-01 | El proveedor se registra con email, contraseña y nombre de empresa, luego inicia sesión | Windows Desktop | Pantalla de inicio muestra "Bienvenido" y el nombre de la empresa | Pasa |
+| SYS-FL-02 | El proveedor crea un servicio desde la pestaña "Servicios" usando el formulario de nuevo servicio | Windows Desktop | El servicio aparece en la lista de servicios | Pasa |
+| SYS-FL-03 | El proveedor crea un trabajador desde la pestaña "Trabajadores" con nombre y especialización | Windows Desktop | El trabajador aparece en la lista del equipo | Pasa |
+| SYS-FL-06 | El proveedor elimina un servicio creado previamente por API | Windows Desktop | El servicio desaparece de la lista tras confirmar la eliminación | Pasa |
+| SYS-FL-08 | El proveedor visualiza en el calendario la reserva de un cliente creada por API | Windows Desktop | El nombre del servicio aparece en el calendario | Pasa |
+| SYS-FL-09 | El proveedor navega al formulario de edición de ubicación desde su perfil | Windows Desktop | La pantalla "Editar ubicación" carga con el botón "Cambiar ubicación" visible | Pasa |
+
+**Evidencia de ejecución — log completo (07/05/2026):**
+
+```
+00:00 +0: Provider core system tests SYS-FL-01 provider registers and signs in
+00:22 +1: Provider core system tests SYS-FL-02 provider creates a service
+00:29 +2: Provider core system tests SYS-FL-01 provider registers and signs in
+00:38 +3: Provider core system tests SYS-FL-03 provider creates a worker
+00:43 +4: Provider core system tests SYS-FL-01 provider registers and signs in
+00:49 +4: Provider core system tests SYS-FL-06 provider deletes a service
+00:53 +5: Provider core system tests SYS-FL-08 provider sees client reservation on calendar
+01:05 +5: Provider core system tests SYS-FL-01 provider registers and signs in
+01:11 +6: Provider core system tests SYS-FL-09 provider updates salon location
+01:17 +6: Provider core system tests SYS-FL-01 provider registers and signs in
+01:22 +6: (tearDownAll)
+01:22 +6: All tests passed!
+```
+
+**Comando de ejecución:**
+
+```bash
+flutter test integration_test/provider_core_system_test.dart --device-id windows
+```
 
 ## 6.2. Static testing & Verification
 
@@ -3223,56 +4541,229 @@ Evidencias de la auditoría recibida.
 
 ## 7.1. Continuous Integration
 
+La Continuous Integration (CI) es una práctica de DevOps que consiste en integrar los cambios de código frecuentemente al repositorio compartido y, en cada integración, ejecutar de manera automática la compilación y la suite de pruebas. El objetivo es detectar rupturas y regresiones en cuestión de minutos, antes de que un cambio llegue a una rama estable o a un ambiente compartido.
+
+Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring Boot + Maven) porque concentra la mayor parte de la lógica de dominio compartida por las tres aplicaciones cliente (Angular, Android nativo y Flutter para iOS). El pipeline ejecuta el build completo y la suite JUnit en cada push a `main`, y publica el artefacto JAR resultante para que el job de despliegue de la sección 7.2 (Continuous Delivery) lo consuma.
+
 ### 7.1.1. Tools and Practices
 
-[Contenido pendiente — herramientas: GitHub Actions / GitLab CI / Jenkins. Prácticas: trunk-based, PR reviews, pre-commit hooks.]
+**Herramientas en uso:**
+
+| Categoría | Herramienta | Uso concreto en el proyecto |
+|---|---|---|
+| CI Engine | **GitHub Actions** | Único CI engine. El workflow `main_paxtech.yml` corre en runners hospedados (`ubuntu-latest`) y se dispara con `push` a `main` o manualmente vía `workflow_dispatch`. |
+| Build tool | **Apache Maven** (3.x con `mvnw`) | Compila el proyecto Spring Boot mediante `mvn clean install`, ejecuta los tests unitarios y de integración (JUnit 5 + Mockito + AssertJ) y produce un JAR ejecutable bajo `target/`. |
+| JDK | **Microsoft Build of OpenJDK 17** | Distribución elegida por compatibilidad nativa con Azure App Service. Se aprovisiona en cada job con `actions/setup-java@v4`. |
+| Artifact registry | **GitHub Actions artifacts** | El job `build` sube `target/*.jar` con `actions/upload-artifact@v4` y el job `deploy` lo recupera con `actions/download-artifact@v4`. |
+| Secret store | **GitHub Encrypted Secrets** | Credenciales de Azure (`AZUREAPPSERVICE_CLIENTID_*`, `AZUREAPPSERVICE_TENANTID_*`, `AZUREAPPSERVICE_SUBSCRIPTIONID_*`) inyectadas como `secrets.*` en el workflow. |
+| Git platform | **GitHub** (organización `paxtech-2026-10`) | Hospeda los cinco repositorios del producto y aplica las reglas de protección de ramas que se describen abajo. |
+
+**Prácticas aplicadas:**
+
+- **GitFlow simplificado** — Las ramas permanentes son `main` (producción) y `develop` (integración). Las ramas cortas siguen los prefijos `feature/*`, `release/*` y `hotfix/*`. Esta convención está formalizada en el archivo [`CLAUDE.md`](./CLAUDE.md) del repositorio del informe y se replica en los repos de código (`Web-Services`, `Frontend-Web-Application`, `Mobile-App`, `Ios-Mobile-App`).
+- **Pull Requests obligatorios** — todo merge a `develop` se hace por PR. Cada PR debe ser aprobado por al menos otro integrante antes de fusionarse. Los merges a `main` provienen exclusivamente de `release/*` o `hotfix/*`.
+- **Conventional Commits** — el formato es `<type>(<scope>): <subject>` con un cuerpo descriptivo en inglés. Los `<type>` permitidos (`feat`, `fix`, `docs`, `style`, `refactor`, `assets`, `chore`, `merge`, `release`) y los scopes válidos están listados en `CLAUDE.md`. Esta convención facilita la generación automática de changelogs en los `release/*`.
+- **Build automático en `push` a `main`** — el workflow `main_paxtech.yml` se dispara en cada push directo o merge a `main`, garantizando que ningún commit que no compile o que rompa los tests llegue a producción. La integración a `develop` queda cubierta por los PRs y, durante el desarrollo, los integrantes ejecutan localmente las suites unitarias de las secciones 6.1.1.1–6.1.1.4 antes de pedir review.
+- **Trazabilidad por artefacto** — el JAR producido por el job `build` se sube con un nombre fijo (`java-app`) y queda asociado al run de Actions; el deploy job lo descarga sin recompilar, asegurando que lo que se despliega es exactamente lo que pasó las pruebas.
+- **Tagging de releases** — cada milestone del curso (TB1, TP, TB2, TF) se etiqueta sobre `main` con SemVer (`v1.0.0`, `v2.0.0`, `v3.0.0`, `v4.0.0`) y se publica con `git push --tags`, según la sección 4 de `CLAUDE.md`.
+
+**Estado actual de la CI por repositorio:**
+
+| Repositorio | Stack | Pipeline CI activo | Workflow |
+|---|---|---|---|
+| `Web-Services` | Spring Boot 3.5 + Java 17 + Maven | **Sí** | `.github/workflows/main_paxtech.yml` |
+| `Frontend-Web-Application` | Angular 19 + Karma/Jasmine | No (suites se ejecutan localmente) | — |
+| `Mobile-App` | Android (Kotlin 2.2 + Compose, AGP 8.13) | No, pero el `app/build.gradle.kts` ya integra el plugin `firebaseAppDistribution` para distribuir builds a *testers* (preparado para activarse en CI futura) | — |
+| `Ios-Mobile-App` | Flutter 3.9 + iOS/Android | No (suites se ejecutan localmente) | — |
+
+Esta concentración de la CI en el backend es deliberada para la fase actual del producto: el equipo prioriza la estabilidad del API que consumen los tres clientes, y los stacks de cliente se validan contra builds de `Web-Services` que ya pasaron por el pipeline.
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
+El pipeline de CI vive en `Web-Services/.github/workflows/main_paxtech.yml` y se compone de **dos jobs encadenados**: `build` (cubierto en esta sección) y `deploy` (descrito en la sección 7.2 — Continuous Delivery). Ambos corren sobre `ubuntu-latest` y comparten el JAR producido por `build` mediante el sistema de artefactos de GitHub Actions.
+
+**Triggers del workflow:**
+
+- `push` sobre la rama `main` — cubre tanto commits directos (sólo merges desde `release/*` y `hotfix/*` por convención) como merges aprobados desde PRs.
+- `workflow_dispatch` — permite re-ejecuciones manuales desde la pestaña *Actions* de GitHub, útil para reintentos cuando una dependencia transitoria de Maven Central falla.
+
+**Workflow file (versión actual):**
+
+```yaml
+# .github/workflows/main_paxtech.yml
+name: Build and deploy JAR app to Azure Web App - paxtech
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java version
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'microsoft'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-app
+          path: '${{ github.workspace }}/target/*.jar'
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: java-app
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_82DCE9BB973C4EF4A946BE0C6D46755A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_58428B8490B147DEBDCF0C42023ABB2D }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_04DDE365C6E44D9E9C1EE14B6AA76525 }}
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'paxtech'
+          slot-name: 'Production'
+          package: '*.jar'
+```
+
+**Componentes del job `build` paso por paso:**
+
+| # | Componente / Step | Acción concreta | Resultado |
+|---|-------------------|-----------------|-----------|
+| 1 | `actions/checkout@v4` | Clona el repositorio `Web-Services` en el runner sobre el commit que disparó el workflow. | El working directory del runner contiene el snapshot del código a integrar. |
+| 2 | `actions/setup-java@v4` (`java-version: 17`, `distribution: microsoft`) | Aprovisiona Microsoft Build of OpenJDK 17, define `JAVA_HOME` y agrega `java`/`javac` al `PATH`. | El runner tiene un toolchain Java 17 listo, sin necesidad de imagen Docker custom. |
+| 3 | `Build with Maven` (`run: mvn clean install`) | Limpia `target/`, descarga dependencias declaradas en `pom.xml`, compila el código, ejecuta la suite de tests JUnit 5 (incluye los tests de las secciones 6.1.1.1, 6.1.1.2, 6.1.1.3 y 6.1.1.4) y empaqueta el JAR en `target/`. | El build falla y aborta el workflow si la compilación o cualquier test falla. |
+| 4 | `actions/upload-artifact@v4` (`name: java-app`, `path: target/*.jar`) | Sube el JAR resultante al storage de artefactos del run actual de Actions. | El artefacto `java-app` queda disponible para `deploy` y para descarga manual desde la UI de GitHub. |
+
+**Componentes del job `deploy` (resumen, detalle completo en 7.2):**
+
+| # | Componente / Step | Acción concreta |
+|---|-------------------|-----------------|
+| 1 | `needs: build` | Declara dependencia explícita: `deploy` no inicia hasta que `build` finalice con `success`. |
+| 2 | `actions/download-artifact@v4` | Recupera el JAR `java-app` producido por `build`. |
+| 3 | `azure/login@v2` | Autenticación OIDC contra Azure usando el `client-id`, `tenant-id` y `subscription-id` guardados como secrets de GitHub (sin contraseña almacenada). |
+| 4 | `azure/webapps-deploy@v3` (`app-name: paxtech`, `slot-name: Production`, `package: *.jar`) | Publica el JAR sobre el Azure Web App `paxtech` en el slot `Production`. |
+
+**Características del pipeline relevantes para CI (no CD):**
+
+- **Aislamiento de jobs** — el job `build` no tiene permisos de identidad federada (`id-token`) y sólo declara `contents: read`, mientras que `deploy` requiere `id-token: write`. Cada job recibe sólo el principio de menor privilegio que necesita.
+- **Fail-fast** — si `mvn clean install` falla en cualquiera de sus fases (compile, test, package), el job `build` retorna no-cero, GitHub Actions lo marca como failure y `deploy` queda en estado `skipped` automáticamente por la cláusula `needs`.
+- **Reproducibilidad** — todas las versiones quedan pinneadas: `actions/checkout@v4`, `actions/setup-java@v4`, `actions/upload-artifact@v4`, `actions/download-artifact@v4`, `azure/login@v2`, `azure/webapps-deploy@v3`. La versión de Maven la provee la imagen `ubuntu-latest` y los plugins de Maven están versionados en el `pom.xml`.
+- **Cobertura de tests ejecutada en CI** — todos los tests JUnit del backend descritos en 6.1.1.1.1 (Services, 15 tests), 6.1.1.2.1 (Workers, 14 tests), 6.1.1.3.1 (IAM, 5 tests) y 6.1.1.4.1 (Profiles, 41 tests) son ejecutados por `mvn install` como parte del fase `test` por defecto, totalizando 75 tests unitarios validados en cada push a `main`.
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Pipeline de CI — Build & Test.
+Pipeline de CI — Build & Test (run del workflow `Build and deploy JAR app to Azure Web App - paxtech` con los jobs `build` y `deploy` encadenados).
 
 <img src="./assets/devops/ci/ci-pipeline.png" alt="CI Pipeline" width="800">
 
 </div>
 
-```yaml
-# Ejemplo de workflow — [GitHub Actions]
-# [Contenido pendiente]
-```
-
 ## 7.2. Continuous Delivery
+
+El Continuous Delivery es una práctica de DevOps que automatiza el proceso con el que se prepara y presenta el producto de software de manera confiable y eficiente. Su objetivo principal es garantizar que la aplicación siempre se encuentre en un estado listo para ser desplegado mediante procesos automatizados que incluyen compilación, validación y despliegue.
+
+Para este proyecto, estamos utilizando GitHub Actions junto con Microsoft Azure para el proceso mencionado. El pipeline automatiza la compilación de la aplicación, la generación de artefactos y el despliegue automático hacia el entorno cloud cada vez que se realizan cambios en la rama principal del repositorio. Así, se reduce la intervención manual y los errores de despliegue.
 
 ### 7.2.1. Tools and Practices
 
-[Contenido pendiente — entrega continua a staging, artifact registry.]
+Las herramientas que estamos utilizando son:
+
+- __GitHub__: Esta herramienta se usa para mantener el control de versiones ordenado así como para lograr que todo el equipo pueda estar al día con el código trabajado y pueda añadir sus cambios sin dificultades.
+- __GitHub Actions__: Esta herramienta se emplea para la automatización del pipeline en esta sección, lo que contempla los procesos de compilación, generación de artefacos y, finalmente, despliegue.
+- __Microsoft Azure__: Se utiliza como la plataforma de despliegue en donde la aplicación queda alojada.
+
+Por el lado de las prácticas, estamos considerando:
+
+- __Automated Build Process__: La aplicación se compila automáticamente cada vez que se detectan cambios en la rama main del repositorio.
+- __Artifact Management__: Una vez que se genera el archivo JAR de la aplicación, este se almacena para ser utilizado en la etapa de despliegue.
+- __Automated Deployment__: Depués de que se verificó que la compilación no presenta problemas, la aplicación es automáticamente desplegada al entorno cloud de Azure.
+- __Version Control Integration__: Dado que el pipeline se encuentra integrado con Github, se logra automatizar el proceso de despliegue directamente al oírse un evento en el repositorio.  
+- __Continuous Validation__: El contar con un flujo automatizado, además de los tests implementados, ayuda a asegurar que la aplicación no presente problemas al momento de ser desplegada.
 
 ### 7.2.2. Stages Deployment Pipeline Components
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+El pipeline de Continuous Delivery está compuesto por múltiples etapas automatizadas que permiten integrar, empaquetar y desplegar la aplicación de manera eficiente. A continuación, se presentan los pasos que se siguen junto a la herramienta que utilizan:
 
-Pipeline de CD — Staging.
-
-<img src="./assets/devops/cd/cd-pipeline.png" alt="CD Pipeline" width="800">
-
-</div>
+- __Source Stage - GitHub__: Cuando se agrega código a la rama main del repositorio, GutHub lo detecta y se activa el pipeline configurado GitHub Actions.
+- __Workflow Trigger Stage - GitHub Actions__: Ya activado el pipeline, GitHub Actions se encarga de ejecutar el workflow definido para automarizar la integración y el despliegue.
+- __Repository Checkout Stage - GitHub Actions__: Aquí, se descarga una copia completa del repositorio dentro del entorno virtual de ejecución de forma en que las siguientes etapas logres acceder al código fuente.
+- __Build Stage - Maven__: En esta parte, el proyecto se compila utilizando Maven y el comando `mvn clean install`. Mientras tanto, se descargan las dependencias, el código es compilado y se genera el archivo JAR del proyecyo para almacenarlo como un artefacto
+- __Deplyment Stage - Microsoft Azure__: Se realiza el ingreso a Azure y se descarga el aetefacto. Luego, este es automáticamente desplegado en el entorno de ejecución.
+- __Validation Stage__: Una vez que el despliegue se completa, GitHub Actions se encarga de registrar logs y el estado de ejecución a modo de historial. Así, es más sencillo detectar posibles errores.
 
 ## 7.3. Continuous Deployment
 
+Continuous Deployment es la práctica que cierra el ciclo DevOps al llevar automáticamente a producción cada cambio que supera los controles de calidad establecidos en las fases anteriores. A diferencia de un modelo de despliegue completamente automatizado, el proyecto uTime adopta un modelo de despliegue supervisado semi-automatizado: la automatización ejecuta el despliegue, pero la puerta de entrada a producción es siempre una revisión humana materializada en un Pull Request aprobado mediante GitHub. Este diseño es coherente con el tamaño del equipo y con el estado actual del producto.
+
 ### 7.3.1. Tools and Practices
 
-[Contenido pendiente — despliegue automático a producción, estrategias blue/green, canary, feature flags.]
+Las herramientas que participan directamente en el proceso de despliegue continuo son las mismas establecidas en las secciones 7.1 y 7.2, dado que el pipeline es único y continuo:
+
+GitHub actúa como sistema de control de versiones y como mecanismo de control de despliegue. Las reglas de protección de ramas impiden que cualquier commit llegue a main sin haber pasado por un Pull Request aprobado por al menos un integrante del equipo. Este requisito convierte el proceso de revisión en la única compuerta manual del ciclo de despliegue.
+GitHub Actions detecta cada push sobre main y dispara automáticamente el workflow que ejecuta la compilación, la suite de pruebas y, si ambas fases concluyen sin errores, el despliegue del artefacto JAR resultante.
+Microsoft Azure recibe el artefacto publicado por el job deploy del workflow y lo ejecuta en el slot Production del Azure Web App paxtech, sin intervención manual adicional por parte del equipo.
+
+Las prácticas aplicadas en esta fase son:
+
+- Despliegue supervisado por PR: ningún cambio alcanza producción sin una revisión explícita. Los merges a main provienen exclusivamente de ramas develop/* o hotfix/*, conforme a la convención GitFlow simplificada.
+- Despliegue sin recompilación: l artefacto que se despliega en producción es el mismo JAR generado y validado por el job build. No se produce ninguna compilación adicional en el job de despliegue, lo que garantiza que el binario en producción es exactamente el que pasó los 75 tests unitarios del backend.
+- Trazabilidad de releases: cada despliegue asociado a un milestone del proyecto queda etiquetado en main. Esto permite identificar con precisión qué versión está activa en producción en cada momento.
 
 ### 7.3.2. Production Deployment Pipeline Components
 
+El pipeline de producción no constituye un workflow independiente, sino la segunda mitad del workflow main_paxtech.yml descrito en 7.1.2. Su ejecución queda condicionada a que el job build finalice con estado success, lo que en la práctica significa que ningún despliegue a producción ocurre si la compilación o algún test falla.
+El flujo completo desde el desarrollo hasta producción sigue la siguiente secuencia:
+
+Un integrante trabaja sobre una rama feature/* y, una vez completo el cambio, abre un Pull Request hacia develop.
+El PR es revisado y aprobado por al menos un integrante distinto al autor; sólo entonces se fusiona en develop.
+Cuando el equipo considera que develop está en condiciones de publicarse, se abre una rama release/* y se crea un Pull Request hacia main.
+Tras la aprobación del PR de release, el merge a main dispara el workflow de GitHub Actions.
+El job build compila el proyecto con mvn clean install, ejecuta la suite de tests y sube el JAR resultante como artefacto del run.
+El job deploy, condicionado por needs: build, descarga el JAR, se autentica contra Azure mediante OIDC y publica el artefacto en el slot Production del Azure Web App paxtech.
+
+La siguiente tabla resume los componentes del pipeline de producción y su responsabilidad dentro del modelo de despliegue supervisado:
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Pipeline de Deployment a Producción.
-
-<img src="./assets/devops/deployment/deployment-pipeline.png" alt="Deployment Pipeline" width="800">
+| Componente | Herramienta | Responsabilidad en el despliegue |
+| ----- | ----- | ----- |
+| Protección de rama `main` | GitHub | Impide merges directos; exige PR aprobado como única compuerta manual. |
+| Disparador del workflow | GitHub Actions (`push` a `main`) | Inicia el pipeline automáticamente al detectar el merge aprobado. |
+| Validación previa al despliegue | Maven (`mvn clean install`) | Ejecuta los 75 tests unitarios; un fallo aborta el despliegue. |
+| Publicación del artefacto | GitHub Actions Artifacts | Garantiza que el binario desplegado es idéntico al validado. |
+| Autenticación cloud | Azure Login (OIDC) | Autentica sin contraseña almacenada, usando secretos cifrados de GitHub. |
+| Despliegue en producción | Azure Web App (`paxtech`, slot `Production`) | Recibe y ejecuta el JAR sin intervención manual del equipo. |
 
 </div>
+
+Este modelo reduce significativamente el esfuerzo manual de despliegue respecto a un proceso manual. Una vez aprobado el PR, el equipo no necesita intervenir para que el cambio llegue a producción. Al mismo tiempo, la obligatoriedad de la revisión humana antes del merge preserva un nivel de supervisión adecuado para la fase actual del producto, donde el equipo prioriza la estabilidad del API backend que consumen las tres aplicaciones cliente.
 
 ## 7.4. Continuous Monitoring
 
