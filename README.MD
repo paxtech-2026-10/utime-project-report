@@ -282,13 +282,24 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
         - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
         - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
+      - [Bounded Context: Services](#bounded-context-services)
+      - [Bounded Context: Workers](#bounded-context-workers)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
+      - [Feature file: Services](#feature-file-services)
+      - [Step definition example](#step-definition-example)
+      - [Execution evidence](#execution-evidence)
       - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
+      - [Feature file: IAM](#feature-file-iam)
+      - [Step definition example](#step-definition-example-1)
+      - [Execution evidence](#execution-evidence-1)
       - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
+      - [Feature file: Profiles](#feature-file-profiles)
+      - [Step definition example](#step-definition-example-2)
+      - [Execution evidence](#execution-evidence-2)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
-      - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integrationtest)
+      - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
   - [6.2. Static testing \& Verification](#62-static-testing--verification)
     - [6.2.1. Static Code Analysis](#621-static-code-analysis)
       - [6.2.1.1. Coding standard \& Code conventions](#6211-coding-standard--code-conventions)
@@ -4193,7 +4204,7 @@ El `--dry-run` carga el feature file y los step definitions y valida que cada `G
   <img src="./assets/testing/bdd/iam/iam-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature IAM (US01 y US03)" width="900">
 </div>
 
-> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:iam`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
 
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
@@ -4291,7 +4302,7 @@ Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario t
   <img src="./assets/testing/bdd/profiles/profiles-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature Profiles (US06)" width="900">
 </div>
 
-> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:profiles`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
 
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
@@ -4314,6 +4325,8 @@ Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario t
 | SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | Pasa |
 | SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | Pasa |
 | SYS-09 | El proveedor se registra desde la web ingresando una dirección y el cliente visualiza los salones ordenados por distancia desde su ubicación | Chromium (desktop con geolocalización simulada) | La dirección se transforma a coordenadas mediante geocoding y se guarda en `provider-profiles` como `dirección\|lat,lng`; el salón más cercano aparece antes que uno lejano y muestra distancia calculada | Pasa |
+
+npx playwright test --headed
 
 **Evidencia de ejecución — log completo (06/05/2026):**
 
