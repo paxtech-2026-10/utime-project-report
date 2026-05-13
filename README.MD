@@ -4539,13 +4539,11 @@ Evidencias de la auditoría recibida.
 
 # Capítulo VII: DevOps Practices
 
-[Contenido pendiente]
-
 ## 7.1. Continuous Integration
 
 La Continuous Integration (CI) es una práctica de DevOps que consiste en integrar los cambios de código frecuentemente al repositorio compartido y, en cada integración, ejecutar de manera automática la compilación y la suite de pruebas. El objetivo es detectar rupturas y regresiones en cuestión de minutos, antes de que un cambio llegue a una rama estable o a un ambiente compartido.
 
-Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring Boot + Maven) porque concentra la mayor parte de la lógica de dominio compartida por las tres aplicaciones cliente (Angular, Android nativo y Flutter para iOS). El pipeline ejecuta el build completo y la suite JUnit en cada push a `main`, y publica el artefacto JAR resultante para que el job de despliegue de la sección 7.2 (Continuous Delivery) lo consuma.
+Para uTime, la CI se implementa sobre los dos repositorios principales de la solución web: el backend `Web-Services` (Spring Boot + Maven) y el frontend `Frontend-Web-Application` (Angular + pnpm + Karma/Jasmine). Esta separación permite validar cada capa con su toolchain nativo antes de integrar cambios a ramas estables: el backend verifica compilación, pruebas JUnit y generación del artefacto JAR; el frontend verifica instalación reproducible de dependencias, build de producción y ejecución de unit tests en Chrome Headless. El despliegue automático se mantiene separado: Azure App Service consume el JAR del backend y Vercel gestiona el autodeployment del frontend una vez que el código aprobado llega a la rama correspondiente.
 
 ### 7.1.1. Tools and Practices
 
@@ -4553,20 +4551,27 @@ Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring
 
 | Categoría | Herramienta | Uso concreto en el proyecto |
 |---|---|---|
-| CI Engine | **GitHub Actions** | Único CI engine. El workflow `main_paxtech.yml` corre en runners hospedados (`ubuntu-latest`) y se dispara con `push` a `main` o manualmente vía `workflow_dispatch`. |
-| Build tool | **Apache Maven** (3.x con `mvnw`) | Compila el proyecto Spring Boot mediante `mvn clean install`, ejecuta los tests unitarios y de integración (JUnit 5 + Mockito + AssertJ) y produce un JAR ejecutable bajo `target/`. |
-| JDK | **Microsoft Build of OpenJDK 17** | Distribución elegida por compatibilidad nativa con Azure App Service. Se aprovisiona en cada job con `actions/setup-java@v4`. |
-| Artifact registry | **GitHub Actions artifacts** | El job `build` sube `target/*.jar` con `actions/upload-artifact@v4` y el job `deploy` lo recupera con `actions/download-artifact@v4`. |
-| Secret store | **GitHub Encrypted Secrets** | Credenciales de Azure (`AZUREAPPSERVICE_CLIENTID_*`, `AZUREAPPSERVICE_TENANTID_*`, `AZUREAPPSERVICE_SUBSCRIPTIONID_*`) inyectadas como `secrets.*` en el workflow. |
-| Git platform | **GitHub** (organización `paxtech-2026-10`) | Hospeda los cinco repositorios del producto y aplica las reglas de protección de ramas que se describen abajo. |
+| CI Engine | **GitHub Actions** | Motor de automatización usado en backend y frontend. Los workflows corren en runners hospedados `ubuntu-latest` y quedan visibles en la pestaña *Actions* de cada repositorio. |
+| Backend build tool | **Apache Maven** | En `Web-Services`, ejecuta `mvn clean install`, compila Spring Boot, corre la suite JUnit 5 y genera el JAR en `target/`. |
+| Backend runtime/toolchain | **Microsoft Build of OpenJDK 17** | Se aprovisiona con `actions/setup-java@v4` para asegurar compatibilidad con Azure App Service. |
+| Frontend package manager | **pnpm 11.1.1** | En `Frontend-Web-Application`, instala dependencias con `pnpm install --frozen-lockfile`, usando `pnpm-lock.yaml` como fuente reproducible. |
+| Frontend runtime/toolchain | **Node.js 22 + Angular CLI 19** | Se aprovisiona con `actions/setup-node@v4`; ejecuta `pnpm run build` y `pnpm run test:ci`. |
+| Frontend test browser | **Chrome Headless** | Se instala en el runner con `browser-actions/setup-chrome@v1` y se expone por `CHROME_BIN` para Karma. El launcher usa `ChromeHeadlessNoSandbox` por compatibilidad con Linux CI. |
+| Artifact registry | **GitHub Actions artifacts** | En backend, el job `build` sube `target/*.jar` con `actions/upload-artifact@v4` y el job `deploy` lo recupera con `actions/download-artifact@v4`. |
+| Secret store | **GitHub Encrypted Secrets** | Credenciales de Azure (`AZUREAPPSERVICE_CLIENTID_*`, `AZUREAPPSERVICE_TENANTID_*`, `AZUREAPPSERVICE_SUBSCRIPTIONID_*`) inyectadas como `secrets.*` en el workflow backend. |
+| Deployment platforms | **Azure App Service + Vercel** | Azure recibe el backend empaquetado como JAR. Vercel gestiona preview/production deployments del frontend a partir de las ramas conectadas, mientras GitHub Actions actúa como quality gate de build y tests. |
+| Git platform | **GitHub** (organización `paxtech-2026-10`) | Hospeda los repositorios del producto y centraliza Pull Requests, branch history, checks y evidencias de ejecución. |
 
 **Prácticas aplicadas:**
 
 - **GitFlow simplificado** — Las ramas permanentes son `main` (producción) y `develop` (integración). Las ramas cortas siguen los prefijos `feature/*`, `release/*` y `hotfix/*`. Esta convención está formalizada en el archivo [`CLAUDE.md`](./CLAUDE.md) del repositorio del informe y se replica en los repos de código (`Web-Services`, `Frontend-Web-Application`, `Mobile-App`, `Ios-Mobile-App`).
 - **Pull Requests obligatorios** — todo merge a `develop` se hace por PR. Cada PR debe ser aprobado por al menos otro integrante antes de fusionarse. Los merges a `main` provienen exclusivamente de `release/*` o `hotfix/*`.
 - **Conventional Commits** — el formato es `<type>(<scope>): <subject>` con un cuerpo descriptivo en inglés. Los `<type>` permitidos (`feat`, `fix`, `docs`, `style`, `refactor`, `assets`, `chore`, `merge`, `release`) y los scopes válidos están listados en `CLAUDE.md`. Esta convención facilita la generación automática de changelogs en los `release/*`.
-- **Build automático en `push` a `main`** — el workflow `main_paxtech.yml` se dispara en cada push directo o merge a `main`, garantizando que ningún commit que no compile o que rompa los tests llegue a producción. La integración a `develop` queda cubierta por los PRs y, durante el desarrollo, los integrantes ejecutan localmente las suites unitarias de las secciones 6.1.1.1–6.1.1.4 antes de pedir review.
+- **Build automático en `push` a `main` para backend** — el workflow `main_paxtech.yml` se dispara en cada push directo o merge a `main`, garantizando que ningún commit de backend que no compile o que rompa tests llegue al flujo de despliegue hacia Azure.
+- **Quality gate en Pull Request para frontend** — el workflow `frontend-ci.yml` se dispara en PRs cuyo destino es `main`. En la práctica, el equipo trabaja desde `develop` y prepara PRs hacia `main`; antes de aprobarlos, GitHub Actions valida instalación, build de producción y unit tests. Esto complementa el autodeployment de Vercel: Vercel se encarga de publicar preview/production, pero GitHub Actions decide si el cambio está técnicamente apto para integrarse.
 - **Trazabilidad por artefacto** — el JAR producido por el job `build` se sube con un nombre fijo (`java-app`) y queda asociado al run de Actions; el deploy job lo descarga sin recompilar, asegurando que lo que se despliega es exactamente lo que pasó las pruebas.
+- **Reproducibilidad de dependencias frontend** — `pnpm install --frozen-lockfile` bloquea la instalación si `package.json` y `pnpm-lock.yaml` no coinciden. Esto evita builds no deterministas y problemas como dependencias presentes localmente pero ausentes en CI.
+- **Separación visual de etapas** — el workflow frontend define jobs separados (`Install dependencies`, `Build production bundle`, `Unit tests`) para que GitHub Actions muestre el flujo como bloques independientes y facilite ubicar fallas.
 - **Tagging de releases** — cada milestone del curso (TB1, TP, TB2, TF) se etiqueta sobre `main` con SemVer (`v1.0.0`, `v2.0.0`, `v3.0.0`, `v4.0.0`) y se publica con `git push --tags`, según la sección 4 de `CLAUDE.md`.
 
 **Estado actual de la CI por repositorio:**
@@ -4574,66 +4579,104 @@ Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring
 | Repositorio | Stack | Pipeline CI activo | Workflow |
 |---|---|---|---|
 | `Web-Services` | Spring Boot 3.5 + Java 17 + Maven | **Sí** | `.github/workflows/main_paxtech.yml` |
-| `Frontend-Web-Application` | Angular 19 + Karma/Jasmine | No (suites se ejecutan localmente) | — |
+| `Frontend-Web-Application` | Angular 19 + pnpm 11.1.1 + Karma/Jasmine | **Sí** | `.github/workflows/frontend-ci.yml` |
 | `Mobile-App` | Android (Kotlin 2.2 + Compose, AGP 8.13) | No, pero el `app/build.gradle.kts` ya integra el plugin `firebaseAppDistribution` para distribuir builds a *testers* (preparado para activarse en CI futura) | — |
 | `Ios-Mobile-App` | Flutter 3.9 + iOS/Android | No (suites se ejecutan localmente) | — |
 
-Esta concentración de la CI en el backend es deliberada para la fase actual del producto: el equipo prioriza la estabilidad del API que consumen los tres clientes, y los stacks de cliente se validan contra builds de `Web-Services` que ya pasaron por el pipeline.
+Con esta actualización, el backend y el frontend web ya cuentan con CI formal. Las aplicaciones móviles mantienen validación local por suite unitaria y quedan como candidatas para automatización posterior, especialmente cuando se consolide la distribución por Firebase App Distribution.
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-El pipeline de CI vive en `Web-Services/.github/workflows/main_paxtech.yml` y se compone de **dos jobs encadenados**: `build` (cubierto en esta sección) y `deploy` (descrito en la sección 7.2 — Continuous Delivery). Ambos corren sobre `ubuntu-latest` y comparten el JAR producido por `build` mediante el sistema de artefactos de GitHub Actions.
+La solución cuenta con dos pipelines de CI activos. El backend vive en `Web-Services/.github/workflows/main_paxtech.yml` y se compone de tres jobs encadenados: `test`, `build` y `deploy`. Para CI, el flujo valida en PR hacia `main`, ejecuta pruebas con H2 en memoria, construye el JAR y sólo despliega a Azure cuando el cambio llega por `push` a `main`. El frontend vive en `Frontend-Web-Application/.github/workflows/frontend-ci.yml` y se compone de tres jobs encadenados: `install`, `build` y `unit-tests`.
 
-**Triggers del workflow:**
+**Triggers de los workflows:**
 
-- `push` sobre la rama `main` — cubre tanto commits directos (sólo merges desde `release/*` y `hotfix/*` por convención) como merges aprobados desde PRs.
-- `workflow_dispatch` — permite re-ejecuciones manuales desde la pestaña *Actions* de GitHub, útil para reintentos cuando una dependencia transitoria de Maven Central falla.
+- Backend (`main_paxtech.yml`):
+  - `pull_request` hacia `main` — valida el cambio antes del merge y deja visibles los 3 cuadros del flujo.
+  - `push` sobre la rama `main` — cubre merges aprobados desde `release/*` o `hotfix/*` hacia producción y dispara el deploy.
+  - `workflow_dispatch` — permite re-ejecuciones manuales desde la pestaña *Actions* de GitHub.
+- Frontend (`frontend-ci.yml`):
+  - `pull_request` hacia `main` — valida PRs antes de integrar cambios a la rama conectada al despliegue principal.
+  - `workflow_dispatch` — permite ejecutar el quality gate manualmente para diagnóstico o reintento.
+  - `paths: "**"` — ejecuta el pipeline ante cualquier cambio incluido en el PR.
 
-**Workflow file (versión actual):**
+**Workflow backend (versión actual resumida):**
 
 ```yaml
 # .github/workflows/main_paxtech.yml
 name: Build and deploy JAR app to Azure Web App - paxtech
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**"
   push:
     branches:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build:
+  test:
+    name: Test
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java version
+      - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
-          distribution: 'microsoft'
+          java-version: "17"
+          distribution: microsoft
+          cache: maven
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Run unit tests
+        run: mvn test
 
-      - name: Upload artifact for deployment job
+  build:
+    name: Build JAR
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: microsoft
+          cache: maven
+
+      - name: Build JAR
+        run: mvn clean package -DskipTests
+
+      - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: "${{ github.workspace }}/target/*.jar"
 
   deploy:
+    name: Deploy to Azure Web App
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       id-token: write
       contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download JAR artifact
         uses: actions/download-artifact@v4
         with:
           name: java-app
@@ -4646,44 +4689,133 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_04DDE365C6E44D9E9C1EE14B6AA76525 }}
 
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'paxtech'
-          slot-name: 'Production'
-          package: '*.jar'
+          app-name: paxtech
+          slot-name: Production
+          package: "*.jar"
 ```
 
-**Componentes del job `build` paso por paso:**
+**Workflow frontend (versión actual resumida):**
 
-| # | Componente / Step | Acción concreta | Resultado |
-|---|-------------------|-----------------|-----------|
-| 1 | `actions/checkout@v4` | Clona el repositorio `Web-Services` en el runner sobre el commit que disparó el workflow. | El working directory del runner contiene el snapshot del código a integrar. |
-| 2 | `actions/setup-java@v4` (`java-version: 17`, `distribution: microsoft`) | Aprovisiona Microsoft Build of OpenJDK 17, define `JAVA_HOME` y agrega `java`/`javac` al `PATH`. | El runner tiene un toolchain Java 17 listo, sin necesidad de imagen Docker custom. |
-| 3 | `Build with Maven` (`run: mvn clean install`) | Limpia `target/`, descarga dependencias declaradas en `pom.xml`, compila el código, ejecuta la suite de tests JUnit 5 (incluye los tests de las secciones 6.1.1.1, 6.1.1.2, 6.1.1.3 y 6.1.1.4) y empaqueta el JAR en `target/`. | El build falla y aborta el workflow si la compilación o cualquier test falla. |
-| 4 | `actions/upload-artifact@v4` (`name: java-app`, `path: target/*.jar`) | Sube el JAR resultante al storage de artefactos del run actual de Actions. | El artefacto `java-app` queda disponible para `deploy` y para descarga manual desde la UI de GitHub. |
+```yaml
+# .github/workflows/frontend-ci.yml
+name: Frontend CI
 
-**Componentes del job `deploy` (resumen, detalle completo en 7.2):**
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**"
+  workflow_dispatch:
 
-| # | Componente / Step | Acción concreta |
-|---|-------------------|-----------------|
-| 1 | `needs: build` | Declara dependencia explícita: `deploy` no inicia hasta que `build` finalice con `success`. |
-| 2 | `actions/download-artifact@v4` | Recupera el JAR `java-app` producido por `build`. |
-| 3 | `azure/login@v2` | Autenticación OIDC contra Azure usando el `client-id`, `tenant-id` y `subscription-id` guardados como secrets de GitHub (sin contraseña almacenada). |
-| 4 | `azure/webapps-deploy@v3` (`app-name: paxtech`, `slot-name: Production`, `package: *.jar`) | Publica el JAR sobre el Azure Web App `paxtech` en el slot `Production`. |
+permissions:
+  contents: read
+
+concurrency:
+  group: frontend-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+  build:
+    name: Build production bundle
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+      - run: pnpm install --frozen-lockfile
+      - name: Run unit tests
+        env:
+          CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: pnpm run test:ci
+```
+
+**Componentes del pipeline backend paso por paso:**
+
+| Job | Step / Acción concreta | Resultado |
+|---|---|---|
+| `test` | `actions/checkout@v4` + `actions/setup-java@v4` + `mvn test` | Valida la suite en H2 antes de construir; el job falla si cualquier test falla. |
+| `build` | `actions/checkout@v4` + `actions/setup-java@v4` + `mvn clean package -DskipTests` + `actions/upload-artifact@v4` | Construye el JAR y lo publica como artefacto `java-app`. |
+| `deploy` | `needs: build` + `actions/download-artifact@v4` + `azure/login@v2` + `azure/webapps-deploy@v3` | Despliega el JAR en Azure App Service sólo cuando el cambio llega por `push` a `main`. |
+
+**Componentes del pipeline frontend paso por paso:**
+
+| Job | Step principal | Acción concreta | Resultado |
+|---|---|---|---|
+| `install` | `actions/checkout@v4` | Clona el commit exacto del PR en el runner. | El runner trabaja sobre la misma versión que se está revisando. |
+| `install` | `pnpm/action-setup@v4` (`version: 11.1.1`) | Instala pnpm 11.1.1, alineado con `packageManager` en `package.json`. | El package manager queda versionado y consistente entre local y CI. |
+| `install` | `actions/setup-node@v4` (`node-version: 22`, `cache: pnpm`) | Aprovisiona Node.js 22 y habilita caché de pnpm. | Se reduce tiempo de instalación sin perder reproducibilidad. |
+| `install` | `pnpm install --frozen-lockfile` | Instala dependencias sólo si `pnpm-lock.yaml` coincide con `package.json`. | El job falla si el lockfile está desactualizado. |
+| `build` | `needs: install` | Encadena el build después de una instalación válida. | No se compila si la instalación reproducible falla. |
+| `build` | `pnpm run build` | Ejecuta `ng build` y genera el bundle de producción Angular. | Detecta errores de TypeScript, templates, imports standalone y configuración Angular. |
+| `unit-tests` | `needs: build` | Ejecuta tests sólo si el bundle de producción compila. | Evita gastar tiempo de test cuando el código ni siquiera construye. |
+| `unit-tests` | `browser-actions/setup-chrome@v1` | Instala Chrome en el runner y expone su ruta. | Karma puede ejecutar los specs en Chrome Headless. |
+| `unit-tests` | `CHROME_BIN` + `pnpm run test:ci` | Ejecuta `ng test --watch=false --browsers=ChromeHeadlessNoSandbox`. | Corre todos los `*.spec.ts` incluidos por `tsconfig.spec.json`; el workflow falla si cualquier spec falla. |
 
 **Características del pipeline relevantes para CI (no CD):**
 
-- **Aislamiento de jobs** — el job `build` no tiene permisos de identidad federada (`id-token`) y sólo declara `contents: read`, mientras que `deploy` requiere `id-token: write`. Cada job recibe sólo el principio de menor privilegio que necesita.
-- **Fail-fast** — si `mvn clean install` falla en cualquiera de sus fases (compile, test, package), el job `build` retorna no-cero, GitHub Actions lo marca como failure y `deploy` queda en estado `skipped` automáticamente por la cláusula `needs`.
-- **Reproducibilidad** — todas las versiones quedan pinneadas: `actions/checkout@v4`, `actions/setup-java@v4`, `actions/upload-artifact@v4`, `actions/download-artifact@v4`, `azure/login@v2`, `azure/webapps-deploy@v3`. La versión de Maven la provee la imagen `ubuntu-latest` y los plugins de Maven están versionados en el `pom.xml`.
-- **Cobertura de tests ejecutada en CI** — todos los tests JUnit del backend descritos en 6.1.1.1.1 (Services, 15 tests), 6.1.1.2.1 (Workers, 14 tests), 6.1.1.3.1 (IAM, 5 tests) y 6.1.1.4.1 (Profiles, 41 tests) son ejecutados por `mvn install` como parte del fase `test` por defecto, totalizando 75 tests unitarios validados en cada push a `main`.
+- **Aislamiento de jobs** — backend separa `test`, `build` y `deploy`; frontend separa instalación, compilación y tests. Cada job corre en un runner limpio y re-instala dependencias desde lockfile.
+- **Principio de menor privilegio** — el workflow frontend sólo declara `contents: read`; el backend reserva `id-token: write` únicamente para `deploy`, no para `build`.
+- **Fail-fast por dependencias explícitas** — en backend, `build` depende de `test` y `deploy` depende de `build`; en frontend, `build` depende de `install` y `unit-tests` depende de `build`. GitHub Actions muestra con claridad en qué etapa se rompe el flujo.
+- **Reproducibilidad** — las acciones quedan versionadas (`actions/checkout@v4`, `actions/setup-node@v4`, `pnpm/action-setup@v4`, `browser-actions/setup-chrome@v1`, `actions/setup-java@v4`, `actions/upload-artifact@v4`). En backend, la suite de pruebas usa H2 en memoria; en frontend, `pnpm-lock.yaml` reemplaza a `package-lock.json` como fuente de verdad.
+- **Compatibilidad de Chrome en CI** — el launcher `ChromeHeadlessNoSandbox` evita fallos por restricciones de sandbox en Linux runners, manteniendo la ejecución real de tests Angular en navegador.
+- **Cobertura de tests ejecutada en CI** — todos los tests JUnit del backend descritos en 6.1.1.1.1 (Services, 15 tests), 6.1.1.2.1 (Workers, 14 tests), 6.1.1.3.1 (IAM, 5 tests) y 6.1.1.4.1 (Profiles, 41 tests) se ejecutan por `mvn test` en el job `test`, totalizando 75 tests unitarios validados antes del build.
+- **Cobertura frontend ejecutada en CI** — el comando `pnpm run test:ci` ejecuta la suite Angular completa configurada por Karma/Jasmine, incluyendo los specs de IAM, Profiles, Appointments, Dashboard, Services y Shared. Durante la implementación del pipeline, el CI permitió detectar y corregir specs con providers faltantes, inputs no inicializados e imports standalone incompletos.
+- **Relación con Vercel** — GitHub Actions no reemplaza el autodeployment de Vercel. Su responsabilidad es validar que el PR esté técnicamente correcto; Vercel se encarga de construir y publicar previews o producción según la integración del repositorio.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Pipeline de CI — Build & Test (run del workflow `Build and deploy JAR app to Azure Web App - paxtech` con los jobs `build` y `deploy` encadenados).
+Pipeline de CI backend — PR validation y build del workflow `Build and deploy JAR app to Azure Web App - paxtech` con los jobs `Test`, `Build JAR` y `Deploy to Azure Web App`.
 
-<img src="./assets/devops/ci/ci-pipeline.png" alt="CI Pipeline" width="800">
+<img src="./assets/devops/ci/backend-ci-pr.png" alt="Backend CI" width="800">
+
+</div>
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Workflow frontend `Frontend CI` con los tres bloques visibles: `Install dependencies`, `Build production bundle` y `Unit tests`.
+
+<img src="./assets/devops/ci/frontend-ci-overview.png" alt="Frontend CI" width="800">
 
 </div>
 
