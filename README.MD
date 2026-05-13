@@ -4713,11 +4713,11 @@ Por el lado de las prácticas, estamos considerando:
 
 El pipeline de Continuous Delivery está compuesto por múltiples etapas automatizadas que permiten integrar, empaquetar y desplegar la aplicación de manera eficiente. A continuación, se presentan los pasos que se siguen junto a la herramienta que utilizan:
 
-- __Source Stage - GitHub__: Cuando se agrega código a la rama main del repositorio, GutHub lo detecta y se activa el pipeline configurado GitHub Actions.
+- __Source Stage - GitHub__: Cuando se agrega código a la rama main del repositorio, GitHub lo detecta y se activa el pipeline configurado GitHub Actions.
 - __Workflow Trigger Stage - GitHub Actions__: Ya activado el pipeline, GitHub Actions se encarga de ejecutar el workflow definido para automarizar la integración y el despliegue.
 - __Repository Checkout Stage - GitHub Actions__: Aquí, se descarga una copia completa del repositorio dentro del entorno virtual de ejecución de forma en que las siguientes etapas logres acceder al código fuente.
 - __Build Stage - Maven__: En esta parte, el proyecto se compila utilizando Maven y el comando `mvn clean install`. Mientras tanto, se descargan las dependencias, el código es compilado y se genera el archivo JAR del proyecyo para almacenarlo como un artefacto
-- __Deplyment Stage - Microsoft Azure__: Se realiza el ingreso a Azure y se descarga el aetefacto. Luego, este es automáticamente desplegado en el entorno de ejecución.
+- __Deployment Stage - Microsoft Azure__: Se realiza el ingreso a Azure y se descarga el aetefacto. Luego, este es automáticamente desplegado en el entorno de ejecución.
 - __Validation Stage__: Una vez que el despliegue se completa, GitHub Actions se encarga de registrar logs y el estado de ejecución a modo de historial. Así, es más sencillo detectar posibles errores.
 
 ## 7.3. Continuous Deployment
