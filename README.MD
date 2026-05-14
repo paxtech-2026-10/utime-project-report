@@ -119,11 +119,30 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 
 </div>
 
+## TB1
+**Tareas**
+Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+| Integrantes                | Tarea asignada |
+|----------------------------|----------------|
+| Jorge Suin Yum Gonzales    | Capítulo VI: Bounded Context Service - Unit Tests, Integration Tests, BDD y Core System Tests |
+| Eduardo Gael Rivera Sosa   | Capítulo VI: Bounded Contexts IAM y Profiles - Unit Tests, Integration Tests y BDD. Capítulo VII: Continuous Integration - Tools and Practices (7.1.1) y Build & Test Suite Pipeline Components (7.1.2) |
+| Gabriel Sánchez Gonzales   | Capítulo VI: Bounded Context Reviews - Unit Tests, Integration Tests y BDD. Capítulo VII: Continuous Deployment - Tools and Practices (7.3.1) y Production Deployment Pipeline Components (7.3.2) |
+| Natalia Bertha Roman Cruz    | Capítulo VI: Bounded Context Workers - Unit Tests, Integration Tests y BDD. Capítulo VII: Continuous Delivery - Tools and Practices (7.2.1) y Stages Deployment Pipeline Components (7.2.2) |
+| Alejandro Daniel Oroncoy Almeyda | Capítulo VI: Bounded Context Reservation - Unit Tests, Integration Tests y BDD |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**.
+
+
+
+
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
   - [AV1](#av1)
+  - [TB1](#tb1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
@@ -395,7 +414,7 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
+      <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
       <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios.<br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de continuar investigando y enriqueciendo mis conocimiento aún durante la fase de desarrollo y aplicación.</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
@@ -413,7 +432,7 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
       <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conceptos de ingeniería de software relacionados con la implementación, despliegue y configuración del producto en el Capítulo V. Apliqué Software Configuration Management con el conjunto de herramientas del ciclo de vida (Pivotal Tracker, Discord, Figma, UXPressia, Trello, WebStorm, IntelliJ IDEA, Android Studio, Git, GitKraken, Render, GitHub Pages, Azure y Firebase), formalicé el flujo GitFlow y las convenciones de Conventional Commits, y documenté las guías de estilo por tecnología (HTML, CSS, JavaScript/Bootstrap, TypeScript/Angular, Dart/Flutter, Java/Spring Boot y Gherkin). Estructuré el Sprint #1 con su Sprint Planning Background, matriz LACX, Sprint Backlog (US01, US03, US29–US35, TS06), Development y Execution Evidence, y los Team Collaboration Insights, y articulé el Acuerdo de Servicio SaaS (SLA) entre PaxTech y el Cliente. Asimismo, alineé la decisión de persistencia de §4.10.1 a PostgreSQL desplegado en Neon, conforme al diagrama de despliegue del producto. </td>
     </tr>
     <tr>
-      <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
+      <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
       <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible.</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
@@ -5333,6 +5352,9 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 - Mobile App — Cliente (Flutter): <https://github.com/paxtech-2026-10/Mobile-App>
 - Mobile App — Negocio (Kotlin nativo): <https://github.com/paxtech-2026-10/Ios-Mobile-App>
 - Acceptance Tests (Cucumber + Gherkin): <https://github.com/paxtech-2026-10/Acceptance-Tests>
+
+**Deployments**
+- Backend Web Services (Azure Web App): <https://paxtech-ashgghgnf7fpfxe9.canadacentral-01.azurewebsites.net/swagger-ui/index.html#/>
 
 **Herramientas de diseño y gestión**
 
