@@ -300,6 +300,10 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
         - [6.1.1.4.3. Mobile App — Android (Kotlin)](#61143-mobile-app--android-kotlin)
         - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
         - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
+      - [6.1.1.5 Reviews Bounded Context](#6115-reviews-bounded-context)
+        - [6.1.1.5.1. Backend - Spring Boot](#61151-backend---spring-boot)
+        - [6.1.1.5.3. Frontend Web — Angular](#61153-frontend-web--angular)
+        - [6.1.1.5.4. Resumen agregado (Reviews)](#61154-resumen-agregado-reviews)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
       - [Bounded Context: Services](#bounded-context-services)
       - [Bounded Context: Workers](#bounded-context-workers)
@@ -3775,6 +3779,8 @@ class DiscountTest {
   <img src="./assets/testing/unit/profiles/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Profiles en Spring Boot" width="900">
 </div>
 
+
+
 ##### 6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)
 
 **Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
@@ -3934,6 +3940,208 @@ ng test --include="src/app/profile/models/profile.entity.spec.ts" --include="src
 | Mobile (Android / Kotlin) | JUnit 4 | 6 | 1 |
 | Frontend Web (Angular) | Karma + Jasmine | 10 | 4 |
 | **Total bounded context Profiles** | | **66** | **14** |
+
+#### 6.1.1.5 Reviews Bounded Context
+
+Cobertura del bounded context **Reviews**: 13 tests distribuidos en 4 archivos backend Spring Boot. La suite cubre el aggregate `Review`, los command services `ReviewCommandServiceImpl`, los query services `ReviewQueryServiceImpl` y los endpoints REST expuestos por `ReviewsController`.
+
+Durante la elaboración del set de tests del bounded context Reviews se validaron los principales flujos de creación, consulta y eliminación de reseñas. La suite también endurece las restricciones ya implementadas en el dominio, como la prevención de reviews duplicadas para un mismo provider/client y la validación del rango permitido para el rating.
+
+##### 6.1.1.5.1. Backend - Spring Boot
+
+**Framework:** JUnit 5 + Mockito + Spring Boot Test (`spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/reviews/application/internal/commandservices/ReviewCommandServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/reviews/application/internal/queryservices/ReviewQueryServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/reviews/domain/model/aggregates/ReviewTest.java`
+- `src/test/java/com/paxtech/utime/platform/reviews/interfaces/rest/ReviewsControllerIntegrationTest.java`
+
+```java
+class ReviewCommandServiceImplTest {
+
+    @Test
+    void createReviewFunctioningTest() {
+        CreateReviewCommand command = new CreateReviewCommand(
+                1L,
+                10L,
+                5,
+                "Excellent service",
+                false
+        );
+
+        when(reviewRepository.findByProviderIdAndClientId(10L, 1L))
+                .thenReturn(Optional.empty());
+
+        Optional<Review> result = reviewCommandService.handle(command);
+
+        assertThat(result).isPresent();
+    }
+
+    @Test
+    void createDuplicateReviewTest() {
+        CreateReviewCommand command = new CreateReviewCommand(
+                1L,
+                10L,
+                5,
+                "Excellent service",
+                false
+        );
+
+        Review existing = new Review(command);
+
+        when(reviewRepository.findByProviderIdAndClientId(10L, 1L))
+                .thenReturn(Optional.of(existing));
+
+        assertThatThrownBy(() -> reviewCommandService.handle(command))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("already exists");
+    }
+
+    @Test
+    void createReview_invalidRatingTest() {
+        assertThatThrownBy(() ->
+                new CreateReviewCommand(
+                        1L,
+                        10L,
+                        0,
+                        "Bad service",
+                        false
+                )
+        )
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("Rating must be between 1 and 5");
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+| ----- | ----- | ----- | ----- | ----- |
+| REV-BE-01 | `ReviewCommandServiceImpl` | `handle(CreateReviewCommand)` | Crea y persiste correctamente una nueva review | Passed |
+| REV-BE-02 | `ReviewCommandServiceImpl` | `handle(CreateReviewCommand)` con review duplicada | Lanza `IllegalArgumentException` cuando ya existe una review para el mismo provider/client | Passed |
+| REV-BE-03 | `ReviewCommandServiceImpl` | `handle(DeleteReviewCommand)` con review existente | Elimina correctamente la review por ID | Passed |
+| REV-BE-04 | `ReviewCommandServiceImpl` | `handle(DeleteReviewCommand)` con review inexistente | Lanza `IllegalArgumentException` indicando que la review no existe | Passed |
+| REV-BE-05 | `CreateReviewCommand` | constructor con rating inválido | Lanza `IllegalArgumentException` cuando el rating está fuera del rango 1–5 | Passed |
+| REV-BE-06 | `ReviewQueryServiceImpl` | `handle(GetReviewBySalonIdAndClientIdQuery)` | Retorna la review correspondiente al providerId/clientId | Passed |
+| REV-BE-07 | `ReviewQueryServiceImpl` | `handle(GetReviewByIdQuery)` | Retorna correctamente una review por ID | Passed |
+| REV-BE-08 | `ReviewQueryServiceImpl` | `handle(GetAllReviewsQuery)` | Retorna todas las reviews persistidas | Passed |
+| REV-BE-09 | `Review` | constructor desde `CreateReviewCommand` | Mapea correctamente clientId, providerId, rating, review y read | Passed |
+| REV-BE-10 | `Review` | setters (`setReview`, `setRating`, `setRead`) | Actualiza correctamente los campos mutables del aggregate | Passed |
+| REV-BE-11 | `ReviewsController` | endpoints REST (`POST`, `GET`, `PUT`, `DELETE`) | Ejecutan correctamente operaciones CRUD sobre reviews | Passed |
+| REV-BE-12 | `ReviewsController` | creación duplicada vía endpoint REST | Lanza `IllegalArgumentException` cuando la review ya existe | Passed |
+| REV-BE-13 | `ReviewsController` | eliminación/actualización de review inexistente | Lanza `IllegalArgumentException` cuando el recurso no existe | Passed |
+
+Comando de ejecución:
+
+```java
+
+./mvnw test -Dtest="ReviewCommandServiceImplTest,ReviewQueryServiceImplTest,ReviewTest,ReviewsControllerIntegrationTest"
+
+```
+
+
+Evidencia de ejecución:
+
+![w](/assets/images/reviews-test-backend-java.png)
+
+
+##### 6.1.1.5.3. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine
+
+**Ubicación en `Frontend-Web-Application`:**
+
+- `src/app/reviews/models/review.entity.ts`
+- `src/app/reviews/pages/reviews-tab/reviews-tab.component.spec.ts`
+
+```typescript
+describe('ReviewsTabComponent reviews integration', () => {
+
+  let component: ReviewsTabComponent;
+  let fixture: ComponentFixture<ReviewsTabComponent>;
+  let reviewApiSpy: jasmine.SpyObj<ReviewApiService>;
+
+  beforeEach(async () => {
+
+    reviewApiSpy = jasmine.createSpyObj('ReviewApiService', ['getBySalonId']);
+
+    reviewApiSpy.getBySalonId.and.returnValue(of([
+      {
+        id: 1,
+        author: 'Gabriel',
+        rating: 5,
+        review: 'Excellent service',
+        read: false,
+        providerId: 7
+      },
+      {
+        id: 2,
+        author: 'Maria',
+        rating: 4,
+        review: 'Good attention',
+        read: true,
+        providerId: 7
+      }
+    ]));
+
+    await TestBed.configureTestingModule({
+      imports: [
+        ReviewsTabComponent,
+        ReviewListComponent,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        { provide: ReviewApiService, useValue: reviewApiSpy }
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ReviewsTabComponent);
+    component = fixture.componentInstance;
+  });
+
+  it('should load reviews and calculate average rating', () => {
+
+    spyOn(localStorage, 'getItem').and.returnValue('7');
+
+    fixture.detectChanges();
+
+    expect(component.reviews.length).toBe(2);
+    expect(component.average).toBe(4.5);
+
+    expect(component.reviews[0].author).toBe('Gabriel');
+    expect(component.reviews[1].author).toBe('Maria');
+  });
+});
+
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+| ----- | ----- | ----- | ----- | ----- |
+| REV-WEB-01 | `Review` | constructor por defecto | Inicializa `author` en `''`, `rating` en `0`, `text` en `''`, `read` en `false` y `salonId` en `0` | Passed |
+| REV-WEB-02 | `ReviewsTabComponent` | creación del componente | El componente se instancia correctamente | Passed |
+| REV-WEB-03 | `ReviewsTabComponent` | integración con `ReviewApiService` | Obtiene correctamente las reviews desde `getBySalonId()` | Passed |
+| REV-WEB-04 | `ReviewsTabComponent` | cálculo de promedio (`average`) | Calcula correctamente el promedio de ratings recibidos | Passed |
+| REV-WEB-05 | `ReviewsTabComponent` | carga de reviews en estado local | Persiste correctamente las reviews obtenidas en `component.reviews` | Passed |
+| REV-WEB-06 | `ReviewsTabComponent` | renderizado de información de reviews | Expone correctamente los autores de las reviews cargadas | Passed |
+
+Comando de ejecución:
+```java
+ng test --include="src/app/reviews/pages/reviews-tab/reviews-tab.component.spec.ts"
+```
+
+Evidencia de ejecución:
+
+![w](/assets/images/test-front.png)
+
+##### 6.1.1.5.4. Resumen agregado (Reviews)
+
+| Plataforma                        | Framework                            | Tests escritos | Archivos |
+| --------------------------------- | ------------------------------------ | -------------- | -------- |
+| Backend (Spring Boot)             | JUnit 5 + Mockito + Spring Boot Test | 13             | 4        |
+| Frontend Web (Angular)            | Karma + Jasmine                      | 6              | 2        |
+| **Total bounded context Reviews** |                                      | **19**         | **6**    |
+
 
 ### 6.1.2. Core Integration Tests
 
