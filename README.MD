@@ -316,6 +316,10 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
       - [Feature file: Profiles](#feature-file-profiles)
       - [Step definition example](#step-definition-example-2)
       - [Execution evidence](#execution-evidence-2)
+      - [6.1.3.4. Workers Bounded Context](#6134-workers-bounded-context)
+      - [Feature file: Workers](#feature-file-workers)
+      - [Step definition example](#step-definition-example-3)
+      - [Execution evidence](#execution-evidence-3)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
@@ -415,7 +419,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
   <tbody>
     <tr>
       <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios.<br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de continuar investigando y enriqueciendo mis conocimiento aún durante la fase de desarrollo y aplicación.</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios. En todos estos pasos, me esforcé por seguir los principios éticos y profesionales de la ingeniería de software acorde con la situación. <br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de utilizar la información con responsabilidad y solo aplicarla en proyectos o prácticas éticas que vayan acorde con el bienestar del equipo y los usuarios planteados.</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -433,7 +437,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
     </tr>
     <tr>
       <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible.</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir. De esta manera, pude emitir un juicio informado conforme a lo investigado, lo planteado en el proyecto y el contexto actual dado.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible de forma en que pudiera emitir un juicio informado en cuanto a que pruebas debían ser implementadas y porqué ofreciendo una mejor calidad en la solución implementada.</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -4328,6 +4332,107 @@ Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario t
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
 | US06 | Profiles | Personalización de la ubicación del salón al registrarse como proveedor | `e2e-bdd/features/profiles.feature` | Validados (dry-run) |
+
+#### 6.1.3.4. Workers Bounded Context
+
+Para el bounded context **Workers**, se aplicó Behavior-Driven Development (BDD) a partir de la user story **US23 — Gestión de trabajadores**, definida en el Product Backlog:
+
+> **Como** dueño/administrador, **quiero** añadir o quitar trabajadores, **para** organizar quién ofrece cada servicio.
+
+Los escenarios automatizados corresponden a los dos criterios de aceptación definidos para **US23**: **"Asignación de nuevo trabajador"** y **"Eliminación de trabajador inactivo"**. Se eligieron porque cubren el comportamiento central del bounded context Workers: mantener la plantilla del proveedor alineada con la operación real del salón (alta y baja de profesionales que prestan servicios), coherente con las pruebas de integración `POST /api/v1/workers` y `DELETE /api/v1/workers/{id}` documentadas en la sección **Bounded Context: Workers** (6.1.2) y con el system test **SYS-03** (creación de miembro del personal desde el dashboard del proveedor).
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript)
+
+**Ubicación en el repositorio Frontend-Web-Applications:**
+
+- `e2e-bdd/features/workers.feature`
+- `e2e-bdd/steps/workers.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: Workers
+
+```gherkin
+# language: es
+@workers @US23
+Característica: Gestión de trabajadores del salón
+  Como dueño o administrador
+  Quiero añadir o quitar trabajadores
+  Para organizar quién ofrece cada servicio
+
+  Escenario: Asignación de nuevo trabajador
+    Dado que el administrador proveedor está autenticado
+    Y se encuentra en el dashboard del proveedor con la lista de personal
+    Cuando completa los datos para registrar un trabajador llamado "Ana BDD" con especialización "Barbería"
+    Entonces el sistema guarda el nuevo trabajador
+    Y el trabajador registrado aparece en la plantilla del salón
+
+  Escenario: Eliminación de trabajador inactivo
+    Dado que el administrador proveedor está autenticado
+    Y tiene un trabajador registrado llamado "Carlos BDD" en la plantilla
+    Y se encuentra en el dashboard del proveedor con la lista de personal
+    Cuando elimina el trabajador de la plantilla
+    Entonces el sistema retira al trabajador de la plantilla
+    Y el trabajador eliminado ya no aparece en la lista de personal
+```
+
+#### Step definition example
+
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions. Estos pasos usan Playwright para interactuar con la aplicación web real (flujo equivalente al **SYS-03** para el alta) y verificar respuestas HTTP observables frente a `/api/v1/workers`, en línea con el agregado **Worker** y el valor de objeto **WorkerSpecialization** descritos en el modelo del dominio.
+
+```typescript
+When(
+  'completa los datos para registrar un trabajador llamado {string} con especialización {string}',
+  async function (workerName: string, specialization: string) {
+    this.registeredWorkerName = `${workerName} ${Date.now()}`;
+
+    await this.page.getByRole('button', { name: /Add worker|Agregar personal/i }).click();
+
+    const dialog = this.page.getByRole('dialog', { name: /New worker|Nuevo trabajador/i });
+    await expect(dialog).toBeVisible();
+
+    const createWorkerResponse = this.page.waitForResponse(response =>
+      new URL(response.url()).pathname === '/api/v1/workers'
+      && response.request().method() === 'POST'
+    );
+
+    await dialog.getByRole('textbox', { name: /Worker name/i }).fill(this.registeredWorkerName);
+    await dialog.getByRole('textbox', { name: /Specializations/i }).fill(specialization);
+    await dialog.getByRole('button', { name: /Crear|Create/i }).click();
+
+    this.workerCreationStatus = (await createWorkerResponse).status();
+  }
+);
+```
+
+#### Execution evidence
+
+Se ejecutan los escenarios BDD contra la aplicación web Angular y el backend Spring Boot en ambiente local. Las pruebas abren la interfaz real con Playwright, autentican un proveedor de prueba, registran un trabajador desde el dashboard (lista `staff-list` / ítems `staff-item`), actualizar la información de un trabajador existente y verificar las respuestas esperadas para `POST /api/v1/workers` y `PATCH /api/v1/workers/{id}`.
+
+Comando ejecutado (script npm paralelo al de servicios, apuntando al tag `@workers`):
+
+```powershell
+npm run bdd:workers
+```
+
+Resultado:
+
+```text
+> frontend-web-applications@0.0.0 bdd:workers
+> cucumber-js e2e-bdd/features/workers.feature --tags @workers
+
+...........
+
+2 scenarios (2 passed)
+11 steps (11 passed)
+```
+
+La ejecución confirma que la especificación BDD está enlazada con step definitions y valida el comportamiento del sistema desde la interfaz del proveedor para el contexto **Workers**.
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
+|------------|-----------------|---------------|---------|--------|
+| US23 | Workers | Asignación de nuevo trabajador | `e2e-bdd/features/workers.feature` | Passed |
+| US23 | Workers | Actualización de infomación de trabajador | `e2e-bdd/features/workers.feature` | Passed |
 
 ### 6.1.4. Core System Tests
 
