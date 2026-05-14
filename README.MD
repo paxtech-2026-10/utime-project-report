@@ -329,6 +329,11 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
       - [Feature file: Workers](#feature-file-workers)
       - [Step definition example](#step-definition-example-3)
       - [Execution evidence](#execution-evidence-3)
+      - [6.1.3.5. Reviews Bounded Context](#6135-reviews-bounded-context)
+  - [Feature file: Reviews](#feature-file-reviews)
+        - [Step definitions](#step-definitions)
+        - [Execution evidence](#execution-evidence-4)
+        - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
@@ -4552,7 +4557,7 @@ El `--dry-run` carga el feature file y los step definitions y valida que cada `G
 </div>
 
 
-
+  
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
 | US01 | IAM | Registro de un cliente desde el formulario público | `e2e-bdd/features/iam.feature` | Validados (dry-run) |
@@ -4755,6 +4760,161 @@ La ejecución confirma que la especificación BDD está enlazada con step defini
 |------------|-----------------|---------------|---------|--------|
 | US23 | Workers | Asignación de nuevo trabajador | `e2e-bdd/features/workers.feature` | Passed |
 | US23 | Workers | Actualización de infomación de trabajador | `e2e-bdd/features/workers.feature` | Passed |
+
+#### 6.1.3.5. Reviews Bounded Context
+
+Los escenarios automatizados corresponden al criterio de aceptación principal: **visualización de reviews y cálculo de promedio de calificaciones**. Se eligió este escenario porque representa el comportamiento central del bounded context Reviews: permitir que el usuario consulte la reputación de un proveedor a partir de las evaluaciones registradas.
+
+Este comportamiento está alineado con la interacción del frontend (vista `/reviews`) y la respuesta del endpoint de reviews, validando tanto la renderización de datos como el cálculo correcto del promedio.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript)
+
+**Ubicación en el repositorio Frontend-Web-Application:**
+
+```javascript
+e2e-bdd/features/reviews.feature
+e2e-bdd/steps/reviews.steps.ts
+e2e-bdd/support/world.ts
+cucumber.js
+```
+
+---
+
+## Feature file: Reviews
+
+```gherkin
+# language: es
+@reviews
+Característica: Gestión y visualización de reviews
+  Como usuario de uTime
+  Quiero visualizar las reviews de un proveedor
+  Para conocer la calidad del servicio brindado
+
+  @USXX
+  Escenario: Visualización de reviews de un proveedor
+    Dado que existe un proveedor con reviews registradas
+    Y el usuario navega a la sección de reviews del proveedor
+    Cuando el sistema carga las reviews del proveedor
+    Entonces el sistema muestra correctamente la lista de reviews
+    Y el sistema calcula correctamente el promedio de calificaciones
+```
+
+##### Step definitions
+
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions usando Playwright. Se realiza el mock del endpoint de reviews para simular la respuesta del backend y validar el comportamiento del sistema en la interfaz real.
+
+```ts
+import { Given, Then, When } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+import { UTimeWorld } from '../support/world';
+
+Given(
+  'que existe un proveedor con reviews registradas',
+  async function (this: UTimeWorld) {
+
+    await this.page.goto(this.baseUrl);
+
+    await this.page.evaluate(() => {
+      localStorage.setItem('providerId', '7');
+      localStorage.setItem('token', 'fake-token');
+    });
+
+    // Mock del endpoint real
+    await this.page.route('**/reviews**', async route => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify([
+          {
+            id: 1,
+            author: 'Gabriel',
+            rating: 5,
+            review: 'Excellent service',
+            read: false,
+            providerId: 7
+          },
+          {
+            id: 2,
+            author: 'Maria',
+            rating: 4,
+            review: 'Good attention',
+            read: true,
+            providerId: 7
+          }
+        ])
+      });
+    });
+  }
+);
+
+Given(
+  'el usuario navega a la sección de reviews del proveedor',
+  async function (this: UTimeWorld) {
+    await this.page.goto(`${this.baseUrl}/reviews`);
+
+    console.log(await this.page.url());
+  }
+);
+
+When(
+  'el sistema carga las reviews del proveedor',
+  async function (this: UTimeWorld) {
+    await this.page.waitForLoadState('networkidle');
+  }
+);
+
+Then(
+  'el sistema muestra correctamente la lista de reviews',
+  async function (this: UTimeWorld) {
+    await expect(this.page.getByText('Gabriel')).toBeVisible({
+      timeout: 10000
+    });
+
+    await expect(this.page.getByText('Maria')).toBeVisible({
+      timeout: 10000
+    });
+  }
+);
+
+Then(
+  'el sistema calcula correctamente el promedio de calificaciones',
+  async function (this: UTimeWorld) {
+    await expect(this.page.getByText(/4(\.5)?/)).toBeVisible({
+      timeout: 10000
+    });
+  }
+);
+```
+
+##### Execution evidence
+
+Se ejecutan los escenarios BDD contra la aplicación frontend en Angular utilizando Playwright. Se valida la carga de la vista /reviews, la renderización de datos mockeados y el cálculo del promedio de calificaciones.
+
+**Comando ejecutado:**
+
+```bash
+npm run bdd:reviews
+```
+
+**Resultado:**
+```bash
+> frontend-web-applications@0.0.0 bdd:reviews
+> cucumber-js e2e-bdd/features/reviews.feature --tags @reviews
+
+..http://localhost:4200/reviews
+.....
+
+1 scenario (1 passed)
+5 steps (5 passed)
+0m03.787s (executing steps: 0m03.769s)
+```
+
+##### Traceabilidad de pruebas
+
+| User Story | Bounded Context | Escenario BDD                            | Archivo                          | Estado |
+| ---------- | --------------- | ---------------------------------------- | -------------------------------- | ------ |
+| USXX       | Reviews         | Visualización de reviews de un proveedor | e2e-bdd/features/reviews.feature | Passed |
+
 
 ### 6.1.4. Core System Tests
 
