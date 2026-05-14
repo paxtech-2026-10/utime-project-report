@@ -330,7 +330,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
       - [Step definition example](#step-definition-example-3)
       - [Execution evidence](#execution-evidence-3)
       - [6.1.3.5. Reviews Bounded Context](#6135-reviews-bounded-context)
-  - [Feature file: Reviews](#feature-file-reviews)
+        - [Feature file: Reviews](#feature-file-reviews)
         - [Step definitions](#step-definitions)
         - [Execution evidence](#execution-evidence-4)
         - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
@@ -4780,7 +4780,7 @@ cucumber.js
 
 ---
 
-## Feature file: Reviews
+##### Feature file: Reviews
 
 ```gherkin
 # language: es
