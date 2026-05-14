@@ -307,6 +307,11 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
       - [Bounded Context: Services](#bounded-context-services)
       - [Bounded Context: Workers](#bounded-context-workers)
+      - [Bounded Context: Reviews](#bounded-context-reviews)
+      - [Comandos de ejecución:](#comandos-de-ejecución)
+      - [Evidencia de ejecución](#evidencia-de-ejecución)
+        - [Backend (Spring Boot)](#backend-spring-boot)
+      - [Frontend Web (Angular)](#frontend-web-angular)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
       - [Feature file: Services](#feature-file-services)
@@ -4242,6 +4247,115 @@ ng test --include="src/app/dashboard/pages/professional-dashboard/professional-d
 <div align="center">
   <img src="./assets/testing/integration/workers/frontend-angular-integration-tests.png" alt="Ejecución de integration tests frontend del bounded context Workers en Angular" width="900">
 </div>
+
+#### Bounded Context: Reviews
+
+**Frameworks y suites consideradas:**
+
+- **Backend (Spring Boot):** `SpringBootTest + MockMvc + H2` (`ReviewsControllerIntegrationTest`) y `JUnit 5 + Mockito` (`ReviewCommandServiceImplTest`, `ReviewQueryServiceImplTest`, `ReviewTest`).
+- **Frontend Web (Angular):** `Angular TestBed + Jasmine + Karma` (`reviews-tab.component.spec.ts`).
+
+Las pruebas de integración del bounded context **Reviews** validan el comportamiento extremo a extremo por capas: persistencia y lógica de negocio en backend mediante servicios y repositorios, exposición de endpoints REST con MockMvc en Spring Boot, e integración de componentes + servicios en Angular para la carga y renderizado de reviews en la interfaz web.
+
+| Test ID | Plataforma | Componentes integrados | Escenario | Resultado esperado | Estado |
+|---|---|---|---|---|---|
+| IT-REV-BE-01 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | creación de review válida | Persiste correctamente la review y retorna `Optional` presente | Pasa |
+| IT-REV-BE-02 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | creación de review duplicada para mismo provider/client | Lanza `IllegalArgumentException` (`already exists`) | Pasa |
+| IT-REV-BE-03 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | eliminación de review existente | Elimina correctamente la review por ID | Pasa |
+| IT-REV-BE-04 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | eliminación de review inexistente | Lanza `IllegalArgumentException` (`does not exist`) | Pasa |
+| IT-REV-BE-05 | Backend | `CreateReviewCommand` | creación con rating inválido (`0`) | Lanza `IllegalArgumentException` (`Rating must be between 1 and 5`) | Pasa |
+| IT-REV-BE-06 | Backend | `ReviewQueryServiceImpl` → `ReviewRepository` | búsqueda por `providerId` y `clientId` | Retorna review correspondiente | Pasa |
+| IT-REV-BE-07 | Backend | `ReviewQueryServiceImpl` → `ReviewRepository` | búsqueda por ID | Retorna `Optional` con review existente | Pasa |
+| IT-REV-BE-08 | Backend | `ReviewQueryServiceImpl` → `ReviewRepository` | consulta global (`GetAllReviewsQuery`) | Retorna lista de reviews persistidas | Pasa |
+| IT-REV-BE-09 | Backend | `Review` aggregate | creación desde `CreateReviewCommand` | Mapea correctamente `clientId`, `providerId`, `rating`, `review` y `read` | Pasa |
+| IT-REV-BE-10 | Backend | `Review` aggregate | actualización mediante setters | Actualiza correctamente `review`, `rating` y `read` | Pasa |
+| IT-REV-BE-11 | Backend | `ReviewsController` → Service → Repository | operaciones REST (`POST`, `GET`, `PUT`, `DELETE`) | CRUD ejecutado correctamente sobre reviews | Pasa |
+| IT-REV-BE-12 | Backend | `ReviewsController` → Service → Repository | creación duplicada vía endpoint REST | Lanza `IllegalArgumentException` (`already exists`) | Pasa |
+| IT-REV-BE-13 | Backend | `ReviewsController` → Service → Repository | actualización/eliminación de review inexistente | Lanza `IllegalArgumentException` (`does not exist`) | Pasa |
+| IT-REV-WEB-01 | Frontend Web | `ReviewsTabComponent` → `ReviewApiService` → `ReviewListComponent` | inicialización del componente con reviews simuladas | Se cargan correctamente 2 reviews | Pasa |
+| IT-REV-WEB-02 | Frontend Web | `ReviewsTabComponent` → `ReviewApiService` | cálculo del promedio de ratings | Average calculado correctamente (`4.5`) | Pasa |
+| IT-REV-WEB-03 | Frontend Web | `ReviewsTabComponent` → `ReviewListComponent` | render/mapeo del primer review | Autor `"Gabriel"` cargado correctamente | Pasa |
+| IT-REV-WEB-04 | Frontend Web | `ReviewsTabComponent` → `ReviewListComponent` | render/mapeo del segundo review | Autor `"Maria"` cargado correctamente | Pasa |
+
+---
+
+#### Comandos de ejecución:
+
+```bash
+# Backend (Web-Services)
+./mvnw test -Dtest="ReviewCommandServiceImplTest,ReviewQueryServiceImplTest,ReviewTest,ReviewsControllerIntegrationTest"
+
+# Frontend Web (Frontend-Web-Application)
+ng test --include="src/app/reviews/pages/reviews-tab/reviews-tab.component.spec.ts"
+```
+
+---
+
+#### Evidencia de ejecución
+
+##### Backend (Spring Boot)
+
+```bash
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.333 s -- in com.paxtech.utime.platform.reviews.interfaces.rest.ReviewsControllerIntegrationTest
+[INFO]
+[INFO] Results:
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.333 s -- in com.paxtech.utime.platform.reviews.interfaces.rest.ReviewsControllerIntegrationTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.333 s -- in com.paxtech.utime.platform.reviews.interfaces.rest.ReviewsControllerIntegrationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.748 s
+[INFO] Finished at: 2026-05-14T09:52:41-05:00
+
+``` 
+
+![](assets/images/reviews-test-%20back.png)
+
+#### Frontend Web (Angular)
+
+```bash
+√ Browser application bundle generation complete.
+14 05 2026 11:24:49.753:WARN [karma]: No captured browser, open http://localhost:9877/
+14 05 2026 11:24:49.784:INFO [karma-server]: Karma v6.4.4 server started at http://localhost:9877/
+14 05 2026 11:24:49.785:INFO [launcher]: Launching browsers Chrome with concurrency unlimited
+14 05 2026 11:24:49.792:INFO [launcher]: Starting browser Chrome
+14 05 2026 11:24:50.929:INFO [Chrome 148.0.0.0 (Windows 10)]: Connected on socket z7xUVe6En7v0MEtwAAAB with id 59470961
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true, salonId: 7}]
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true,
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true, salonId: 7}]
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true,
+LOG: 4.5                                                                                                                                                                            
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "1" at index "0" and "1",
+key "1" at index "1" and "2",
+key "1" at index "2" and "3",
+key "1" at index "3" and "4". Find more at https://angular.dev/errors/NG0955'
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "1" at index "0" and "1",
+key "1" at index "1" and "2",
+key "1" at index "2" and "3",
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "2" at index "0" and "1",
+key "2" at index "1" and "2",
+key "2" at index "2" and "3". Find more at https://angular.dev/errors/NG0955'
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "2" at index "0" and "1",
+key "2" at index "1" and "2",
+Chrome 148.0.0.0 (Windows 10): Executed 1 of 1 SUCCESS (0.01 secs / 0.061 secs)
+TOTAL: 1 SUCCESS
+```
+
+![](assets/images/reviews-test-%20front.png)
 
 ### 6.1.3. Core Behavior-Driven Development
 
