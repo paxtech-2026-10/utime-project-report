@@ -119,11 +119,30 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
 
 </div>
 
+## TB1
+**Tareas**
+Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+| Integrantes                | Tarea asignada |
+|----------------------------|----------------|
+| Jorge Suin Yum Gonzales    | Capítulo VI: Bounded Context Service - Unit Tests, Integration Tests, BDD y Core System Tests |
+| Eduardo Gael Rivera Sosa   | Capítulo VI: Bounded Contexts IAM y Profiles - Unit Tests, Integration Tests y BDD. Capítulo VII: Continuous Integration - Tools and Practices (7.1.1) y Build & Test Suite Pipeline Components (7.1.2) |
+| Gabriel Sánchez Gonzales   | Capítulo VI: Bounded Context Reviews - Unit Tests, Integration Tests y BDD. Capítulo VII: Continuous Deployment - Tools and Practices (7.3.1) y Production Deployment Pipeline Components (7.3.2) |
+| Natalia Bertha Roman Cruz    | Capítulo VI: Bounded Context Workers - Unit Tests, Integration Tests y BDD. Capítulo VII: Continuous Delivery - Tools and Practices (7.2.1) y Stages Deployment Pipeline Components (7.2.2) |
+| Alejandro Daniel Oroncoy Almeyda | Capítulo VI: Bounded Context Reservation - Unit Tests, Integration Tests y BDD |
+
+**GitHub Collaboration Insights**
+
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**.
+
+
+
+
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
   - [AV1](#av1)
+  - [TB1](#tb1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
@@ -281,14 +300,33 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
         - [6.1.1.4.3. Mobile App — Android (Kotlin)](#61143-mobile-app--android-kotlin)
         - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
         - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
+      - [6.1.1.5 Reviews Bounded Context](#6115-reviews-bounded-context)
+        - [6.1.1.5.1. Backend - Spring Boot](#61151-backend---spring-boot)
+        - [6.1.1.5.3. Frontend Web — Angular](#61153-frontend-web--angular)
+        - [6.1.1.5.4. Resumen agregado (Reviews)](#61154-resumen-agregado-reviews)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
+      - [Bounded Context: Services](#bounded-context-services)
+      - [Bounded Context: Workers](#bounded-context-workers)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
+      - [Feature file: Services](#feature-file-services)
+      - [Step definition example](#step-definition-example)
+      - [Execution evidence](#execution-evidence)
       - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
+      - [Feature file: IAM](#feature-file-iam)
+      - [Step definition example](#step-definition-example-1)
+      - [Execution evidence](#execution-evidence-1)
       - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
+      - [Feature file: Profiles](#feature-file-profiles)
+      - [Step definition example](#step-definition-example-2)
+      - [Execution evidence](#execution-evidence-2)
+      - [6.1.3.4. Workers Bounded Context](#6134-workers-bounded-context)
+      - [Feature file: Workers](#feature-file-workers)
+      - [Step definition example](#step-definition-example-3)
+      - [Execution evidence](#execution-evidence-3)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
-      - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integrationtest)
+      - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
   - [6.2. Static testing \& Verification](#62-static-testing--verification)
     - [6.2.1. Static Code Analysis](#621-static-code-analysis)
       - [6.2.1.1. Coding standard \& Code conventions](#6211-coding-standard--code-conventions)
@@ -384,8 +422,8 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
   </thead>
   <tbody>
     <tr>
-      <td rowspan="5"><strong>7.c1. Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de ingeniería de software</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios.<br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de continuar investigando y enriqueciendo mis conocimiento aún durante la fase de desarrollo y aplicación.</td>
+      <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios. En todos estos pasos, me esforcé por seguir los principios éticos y profesionales de la ingeniería de software acorde con la situación. <br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de utilizar la información con responsabilidad y solo aplicarla en proyectos o prácticas éticas que vayan acorde con el bienestar del equipo y los usuarios planteados.</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -402,8 +440,8 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub.
       <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conceptos de ingeniería de software relacionados con la implementación, despliegue y configuración del producto en el Capítulo V. Apliqué Software Configuration Management con el conjunto de herramientas del ciclo de vida (Pivotal Tracker, Discord, Figma, UXPressia, Trello, WebStorm, IntelliJ IDEA, Android Studio, Git, GitKraken, Render, GitHub Pages, Azure y Firebase), formalicé el flujo GitFlow y las convenciones de Conventional Commits, y documenté las guías de estilo por tecnología (HTML, CSS, JavaScript/Bootstrap, TypeScript/Angular, Dart/Flutter, Java/Spring Boot y Gherkin). Estructuré el Sprint #1 con su Sprint Planning Background, matriz LACX, Sprint Backlog (US01, US03, US29–US35, TS06), Development y Execution Evidence, y los Team Collaboration Insights, y articulé el Acuerdo de Servicio SaaS (SLA) entre PaxTech y el Cliente. Asimismo, alineé la decisión de persistencia de §4.10.1 a PostgreSQL desplegado en Neon, conforme al diagrama de despliegue del producto. </td>
     </tr>
     <tr>
-      <td rowspan="5"><strong>7.c2. Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de tecnologías de ingeniería de software</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible.</td>
+      <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir. De esta manera, pude emitir un juicio informado conforme a lo investigado, lo planteado en el proyecto y el contexto actual dado.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible de forma en que pudiera emitir un juicio informado en cuanto a que pruebas debían ser implementadas y porqué ofreciendo una mejor calidad en la solución implementada.</td>
       <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
     </tr>
     <tr>
@@ -3741,6 +3779,8 @@ class DiscountTest {
   <img src="./assets/testing/unit/profiles/backend-springboot-unit-tests.png" alt="Ejecución de unit tests backend del bounded context Profiles en Spring Boot" width="900">
 </div>
 
+
+
 ##### 6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)
 
 **Framework:** `flutter_test` (incluido en el SDK de Flutter, sin dependencias adicionales).
@@ -3900,6 +3940,208 @@ ng test --include="src/app/profile/models/profile.entity.spec.ts" --include="src
 | Mobile (Android / Kotlin) | JUnit 4 | 6 | 1 |
 | Frontend Web (Angular) | Karma + Jasmine | 10 | 4 |
 | **Total bounded context Profiles** | | **66** | **14** |
+
+#### 6.1.1.5 Reviews Bounded Context
+
+Cobertura del bounded context **Reviews**: 13 tests distribuidos en 4 archivos backend Spring Boot. La suite cubre el aggregate `Review`, los command services `ReviewCommandServiceImpl`, los query services `ReviewQueryServiceImpl` y los endpoints REST expuestos por `ReviewsController`.
+
+Durante la elaboración del set de tests del bounded context Reviews se validaron los principales flujos de creación, consulta y eliminación de reseñas. La suite también endurece las restricciones ya implementadas en el dominio, como la prevención de reviews duplicadas para un mismo provider/client y la validación del rango permitido para el rating.
+
+##### 6.1.1.5.1. Backend - Spring Boot
+
+**Framework:** JUnit 5 + Mockito + Spring Boot Test (`spring-boot-starter-test`).
+
+**Ubicación en `Web-Services`:**
+
+- `src/test/java/com/paxtech/utime/platform/reviews/application/internal/commandservices/ReviewCommandServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/reviews/application/internal/queryservices/ReviewQueryServiceImplTest.java`
+- `src/test/java/com/paxtech/utime/platform/reviews/domain/model/aggregates/ReviewTest.java`
+- `src/test/java/com/paxtech/utime/platform/reviews/interfaces/rest/ReviewsControllerIntegrationTest.java`
+
+```java
+class ReviewCommandServiceImplTest {
+
+    @Test
+    void createReviewFunctioningTest() {
+        CreateReviewCommand command = new CreateReviewCommand(
+                1L,
+                10L,
+                5,
+                "Excellent service",
+                false
+        );
+
+        when(reviewRepository.findByProviderIdAndClientId(10L, 1L))
+                .thenReturn(Optional.empty());
+
+        Optional<Review> result = reviewCommandService.handle(command);
+
+        assertThat(result).isPresent();
+    }
+
+    @Test
+    void createDuplicateReviewTest() {
+        CreateReviewCommand command = new CreateReviewCommand(
+                1L,
+                10L,
+                5,
+                "Excellent service",
+                false
+        );
+
+        Review existing = new Review(command);
+
+        when(reviewRepository.findByProviderIdAndClientId(10L, 1L))
+                .thenReturn(Optional.of(existing));
+
+        assertThatThrownBy(() -> reviewCommandService.handle(command))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("already exists");
+    }
+
+    @Test
+    void createReview_invalidRatingTest() {
+        assertThatThrownBy(() ->
+                new CreateReviewCommand(
+                        1L,
+                        10L,
+                        0,
+                        "Bad service",
+                        false
+                )
+        )
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("Rating must be between 1 and 5");
+    }
+}
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+| ----- | ----- | ----- | ----- | ----- |
+| REV-BE-01 | `ReviewCommandServiceImpl` | `handle(CreateReviewCommand)` | Crea y persiste correctamente una nueva review | Passed |
+| REV-BE-02 | `ReviewCommandServiceImpl` | `handle(CreateReviewCommand)` con review duplicada | Lanza `IllegalArgumentException` cuando ya existe una review para el mismo provider/client | Passed |
+| REV-BE-03 | `ReviewCommandServiceImpl` | `handle(DeleteReviewCommand)` con review existente | Elimina correctamente la review por ID | Passed |
+| REV-BE-04 | `ReviewCommandServiceImpl` | `handle(DeleteReviewCommand)` con review inexistente | Lanza `IllegalArgumentException` indicando que la review no existe | Passed |
+| REV-BE-05 | `CreateReviewCommand` | constructor con rating inválido | Lanza `IllegalArgumentException` cuando el rating está fuera del rango 1–5 | Passed |
+| REV-BE-06 | `ReviewQueryServiceImpl` | `handle(GetReviewBySalonIdAndClientIdQuery)` | Retorna la review correspondiente al providerId/clientId | Passed |
+| REV-BE-07 | `ReviewQueryServiceImpl` | `handle(GetReviewByIdQuery)` | Retorna correctamente una review por ID | Passed |
+| REV-BE-08 | `ReviewQueryServiceImpl` | `handle(GetAllReviewsQuery)` | Retorna todas las reviews persistidas | Passed |
+| REV-BE-09 | `Review` | constructor desde `CreateReviewCommand` | Mapea correctamente clientId, providerId, rating, review y read | Passed |
+| REV-BE-10 | `Review` | setters (`setReview`, `setRating`, `setRead`) | Actualiza correctamente los campos mutables del aggregate | Passed |
+| REV-BE-11 | `ReviewsController` | endpoints REST (`POST`, `GET`, `PUT`, `DELETE`) | Ejecutan correctamente operaciones CRUD sobre reviews | Passed |
+| REV-BE-12 | `ReviewsController` | creación duplicada vía endpoint REST | Lanza `IllegalArgumentException` cuando la review ya existe | Passed |
+| REV-BE-13 | `ReviewsController` | eliminación/actualización de review inexistente | Lanza `IllegalArgumentException` cuando el recurso no existe | Passed |
+
+Comando de ejecución:
+
+```java
+
+./mvnw test -Dtest="ReviewCommandServiceImplTest,ReviewQueryServiceImplTest,ReviewTest,ReviewsControllerIntegrationTest"
+
+```
+
+
+Evidencia de ejecución:
+
+![w](/assets/images/reviews-test-backend-java.png)
+
+
+##### 6.1.1.5.3. Frontend Web — Angular
+
+**Framework:** Karma + Jasmine
+
+**Ubicación en `Frontend-Web-Application`:**
+
+- `src/app/reviews/models/review.entity.ts`
+- `src/app/reviews/pages/reviews-tab/reviews-tab.component.spec.ts`
+
+```typescript
+describe('ReviewsTabComponent reviews integration', () => {
+
+  let component: ReviewsTabComponent;
+  let fixture: ComponentFixture<ReviewsTabComponent>;
+  let reviewApiSpy: jasmine.SpyObj<ReviewApiService>;
+
+  beforeEach(async () => {
+
+    reviewApiSpy = jasmine.createSpyObj('ReviewApiService', ['getBySalonId']);
+
+    reviewApiSpy.getBySalonId.and.returnValue(of([
+      {
+        id: 1,
+        author: 'Gabriel',
+        rating: 5,
+        review: 'Excellent service',
+        read: false,
+        providerId: 7
+      },
+      {
+        id: 2,
+        author: 'Maria',
+        rating: 4,
+        review: 'Good attention',
+        read: true,
+        providerId: 7
+      }
+    ]));
+
+    await TestBed.configureTestingModule({
+      imports: [
+        ReviewsTabComponent,
+        ReviewListComponent,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        { provide: ReviewApiService, useValue: reviewApiSpy }
+      ]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ReviewsTabComponent);
+    component = fixture.componentInstance;
+  });
+
+  it('should load reviews and calculate average rating', () => {
+
+    spyOn(localStorage, 'getItem').and.returnValue('7');
+
+    fixture.detectChanges();
+
+    expect(component.reviews.length).toBe(2);
+    expect(component.average).toBe(4.5);
+
+    expect(component.reviews[0].author).toBe('Gabriel');
+    expect(component.reviews[1].author).toBe('Maria');
+  });
+});
+
+```
+
+| Test ID | Entidad | Método probado | Resultado esperado | Estado |
+| ----- | ----- | ----- | ----- | ----- |
+| REV-WEB-01 | `Review` | constructor por defecto | Inicializa `author` en `''`, `rating` en `0`, `text` en `''`, `read` en `false` y `salonId` en `0` | Passed |
+| REV-WEB-02 | `ReviewsTabComponent` | creación del componente | El componente se instancia correctamente | Passed |
+| REV-WEB-03 | `ReviewsTabComponent` | integración con `ReviewApiService` | Obtiene correctamente las reviews desde `getBySalonId()` | Passed |
+| REV-WEB-04 | `ReviewsTabComponent` | cálculo de promedio (`average`) | Calcula correctamente el promedio de ratings recibidos | Passed |
+| REV-WEB-05 | `ReviewsTabComponent` | carga de reviews en estado local | Persiste correctamente las reviews obtenidas en `component.reviews` | Passed |
+| REV-WEB-06 | `ReviewsTabComponent` | renderizado de información de reviews | Expone correctamente los autores de las reviews cargadas | Passed |
+
+Comando de ejecución:
+```java
+ng test --include="src/app/reviews/pages/reviews-tab/reviews-tab.component.spec.ts"
+```
+
+Evidencia de ejecución:
+
+![w](/assets/images/test-front.png)
+
+##### 6.1.1.5.4. Resumen agregado (Reviews)
+
+| Plataforma                        | Framework                            | Tests escritos | Archivos |
+| --------------------------------- | ------------------------------------ | -------------- | -------- |
+| Backend (Spring Boot)             | JUnit 5 + Mockito + Spring Boot Test | 13             | 4        |
+| Frontend Web (Angular)            | Karma + Jasmine                      | 6              | 2        |
+| **Total bounded context Reviews** |                                      | **19**         | **6**    |
+
 
 ### 6.1.2. Core Integration Tests
 
@@ -4195,7 +4437,7 @@ El `--dry-run` carga el feature file y los step definitions y valida que cada `G
   <img src="./assets/testing/bdd/iam/iam-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature IAM (US01 y US03)" width="900">
 </div>
 
-> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:iam`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
 
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
@@ -4293,11 +4535,112 @@ Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario t
   <img src="./assets/testing/bdd/profiles/profiles-bdd-cucumber-report.png" alt="Validación de bindings dry-run del feature Profiles (US06)" width="900">
 </div>
 
-> **Evidencia de ejecución completa:** *pendiente — se adjuntará captura del run end-to-end (`npm run bdd:profiles`) cuando se ejecute con backend Spring Boot en `:8080` y frontend Angular en `:4200` levantados.*
+
 
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
 | US06 | Profiles | Personalización de la ubicación del salón al registrarse como proveedor | `e2e-bdd/features/profiles.feature` | Validados (dry-run) |
+
+#### 6.1.3.4. Workers Bounded Context
+
+Para el bounded context **Workers**, se aplicó Behavior-Driven Development (BDD) a partir de la user story **US23 — Gestión de trabajadores**, definida en el Product Backlog:
+
+> **Como** dueño/administrador, **quiero** añadir o quitar trabajadores, **para** organizar quién ofrece cada servicio.
+
+Los escenarios automatizados corresponden a los dos criterios de aceptación definidos para **US23**: **"Asignación de nuevo trabajador"** y **"Eliminación de trabajador inactivo"**. Se eligieron porque cubren el comportamiento central del bounded context Workers: mantener la plantilla del proveedor alineada con la operación real del salón (alta y baja de profesionales que prestan servicios), coherente con las pruebas de integración `POST /api/v1/workers` y `DELETE /api/v1/workers/{id}` documentadas en la sección **Bounded Context: Workers** (6.1.2) y con el system test **SYS-03** (creación de miembro del personal desde el dashboard del proveedor).
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript)
+
+**Ubicación en el repositorio Frontend-Web-Applications:**
+
+- `e2e-bdd/features/workers.feature`
+- `e2e-bdd/steps/workers.steps.ts`
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
+
+#### Feature file: Workers
+
+```gherkin
+# language: es
+@workers @US23
+Característica: Gestión de trabajadores del salón
+  Como dueño o administrador
+  Quiero añadir o quitar trabajadores
+  Para organizar quién ofrece cada servicio
+
+  Escenario: Asignación de nuevo trabajador
+    Dado que el administrador proveedor está autenticado
+    Y se encuentra en el dashboard del proveedor con la lista de personal
+    Cuando completa los datos para registrar un trabajador llamado "Ana BDD" con especialización "Barbería"
+    Entonces el sistema guarda el nuevo trabajador
+    Y el trabajador registrado aparece en la plantilla del salón
+
+  Escenario: Eliminación de trabajador inactivo
+    Dado que el administrador proveedor está autenticado
+    Y tiene un trabajador registrado llamado "Carlos BDD" en la plantilla
+    Y se encuentra en el dashboard del proveedor con la lista de personal
+    Cuando elimina el trabajador de la plantilla
+    Entonces el sistema retira al trabajador de la plantilla
+    Y el trabajador eliminado ya no aparece en la lista de personal
+```
+
+#### Step definition example
+
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions. Estos pasos usan Playwright para interactuar con la aplicación web real (flujo equivalente al **SYS-03** para el alta) y verificar respuestas HTTP observables frente a `/api/v1/workers`, en línea con el agregado **Worker** y el valor de objeto **WorkerSpecialization** descritos en el modelo del dominio.
+
+```typescript
+When(
+  'completa los datos para registrar un trabajador llamado {string} con especialización {string}',
+  async function (workerName: string, specialization: string) {
+    this.registeredWorkerName = `${workerName} ${Date.now()}`;
+
+    await this.page.getByRole('button', { name: /Add worker|Agregar personal/i }).click();
+
+    const dialog = this.page.getByRole('dialog', { name: /New worker|Nuevo trabajador/i });
+    await expect(dialog).toBeVisible();
+
+    const createWorkerResponse = this.page.waitForResponse(response =>
+      new URL(response.url()).pathname === '/api/v1/workers'
+      && response.request().method() === 'POST'
+    );
+
+    await dialog.getByRole('textbox', { name: /Worker name/i }).fill(this.registeredWorkerName);
+    await dialog.getByRole('textbox', { name: /Specializations/i }).fill(specialization);
+    await dialog.getByRole('button', { name: /Crear|Create/i }).click();
+
+    this.workerCreationStatus = (await createWorkerResponse).status();
+  }
+);
+```
+
+#### Execution evidence
+
+Se ejecutan los escenarios BDD contra la aplicación web Angular y el backend Spring Boot en ambiente local. Las pruebas abren la interfaz real con Playwright, autentican un proveedor de prueba, registran un trabajador desde el dashboard (lista `staff-list` / ítems `staff-item`), actualizar la información de un trabajador existente y verificar las respuestas esperadas para `POST /api/v1/workers` y `PATCH /api/v1/workers/{id}`.
+
+Comando ejecutado (script npm paralelo al de servicios, apuntando al tag `@workers`):
+
+```powershell
+npm run bdd:workers
+```
+
+Resultado:
+
+```text
+> frontend-web-applications@0.0.0 bdd:workers
+> cucumber-js e2e-bdd/features/workers.feature --tags @workers
+
+...........
+
+2 scenarios (2 passed)
+11 steps (11 passed)
+```
+
+La ejecución confirma que la especificación BDD está enlazada con step definitions y valida el comportamiento del sistema desde la interfaz del proveedor para el contexto **Workers**.
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado |
+|------------|-----------------|---------------|---------|--------|
+| US23 | Workers | Asignación de nuevo trabajador | `e2e-bdd/features/workers.feature` | Passed |
+| US23 | Workers | Actualización de infomación de trabajador | `e2e-bdd/features/workers.feature` | Passed |
 
 ### 6.1.4. Core System Tests
 
@@ -4316,6 +4659,8 @@ Igual que en 6.1.3.2, el `--dry-run` confirma que los seis pasos del escenario t
 | SYS-07 | El cliente navega desde el dashboard de clientes (`/client/homeClient`) al detalle de un salón haciendo click en el botón de reserva | Chromium (desktop) | La URL cambia a `/client/homeClient/salon/{id}` | Pasa |
 | SYS-08 | El proveedor visualiza en su dashboard la cita de un cliente con todos los datos relacionados (servicio, worker, estado de pago) | Chromium (desktop) | `GET /reservationsDetails/details/{id}/` retorna el grafo completo de datos; la tarjeta de la cita muestra la especialización del worker y "No pagado" | Pasa |
 | SYS-09 | El proveedor se registra desde la web ingresando una dirección y el cliente visualiza los salones ordenados por distancia desde su ubicación | Chromium (desktop con geolocalización simulada) | La dirección se transforma a coordenadas mediante geocoding y se guarda en `provider-profiles` como `dirección\|lat,lng`; el salón más cercano aparece antes que uno lejano y muestra distancia calculada | Pasa |
+
+npx playwright test --headed
 
 **Evidencia de ejecución — log completo (06/05/2026):**
 
@@ -4539,13 +4884,11 @@ Evidencias de la auditoría recibida.
 
 # Capítulo VII: DevOps Practices
 
-[Contenido pendiente]
-
 ## 7.1. Continuous Integration
 
 La Continuous Integration (CI) es una práctica de DevOps que consiste en integrar los cambios de código frecuentemente al repositorio compartido y, en cada integración, ejecutar de manera automática la compilación y la suite de pruebas. El objetivo es detectar rupturas y regresiones en cuestión de minutos, antes de que un cambio llegue a una rama estable o a un ambiente compartido.
 
-Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring Boot + Maven) porque concentra la mayor parte de la lógica de dominio compartida por las tres aplicaciones cliente (Angular, Android nativo y Flutter para iOS). El pipeline ejecuta el build completo y la suite JUnit en cada push a `main`, y publica el artefacto JAR resultante para que el job de despliegue de la sección 7.2 (Continuous Delivery) lo consuma.
+Para uTime, la CI se implementa sobre los dos repositorios principales de la solución web: el backend `Web-Services` (Spring Boot + Maven) y el frontend `Frontend-Web-Application` (Angular + pnpm + Karma/Jasmine). Esta separación permite validar cada capa con su toolchain nativo antes de integrar cambios a ramas estables: el backend verifica compilación, pruebas JUnit y generación del artefacto JAR; el frontend verifica instalación reproducible de dependencias, build de producción y ejecución de unit tests en Chrome Headless. El despliegue automático se mantiene separado: Azure App Service consume el JAR del backend y Vercel gestiona el autodeployment del frontend una vez que el código aprobado llega a la rama correspondiente.
 
 ### 7.1.1. Tools and Practices
 
@@ -4553,20 +4896,27 @@ Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring
 
 | Categoría | Herramienta | Uso concreto en el proyecto |
 |---|---|---|
-| CI Engine | **GitHub Actions** | Único CI engine. El workflow `main_paxtech.yml` corre en runners hospedados (`ubuntu-latest`) y se dispara con `push` a `main` o manualmente vía `workflow_dispatch`. |
-| Build tool | **Apache Maven** (3.x con `mvnw`) | Compila el proyecto Spring Boot mediante `mvn clean install`, ejecuta los tests unitarios y de integración (JUnit 5 + Mockito + AssertJ) y produce un JAR ejecutable bajo `target/`. |
-| JDK | **Microsoft Build of OpenJDK 17** | Distribución elegida por compatibilidad nativa con Azure App Service. Se aprovisiona en cada job con `actions/setup-java@v4`. |
-| Artifact registry | **GitHub Actions artifacts** | El job `build` sube `target/*.jar` con `actions/upload-artifact@v4` y el job `deploy` lo recupera con `actions/download-artifact@v4`. |
-| Secret store | **GitHub Encrypted Secrets** | Credenciales de Azure (`AZUREAPPSERVICE_CLIENTID_*`, `AZUREAPPSERVICE_TENANTID_*`, `AZUREAPPSERVICE_SUBSCRIPTIONID_*`) inyectadas como `secrets.*` en el workflow. |
-| Git platform | **GitHub** (organización `paxtech-2026-10`) | Hospeda los cinco repositorios del producto y aplica las reglas de protección de ramas que se describen abajo. |
+| CI Engine | **GitHub Actions** | Motor de automatización usado en backend y frontend. Los workflows corren en runners hospedados `ubuntu-latest` y quedan visibles en la pestaña *Actions* de cada repositorio. |
+| Backend build tool | **Apache Maven** | En `Web-Services`, ejecuta `mvn clean install`, compila Spring Boot, corre la suite JUnit 5 y genera el JAR en `target/`. |
+| Backend runtime/toolchain | **Microsoft Build of OpenJDK 17** | Se aprovisiona con `actions/setup-java@v4` para asegurar compatibilidad con Azure App Service. |
+| Frontend package manager | **pnpm 11.1.1** | En `Frontend-Web-Application`, instala dependencias con `pnpm install --frozen-lockfile`, usando `pnpm-lock.yaml` como fuente reproducible. |
+| Frontend runtime/toolchain | **Node.js 22 + Angular CLI 19** | Se aprovisiona con `actions/setup-node@v4`; ejecuta `pnpm run build` y `pnpm run test:ci`. |
+| Frontend test browser | **Chrome Headless** | Se instala en el runner con `browser-actions/setup-chrome@v1` y se expone por `CHROME_BIN` para Karma. El launcher usa `ChromeHeadlessNoSandbox` por compatibilidad con Linux CI. |
+| Artifact registry | **GitHub Actions artifacts** | En backend, el job `build` sube `target/*.jar` con `actions/upload-artifact@v4` y el job `deploy` lo recupera con `actions/download-artifact@v4`. |
+| Secret store | **GitHub Encrypted Secrets** | Credenciales de Azure (`AZUREAPPSERVICE_CLIENTID_*`, `AZUREAPPSERVICE_TENANTID_*`, `AZUREAPPSERVICE_SUBSCRIPTIONID_*`) inyectadas como `secrets.*` en el workflow backend. |
+| Deployment platforms | **Azure App Service + Vercel** | Azure recibe el backend empaquetado como JAR. Vercel gestiona preview/production deployments del frontend a partir de las ramas conectadas, mientras GitHub Actions actúa como quality gate de build y tests. |
+| Git platform | **GitHub** (organización `paxtech-2026-10`) | Hospeda los repositorios del producto y centraliza Pull Requests, branch history, checks y evidencias de ejecución. |
 
 **Prácticas aplicadas:**
 
 - **GitFlow simplificado** — Las ramas permanentes son `main` (producción) y `develop` (integración). Las ramas cortas siguen los prefijos `feature/*`, `release/*` y `hotfix/*`. Esta convención está formalizada en el archivo [`CLAUDE.md`](./CLAUDE.md) del repositorio del informe y se replica en los repos de código (`Web-Services`, `Frontend-Web-Application`, `Mobile-App`, `Ios-Mobile-App`).
 - **Pull Requests obligatorios** — todo merge a `develop` se hace por PR. Cada PR debe ser aprobado por al menos otro integrante antes de fusionarse. Los merges a `main` provienen exclusivamente de `release/*` o `hotfix/*`.
 - **Conventional Commits** — el formato es `<type>(<scope>): <subject>` con un cuerpo descriptivo en inglés. Los `<type>` permitidos (`feat`, `fix`, `docs`, `style`, `refactor`, `assets`, `chore`, `merge`, `release`) y los scopes válidos están listados en `CLAUDE.md`. Esta convención facilita la generación automática de changelogs en los `release/*`.
-- **Build automático en `push` a `main`** — el workflow `main_paxtech.yml` se dispara en cada push directo o merge a `main`, garantizando que ningún commit que no compile o que rompa los tests llegue a producción. La integración a `develop` queda cubierta por los PRs y, durante el desarrollo, los integrantes ejecutan localmente las suites unitarias de las secciones 6.1.1.1–6.1.1.4 antes de pedir review.
+- **Build automático en `push` a `main` para backend** — el workflow `main_paxtech.yml` se dispara en cada push directo o merge a `main`, garantizando que ningún commit de backend que no compile o que rompa tests llegue al flujo de despliegue hacia Azure.
+- **Quality gate en Pull Request para frontend** — el workflow `frontend-ci.yml` se dispara en PRs cuyo destino es `main`. En la práctica, el equipo trabaja desde `develop` y prepara PRs hacia `main`; antes de aprobarlos, GitHub Actions valida instalación, build de producción y unit tests. Esto complementa el autodeployment de Vercel: Vercel se encarga de publicar preview/production, pero GitHub Actions decide si el cambio está técnicamente apto para integrarse.
 - **Trazabilidad por artefacto** — el JAR producido por el job `build` se sube con un nombre fijo (`java-app`) y queda asociado al run de Actions; el deploy job lo descarga sin recompilar, asegurando que lo que se despliega es exactamente lo que pasó las pruebas.
+- **Reproducibilidad de dependencias frontend** — `pnpm install --frozen-lockfile` bloquea la instalación si `package.json` y `pnpm-lock.yaml` no coinciden. Esto evita builds no deterministas y problemas como dependencias presentes localmente pero ausentes en CI.
+- **Separación visual de etapas** — el workflow frontend define jobs separados (`Install dependencies`, `Build production bundle`, `Unit tests`) para que GitHub Actions muestre el flujo como bloques independientes y facilite ubicar fallas.
 - **Tagging de releases** — cada milestone del curso (TB1, TP, TB2, TF) se etiqueta sobre `main` con SemVer (`v1.0.0`, `v2.0.0`, `v3.0.0`, `v4.0.0`) y se publica con `git push --tags`, según la sección 4 de `CLAUDE.md`.
 
 **Estado actual de la CI por repositorio:**
@@ -4574,66 +4924,104 @@ Para uTime, la CI se centraliza en el repositorio backend `Web-Services` (Spring
 | Repositorio | Stack | Pipeline CI activo | Workflow |
 |---|---|---|---|
 | `Web-Services` | Spring Boot 3.5 + Java 17 + Maven | **Sí** | `.github/workflows/main_paxtech.yml` |
-| `Frontend-Web-Application` | Angular 19 + Karma/Jasmine | No (suites se ejecutan localmente) | — |
+| `Frontend-Web-Application` | Angular 19 + pnpm 11.1.1 + Karma/Jasmine | **Sí** | `.github/workflows/frontend-ci.yml` |
 | `Mobile-App` | Android (Kotlin 2.2 + Compose, AGP 8.13) | No, pero el `app/build.gradle.kts` ya integra el plugin `firebaseAppDistribution` para distribuir builds a *testers* (preparado para activarse en CI futura) | — |
 | `Ios-Mobile-App` | Flutter 3.9 + iOS/Android | No (suites se ejecutan localmente) | — |
 
-Esta concentración de la CI en el backend es deliberada para la fase actual del producto: el equipo prioriza la estabilidad del API que consumen los tres clientes, y los stacks de cliente se validan contra builds de `Web-Services` que ya pasaron por el pipeline.
+Con esta actualización, el backend y el frontend web ya cuentan con CI formal. Las aplicaciones móviles mantienen validación local por suite unitaria y quedan como candidatas para automatización posterior, especialmente cuando se consolide la distribución por Firebase App Distribution.
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-El pipeline de CI vive en `Web-Services/.github/workflows/main_paxtech.yml` y se compone de **dos jobs encadenados**: `build` (cubierto en esta sección) y `deploy` (descrito en la sección 7.2 — Continuous Delivery). Ambos corren sobre `ubuntu-latest` y comparten el JAR producido por `build` mediante el sistema de artefactos de GitHub Actions.
+La solución cuenta con dos pipelines de CI activos. El backend vive en `Web-Services/.github/workflows/main_paxtech.yml` y se compone de tres jobs encadenados: `test`, `build` y `deploy`. Para CI, el flujo valida en PR hacia `main`, ejecuta pruebas con H2 en memoria, construye el JAR y sólo despliega a Azure cuando el cambio llega por `push` a `main`. El frontend vive en `Frontend-Web-Application/.github/workflows/frontend-ci.yml` y se compone de tres jobs encadenados: `install`, `build` y `unit-tests`.
 
-**Triggers del workflow:**
+**Triggers de los workflows:**
 
-- `push` sobre la rama `main` — cubre tanto commits directos (sólo merges desde `release/*` y `hotfix/*` por convención) como merges aprobados desde PRs.
-- `workflow_dispatch` — permite re-ejecuciones manuales desde la pestaña *Actions* de GitHub, útil para reintentos cuando una dependencia transitoria de Maven Central falla.
+- Backend (`main_paxtech.yml`):
+  - `pull_request` hacia `main` — valida el cambio antes del merge y deja visibles los 3 cuadros del flujo.
+  - `push` sobre la rama `main` — cubre merges aprobados desde `release/*` o `hotfix/*` hacia producción y dispara el deploy.
+  - `workflow_dispatch` — permite re-ejecuciones manuales desde la pestaña *Actions* de GitHub.
+- Frontend (`frontend-ci.yml`):
+  - `pull_request` hacia `main` — valida PRs antes de integrar cambios a la rama conectada al despliegue principal.
+  - `workflow_dispatch` — permite ejecutar el quality gate manualmente para diagnóstico o reintento.
+  - `paths: "**"` — ejecuta el pipeline ante cualquier cambio incluido en el PR.
 
-**Workflow file (versión actual):**
+**Workflow backend (versión actual resumida):**
 
 ```yaml
 # .github/workflows/main_paxtech.yml
 name: Build and deploy JAR app to Azure Web App - paxtech
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**"
   push:
     branches:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build:
+  test:
+    name: Test
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Java version
+      - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
-          distribution: 'microsoft'
+          java-version: "17"
+          distribution: microsoft
+          cache: maven
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Run unit tests
+        run: mvn test
 
-      - name: Upload artifact for deployment job
+  build:
+    name: Build JAR
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: microsoft
+          cache: maven
+
+      - name: Build JAR
+        run: mvn clean package -DskipTests
+
+      - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: "${{ github.workspace }}/target/*.jar"
 
   deploy:
+    name: Deploy to Azure Web App
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       id-token: write
       contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download JAR artifact
         uses: actions/download-artifact@v4
         with:
           name: java-app
@@ -4646,44 +5034,133 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_04DDE365C6E44D9E9C1EE14B6AA76525 }}
 
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'paxtech'
-          slot-name: 'Production'
-          package: '*.jar'
+          app-name: paxtech
+          slot-name: Production
+          package: "*.jar"
 ```
 
-**Componentes del job `build` paso por paso:**
+**Workflow frontend (versión actual resumida):**
 
-| # | Componente / Step | Acción concreta | Resultado |
-|---|-------------------|-----------------|-----------|
-| 1 | `actions/checkout@v4` | Clona el repositorio `Web-Services` en el runner sobre el commit que disparó el workflow. | El working directory del runner contiene el snapshot del código a integrar. |
-| 2 | `actions/setup-java@v4` (`java-version: 17`, `distribution: microsoft`) | Aprovisiona Microsoft Build of OpenJDK 17, define `JAVA_HOME` y agrega `java`/`javac` al `PATH`. | El runner tiene un toolchain Java 17 listo, sin necesidad de imagen Docker custom. |
-| 3 | `Build with Maven` (`run: mvn clean install`) | Limpia `target/`, descarga dependencias declaradas en `pom.xml`, compila el código, ejecuta la suite de tests JUnit 5 (incluye los tests de las secciones 6.1.1.1, 6.1.1.2, 6.1.1.3 y 6.1.1.4) y empaqueta el JAR en `target/`. | El build falla y aborta el workflow si la compilación o cualquier test falla. |
-| 4 | `actions/upload-artifact@v4` (`name: java-app`, `path: target/*.jar`) | Sube el JAR resultante al storage de artefactos del run actual de Actions. | El artefacto `java-app` queda disponible para `deploy` y para descarga manual desde la UI de GitHub. |
+```yaml
+# .github/workflows/frontend-ci.yml
+name: Frontend CI
 
-**Componentes del job `deploy` (resumen, detalle completo en 7.2):**
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**"
+  workflow_dispatch:
 
-| # | Componente / Step | Acción concreta |
-|---|-------------------|-----------------|
-| 1 | `needs: build` | Declara dependencia explícita: `deploy` no inicia hasta que `build` finalice con `success`. |
-| 2 | `actions/download-artifact@v4` | Recupera el JAR `java-app` producido por `build`. |
-| 3 | `azure/login@v2` | Autenticación OIDC contra Azure usando el `client-id`, `tenant-id` y `subscription-id` guardados como secrets de GitHub (sin contraseña almacenada). |
-| 4 | `azure/webapps-deploy@v3` (`app-name: paxtech`, `slot-name: Production`, `package: *.jar`) | Publica el JAR sobre el Azure Web App `paxtech` en el slot `Production`. |
+permissions:
+  contents: read
+
+concurrency:
+  group: frontend-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+  build:
+    name: Build production bundle
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.1.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - id: setup-chrome
+        uses: browser-actions/setup-chrome@v1
+      - run: pnpm install --frozen-lockfile
+      - name: Run unit tests
+        env:
+          CHROME_BIN: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: pnpm run test:ci
+```
+
+**Componentes del pipeline backend paso por paso:**
+
+| Job | Step / Acción concreta | Resultado |
+|---|---|---|
+| `test` | `actions/checkout@v4` + `actions/setup-java@v4` + `mvn test` | Valida la suite en H2 antes de construir; el job falla si cualquier test falla. |
+| `build` | `actions/checkout@v4` + `actions/setup-java@v4` + `mvn clean package -DskipTests` + `actions/upload-artifact@v4` | Construye el JAR y lo publica como artefacto `java-app`. |
+| `deploy` | `needs: build` + `actions/download-artifact@v4` + `azure/login@v2` + `azure/webapps-deploy@v3` | Despliega el JAR en Azure App Service sólo cuando el cambio llega por `push` a `main`. |
+
+**Componentes del pipeline frontend paso por paso:**
+
+| Job | Step principal | Acción concreta | Resultado |
+|---|---|---|---|
+| `install` | `actions/checkout@v4` | Clona el commit exacto del PR en el runner. | El runner trabaja sobre la misma versión que se está revisando. |
+| `install` | `pnpm/action-setup@v4` (`version: 11.1.1`) | Instala pnpm 11.1.1, alineado con `packageManager` en `package.json`. | El package manager queda versionado y consistente entre local y CI. |
+| `install` | `actions/setup-node@v4` (`node-version: 22`, `cache: pnpm`) | Aprovisiona Node.js 22 y habilita caché de pnpm. | Se reduce tiempo de instalación sin perder reproducibilidad. |
+| `install` | `pnpm install --frozen-lockfile` | Instala dependencias sólo si `pnpm-lock.yaml` coincide con `package.json`. | El job falla si el lockfile está desactualizado. |
+| `build` | `needs: install` | Encadena el build después de una instalación válida. | No se compila si la instalación reproducible falla. |
+| `build` | `pnpm run build` | Ejecuta `ng build` y genera el bundle de producción Angular. | Detecta errores de TypeScript, templates, imports standalone y configuración Angular. |
+| `unit-tests` | `needs: build` | Ejecuta tests sólo si el bundle de producción compila. | Evita gastar tiempo de test cuando el código ni siquiera construye. |
+| `unit-tests` | `browser-actions/setup-chrome@v1` | Instala Chrome en el runner y expone su ruta. | Karma puede ejecutar los specs en Chrome Headless. |
+| `unit-tests` | `CHROME_BIN` + `pnpm run test:ci` | Ejecuta `ng test --watch=false --browsers=ChromeHeadlessNoSandbox`. | Corre todos los `*.spec.ts` incluidos por `tsconfig.spec.json`; el workflow falla si cualquier spec falla. |
 
 **Características del pipeline relevantes para CI (no CD):**
 
-- **Aislamiento de jobs** — el job `build` no tiene permisos de identidad federada (`id-token`) y sólo declara `contents: read`, mientras que `deploy` requiere `id-token: write`. Cada job recibe sólo el principio de menor privilegio que necesita.
-- **Fail-fast** — si `mvn clean install` falla en cualquiera de sus fases (compile, test, package), el job `build` retorna no-cero, GitHub Actions lo marca como failure y `deploy` queda en estado `skipped` automáticamente por la cláusula `needs`.
-- **Reproducibilidad** — todas las versiones quedan pinneadas: `actions/checkout@v4`, `actions/setup-java@v4`, `actions/upload-artifact@v4`, `actions/download-artifact@v4`, `azure/login@v2`, `azure/webapps-deploy@v3`. La versión de Maven la provee la imagen `ubuntu-latest` y los plugins de Maven están versionados en el `pom.xml`.
-- **Cobertura de tests ejecutada en CI** — todos los tests JUnit del backend descritos en 6.1.1.1.1 (Services, 15 tests), 6.1.1.2.1 (Workers, 14 tests), 6.1.1.3.1 (IAM, 5 tests) y 6.1.1.4.1 (Profiles, 41 tests) son ejecutados por `mvn install` como parte del fase `test` por defecto, totalizando 75 tests unitarios validados en cada push a `main`.
+- **Aislamiento de jobs** — backend separa `test`, `build` y `deploy`; frontend separa instalación, compilación y tests. Cada job corre en un runner limpio y re-instala dependencias desde lockfile.
+- **Principio de menor privilegio** — el workflow frontend sólo declara `contents: read`; el backend reserva `id-token: write` únicamente para `deploy`, no para `build`.
+- **Fail-fast por dependencias explícitas** — en backend, `build` depende de `test` y `deploy` depende de `build`; en frontend, `build` depende de `install` y `unit-tests` depende de `build`. GitHub Actions muestra con claridad en qué etapa se rompe el flujo.
+- **Reproducibilidad** — las acciones quedan versionadas (`actions/checkout@v4`, `actions/setup-node@v4`, `pnpm/action-setup@v4`, `browser-actions/setup-chrome@v1`, `actions/setup-java@v4`, `actions/upload-artifact@v4`). En backend, la suite de pruebas usa H2 en memoria; en frontend, `pnpm-lock.yaml` reemplaza a `package-lock.json` como fuente de verdad.
+- **Compatibilidad de Chrome en CI** — el launcher `ChromeHeadlessNoSandbox` evita fallos por restricciones de sandbox en Linux runners, manteniendo la ejecución real de tests Angular en navegador.
+- **Cobertura de tests ejecutada en CI** — todos los tests JUnit del backend descritos en 6.1.1.1.1 (Services, 15 tests), 6.1.1.2.1 (Workers, 14 tests), 6.1.1.3.1 (IAM, 5 tests) y 6.1.1.4.1 (Profiles, 41 tests) se ejecutan por `mvn test` en el job `test`, totalizando 75 tests unitarios validados antes del build.
+- **Cobertura frontend ejecutada en CI** — el comando `pnpm run test:ci` ejecuta la suite Angular completa configurada por Karma/Jasmine, incluyendo los specs de IAM, Profiles, Appointments, Dashboard, Services y Shared. Durante la implementación del pipeline, el CI permitió detectar y corregir specs con providers faltantes, inputs no inicializados e imports standalone incompletos.
+- **Relación con Vercel** — GitHub Actions no reemplaza el autodeployment de Vercel. Su responsabilidad es validar que el PR esté técnicamente correcto; Vercel se encarga de construir y publicar previews o producción según la integración del repositorio.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Pipeline de CI — Build & Test (run del workflow `Build and deploy JAR app to Azure Web App - paxtech` con los jobs `build` y `deploy` encadenados).
+Pipeline de CI backend — PR validation y build del workflow `Build and deploy JAR app to Azure Web App - paxtech` con los jobs `Test`, `Build JAR` y `Deploy to Azure Web App`.
 
-<img src="./assets/devops/ci/ci-pipeline.png" alt="CI Pipeline" width="800">
+<img src="./assets/devops/ci/backend-ci-pr.png" alt="Backend CI" width="800">
+
+</div>
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Workflow frontend `Frontend CI` con los tres bloques visibles: `Install dependencies`, `Build production bundle` y `Unit tests`.
+
+<img src="./assets/devops/ci/frontend-ci-overview.png" alt="Frontend CI" width="800">
 
 </div>
 
@@ -4713,11 +5190,11 @@ Por el lado de las prácticas, estamos considerando:
 
 El pipeline de Continuous Delivery está compuesto por múltiples etapas automatizadas que permiten integrar, empaquetar y desplegar la aplicación de manera eficiente. A continuación, se presentan los pasos que se siguen junto a la herramienta que utilizan:
 
-- __Source Stage - GitHub__: Cuando se agrega código a la rama main del repositorio, GutHub lo detecta y se activa el pipeline configurado GitHub Actions.
+- __Source Stage - GitHub__: Cuando se agrega código a la rama main del repositorio, GitHub lo detecta y se activa el pipeline configurado GitHub Actions.
 - __Workflow Trigger Stage - GitHub Actions__: Ya activado el pipeline, GitHub Actions se encarga de ejecutar el workflow definido para automarizar la integración y el despliegue.
 - __Repository Checkout Stage - GitHub Actions__: Aquí, se descarga una copia completa del repositorio dentro del entorno virtual de ejecución de forma en que las siguientes etapas logres acceder al código fuente.
 - __Build Stage - Maven__: En esta parte, el proyecto se compila utilizando Maven y el comando `mvn clean install`. Mientras tanto, se descargan las dependencias, el código es compilado y se genera el archivo JAR del proyecyo para almacenarlo como un artefacto
-- __Deplyment Stage - Microsoft Azure__: Se realiza el ingreso a Azure y se descarga el aetefacto. Luego, este es automáticamente desplegado en el entorno de ejecución.
+- __Deployment Stage - Microsoft Azure__: Se realiza el ingreso a Azure y se descarga el aetefacto. Luego, este es automáticamente desplegado en el entorno de ejecución.
 - __Validation Stage__: Una vez que el despliegue se completa, GitHub Actions se encarga de registrar logs y el estado de ejecución a modo de historial. Así, es más sencillo detectar posibles errores.
 
 ## 7.3. Continuous Deployment
@@ -5188,6 +5665,9 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 - Mobile App — Cliente (Flutter): <https://github.com/paxtech-2026-10/Mobile-App>
 - Mobile App — Negocio (Kotlin nativo): <https://github.com/paxtech-2026-10/Ios-Mobile-App>
 - Acceptance Tests (Cucumber + Gherkin): <https://github.com/paxtech-2026-10/Acceptance-Tests>
+
+**Deployments**
+- Backend Web Services (Azure Web App): <https://paxtech-ashgghgnf7fpfxe9.canadacentral-01.azurewebsites.net/swagger-ui/index.html#/>
 
 **Herramientas de diseño y gestión**
 
