@@ -307,6 +307,11 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
       - [Bounded Context: Services](#bounded-context-services)
       - [Bounded Context: Workers](#bounded-context-workers)
+      - [Bounded Context: Reviews](#bounded-context-reviews)
+      - [Comandos de ejecución:](#comandos-de-ejecución)
+      - [Evidencia de ejecución](#evidencia-de-ejecución)
+        - [Backend (Spring Boot)](#backend-spring-boot)
+      - [Frontend Web (Angular)](#frontend-web-angular)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
       - [Feature file: Services](#feature-file-services)
@@ -324,6 +329,11 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
       - [Feature file: Workers](#feature-file-workers)
       - [Step definition example](#step-definition-example-3)
       - [Execution evidence](#execution-evidence-3)
+      - [6.1.3.5. Reviews Bounded Context](#6135-reviews-bounded-context)
+        - [Feature file: Reviews](#feature-file-reviews)
+        - [Step definitions](#step-definitions)
+        - [Execution evidence](#execution-evidence-4)
+        - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
@@ -449,7 +459,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
     </tr>
     <tr>
       <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.</td>
- <b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad del sistema mediante pruebas bien estructuradas. Diseñé y documenté pruebas unitarias para el backend en Spring Boot, validando la lógica de negocio y el correcto comportamiento de los servicios, con el objetivo de garantizar consistencia y confiabilidad en las funcionalidades relacionadas al módulo de reseñas.</td>
+ <b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad y confiabilidad del sistema mediante pruebas bien estructuradas. Esto permitió emitir soluciones más seguras y consistentes, considerando el impacto que un software estable y correctamente validado tiene en la experiencia de los usuarios y en el correcto funcionamiento de la plataforma dentro de un contexto tecnológico y social.</td>
     </tr>
     <tr>
       <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al cubrir los cuatro stacks del producto en una misma entrega de testing y al documentar el pipeline de CI/CD. Para los unit tests fue necesario aplicar JUnit 5, Karma + Jasmine sobre Angular 19, JUnit 4 sobre Kotlin/Compose y flutter_test, además de patrones DDD aplicados a aggregates (User, Client, Provider, ProviderProfile, Discount, PortfolioImage, Social) y value objects (FullName, CompanyName). Para BDD profundicé en Cucumber.js, Gherkin en español, Playwright y la convención de step definitions reutilizables que ya seguía el bounded context Services. Para CI estudié los triggers de GitHub Actions, la autenticación OIDC contra Azure y el flujo de artifacts entre jobs. Este trabajo evidenció que mantener consistencia entre cuatro stacks distintos exige aprender de forma continua las particularidades de cada herramienta y converger en una misma convención de testing, naming y trazabilidad.</td>
@@ -4243,6 +4253,115 @@ ng test --include="src/app/dashboard/pages/professional-dashboard/professional-d
   <img src="./assets/testing/integration/workers/frontend-angular-integration-tests.png" alt="Ejecución de integration tests frontend del bounded context Workers en Angular" width="900">
 </div>
 
+#### Bounded Context: Reviews
+
+**Frameworks y suites consideradas:**
+
+- **Backend (Spring Boot):** `SpringBootTest + MockMvc + H2` (`ReviewsControllerIntegrationTest`) y `JUnit 5 + Mockito` (`ReviewCommandServiceImplTest`, `ReviewQueryServiceImplTest`, `ReviewTest`).
+- **Frontend Web (Angular):** `Angular TestBed + Jasmine + Karma` (`reviews-tab.component.spec.ts`).
+
+Las pruebas de integración del bounded context **Reviews** validan el comportamiento extremo a extremo por capas: persistencia y lógica de negocio en backend mediante servicios y repositorios, exposición de endpoints REST con MockMvc en Spring Boot, e integración de componentes + servicios en Angular para la carga y renderizado de reviews en la interfaz web.
+
+| Test ID | Plataforma | Componentes integrados | Escenario | Resultado esperado | Estado |
+|---|---|---|---|---|---|
+| IT-REV-BE-01 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | creación de review válida | Persiste correctamente la review y retorna `Optional` presente | Pasa |
+| IT-REV-BE-02 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | creación de review duplicada para mismo provider/client | Lanza `IllegalArgumentException` (`already exists`) | Pasa |
+| IT-REV-BE-03 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | eliminación de review existente | Elimina correctamente la review por ID | Pasa |
+| IT-REV-BE-04 | Backend | `ReviewCommandServiceImpl` → `ReviewRepository` | eliminación de review inexistente | Lanza `IllegalArgumentException` (`does not exist`) | Pasa |
+| IT-REV-BE-05 | Backend | `CreateReviewCommand` | creación con rating inválido (`0`) | Lanza `IllegalArgumentException` (`Rating must be between 1 and 5`) | Pasa |
+| IT-REV-BE-06 | Backend | `ReviewQueryServiceImpl` → `ReviewRepository` | búsqueda por `providerId` y `clientId` | Retorna review correspondiente | Pasa |
+| IT-REV-BE-07 | Backend | `ReviewQueryServiceImpl` → `ReviewRepository` | búsqueda por ID | Retorna `Optional` con review existente | Pasa |
+| IT-REV-BE-08 | Backend | `ReviewQueryServiceImpl` → `ReviewRepository` | consulta global (`GetAllReviewsQuery`) | Retorna lista de reviews persistidas | Pasa |
+| IT-REV-BE-09 | Backend | `Review` aggregate | creación desde `CreateReviewCommand` | Mapea correctamente `clientId`, `providerId`, `rating`, `review` y `read` | Pasa |
+| IT-REV-BE-10 | Backend | `Review` aggregate | actualización mediante setters | Actualiza correctamente `review`, `rating` y `read` | Pasa |
+| IT-REV-BE-11 | Backend | `ReviewsController` → Service → Repository | operaciones REST (`POST`, `GET`, `PUT`, `DELETE`) | CRUD ejecutado correctamente sobre reviews | Pasa |
+| IT-REV-BE-12 | Backend | `ReviewsController` → Service → Repository | creación duplicada vía endpoint REST | Lanza `IllegalArgumentException` (`already exists`) | Pasa |
+| IT-REV-BE-13 | Backend | `ReviewsController` → Service → Repository | actualización/eliminación de review inexistente | Lanza `IllegalArgumentException` (`does not exist`) | Pasa |
+| IT-REV-WEB-01 | Frontend Web | `ReviewsTabComponent` → `ReviewApiService` → `ReviewListComponent` | inicialización del componente con reviews simuladas | Se cargan correctamente 2 reviews | Pasa |
+| IT-REV-WEB-02 | Frontend Web | `ReviewsTabComponent` → `ReviewApiService` | cálculo del promedio de ratings | Average calculado correctamente (`4.5`) | Pasa |
+| IT-REV-WEB-03 | Frontend Web | `ReviewsTabComponent` → `ReviewListComponent` | render/mapeo del primer review | Autor `"Gabriel"` cargado correctamente | Pasa |
+| IT-REV-WEB-04 | Frontend Web | `ReviewsTabComponent` → `ReviewListComponent` | render/mapeo del segundo review | Autor `"Maria"` cargado correctamente | Pasa |
+
+---
+
+#### Comandos de ejecución:
+
+```bash
+# Backend (Web-Services)
+./mvnw test -Dtest="ReviewCommandServiceImplTest,ReviewQueryServiceImplTest,ReviewTest,ReviewsControllerIntegrationTest"
+
+# Frontend Web (Frontend-Web-Application)
+ng test --include="src/app/reviews/pages/reviews-tab/reviews-tab.component.spec.ts"
+```
+
+---
+
+#### Evidencia de ejecución
+
+##### Backend (Spring Boot)
+
+```bash
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.333 s -- in com.paxtech.utime.platform.reviews.interfaces.rest.ReviewsControllerIntegrationTest
+[INFO]
+[INFO] Results:
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.333 s -- in com.paxtech.utime.platform.reviews.interfaces.rest.ReviewsControllerIntegrationTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.333 s -- in com.paxtech.utime.platform.reviews.interfaces.rest.ReviewsControllerIntegrationTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.748 s
+[INFO] Finished at: 2026-05-14T09:52:41-05:00
+
+``` 
+
+![](assets/images/reviews-test-%20back.png)
+
+#### Frontend Web (Angular)
+
+```bash
+√ Browser application bundle generation complete.
+14 05 2026 11:24:49.753:WARN [karma]: No captured browser, open http://localhost:9877/
+14 05 2026 11:24:49.784:INFO [karma-server]: Karma v6.4.4 server started at http://localhost:9877/
+14 05 2026 11:24:49.785:INFO [launcher]: Launching browsers Chrome with concurrency unlimited
+14 05 2026 11:24:49.792:INFO [launcher]: Starting browser Chrome
+14 05 2026 11:24:50.929:INFO [Chrome 148.0.0.0 (Windows 10)]: Connected on socket z7xUVe6En7v0MEtwAAAB with id 59470961
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true, salonId: 7}]
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true,
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true, salonId: 7}]
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+LOG: [Object{id: 1, author: 'Gabriel', rating: 5, text: 'Excellent service', read: false, salonId: 7}, Object{id: 2, author: 'Maria', rating: 4, text: 'Good attention', read: true,
+LOG: 4.5                                                                                                                                                                            
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "1" at index "0" and "1",
+key "1" at index "1" and "2",
+key "1" at index "2" and "3",
+key "1" at index "3" and "4". Find more at https://angular.dev/errors/NG0955'
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "1" at index "0" and "1",
+key "1" at index "1" and "2",
+key "1" at index "2" and "3",
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "2" at index "0" and "1",
+key "2" at index "1" and "2",
+key "2" at index "2" and "3". Find more at https://angular.dev/errors/NG0955'
+Chrome 148.0.0.0 (Windows 10): Executed 0 of 1 SUCCESS (0 secs / 0 secs)
+WARN: 'NG0955: The provided track expression resulted in duplicated keys for a given collection. Adjust the tracking expression such that it uniquely identifies all the items in the collection. Duplicated keys were:
+key "2" at index "0" and "1",
+key "2" at index "1" and "2",
+Chrome 148.0.0.0 (Windows 10): Executed 1 of 1 SUCCESS (0.01 secs / 0.061 secs)
+TOTAL: 1 SUCCESS
+```
+
+![](assets/images/reviews-test-%20front.png)
+
 ### 6.1.3. Core Behavior-Driven Development
 
 #### 6.1.3.1. Services Bounded Context
@@ -4438,7 +4557,7 @@ El `--dry-run` carga el feature file y los step definitions y valida que cada `G
 </div>
 
 
-
+  
 | User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
 |------------|-----------------|---------------|---------|-----------------|
 | US01 | IAM | Registro de un cliente desde el formulario público | `e2e-bdd/features/iam.feature` | Validados (dry-run) |
@@ -4641,6 +4760,161 @@ La ejecución confirma que la especificación BDD está enlazada con step defini
 |------------|-----------------|---------------|---------|--------|
 | US23 | Workers | Asignación de nuevo trabajador | `e2e-bdd/features/workers.feature` | Passed |
 | US23 | Workers | Actualización de infomación de trabajador | `e2e-bdd/features/workers.feature` | Passed |
+
+#### 6.1.3.5. Reviews Bounded Context
+
+Los escenarios automatizados corresponden al criterio de aceptación principal: **visualización de reviews y cálculo de promedio de calificaciones**. Se eligió este escenario porque representa el comportamiento central del bounded context Reviews: permitir que el usuario consulte la reputación de un proveedor a partir de las evaluaciones registradas.
+
+Este comportamiento está alineado con la interacción del frontend (vista `/reviews`) y la respuesta del endpoint de reviews, validando tanto la renderización de datos como el cálculo correcto del promedio.
+
+**Framework:** Cucumber.js + Gherkin + Playwright (TypeScript)
+
+**Ubicación en el repositorio Frontend-Web-Application:**
+
+```javascript
+e2e-bdd/features/reviews.feature
+e2e-bdd/steps/reviews.steps.ts
+e2e-bdd/support/world.ts
+cucumber.js
+```
+
+---
+
+##### Feature file: Reviews
+
+```gherkin
+# language: es
+@reviews
+Característica: Gestión y visualización de reviews
+  Como usuario de uTime
+  Quiero visualizar las reviews de un proveedor
+  Para conocer la calidad del servicio brindado
+
+  @USXX
+  Escenario: Visualización de reviews de un proveedor
+    Dado que existe un proveedor con reviews registradas
+    Y el usuario navega a la sección de reviews del proveedor
+    Cuando el sistema carga las reviews del proveedor
+    Entonces el sistema muestra correctamente la lista de reviews
+    Y el sistema calcula correctamente el promedio de calificaciones
+```
+
+##### Step definitions
+
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions usando Playwright. Se realiza el mock del endpoint de reviews para simular la respuesta del backend y validar el comportamiento del sistema en la interfaz real.
+
+```ts
+import { Given, Then, When } from '@cucumber/cucumber';
+import { expect } from '@playwright/test';
+import { UTimeWorld } from '../support/world';
+
+Given(
+  'que existe un proveedor con reviews registradas',
+  async function (this: UTimeWorld) {
+
+    await this.page.goto(this.baseUrl);
+
+    await this.page.evaluate(() => {
+      localStorage.setItem('providerId', '7');
+      localStorage.setItem('token', 'fake-token');
+    });
+
+    // Mock del endpoint real
+    await this.page.route('**/reviews**', async route => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify([
+          {
+            id: 1,
+            author: 'Gabriel',
+            rating: 5,
+            review: 'Excellent service',
+            read: false,
+            providerId: 7
+          },
+          {
+            id: 2,
+            author: 'Maria',
+            rating: 4,
+            review: 'Good attention',
+            read: true,
+            providerId: 7
+          }
+        ])
+      });
+    });
+  }
+);
+
+Given(
+  'el usuario navega a la sección de reviews del proveedor',
+  async function (this: UTimeWorld) {
+    await this.page.goto(`${this.baseUrl}/reviews`);
+
+    console.log(await this.page.url());
+  }
+);
+
+When(
+  'el sistema carga las reviews del proveedor',
+  async function (this: UTimeWorld) {
+    await this.page.waitForLoadState('networkidle');
+  }
+);
+
+Then(
+  'el sistema muestra correctamente la lista de reviews',
+  async function (this: UTimeWorld) {
+    await expect(this.page.getByText('Gabriel')).toBeVisible({
+      timeout: 10000
+    });
+
+    await expect(this.page.getByText('Maria')).toBeVisible({
+      timeout: 10000
+    });
+  }
+);
+
+Then(
+  'el sistema calcula correctamente el promedio de calificaciones',
+  async function (this: UTimeWorld) {
+    await expect(this.page.getByText(/4(\.5)?/)).toBeVisible({
+      timeout: 10000
+    });
+  }
+);
+```
+
+##### Execution evidence
+
+Se ejecutan los escenarios BDD contra la aplicación frontend en Angular utilizando Playwright. Se valida la carga de la vista /reviews, la renderización de datos mockeados y el cálculo del promedio de calificaciones.
+
+**Comando ejecutado:**
+
+```bash
+npm run bdd:reviews
+```
+
+**Resultado:**
+```bash
+> frontend-web-applications@0.0.0 bdd:reviews
+> cucumber-js e2e-bdd/features/reviews.feature --tags @reviews
+
+..http://localhost:4200/reviews
+.....
+
+1 scenario (1 passed)
+5 steps (5 passed)
+0m03.787s (executing steps: 0m03.769s)
+```
+
+##### Traceabilidad de pruebas
+
+| User Story | Bounded Context | Escenario BDD                            | Archivo                          | Estado |
+| ---------- | --------------- | ---------------------------------------- | -------------------------------- | ------ |
+| USXX       | Reviews         | Visualización de reviews de un proveedor | e2e-bdd/features/reviews.feature | Passed |
+
 
 ### 6.1.4. Core System Tests
 
