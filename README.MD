@@ -132,10 +132,17 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 
 **GitHub Collaboration Insights**
 
+![alt text](image.png)
+
 En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**.
 
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub para el TB1.
 
+![Insights TB1 - Network Graph](./assets/tb1/insights/networkgraph-tb1.png)
+
+</div>
 
 <div class="page"></div>
 
