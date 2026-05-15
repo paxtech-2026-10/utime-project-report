@@ -2880,6 +2880,300 @@ El backend RESTful se construye con **Spring Boot** y persistencia en **PostgreS
 
 La documentación interactiva de la API se genera automáticamente con **springdoc-openapi** y se publica en la ruta `/swagger-ui.html` del servicio backend. Allí se pueden inspeccionar los recursos de Workers, Provider Profiles, Reservations, Services y Reviews, así como ejecutar peticiones de prueba contra cada endpoint.
 
+**Ejemplos de requests por bounded context**
+
+Los siguientes ejemplos fueron tomados de los `Resource` usados por los controllers REST del backend Spring Boot.
+
+**IAM**
+
+`POST /api/v1/authentication/sign-up`
+
+```json
+{
+  "email": "cliente.demo@utime.com",
+  "password": "Password123!"
+}
+```
+
+`POST /api/v1/authentication/sign-in`
+
+```json
+{
+  "email": "cliente.demo@utime.com",
+  "password": "Password123!"
+}
+```
+
+**Profiles**
+
+`POST /api/v1/providers`
+
+```json
+{
+  "companyName": "Barbería Central",
+  "userId": 1
+}
+```
+
+`PUT /api/v1/providers/{id}`
+
+```json
+{
+  "companyName": "Barbería Central Premium"
+}
+```
+
+`POST /api/v1/clients`
+
+```json
+{
+  "firstName": "Camila",
+  "lastName": "Cortez",
+  "userId": 2
+}
+```
+
+`PUT /api/v1/clients/{id}`
+
+```json
+{
+  "firstName": "Camila",
+  "lastName": "Cortez",
+  "profileImageUrl": "https://cdn.utime.com/profiles/client-2.png"
+}
+```
+
+`POST /api/v1/provider-profiles`
+
+```json
+{
+  "providerId": 1,
+  "companyName": "Barbería Central",
+  "location": "Av. Primavera 123, Lima",
+  "email": "contacto@barberiacentral.com",
+  "profileImageUrl": "https://cdn.utime.com/profiles/provider-1.png",
+  "coverImageUrl": "https://cdn.utime.com/covers/provider-1.png",
+  "socials": {
+    "instagram": "https://instagram.com/barberiacentral",
+    "facebook": "https://facebook.com/barberiacentral"
+  },
+  "portfolioImages": [
+    "https://cdn.utime.com/portfolio/corte-1.png",
+    "https://cdn.utime.com/portfolio/corte-2.png"
+  ],
+  "description": "Especialistas en barbería clásica y moderna.",
+  "openTime": "09:00:00",
+  "closeTime": "20:00:00"
+}
+```
+
+`PUT /api/v1/provider-profiles/{id}`
+
+```json
+{
+  "profileImageUrl": "https://cdn.utime.com/profiles/provider-1-new.png",
+  "coverImageUrl": "https://cdn.utime.com/covers/provider-1-new.png",
+  "location": "Av. Primavera 456, Lima",
+  "companyName": "Barbería Central Premium",
+  "socials": {
+    "instagram": "https://instagram.com/barberiacentralpremium",
+    "tiktok": "https://tiktok.com/@barberiacentral"
+  },
+  "portfolioImages": [
+    "https://cdn.utime.com/portfolio/fade-1.png"
+  ],
+  "description": "Servicios de barbería, arreglo de barba y tratamientos capilares.",
+  "openTime": "10:00:00",
+  "closeTime": "21:00:00"
+}
+```
+
+`POST /api/v1/discounts`
+
+```json
+{
+  "title": "Descuento de bienvenida",
+  "subtitle": "20% para nuevos clientes",
+  "content": "Aplica en cortes y barbería durante la primera visita.",
+  "discountType": "PERCENTAGE",
+  "discountValue": 20,
+  "providerProfileId": 1
+}
+```
+
+`PUT /api/v1/discounts/{id}`
+
+```json
+{
+  "title": "Descuento de temporada",
+  "subtitle": "S/ 15 menos en servicios seleccionados",
+  "content": "Promoción válida de lunes a jueves.",
+  "discountType": "FIXED_AMOUNT",
+  "discountValue": 15
+}
+```
+
+`POST /api/v1/providerProfiles/{providerProfileId}/socials` / `PUT /api/v1/providerProfiles/{providerProfileId}/socials/{id}`
+
+```json
+{
+  "socialUrl": "https://instagram.com/barberiacentral",
+  "socialIcon": "instagram"
+}
+```
+
+`POST /api/v1/providerProfiles/{providerProfileId}/portfolio` / `PUT /api/v1/providerProfiles/{providerProfileId}/portfolio/{id}`
+
+```json
+{
+  "imageUrl": "https://cdn.utime.com/portfolio/corte-clasico.png"
+}
+```
+
+**Workers**
+
+`POST /api/v1/workers`
+
+```json
+{
+  "name": "Luis Farfán",
+  "specialization": "Barbería y arreglo de barba",
+  "photoUrl": "https://cdn.utime.com/workers/luis.png",
+  "providerId": 1
+}
+```
+
+`PUT /api/v1/workers/{workerId}`
+
+```json
+{
+  "name": "Luis Farfán",
+  "specialization": "Cortes urbanos y fade",
+  "photoUrl": "https://cdn.utime.com/workers/luis-updated.png",
+  "providerId": 1
+}
+```
+
+**Services**
+
+`POST /api/v1/services`
+
+```json
+{
+  "name": "Corte clásico",
+  "duration": 45,
+  "price": 35,
+  "status": true,
+  "providerId": 1
+}
+```
+
+`PUT /api/v1/services/{id}`
+
+```json
+{
+  "name": "Corte clásico premium",
+  "duration": 60,
+  "price": 50,
+  "providerId": 1
+}
+```
+
+**Reservations**
+
+`POST /api/v1/time-slots`
+
+```json
+{
+  "startTime": "2026-05-20T09:00:00",
+  "endTime": "2026-05-20T09:45:00",
+  "status": true,
+  "type": "AVAILABLE"
+}
+```
+
+`POST /api/v1/reservationsDetails`
+
+```json
+{
+  "clientId": 1,
+  "providerId": 1,
+  "serviceId": 1,
+  "timeSlotId": 1,
+  "workerId": 1
+}
+```
+
+`POST /api/v1/payments`
+
+```json
+{
+  "amount": 50.0,
+  "currency": "PEN",
+  "reservationId": 1,
+  "clientId": 1
+}
+```
+
+`POST /api/v1/payments/create-payment-link`
+
+```json
+{
+  "paymentId": 1,
+  "amount": 50.0,
+  "currency": "PEN",
+  "description": "Reserva de corte clásico"
+}
+```
+
+`POST /api/v1/payments/webhook`
+
+```http
+Stripe-Signature: t=timestamp,v1=signature
+Content-Type: application/json
+```
+
+```json
+{
+  "id": "evt_123456789",
+  "type": "checkout.session.completed",
+  "data": {
+    "object": {
+      "payment_status": "paid"
+    }
+  }
+}
+```
+
+**Reviews**
+
+`POST /api/v1/reviews`
+
+```json
+{
+  "clientId": 1,
+  "providerId": 1,
+  "rating": 5,
+  "review": "Excelente atención y puntualidad."
+}
+```
+
+**Requests multipart/form-data**
+
+Los endpoints de carga de imágenes reciben un campo `file` con una imagen (`JPEG`, `PNG`, `WEBP` o `GIF`) de hasta 5MB:
+
+```http
+POST /api/v1/clients/{id}/profile-image
+POST /api/v1/provider-profiles/{id}/profile-image
+POST /api/v1/provider-profiles/{id}/cover-image
+POST /api/v1/workers/{workerId}/photo-image
+Content-Type: multipart/form-data
+
+file=@imagen.png
+```
+
+Los requests `GET` y `DELETE` expuestos por estos controllers no requieren body; reciben sus valores mediante path parameters o query parameters según corresponda.
+
 ### 5.2.8. Team Collaboration Insights
 
 <div align="center">
