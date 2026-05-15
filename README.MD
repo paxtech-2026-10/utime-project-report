@@ -51,7 +51,7 @@
 
 <h5 style="text-align: center; font-style: italic;"> Abril 2026 </h5>
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Registro de Versiones del Informe
 
@@ -59,7 +59,7 @@
 |---------|-------|-------|-----------------------------|
 | 1.0     | 26/04/2026 | Roman, Sánchez, Rivera, Oroncoy, Yum  | Capítulos I, II, III, IV y V |
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Project Report Collaboration Insights
 
@@ -136,6 +136,8 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 
 
 
+
+<div class="page"></div>
 
 # Contenido
 
@@ -420,7 +422,7 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 - [Anexos](#anexos)
   - [AV1](#av1-1)
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Student Outcome
 
@@ -472,11 +474,9 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
   </tbody>
 </table>
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Part I: As-Is Software Project
-
-<hr class="page-break">
 
 # Capítulo I: Introducción
 
@@ -747,7 +747,7 @@ Los segmentos objetivos son las personas o entidades a las cuales está destinad
 - Van frecuentemente a salones de belleza para estar a la moda o presentables para un evento importante.
 - Tienden a preferir tratarse con el mismo estilista o barbero debido a experiencias anteriores o por la técnica del especialista.
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Capítulo II: Requirements Elicitation & Analysis
 
@@ -1364,7 +1364,7 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
       - Mejora en la puntualidad y la atención al cliente.
       - Facilitar el uso de herramientas digitales.
 
-<div style="page-break-before: always;"></div>
+<div class="page"></div>
 
 ## 2.3. Needfinding
 
@@ -1378,8 +1378,6 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
 
 </div>
 
-<div style="page-break-before: always;"></div>
-
 **Segmento objetivo #2: Clientes de servicios de belleza**
 
 <div align="center">
@@ -1387,8 +1385,6 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
 <img src="./assets/images/screenshots/Camila_Cortez_user_persona.png" alt="user_persona_2" />
 
 </div>
-
-<div style="page-break-before: always;"></div>
 
 ### 2.3.2. User Task Matrix
 
@@ -1413,7 +1409,7 @@ María Ysabel Sosa Rodríguez, de 45 años, es dueña de un salón de belleza y 
 | Realizar el pago por el servicio                | Alta                    | Alta                     | Alta                    | Alta                     |
 | Pagar por medios electrónicos                   | Baja                    | Baja                     | Alta                    | Alta                     |
 
-<div style="page-break-before: always;"></div>
+<div class="page"></div>
 
 ### 2.3.3. User Journey Mapping
 
@@ -1421,11 +1417,9 @@ Para el segmento de los salones estilistas o barberos se consideró el momento d
 
 ![Journey mapping | Segmento objetivo #1](./assets/images/screenshots/journeymapping1.png)
 
-<div style="page-break-before: always;"></div>
-
 ![Journey mapping | Segmento objetivo #2](./assets/images/screenshots/journeymapping2.png)
 
-<div style="page-break-before: always;"></div>
+<div class="page"></div>
 
 </div>
 
@@ -1440,8 +1434,6 @@ Para el segmento de los salones estilistas o barberos se consideró el momento d
 
 </div>
 
-<div style="page-break-before: always;"></div>
-
 **Segmento objetivo #2: Clientes de servicios de belleza**
 
 <div align="center">
@@ -1450,7 +1442,7 @@ Para el segmento de los salones estilistas o barberos se consideró el momento d
 
 </div>
 
-<div style="page-break-before: always;"></div>
+<div class="page"></div>
 
 ### 2.3.5. As-is Scenario Mapping
 
@@ -1484,6 +1476,8 @@ Segmento objetivo #2: Clientes de servicios de belleza
 | **Puntaje de Reseña**              | `Review.rating`                              | Reviews             | Valor numérico asociado a una reseña de servicio.                                         |
 
 <br>
+
+<div class="page"></div>
 
 # Capítulo III: Requirements Specification
 
@@ -1735,7 +1729,7 @@ Impact Mapping - Mobile
 
 </div>
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Capítulo IV: Product Design
 
@@ -2462,7 +2456,7 @@ La persistencia del sistema se implementa sobre **PostgreSQL** desplegado en **N
   <img src="assets/images/bd/bd-workers.png" alt="BD Workers" width="700">
 </div>
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Capítulo V: Product Implementation
 
@@ -3199,11 +3193,11 @@ En el video *About-the-Product* se presenta **uTime** mostrando sus característ
 
 </div>
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Part II: Verification, Validation & Pipeline
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Capítulo VI: Product Verification & Validation
 
@@ -5483,7 +5477,7 @@ Evidencias de la auditoría recibida.
 |---|----------|-----------|-------------------|-------------|--------|
 |   |          |           |                   |             |        |
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Capítulo VII: DevOps Practices
 
@@ -5881,11 +5875,11 @@ Dashboard de monitoreo.
 
 [Contenido pendiente — integración con Slack / correo / PagerDuty.]
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Part III: Experiment-Driven Lifecycle
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Capítulo VIII: Experiment-Driven Development
 
@@ -6172,7 +6166,7 @@ Artefactos de la sesión de shareback.
 
 [URL del video intro del producto To-Be]([URL-VIDEO-INTRO])
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Conclusiones
 
@@ -6210,19 +6204,19 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 - Cuidar el **rendimiento en móvil** desde el diseño: limitar el peso de imágenes, planificar carga diferida y considerar conectividad intermitente, dado que muchos profesionales operan en zonas con red inestable.
 - Mantener sincronización del equipo mediante revisiones de pares, PRs pequeños y comunicación constante en los hitos del proyecto, asegurando que cada integrante avance según los criterios del Student Outcome (7.c1 y 7.c2).
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Video App Validation
 
 [URL del video de validación de la aplicación]([URL-VIDEO-VALIDATION])
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Video About-the-Team
 
 [URL del video About-the-Team]([URL-VIDEO-TEAM])
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Bibliografía
 
@@ -6252,7 +6246,7 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 
 </div>
 
-<hr class="page-break">
+<div class="page"></div>
 
 # Anexos
 
