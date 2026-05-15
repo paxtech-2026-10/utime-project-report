@@ -5249,12 +5249,14 @@ Los dos escenarios automatizados corresponden a los criterios de aceptación de 
 
 **Framework:** Cucumber.js (`@cucumber/cucumber@^12.8.2`) + Gherkin + Playwright (`@playwright/test@^1.59.1`) en TypeScript.
 
-**Ubicación en el repositorio [Frontend-Web-Application](https://github.com/paxtech-2026-10/Frontend-Web-Application):**
+**Ubicación en el repositorio [Frontend-Web-Application](https://github.com/paxtech-2026-10/Frontend-Web-Application) (rama `feature/iam-profiles-bdd`):**
 
-- `e2e-bdd/features/reservations.feature`
-- `e2e-bdd/steps/reservations.steps.ts`
-- `e2e-bdd/support/world.ts`
-- `cucumber.js`
+- [`e2e-bdd/features/reservations.feature`](https://github.com/paxtech-2026-10/Frontend-Web-Application/blob/feature/iam-profiles-bdd/e2e-bdd/features/reservations.feature)
+- [`e2e-bdd/steps/reservations.steps.ts`](https://github.com/paxtech-2026-10/Frontend-Web-Application/blob/feature/iam-profiles-bdd/e2e-bdd/steps/reservations.steps.ts)
+- [`e2e-bdd/support/world.ts`](https://github.com/paxtech-2026-10/Frontend-Web-Application/blob/feature/iam-profiles-bdd/e2e-bdd/support/world.ts)
+- [`cucumber.js`](https://github.com/paxtech-2026-10/Frontend-Web-Application/blob/feature/iam-profiles-bdd/cucumber.js)
+
+Implementación introducida por el PR [paxtech-2026-10/Frontend-Web-Application#2](https://github.com/paxtech-2026-10/Frontend-Web-Application/pull/2) (merged el 15/05/2026, commit `191fe01`).
 
 #### Feature file: Reservations
 
@@ -5267,55 +5269,58 @@ Característica: Creación de citas por parte del cliente
   Para recibir el servicio deseado
 
   Escenario: Registro correcto de cita nueva
-    Dado que el cliente está autenticado en uTime
-    Y se encuentra en el detalle de un salón con servicios y trabajadores disponibles
-    Cuando selecciona el servicio "Corte clásico", al trabajador "Luis Farfán" y un slot disponible
-    Y confirma la reserva
+    Dado que existe un salón con un servicio, un trabajador y un slot disponible
+    Y un cliente autenticado navega al detalle del salón
+    Cuando reserva el servicio con el trabajador en el slot disponible
     Entonces el sistema persiste la reserva con su cliente, servicio, trabajador y slot
-    Y la aplicación lo redirige a la pantalla de pago con el enlace de Stripe generado
+    Y el sistema persiste el pago en estado PENDING vinculado a la reserva
+    Y la aplicación lo redirige a la pantalla de procesamiento de pago con el enlace de Stripe
 
   Escenario: Verificación de disponibilidad antes de agendar
-    Dado que el cliente está autenticado en uTime
-    Y se encuentra en el detalle de un salón con servicios y trabajadores disponibles
-    Y todos los slots del worker seleccionado para hoy están ocupados
-    Cuando intenta confirmar una reserva sin un slot libre
-    Entonces el sistema impide el registro de la cita
-    Y el botón de confirmación permanece deshabilitado hasta que se elija un slot libre
+    Dado que existe un salón con un servicio y un trabajador
+    Pero el único slot del trabajador ya está reservado por otro cliente
+    Y un cliente autenticado navega al detalle del salón
+    Cuando intenta confirmar una reserva sin slots disponibles
+    Entonces el sistema no persiste ninguna nueva reserva
+    Y el calendario no ofrece slots seleccionables para esa fecha
 ```
 
 #### Step definition example
 
-Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions que reutilizan el `UTimeWorld` ya implementado en `e2e-bdd/support/world.ts`. Los pasos usan Playwright para reproducir exactamente el flujo del system test SYS-04 e interceptar las respuestas HTTP de `/api/v1/reservationsDetails` y `/api/v1/payments/create-payment-link` documentadas en §5.2.7.
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions que reutilizan el `UTimeWorld` ya implementado en `e2e-bdd/support/world.ts` y los helpers de fixtures en `e2e/support/api.ts`. Los pasos usan Playwright para reproducir exactamente el flujo del system test SYS-04, interceptando `/api/v1/payments/create-payment-link` para devolver una URL de Stripe controlada y verificando las respuestas reales de `/api/v1/reservationsDetails` y `/api/v1/payments` (endpoints documentados en §5.2.7).
 
 ```typescript
-When(
-  'selecciona el servicio {string}, al trabajador {string} y un slot disponible',
-  async function (this: UTimeWorld, serviceName: string, workerName: string) {
-    await this.page.getByRole('listitem', { name: serviceName }).click();
-    await this.page.getByRole('listitem', { name: workerName }).click();
+When('reserva el servicio con el trabajador en el slot disponible', async function (this: UTimeWorld) {
+  const serviceCard = this.page.getByLabel('Service card').filter({ hasText: this.reservationService!.name });
+  await serviceCard.getByRole('button', { name: 'Reservar ahora' }).click();
 
-    const firstAvailableSlot = this.page.locator('button.slot-available').first();
-    await expect(firstAvailableSlot).toBeEnabled();
-    await firstAvailableSlot.click();
-  }
-);
+  await expect(this.page).toHaveURL(new RegExp(`/client/appointment-maker/${this.reservationSalon!.id}`));
+  await this.page.getByRole('option').filter({ hasText: this.reservationWorker!.name }).click();
 
-When('confirma la reserva', async function (this: UTimeWorld) {
-  const createReservationResponse = this.page.waitForResponse(response =>
+  const reservationResponsePromise = this.page.waitForResponse(response =>
     new URL(response.url()).pathname === '/api/v1/reservationsDetails'
     && response.request().method() === 'POST'
   );
-
-  const createPaymentLinkResponse = this.page.waitForResponse(response =>
-    new URL(response.url()).pathname === '/api/v1/payments/create-payment-link'
+  const paymentResponsePromise = this.page.waitForResponse(response =>
+    new URL(response.url()).pathname === '/api/v1/payments'
     && response.request().method() === 'POST'
   );
 
-  await this.page.getByRole('button', { name: /Confirm reservation|Confirmar reserva/i }).click();
+  this.page.once('dialog', dialog => dialog.accept());
+  // …selecciona un slot disponible del FullCalendar evaluando data-date y data-time…
 
-  this.reservationStatus = (await createReservationResponse).status();
-  const paymentBody = await (await createPaymentLinkResponse).json();
-  this.stripePaymentUrl = paymentBody.paymentUrl;
+  this.reservationResponse = await (await reservationResponsePromise).json();
+  this.paymentResponse = await (await paymentResponsePromise).json();
+});
+
+Then('el sistema persiste el pago en estado PENDING vinculado a la reserva', async function (this: UTimeWorld) {
+  expect(this.paymentResponse).toMatchObject({
+    amount: this.reservationService!.price,
+    currency: 'PEN',
+    paymentStatus: 'PENDING',
+    reservationId: this.reservationResponse!.id,
+    clientId: this.reservationClient!.clientId
+  });
 });
 ```
 
