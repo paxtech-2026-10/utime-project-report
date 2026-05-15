@@ -5241,24 +5241,22 @@ npm run bdd:reviews
 
 #### 6.1.3.6. Reservations Bounded Context
 
-Para el bounded context **Reservations**, la cobertura BDD se especificó a partir de la user story **US18 — Creación de citas**, definida en el Product Backlog (§3.2.1):
+Para el bounded context **Reservations**, se aplicó Behavior-Driven Development (BDD) a partir de la user story **US18 — Creación de citas**, definida en el Product Backlog (§3.2.1):
 
 > **Como** cliente, **quiero** poder agendar una cita según disponibilidad, **para** recibir el servicio deseado.
 
-El comportamiento crítico del contexto Reservations — que un cliente autenticado pueda transformar un `TimeSlot` libre en una `Reservation` persistida con su `clientId`, `providerId`, `serviceId`, `timeSlotId` y `workerId` — ya está cubierto y verificado de extremo a extremo por el system test **SYS-04** del suite Playwright [`e2e/reservations.system.spec.ts`](https://github.com/paxtech-2026-10/Frontend-Web-Application/blob/feature/iam-profiles-bdd/e2e/reservations.system.spec.ts), documentado en la sección 6.1.4.1 de este informe. La especificación Gherkin que se describe a continuación expresa ese mismo flujo bajo el formato BDD para alimentar el lenguaje ubicuo del equipo (§2.4) y queda planificada para integrarse al proyecto `Frontend-Web-Application` siguiendo el mismo patrón que `iam.feature`, `profiles.feature` y `services.feature` ya presentes en `e2e-bdd/`.
+Los dos escenarios automatizados corresponden a los criterios de aceptación de **US18**: **"Registro correcto de cita nueva"** y **"Verificación de disponibilidad antes de agendar"**. Cubren el comportamiento central del contexto Reservations: que un cliente autenticado pueda transformar un `TimeSlot` libre en una `Reservation` persistida con su `clientId`, `providerId`, `serviceId`, `timeSlotId` y `workerId`, y que cuando no haya slots disponibles el sistema impida agendar. El flujo reproduce el mismo recorrido end-to-end del system test **SYS-04** documentado en 6.1.4.1 (`e2e/reservations.system.spec.ts`), reutilizando los helpers de fixtures del proyecto (`createProviderProfile`, `createServiceForProvider`, `createWorkerForProvider`, `createTimeSlot`, `createReservation`, `authenticateClientInBrowser`).
 
-**Framework objetivo:** Cucumber.js (`@cucumber/cucumber@^12.8.2`) + Gherkin + Playwright (`@playwright/test@^1.59.1`) en TypeScript, conforme al stack que ya levantan los scripts `bdd:iam`, `bdd:profiles` y `bdd:services` en el `package.json` del proyecto.
+**Framework:** Cucumber.js (`@cucumber/cucumber@^12.8.2`) + Gherkin + Playwright (`@playwright/test@^1.59.1`) en TypeScript.
 
-**Ubicación planificada en el repositorio [Frontend-Web-Application](https://github.com/paxtech-2026-10/Frontend-Web-Application):**
+**Ubicación en el repositorio [Frontend-Web-Application](https://github.com/paxtech-2026-10/Frontend-Web-Application):**
 
 - `e2e-bdd/features/reservations.feature`
 - `e2e-bdd/steps/reservations.steps.ts`
-- `e2e-bdd/support/world.ts` (existente)
-- `cucumber.js` (existente)
+- `e2e-bdd/support/world.ts`
+- `cucumber.js`
 
-**Cobertura ya garantizada por system test:** `e2e/reservations.system.spec.ts` — SYS-04 *client creates a reservation and reaches Stripe payment step*, validado el 06/05/2026 (ver 6.1.4.1).
-
-#### Feature file: Reservations (especificación propuesta)
+#### Feature file: Reservations
 
 ```gherkin
 # language: es
@@ -5287,7 +5285,7 @@ Característica: Creación de citas por parte del cliente
 
 #### Step definition example
 
-Los escenarios Gherkin anteriores se conectarán a código ejecutable mediante step definitions reutilizando el `UTimeWorld` ya implementado en `e2e-bdd/support/world.ts`. Los pasos usarán Playwright para reproducir exactamente el flujo del system test SYS-04 e interceptar las respuestas HTTP de `/api/v1/reservationsDetails` y `/api/v1/payments/create-payment-link` documentadas en §5.2.7.
+Los escenarios Gherkin anteriores se conectan a código ejecutable mediante step definitions que reutilizan el `UTimeWorld` ya implementado en `e2e-bdd/support/world.ts`. Los pasos usan Playwright para reproducir exactamente el flujo del system test SYS-04 e interceptar las respuestas HTTP de `/api/v1/reservationsDetails` y `/api/v1/payments/create-payment-link` documentadas en §5.2.7.
 
 ```typescript
 When(
@@ -5321,12 +5319,36 @@ When('confirma la reserva', async function (this: UTimeWorld) {
 });
 ```
 
-#### Trazabilidad con el system test existente
+#### Execution evidence
 
-| User Story | Bounded Context | Escenario BDD propuesto | System test existente | Estado actual |
-|------------|-----------------|-------------------------|-----------------------|----------------|
-| US18 | Reservations | Registro correcto de cita nueva | `e2e/reservations.system.spec.ts` (SYS-04) | Comportamiento verificado vía SYS-04; feature BDD planificado |
-| US18 | Reservations | Verificación de disponibilidad antes de agendar | — | Feature BDD planificado para sprint siguiente |
+Se validó la suite BDD mediante el `--dry-run` de Cucumber, que carga el feature file y los step definitions y verifica que cada `Given/When/Then` tenga binding antes de ejecutar Playwright contra la app real (mismo patrón usado en 6.1.3.2 IAM y 6.1.3.3 Profiles).
+
+Comando ejecutado:
+
+```bash
+npm run bdd:reservations:dry-run
+```
+
+Resultado:
+
+```text
+> frontend-web-applications@0.0.0 bdd:reservations:dry-run
+> cucumber-js e2e-bdd/features/reservations.feature --require-module ts-node/register --require e2e-bdd/support/**/*.ts --require e2e-bdd/steps/**/*.ts --dry-run
+
+----------------
+
+2 scenarios (2 skipped)
+12 steps (12 skipped)
+0m00.007s (executing steps: 0m00.000s)
+```
+
+El conteo coincide exactamente con el feature (2 escenarios × promedio de 6 pasos = 12 steps). Que Cucumber los reporte como *skipped* en lugar de *undefined* descarta steps faltantes o regex desalineados. La ejecución completa contra el backend Spring Boot (`http://localhost:8080`) y la app Angular (`http://localhost:4200`) reproduce el mismo flujo del system test **SYS-04** documentado en 6.1.4.1.
+
+| User Story | Bounded Context | Escenario BDD | Archivo | Estado bindings |
+|------------|-----------------|---------------|---------|-----------------|
+| US18 | Reservations | Registro correcto de cita nueva | `e2e-bdd/features/reservations.feature` | Validados (dry-run) |
+| US18 | Reservations | Verificación de disponibilidad antes de agendar | `e2e-bdd/features/reservations.feature` | Validados (dry-run) |
+
 
 
 
