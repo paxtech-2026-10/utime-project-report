@@ -2874,8 +2874,9 @@ El backend RESTful se construye con **Spring Boot** y persistencia en **PostgreS
 
 <img src="./assets/ux-ui/evidences/api-docs/api-docs.png" alt="API Docs" width="800">
 
-[Repositorio del Backend Web Services](https://github.com/paxtech-2026-10/Web-Services)
+[https://github.com/paxtech-2026-10/Web-Services](https://github.com/paxtech-2026-10/Web-Services)
 
+https://paxtech-ashgghgnf7fpfxe9.canadacentral-01.azurewebsites.net/swagger-ui/index.html#/
 </div>
 
 La documentación interactiva de la API se genera automáticamente con **springdoc-openapi** y se publica en la ruta `/swagger-ui.html` del servicio backend. Allí se pueden inspeccionar los recursos de Workers, Provider Profiles, Reservations, Services y Reviews, así como ejecutar peticiones de prueba contra cada endpoint.
