@@ -6290,7 +6290,7 @@ Artefactos de la sesión de shareback.
 
 ## Conclusiones y recomendaciones
 
-A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado durante el AV1, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design) del informe.
+A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las dos entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); y el **AV2/TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices) del informe.
 
 ### Conclusiones
 
