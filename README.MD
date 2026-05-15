@@ -132,8 +132,6 @@ Para el desarrollo del TB1, cada participante del equipo realizó las siguientes
 
 **GitHub Collaboration Insights**
 
-![alt text](image.png)
-
 En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
@@ -141,6 +139,10 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 Gráfico de red (*network graph*) de ramas en el repositorio de GitHub para el TB1.
 
 ![Insights TB1 - Network Graph](./assets/tb1/insights/networkgraph-tb1.png)
+
+Actividad de commits en el tiempo para el TB1.
+
+![Insights TB1 - Commits Over Time](./assets/tb1/insights/commits-over-time-tb1.png)
 
 </div>
 
@@ -345,6 +347,10 @@ Gráfico de red (*network graph*) de ramas en el repositorio de GitHub para el T
         - [Step definitions](#step-definitions)
         - [Execution evidence](#execution-evidence-4)
         - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
+      - [6.1.3.6. Reservations Bounded Context](#6136-reservations-bounded-context)
+      - [Feature file: Reservations](#feature-file-reservations)
+      - [Step definition example](#step-definition-example-4)
+      - [Execution evidence](#execution-evidence-5)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
