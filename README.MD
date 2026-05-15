@@ -89,7 +89,7 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 
 **Tareas**
 
-Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
 
 | Integrantes                | Tarea asignada |
 |----------------------------|----------------|
