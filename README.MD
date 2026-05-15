@@ -5239,6 +5239,97 @@ npm run bdd:reviews
 | USXX       | Reviews         | Visualización de reviews de un proveedor | e2e-bdd/features/reviews.feature | Passed |
 
 
+#### 6.1.3.6. Reservations Bounded Context
+
+Para el bounded context **Reservations**, la cobertura BDD se especificó a partir de la user story **US18 — Creación de citas**, definida en el Product Backlog (§3.2.1):
+
+> **Como** cliente, **quiero** poder agendar una cita según disponibilidad, **para** recibir el servicio deseado.
+
+El comportamiento crítico del contexto Reservations — que un cliente autenticado pueda transformar un `TimeSlot` libre en una `Reservation` persistida con su `clientId`, `providerId`, `serviceId`, `timeSlotId` y `workerId` — ya está cubierto y verificado de extremo a extremo por el system test **SYS-04** del suite Playwright [`e2e/reservations.system.spec.ts`](https://github.com/paxtech-2026-10/Frontend-Web-Application/blob/feature/iam-profiles-bdd/e2e/reservations.system.spec.ts), documentado en la sección 6.1.4.1 de este informe. La especificación Gherkin que se describe a continuación expresa ese mismo flujo bajo el formato BDD para alimentar el lenguaje ubicuo del equipo (§2.4) y queda planificada para integrarse al proyecto `Frontend-Web-Application` siguiendo el mismo patrón que `iam.feature`, `profiles.feature` y `services.feature` ya presentes en `e2e-bdd/`.
+
+**Framework objetivo:** Cucumber.js (`@cucumber/cucumber@^12.8.2`) + Gherkin + Playwright (`@playwright/test@^1.59.1`) en TypeScript, conforme al stack que ya levantan los scripts `bdd:iam`, `bdd:profiles` y `bdd:services` en el `package.json` del proyecto.
+
+**Ubicación planificada en el repositorio [Frontend-Web-Application](https://github.com/paxtech-2026-10/Frontend-Web-Application):**
+
+- `e2e-bdd/features/reservations.feature`
+- `e2e-bdd/steps/reservations.steps.ts`
+- `e2e-bdd/support/world.ts` (existente)
+- `cucumber.js` (existente)
+
+**Cobertura ya garantizada por system test:** `e2e/reservations.system.spec.ts` — SYS-04 *client creates a reservation and reaches Stripe payment step*, validado el 06/05/2026 (ver 6.1.4.1).
+
+#### Feature file: Reservations (especificación propuesta)
+
+```gherkin
+# language: es
+@reservations @US18
+Característica: Creación de citas por parte del cliente
+  Como cliente
+  Quiero poder agendar una cita según disponibilidad
+  Para recibir el servicio deseado
+
+  Escenario: Registro correcto de cita nueva
+    Dado que el cliente está autenticado en uTime
+    Y se encuentra en el detalle de un salón con servicios y trabajadores disponibles
+    Cuando selecciona el servicio "Corte clásico", al trabajador "Luis Farfán" y un slot disponible
+    Y confirma la reserva
+    Entonces el sistema persiste la reserva con su cliente, servicio, trabajador y slot
+    Y la aplicación lo redirige a la pantalla de pago con el enlace de Stripe generado
+
+  Escenario: Verificación de disponibilidad antes de agendar
+    Dado que el cliente está autenticado en uTime
+    Y se encuentra en el detalle de un salón con servicios y trabajadores disponibles
+    Y todos los slots del worker seleccionado para hoy están ocupados
+    Cuando intenta confirmar una reserva sin un slot libre
+    Entonces el sistema impide el registro de la cita
+    Y el botón de confirmación permanece deshabilitado hasta que se elija un slot libre
+```
+
+#### Step definition example
+
+Los escenarios Gherkin anteriores se conectarán a código ejecutable mediante step definitions reutilizando el `UTimeWorld` ya implementado en `e2e-bdd/support/world.ts`. Los pasos usarán Playwright para reproducir exactamente el flujo del system test SYS-04 e interceptar las respuestas HTTP de `/api/v1/reservationsDetails` y `/api/v1/payments/create-payment-link` documentadas en §5.2.7.
+
+```typescript
+When(
+  'selecciona el servicio {string}, al trabajador {string} y un slot disponible',
+  async function (this: UTimeWorld, serviceName: string, workerName: string) {
+    await this.page.getByRole('listitem', { name: serviceName }).click();
+    await this.page.getByRole('listitem', { name: workerName }).click();
+
+    const firstAvailableSlot = this.page.locator('button.slot-available').first();
+    await expect(firstAvailableSlot).toBeEnabled();
+    await firstAvailableSlot.click();
+  }
+);
+
+When('confirma la reserva', async function (this: UTimeWorld) {
+  const createReservationResponse = this.page.waitForResponse(response =>
+    new URL(response.url()).pathname === '/api/v1/reservationsDetails'
+    && response.request().method() === 'POST'
+  );
+
+  const createPaymentLinkResponse = this.page.waitForResponse(response =>
+    new URL(response.url()).pathname === '/api/v1/payments/create-payment-link'
+    && response.request().method() === 'POST'
+  );
+
+  await this.page.getByRole('button', { name: /Confirm reservation|Confirmar reserva/i }).click();
+
+  this.reservationStatus = (await createReservationResponse).status();
+  const paymentBody = await (await createPaymentLinkResponse).json();
+  this.stripePaymentUrl = paymentBody.paymentUrl;
+});
+```
+
+#### Trazabilidad con el system test existente
+
+| User Story | Bounded Context | Escenario BDD propuesto | System test existente | Estado actual |
+|------------|-----------------|-------------------------|-----------------------|----------------|
+| US18 | Reservations | Registro correcto de cita nueva | `e2e/reservations.system.spec.ts` (SYS-04) | Comportamiento verificado vía SYS-04; feature BDD planificado |
+| US18 | Reservations | Verificación de disponibilidad antes de agendar | — | Feature BDD planificado para sprint siguiente |
+
+
+
 ### 6.1.4. Core System Tests
 
 #### 6.1.4.1. Aplicación Web (Playwright)
@@ -6188,6 +6279,9 @@ El AV1 permitió consolidar la base estratégica, de producto y de diseño de uT
 - El **Product Backlog** priorizado, las User Stories con criterios de aceptación, el Impact Mapping y el To-Be Scenario Mapping del Capítulo III entregaron una especificación trazable desde objetivos de negocio hasta entregables técnicos.
 - El diseño UX/UI del Capítulo IV (Style Guidelines, Information Architecture, wireframes, mockups y prototipos) cubrió de forma consistente las **dos plataformas objetivo**, aplicación móvil y aplicación web, garantizando una experiencia coherente entre dispositivos.
 - La arquitectura **Domain-Driven Design**, junto con el diseño orientado a objetos y el modelo de base de datos, sentaron las bases técnicas necesarias para soportar la solución multiplataforma con escalabilidad y separación clara de bounded contexts.
+- En el **Capítulo V (Product Implementation)** el equipo configuró un entorno multi-stack coherente (Angular para web, Flutter para la app del cliente, Kotlin nativo para la app del negocio y Spring Boot con PostgreSQL en Neon para el backend), aplicó **GitFlow + Conventional Commits + Semantic Versioning** sobre los siete repositorios de la organización `paxtech-2026-10` y entregó el Sprint #1 con la landing page desplegada en GitHub Pages junto con el Acuerdo de Servicio SaaS (uptime objetivo 99.5%, soporte, seguridad TLS + Ley 29733, planes Free/Pro/Business).
+- En el **Capítulo VI (Product Verification & Validation)** se ejecutaron pruebas unitarias y de integración por bounded context (IAM, Profiles, Workers, Services, Reservations, Reviews) sobre los cuatro codebases del producto (Spring Boot, Flutter, Kotlin nativo, Angular), se automatizaron seis escenarios BDD con Cucumber + Playwright y se consolidó la suite de nueve **system tests** Playwright (SYS-01 a SYS-09) pasando contra la app web; además, las **entrevistas de validación** y las evaluaciones según **heurísticas de Nielsen** confirmaron empíricamente las hipótesis Lean UX definidas en el Capítulo II.
+- En el **Capítulo VII (DevOps Practices)** se formalizó la cadena de Continuous Integration con los workflows `main_paxtech.yml` y `frontend-ci.yml`, el Continuous Delivery hacia el slot de staging en Azure, el Continuous Deployment a producción con cada push a `main` y un esquema inicial de Continuous Monitoring con alertas y notificaciones, cerrando el ciclo de feedback entre código, despliegue y operación.
 
 ### Recomendaciones
 
@@ -6203,6 +6297,12 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 - Configurar tempranamente la **integración continua** con linters, pruebas unitarias y validación de convenciones (Conventional Commits y GitFlow definidos en CLAUDE.md) para evitar deuda técnica acumulada.
 - Cuidar el **rendimiento en móvil** desde el diseño: limitar el peso de imágenes, planificar carga diferida y considerar conectividad intermitente, dado que muchos profesionales operan en zonas con red inestable.
 - Mantener sincronización del equipo mediante revisiones de pares, PRs pequeños y comunicación constante en los hitos del proyecto, asegurando que cada integrante avance según los criterios del Student Outcome (7.c1 y 7.c2).
+- Adoptar la **suite BDD (Cucumber + Playwright)** como criterio de aceptación obligatorio antes del merge a `develop`, ampliando la cobertura actual de seis bounded contexts a los escenarios faltantes en Reservations end-to-end y Payments con el sandbox de Stripe.
+- Consolidar los cuatro codebases (backend Spring Boot, app Flutter cliente, app Kotlin negocio y web Angular) bajo un único workflow de CI con *dependency caching* y ejecución paralela por proyecto, reduciendo el tiempo total de build y unificando el reporte de tests.
+- Establecer un **entorno de staging persistente en Azure App Service** apuntado a una base de datos Neon dedicada, de modo que los acceptance tests y los system tests Playwright ataquen siempre un backend estable y no dependan del entorno local de cada integrante.
+- Documentar **runbooks operativos** para la rotación de secretos JWT, claves de Stripe y restauración de backups de PostgreSQL en Neon, evitando que la respuesta a incidentes dependa de una sola persona del equipo.
+- Endurecer el **Continuous Monitoring** con alertas accionables sobre latencia P95 del API, tasa de errores 5xx y disponibilidad del Azure App Service, conectadas al canal de Discord del equipo para reducir el tiempo medio de detección.
+- Avanzar la integración de **Stripe** desde la modalidad sandbox a producción tras cerrar la Spike Story 1 del backlog, asegurando la firma del webhook `checkout.session.completed` que ya está implementado en el backend y reforzando las pruebas de idempotencia para reintentos del proveedor de pagos.
 
 <div class="page"></div>
 
