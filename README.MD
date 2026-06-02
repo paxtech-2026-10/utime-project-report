@@ -89,7 +89,7 @@ Se usó el flujo de trabajo **GitFlow**, que incluye las siguientes ramas princi
 
 **Tareas**
 
-Para el desarrollo del TB1, cada participante del equipo realizó las siguientes tareas:
+Para el desarrollo del AV1, cada participante del equipo realizó las siguientes tareas:
 
 | Integrantes                | Tarea asignada |
 |----------------------------|----------------|
@@ -152,8 +152,17 @@ Para el desarrollo del AV2, se registran las siguientes tareas asignadas:
 
 En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados durante el AV2. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo **GitFlow**, manteniendo trazabilidad entre las actualizaciones del Capítulo VIII y los commits realizados en el repositorio del informe.
 
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub para el TB1.
 
+![Insights TB1 - Network Graph](./assets/tb1/insights/networkgraph-tb1.png)
+
+Actividad de commits en el tiempo para el TB1.
+
+![Insights TB1 - Commits Over Time](./assets/tb1/insights/commits-over-time-tb1.png)
+
+</div>
 
 <div class="page"></div>
 
