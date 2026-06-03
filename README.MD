@@ -6067,7 +6067,7 @@ El backlog se organiza como una lista priorizada de preguntas de investigación.
 | Hipótesis | Creemos que, al probar un flujo básico de agenda digital en uTime, al menos el 60% de los salones de belleza y barberías manifestará disposición a usarla para gestionar reservas. |
 | Simplest Useful Thing | La funciondalidad mínima y usable más sencilla a implementar sería, por el lado del usuario, la selección del salón o barbería, estilista deseado, servicio y hora del mismo de acuerdo a disponibilidad. Con esta información, se gurdaría su reserva, miemntras que, al confirmar los datos, esta misma se vería reflejada en el calendario del salón seleccionado. |
 | Lado posterior |
-| Medidas | Analizar las puntuaciones en una encuesta de satisfacción dirigida hacia los salones y barberías antes y después de la implementaci+on del flujo de reservaciones y calendario en las aplicaciones. |
+| Medidas | Analizar las puntuaciones en una encuesta de satisfacción dirigida hacia los salones y barberías antes y después de la implementación del flujo de reservaciones y calendario en las aplicaciones durante un periodo de 30 días. |
 | Condiciones | Experimental --> Los salones de belleza, barberías y sus clientes empiezan a usar uTime para la gestión de sus reservas - Control --> Las reservas se siguen registrando mediantes llamadas y aplicaciones de mensajería |
 | Escala | Implementar y mantener el flujo de reservas dentro de la aplicación si más de la mitad de los salones de belleza y barbería manifiestan una lat satisfacción en cuanto al uso de esta funcionalidad. |  
 
@@ -6109,7 +6109,7 @@ El backlog se organiza como una lista priorizada de preguntas de investigación.
 | Hipótesis | El flujo directo de reserva en la app generará al menos 20% más intención de reserva que un flujo basado únicamente en contacto inicial por WhatsApp. |
 | Simplest Useful Thing | Dentro de la aplicación, se mostrará la lista de salones registrados, sus promociones existentes y los clientes podrán fitrarlos de acuerdo a los servicios que desean adquirir, así como tendrán la posibilidad de reservar su cita en cuanto encuentran un salón o barbería de su agrado. |
 | Lado posterior |
-| Medidas | Comparar la intención de reserva en cada canal considerando tanto las visitas al perdil del salón o barbería como sus reservas completadas durante 30 días. |
+| Medidas | Comparar la intención de reserva en cada canal considerando tanto las visitas al perfil del salón o barbería como sus reservas completadas durante 30 días. |
 | Condiciones | Experimental --> Los clientes visualizan y filtran los salones y barberías en existencia dentro de la aplicación y acceden al flujo directo de reserva en la app o web de uTime sin depender de una conversación inicial por WhatsApp - Actual --> Los clientes inician el contacto únicamente mediante WhatsApp o mensajería para coordinar disponibilidad y concretar la cita, y los salones y barberías poseen una exposición al público limitada |
 | Escala | Priorizar la visibilidad de los nuevos salones y el acceso al flujo directo de reserva de citas a través de la app si genera al menos 20% más intención de reserva que el contacto inicial por WhatsApp. |  
 
@@ -6151,9 +6151,13 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 ### 8.2.3. Measures
 
-| Medida | Tipo (cuantitativa / cualitativa) | Instrumento |
-|--------|------------------------------------|-------------|
-|        |                                    |             |
+| Questions | Measures |
+|--------|-------------|
+| ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | Analizar las puntuaciones en una encuesta de satisfacción dirigida hacia los salones y barberías antes y después de la implementación del flujo de reservaciones y calendario en las aplicaciones durante un periodo de 30 días. |
+| ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | Comparar la cantidad de citas canceladas y reprogramadas a causa de olvidos durante 30 días antes y después de la implementación de los recordatorios. |
+| ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | Comparar la tasa de cancelaciones o ausencias durante 30 días antes y después de habilitar el paso de confirmación o pago, y aplicar una encuesta breve al cliente sobre su nivel de compromiso y seguridad percibida tras reservar. |
+| ¿Qué canal genera mayor intención de reserva inicial: flujo directo en la app o contacto por WhatsApp? | Comparar la intención de reserva en cada canal considerando tanto las visitas al perfil del salón o barbería como sus reservas completadas durante 30 días. |
+| ¿Qué elementos del perfil generan mayor confianza antes de reservar: reseñas, calificaciones, precios visibles o portafolio visual? | Analizar una encuesta que consulta acerca de la confianza percibida por los clientes antes de reservar en un salón que no conocían antes y después de la habilitación de reseñas, calificaciones y portafolios. |
 
 ### 8.2.4. Conditions
 
