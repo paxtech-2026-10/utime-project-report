@@ -6141,9 +6141,13 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 ### 8.2.2. Domain Business Metrics
 
-| Métrica | Definición | Fórmula | Objetivo |
+| Métrica | Descripción | Objetivo | Fuente de datos |
 |---------|-----------|---------|----------|
-|         |           |         |          |
+| Indíce de confianza percibida por los clientes | Promedia de puntuación otorgada por los clientes del 1 al 10 al visitar un salón o barbería por primera vez | Medir la confianza que generan los agregados en los perfiles de salones y barberías | Encuesta en la app |
+| Freciencia de uso mensual y semanal | Número promedio de usuario que usaron la aplicación durante cierto periodo | Medir la utilidad de la aplicación durante un día laboral en los salones y barberías | Google Analytics y Firebase Analytics |
+| Cantidad de visitas y reservas realizadas semanal y mensualmente | Número de visitas que recibió el perfil de un salón o barbería y número de citas reservadas en este que hubo durante cierto periodo | Medir el impacto del uso de uTime y sus funcionalidades en la cantidad de visitas y reservas recibidad por los salones y barberías | Azure Application Insigths |
+| Cantidad de reservaciones canceladas o reprogramadas de forma tardía semanal y mensualmente | Número de reservaciones que fueron canceladas y reprogramas por olvido y/o de forma tardía durante cierto periodo | Medir el impacto de los recordatorios sobre la cantidad de citas canceladas o reprogramadas | Logs dentro de la aplicación |
+| Nivel de satisfacción de los salores y barberías | Promedio de putnuación otorgada por parte de los dueños de salones de belleza, barberías y sus estilistas del 1 al 10 en cuanto a su nivel de satisfacción sobre las funcionalidades y flujos incluídos en la aplicación | Medir el nivel de satisfacción de los usuarios por el lado de los salones y barberías sobre el producto ofrecido | Encuesta en la app |
 
 ### 8.2.3. Measures
 
