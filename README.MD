@@ -5995,9 +5995,9 @@ Dashboard de monitoreo.
 
 ### 8.1.1. As-Is Summary
 
-PaxTech en este momento se encuentra en una etapa temprana de desarrollo, con un producto mínimo viable (MVP) que incluye una API backend funcional y tres aplicaciones cliente (web y móviles Android) que consumen dicha API. Esto se ha hecho con el propósito de validar nuestra propuesta de valor y confirmar la viabilidad del MVP. El equipo ha implementado una suite de pruebas unitarias para el backend y ha establecido pipelines de CI para el backend y el frontend web.
+El punto de partida del trabajo experimental no consiste en proponer nuevas funcionalidades de forma directa, sino en reunir el material bruto disponible para generar preguntas útiles. Para uTime, este material proviene de las entrevistas iniciales, el análisis de segmentos objetivo, el needfinding, los As-Is Scenario Maps, las hipótesis Lean UX y el estado actual del MVP descrito en los capítulos anteriores.
 
-Desde el lado del problema, las entrevistas y el needfinding muestran que los salones de belleza y barberías todavía dependen de WhatsApp, llamadas y registros manuales para coordinar reservas, mientras que los clientes buscan disponibilidad clara, puntualidad, confianza y pagos digitales. Por ello, el estado As-Is no solo evidencia una oportunidad funcional, sino también brechas de adopción, confianza y recurrencia que deben transformarse en preguntas experimentales antes de escalar la solución.
+Las evidencias recopiladas muestran que los salones de belleza y barberías todavía coordinan gran parte de sus reservas mediante WhatsApp, llamadas, redes sociales o registros manuales, mientras que los clientes buscan disponibilidad clara, puntualidad, confianza, recordatorios y pagos digitales. A partir de este estado actual, el equipo identifica suposiciones, brechas de conocimiento, ideas y afirmaciones que deben transformarse en preguntas experimentales antes de decidir qué solución escalar.
 
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
@@ -6027,31 +6027,33 @@ Desde el lado del problema, las entrevistas y el needfinding muestran que los sa
 
 **Claims (Afirmaciones testables):**
 
-1. **Reserva directa simplificada:** Se espera que un flujo de reserva con menos pasos genere mayor intención de completado que un flujo extenso.
-2. **WhatsApp como canal de transición:** Se afirma que el contacto por WhatsApp puede generar más interacciones iniciales que un formulario web tradicional.
-3. **Recordatorios automáticos:** Se postula que los recordatorios antes de la cita reducirán olvidos y reprogramaciones tardías.
-4. **Confianza mediante perfiles y reseñas:** Se espera que los perfiles con reseñas y evidencias visuales aumenten la confianza del cliente al reservar.
-5. **Pago digital como compromiso:** Se afirma que integrar pagos digitales o confirmación de reserva aumentará la percepción de seguridad y reducirá cancelaciones.
+1. **WhatsApp como canal habitual:** Los entrevistados afirman que WhatsApp y redes sociales son canales prácticos y frecuentes para coordinar citas.
+2. **Puntualidad como factor crítico:** Los clientes declaran que la puntualidad influye directamente en su experiencia y en su disposición a volver al salón.
+3. **Cancelaciones y cambios tardíos:** Los negocios reportan que las cancelaciones o reprogramaciones de último momento afectan su organización e ingresos.
+4. **Reputación y evidencia visual:** Los clientes afirman que comentarios, reseñas, reputación y trabajos previos influyen en la elección de un salón o estilista.
+5. **Pagos digitales:** Los clientes mencionan que los pagos por aplicaciones, tarjeta o transferencia les resultan más cómodos y seguros que el efectivo.
 
 ### 8.1.3. Experiment-Ready Questions
 
-| Question | Confidence | Risk | Impact | Interest | Total Score |
-|----------|------------|------|--------|----------|-------------|
-| ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | 8 - Las entrevistas muestran que la coordinación manual por WhatsApp, llamadas y registros físicos genera desorden y pérdida de tiempo. | 3 - Riesgo moderado, porque implica cambiar hábitos actuales de gestión del negocio. | 6 - Puede impactar directamente en la adopción del segmento negocio. | 6 - Interés alto, ya que valida la propuesta central para salones y barberías. | 23 |
-| ¿Generará mayor intención de reserva un flujo directo en la app que un contacto inicial por WhatsApp? | 6 - Los clientes usan WhatsApp con frecuencia, pero también buscan procesos más rápidos y claros. | 3 - Riesgo moderado, porque el canal preferido puede variar según confianza y familiaridad digital. | 5 - Puede mejorar la conversión de clientes desde la exploración hasta la reserva. | 6 - Interés alto, porque define el canal principal del flujo de adquisición. | 20 |
-| ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | 8 - Las entrevistas identifican puntualidad, recordatorios y cambios de último momento como puntos críticos. | 2 - Riesgo bajo, ya que los recordatorios son una funcionalidad común y técnicamente viable. | 6 - Puede mejorar la asistencia, la organización y la satisfacción de ambos segmentos. | 6 - Interés alto, porque conecta con uno de los dolores más repetidos en el As-Is. | 22 |
-| ¿Aumentarán los perfiles con reseñas, calificaciones y portafolio visual la confianza del cliente antes de reservar? | 7 - Los clientes mencionan reputación, confianza y atención previa como criterios importantes para elegir un salón. | 2 - Riesgo bajo, porque la información puede mostrarse sin alterar el flujo principal de reserva. | 5 - Puede aumentar la seguridad percibida y la intención de reserva. | 5 - Interés moderado-alto, porque ayuda a priorizar elementos de confianza en la interfaz. | 19 |
-| ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | 6 - Los clientes muestran preferencia por pagos digitales, pero aún falta validar si esto reduce cancelaciones. | 4 - Riesgo medio, porque pedir pago o confirmación puede generar fricción si se introduce demasiado pronto. | 6 - Puede reducir ausencias y mejorar la planificación del negocio. | 5 - Interés moderado-alto, ya que afecta ingresos, confianza y experiencia de reserva. | 21 |
+| Tipo | Question | Why | Confidence | Risk | Impact | Interest | Total Score |
+|------|----------|-----|------------|------|--------|----------|-------------|
+| Belief-led | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | Permite probar la creencia de que el desorden generado por canales manuales puede convertirse en intención de adopción de una agenda digital. | 8 - Las entrevistas muestran que la coordinación manual por WhatsApp, llamadas y registros físicos genera desorden y pérdida de tiempo. | 3 - Riesgo moderado, porque implica cambiar hábitos actuales de gestión del negocio. | 6 - Puede impactar directamente en la adopción del segmento negocio. | 6 - Interés alto, ya que prueba la premisa central para salones y barberías. | 23 |
+| Belief-led | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | Permite probar la creencia de que los recordatorios atacan un dolor recurrente observado en clientes y negocios. | 8 - Las entrevistas identifican puntualidad, recordatorios y cambios de último momento como puntos críticos. | 2 - Riesgo bajo, ya que los recordatorios son una funcionalidad común y técnicamente viable. | 6 - Puede mejorar la asistencia, la organización y la satisfacción de ambos segmentos. | 6 - Interés alto, porque conecta con uno de los dolores más repetidos en el As-Is. | 22 |
+| Belief-led | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | Permite evaluar si la comodidad de los pagos digitales también puede funcionar como mecanismo de compromiso con la reserva. | 6 - Los clientes muestran preferencia por pagos digitales, pero aún falta probar si esto reduce cancelaciones. | 4 - Riesgo medio, porque pedir pago o confirmación puede generar fricción si se introduce demasiado pronto. | 6 - Puede reducir ausencias y mejorar la planificación del negocio. | 5 - Interés moderado-alto, ya que afecta ingresos, confianza y experiencia de reserva. | 21 |
+| Exploratory | ¿Qué canal genera mayor intención de reserva inicial: flujo directo en la app o contacto por WhatsApp? | Permite explorar si el canal habitual de comunicación debe mantenerse como transición o si el flujo directo puede reemplazarlo progresivamente. | 6 - Los clientes usan WhatsApp con frecuencia, pero también buscan procesos más rápidos y claros. | 3 - Riesgo moderado, porque el canal preferido puede variar según confianza y familiaridad digital. | 5 - Puede mejorar la conversión de clientes desde la exploración hasta la reserva. | 6 - Interés alto, porque define el canal principal del flujo de adquisición. | 20 |
+| Exploratory | ¿Qué elementos del perfil generan mayor confianza antes de reservar: reseñas, calificaciones, precios visibles o portafolio visual? | Permite explorar qué información mínima necesita el cliente para confiar antes de reservar sin comunicarse primero por otro canal. | 7 - Los clientes mencionan reputación, confianza y atención previa como criterios importantes para elegir un salón. | 2 - Riesgo bajo, porque la información puede mostrarse sin alterar el flujo principal de reserva. | 5 - Puede aumentar la seguridad percibida y la intención de reserva. | 5 - Interés moderado-alto, porque ayuda a priorizar elementos de confianza en la interfaz. | 19 |
 
 ### 8.1.4. Question Backlog
 
-| Prioridad | Pregunta | Métrica asociada | Estado |
-|-----------|----------|------------------|--------|
-| 1 | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | Disposición de adopción del segmento negocio | Pendiente |
-| 2 | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | Tasa de cancelaciones tardías y reprogramaciones | Pendiente |
-| 3 | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | Porcentaje de reservas confirmadas o pagadas digitalmente | Pendiente |
-| 4 | ¿Generará mayor intención de reserva un flujo directo en la app que un contacto inicial por WhatsApp? | Intención de reserva por canal | Pendiente |
-| 5 | ¿Aumentarán los perfiles con reseñas, calificaciones y portafolio visual la confianza del cliente antes de reservar? | Confianza percibida antes de reservar | Pendiente |
+El backlog se organiza como una lista priorizada de preguntas de investigación. En caso de empate en el puntaje total, se prioriza la pregunta con mayor riesgo, ya que representa una incertidumbre más crítica para la toma de decisiones del producto.
+
+| Prioridad | Tipo | Pregunta | Why | Confidence | Risk | Impact | Interest | Total Score | Métrica asociada | Estado |
+|-----------|------|----------|-----|------------|------|--------|----------|-------------|------------------|--------|
+| 1 | Belief-led | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | Probar si el dolor de gestión manual se traduce en adopción potencial. | 8 | 3 | 6 | 6 | 23 | Disposición de adopción del segmento negocio | Pendiente |
+| 2 | Belief-led | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | Probar si una intervención simple puede reducir fricción operativa. | 8 | 2 | 6 | 6 | 22 | Intención declarada de cancelación, olvido o reprogramación | Pendiente |
+| 3 | Belief-led | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | Probar si la confirmación o pago aumenta compromiso sin generar fricción excesiva. | 6 | 4 | 6 | 5 | 21 | Porcentaje de clientes que prefiere confirmar o pagar digitalmente | Pendiente |
+| 4 | Exploratory | ¿Qué canal genera mayor intención de reserva inicial: flujo directo en la app o contacto por WhatsApp? | Explorar si conviene priorizar reserva directa o mantener WhatsApp como canal de transición. | 6 | 3 | 5 | 6 | 20 | Intención de reserva por canal | Pendiente |
+| 5 | Exploratory | ¿Qué elementos del perfil generan mayor confianza antes de reservar: reseñas, calificaciones, precios visibles o portafolio visual? | Explorar qué información mínima necesita el cliente para confiar antes de reservar. | 7 | 2 | 5 | 5 | 19 | Confianza percibida antes de reservar | Pendiente |
 
 ### 8.1.5. Experiment Cards  
 
@@ -6129,13 +6131,13 @@ Desde el lado del problema, las entrevistas y el needfinding muestran que los sa
 
 ### 8.2.1. Hypotheses
 
+Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que parten de una creencia explícita que puede ser probada mediante un experimento. Las preguntas exploratorias se mantienen como insumo para investigación y medición, pero no se presentan como hipótesis hasta que el equipo formule una creencia concreta asociada.
+
 | Question | Belief | Hypothesis | Null Hypothesis |
 |----------|--------|------------|-----------------|
 | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | Los salones y barberías gestionan gran parte de sus reservas mediante WhatsApp, llamadas o registros físicos, lo que genera desorden, pérdida de tiempo y dificultad para controlar cambios de horario. | Al menos el 60% de los negocios evaluados manifestará disposición a usar la agenda digital de uTime después de probar un flujo básico de gestión de reservas. | La agenda digital centralizada no influirá de forma significativa en la disposición de los salones y barberías para gestionar reservas desde uTime. |
 | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | Tanto clientes como negocios consideran importante la puntualidad y la confirmación previa de las citas; por ello, los recordatorios pueden reducir olvidos y cambios de último momento. | Los recordatorios automáticos reducirán en al menos 30% la intención declarada de cancelar, olvidar o reprogramar una cita en comparación con un flujo sin recordatorios. | Los recordatorios automáticos no reducirán de forma significativa los olvidos, cancelaciones tardías ni reprogramaciones de citas. |
 | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | Los clientes valoran los pagos digitales por comodidad y seguridad, mientras que los negocios necesitan mayor certeza de asistencia para organizar su agenda. | Al menos el 50% de los clientes evaluados preferirá confirmar o pagar digitalmente su reserva si esta opción se presenta dentro del flujo de agendamiento. | La confirmación o pago digital no influirá de forma significativa en el compromiso del cliente con la cita reservada. |
-| ¿Generará mayor intención de reserva un flujo directo en la app que un contacto inicial por WhatsApp? | Aunque WhatsApp es el canal habitual, los clientes buscan procesos más rápidos, claros y con menor espera para conocer disponibilidad y concretar una cita. | El flujo directo de reserva en la app generará al menos 20% más intención de reserva que un flujo basado únicamente en contacto inicial por WhatsApp. | El flujo directo en la app no generará una diferencia significativa en la intención de reserva frente al contacto inicial por WhatsApp. |
-| ¿Aumentarán los perfiles con reseñas, calificaciones y portafolio visual la confianza del cliente antes de reservar? | Los clientes toman decisiones considerando reputación, confianza, trabajos previos y calidad percibida del salón o profesional. | Los perfiles con reseñas, calificaciones y portafolio visual aumentarán la confianza percibida del cliente en al menos 25% frente a perfiles sin evidencia social ni visual. | Los perfiles con reseñas, calificaciones y portafolio visual no producirán un cambio significativo en la confianza percibida antes de reservar. |
 
 ### 8.2.2. Domain Business Metrics
 
@@ -6163,13 +6165,13 @@ Desde el lado del problema, las entrevistas y el needfinding muestran que los sa
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
-**Regla de oro:** cada métrica responde a una hipótesis priorizada y se mide con herramientas específicas para comparar intención, adopción y confianza antes de escalar la funcionalidad.
+**Regla de oro:** cada métrica responde a una pregunta priorizada o hipótesis de trabajo y se mide con herramientas específicas para comparar intención, adopción y confianza antes de escalar la funcionalidad.
 
 | Objetivo | KPI | Métrica de éxito | Herramienta de tracking |
 |----------|-----|------------------|-------------------------|
-| **Validar adopción de agenda digital** | Disposición de adopción del segmento negocio | ≥60% de negocios evaluados manifiestan disposición a usar la agenda digital después de probar el flujo básico | Encuesta post-prueba + registros de uso del panel negocio |
-| **Reducir fricción por olvidos y cambios de cita** | Tasa de cancelaciones tardías y reprogramaciones | ≥30% de reducción en intención declarada de olvidar, cancelar tarde o reprogramar una cita frente a un flujo sin recordatorios | Logs de reservas + encuestas post-experimento |
-| **Validar compromiso mediante confirmación o pago digital** | Ratio de reservas confirmadas o pagadas digitalmente | ≥50% de clientes evaluados prefiere confirmar o pagar digitalmente dentro del flujo de agendamiento | Eventos de confirmación + registros de pagos en sandbox |
+| **Evaluar adopción de agenda digital** | Disposición de adopción del segmento negocio | ≥60% de negocios evaluados manifiestan disposición a usar la agenda digital después de probar el flujo básico | Encuesta post-prueba + registros de uso del panel negocio |
+| **Reducir fricción por olvidos y cambios de cita** | Intención declarada de cancelación o reprogramación | ≥30% de reducción en intención declarada de olvidar, cancelar tarde o reprogramar una cita frente a un flujo sin recordatorios | Logs de reservas + encuestas post-experimento |
+| **Contrastar compromiso mediante confirmación o pago digital** | Ratio de reservas confirmadas o pagadas digitalmente | ≥50% de clientes evaluados prefiere confirmar o pagar digitalmente dentro del flujo de agendamiento | Eventos de confirmación + registros de pagos en sandbox |
 | **Comparar reserva directa contra contacto por WhatsApp** | Intención de reserva por canal | Flujo directo en app genera ≥20% más intención de reserva que contacto inicial por WhatsApp | Google Analytics / GA4 + Google Tag Manager |
 | **Medir confianza generada por perfiles enriquecidos** | Confianza percibida antes de reservar | ≥25% de aumento en confianza percibida frente a perfiles sin reseñas, calificaciones ni portafolio visual | Encuesta in-app + eventos de visualización de perfil |
 
