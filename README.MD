@@ -58,6 +58,8 @@
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
 | 1.0     | 26/04/2026 | Roman, Sánchez, Rivera, Oroncoy, Yum  | Capítulos I, II, III, IV y V |
+| 2.0     | 26/04/2026 | Roman, Sánchez, Rivera, Oroncoy, Yum  | Avance de capítulos VI y VII |
+| 3.0     | 26/04/2026 | Roman, Sánchez, Rivera, Oroncoy, Yum  | Capítulos VI, VII y VIII |
 
 <div class="page"></div>
 
@@ -145,7 +147,7 @@ Para el desarrollo del AV2, se registran las siguientes tareas asignadas:
 | Jorge Suin Yum Gonzales    | Capítulo VIII: Experiment-Driven Development — As-Is Summary (8.1.1), Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims (8.1.2), Experiment-Ready Questions (8.1.3), Question Backlog (8.1.4), Hypotheses (8.2.1), Data Analytics: Goals, KPIs and Metrics Selection (8.2.7), To-Be User Stories (8.3.1) y To-Be Product Backlog (8.3.2) |
 | Eduardo Gael Rivera Sosa   | |
 | Gabriel Sánchez Gonzales   | |
-| Natalia Bertha Roman Cruz  | |
+| Natalia Bertha Roman Cruz  | Elaboración de las Experiment Cards, Domain Business Metrics, Measures, Conditions, Scale Calculations and Decisions, Methods selection y data analytics |
 | Alejandro Daniel Oroncoy Almeyda | |
 
 **GitHub Collaboration Insights**
@@ -295,7 +297,6 @@ Actividad de commits en el tiempo para el TB1.
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
   - [5.2. Product Implementation \& Deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
-      - [Sprint #1](#sprint-1)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
@@ -309,67 +310,24 @@ Actividad de commits en el tiempo para el TB1.
   - [6.1. Testing Suites \& Validation](#61-testing-suites--validation)
     - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
       - [6.1.1.1. Services Bounded Context](#6111-services-bounded-context)
-        - [6.1.1.1.1. Backend — Spring Boot](#61111-backend--spring-boot)
-        - [6.1.1.1.2. Mobile App — Flutter (iOS Mobile App)](#61112-mobile-app--flutter-ios-mobile-app)
-        - [6.1.1.1.3. Mobile App — Android (Kotlin)](#61113-mobile-app--android-kotlin)
-        - [6.1.1.1.4. Frontend Web — Angular](#61114-frontend-web--angular)
-        - [6.1.1.1.5. Resumen agregado (Services)](#61115-resumen-agregado-services)
       - [6.1.1.2. Workers Bounded Context](#6112-workers-bounded-context)
-        - [6.1.1.2.1. Backend — Spring Boot](#61121-backend--spring-boot)
-        - [6.1.1.2.2. Mobile App — Flutter (iOS Mobile App)](#61122-mobile-app--flutter-ios-mobile-app)
-        - [6.1.1.2.3. Mobile App — Android (Kotlin)](#61123-mobile-app--android-kotlin)
-        - [6.1.1.2.4. Frontend Web — Angular](#61124-frontend-web--angular)
-        - [6.1.1.2.5. Resumen agregado (Workers)](#61125-resumen-agregado-workers)
       - [6.1.1.3. IAM Bounded Context](#6113-iam-bounded-context)
-        - [6.1.1.3.1. Backend — Spring Boot](#61131-backend--spring-boot)
-        - [6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)](#61132-mobile-app--flutter-ios-mobile-app)
-        - [6.1.1.3.3. Mobile App — Android (Kotlin)](#61133-mobile-app--android-kotlin)
-        - [6.1.1.3.4. Frontend Web — Angular](#61134-frontend-web--angular)
-        - [6.1.1.3.5. Resumen agregado (IAM)](#61135-resumen-agregado-iam)
       - [6.1.1.4. Profiles Bounded Context](#6114-profiles-bounded-context)
-        - [6.1.1.4.1. Backend — Spring Boot](#61141-backend--spring-boot)
-        - [6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)](#61142-mobile-app--flutter-ios-mobile-app)
-        - [6.1.1.4.3. Mobile App — Android (Kotlin)](#61143-mobile-app--android-kotlin)
-        - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
-        - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
       - [6.1.1.5 Reviews Bounded Context](#6115-reviews-bounded-context)
-        - [6.1.1.5.1. Backend - Spring Boot](#61151-backend---spring-boot)
-        - [6.1.1.5.3. Frontend Web — Angular](#61153-frontend-web--angular)
-        - [6.1.1.5.4. Resumen agregado (Reviews)](#61154-resumen-agregado-reviews)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
       - [Bounded Context: Services](#bounded-context-services)
       - [Bounded Context: Workers](#bounded-context-workers)
       - [Bounded Context: Reviews](#bounded-context-reviews)
       - [Comandos de ejecución:](#comandos-de-ejecución)
       - [Evidencia de ejecución](#evidencia-de-ejecución)
-        - [Backend (Spring Boot)](#backend-spring-boot)
       - [Frontend Web (Angular)](#frontend-web-angular)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
-      - [Feature file: Services](#feature-file-services)
-      - [Step definition example](#step-definition-example)
-      - [Execution evidence](#execution-evidence)
       - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
-      - [Feature file: IAM](#feature-file-iam)
-      - [Step definition example](#step-definition-example-1)
-      - [Execution evidence](#execution-evidence-1)
       - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
-      - [Feature file: Profiles](#feature-file-profiles)
-      - [Step definition example](#step-definition-example-2)
-      - [Execution evidence](#execution-evidence-2)
       - [6.1.3.4. Workers Bounded Context](#6134-workers-bounded-context)
-      - [Feature file: Workers](#feature-file-workers)
-      - [Step definition example](#step-definition-example-3)
-      - [Execution evidence](#execution-evidence-3)
       - [6.1.3.5. Reviews Bounded Context](#6135-reviews-bounded-context)
-        - [Feature file: Reviews](#feature-file-reviews)
-        - [Step definitions](#step-definitions)
-        - [Execution evidence](#execution-evidence-4)
-        - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
       - [6.1.3.6. Reservations Bounded Context](#6136-reservations-bounded-context)
-      - [Feature file: Reservations](#feature-file-reservations)
-      - [Step definition example](#step-definition-example-4)
-      - [Execution evidence](#execution-evidence-5)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
@@ -6033,8 +5991,6 @@ Dashboard de monitoreo.
 
 # Capítulo VIII: Experiment-Driven Development
 
-[Contenido pendiente]
-
 ## 8.1. Experiment Planning
 
 ### 8.1.1. As-Is Summary
@@ -6097,21 +6053,77 @@ Desde el lado del problema, las entrevistas y el needfinding muestran que los sa
 | 4 | ¿Generará mayor intención de reserva un flujo directo en la app que un contacto inicial por WhatsApp? | Intención de reserva por canal | Pendiente |
 | 5 | ¿Aumentarán los perfiles con reseñas, calificaciones y portafolio visual la confianza del cliente antes de reservar? | Confianza percibida antes de reservar | Pendiente |
 
-### 8.1.5. Experiment Cards
-
-**Experiment Card — EXP01**
+### 8.1.5. Experiment Cards  
 
 | Campo | Detalle |
 |-------|---------|
 | ID | EXP01 |
-| Título | [Título del experimento] |
-| Hypothesis | Creemos que [acción] producirá [resultado] en [segmento]. |
-| Method | [Tipo: A/B test, Fake door, Smoke test, Concierge, etc.] |
-| Conditions | [Variables controladas / independientes] |
-| Duration | [Duración planificada] |
-| Success Criteria | [Métricas mínimas para validar] |
-| Data to collect | [Métricas / KPIs] |
-| Results | [Contenido pendiente — completar tras ejecutar] |
+| Título | Aplicación de una agenda digital centralizada |
+| Lado frontal |
+| Pregunta | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? |
+| Razón | Consideramos que es necesario dado que la mayor parte de los problemas o mal entendidos en cuanto a la realización de servicios en los salones de belleza se da precisamente debido a la falta de visibilidad y coordinación. Así, la implementación de una herreminta digital de gestión probablemente ayudaría a los salones a darse a conocer y a organizar mejor las citas agendadas y las necesidades de cada una, mas esta idea debe ser validada. |
+| Hipótesis | Creemos que, al probar un flujo básico de agenda digital en uTime, al menos el 60% de los salones de belleza y barberías manifestará disposición a usarla para gestionar reservas. |
+| Simplest Useful Thing | La funciondalidad mínima y usable más sencilla a implementar sería, por el lado del usuario, la selección del salón o barbería, estilista deseado, servicio y hora del mismo de acuerdo a disponibilidad. Con esta información, se gurdaría su reserva, miemntras que, al confirmar los datos, esta misma se vería reflejada en el calendario del salón seleccionado. |
+| Lado posterior |
+| Medidas | Analizar las puntuaciones en una encuesta de satisfacción dirigida hacia los salones y barberías antes y después de la implementaci+on del flujo de reservaciones y calendario en las aplicaciones. |
+| Condiciones | Experimental --> Los salones de belleza, barberías y sus clientes empiezan a usar uTime para la gestión de sus reservas - Control --> Las reservas se siguen registrando mediantes llamadas y aplicaciones de mensajería |
+| Escala | Implementar y mantener el flujo de reservas dentro de la aplicación si más de la mitad de los salones de belleza y barbería manifiestan una lat satisfacción en cuanto al uso de esta funcionalidad. |  
+
+| Campo | Detalle |
+|-------|---------|
+| ID | EXP02 |
+| Título | Implementación de recordatorios |
+| Lado frontal |
+| Pregunta | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? |
+| Razón | Tanto para los negocios como para los clientes existe una inversión en la preparación para la realización del servicio reservado, por lo que un olvido, cancelación o reprogramación en el último momento siempre causará un malestar. En cuanto a ello, consideramos que si se envían alertas horas antes o hasta el día anterior a la fecha reservada para la cita, estos olvidos se reducirán y las citas podrán cumplirse sin problemas, mas es necesario validar la idea. |
+| Hipótesis | Los recordatorios automáticos reducirán en al menos 30% la intención declarada de cancelar, olvidar o reprogramar una cita en comparación con un flujo sin recordatorios. |
+| Simplest Useful Thing | Como primera implementación en cuanto a recordatorios, se puede emitir una que se muestre tanto al salón o barbería como al usuario 24 horas antes de la hora de la cita. |
+| Lado posterior |
+| Medidas | Comparar la cantidad de citas canceladas y reprogramadas a causa de olvidos durante 30 días antes y después de la implementación de los recordatorios. |
+| Condiciones | Experimental --> Muestra de recordatorios para los salones, barberías y clientes 24 horas de que tengan una cita programadas - Actual --> Los clientes, salones y barberían no cuentan con recordatorios y dependen de sus apuntes para recordar las citas |
+| Escala | Implementar recordatorios globalmente y con diferente frecuencia según el caso tanto para clientes como para salones y barberías si los recordatorios implementados ayudan a reducir más del 20% de la cantidad de citas canceladas o reprogramadas de forma tardía. |  
+
+| Campo | Detalle |
+|-------|---------|
+| ID | EXP03 |
+| Título | Confirmación o pago digital de reserva |
+| Lado frontal |
+| Pregunta | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? |
+| Razón | Los clientes valoran la comodidad y seguridad de los pagos digitales, mientras que los salones y barberías necesitan mayor certeza de que el cliente asistirá a la cita para organizar su agenda e ingresos sin dudas. Con el manejor actual, muchas reservas quedan solo como intención o acuerdo por mensajería, lo que facilita cancelaciones y ausencias imprevistas. Consideramos que un paso de confirmación o pago dentro del flujo de uTime reforzará el compromiso con la cita, pero esta idea debe ser validada porque también puede generar fricción si el cliente aún no desea confirmar. |
+| Hipótesis | Al menos el 50% de los clientes evaluados preferirá confirmar o pagar digitalmente su reserva si esta opción se presenta dentro del flujo de agendamiento. |
+| Simplest Useful Thing | Tras seleccionar salón o barbería, servicio, estilista y horario disponible, el cliente puede confirmar la reserva con un botón u optar por realizar un pago digital a través de Stripe. Al completar el paso, el sistema marca la reserva como confirmada, muestra una constancia al cliente y la refleja en el panel del negocio. Si solo se confirmó, la cita figura como confirmada y pendiente de pago para el salón o barbería. |
+| Lado posterior |
+| Medidas | Comparar la tasa de cancelaciones o ausencias durante 30 días antes y después de habilitar el paso de confirmación o pago, y aplicar una encuesta breve al cliente sobre su nivel de compromiso y seguridad percibida tras reservar. |
+| Condiciones | Experimental --> Los clientes que reservan en uTime deben confirmar la cita o pagar digitalmente a través de Stripe antes de que la reserva quede registrada - Actual --> Los clientes completan la reserva sin confirmación ni pago digital y el compromiso depende del acuerdo habitual por mensajería o presencial |
+| Escala | Integrar de forma permanente la confirmación o pago digital en el flujo de reservas si al menos el 40% de los clientes evaluados prefiere confirmar o pagar digitalmente y se observa una reducción de al menos 15% en cuanto a cancelaciones o ausencias respecto al periodo sin ese paso. |  
+
+| Campo | Detalle |
+|-------|---------|
+| ID | EXP04 |
+| Título | Visibilidad de negocios e intención de reserva |
+| Lado frontal |
+| Pregunta | ¿Generará mayor intención de reserva un flujo directo en la app que un contacto inicial por WhatsApp? |
+| Razón | Actualmente, muchos de los salones de belleza y barberías promocionan sus servicios a través de redes sociales y carteles, así como ofrecen la reserva de citas a través canales de mensajería, pero esto puede estar limitando su alance en cuanto a clientes. Consideramos que el presentarse y promocionarse a través de uTime, así como permitir reservar directamente desde la app aumentará la cantidad de posibles clientes y la intención de completar una reserva de cita frente a depender de que alguien vea un cartel y siga una conversación inicial por mensajería, mas es necesario validar qué canal funciona mejor. |
+| Hipótesis | El flujo directo de reserva en la app generará al menos 20% más intención de reserva que un flujo basado únicamente en contacto inicial por WhatsApp. |
+| Simplest Useful Thing | Dentro de la aplicación, se mostrará la lista de salones registrados, sus promociones existentes y los clientes podrán fitrarlos de acuerdo a los servicios que desean adquirir, así como tendrán la posibilidad de reservar su cita en cuanto encuentran un salón o barbería de su agrado. |
+| Lado posterior |
+| Medidas | Comparar la intención de reserva en cada canal considerando tanto las visitas al perdil del salón o barbería como sus reservas completadas durante 30 días. |
+| Condiciones | Experimental --> Los clientes visualizan y filtran los salones y barberías en existencia dentro de la aplicación y acceden al flujo directo de reserva en la app o web de uTime sin depender de una conversación inicial por WhatsApp - Actual --> Los clientes inician el contacto únicamente mediante WhatsApp o mensajería para coordinar disponibilidad y concretar la cita, y los salones y barberías poseen una exposición al público limitada |
+| Escala | Priorizar la visibilidad de los nuevos salones y el acceso al flujo directo de reserva de citas a través de la app si genera al menos 20% más intención de reserva que el contacto inicial por WhatsApp. |  
+
+| Campo | Detalle |
+|-------|---------|
+| ID | EXP05 |
+| Título | Perfil con reseñas y portafolio visual |
+| Lado frontal |
+| Pregunta | ¿Aumentarán los perfiles con reseñas, calificaciones y portafolio visual la confianza del cliente antes de reservar? |
+| Razón | En las entrevistas, los clientes indican que al escoger un salón o estilista suelen basarse en la reputación, trabajos previos y calidad percibida, no solo en el precio o la ubicación. Actualmente, esa información suele llegar por recomendaciones entre clientes o redes sociales. Consideramos que mostrar reseñas, calificación promedio y un portafolio visual en el perfil del negocio aumentará la confianza de los posibles clientes antes de reservar, mas es necesario validar si ese contenido realmente impulsará su intención. |
+| Hipótesis | Los perfiles con reseñas, calificaciones y portafolio visual aumentarán la confianza percibida del cliente en al menos 25% frente a perfiles sin evidencia social ni visual. |
+| Simplest Useful Thing | Al visitar el perfil de un salón o estilista, el cliente verá reseñas de usuarios que ya han tomado sus servicios, la calificación promedio obtenida y una galería de trabajos previos que puede revisar antes de iniciar la reserva. |
+| Lado posterior |
+| Medidas | Analizar una encuesta que consulta acerca de la confianza percibida por los clientes antes de reservar en un salón que no conocían antes y después de la habilitación de reseñas, calificaciones y portafolios. |
+| Condiciones | Experimental --> Los clientes consultan perfiles con reseñas, calificaciones y portafolios visuales antes de realizar su primera reserva en este salón o barbería - Actual --> Los clientes consultan un perfil básico sin reseñas, calificaciones ni una muestra de trabajos previos |
+| Escala | Mantener de forma permanente los perfiles enriquecidos en uTime si la confianza percibida aumenta en al menos 20% frente al perfil básico y se correlaciona con al menos un 10% de mayor intención o finalización de reservas. |  
 
 ## 8.2. Experiment Design
 
