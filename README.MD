@@ -6182,8 +6182,13 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 ### 8.2.6. Methods Selection
 
-[Contenido pendiente — justificación del método elegido por cada experimento.]
-
+| Herramienta | Precio | Capacidad de análisis | Sencillez | Ventajas |
+|-------------|--------|----------------------|-----------|----------|
+| **Encuesta en la app** | Gratuito | Captura percepción cualitativa y cuantitativa en cuanto a satisfacción, confianza, compromiso y disposición de adopción por parte de los usuarios. | Alta para el usuario final, mas requiere diseño y despliegue del cuestionario en web/móvil. | Permite medir el índice de confianza percibida y el nivel de satisfacción de salones y barberías dentro de la aplicación. |
+| **Google Analytics (GA4)** | Gratuito | Análisis de tráfico web, eventos, embudos de conversión, sesiones y comparación de canales en la app web. | Facilidad de integración con Angular mediante gtag.js o Google Tag Manager. | Permite medir clics e intención de reserva según el seguimiento de acceso en la aplicación. |
+| **Firebase Analytics** | Gratuito | Análisis de retención, eventos personalizados, embudos y frecuencia de uso (DAU/MAU) en aplicaciones móviles. | Facilidad de integración con Flutter y Kotlin mediante SDK de Firebase. | Permite medir la frecuencia de uso semanal y mensual en móvil y eventos como visualización de perfil de salones y barberías por parte de los clientes. |
+| **Azure Application Insights** | Incluido en el plan de Azure App Service del backend | Trazas, métricas de rendimiento, conteo de peticiones y telemetría de endpoints de reservas y perfiles. | Integración de dificultad media, mas ya está alineado al despliegue Spring Boot en Azure del proyecto. | Permite medir visitas a perfiles de salón y reservas completadas. |
+| **Logs dentro de la aplicación** | Incluídos como tabla en la base de datos desplegada | Seguimiento de estados de reserva y viaulizaciones del perfil: ingreso, creación, confirmación, cancelación tardía y reprogramación con motivo. | Fácil de integrar para el equipo de desarrollo dentro del bounded context Reservations. | Permite medir cancelaciones y reprogramaciones tardías así como elaborar comparaciones con consultas simples en la base de datos. |
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
