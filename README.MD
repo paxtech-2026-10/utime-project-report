@@ -6161,7 +6161,13 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 ### 8.2.4. Conditions
 
-[Contenido pendiente — condiciones controladas, tamaño muestral, segmentación de cohortes.]
+| Question | Experimental Condition | Control Condition |
+|----------|------------------------|-------------------|
+| ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? | Los salones de belleza y barberías, junto con sus clientes, gestionan las reservas mediante uTime: el cliente selecciona salón, servicio, estilista y horario, y la cita se refleja en el calendario digital del negocio. | Las reservas se siguen coordinando mediante llamadas y aplicaciones de mensajería. |
+| ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? | Salones, barberías y clientes reciben un recordatorio automático en la app 24 horas antes de cada cita programada. | Salones, barberías y clientes no reciben recordatorios automáticos y dependen de apuntes o coordinación manual para recordar las citas. |
+| ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? | Los clientes deben confirmar la reserva o pagar digitalmente mediante Stripe antes de que la cita quede registrada como confirmada en uTime. | Los clientes completan la reserva sin confirmación ni pago digital, el compromiso con la cita depende del acuerdo habitual por mensajería. |
+| ¿Generará mayor intención de reserva un flujo directo en la app que un contacto inicial por WhatsApp? | Los clientes visualizan y filtran salones y barberías dentro de uTime y acceden al flujo directo de reserva en la app o web sin depender de una conversación inicial por WhatsApp. | Los clientes inician el contacto únicamente por WhatsApp o mensajería para coordinar disponibilidad y concretar la cita, los negocios mantienen una exposición limitada fuera de la plataforma. |
+| ¿Aumentarán los perfiles con reseñas, calificaciones y portafolio visual la confianza del cliente antes de reservar? | Los clientes consultan perfiles con reseñas, calificación promedio y portafolio visual de trabajos previos antes de realizar su primera reserva en ese salón o barbería. | Los clientes consultan un perfil básico sin reseñas, sin calificación visible ni galería de trabajos previos antes de reservar en un nuevo salón, quedando con incertidumbre. |
 
 ### 8.2.5. Scale Calculations and Decisions
 
