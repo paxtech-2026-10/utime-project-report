@@ -6171,11 +6171,19 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 ### 8.2.5. Scale Calculations and Decisions
 
-[Contenido pendiente — cálculo de significancia estadística, tamaño de muestra.]
+
+| Hipótesis | Decisión | Desfavorable | Aceptable | Ideal | Excelente |
+|-----------|----------|:------------:|:---------:|:-----:|:---------:|
+| Se espera que al menos el 60% de los salones y barberías manifiesten disposición a usar la agenda digital de uTime tras probar el flujo básico de reservas y calendario. | Implementar y mantener el flujo de reservas y calendario centralizado si más del 50% de los negocios evaluados reportan satisfacción aceptable con la funcionalidad durante el periodo de prueba. | | | | X |
+| Se espera una reducción de al menos el 30% en olvidos, cancelaciones tardías o reprogramaciones de citas con recordatorios automáticos 24 horas antes de la cita. | Implementar recordatorios de forma global para clientes y negocios si la reducción de cancelaciones o reprogramaciones tardías supera el 20% respecto al periodo sin recordatorios. | | | X | |
+| Se espera que al menos el 50% de los clientes evaluados prefiera confirmar o pagar digitalmente su reserva cuando la opción está disponible en el flujo de agendamiento. | Integrar de forma permanente la confirmación o el pago digital mediante Stripe si al menos el 40% de los clientes lo prefiere y las cancelaciones o ausencias se reducen al menos un 15%. | | X | | |
+| Se espera que el flujo directo de reserva en la app genere al menos un 20% más de intención de reserva que el contacto inicial por WhatsApp, considerando visitas al perfil y reservas completadas. | Priorizar la visibilidad de salones en uTime y el flujo directo de reserva en la app si la intención de reserva supera en al menos un 20% al canal de WhatsApp durante 30 días de medición. | | | X | |
+| Se espera un aumento de al menos el 25% en la confianza percibida del cliente al consultar perfiles con reseñas, calificaciones y portafolio visual frente a un perfil básico. | Mantener de forma permanente los perfiles enriquecidos si la confianza percibida aumenta al menos un 20% y se correlaciona con al menos un 10% más de intención o finalización de reservas. | | | | X |
 
 ### 8.2.6. Methods Selection
 
 [Contenido pendiente — justificación del método elegido por cada experimento.]
+
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
