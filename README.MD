@@ -6206,7 +6206,16 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 | Evento | Trigger | Propiedades | Plataforma (Web / iOS / Android) | Herramienta |
 |--------|---------|-------------|----------------------------------|-------------|
-|        |         |             |                                  |             |
+| `profile_view` | El cliente abre el perfil de un salón o estilista antes de reservar. | `salon_id`, `profile_type`, `has_reviews`, `has_portfolio`, `source` | Web, Android | Google Analytics (GA4), Firebase Analytics |
+| `salon_list_viewed` | El cliente ingresa al listado de salones y barberías registrados en uTime. | `result_count`, `screen_name` | Web, Android | Google Analytics (GA4), Firebase Analytics |
+| `book_in_app_started` | El cliente inicia el flujo directo de reserva en uTime (selección de servicio, estilista u horario). | `salon_id`, `service_id`, `channel` | Web, Android | Google Analytics (GA4), Google Tag Manager, Firebase Analytics |
+| `book_in_app_completed` | El cliente completa una reserva dentro de uTime sin redirigirse a WhatsApp. | `salon_id`, `service_id`, `worker_id`, `reservation_id`, `channel` | Web, Android | Google Analytics (GA4), Firebase Analytics, Azure Application Insights |
+| `contact_whatsapp_initiated` | El cliente elige contactar al negocio por WhatsApp desde la landing o la app. | `salon_id`, `channel`, `entry_point` | Web, Android | Google Analytics (GA4), Google Tag Manager, Firebase Analytics |
+| `calendar_viewed` | El dueño o administrador del salón accede a la agenda digital centralizada. | `salon_id`, `user_role`, `reservations_visible_count` | Web, Android | Firebase Analytics, Azure Application Insights |
+| `reminder_sent` | El sistema envía un recordatorio automático 24 horas antes de una cita confirmada. | `reservation_id`, `user_role`, `hours_before` | Web, Android | Firebase Analytics, Logs dentro de la aplicación |
+| `reservation_confirmed` | El cliente confirma la reserva con el botón de confirmación o finaliza un pago en Stripe. | `reservation_id`, `confirmation_type`, `amount`, `salon_id` | Web, Android | Firebase Analytics, Logs dentro de la aplicación, Azure Application Insights |
+| `reservation_cancelled_late` | Una reserva confirmada se cancela o reprograma de forma tardía. | `reservation_id`, `salon_id`, `reason`, `hours_before_appointment` | Web, Android | Logs dentro de la aplicación, Azure Application Insights |
+| `survey_completed` | El usuario envía una encuesta in-app sobre la satisfacción del negocio o confianza percibida. | `survey_type`, `score`, `experiment_id` | Web, Android | Encuesta en base de datos con logs |
 
 ## 8.3. Experimentation
 
