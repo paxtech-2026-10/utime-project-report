@@ -6065,7 +6065,24 @@ Este modelo reduce significativamente el esfuerzo manual de despliegue respecto 
 
 ### 7.4.1. Tools and Practices
 
-[Contenido pendiente — Grafana / Datadog / New Relic / Sentry.]
+El Continuous Monitoring es la práctica de DevOps que cierra el ciclo al observar la aplicación una vez desplegada en producción, con el objetivo de detectar fallos, degradaciones de rendimiento o comportamientos anómalos antes de que afecten a los usuarios. Para uTime, el monitoreo no se apoya en un APM externo, sino en la observabilidad nativa de las mismas plataformas que ya intervienen en las fases de CI/CD (secciones 7.1 a 7.3), decisión coherente con la etapa de MVP del producto y con el tamaño del equipo.
+
+Las herramientas que estamos utilizando son:
+
+- __Azure App Service (`paxtech`)__: la plataforma donde se ejecuta el backend expone de forma nativa el *Log Stream* (salida en tiempo real de logs de la aplicación) y un panel de *Metrics* con indicadores de CPU, memoria, requests HTTP y códigos de respuesta, sin necesidad de instrumentación adicional.
+- __Azure Monitor__: se emplea para definir *alert rules* sobre las métricas del App Service y para enrutar las notificaciones mediante *Action Groups* hacia el correo del equipo.
+- __GitHub Actions__: además de ejecutar el pipeline de CI/CD, su historial de runs funciona como señal de salud del proceso de build, test y despliegue, notificando automáticamente los fallos.
+- __Vercel__: provee el estado de los despliegues del frontend Angular (previews y producción), sirviendo como punto de monitoreo de la capa web.
+- __Firebase Analytics__: integrado en la aplicación móvil Android, recolecta eventos de comportamiento de usuario que complementan la visión de uso del producto.
+- __SLF4J + Logback__: el framework de logging por defecto de Spring Boot 3.5 registra los eventos del backend (`INFO`/`WARN`/`ERROR`) y los persiste en `/home/LogFiles/Application/app.log` dentro del App Service.
+
+Por el lado de las prácticas, estamos considerando:
+
+- __Monitoreo nativo de plataforma__: en lugar de incorporar herramientas externas (Grafana, Datadog, New Relic o Sentry), se aprovecha la observabilidad integrada de Azure, GitHub, Vercel y Firebase, reduciendo la carga de instrumentación mientras el producto valida sus hipótesis.
+- __Logging centralizado de aplicación__: el backend escribe sus logs a un archivo persistente del App Service, accesible vía Log Stream, lo que permite revisar el comportamiento del sistema en producción.
+- __Alertas basadas en métricas__: se definen reglas en Azure Monitor sobre disponibilidad, latencia y uso de recursos, de modo que las condiciones críticas se detecten automáticamente y no por inspección manual.
+- __Monitoreo de la salud del despliegue__: el estado de los pipelines de GitHub Actions y Vercel se vigila de forma continua para garantizar que ningún despliegue fallido pase desapercibido, enlazando el monitoreo con el Continuous Deployment.
+- __Notificación por correo__: las alertas de producción se canalizan mediante Action Groups de Azure Monitor hacia el correo del equipo, manteniendo un mecanismo de aviso simple y suficiente para la fase actual.
 
 ### 7.4.2. Monitoring Pipeline Components
 
