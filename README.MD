@@ -5478,32 +5478,136 @@ Reporte de calidad y seguridad.
 
 ### 6.3.1. Diseño de Entrevistas
 
-**Preguntas para validación — [Segmento 1]:**
+Para esta segunda ronda de validación se diseñó una guía de entrevista que
+parte de preguntas introductorias comunes y luego se divide en dos segmentos
+objetivo. En cada segmento se mostró al entrevistado la Landing Page y la
+Aplicación Móvil, recogiendo su retroalimentación tras cada artefacto.
 
-1. [Pregunta 1]
-2. [Pregunta 2]
-3. [Pregunta 3]
+**Preguntas introductorias:**
 
-**Preguntas para validación — [Segmento 2]:**
+- ¿Cuál es tu nombre?
+- ¿Cuánto tiempo llevas trabajando en el sector de belleza? / ¿Con qué frecuencia solicitas servicios de belleza?
+- ¿Has usado alguna herramienta digital para reservas o todo lo haces por WhatsApp, redes u otro método?
+- ¿Qué es lo que más te cuesta gestionar en el tema de reservas?
 
-1. [Pregunta 1]
-2. [Pregunta 2]
-3. [Pregunta 3]
+**Segmento Objetivo 1 — Dueños de Salones de Belleza o Barberías**
+
+Preguntas tras mostrar la Landing Page:
+
+- ¿Sientes que comunica bien la propuesta y beneficios del producto?
+- ¿Qué sección o contenido te pareció más útil o llamativo?
+- ¿Los planes que se ofrecen se ven claros y bien diferenciados?
+- ¿Te animarías a probar una plataforma como esta luego de ver la landing?
+
+Preguntas tras mostrar la Aplicación Móvil (vista del salón):
+
+- ¿Fue fácil navegar y entender cómo funciona la gestión de citas?
+- ¿Te resultó intuitiva la configuración de horarios y servicios?
+- ¿Te parecen útiles las funciones de notificación automática y panel de reseñas?
+- ¿Qué tan probable es que uses esta herramienta en tu negocio?
+- ¿Te sentirías cómodo/a pagando por un plan si esto mejora la eficiencia de tu gestión?
+- ¿Qué barreras o preocupaciones tendrías para adoptar uTime?
+
+**Segmento Objetivo 2 — Clientes de servicios de belleza**
+
+Preguntas tras mostrar la Landing Page:
+
+- ¿Qué tan atractivo te parece el diseño y la organización del sitio?
+- ¿Qué parte de la información te pareció más útil para ti como cliente?
+- ¿Te daría confianza usar este sistema para reservar en lugar de escribir por redes?
+
+Preguntas tras mostrar la Aplicación Móvil (vista cliente):
+
+- ¿Fue sencillo registrarte y navegar por la aplicación?
+- ¿Pudiste encontrar fácilmente un estilista y agendar una cita?
+- ¿Qué opinas del flujo para elegir horario y método de pago?
+- ¿Te gustaría recibir notificaciones o recordatorios como los que viste?
+- ¿Te gustaría tener la opción de guardar tus salones favoritos o ver tu historial?
+- ¿Qué tan probable es que uses uTime para reservar tus próximas citas?
+
+Preguntas finales (cierre):
+
+- ¿Qué es lo que más te gustó de uTime?
+- ¿Qué aspecto te pareció confuso o poco útil?
+- ¿Hay alguna funcionalidad que esperabas ver y no encontraste?
 
 ### 6.3.2. Registro de Entrevistas
 
-**Segmento 1 — Entrevista 1**
+### Segmento Objetivo 1 (Salones de Belleza y Barberías)
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre | [Nombre del entrevistado] |
-| Edad | [Edad] |
-| Ocupación | [Ocupación] |
-| Fecha | [Fecha] |
-| Duración | [Duración] |
-| Entrevistador | [APELLIDOS Y NOMBRES] |
-| URL del video | [URL] |
-| Resumen | [Contenido pendiente] |
+##### Datos del Entrevistado #1
+
+- **Nombre completo:** Mileydi Patricia
+- **Segmento Objetivo:** Dueña de salón de estética
+- **Edad:** 24 años
+- **Distrito:** San Borja
+- **Inicio de la entrevista:** 0:15 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Mileydi Patricia](./assets/images/photos/segmento-objetivo1-1.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Mileydi Patricia, esteticista con 5 años de experiencia en Estados Unidos. Ve la landing page de manera positiva; menciona que se ve con claridad la propuesta y características que ofrecería la aplicación, y que si estuviera en necesidad, pagaría por las suscripciones mencionadas. Luego de ver la aplicación móvil, comenta que le parece fácil de manipular y le interesan bastante las funciones de notificaciones automáticas y panel de gestión de citas. En general, no se presentaron críticas negativas aparte de la traducción al inglés por parte de la aplicación móvil.
+
+##### Datos del Entrevistado #2
+
+- **Nombre completo:** Maria Ysabel Sosa Rodriguez
+- **Segmento Objetivo:** Dueña de un Salón de belleza
+- **Edad:** 45 años
+- **Distrito:** San Juan de Lurigancho
+- **Inicio de la entrevista:** 3:06 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Maria Ysabel Sosa](./assets/images/photos/segmento-objetivo1-2.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de experiencia. Actualmente gestiona sus reservas solo por WhatsApp, lo cual le dificulta manejar los tiempos entre un servicio y otro. Calificó la aplicación móvil con un 10 en probabilidad de uso, describiéndola como organizada y con las herramientas necesarias, y confirmó que se sentiría cómoda pagando un plan para evitar cruces de clientes. Como crítica constructiva o mejora, solicitó añadir un espacio de "notas" o historial para registrar qué servicio se hizo el cliente y la fecha, evitando así que esa información se pierda en papeles.
+
+### Segmento Objetivo 2 (Clientes de servicios de belleza)
+
+#### Datos del Entrevistado #1
+
+- **Nombre completo:** Anedyib Villar Bisso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 20 años
+- **Distrito:** San Isidro
+- **Inicio de la entrevista:** 6:19 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Anedyib Villar](./assets/images/photos/segmento-objetivo2-1.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Anedyib Villar, cliente que solicita servicios de belleza una vez al mes. Menciona que lo que más le cuesta actualmente es la demora en las respuestas de los salones vía WhatsApp. Opinó que la landing page es bonita y completa, destacando la sección de "features" y el calendario interactivo, lo cual le genera más confianza que el método tradicional. Sobre la aplicación, reportó que el flujo de registro, elección de horario y método de pago fue muy sencillo, afirmando que la descargaría y usaría siempre si saliera en la Play Store. No encontró puntos confusos y valoró la opción de historial y salones favoritos.
+
+#### Datos del Entrevistado #2
+
+- **Nombre completo:** Edward Rodriguez
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 24 años
+- **Distrito:** Santiago de Surco
+- **Inicio de la entrevista:** 10:04 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Edward Rodriguez](./assets/images/photos/segmento-objetivo2-2.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expresa frustración por tener que ajustarse siempre a la disponibilidad de las barberías en lugar de poder elegir según su propia conveniencia. Considera que el diseño de la landing page está bien trabajado y le inspira confianza para reservar. Respecto a la aplicación móvil, destacó principalmente la función de geolocalización para encontrar salones cercanos y la rapidez del proceso. Como sugerencia clave, indicó que le gustaría que la aplicación pudiera sincronizar las citas directamente con Google Calendar para unificar sus notificaciones.
+
+> **Nota:** Todos los videos de validación se encuentran consolidados en un único
+> archivo. Los campos "Inicio de la entrevista" indican el minuto de inicio de
+> cada entrevistado dentro de ese video compartido.
 
 ### 6.3.3. Evaluaciones según heurísticas
 
@@ -6488,8 +6592,6 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 <div class="page"></div>
 
 # Anexos
-
-## AV1
 
 **Repositorios**
 
