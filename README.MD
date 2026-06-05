@@ -6069,23 +6069,57 @@ Este modelo reduce significativamente el esfuerzo manual de despliegue respecto 
 
 ### 7.4.2. Monitoring Pipeline Components
 
+Acorde con la etapa de MVP del producto, uTime adopta un enfoque de monitoreo **nativo de plataforma**: en lugar de incorporar un APM dedicado (Grafana, Datadog, New Relic o Sentry), aprovecha la observabilidad integrada de las plataformas que ya forman parte del pipeline DevOps —Azure App Service, GitHub Actions, Vercel y Firebase— sumada al logging a nivel de aplicación del backend. Esta decisión evita sobrecargar al equipo con instrumentación adicional mientras el producto valida sus hipótesis, manteniendo señales suficientes para detectar fallos en producción.
+
+Los componentes que conforman el pipeline de monitoreo son:
+
+| Componente | Herramienta | Señal que recolecta | Punto de acceso |
+|---|---|---|---|
+| Logging de aplicación | SLF4J + Logback (Spring Boot 3.5) | Eventos `INFO`/`WARN`/`ERROR` del backend, persistidos en `/home/LogFiles/Application/app.log` (`logging.file.name`, `logging.level.root=INFO`) | Azure App Service → Log Stream / archivo persistente |
+| Log Stream | Azure App Service | Salida `stdout`/`stderr` y `app.log` en tiempo real | Portal Azure → `paxtech` → Log stream |
+| Métricas de plataforma | Azure Monitor (métricas de App Service, sin instrumentación) | CPU, memoria (working set), número de requests HTTP, tiempo de respuesta y conteo de respuestas HTTP 4xx/5xx | Portal Azure → `paxtech` → Metrics |
+| Estado de despliegue backend | GitHub Actions | Resultado de los jobs `test`, `build` y `deploy` en cada run del workflow `main_paxtech.yml` | Pestaña *Actions* del repositorio `Web-Services` |
+| Estado de despliegue frontend | Vercel | Estado de build y despliegues de preview/producción de la app Angular | Dashboard de Vercel |
+| Analítica de uso móvil | Firebase Analytics | Eventos de comportamiento de usuario en la app Android | Consola de Firebase |
+
+En conjunto, estos componentes cubren tres planos de observabilidad: **infraestructura** (métricas de CPU/memoria de App Service), **aplicación** (logs del backend y códigos de respuesta HTTP) y **entrega** (estado de los pipelines de GitHub Actions y Vercel).
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Dashboard de monitoreo.
+Panel de métricas de Azure App Service (`paxtech`) — CPU, memoria, requests HTTP y respuestas 4xx/5xx del backend en producción.
 
-<img src="./assets/devops/monitoring/monitoring-dashboard.png" alt="Monitoring Dashboard" width="800">
+<!-- Captura pendiente: Portal Azure → App Service paxtech → Metrics. Guardar en ./assets/devops/monitoring/monitoring-dashboard.png y referenciar aquí. -->
+_Captura pendiente de adjuntar desde el Portal de Azure (App Service → Metrics)._
 
 </div>
 
 ### 7.4.3. Alerting Pipeline Components
 
+El sistema de alertas se construye sobre **Azure Monitor alert rules** definidas sobre las mismas métricas de plataforma del App Service, complementadas por las notificaciones de fallo de **GitHub Actions** en el pipeline de despliegue. Cada alerta evalúa una condición sobre una ventana temporal y, al dispararse, enruta a un canal mediante un *Action Group*. La severidad sigue una escala de tres niveles (Crítica / Alta / Media) según el impacto en la disponibilidad del backend que consumen las tres aplicaciones cliente.
+
 | Alerta | Condición | Canal | Severidad |
 |--------|-----------|-------|-----------|
-|        |           |       |           |
+| Backend no disponible | El App Service `paxtech` deja de responder o devuelve HTTP 5xx de forma sostenida (métrica *Http Server Errors* > 0 durante 5 min) | Correo (Action Group de Azure Monitor) | Crítica |
+| Latencia elevada | Tiempo de respuesta promedio > 2 s en una ventana de 5 min | Correo (Action Group) | Alta |
+| Saturación de CPU | Uso de CPU del App Service Plan > 80 % sostenido durante 5 min | Correo (Action Group) | Media |
+| Presión de memoria | *Memory working set* > 85 % de la capacidad del plan | Correo (Action Group) | Media |
+| Errores de cliente elevados | Conteo de respuestas HTTP 4xx por encima del umbral esperado en 5 min (posible regresión de contrato de API) | Correo (Action Group) | Media |
+| Fallo del pipeline de despliegue | Cualquier job (`test`, `build`, `deploy`) del workflow `main_paxtech.yml` falla en un `push` a `main` | Notificación de GitHub + correo al autor | Alta |
+
+Las tres primeras alertas protegen la **disponibilidad y el rendimiento** del backend en producción; la de errores 4xx vigila la **salud de los contratos de API** consumidos por los clientes; y la de pipeline garantiza que ningún despliegue fallido pase desapercibido, cerrando el lazo entre el Continuous Deployment (7.3) y el monitoreo.
 
 ### 7.4.4. Notification Pipeline Components
 
-[Contenido pendiente — integración con Slack / correo / PagerDuty.]
+Las notificaciones son el último eslabón del pipeline de monitoreo: traducen las alertas y los eventos de plataforma en mensajes accionables para el equipo. uTime utiliza un esquema de notificación basado en correo y en las integraciones nativas de las plataformas que ya emplea, sin un sistema de on-call dedicado (PagerDuty) ni un bus de chatops (Slack), coherente con el tamaño del equipo y la fase del producto.
+
+| Canal | Origen del evento | Destinatario | Propósito |
+|---|---|---|---|
+| Action Group de Azure Monitor (correo) | Alertas de Azure Monitor sobre el App Service (7.4.3) | Correo del equipo | Canal principal para incidentes de disponibilidad, latencia y recursos en producción |
+| GitHub Actions (correo + checks en el PR) | Runs fallidos de los workflows de CI/CD | Autor del commit y maintainers del repositorio | Avisa de fallos de build, test o deploy directamente en el flujo de trabajo |
+| Vercel (notificaciones de despliegue) | Resultado de los despliegues del frontend | Equipo de frontend | Informa el estado de los despliegues de preview y producción de la app Angular |
+| Firebase App Distribution | Publicación de una nueva build de la app Android | Testers registrados | Notifica a los testers cuando hay una versión disponible para validar |
+
+**Estado actual y trabajo futuro.** El tejido de notificación se apoya hoy en **correo electrónico** (vía Azure Monitor Action Groups) y en las **notificaciones integradas de GitHub, Vercel y Firebase**. No existe aún integración con Slack ni PagerDuty; de requerirse mayor inmediatez, un Action Group de Azure Monitor puede ampliarse con un webhook hacia Slack, o agregarse un step de notificación a Slack en el workflow de GitHub Actions, sin alterar el resto del pipeline de monitoreo.
 
 <div class="page"></div>
 
