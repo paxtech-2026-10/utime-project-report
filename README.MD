@@ -5446,33 +5446,129 @@ flutter test integration_test/provider_core_system_test.dart --device-id windows
 
 #### 6.2.1.1. Coding standard & Code conventions
 
-[Contenido pendiente — linters / formatters configurados: ESLint, Prettier, Checkstyle, etc.]
+El equipo adoptó un conjunto coherente de convenciones de código y estándares de nomenclatura para cada capa del stack tecnológico de uTime, con el objetivo de mantener la legibilidad, la consistencia y la mantenibilidad del código a lo largo del proyecto.
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Frontend Web — Angular 19 / TypeScript**
 
-Resultados del linter.
+El análisis estático del frontend se apoya en el compilador TypeScript configurado con el modo estricto activado en `tsconfig.json`. Las siguientes flags están habilitadas en todos los entornos (desarrollo, pruebas y producción):
 
-<img src="./assets/testing/static-analysis/lint-report.png" alt="Lint Report" width="800">
+| Flag TypeScript | Propósito |
+|-----------------|-----------|
+| `strict: true` | Activa el grupo base de comprobaciones de tipo |
+| `noImplicitOverride` | Obliga a declarar `override` en métodos que redefinen la clase base |
+| `noPropertyAccessFromIndexSignature` | Prohíbe el acceso por índice implícito a propiedades tipadas |
+| `noImplicitReturns` | Detecta rutas de retorno sin valor en funciones con tipo de retorno explícito |
+| `noFallthroughCasesInSwitch` | Previene caídas silenciosas entre ramas `case` de un `switch` |
+| `strictTemplates` | Verifica los tipos en las plantillas HTML de Angular |
+| `strictInjectionParameters` | Valida que todos los parámetros del sistema de inyección de dependencias estén tipados |
+| `strictInputAccessModifiers` | Exige que los `@Input()` sean accesibles desde las plantillas |
 
-</div>
+En cuanto a convenciones de nombres, el proyecto sigue la guía oficial de Angular Style Guide:
+
+- **Componentes:** `PascalCase` para la clase (`ReservationCardComponent`) y `kebab-case` para el selector (`app-reservation-card`)
+- **Servicios:** `PascalCase` con sufijo `Service` (`ProfileService`)
+- **Modelos / Entidades:** `PascalCase` sin sufijo (`Reservation`, `WorkerProfile`)
+- **Archivos:** `kebab-case` con el rol como sufijo (`reservation-card.component.ts`, `profile.service.ts`)
+- **Métodos y propiedades:** `camelCase`
+- **Constantes globales:** `UPPER_SNAKE_CASE`
+
+**Backend — Spring Boot 3.5 / Java 17**
+
+El backend sigue las convenciones estándar de Java (Oracle Java Code Conventions) y la guía de Spring Boot:
+
+- **Clases de entidad:** `PascalCase` alineado con el nombre del aggregate root del bounded context (`Review`, `Reservation`, `WorkerProfile`)
+- **Columnas de base de datos:** se aplica automáticamente `SnakeCasePhysicalNamingStrategy` de Hibernate, convirtiendo `fieldName` a `field_name` sin configuración manual
+- **Paquetes:** estructura `com.paxtech.utime.platform.<bounded-context>.<capa>` respetando la separación por bounded contexts DDD
+- **Getters y setters:** generados por **Lombok** (`@Getter`, `@Setter`, `@Data`) para eliminar código repetitivo y reducir errores
+
+**Mobile Android — Kotlin 2.2 / Jetpack Compose**
+
+Se aplican las convenciones oficiales del Kotlin Style Guide:
+
+- **Clases y objetos:** `PascalCase`
+- **Funciones y variables:** `camelCase`
+- **Composables:** `PascalCase` sin sufijo (`ReservationCard`, `BookingScreen`)
+- **Constantes:** `UPPER_SNAKE_CASE` en `companion object`
+
+**Mobile iOS/Android — Flutter 3.9 / Dart**
+
+Se sigue la guía de estilo oficial de Dart:
+
+- **Clases:** `UpperCamelCase`
+- **Variables, funciones y parámetros:** `lowerCamelCase`
+- **Archivos:** `snake_case.dart`
+- **Constantes:** `lowerCamelCase` (convención Dart) o `UPPER_SNAKE_CASE` para constantes de clase
+
+**Control de versiones**
+
+Se aplican **Conventional Commits** en todos los repositorios de la organización PaxTech:
+
+| Tipo | Uso |
+|------|-----|
+| `feat` | Nueva funcionalidad |
+| `fix` | Corrección de bug |
+| `docs` | Cambios en documentación |
+| `style` | Cambios de formato sin impacto funcional |
+| `refactor` | Refactorización sin cambio de comportamiento |
+| `chore` | Tareas de mantenimiento (dependencias, configuración) |
+| `merge` | Integración entre ramas |
+| `release` | Marca de versión semántica |
+
+El flujo de ramas sigue **GitFlow** con ramas `main`, `develop`, `feature/*`, `fix/*` y `release/*`. Todo cambio a `develop` o `main` requiere Pull Request con al menos un aprobador.
 
 #### 6.2.1.2. Code Quality & Code Security
 
-[Contenido pendiente — SonarQube / SonarCloud / Snyk / CodeQL.]
+El aseguramiento de la calidad y la seguridad del código en uTime se lleva a cabo mediante herramientas de análisis integradas en el pipeline de integración continua y en las herramientas de desarrollo.
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Análisis de calidad en el backend — CI con Maven**
 
-Reporte de calidad y seguridad.
+El repositorio `paxtech-2026-10/Web-Services` cuenta con el workflow `java-ci.yml` en GitHub Actions, que se ejecuta en cada `push` y en cada Pull Request contra cualquier rama. El job `test` ejecuta:
 
-<img src="./assets/testing/static-analysis/sonar-report.png" alt="Sonar Report" width="800">
+```bash
+mvn clean test
+```
 
-</div>
+Este comando realiza compilación completa con el compilador de Java 17, lo que detecta en tiempo de compilación errores de tipo, imports no utilizados, clases no encontradas y llamadas a métodos inexistentes. Si algún test unitario falla, el pipeline bloquea el merge del PR.
+
+**Validación en tiempo de compilación — TypeScript**
+
+En el frontend, el script `ng build` (ejecutado en el CI del workflow `frontend-ci.yml`) compila el proyecto Angular con `--configuration production`. La salida del compilador TypeScript actúa como análisis estático: cualquier violación de las flags estrictas detiene el build y bloquea el despliegue a Vercel.
+
+**Seguridad en la API REST**
+
+La capa de seguridad a nivel de código se aplica mediante:
+
+- **Spring Boot Validation (`javax.validation`):** anotaciones `@NotNull`, `@NotBlank`, `@Size`, `@Min`/`@Max` en los DTOs de entrada, que rechazan payloads malformados antes de que lleguen a la capa de servicio
+- **Google OAuth 2.0 (2FA):** autenticación delegada a Google como proveedor de identidad, sin almacenamiento de contraseñas en el sistema
+- **Spring Security:** control de acceso a endpoints mediante roles definidos por bounded context; rutas públicas explícitamente declaradas con `.permitAll()`
+- **springdoc-openapi 2.8.8:** documenta y expone cada endpoint con sus tipos de entrada y salida en Swagger UI, facilitando la inspección de la superficie de ataque de la API
+
+**Integridad de dependencias**
+
+- El frontend usa `pnpm install --frozen-lockfile` en CI, que garantiza que ningún colaborador pueda introducir versiones de dependencias no auditadas fuera del `pnpm-lock.yaml`
+- El backend usa `~/.m2` cacheado por `actions/cache@v4` con clave basada en el hash del `pom.xml`, lo que asegura reproducibilidad del build
+
+| Capa | Herramienta de calidad/seguridad | Activación |
+|------|----------------------------------|------------|
+| Backend Java | Compilador Java 17 (`mvn clean test`) | CI — cada PR |
+| Backend Java | Spring Boot Validation (anotaciones `@Valid`) | Runtime — cada request |
+| Backend Java | Spring Security + Google OAuth 2.0 | Runtime — cada request autenticado |
+| Frontend Angular | TypeScript strict mode + `ng build` | CI — cada push a `develop` |
+| Frontend Angular | `pnpm --frozen-lockfile` | CI — instalación de dependencias |
+| Mobile Kotlin | Compilador Kotlin 2.2 + AGP | Build local — cada compilación |
+| Mobile Flutter | `flutter analyze` + `flutter_lints` | Build local — cada compilación |
 
 ### 6.2.2. Reviews
 
-| PR / Commit | Revisor | Fecha | Comentarios | Estado |
-|-------------|---------|-------|-------------|--------|
-|             |         |       |             |        |
+El proceso de revisión de código en uTime se formalizó mediante Pull Requests obligatorios con al menos un aprobador antes de integrar cualquier rama a `develop` o `main`. A continuación se presentan las revisiones más representativas realizadas durante el ciclo de desarrollo:
+
+| PR / Repositorio | Revisor | Fecha | Comentarios destacados | Estado |
+|------------------|---------|-------|------------------------|--------|
+| [#5 ci: add backend pr validation](https://github.com/paxtech-2026-10/Web-Services/pull/5) — `paxtech-2026-10/Web-Services` | alejooroncoy | 2026-05-14 | Revisión de la introducción del workflow `java-ci.yml`; verificación de que `mvn clean test` se ejecute en cada PR y que la cache de Maven esté configurada correctamente con hash del `pom.xml` | Aprobado y merged |
+| [#2 feat(bdd): add Reservations BDD suite for US18](https://github.com/paxtech-2026-10/Frontend-Web-Application/pull/2) — `paxtech-2026-10/Frontend-Web-Application` | gael-rs | 2026-05-15 | Revisión de los feature files Gherkin para US18, validación de steps de Playwright y cobertura de escenarios feliz/triste para el flujo de reservas | Aprobado y merged |
+| [#14 docs(cap6): add Reservations BDD + extend AV2/TB1 conclusions](https://github.com/paxtech-2026-10/utime-project-report/pull/14) — `paxtech-2026-10/utime-project-report` | yigabriel | 2026-05-15 | Revisión de la documentación de pruebas BDD del bounded context Reservations y ampliación de conclusiones de evidencia AV2/TB1 | Aprobado y merged |
+| [#6 fix(readme): exhaustive consistency cleanup](https://github.com/paxtech-2026-10/utime-project-report/pull/6) — `paxtech-2026-10/utime-project-report` | yigabriel | 2026-04-28 | Auditoría completa de consistencia del README: corrección de HTML malformado, rutas de assets rotos, errores tipográficos y referencias a imágenes inexistentes | Aprobado y merged |
+| [#2 docs: register functional requirements](https://github.com/UPC-PaxTech/uTime/pull/1) — `UPC-PaxTech/uTime` | alejooroncoy | 2026-04-10 | Revisión del registro inicial de requerimientos funcionales de los bounded contexts Marketplace y Products; verificación de completitud contra el backlog de user stories | Aprobado y merged |
 
 ## 6.3. Validation Interviews
 
