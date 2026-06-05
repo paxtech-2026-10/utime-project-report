@@ -6101,15 +6101,6 @@ Los componentes que conforman el pipeline de monitoreo son:
 
 En conjunto, estos componentes cubren tres planos de observabilidad: **infraestructura** (métricas de CPU/memoria de App Service), **aplicación** (logs del backend y códigos de respuesta HTTP) y **entrega** (estado de los pipelines de GitHub Actions y Vercel).
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-
-Panel de métricas de Azure App Service (`paxtech`) — CPU, memoria, requests HTTP y respuestas 4xx/5xx del backend en producción.
-
-<!-- Captura pendiente: Portal Azure → App Service paxtech → Metrics. Guardar en ./assets/devops/monitoring/monitoring-dashboard.png y referenciar aquí. -->
-_Captura pendiente de adjuntar desde el Portal de Azure (App Service → Metrics)._
-
-</div>
-
 ### 7.4.3. Alerting Pipeline Components
 
 El sistema de alertas se construye sobre **Azure Monitor alert rules** definidas sobre las mismas métricas de plataforma del App Service, complementadas por las notificaciones de fallo de **GitHub Actions** en el pipeline de despliegue. Cada alerta evalúa una condición sobre una ventana temporal y, al dispararse, enruta a un canal mediante un *Action Group*. La severidad sigue una escala de tres niveles (Crítica / Alta / Media) según el impacto en la disponibilidad del backend que consumen las tres aplicaciones cliente.
