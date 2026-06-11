@@ -2235,13 +2235,13 @@ URL del video: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211g671_upc
 
 Los diagramas de flujo de usuario mapean el camino completo que sigue una persona dentro de la aplicación, desde el principio hasta que alcanza su meta. Esto permite visualizar y entender las interacciones, pasos y decisiones.
 
-![Userflow Web 1](assets/userflow-web/Untitled%20(1).png)
-![Userflow Web 2](assets/userflow-web/Untitled%20(2).png)
-![Userflow Web 3](assets/userflow-web/Untitled%20(3).png)
-![Userflow Web 4](assets/userflow-web/Untitled%20(4).png)
-![Userflow Web 5](assets/userflow-web/Untitled%20(5).png)
-![Userflow Web 6](assets/userflow-web/Untitled%20(6).png)
-![Userflow Web](assets/userflow-web/Untitled.png)
+![Userflow Web 1](assets/images/userflow-web/Untitled(1).png)
+![Userflow Web 2](assets/images/userflow-web/Untitled(2).png)
+![Userflow Web 3](assets/images/userflow-web/Untitled(3).png)
+![Userflow Web 4](assets/images/userflow-web/Untitled(4).png)
+![Userflow Web 5](assets/images/userflow-web/Untitled(5).png)
+![Userflow Web 6](assets/images/userflow-web/Untitled(6).png)
+![Userflow Web 7](assets/images/userflow-web/Untitled.png)
 
 
 </div>
