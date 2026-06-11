@@ -5446,64 +5446,264 @@ flutter test integration_test/provider_core_system_test.dart --device-id windows
 
 #### 6.2.1.1. Coding standard & Code conventions
 
-[Contenido pendiente — linters / formatters configurados: ESLint, Prettier, Checkstyle, etc.]
+El equipo adoptó un conjunto coherente de convenciones de código y estándares de nomenclatura para cada capa del stack tecnológico de uTime, con el objetivo de mantener la legibilidad, la consistencia y la mantenibilidad del código a lo largo del proyecto.
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Frontend Web — Angular 19 / TypeScript**
 
-Resultados del linter.
+El análisis estático del frontend se apoya en el compilador TypeScript configurado con el modo estricto activado en `tsconfig.json`. Las siguientes flags están habilitadas en todos los entornos (desarrollo, pruebas y producción):
 
-<img src="./assets/testing/static-analysis/lint-report.png" alt="Lint Report" width="800">
+| Flag TypeScript | Propósito |
+|-----------------|-----------|
+| `strict: true` | Activa el grupo base de comprobaciones de tipo |
+| `noImplicitOverride` | Obliga a declarar `override` en métodos que redefinen la clase base |
+| `noPropertyAccessFromIndexSignature` | Prohíbe el acceso por índice implícito a propiedades tipadas |
+| `noImplicitReturns` | Detecta rutas de retorno sin valor en funciones con tipo de retorno explícito |
+| `noFallthroughCasesInSwitch` | Previene caídas silenciosas entre ramas `case` de un `switch` |
+| `strictTemplates` | Verifica los tipos en las plantillas HTML de Angular |
+| `strictInjectionParameters` | Valida que todos los parámetros del sistema de inyección de dependencias estén tipados |
+| `strictInputAccessModifiers` | Exige que los `@Input()` sean accesibles desde las plantillas |
 
-</div>
+En cuanto a convenciones de nombres, el proyecto sigue la guía oficial de Angular Style Guide:
+
+- **Componentes:** `PascalCase` para la clase (`ReservationCardComponent`) y `kebab-case` para el selector (`app-reservation-card`)
+- **Servicios:** `PascalCase` con sufijo `Service` (`ProfileService`)
+- **Modelos / Entidades:** `PascalCase` sin sufijo (`Reservation`, `WorkerProfile`)
+- **Archivos:** `kebab-case` con el rol como sufijo (`reservation-card.component.ts`, `profile.service.ts`)
+- **Métodos y propiedades:** `camelCase`
+- **Constantes globales:** `UPPER_SNAKE_CASE`
+
+**Backend — Spring Boot 3.5 / Java 17**
+
+El backend sigue las convenciones estándar de Java (Oracle Java Code Conventions) y la guía de Spring Boot:
+
+- **Clases de entidad:** `PascalCase` alineado con el nombre del aggregate root del bounded context (`Review`, `Reservation`, `WorkerProfile`)
+- **Columnas de base de datos:** se aplica automáticamente `SnakeCasePhysicalNamingStrategy` de Hibernate, convirtiendo `fieldName` a `field_name` sin configuración manual
+- **Paquetes:** estructura `com.paxtech.utime.platform.<bounded-context>.<capa>` respetando la separación por bounded contexts DDD
+- **Getters y setters:** generados por **Lombok** (`@Getter`, `@Setter`, `@Data`) para eliminar código repetitivo y reducir errores
+
+**Mobile Android — Kotlin 2.2 / Jetpack Compose**
+
+Se aplican las convenciones oficiales del Kotlin Style Guide:
+
+- **Clases y objetos:** `PascalCase`
+- **Funciones y variables:** `camelCase`
+- **Composables:** `PascalCase` sin sufijo (`ReservationCard`, `BookingScreen`)
+- **Constantes:** `UPPER_SNAKE_CASE` en `companion object`
+
+**Mobile iOS/Android — Flutter 3.9 / Dart**
+
+Se sigue la guía de estilo oficial de Dart:
+
+- **Clases:** `UpperCamelCase`
+- **Variables, funciones y parámetros:** `lowerCamelCase`
+- **Archivos:** `snake_case.dart`
+- **Constantes:** `lowerCamelCase` (convención Dart) o `UPPER_SNAKE_CASE` para constantes de clase
+
+**Control de versiones**
+
+Se aplican **Conventional Commits** en todos los repositorios de la organización PaxTech:
+
+| Tipo | Uso |
+|------|-----|
+| `feat` | Nueva funcionalidad |
+| `fix` | Corrección de bug |
+| `docs` | Cambios en documentación |
+| `style` | Cambios de formato sin impacto funcional |
+| `refactor` | Refactorización sin cambio de comportamiento |
+| `chore` | Tareas de mantenimiento (dependencias, configuración) |
+| `merge` | Integración entre ramas |
+| `release` | Marca de versión semántica |
+
+El flujo de ramas sigue **GitFlow** con ramas `main`, `develop`, `feature/*`, `fix/*` y `release/*`. Todo cambio a `develop` o `main` requiere Pull Request con al menos un aprobador.
 
 #### 6.2.1.2. Code Quality & Code Security
 
-[Contenido pendiente — SonarQube / SonarCloud / Snyk / CodeQL.]
+El aseguramiento de la calidad y la seguridad del código en uTime se lleva a cabo mediante herramientas de análisis integradas en el pipeline de integración continua y en las herramientas de desarrollo.
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Análisis de calidad en el backend — CI con Maven**
 
-Reporte de calidad y seguridad.
+El repositorio `paxtech-2026-10/Web-Services` cuenta con el workflow `java-ci.yml` en GitHub Actions, que se ejecuta en cada `push` y en cada Pull Request contra cualquier rama. El job `test` ejecuta:
 
-<img src="./assets/testing/static-analysis/sonar-report.png" alt="Sonar Report" width="800">
+```bash
+mvn clean test
+```
 
-</div>
+Este comando realiza compilación completa con el compilador de Java 17, lo que detecta en tiempo de compilación errores de tipo, imports no utilizados, clases no encontradas y llamadas a métodos inexistentes. Si algún test unitario falla, el pipeline bloquea el merge del PR.
+
+**Validación en tiempo de compilación — TypeScript**
+
+En el frontend, el script `ng build` (ejecutado en el CI del workflow `frontend-ci.yml`) compila el proyecto Angular con `--configuration production`. La salida del compilador TypeScript actúa como análisis estático: cualquier violación de las flags estrictas detiene el build y bloquea el despliegue a Vercel.
+
+**Seguridad en la API REST**
+
+La capa de seguridad a nivel de código se aplica mediante:
+
+- **Spring Boot Validation (`javax.validation`):** anotaciones `@NotNull`, `@NotBlank`, `@Size`, `@Min`/`@Max` en los DTOs de entrada, que rechazan payloads malformados antes de que lleguen a la capa de servicio
+- **Google OAuth 2.0 (2FA):** autenticación delegada a Google como proveedor de identidad, sin almacenamiento de contraseñas en el sistema
+- **Spring Security:** control de acceso a endpoints mediante roles definidos por bounded context; rutas públicas explícitamente declaradas con `.permitAll()`
+- **springdoc-openapi 2.8.8:** documenta y expone cada endpoint con sus tipos de entrada y salida en Swagger UI, facilitando la inspección de la superficie de ataque de la API
+
+**Integridad de dependencias**
+
+- El frontend usa `pnpm install --frozen-lockfile` en CI, que garantiza que ningún colaborador pueda introducir versiones de dependencias no auditadas fuera del `pnpm-lock.yaml`
+- El backend usa `~/.m2` cacheado por `actions/cache@v4` con clave basada en el hash del `pom.xml`, lo que asegura reproducibilidad del build
+
+| Capa | Herramienta de calidad/seguridad | Activación |
+|------|----------------------------------|------------|
+| Backend Java | Compilador Java 17 (`mvn clean test`) | CI — cada PR |
+| Backend Java | Spring Boot Validation (anotaciones `@Valid`) | Runtime — cada request |
+| Backend Java | Spring Security + Google OAuth 2.0 | Runtime — cada request autenticado |
+| Frontend Angular | TypeScript strict mode + `ng build` | CI — cada push a `develop` |
+| Frontend Angular | `pnpm --frozen-lockfile` | CI — instalación de dependencias |
+| Mobile Kotlin | Compilador Kotlin 2.2 + AGP | Build local — cada compilación |
+| Mobile Flutter | `flutter analyze` + `flutter_lints` | Build local — cada compilación |
 
 ### 6.2.2. Reviews
 
-| PR / Commit | Revisor | Fecha | Comentarios | Estado |
-|-------------|---------|-------|-------------|--------|
-|             |         |       |             |        |
+El proceso de revisión de código en uTime se formalizó mediante Pull Requests obligatorios con al menos un aprobador antes de integrar cualquier rama a `develop` o `main`. A continuación se presentan las revisiones más representativas realizadas durante el ciclo de desarrollo:
+
+| PR / Repositorio | Revisor | Fecha | Comentarios destacados | Estado |
+|------------------|---------|-------|------------------------|--------|
+| [#5 ci: add backend pr validation](https://github.com/paxtech-2026-10/Web-Services/pull/5) — `paxtech-2026-10/Web-Services` | alejooroncoy | 2026-05-14 | Revisión de la introducción del workflow `java-ci.yml`; verificación de que `mvn clean test` se ejecute en cada PR y que la cache de Maven esté configurada correctamente con hash del `pom.xml` | Aprobado y merged |
+| [#2 feat(bdd): add Reservations BDD suite for US18](https://github.com/paxtech-2026-10/Frontend-Web-Application/pull/2) — `paxtech-2026-10/Frontend-Web-Application` | gael-rs | 2026-05-15 | Revisión de los feature files Gherkin para US18, validación de steps de Playwright y cobertura de escenarios feliz/triste para el flujo de reservas | Aprobado y merged |
+| [#14 docs(cap6): add Reservations BDD + extend AV2/TB1 conclusions](https://github.com/paxtech-2026-10/utime-project-report/pull/14) — `paxtech-2026-10/utime-project-report` | yigabriel | 2026-05-15 | Revisión de la documentación de pruebas BDD del bounded context Reservations y ampliación de conclusiones de evidencia AV2/TB1 | Aprobado y merged |
+| [#6 fix(readme): exhaustive consistency cleanup](https://github.com/paxtech-2026-10/utime-project-report/pull/6) — `paxtech-2026-10/utime-project-report` | yigabriel | 2026-04-28 | Auditoría completa de consistencia del README: corrección de HTML malformado, rutas de assets rotos, errores tipográficos y referencias a imágenes inexistentes | Aprobado y merged |
+| [#2 docs: register functional requirements](https://github.com/UPC-PaxTech/uTime/pull/1) — `UPC-PaxTech/uTime` | alejooroncoy | 2026-04-10 | Revisión del registro inicial de requerimientos funcionales de los bounded contexts Marketplace y Products; verificación de completitud contra el backlog de user stories | Aprobado y merged |
 
 ## 6.3. Validation Interviews
 
 ### 6.3.1. Diseño de Entrevistas
 
-**Preguntas para validación — [Segmento 1]:**
+Para esta segunda ronda de validación se diseñó una guía de entrevista que
+parte de preguntas introductorias comunes y luego se divide en dos segmentos
+objetivo. En cada segmento se mostró al entrevistado la Landing Page y la
+Aplicación Móvil, recogiendo su retroalimentación tras cada artefacto.
 
-1. [Pregunta 1]
-2. [Pregunta 2]
-3. [Pregunta 3]
+**Preguntas introductorias:**
 
-**Preguntas para validación — [Segmento 2]:**
+- ¿Cuál es tu nombre?
+- ¿Cuánto tiempo llevas trabajando en el sector de belleza? / ¿Con qué frecuencia solicitas servicios de belleza?
+- ¿Has usado alguna herramienta digital para reservas o todo lo haces por WhatsApp, redes u otro método?
+- ¿Qué es lo que más te cuesta gestionar en el tema de reservas?
 
-1. [Pregunta 1]
-2. [Pregunta 2]
-3. [Pregunta 3]
+**Segmento Objetivo 1 — Dueños de Salones de Belleza o Barberías**
+
+Preguntas tras mostrar la Landing Page:
+
+- ¿Sientes que comunica bien la propuesta y beneficios del producto?
+- ¿Qué sección o contenido te pareció más útil o llamativo?
+- ¿Los planes que se ofrecen se ven claros y bien diferenciados?
+- ¿Te animarías a probar una plataforma como esta luego de ver la landing?
+
+Preguntas tras mostrar la Aplicación Móvil (vista del salón):
+
+- ¿Fue fácil navegar y entender cómo funciona la gestión de citas?
+- ¿Te resultó intuitiva la configuración de horarios y servicios?
+- ¿Te parecen útiles las funciones de notificación automática y panel de reseñas?
+- ¿Qué tan probable es que uses esta herramienta en tu negocio?
+- ¿Te sentirías cómodo/a pagando por un plan si esto mejora la eficiencia de tu gestión?
+- ¿Qué barreras o preocupaciones tendrías para adoptar uTime?
+
+**Segmento Objetivo 2 — Clientes de servicios de belleza**
+
+Preguntas tras mostrar la Landing Page:
+
+- ¿Qué tan atractivo te parece el diseño y la organización del sitio?
+- ¿Qué parte de la información te pareció más útil para ti como cliente?
+- ¿Te daría confianza usar este sistema para reservar en lugar de escribir por redes?
+
+Preguntas tras mostrar la Aplicación Móvil (vista cliente):
+
+- ¿Fue sencillo registrarte y navegar por la aplicación?
+- ¿Pudiste encontrar fácilmente un estilista y agendar una cita?
+- ¿Qué opinas del flujo para elegir horario y método de pago?
+- ¿Te gustaría recibir notificaciones o recordatorios como los que viste?
+- ¿Te gustaría tener la opción de guardar tus salones favoritos o ver tu historial?
+- ¿Qué tan probable es que uses uTime para reservar tus próximas citas?
+
+Preguntas finales (cierre):
+
+- ¿Qué es lo que más te gustó de uTime?
+- ¿Qué aspecto te pareció confuso o poco útil?
+- ¿Hay alguna funcionalidad que esperabas ver y no encontraste?
 
 ### 6.3.2. Registro de Entrevistas
 
-**Segmento 1 — Entrevista 1**
+### Segmento Objetivo 1 (Salones de Belleza y Barberías)
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre | [Nombre del entrevistado] |
-| Edad | [Edad] |
-| Ocupación | [Ocupación] |
-| Fecha | [Fecha] |
-| Duración | [Duración] |
-| Entrevistador | [APELLIDOS Y NOMBRES] |
-| URL del video | [URL] |
-| Resumen | [Contenido pendiente] |
+##### Datos del Entrevistado #1
+
+- **Nombre completo:** Mileydi Patricia
+- **Segmento Objetivo:** Dueña de salón de estética
+- **Edad:** 24 años
+- **Distrito:** San Borja
+- **Inicio de la entrevista:** 0:15 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Mileydi Patricia](./assets/images/photos/segmento-objetivo1-1.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Mileydi Patricia, esteticista con 5 años de experiencia en Estados Unidos. Ve la landing page de manera positiva; menciona que se ve con claridad la propuesta y características que ofrecería la aplicación, y que si estuviera en necesidad, pagaría por las suscripciones mencionadas. Luego de ver la aplicación móvil, comenta que le parece fácil de manipular y le interesan bastante las funciones de notificaciones automáticas y panel de gestión de citas. En general, no se presentaron críticas negativas aparte de la traducción al inglés por parte de la aplicación móvil.
+
+##### Datos del Entrevistado #2
+
+- **Nombre completo:** Maria Ysabel Sosa Rodriguez
+- **Segmento Objetivo:** Dueña de un Salón de belleza
+- **Edad:** 45 años
+- **Distrito:** San Juan de Lurigancho
+- **Inicio de la entrevista:** 3:06 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Maria Ysabel Sosa](./assets/images/photos/segmento-objetivo1-2.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de experiencia. Actualmente gestiona sus reservas solo por WhatsApp, lo cual le dificulta manejar los tiempos entre un servicio y otro. Calificó la aplicación móvil con un 10 en probabilidad de uso, describiéndola como organizada y con las herramientas necesarias, y confirmó que se sentiría cómoda pagando un plan para evitar cruces de clientes. Como crítica constructiva o mejora, solicitó añadir un espacio de "notas" o historial para registrar qué servicio se hizo el cliente y la fecha, evitando así que esa información se pierda en papeles.
+
+### Segmento Objetivo 2 (Clientes de servicios de belleza)
+
+#### Datos del Entrevistado #1
+
+- **Nombre completo:** Anedyib Villar Bisso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 20 años
+- **Distrito:** San Isidro
+- **Inicio de la entrevista:** 6:19 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Anedyib Villar](./assets/images/photos/segmento-objetivo2-1.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Anedyib Villar, cliente que solicita servicios de belleza una vez al mes. Menciona que lo que más le cuesta actualmente es la demora en las respuestas de los salones vía WhatsApp. Opinó que la landing page es bonita y completa, destacando la sección de "features" y el calendario interactivo, lo cual le genera más confianza que el método tradicional. Sobre la aplicación, reportó que el flujo de registro, elección de horario y método de pago fue muy sencillo, afirmando que la descargaría y usaría siempre si saliera en la Play Store. No encontró puntos confusos y valoró la opción de historial y salones favoritos.
+
+#### Datos del Entrevistado #2
+
+- **Nombre completo:** Edward Rodriguez
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 24 años
+- **Distrito:** Santiago de Surco
+- **Inicio de la entrevista:** 10:04 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Edward Rodriguez](./assets/images/photos/segmento-objetivo2-2.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expresa frustración por tener que ajustarse siempre a la disponibilidad de las barberías en lugar de poder elegir según su propia conveniencia. Considera que el diseño de la landing page está bien trabajado y le inspira confianza para reservar. Respecto a la aplicación móvil, destacó principalmente la función de geolocalización para encontrar salones cercanos y la rapidez del proceso. Como sugerencia clave, indicó que le gustaría que la aplicación pudiera sincronizar las citas directamente con Google Calendar para unificar sus notificaciones.
+
+> **Nota:** Todos los videos de validación se encuentran consolidados en un único
+> archivo. Los campos "Inicio de la entrevista" indican el minuto de inicio de
+> cada entrevistado dentro de ese video compartido.
 
 ### 6.3.3. Evaluaciones según heurísticas
 
@@ -5961,27 +6161,69 @@ Este modelo reduce significativamente el esfuerzo manual de despliegue respecto 
 
 ### 7.4.1. Tools and Practices
 
-[Contenido pendiente — Grafana / Datadog / New Relic / Sentry.]
+El Continuous Monitoring es la práctica de DevOps que cierra el ciclo al observar la aplicación una vez desplegada en producción, con el objetivo de detectar fallos, degradaciones de rendimiento o comportamientos anómalos antes de que afecten a los usuarios. Para uTime, el monitoreo no se apoya en un APM externo, sino en la observabilidad nativa de las mismas plataformas que ya intervienen en las fases de CI/CD (secciones 7.1 a 7.3), decisión coherente con la etapa de MVP del producto y con el tamaño del equipo.
+
+Las herramientas que estamos utilizando son:
+
+- __Azure App Service (`paxtech`)__: la plataforma donde se ejecuta el backend expone de forma nativa el *Log Stream* (salida en tiempo real de logs de la aplicación) y un panel de *Metrics* con indicadores de CPU, memoria, requests HTTP y códigos de respuesta, sin necesidad de instrumentación adicional.
+- __Azure Monitor__: se emplea para definir *alert rules* sobre las métricas del App Service y para enrutar las notificaciones mediante *Action Groups* hacia el correo del equipo.
+- __GitHub Actions__: además de ejecutar el pipeline de CI/CD, su historial de runs funciona como señal de salud del proceso de build, test y despliegue, notificando automáticamente los fallos.
+- __Vercel__: provee el estado de los despliegues del frontend Angular (previews y producción), sirviendo como punto de monitoreo de la capa web.
+- __Firebase Analytics__: integrado en la aplicación móvil Android, recolecta eventos de comportamiento de usuario que complementan la visión de uso del producto.
+- __SLF4J + Logback__: el framework de logging por defecto de Spring Boot 3.5 registra los eventos del backend (`INFO`/`WARN`/`ERROR`) y los persiste en `/home/LogFiles/Application/app.log` dentro del App Service.
+
+Por el lado de las prácticas, estamos considerando:
+
+- __Monitoreo nativo de plataforma__: en lugar de incorporar herramientas externas (Grafana, Datadog, New Relic o Sentry), se aprovecha la observabilidad integrada de Azure, GitHub, Vercel y Firebase, reduciendo la carga de instrumentación mientras el producto valida sus hipótesis.
+- __Logging centralizado de aplicación__: el backend escribe sus logs a un archivo persistente del App Service, accesible vía Log Stream, lo que permite revisar el comportamiento del sistema en producción.
+- __Alertas basadas en métricas__: se definen reglas en Azure Monitor sobre disponibilidad, latencia y uso de recursos, de modo que las condiciones críticas se detecten automáticamente y no por inspección manual.
+- __Monitoreo de la salud del despliegue__: el estado de los pipelines de GitHub Actions y Vercel se vigila de forma continua para garantizar que ningún despliegue fallido pase desapercibido, enlazando el monitoreo con el Continuous Deployment.
+- __Notificación por correo__: las alertas de producción se canalizan mediante Action Groups de Azure Monitor hacia el correo del equipo, manteniendo un mecanismo de aviso simple y suficiente para la fase actual.
 
 ### 7.4.2. Monitoring Pipeline Components
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+Acorde con la etapa de MVP del producto, uTime adopta un enfoque de monitoreo **nativo de plataforma**: en lugar de incorporar un APM dedicado (Grafana, Datadog, New Relic o Sentry), aprovecha la observabilidad integrada de las plataformas que ya forman parte del pipeline DevOps —Azure App Service, GitHub Actions, Vercel y Firebase— sumada al logging a nivel de aplicación del backend. Esta decisión evita sobrecargar al equipo con instrumentación adicional mientras el producto valida sus hipótesis, manteniendo señales suficientes para detectar fallos en producción.
 
-Dashboard de monitoreo.
+Los componentes que conforman el pipeline de monitoreo son:
 
-<img src="./assets/devops/monitoring/monitoring-dashboard.png" alt="Monitoring Dashboard" width="800">
+| Componente | Herramienta | Señal que recolecta | Punto de acceso |
+|---|---|---|---|
+| Logging de aplicación | SLF4J + Logback (Spring Boot 3.5) | Eventos `INFO`/`WARN`/`ERROR` del backend, persistidos en `/home/LogFiles/Application/app.log` (`logging.file.name`, `logging.level.root=INFO`) | Azure App Service → Log Stream / archivo persistente |
+| Log Stream | Azure App Service | Salida `stdout`/`stderr` y `app.log` en tiempo real | Portal Azure → `paxtech` → Log stream |
+| Métricas de plataforma | Azure Monitor (métricas de App Service, sin instrumentación) | CPU, memoria (working set), número de requests HTTP, tiempo de respuesta y conteo de respuestas HTTP 4xx/5xx | Portal Azure → `paxtech` → Metrics |
+| Estado de despliegue backend | GitHub Actions | Resultado de los jobs `test`, `build` y `deploy` en cada run del workflow `main_paxtech.yml` | Pestaña *Actions* del repositorio `Web-Services` |
+| Estado de despliegue frontend | Vercel | Estado de build y despliegues de preview/producción de la app Angular | Dashboard de Vercel |
+| Analítica de uso móvil | Firebase Analytics | Eventos de comportamiento de usuario en la app Android | Consola de Firebase |
 
-</div>
+En conjunto, estos componentes cubren tres planos de observabilidad: **infraestructura** (métricas de CPU/memoria de App Service), **aplicación** (logs del backend y códigos de respuesta HTTP) y **entrega** (estado de los pipelines de GitHub Actions y Vercel).
 
 ### 7.4.3. Alerting Pipeline Components
 
+El sistema de alertas se construye sobre **Azure Monitor alert rules** definidas sobre las mismas métricas de plataforma del App Service, complementadas por las notificaciones de fallo de **GitHub Actions** en el pipeline de despliegue. Cada alerta evalúa una condición sobre una ventana temporal y, al dispararse, enruta a un canal mediante un *Action Group*. La severidad sigue una escala de tres niveles (Crítica / Alta / Media) según el impacto en la disponibilidad del backend que consumen las tres aplicaciones cliente.
+
 | Alerta | Condición | Canal | Severidad |
 |--------|-----------|-------|-----------|
-|        |           |       |           |
+| Backend no disponible | El App Service `paxtech` deja de responder o devuelve HTTP 5xx de forma sostenida (métrica *Http Server Errors* > 0 durante 5 min) | Correo (Action Group de Azure Monitor) | Crítica |
+| Latencia elevada | Tiempo de respuesta promedio > 2 s en una ventana de 5 min | Correo (Action Group) | Alta |
+| Saturación de CPU | Uso de CPU del App Service Plan > 80 % sostenido durante 5 min | Correo (Action Group) | Media |
+| Presión de memoria | *Memory working set* > 85 % de la capacidad del plan | Correo (Action Group) | Media |
+| Errores de cliente elevados | Conteo de respuestas HTTP 4xx por encima del umbral esperado en 5 min (posible regresión de contrato de API) | Correo (Action Group) | Media |
+| Fallo del pipeline de despliegue | Cualquier job (`test`, `build`, `deploy`) del workflow `main_paxtech.yml` falla en un `push` a `main` | Notificación de GitHub + correo al autor | Alta |
+
+Las tres primeras alertas protegen la **disponibilidad y el rendimiento** del backend en producción; la de errores 4xx vigila la **salud de los contratos de API** consumidos por los clientes; y la de pipeline garantiza que ningún despliegue fallido pase desapercibido, cerrando el lazo entre el Continuous Deployment (7.3) y el monitoreo.
 
 ### 7.4.4. Notification Pipeline Components
 
-[Contenido pendiente — integración con Slack / correo / PagerDuty.]
+Las notificaciones son el último eslabón del pipeline de monitoreo: traducen las alertas y los eventos de plataforma en mensajes accionables para el equipo. uTime utiliza un esquema de notificación basado en correo y en las integraciones nativas de las plataformas que ya emplea, sin un sistema de on-call dedicado (PagerDuty) ni un bus de chatops (Slack), coherente con el tamaño del equipo y la fase del producto.
+
+| Canal | Origen del evento | Destinatario | Propósito |
+|---|---|---|---|
+| Action Group de Azure Monitor (correo) | Alertas de Azure Monitor sobre el App Service (7.4.3) | Correo del equipo | Canal principal para incidentes de disponibilidad, latencia y recursos en producción |
+| GitHub Actions (correo + checks en el PR) | Runs fallidos de los workflows de CI/CD | Autor del commit y maintainers del repositorio | Avisa de fallos de build, test o deploy directamente en el flujo de trabajo |
+| Vercel (notificaciones de despliegue) | Resultado de los despliegues del frontend | Equipo de frontend | Informa el estado de los despliegues de preview y producción de la app Angular |
+| Firebase App Distribution | Publicación de una nueva build de la app Android | Testers registrados | Notifica a los testers cuando hay una versión disponible para validar |
+
+**Estado actual y trabajo futuro.** El tejido de notificación se apoya hoy en **correo electrónico** (vía Azure Monitor Action Groups) y en las **notificaciones integradas de GitHub, Vercel y Firebase**. No existe aún integración con Slack ni PagerDuty; de requerirse mayor inmediatez, un Action Group de Azure Monitor puede ampliarse con un webhook hacia Slack, o agregarse un step de notificación a Slack en el workflow de GitHub Actions, sin alterar el resto del pipeline de monitoreo.
 
 <div class="page"></div>
 
@@ -6488,8 +6730,6 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 <div class="page"></div>
 
 # Anexos
-
-## AV1
 
 **Repositorios**
 
