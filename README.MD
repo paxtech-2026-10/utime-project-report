@@ -5518,45 +5518,45 @@ El flujo de ramas sigue **GitFlow** con ramas `main`, `develop`, `feature/*`, `f
 
 #### 6.2.1.2. Code Quality & Code Security
 
-El aseguramiento de la calidad y la seguridad del código en uTime se lleva a cabo mediante herramientas de análisis integradas en el pipeline de integración continua y en las herramientas de desarrollo.
+El aseguramiento de la calidad y la seguridad del código en uTime se evalúa de forma cuantitativa mediante **SonarCloud (SonarQube Cloud)**, integrado con la organización de GitHub `paxtech-2026-10`. SonarCloud analiza automáticamente cada repositorio del producto y reporta métricas de **fiabilidad (bugs), seguridad (vulnerabilidades), revisión de seguridad (security hotspots), mantenibilidad (code smells) y duplicación de código**, además de una calificación A–E por dimensión.
 
-**Análisis de calidad en el backend — CI con Maven**
+**Herramienta:** SonarCloud — Organización `paxtech-2026-10` ([sonarcloud.io](https://sonarcloud.io/organizations/paxtech-2026-10/projects)). El análisis se ejecuta en modo *Automatic Analysis* sobre la rama principal de cada repositorio, sin necesidad de instrumentación manual.
 
-El repositorio `paxtech-2026-10/Web-Services` cuenta con el workflow `java-ci.yml` en GitHub Actions, que se ejecuta en cada `push` y en cada Pull Request contra cualquier rama. El job `test` ejecuta:
+**Resultados consolidados del análisis estático**
 
-```bash
-mvn clean test
-```
+| Repositorio | Líneas | Bugs (Reliability) | Vulnerab. (Security) | Security Review | Code Smells (Maintainability) | Duplicación |
+|-------------|-------:|:---:|:---:|:---:|:---:|:---:|
+| `Web-Services` (Java / Spring Boot) | 7 368 | 2 — **C** | 0 — **A** | **A** | 134 — **A** | 3.6 % |
+| `Frontend-Web-Application` (Angular / TS) | 21 213 | 30 — **C** | 14 — **C** | **E** | 254 — **A** | 0.3 % |
+| `Mobile-App` (Kotlin) | 15 417 | 1 — **C** | 0 — **A** | **E** | 58 — **A** | 7.1 % |
 
-Este comando realiza compilación completa con el compilador de Java 17, lo que detecta en tiempo de compilación errores de tipo, imports no utilizados, clases no encontradas y llamadas a métodos inexistentes. Si algún test unitario falla, el pipeline bloquea el merge del PR.
+**Hallazgos de seguridad (Code Security)**
 
-**Validación en tiempo de compilación — TypeScript**
+El análisis identificó vulnerabilidades y *security hotspots* concretos que se incorporan al backlog técnico como deuda a subsanar:
 
-En el frontend, el script `ng build` (ejecutado en el CI del workflow `frontend-ci.yml`) compila el proyecto Angular con `--configuration production`. La salida del compilador TypeScript actúa como análisis estático: cualquier violación de las flags estrictas detiene el build y bloquea el despliegue a Vercel.
+- **Frontend Web — 14 vulnerabilidades:** 10 corresponden a **credenciales potencialmente hard-codeadas** (cadenas tipo `password` embebidas en el código que deben moverse a variables de entorno) y 4 a la **ausencia de Subresource Integrity (SRI)** en recursos externos cargados por `<script>`/`<link>`.
+- **Frontend Web — 14 security hotspots:** 6 de **criptografía débil** (`weak-cryptography`), 2 de **denegación de servicio** (`dos`) y 6 de otras categorías, pendientes de revisión manual.
+- **Backend Java — 2 bugs de fiabilidad:** un posible *overflow* por no castear a `long` un operando de una multiplicación, y un método con retorno `Optional` que puede devolver `null`.
 
-**Seguridad en la API REST**
+**Mitigaciones de seguridad ya presentes en el código**
 
-La capa de seguridad a nivel de código se aplica mediante:
+Frente a las vulnerabilidades clásicas que exige revisar el estándar, el stack del producto ya incorpora defensas a nivel de framework:
 
-- **Spring Boot Validation (`javax.validation`):** anotaciones `@NotNull`, `@NotBlank`, `@Size`, `@Min`/`@Max` en los DTOs de entrada, que rechazan payloads malformados antes de que lleguen a la capa de servicio
-- **Google OAuth 2.0 (2FA):** autenticación delegada a Google como proveedor de identidad, sin almacenamiento de contraseñas en el sistema
-- **Spring Security:** control de acceso a endpoints mediante roles definidos por bounded context; rutas públicas explícitamente declaradas con `.permitAll()`
-- **springdoc-openapi 2.8.8:** documenta y expone cada endpoint con sus tipos de entrada y salida en Swagger UI, facilitando la inspección de la superficie de ataque de la API
+- **Inyección SQL (SQLi):** mitigada por defecto — la persistencia usa **JPA/Hibernate con consultas parametrizadas** (*prepared statements*), evitando la concatenación directa de entradas del usuario en SQL.
+- **Cross-Site Scripting (XSS):** mitigado por defecto — **Angular sanitiza y escapa automáticamente** la interpolación en plantillas (`{{ }}`) y bloquea HTML no confiable salvo uso explícito de `DomSanitizer`.
+- **Manejo de datos sensibles:** la autenticación se delega a **Google OAuth 2.0**, por lo que no se almacenan contraseñas; el backend valida toda entrada con **Spring Boot Validation** (`@NotNull`, `@NotBlank`, `@Size`) y controla el acceso por roles con **Spring Security**.
 
-**Integridad de dependencias**
+**Quality Gate y decisión**
 
-- El frontend usa `pnpm install --frozen-lockfile` en CI, que garantiza que ningún colaborador pueda introducir versiones de dependencias no auditadas fuera del `pnpm-lock.yaml`
-- El backend usa `~/.m2` cacheado por `actions/cache@v4` con clave basada en el hash del `pom.xml`, lo que asegura reproducibilidad del build
+El backend alcanza calificación **A** en Seguridad, Security Review y Mantenibilidad, mientras que el frontend concentra la deuda crítica (Security **C**, Security Review **E**), priorizándose la corrección de las credenciales hard-codeadas y la criptografía débil. La integridad de dependencias se refuerza con `pnpm install --frozen-lockfile` (frontend) y cache de `~/.m2` por hash del `pom.xml` (backend), garantizando builds reproducibles.
 
-| Capa | Herramienta de calidad/seguridad | Activación |
-|------|----------------------------------|------------|
-| Backend Java | Compilador Java 17 (`mvn clean test`) | CI — cada PR |
-| Backend Java | Spring Boot Validation (anotaciones `@Valid`) | Runtime — cada request |
-| Backend Java | Spring Security + Google OAuth 2.0 | Runtime — cada request autenticado |
-| Frontend Angular | TypeScript strict mode + `ng build` | CI — cada push a `develop` |
-| Frontend Angular | `pnpm --frozen-lockfile` | CI — instalación de dependencias |
-| Mobile Kotlin | Compilador Kotlin 2.2 + AGP | Build local — cada compilación |
-| Mobile Flutter | `flutter analyze` + `flutter_lints` | Build local — cada compilación |
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Dashboard de SonarCloud con las métricas de calidad y seguridad por repositorio.
+
+<img src="./assets/testing/static-analysis/sonar-report.png" alt="Sonar Report" width="800">
+
+</div>
 
 ### 6.2.2. Reviews
 
