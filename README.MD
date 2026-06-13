@@ -5552,9 +5552,17 @@ El backend alcanza calificación **A** en Seguridad, Security Review y Mantenibi
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Dashboard de SonarCloud con las métricas de calidad y seguridad por repositorio.
+Dashboard de SonarCloud (organización `paxtech-2026-10`): métricas de seguridad, fiabilidad, mantenibilidad y duplicación por repositorio.
 
-<img src="./assets/testing/static-analysis/sonar-report.png" alt="Sonar Report" width="800">
+<img src="./assets/testing/static-analysis/sonar-report.png" alt="SonarCloud — Vista de proyectos de la organización" width="800">
+
+</div>
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Detalle del análisis de seguridad del `Frontend-Web-Application`: Security Rating C, 14 issues de seguridad y su desglose por severidad.
+
+<img src="./assets/testing/static-analysis/sonar-frontend-security.png" alt="SonarCloud — Security snapshot del frontend" width="800">
 
 </div>
 
