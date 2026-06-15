@@ -6197,13 +6197,39 @@ Los componentes que conforman el pipeline de monitoreo son:
 | Componente | Herramienta | Señal que recolecta | Punto de acceso |
 |---|---|---|---|
 | Health-check programado | GitHub Actions (`monitoring.yml`, cron 15 min) + `curl` | Disponibilidad del backend en producción (código HTTP del endpoint público); falla si el backend no responde | Pestaña *Actions* → workflow *Continuous Monitoring* del repo `Web-Services` |
-| Estado de despliegue backend | GitHub Actions (`main_paxtech.yml`) | Resultado de los jobs `test`, `build`, `deploy` y `notify` en cada run | Pestaña *Actions* del repositorio `Web-Services` |
+| Estado de despliegue backend | GitHub Actions (`main_paxtech.yml`) | Resultado de los jobs `build`, `deploy` y `notify` en cada run | Pestaña *Actions* del repositorio `Web-Services` |
 | Logging de aplicación | SLF4J + Logback (Spring Boot) | Eventos `INFO`/`WARN`/`ERROR`, persistidos en `/home/LogFiles/Application/app.log` (`logging.file.name`, `logging.level.root=INFO`) | Azure App Service → Log Stream / archivo persistente |
 | Log Stream y métricas | Azure App Service | `stdout`/`stderr` en tiempo real; CPU, memoria (working set), requests HTTP y códigos 4xx/5xx | Portal Azure → `paxtech` → Log stream / Metrics |
 | Estado de despliegue frontend | Vercel | Estado de build y despliegues de preview/producción de la app Angular | Dashboard de Vercel |
 | Analítica de uso móvil | Firebase Analytics | Eventos de comportamiento de usuario en la app Android | Consola de Firebase |
 
 En conjunto, estos componentes cubren tres planos de observabilidad: **entrega** (estado de los pipelines y del health-check en GitHub Actions), **aplicación** (logs del backend y códigos de respuesta HTTP) e **infraestructura** (métricas de CPU/memoria del App Service).
+
+Como evidencia del componente de **estado de despliegue backend**, la siguiente figura muestra un run real del pipeline en GitHub Actions, donde se observan de forma encadenada los tres componentes del flujo —`build`, `deploy` y `Notify pipeline result`— todos finalizados en éxito (estado *Success*). Esta vista es la que permite "ver los componentes" del pipeline directamente en la plataforma, sin necesidad de una herramienta externa.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Vista del run del workflow `main_paxtech.yml`: los componentes `build → deploy → Notify pipeline result` ejecutados y en verde.
+
+<img src="./assets/devops/monitoring/pipeline-flow-success.png" alt="Flujo del pipeline build-deploy-notify en verde" width="800">
+
+</div>
+
+El detalle interno de cada job confirma las señales que recolecta el monitoreo de entrega: el job `build` compila y empaqueta el artefacto, y el job `deploy` lo publica en el Azure App Service.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Detalle del job `build` (compilación y empaquetado con Maven) finalizado correctamente.
+
+<img src="./assets/devops/monitoring/pipeline-build-job.png" alt="Detalle del job build" width="800">
+
+Detalle del job `deploy` (login a Azure y publicación en el App Service `paxtech`) finalizado correctamente.
+
+<img src="./assets/devops/monitoring/pipeline-deploy-job.png" alt="Detalle del job deploy" width="800">
+
+</div>
+
+Por su parte, el workflow dedicado de health-check (`monitoring.yml`) se ejecuta de forma programada y bajo demanda, sondeando la disponibilidad del backend en producción.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
@@ -6222,10 +6248,12 @@ El sistema de alertas está **implementado con GitHub Actions** y se dispara aut
 | Alerta | Disparador (implementado) | Canal | Severidad |
 |--------|---------------------------|-------|-----------|
 | Backend no disponible | El job `health-check` de `monitoring.yml` no obtiene respuesta del endpoint público (*timeout* o error HTTP 5xx) → se ejecuta el job `alert` | Correo (Gmail SMTP) | Crítica |
-| Fallo del pipeline de despliegue | Cualquier job (`test`, `build`, `deploy`) de `main_paxtech.yml` falla en un `push` a `main` → el job `notify` envía correo de alerta | Correo (Gmail SMTP) + checks en GitHub | Alta |
+| Fallo del pipeline de despliegue | Cualquier job (`build`, `deploy`) de `main_paxtech.yml` falla en un `push` a `main` → el job `notify` envía correo de alerta | Correo (Gmail SMTP) + checks en GitHub | Alta |
 | Saturación de recursos / latencia (complementaria) | Métricas del App Service: CPU > 80 %, *memory working set* alto o tiempo de respuesta elevado | Azure Monitor → correo (opcional) | Media |
 
 Las dos primeras alertas están **activas en el repositorio** y constituyen el núcleo demostrable del capítulo: garantizan que ni una caída del backend ni un despliegue fallido pasen desapercibidos, cerrando el lazo entre el Continuous Deployment (7.3) y el monitoreo. La tercera queda como refuerzo opcional sobre las métricas que Azure ya expone sin instrumentación.
+
+El propio job `notify` del pipeline materializa la lógica de alerta: contiene un step *Send FAILURE alert email* que solo se ejecuta cuando algún job termina en `failure`, condición que puede observarse en la figura del componente de notificación (sección 7.4.4). La siguiente captura corresponde a la prueba específica de caída del backend, donde el health-check falla y dispara el job `alert`.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
@@ -6252,13 +6280,35 @@ Para enviar correos, el repositorio configura los secrets `MAIL_USERNAME`, `MAIL
 
 **Estado actual y trabajo futuro.** El tejido de notificación está **implementado y es demostrable**: los correos se envían desde GitHub Actions a través de Gmail SMTP tanto ante caídas del backend como ante el resultado del pipeline de despliegue. No existe aún integración con Slack ni PagerDuty; de requerirse mayor inmediatez, basta con añadir un step de notificación a Slack en los mismos workflows o ampliar un Action Group de Azure Monitor con un webhook, sin alterar el resto del pipeline de monitoreo.
 
+El mecanismo de envío vive dentro del job `notify`: la siguiente figura muestra sus dos steps condicionales —*Send FAILURE alert email* (que se omite cuando todo sale bien) y *Send SUCCESS notification email* (que se ejecuta en un despliegue exitoso)— evidenciando la distinción entre alerta y notificación dentro del mismo componente.
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Correos recibidos en Gmail: notificación `[OK]` de despliegue exitoso y alerta `[ALERTA - CRITICA]` de caída del backend.
+Job `notify` en GitHub Actions: el step de notificación de éxito se ejecuta y el de alerta de fallo queda omitido (*skipped*), según el resultado del pipeline.
 
-[Implementar captura de: bandeja de **Gmail** mostrando un correo `[OK]` de despliegue exitoso y un correo `[ALERTA - CRITICA]` de backend caído enviados por el pipeline]
+<img src="./assets/devops/monitoring/notify-job-steps.png" alt="Steps de envío de correo del job notify" width="800">
 
-<!-- <img src="./assets/devops/monitoring/monitoring-emails.png" alt="Correos de notificación y alerta" width="800"> -->
+</div>
+
+El resultado final es el correo entregado al equipo. La siguiente captura muestra la notificación `[OK]` de despliegue exitoso recibida en Gmail, enviada automáticamente por el pipeline desde la cuenta configurada en `MAIL_USERNAME`.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Correo `[OK] Despliegue exitoso a produccion - Web-Services` recibido en Gmail, con el detalle del resultado de los jobs, el commit y el enlace al run.
+
+<img src="./assets/devops/monitoring/email-ok-received.png" alt="Correo de notificación OK recibido en Gmail" width="800">
+
+</div>
+
+De forma análoga, ante una caída del backend o un fallo del pipeline, el equipo recibe un correo de alerta `[ALERTA - CRITICA]` / `[ALERTA]`.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Correo de alerta `[ALERTA - CRITICA]` recibido en Gmail cuando el monitoreo detecta que el backend no responde.
+
+[Implementar captura de: correo **`[ALERTA - CRITICA]`** recibido en Gmail (se obtiene tras la prueba de caída del backend descrita en 7.4.3)]
+
+<!-- <img src="./assets/devops/monitoring/email-alert-received.png" alt="Correo de alerta recibido en Gmail" width="800"> -->
 
 </div>
 
