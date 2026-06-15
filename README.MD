@@ -6315,11 +6315,11 @@ El backlog se organiza como una lista priorizada de preguntas de investigación.
 | Pregunta | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? |
 | Razón | Consideramos que es necesario dado que la mayor parte de los problemas o mal entendidos en cuanto a la realización de servicios en los salones de belleza se da precisamente debido a la falta de visibilidad y coordinación. Así, la implementación de una herreminta digital de gestión probablemente ayudaría a los salones a darse a conocer y a organizar mejor las citas agendadas y las necesidades de cada una, mas esta idea debe ser validada. |
 | Hipótesis | Creemos que, al probar un flujo básico de agenda digital en uTime, al menos el 60% de los salones de belleza y barberías manifestará disposición a usarla para gestionar reservas. |
-| Simplest Useful Thing | La funciondalidad mínima y usable más sencilla a implementar sería, por el lado del usuario, la selección del salón o barbería, estilista deseado, servicio y hora del mismo de acuerdo a disponibilidad. Con esta información, se gurdaría su reserva, miemntras que, al confirmar los datos, esta misma se vería reflejada en el calendario del salón seleccionado. |
+| Simplest Useful Thing | La funciondalidad mínima y usable más sencilla a implementar sería, por el lado del usuario, la selección del salón o barbería, estilista deseado, servicio y hora del mismo de acuerdo a disponibilidad. Con esta información, se gurdaría su reserva, mientras que, al confirmar los datos, esta misma se vería reflejada en el calendario del salón seleccionado. |
 | Lado posterior |
 | Medidas | Analizar las puntuaciones en una encuesta de satisfacción dirigida hacia los salones y barberías antes y después de la implementación del flujo de reservaciones y calendario en las aplicaciones durante un periodo de 30 días. |
 | Condiciones | Experimental --> Los salones de belleza, barberías y sus clientes empiezan a usar uTime para la gestión de sus reservas - Control --> Las reservas se siguen registrando mediantes llamadas y aplicaciones de mensajería |
-| Escala | Implementar y mantener el flujo de reservas dentro de la aplicación si más de la mitad de los salones de belleza y barbería manifiestan una lat satisfacción en cuanto al uso de esta funcionalidad. |  
+| Escala | Implementar y mantener el flujo de reservas dentro de la aplicación si más de la mitad de los salones de belleza y barbería manifiestan una alta satisfacción en cuanto al uso de esta funcionalidad. |  
 
 | Campo | Detalle |
 |-------|---------|
