@@ -6233,11 +6233,9 @@ Por su parte, el workflow dedicado de health-check (`monitoring.yml`) se ejecuta
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Workflow *Continuous Monitoring* ejecutándose en la pestaña *Actions* del repositorio `Web-Services`, con el job `health-check` en verde (backend disponible).
+Workflow *Continuous Monitoring* ejecutándose en la pestaña *Actions* del repositorio `Web-Services`, con el job `Health check (monitoring)` en verde (backend disponible) y el job `Alert and notify (down)` omitido.
 
-[Implementar captura de: pestaña **Actions → workflow "Continuous Monitoring"** mostrando un run exitoso con el job `health-check` en verde]
-
-<!-- <img src="./assets/devops/monitoring/monitoring-healthcheck-ok.png" alt="Health-check OK" width="800"> -->
+<img src="./assets/devops/monitoring/monitoring-healthcheck-ok.png" alt="Health-check OK" width="800">
 
 </div>
 
@@ -6257,11 +6255,9 @@ El propio job `notify` del pipeline materializa la lógica de alerta: contiene u
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Run del workflow *Continuous Monitoring* en estado fallido (backend no disponible) que dispara el job `alert`.
+Run del workflow *Continuous Monitoring* en estado *Failure*: el job `Health check (monitoring)` falla con el mensaje "Backend NO responde (HTTP 000)" y dispara el job `Alert and notify (down)`, que se ejecuta correctamente.
 
-[Implementar captura de: run de **"Continuous Monitoring" en rojo** con el job `health-check` fallido y el job `alert` ejecutado]
-
-<!-- <img src="./assets/devops/monitoring/monitoring-alert-down.png" alt="Alerta backend caído" width="800"> -->
+<img src="./assets/devops/monitoring/monitoring-alert-down.png" alt="Alerta backend caído" width="800">
 
 </div>
 
@@ -6304,11 +6300,9 @@ De forma análoga, ante una caída del backend o un fallo del pipeline, el equip
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Correo de alerta `[ALERTA - CRITICA]` recibido en Gmail cuando el monitoreo detecta que el backend no responde.
+Correo de alerta `[ALERTA - CRITICA] El backend uTime no responde` recibido en Gmail, con el código HTTP recibido (000), la URL monitoreada, la severidad y el enlace al run.
 
-[Implementar captura de: correo **`[ALERTA - CRITICA]`** recibido en Gmail (se obtiene tras la prueba de caída del backend descrita en 7.4.3)]
-
-<!-- <img src="./assets/devops/monitoring/email-alert-received.png" alt="Correo de alerta recibido en Gmail" width="800"> -->
+<img src="./assets/devops/monitoring/email-alert-received.png" alt="Correo de alerta recibido en Gmail" width="800">
 
 </div>
 
