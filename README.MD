@@ -368,10 +368,41 @@ Actividad de commits en el tiempo para el TB1.
       - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
       - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
       - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+        - [SITE o APP A EVALUAR](#site-o-app-a-evaluar)
+        - [TAREAS A EVALUAR](#tareas-a-evaluar)
+        - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas)
+        - [ESCALA DE SEVERIDAD](#escala-de-severidad)
+        - [TABLA RESUMEN](#tabla-resumen)
+        - [DESCRIPCIÓN DE PROBLEMAS](#descripción-de-problemas)
+          - [PROBLEMA #1: Falta de contexto en la asignación de técnicos y maquinaria](#problema-1-falta-de-contexto-en-la-asignación-de-técnicos-y-maquinaria)
+          - [PROBLEMA #2: Ausencia de mecanismos visibles para agilizar tareas repetitivas](#problema-2-ausencia-de-mecanismos-visibles-para-agilizar-tareas-repetitivas)
+          - [PROBLEMA #3: Navegación basada únicamente en iconos](#problema-3-navegación-basada-únicamente-en-iconos)
+          - [PROBLEMA #4: Tarjetas con métricas sin facilidad de identificación](#problema-4-tarjetas-con-métricas-sin-facilidad-de-identificación)
+          - [PROBLEMA #5: Bajo contraste visual que afecta la legibilidad](#problema-5-bajo-contraste-visual-que-afecta-la-legibilidad)
+          - [PROBLEMA #6: Inconsistencia en la jerarquía y ubicación de acciones principales](#problema-6-inconsistencia-en-la-jerarquía-y-ubicación-de-acciones-principales)
+        - [OBSERVACIONES GENERALES](#observaciones-generales)
     - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
       - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
       - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
       - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+- [SITE o APP A EVALUAR](#site-o-app-a-evaluar-1)
+        - [TAREAS A EVALUAR](#tareas-a-evaluar-1)
+        - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas-1)
+        - [ESCALA DE SEVERIDAD](#escala-de-severidad-1)
+        - [TABLA RESUMEN](#tabla-resumen-1)
+        - [DESCRIPCIÓN DE PROBLEMAS](#descripción-de-problemas-1)
+          - [PROBLEMA #1: Uso contraintuitivo del color verde para horarios bloqueados](#problema-1-uso-contraintuitivo-del-color-verde-para-horarios-bloqueados)
+          - [PROBLEMA #2: Errores críticos de mapeo de datos e inconsistencia de moneda](#problema-2-errores-críticos-de-mapeo-de-datos-e-inconsistencia-de-moneda)
+          - [PROBLEMA #3: Inconsistencia de idioma en flujos principales](#problema-3-inconsistencia-de-idioma-en-flujos-principales)
+          - [PROBLEMA #4: Acción destructiva instantánea y confusión visual por color primario](#problema-4-acción-destructiva-instantánea-y-confusión-visual-por-color-primario)
+          - [PROBLEMA #5: Falta de affordance en la solicitud de permisos de ubicación](#problema-5-falta-de-affordance-en-la-solicitud-de-permisos-de-ubicación)
+          - [PROBLEMA #6: Confirmación de reserva mediante alerta nativa del navegador](#problema-6-confirmación-de-reserva-mediante-alerta-nativa-del-navegador)
+          - [PROBLEMA #7: Errores de mapeo de datos y exposición de valores del sistema](#problema-7-errores-de-mapeo-de-datos-y-exposición-de-valores-del-sistema)
+          - [PROBLEMA #8: Inconsistencia de idioma (Spanglish) en componentes principales](#problema-8-inconsistencia-de-idioma-spanglish-en-componentes-principales)
+          - [PROBLEMA #9: Falta de visibilidad del estado en los planes de suscripción](#problema-9-falta-de-visibilidad-del-estado-en-los-planes-de-suscripción)
+          - [PROBLEMA #10: Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN)](#problema-10-exposición-de-jerga-del-sistema-por-ausencia-de-un-estado-vacío-nan)
+        - [CONCLUSIONES](#conclusiones)
+        - [OBSERVACIONES GENERALES](#observaciones-generales-1)
       - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
 - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
   - [7.1. Continuous Integration](#71-continuous-integration)
@@ -425,9 +456,9 @@ Actividad de commits en el tiempo para el TB1.
     - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
   - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
     - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
-- [Conclusiones](#conclusiones)
+- [Conclusiones](#conclusiones-1)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Conclusiones](#conclusiones-1)
+    - [Conclusiones](#conclusiones-2)
     - [Recomendaciones](#recomendaciones)
 - [Video App Validation](#video-app-validation)
 - [Video About-the-Team](#video-about-the-team)
@@ -5549,64 +5580,607 @@ Reporte de calidad y seguridad.
 
 #### 6.4.1.1. Información del grupo auditado
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre del grupo / Startup | [Grupo auditado] |
-| Producto | [Producto auditado] |
-| Integrantes | [Lista] |
-| Repositorio | [URL] |
+| Campo | Valor |
+|---------|---------|
+| CARRERA | Ingeniería de Software |
+| CURSO | Diseño de Experimentos de Ingeniería de Software |
+| NRC | 10253 |
+| PROFESORES | Juan Carlos Tinoco Licas |
+| AUDITOR | Paxtech |
+| CLIENTE(S) | awawaTech |
 
 #### 6.4.1.2. Cronograma de auditoría realizada
 
-| Fecha | Actividad | Responsable | Observaciones |
-|-------|-----------|-------------|---------------|
-|       |           |             |               |
+| Fecha | Actividad | Responsable | Duración Estimada |
+| :---- | :---- | :---- | :---- |
+| 03/06/2026 | Recepción de Contendio para Auditoría | Gabriel Sanchez | 10 minutos |
+| 03/06/2026 | Definición de alcance  y tareas a evaluar  | Gabriel Sanchez | 1 hora |
+| 04/06/2026 | Realización de Auditoría Mobile | Gabriel Sanchez | 1 hora |
+| 04/06/2026 | Realización de Auditoría Web | Gabriel Sanchez | 1 hora |
+| 04/06/2026 | Clasificación de problemas encontrados | Gabriel Sanchez | 30 minutos |
+| 04/06/2026 | Redacción de Conclusiones y Mejoras | Gabriel Sanchez | 1 hora |
+| 05/06/2026 | Envío de Auditoría a Grupo Auditado | Gabriel Sanchez | 10 minutos |
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
-[Contenido pendiente — hallazgos, evidencias, recomendaciones.]
+##### SITE o APP A EVALUAR
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Nombre de la aplicación:** Mecanaut
 
-Evidencias de la auditoría realizada.
+---
 
-<img src="./assets/audit/performed/audit-performed.png" alt="Auditoría realizada" width="800">
+##### TAREAS A EVALUAR
 
-</div>
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Asignar técnicos a órdenes de trabajo.
+2. Gestionar activos y maquinarias.
+3. Navegar entre los módulos del sistema mediante el menú lateral.
+4. Crear nuevas órdenes de trabajo mediante formularios modales.
+5. Consultar información y detalles de órdenes de trabajo.
+
+##### No están incluidas en esta evaluación las siguientes tareas:
+
+1. Consulta del dashboard principal.
+2. Ejecución completa de órdenes de trabajo.
+3. Finalización de tareas de mantenimiento.
+4. Creación completa de planes de mantenimiento.
+5. Registro detallado de planes de mantenimiento.
+6. Registro y gestión completa de maquinarias y activos.
+7. Gestión de usuarios y permisos.
+8. Configuración general del sistema.
+9. Reportes y análisis.
+10. Notificaciones del sistema.
+11. Integraciones externas.
+12. Cualquier funcionalidad no representada visualmente en las pantallas evaluadas.
+---
+
+##### ESCALA DE SEVERIDAD
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|---------|---------|
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| **2** | Problema menor: puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+##### TABLA RESUMEN
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---:|---|
+| 1 | Falta de contexto en la asignación de técnicos y maquinaria | 3 | Reconocimiento antes que recuerdo |
+| 2 | Ausencia de mecanismos visibles para agilizar tareas repetitivas | 2 | Flexibilidad y eficiencia de uso |
+| 3 | Navegación basada únicamente en iconos | 4 | Reconocimiento antes que recuerdo |
+| 4 | Distribución ineficiente del espacio visual y baja densidad informativa | 2 | Diseño estético y minimalista |
+| 5 | Bajo contraste visual que afecta la legibilidad | 3 | Diseño estético y minimalista |
+| 6 | Inconsistencia en la jerarquía y ubicación de acciones principales | 3 | Consistencia y estándares |
+
+---
+
+##### DESCRIPCIÓN DE PROBLEMAS
+
+---
+
+###### PROBLEMA #1: Falta de contexto en la asignación de técnicos y maquinaria
+
+**Severidad:** 3
+
+**Heurística violada:** Reconocimiento antes que recuerdo
+
+**Problema**
+
+Durante el proceso de asignación de técnicos a una orden de trabajo, el sistema presenta listas desplegables con identificadores de maquinaria (por ejemplo, MT-430, MT-450) sin información contextual adicional que permita diferenciarlas rápidamente. El usuario debe recordar previamente características relevantes de cada máquina, como su ubicación, estado o prioridad, para realizar la asignación correcta.
+
+Este diseño incrementa la carga cognitiva y aumenta la probabilidad de errores, especialmente cuando existen múltiples máquinas con nomenclaturas similares. La situación resulta más crítica para usuarios nuevos o para quienes gestionan un gran volumen de activos diariamente.
+
+![](assets/auditoria/web/userflow-registrar-maquinaria.png)
+
+**Recomendación**
+
+Complementar los identificadores de maquinaria con información descriptiva relevante, como ubicación, estado operativo, prioridad o nombre del activo. También se recomienda incorporar búsquedas inteligentes o vistas resumidas que permitan al usuario reconocer rápidamente la opción adecuada sin depender de la memoria.
+
+---
+
+###### PROBLEMA #2: Ausencia de mecanismos visibles para agilizar tareas repetitivas
+
+**Severidad:** 2
+
+**Heurística violada:** Flexibilidad y eficiencia de uso
+
+**Problema**
+
+Los flujos observados para registrar maquinaria, crear planes de mantenimiento y asignar técnicos muestran formularios que requieren ingresar información manualmente campo por campo. En las capturas no se evidencian mecanismos que permitan acelerar tareas frecuentes, como plantillas predefinidas, autocompletado, sugerencias automáticas o reutilización de configuraciones previas.
+
+Aunque este enfoque puede ser suficiente para usuarios ocasionales, los usuarios frecuentes que realizan estas tareas de manera repetitiva podrían invertir más tiempo del necesario en completar procesos administrativos similares.
+
+![](assets/auditoria/web/registrarmaquina.png)
+
+**Recomendación**
+
+Incorporar funcionalidades orientadas a mejorar la eficiencia de usuarios recurrentes, tales como:
+
+- Plantillas reutilizables para planes de mantenimiento.
+- Autocompletado de información frecuente.
+- Valores predeterminados según el tipo de maquinaria.
+- Copia de configuraciones existentes.
+- Atajos o acciones rápidas para tareas repetitivas.
+
+---
+
+###### PROBLEMA #3: Navegación basada únicamente en iconos
+
+**Severidad:** 4
+
+**Heurística violada:** Reconocimiento antes que recuerdo
+
+**Problema**
+
+El menú lateral de navegación está compuesto principalmente por iconos sin etiquetas textuales visibles. Aunque algunos iconos pueden resultar familiares para usuarios experimentados, otros pueden ser ambiguos o difíciles de interpretar sin conocimiento previo del sistema.
+
+La ausencia de texto obliga al usuario a memorizar el significado de cada icono o explorar distintas secciones hasta encontrar la funcionalidad deseada. Este problema afecta especialmente a usuarios nuevos y aumenta la curva de aprendizaje de la aplicación.
+
+
+<img src="assets/auditoria/web/Frame%20254.png" style="height: 500px">
+
+**Recomendación**
+
+Incorporar etiquetas de texto visibles junto a los iconos o mostrar tooltips descriptivos al pasar el cursor. Además, se recomienda resaltar claramente la sección activa para mejorar la orientación durante la navegación.
+
+---
+
+###### PROBLEMA #4: Tarjetas con métricas sin facilidad de identificación
+
+**Severidad:** 2
+
+**Heurística violada:** Visibilidad del estado del sistema
+
+**Problema**
+
+En el dashboard, las tarjetas de métricas "MTBF Promedio" y "MTTR Promedio" no indican a qué período corresponden ni si los valores son favorables o desfavorables. El usuario no sabe si 320h o 4.5h son valores buenos, malos o dentro del rango esperado.
+Las tarjetas muestran únicamente el valor numérico y la etiqueta de la métrica. No hay indicadores visuales (semáforos, flechas de tendencia, rangos objetivo) que contextualicen el dato. Por ende, un supervisor o técnico sin conocimiento profundo de los KPIs no puede interpretar si el estado actual requiere acción inmediata o es satisfactorio, reduciendo la utilidad del dashboard como herramienta de toma de decisiones.
+
+<img src="assets/auditoria/movil/kpi.png" style="height: 500px">
+
+
+
+**Recomendación**
+
+Agregar indicadores de tendencia (↑↓), colores semafóricos (verde/ámbar/rojo) y un rango objetivo visible en cada tarjeta métrica. Por ejemplo: "Meta: > 300h" junto al valor de MTBF. Una tarjeta informativa tambien que ayude a usuarios sin conocimiento extenso a entender las metricas presentadas
+
+---
+
+###### PROBLEMA #5: Bajo contraste visual que afecta la legibilidad
+
+**Severidad:** 3
+
+**Heurística violada:** Diseño estético y minimalista
+
+**Problema**
+
+La interfaz utiliza múltiples elementos visuales con bajo contraste, dificultando la lectura y diferenciación entre componentes interactivos y contenido informativo.
+
+Se observan placeholders muy tenues, etiquetas secundarias en tonos grises claros, botones deshabilitados prácticamente invisibles y textos con poca separación visual respecto al fondo. Esto puede generar dificultades de lectura, especialmente en dispositivos móviles, ambientes con iluminación variable o usuarios con limitaciones visuales.
+
+La reducción de contraste disminuye la accesibilidad y puede incrementar el esfuerzo necesario para completar tareas simples.
+
+<img src="assets/auditoria/movil/Orden%20de%20Compra.png" style="height: 500px">
+<img src="assets/auditoria/movil/Orden%20de%20Trabajo.png" style="height: 500px">
+
+**Recomendación**
+
+Incrementar el contraste entre texto, fondo y componentes interactivos utilizando combinaciones de colores que cumplan estándares de accesibilidad. También se recomienda diferenciar estados deshabilitados mediante cambios adicionales además del color.
+
+
+---
+
+###### PROBLEMA #6: Inconsistencia en la jerarquía y ubicación de acciones principales
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+Las acciones principales y secundarias no mantienen una estructura consistente entre distintas pantallas y modales, generando cambios innecesarios en los patrones de interacción.
+
+Se observa que algunos modales presentan el botón principal en una posición distinta respecto a otros, mientras que ciertas acciones secundarias aparecen arriba, abajo o con diferentes estilos visuales (relleno, borde, color). Esta inconsistencia obliga al usuario a reaprender la ubicación y jerarquía de acciones cada vez que cambia de contexto.
+
+La falta de consistencia aumenta la carga cognitiva y puede incrementar la probabilidad de errores de interacción.
+
+
+<img src="assets/auditoria/movil/Nueva%20Orden%20de%20Trabajo%20(Modal).png" style="height: 500px">
+<img src="assets/auditoria/movil/Nuevo%20Repuesto%20(Modal).png" style="height: 500px">
+
+---
+
+##### OBSERVACIONES GENERALES
+
+- Los problemas identificados afectan principalmente la eficiencia y facilidad de uso para usuarios nuevos.
+- La incorporación de contexto visual y una mejor jerarquización de la información mejoraría significativamente la experiencia de uso.
+- Se recomienda complementar la evaluación heurística con pruebas de usuario para validar el impacto real de estos hallazgos.
+
 
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre del grupo / Startup | [Grupo auditor] |
-| Integrantes | [Lista] |
-| Contacto | [URL / correo] |
+| Campo      | Valor                                            |
+| ---------- | ------------------------------------------------ |
+| CARRERA    | Ingeniería de Software                           |
+| CURSO      | Diseño de Experimentos de Ingeniería de Software |
+| NRC        | 10253                                            |
+| PROFESORES | Juan Carlos Tinoco Licas                         |
+| AUDITOR    | awawaTech                                        |
+| CLIENTE(S) | Paxtech                                          |
 
 #### 6.4.2.2. Cronograma de auditoría recibida
 
-| Fecha | Actividad | Responsable | Observaciones |
-|-------|-----------|-------------|---------------|
-|       |           |             |               |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left; width: 45%;">Actividad</th>
+      <th style="text-align: left; width: 15%;">Fecha</th>
+      <th style="text-align: left; width: 25%;">Responsable</th>
+      <th style="text-align: left; width: 15%;">Duración estimada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Recepción de accesos y material a evaluar</td>
+      <td>06/06/2026</td>
+      <td>Mauricio Elera, Ariana Agreda</td>
+      <td>10 minutos</td>
+    </tr>
+    <tr>
+      <td>Definición del alcance y selección de tareas principales</td>
+      <td>10/06/2026</td>
+      <td>Mauricio Elera, Ariana Agreda</td>
+      <td>1 hora</td>
+    </tr>
+    <tr>
+      <td>Ejecución de auditoría heurística (Entorno Web)</td>
+      <td>11/06/2026</td>
+      <td>Mauricio Elera</td>
+      <td>2 horas</td>
+    </tr>
+    <tr>
+      <td>Ejecución de auditoría heurística (Entorno Móvil)</td>
+      <td>11/06/2026</td>
+      <td>Ariana Agreda</td>
+      <td>2 horas</td>
+    </tr>
+    <tr>
+      <td>Evaluación de severidad y clasificación de hallazgos</td>
+      <td>12/06/2026</td>
+      <td>Ariana Agreda, Mauricio Elera</td>
+      <td>1 hora</td>
+    </tr>
+    <tr>
+      <td>Consolidación, redacción de conclusiones y cierre de informe</td>
+      <td>12/06/2026</td>
+      <td>Mauricio Elera, Ariana Agreda</td>
+      <td>1 hora</td>
+    </tr>
+  </tbody>
+</table>
+
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
-[Contenido pendiente — hallazgos reportados por el auditor.]
+# SITE o APP A EVALUAR
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Nombre de la aplicación:** uTime
 
-Evidencias de la auditoría recibida.
+---
 
-<img src="./assets/audit/received/audit-received.png" alt="Auditoría recibida" width="800">
+##### TAREAS A EVALUAR
 
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas principales (abarcando los entornos Móvil y Web):
+
+1. Explorar salones cercanos en la pantalla de inicio y gestionar permisos de ubicación.
+2. Realizar el flujo completo de programación de una cita (selección de profesional, fecha, hora y revisión del resumen de pago).
+3. Consultar el historial de citas programadas y ejecutar acciones sobre ellas (cancelación).
+4. Visualizar y analizar planes de suscripción para proveedores (Web).
+5. Consultar el listado de servicios ofrecidos y sus detalles (Web).
+6. Revisar el panel de calificaciones y reseñas del establecimiento (Web).
+
+##### No están incluidas en esta evaluación las siguientes tareas:
+
+1. Proceso de registro de usuario (Sign Up), inicio de sesión (Login) y recuperación de contraseñas.
+2. Visualizar y editar datos en el perfil de usuario.
+3. Ejecución y procesamiento real de pagos en pasarelas externas (ej. Stripe).
+4. Creación, edición y eliminación de nuevos servicios en el panel de proveedor.
+5. Gestión avanzada y exportación de la base de datos de clientes.
+6. Configuración de métodos de pago y facturación.
+7. Recepción e interacción con notificaciones push o correos electrónicos del sistema.
+8. Flujo de redacción y publicación de una nueva reseña por parte del cliente.
+9. Uso del buscador avanzado y aplicación de filtros para encontrar salones.
+10. Cualquier funcionalidad o configuración interna no representada visualmente en las pantallas proporcionadas.
+
+---
+
+##### ESCALA DE SEVERIDAD
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción                                                                                                                                                                                    |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                   |
+| **2** | Problema menor: puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sean corregidos y se les debe asignar una prioridad alta.                                 |
+| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                              |
+
+---
+
+##### TABLA RESUMEN
+
+| #   | Problema                                                                | Escala de severidad | Heurística/Principio violada(o)                                                |
+| --- | ----------------------------------------------------------------------- | ------------------: | ------------------------------------------------------------------------------ |
+| 1   | Uso contraintuitivo del color verde para horarios bloqueados            |                   3 | Relación entre el sistema y el mundo real / Consistencia y estándares          |
+| 2   | Errores críticos de mapeo de datos e inconsistencia de moneda           |                   4 | Prevención de errores / Consistencia y estándares                              |
+| 3   | Inconsistencia de idioma en flujos principales                          |                   3 | Consistencia y estándares                                                      |
+| 4   | Acción destructiva instantánea y confusión visual por color primario    |                   4 | Prevención de errores / Control y libertad del usuario                         |
+| 5   | Falta de affordance en la solicitud de permisos de ubicación            |                   3 | Consistencia y estándares                                                      |
+| 6   | Confirmación de reserva mediante alerta nativa del navegador            |                   4 | Consistencia y estándares / Diseño estético y minimalista                      |
+| 7   | Errores de mapeo de datos y exposición de valores del sistema           |                   3 | Relación entre el sistema y el mundo real                                      |
+| 8   | Inconsistencia de idioma (Spanglish) en componentes principales         |                   3 | Consistencia y estándares                                                      |
+| 9   | Falta de visibilidad del estado en los planes de suscripción            |                   3 | Visibilidad del estado del sistema / Prevención de errores                     |
+| 10  | Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN) |                   3 | Relación entre el sistema y el mundo real / Visibilidad del estado del sistema |
+
+---
+
+##### DESCRIPCIÓN DE PROBLEMAS
+
+---
+
+###### PROBLEMA #1: Uso contraintuitivo del color verde para horarios bloqueados
+
+**Severidad:** 3
+
+**Heurística violada:** Relación entre el sistema y el mundo real / Consistencia y estándares
+
+**Problema**
+
+En la leyenda y en la cuadrícula de horas, el estado "Booked" (Reservado/Bloqueado) utiliza un color verde claro. Universalmente, el color verde indica "Disponible", "Éxito" o "Avanzar". Esto provoca un choque mental inmediato; los usuarios intentarán presionar los botones verdes asumiendo que están libres, lo que generará frustración al no obtener respuesta del sistema.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile1.png" width="250" alt="Reserva de horarios">
 </div>
+
+**Recomendación**
+
+Alinear los colores con los modelos mentales establecidos. Se recomienda usar gris o un color de baja opacidad para los horarios bloqueados (indicando que están deshabilitados), y dejar el color de fondo normal (blanco o claro) para los horarios disponibles.
+
+---
+
+###### PROBLEMA #2: Errores críticos de mapeo de datos e inconsistencia de moneda
+
+**Severidad:** 4
+
+**Heurística violada:** Prevención de errores / Consistencia y estándares
+
+**Problema**
+
+En la pantalla de resumen de la reserva hemos identificado dos problemas que impactan directamente la experiencia del usuario antes del pago. Primero, el nombre del profesional se muestra bajo una etiqueta incorrecta ("Gender Type: jose"). Segundo, el costo individual del servicio aparece en Soles (S/10.00), mientras que el Subtotal y Total figuran en Dólares ($10.00). Esta inconsistencia en los símbolos de moneda puede generar confusión y provocar que el usuario abandone la reserva por temor a un cobro erróneo.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile2.png" width="250" alt="Resumen de reserva">
+</div>
+
+**Recomendación**
+
+Corregir el mapeo de variables desde el backend para que la etiqueta indique "Profesional" o "Especialista". Unificar y forzar el formato de moneda en toda la aplicación para que todos los montos se muestren en la moneda local correspondiente.
+
+---
+
+###### PROBLEMA #3: Inconsistencia de idioma en flujos principales
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+A lo largo del flujo de reserva y en el historial de citas, la aplicación mezcla constantemente español e inglés. Se observan títulos como "Your Appointment" o "My Appointment Booking" junto a servicios como "Masaje", y botones que alternan entre "Confirmar", "Rebook" o estados como "Completed". Esta falta de consistencia en el idioma puede desorientar al usuario y afectar la percepción de calidad de la plataforma.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile2.png" width="250" alt="Resumen de Reserva">
+   
+  <img src="assets/auditoria/movil/audit-mobile3.png" width="250" alt="Mis Reservas">
+</div>
+
+**Recomendación**
+
+Se recomienda implementar un sistema de internacionalización (i18n). Es importante asegurar que todo el texto estático de la interfaz (títulos, etiquetas, botones, formatos de fecha) se renderice de manera uniforme en un solo idioma, basado en la configuración del dispositivo o la cuenta del usuario.
+
+---
+
+###### PROBLEMA #4: Acción destructiva instantánea y confusión visual por color primario
+
+**Severidad:** 4
+
+**Heurística violada:** Prevención de errores / Control y libertad del usuario
+
+**Problema**
+
+En la pantalla de detalle de cita, la opción "Cancelar cita" se muestra como un texto simple, sin apariencia de botón. El problema se agrava porque utiliza el color morado, que es el color principal de la plataforma destinado a acciones positivas o de avance. Esta presentación visual puede inducir al usuario a error al no identificar claramente el elemento como una acción destructiva. Dado que al presionarlo la cita se elimina de forma inmediata, el riesgo de que el usuario borre una reserva importante por un toque accidental es muy alto.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile4.png" width="250" alt="Detalles de Reserva">
+</div>
+
+**Recomendación**
+
+Recomendamos modificar el diseño visual de "Cancelar cita" para que cuente con un estilo de un botón y utilizar un color que se diferencie del primario (como texto rojo o un estilo de botón secundario) para advertir que es una acción destructiva. Asimismo, es necesario implementar un diálogo de confirmación (Modal) que pregunte "¿Estás seguro de que deseas cancelar tu cita?" antes de procesar la eliminación.
+
+---
+
+###### PROBLEMA #5: Falta de affordance en la solicitud de permisos de ubicación
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+En la pantalla de inicio, el texto "Permitir acceso a ubicación" funciona como un disparador para abrir el modal de permisos del sistema operativo. Sin embargo, visualmente es idéntico a un texto descriptivo o subtítulo. Los usuarios no tienen forma intuitiva de saber que pueden interactuar con él, lo que impide que la función principal de "Salones Cercanos" opere correctamente.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile5.png" width="250" alt="Inicio">
+</div>
+
+**Recomendación**
+
+Transformar el texto estático en un elemento claramente accionable. Se puede utilizar el color principal (morado), añadir un subrayado, usar un ícono de botón nativo o, como mejor práctica, mostrar una tarjeta contextual vacía en la sección de "Salones Cercanos" que invite al usuario a habilitar la ubicación mediante un botón claro.
+
+---
+
+###### PROBLEMA #6: Confirmación de reserva mediante alerta nativa del navegador
+
+**Severidad:** 4
+
+**Heurística violada:** Consistencia y estándares / Diseño estético y minimalista
+
+**Problema**
+
+El problema más crítico de todo el flujo sucede al intentar seleccionar el bloque de tiempo. Exactamente en la pantalla de "Elegir Horario", el sistema utiliza un cuadro de diálogo nativo del sistema/navegador (window.confirm) para solicitar la confirmación de la reserva.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web1.png" width="600" alt="Confirmación con alerta nativa del navegador">
+</div>
+
+**Recomendación**
+
+Se debe reemplazar de inmediato la alerta nativa del navegador por un componente "Modal" (ventana emergente) diseñado a medida (Custom UI). Este modal debe integrarse visualmente con el diseño de la aplicación web, respetando la identidad visual (tipografía, colores de la marca), mostrando de forma clara el resumen de la fecha y hora seleccionada, y utilizando botones propios para "Confirmar" o "Cancelar".
+
+---
+
+###### PROBLEMA #7: Errores de mapeo de datos y exposición de valores del sistema
+
+**Severidad:** 3
+
+**Heurística violada:** Relación entre el sistema y el mundo real
+
+**Problema**
+
+Al revisar las tarjetas de detalle en la sección "Tus Citas", se evidencia que la interfaz está renderizando datos crudos de la base de datos o mapeando variables incorrectas en lugar de mostrar información contextualizada. Específicamente, el título de la cita y el nombre del "Salón" muestran un correo electrónico (julia@gmail.com), mientras que el campo "Cliente" expone un ID numérico (1) en lugar de un nombre.
+
+El sistema debe hablar el lenguaje del usuario, no el del backend. Mostrar identificadores numéricos o correos genéricos en lugar de nombres comerciales o personales genera confusión inmediata, ya que el usuario no puede reconocer a simple vista con quién o en dónde es su cita exactamente.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web2.png" width="600" alt="Errores de mapeo de datos en tarjetas de citas">
+</div>
+
+**Recomendación**
+
+Se sugiere auditar los _endpoints_ del backend que alimentan esta vista para asegurar que el frontend esté consumiendo las propiedades correctas del objeto. El campo "Salón" debe apuntar al nombre comercial del establecimiento (ej. "Julia Barber"), el campo "Cliente" debe mostrar el nombre y apellido del usuario, y el título principal de la tarjeta debería reflejar el nombre del servicio reservado (ej. "Masaje").
+
+---
+
+###### PROBLEMA #8: Inconsistencia de idioma (Spanglish) en componentes principales
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+En la vista de gestión de "Services", se evidencia una falla en la aplicación de las traducciones. A pesar de que el usuario ha seleccionado explícitamente el idioma inglés ("English") en el menú de navegación superior, elementos clave de la interfaz permanecen codificados de forma rígida en español. El caso más notorio es el botón de acción principal para crear un registro, el cual muestra el texto "Nuevo servicio".
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web3.png" width="800" alt="Inconsistencia de idioma en la vista de servicios">
+</div>
+
+**Recomendación**
+
+Revisar el sistema de internacionalización (i18n) para garantizar que absolutamente todos los textos estáticos, en especial los botones y llamadas a la acción (CTAs), estén correctamente mapeados a sus respectivos archivos de traducción. Asimismo, se recomienda añadir la medida de tiempo en la columna de duración (ej. "50 min") para mejorar la legibilidad de los datos.
+
+---
+
+###### PROBLEMA #9: Falta de visibilidad del estado en los planes de suscripción
+
+**Severidad:** 3
+
+**Heurística violada:** Visibilidad del estado del sistema / Prevención de errores
+
+**Problema**
+
+En la vista de Suscripción, el sistema indica correctamente en la parte superior que el plan activo del usuario es "ProStyle". Sin embargo, al observar las tarjetas de precios en la parte inferior, la tarjeta correspondiente a dicho plan sigue mostrando un botón habilitado con el texto "Choose", viéndose idéntico al resto de las opciones no adquiridas. Esta desconexión entre el estado real de la cuenta y las acciones presentadas en pantalla genera ambigüedad, y podría inducir al usuario al error de intentar adquirir o procesar el pago de un plan que ya posee.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web4.png" width="800" alt="Botón habilitado incorrectamente en el plan de suscripción actual">
+</div>
+
+**Recomendación**
+
+Implementar una validación visual en el _frontend_ que reconozca el plan activo del proveedor y actualice el estado de su tarjeta correspondiente. El botón del plan actual debe cambiar de estado (por ejemplo, deshabilitarse) y modificar su texto por un indicador claro como "Plan Actual" (o "Current Plan"), diferenciándose claramente de los planes que sí están disponibles para un _upgrade_.
+
+---
+
+###### PROBLEMA #10: Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN)
+
+**Severidad:** 3
+
+**Heurística violada:** Relación entre el sistema y el mundo real / Visibilidad del estado del sistema
+
+**Problema**
+
+En la vista principal de "Reviews", hemos detectado un error técnico expuesto directamente en la interfaz: el puntaje general muestra el valor "NaN" (_Not a Number_) junto al ícono de la estrella.
+
+Este es un detalle muy común en el desarrollo que ocurre cuando el sistema intenta calcular el promedio de calificaciones pero se encuentra con un divisor de cero (dado que actualmente hay "0 Reviews"). Mostrar términos de error de programación como "NaN" viola la regla de hablar en el lenguaje del usuario y del mundo real. Esto puede desconcertar al proveedor y darle la impresión de que la plataforma está "rota" o presenta fallos de programación.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web5.png" width="800" alt="Exposición del error NaN en el puntaje de reseñas por falta de estado vacío">
+</div>
+
+**Recomendación**
+
+Sugerimos implementar un manejo adecuado de "Estados Vacíos" (_Empty States_). A nivel de código, se debe agregar una pequeña validación antes de calcular el promedio general: si el contador de reseñas es igual a 0, el sistema debe evitar la operación matemática y renderizar en pantalla un valor amigable, como "0", un guion ("-"), o un mensaje constructivo como "Aún no tienes calificaciones".
+
+---
+
+##### CONCLUSIONES
+
+**Aplicación Web**
+
+1. La interfaz expone frecuentemente lógica y variables del sistema (uso de alertas nativas del navegador, errores "NaN", exposición de IDs y correos en lugar de nombres), lo que rompe la relación con el mundo real y disminuye drásticamente la confianza del usuario.
+2. Existen fallas en la visibilidad del estado actual del sistema (como botones habilitados en planes de suscripción ya activos), lo que incrementa la carga cognitiva y obliga al usuario a recordar su contexto para evitar errores o pagos redundantes.
+3. La falta de un sistema de internacionalización (i18n) sólido en componentes clave (vistas de servicios y suscripciones) genera inconsistencias visuales y de comunicación que afectan la percepción de calidad del producto final.
+
+**Aplicación Móvil**
+
+1. Existen inconsistencias estructurales en el manejo del idioma, el mapeo de datos y los formatos (como la moneda), las cuales impactan negativamente en la percepción de calidad y la confianza del usuario durante los flujos de pago.
+2. Algunas decisiones de diseño visual limitan la interactividad (falta de _affordance_ en botones y enlaces) y contradicen modelos mentales universales, dificultando que los usuarios reconozcan acciones clave.
+3. La arquitectura de interacción presenta vulnerabilidades en la prevención de errores, careciendo de fricción positiva (confirmaciones) ante acciones destructivas, lo que eleva el riesgo de equivocaciones por parte del usuario.
+
+---
+
+##### OBSERVACIONES GENERALES
+
+- **Impacto directo en la credibilidad y conversión:** Gran parte de los problemas de severidad alta (inconsistencias de moneda, mezcla de idiomas y exposición de jerga técnica como "NaN" o datos crudos) afectan la percepción de seguridad de la plataforma. En un entorno de reservas y pagos, estos detalles pueden traducirse en una alta tasa de abandono por desconfianza del usuario.
+- **Vulnerabilidades en la prevención de errores:** Se identificó un patrón de riesgo crítico relacionado con la falta de "fricción positiva". Acciones destructivas (como cancelar una cita) ocurren de forma instantánea, y las confirmaciones web dependen de alertas nativas del navegador. Implementar Modales de confirmación personalizados reducirá drásticamente la frustración por errores accidentales.
+- **Brechas en los modelos mentales y affordance:** Existen decisiones visuales que contradicen la intuición del usuario (ej. usar color verde para horarios bloqueados o botones visualmente idénticos para planes de suscripción ya adquiridos). Aclarar estos estados visuales mejorará la curva de aprendizaje de los usuarios nuevos.
+- **Necesidad de estandarización omnicanal:** Se recomienda consolidar los componentes bajo un único Sistema de Diseño y centralizar la internacionalización (i18n). Esto garantizará que tanto el cliente (en la app móvil) como el proveedor (en la plataforma web) experimenten coherencia visual, de lenguaje y de formatos (como el uso estricto de la moneda local).
+
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
-| # | Hallazgo | Severidad | Acción correctiva | Responsable | Estado |
-|---|----------|-----------|-------------------|-------------|--------|
-|   |          |           |                   |             |        |
+| \# | Hallazgo | Severidad | Acción correctiva | Responsable | Estado |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| 1 | Uso contraintuitivo del color verde para horarios bloqueados (Móvil) | 3 | Cambiar el color de los horarios "Booked" a gris o baja opacidad (deshabilitado) y reservar el fondo claro/blanco para los disponibles, alineando con los modelos mentales del usuario. | Jorge | Resuelto |
+| 2 | Errores críticos de mapeo de datos e inconsistencia de moneda (Móvil) | 4 | Corregir el mapeo de variables en backend para que la etiqueta muestre "Profesional/Especialista"; unificar y forzar el formato de moneda local en toda la app. | Jorge | Resuelto |
+| 3 | Inconsistencia de idioma (español/inglés) en flujos principales (Móvil) | 3 | Renderizar todo el texto estático en un solo idioma según la configuración del dispositivo o cuenta con i18n. | Jorge | Resuelto |
+| 4 | Acción destructiva instantánea y confusión visual por color primario "Cancelar cita" (Móvil) | 4 | Rediseñar "Cancelar cita" como botón con estilo destructivo (rojo/secundario) y añadir modal de confirmación antes de eliminar la reserva. | Jorge | Resuelto |
+| 5 | Falta de affordance en la solicitud de permisos de ubicación (Móvil) | 3 | Convertir el texto en un elemento accionable claro (color primario, subrayado, ícono o tarjeta contextual vacía con botón "Habilitar ubicación"). | Jorge | Resuelto |
+| 6 | Confirmación de reserva mediante alerta nativa del navegador (window.confirm) (Web) | 4 | Reemplazar la alerta nativa por un modal personalizado (Custom UI) alineado a la identidad visual, con resumen de fecha/hora y botones propios "Confirmar/Cancelar". | Jorge | Resuelto |
+| 7 | Errores de mapeo de datos y exposición de valores del sistema (correos, IDs) en "Tus Citas" (Web) | 3 | Auditar endpoints para consumir las propiedades correctas: "Salón" → nombre comercial, "Cliente" → nombre y apellido, título → nombre del servicio. | Jorge | Resuelto |
+| 8 | Inconsistencia de idioma (español/inglés) (Web) | 3 | Mapear todos los textos estáticos y CTAs a los archivos de traducción del i18n; añadir unidad de tiempo a la columna de duración (ej. "50 min"). | Jorge | Resuelto |
+| 9 | Falta de visibilidad del estado en los planes de suscripción (botón "Choose" en plan activo) (Web) | 3 | Validar el plan activo en frontend y deshabilitar/etiquetar su tarjeta como "Plan Actual / Current Plan", diferenciándola de los planes disponibles para upgrade. | Jorge | Resuelto |
+| 10 | Exposición de jerga del sistema por ausencia de "estado vacío" ("NaN" en Reviews) (Web) | 3 | Validar el contador de reseñas antes de calcular el promedio: si es 0, evitar la operación y mostrar un valor amigable ("0", "-" o "Aún no tienes calificaciones"). | Jorge | Resuelto |
 
 <div class="page"></div>
 
