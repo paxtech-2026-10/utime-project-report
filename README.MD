@@ -5561,18 +5561,12 @@ Reporte de calidad y seguridad.
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-| # | Heurística de Nielsen | Hallazgo | Severidad (0-4) | Recomendación |
-|---|-----------------------|----------|-----------------|---------------|
-| 1 | Visibilidad del estado del sistema |          |                 |               |
-| 2 | Correspondencia sistema-mundo real |          |                 |               |
-| 3 | Control y libertad del usuario |              |                 |               |
-| 4 | Consistencia y estándares |                   |                 |               |
-| 5 | Prevención de errores |                       |                 |               |
-| 6 | Reconocer antes que recordar |                |                 |               |
-| 7 | Flexibilidad y eficiencia de uso |            |                 |               |
-| 8 | Diseño estético y minimalista |               |                 |               |
-| 9 | Ayudar a reconocer y recuperarse de errores | |                 |               |
-| 10 | Ayuda y documentación |                      |                 |               |
+| # | Heurística de Nielsen              | Hallazgo                                                             | Severidad (0-4) | Recomendación                                                |
+| - | ---------------------------------- | -------------------------------------------------------------------- | --------------- | ------------------------------------------------------------ |
+| 1 | Consistencia y estándares          | Inconsistencias en la traducción al inglés de la aplicación móvil.   | 2               | Corregir textos y revisar el sistema de traducciones.        |
+| 2 | Flexibilidad y eficiencia de uso   | Falta de un historial o registro de servicios realizados a clientes. | 2               | Incorporar notas e historial de atención por cliente.        |
+| 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas.    | 2               | Permitir sincronización automática con calendarios externos. |
+                |                 |               |
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
