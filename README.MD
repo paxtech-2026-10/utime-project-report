@@ -5518,45 +5518,53 @@ El flujo de ramas sigue **GitFlow** con ramas `main`, `develop`, `feature/*`, `f
 
 #### 6.2.1.2. Code Quality & Code Security
 
-El aseguramiento de la calidad y la seguridad del código en uTime se lleva a cabo mediante herramientas de análisis integradas en el pipeline de integración continua y en las herramientas de desarrollo.
+El aseguramiento de la calidad y la seguridad del código en uTime se evalúa de forma cuantitativa mediante **SonarCloud (SonarQube Cloud)**, integrado con la organización de GitHub `paxtech-2026-10`. SonarCloud analiza automáticamente cada repositorio del producto y reporta métricas de **fiabilidad (bugs), seguridad (vulnerabilidades), revisión de seguridad (security hotspots), mantenibilidad (code smells) y duplicación de código**, además de una calificación A–E por dimensión.
 
-**Análisis de calidad en el backend — CI con Maven**
+**Herramienta:** SonarCloud — Organización `paxtech-2026-10` ([sonarcloud.io](https://sonarcloud.io/organizations/paxtech-2026-10/projects)). El análisis se ejecuta en modo *Automatic Analysis* sobre la rama principal de cada repositorio, sin necesidad de instrumentación manual.
 
-El repositorio `paxtech-2026-10/Web-Services` cuenta con el workflow `java-ci.yml` en GitHub Actions, que se ejecuta en cada `push` y en cada Pull Request contra cualquier rama. El job `test` ejecuta:
+**Resultados consolidados del análisis estático**
 
-```bash
-mvn clean test
-```
+| Repositorio | Líneas | Bugs (Reliability) | Vulnerab. (Security) | Security Review | Code Smells (Maintainability) | Duplicación |
+|-------------|-------:|:---:|:---:|:---:|:---:|:---:|
+| `Web-Services` (Java / Spring Boot) | 7 368 | 2 — **C** | 0 — **A** | **A** | 134 — **A** | 3.6 % |
+| `Frontend-Web-Application` (Angular / TS) | 21 213 | 30 — **C** | 14 — **C** | **E** | 254 — **A** | 0.3 % |
+| `Mobile-App` (Kotlin) | 15 417 | 1 — **C** | 0 — **A** | **E** | 58 — **A** | 7.1 % |
 
-Este comando realiza compilación completa con el compilador de Java 17, lo que detecta en tiempo de compilación errores de tipo, imports no utilizados, clases no encontradas y llamadas a métodos inexistentes. Si algún test unitario falla, el pipeline bloquea el merge del PR.
+**Hallazgos de seguridad (Code Security)**
 
-**Validación en tiempo de compilación — TypeScript**
+El análisis identificó vulnerabilidades y *security hotspots* concretos que se incorporan al backlog técnico como deuda a subsanar:
 
-En el frontend, el script `ng build` (ejecutado en el CI del workflow `frontend-ci.yml`) compila el proyecto Angular con `--configuration production`. La salida del compilador TypeScript actúa como análisis estático: cualquier violación de las flags estrictas detiene el build y bloquea el despliegue a Vercel.
+- **Frontend Web — 14 vulnerabilidades:** 10 corresponden a **credenciales potencialmente hard-codeadas** (cadenas tipo `password` embebidas en el código que deben moverse a variables de entorno) y 4 a la **ausencia de Subresource Integrity (SRI)** en recursos externos cargados por `<script>`/`<link>`.
+- **Frontend Web — 14 security hotspots:** 6 de **criptografía débil** (`weak-cryptography`), 2 de **denegación de servicio** (`dos`) y 6 de otras categorías, pendientes de revisión manual.
+- **Backend Java — 2 bugs de fiabilidad:** un posible *overflow* por no castear a `long` un operando de una multiplicación, y un método con retorno `Optional` que puede devolver `null`.
 
-**Seguridad en la API REST**
+**Mitigaciones de seguridad ya presentes en el código**
 
-La capa de seguridad a nivel de código se aplica mediante:
+Frente a las vulnerabilidades clásicas que exige revisar el estándar, el stack del producto ya incorpora defensas a nivel de framework:
 
-- **Spring Boot Validation (`javax.validation`):** anotaciones `@NotNull`, `@NotBlank`, `@Size`, `@Min`/`@Max` en los DTOs de entrada, que rechazan payloads malformados antes de que lleguen a la capa de servicio
-- **Google OAuth 2.0 (2FA):** autenticación delegada a Google como proveedor de identidad, sin almacenamiento de contraseñas en el sistema
-- **Spring Security:** control de acceso a endpoints mediante roles definidos por bounded context; rutas públicas explícitamente declaradas con `.permitAll()`
-- **springdoc-openapi 2.8.8:** documenta y expone cada endpoint con sus tipos de entrada y salida en Swagger UI, facilitando la inspección de la superficie de ataque de la API
+- **Inyección SQL (SQLi):** mitigada por defecto — la persistencia usa **JPA/Hibernate con consultas parametrizadas** (*prepared statements*), evitando la concatenación directa de entradas del usuario en SQL.
+- **Cross-Site Scripting (XSS):** mitigado por defecto — **Angular sanitiza y escapa automáticamente** la interpolación en plantillas (`{{ }}`) y bloquea HTML no confiable salvo uso explícito de `DomSanitizer`.
+- **Manejo de datos sensibles:** la autenticación se delega a **Google OAuth 2.0**, por lo que no se almacenan contraseñas; el backend valida toda entrada con **Spring Boot Validation** (`@NotNull`, `@NotBlank`, `@Size`) y controla el acceso por roles con **Spring Security**.
 
-**Integridad de dependencias**
+**Quality Gate y decisión**
 
-- El frontend usa `pnpm install --frozen-lockfile` en CI, que garantiza que ningún colaborador pueda introducir versiones de dependencias no auditadas fuera del `pnpm-lock.yaml`
-- El backend usa `~/.m2` cacheado por `actions/cache@v4` con clave basada en el hash del `pom.xml`, lo que asegura reproducibilidad del build
+El backend alcanza calificación **A** en Seguridad, Security Review y Mantenibilidad, mientras que el frontend concentra la deuda crítica (Security **C**, Security Review **E**), priorizándose la corrección de las credenciales hard-codeadas y la criptografía débil. La integridad de dependencias se refuerza con `pnpm install --frozen-lockfile` (frontend) y cache de `~/.m2` por hash del `pom.xml` (backend), garantizando builds reproducibles.
 
-| Capa | Herramienta de calidad/seguridad | Activación |
-|------|----------------------------------|------------|
-| Backend Java | Compilador Java 17 (`mvn clean test`) | CI — cada PR |
-| Backend Java | Spring Boot Validation (anotaciones `@Valid`) | Runtime — cada request |
-| Backend Java | Spring Security + Google OAuth 2.0 | Runtime — cada request autenticado |
-| Frontend Angular | TypeScript strict mode + `ng build` | CI — cada push a `develop` |
-| Frontend Angular | `pnpm --frozen-lockfile` | CI — instalación de dependencias |
-| Mobile Kotlin | Compilador Kotlin 2.2 + AGP | Build local — cada compilación |
-| Mobile Flutter | `flutter analyze` + `flutter_lints` | Build local — cada compilación |
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Dashboard de SonarCloud (organización `paxtech-2026-10`): métricas de seguridad, fiabilidad, mantenibilidad y duplicación por repositorio.
+
+<img src="./assets/testing/static-analysis/sonar-report.png" alt="SonarCloud — Vista de proyectos de la organización" width="800">
+
+</div>
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Detalle del análisis de seguridad del `Frontend-Web-Application`: Security Rating C, 14 issues de seguridad y su desglose por severidad.
+
+<img src="./assets/testing/static-analysis/sonar-frontend-security.png" alt="SonarCloud — Security snapshot del frontend" width="800">
+
+</div>
 
 ### 6.2.2. Reviews
 
@@ -6161,69 +6169,142 @@ Este modelo reduce significativamente el esfuerzo manual de despliegue respecto 
 
 ### 7.4.1. Tools and Practices
 
-El Continuous Monitoring es la práctica de DevOps que cierra el ciclo al observar la aplicación una vez desplegada en producción, con el objetivo de detectar fallos, degradaciones de rendimiento o comportamientos anómalos antes de que afecten a los usuarios. Para uTime, el monitoreo no se apoya en un APM externo, sino en la observabilidad nativa de las mismas plataformas que ya intervienen en las fases de CI/CD (secciones 7.1 a 7.3), decisión coherente con la etapa de MVP del producto y con el tamaño del equipo.
+El Continuous Monitoring es la práctica de DevOps que cierra el ciclo al observar la aplicación una vez desplegada en producción, con el objetivo de detectar fallos, degradaciones de rendimiento o comportamientos anómalos antes de que afecten a los usuarios. Para uTime, este monitoreo no se queda en la documentación: está **implementado y es demostrable** sobre **GitHub Actions** —el mismo motor de pipeline que ya ejecuta el CI/CD (secciones 7.1 a 7.3)— complementado con la observabilidad nativa del Azure App Service donde corre el backend. Se descartó Jenkins porque GitHub Actions ofrece el mismo resultado de forma más simple, gratuita y sin infraestructura que mantener, permitiendo visualizar los componentes del pipeline y enviar correos directamente desde el repositorio.
 
 Las herramientas que estamos utilizando son:
 
-- __Azure App Service (`paxtech`)__: la plataforma donde se ejecuta el backend expone de forma nativa el *Log Stream* (salida en tiempo real de logs de la aplicación) y un panel de *Metrics* con indicadores de CPU, memoria, requests HTTP y códigos de respuesta, sin necesidad de instrumentación adicional.
-- __Azure Monitor__: se emplea para definir *alert rules* sobre las métricas del App Service y para enrutar las notificaciones mediante *Action Groups* hacia el correo del equipo.
-- __GitHub Actions__: además de ejecutar el pipeline de CI/CD, su historial de runs funciona como señal de salud del proceso de build, test y despliegue, notificando automáticamente los fallos.
-- __Vercel__: provee el estado de los despliegues del frontend Angular (previews y producción), sirviendo como punto de monitoreo de la capa web.
-- __Firebase Analytics__: integrado en la aplicación móvil Android, recolecta eventos de comportamiento de usuario que complementan la visión de uso del producto.
-- __SLF4J + Logback__: el framework de logging por defecto de Spring Boot 3.5 registra los eventos del backend (`INFO`/`WARN`/`ERROR`) y los persiste en `/home/LogFiles/Application/app.log` dentro del App Service.
+- __GitHub Actions__: motor del pipeline de monitoreo. Ejecuta el workflow programado `monitoring.yml` (health-check cada 15 minutos sobre el backend en producción) y el job `notify` del workflow `main_paxtech.yml`, cuyo historial de runs funciona como señal de salud del proceso de build, test y despliegue.
+- __Sonda HTTP (`curl`)__: dentro del workflow de monitoreo, realiza una petición al endpoint público del backend y evalúa el código de respuesta HTTP como prueba de *liveness*, sin requerir instrumentación adicional en la aplicación.
+- __Gmail SMTP (`dawidd6/action-send-mail`)__: *action* de GitHub que envía correos a través de `smtp.gmail.com` usando una *App Password* almacenada como secret cifrado del repositorio. Es el canal de alertas y notificaciones del equipo.
+- __Azure App Service (`paxtech`)__: la plataforma donde se ejecuta el backend expone de forma nativa el *Log Stream* (logs en tiempo real) y un panel de *Metrics* (CPU, memoria, requests HTTP, códigos de respuesta), disponibles sin instrumentación para inspección complementaria.
+- __SLF4J + Logback__: el framework de logging por defecto de Spring Boot registra los eventos del backend (`INFO`/`WARN`/`ERROR`) y los persiste en `/home/LogFiles/Application/app.log` dentro del App Service.
+- __Vercel y Firebase Analytics__: complementan la observabilidad en la capa web (estado de despliegues del frontend Angular) y móvil (eventos de comportamiento de la app Android), respectivamente.
 
-Por el lado de las prácticas, estamos considerando:
+Por el lado de las prácticas, estamos aplicando:
 
-- __Monitoreo nativo de plataforma__: en lugar de incorporar herramientas externas (Grafana, Datadog, New Relic o Sentry), se aprovecha la observabilidad integrada de Azure, GitHub, Vercel y Firebase, reduciendo la carga de instrumentación mientras el producto valida sus hipótesis.
-- __Logging centralizado de aplicación__: el backend escribe sus logs a un archivo persistente del App Service, accesible vía Log Stream, lo que permite revisar el comportamiento del sistema en producción.
-- __Alertas basadas en métricas__: se definen reglas en Azure Monitor sobre disponibilidad, latencia y uso de recursos, de modo que las condiciones críticas se detecten automáticamente y no por inspección manual.
-- __Monitoreo de la salud del despliegue__: el estado de los pipelines de GitHub Actions y Vercel se vigila de forma continua para garantizar que ningún despliegue fallido pase desapercibido, enlazando el monitoreo con el Continuous Deployment.
-- __Notificación por correo__: las alertas de producción se canalizan mediante Action Groups de Azure Monitor hacia el correo del equipo, manteniendo un mecanismo de aviso simple y suficiente para la fase actual.
+- __Pipeline-as-monitoring__: el propio pipeline de GitHub Actions es el punto donde se observan los componentes (jobs `test`, `build`, `deploy`, `health-check` y `notify`), tal como se haría en un tablero de Jenkins, pero sin servidor que mantener.
+- __Health-check programado__: un workflow con disparador `schedule` (cron) sondea periódicamente la disponibilidad del backend en producción, detectando caídas de forma automática y no por inspección manual.
+- __Distinción entre notificación y alerta__: una **notificación** es un mensaje informativo del estado de una ejecución (p. ej. "despliegue exitoso"); una **alerta** es una señal de que *algo está mal* y requiere ser investigado (backend caído o pipeline fallido). Ambas se canalizan por correo.
+- __Notificación por correo (Gmail)__: las alertas y los resultados del pipeline se envían al correo del equipo mediante Gmail SMTP, un mecanismo simple y suficiente para la fase actual del producto.
+- __Observabilidad nativa de plataforma__: en lugar de incorporar un APM externo (Grafana, Datadog, New Relic o Sentry), se aprovecha la observabilidad integrada de Azure App Service, GitHub, Vercel y Firebase, reduciendo la carga de instrumentación mientras el producto valida sus hipótesis.
 
 ### 7.4.2. Monitoring Pipeline Components
 
-Acorde con la etapa de MVP del producto, uTime adopta un enfoque de monitoreo **nativo de plataforma**: en lugar de incorporar un APM dedicado (Grafana, Datadog, New Relic o Sentry), aprovecha la observabilidad integrada de las plataformas que ya forman parte del pipeline DevOps —Azure App Service, GitHub Actions, Vercel y Firebase— sumada al logging a nivel de aplicación del backend. Esta decisión evita sobrecargar al equipo con instrumentación adicional mientras el producto valida sus hipótesis, manteniendo señales suficientes para detectar fallos en producción.
+El pipeline de monitoreo está **implementado en el repositorio `Web-Services`** y se compone de un workflow dedicado de health-check más las señales nativas de las plataformas que ya forman parte del flujo DevOps. El componente central y demostrable es el workflow `monitoring.yml`, que se ejecuta de forma programada (cron) y también bajo demanda desde la pestaña *Actions*.
 
 Los componentes que conforman el pipeline de monitoreo son:
 
 | Componente | Herramienta | Señal que recolecta | Punto de acceso |
 |---|---|---|---|
-| Logging de aplicación | SLF4J + Logback (Spring Boot 3.5) | Eventos `INFO`/`WARN`/`ERROR` del backend, persistidos en `/home/LogFiles/Application/app.log` (`logging.file.name`, `logging.level.root=INFO`) | Azure App Service → Log Stream / archivo persistente |
-| Log Stream | Azure App Service | Salida `stdout`/`stderr` y `app.log` en tiempo real | Portal Azure → `paxtech` → Log stream |
-| Métricas de plataforma | Azure Monitor (métricas de App Service, sin instrumentación) | CPU, memoria (working set), número de requests HTTP, tiempo de respuesta y conteo de respuestas HTTP 4xx/5xx | Portal Azure → `paxtech` → Metrics |
-| Estado de despliegue backend | GitHub Actions | Resultado de los jobs `test`, `build` y `deploy` en cada run del workflow `main_paxtech.yml` | Pestaña *Actions* del repositorio `Web-Services` |
+| Health-check programado | GitHub Actions (`monitoring.yml`, cron 15 min) + `curl` | Disponibilidad del backend en producción (código HTTP del endpoint público); falla si el backend no responde | Pestaña *Actions* → workflow *Continuous Monitoring* del repo `Web-Services` |
+| Estado de despliegue backend | GitHub Actions (`main_paxtech.yml`) | Resultado de los jobs `build`, `deploy` y `notify` en cada run | Pestaña *Actions* del repositorio `Web-Services` |
+| Logging de aplicación | SLF4J + Logback (Spring Boot) | Eventos `INFO`/`WARN`/`ERROR`, persistidos en `/home/LogFiles/Application/app.log` (`logging.file.name`, `logging.level.root=INFO`) | Azure App Service → Log Stream / archivo persistente |
+| Log Stream y métricas | Azure App Service | `stdout`/`stderr` en tiempo real; CPU, memoria (working set), requests HTTP y códigos 4xx/5xx | Portal Azure → `paxtech` → Log stream / Metrics |
 | Estado de despliegue frontend | Vercel | Estado de build y despliegues de preview/producción de la app Angular | Dashboard de Vercel |
 | Analítica de uso móvil | Firebase Analytics | Eventos de comportamiento de usuario en la app Android | Consola de Firebase |
 
-En conjunto, estos componentes cubren tres planos de observabilidad: **infraestructura** (métricas de CPU/memoria de App Service), **aplicación** (logs del backend y códigos de respuesta HTTP) y **entrega** (estado de los pipelines de GitHub Actions y Vercel).
+En conjunto, estos componentes cubren tres planos de observabilidad: **entrega** (estado de los pipelines y del health-check en GitHub Actions), **aplicación** (logs del backend y códigos de respuesta HTTP) e **infraestructura** (métricas de CPU/memoria del App Service).
+
+Como evidencia del componente de **estado de despliegue backend**, la siguiente figura muestra un run real del pipeline en GitHub Actions, donde se observan de forma encadenada los tres componentes del flujo —`build`, `deploy` y `Notify pipeline result`— todos finalizados en éxito (estado *Success*). Esta vista es la que permite "ver los componentes" del pipeline directamente en la plataforma, sin necesidad de una herramienta externa.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Vista del run del workflow `main_paxtech.yml`: los componentes `build → deploy → Notify pipeline result` ejecutados y en verde.
+
+<img src="./assets/devops/monitoring/pipeline-flow-success.png" alt="Flujo del pipeline build-deploy-notify en verde" width="800">
+
+</div>
+
+El detalle interno de cada job confirma las señales que recolecta el monitoreo de entrega: el job `build` compila y empaqueta el artefacto, y el job `deploy` lo publica en el Azure App Service.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Detalle del job `build` (compilación y empaquetado con Maven) finalizado correctamente.
+
+<img src="./assets/devops/monitoring/pipeline-build-job.png" alt="Detalle del job build" width="800">
+
+Detalle del job `deploy` (login a Azure y publicación en el App Service `paxtech`) finalizado correctamente.
+
+<img src="./assets/devops/monitoring/pipeline-deploy-job.png" alt="Detalle del job deploy" width="800">
+
+</div>
+
+Por su parte, el workflow dedicado de health-check (`monitoring.yml`) se ejecuta de forma programada y bajo demanda, sondeando la disponibilidad del backend en producción.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Workflow *Continuous Monitoring* ejecutándose en la pestaña *Actions* del repositorio `Web-Services`, con el job `Health check (monitoring)` en verde (backend disponible) y el job `Alert and notify (down)` omitido.
+
+<img src="./assets/devops/monitoring/monitoring-healthcheck-ok.png" alt="Health-check OK" width="800">
+
+</div>
 
 ### 7.4.3. Alerting Pipeline Components
 
-El sistema de alertas se construye sobre **Azure Monitor alert rules** definidas sobre las mismas métricas de plataforma del App Service, complementadas por las notificaciones de fallo de **GitHub Actions** en el pipeline de despliegue. Cada alerta evalúa una condición sobre una ventana temporal y, al dispararse, enruta a un canal mediante un *Action Group*. La severidad sigue una escala de tres niveles (Crítica / Alta / Media) según el impacto en la disponibilidad del backend que consumen las tres aplicaciones cliente.
+El sistema de alertas está **implementado con GitHub Actions** y se dispara automáticamente ante dos condiciones de *"algo está mal"*: que el backend deje de responder o que el pipeline de despliegue falle. En ambos casos la alerta se enruta por **correo (Gmail SMTP)** al equipo. De forma complementaria, las métricas nativas del Azure App Service pueden respaldar reglas de alerta sobre rendimiento y recursos.
 
-| Alerta | Condición | Canal | Severidad |
-|--------|-----------|-------|-----------|
-| Backend no disponible | El App Service `paxtech` deja de responder o devuelve HTTP 5xx de forma sostenida (métrica *Http Server Errors* > 0 durante 5 min) | Correo (Action Group de Azure Monitor) | Crítica |
-| Latencia elevada | Tiempo de respuesta promedio > 2 s en una ventana de 5 min | Correo (Action Group) | Alta |
-| Saturación de CPU | Uso de CPU del App Service Plan > 80 % sostenido durante 5 min | Correo (Action Group) | Media |
-| Presión de memoria | *Memory working set* > 85 % de la capacidad del plan | Correo (Action Group) | Media |
-| Errores de cliente elevados | Conteo de respuestas HTTP 4xx por encima del umbral esperado en 5 min (posible regresión de contrato de API) | Correo (Action Group) | Media |
-| Fallo del pipeline de despliegue | Cualquier job (`test`, `build`, `deploy`) del workflow `main_paxtech.yml` falla en un `push` a `main` | Notificación de GitHub + correo al autor | Alta |
+| Alerta | Disparador (implementado) | Canal | Severidad |
+|--------|---------------------------|-------|-----------|
+| Backend no disponible | El job `health-check` de `monitoring.yml` no obtiene respuesta del endpoint público (*timeout* o error HTTP 5xx) → se ejecuta el job `alert` | Correo (Gmail SMTP) | Crítica |
+| Fallo del pipeline de despliegue | Cualquier job (`build`, `deploy`) de `main_paxtech.yml` falla en un `push` a `main` → el job `notify` envía correo de alerta | Correo (Gmail SMTP) + checks en GitHub | Alta |
+| Saturación de recursos / latencia (complementaria) | Métricas del App Service: CPU > 80 %, *memory working set* alto o tiempo de respuesta elevado | Azure Monitor → correo (opcional) | Media |
 
-Las tres primeras alertas protegen la **disponibilidad y el rendimiento** del backend en producción; la de errores 4xx vigila la **salud de los contratos de API** consumidos por los clientes; y la de pipeline garantiza que ningún despliegue fallido pase desapercibido, cerrando el lazo entre el Continuous Deployment (7.3) y el monitoreo.
+Las dos primeras alertas están **activas en el repositorio** y constituyen el núcleo demostrable del capítulo: garantizan que ni una caída del backend ni un despliegue fallido pasen desapercibidos, cerrando el lazo entre el Continuous Deployment (7.3) y el monitoreo. La tercera queda como refuerzo opcional sobre las métricas que Azure ya expone sin instrumentación.
+
+El propio job `notify` del pipeline materializa la lógica de alerta: contiene un step *Send FAILURE alert email* que solo se ejecuta cuando algún job termina en `failure`, condición que puede observarse en la figura del componente de notificación (sección 7.4.4). La siguiente captura corresponde a la prueba específica de caída del backend, donde el health-check falla y dispara el job `alert`.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Run del workflow *Continuous Monitoring* en estado *Failure*: el job `Health check (monitoring)` falla con el mensaje "Backend NO responde (HTTP 000)" y dispara el job `Alert and notify (down)`, que se ejecuta correctamente.
+
+<img src="./assets/devops/monitoring/monitoring-alert-down.png" alt="Alerta backend caído" width="800">
+
+</div>
 
 ### 7.4.4. Notification Pipeline Components
 
-Las notificaciones son el último eslabón del pipeline de monitoreo: traducen las alertas y los eventos de plataforma en mensajes accionables para el equipo. uTime utiliza un esquema de notificación basado en correo y en las integraciones nativas de las plataformas que ya emplea, sin un sistema de on-call dedicado (PagerDuty) ni un bus de chatops (Slack), coherente con el tamaño del equipo y la fase del producto.
+Las notificaciones son el último eslabón del pipeline de monitoreo: traducen las alertas y los eventos del pipeline en mensajes accionables para el equipo. uTime implementa este eslabón con **correo electrónico vía Gmail SMTP**, enviado directamente desde GitHub Actions mediante la action `dawidd6/action-send-mail` y una *App Password* guardada como secret del repositorio. No se usa un sistema de on-call dedicado (PagerDuty) ni un bus de chatops (Slack), coherente con el tamaño del equipo y la fase del producto.
 
-| Canal | Origen del evento | Destinatario | Propósito |
+Para enviar correos, el repositorio configura los secrets `MAIL_USERNAME`, `MAIL_PASSWORD` (App Password de Gmail) y `MAIL_TO`, además de la variable `BACKEND_URL` que indica la URL a monitorear.
+
+| Canal | Origen del evento | Tipo | Propósito |
 |---|---|---|---|
-| Action Group de Azure Monitor (correo) | Alertas de Azure Monitor sobre el App Service (7.4.3) | Correo del equipo | Canal principal para incidentes de disponibilidad, latencia y recursos en producción |
-| GitHub Actions (correo + checks en el PR) | Runs fallidos de los workflows de CI/CD | Autor del commit y maintainers del repositorio | Avisa de fallos de build, test o deploy directamente en el flujo de trabajo |
-| Vercel (notificaciones de despliegue) | Resultado de los despliegues del frontend | Equipo de frontend | Informa el estado de los despliegues de preview y producción de la app Angular |
-| Firebase App Distribution | Publicación de una nueva build de la app Android | Testers registrados | Notifica a los testers cuando hay una versión disponible para validar |
+| Correo Gmail — `[ALERTA - CRITICA]` | Job `alert` de `monitoring.yml` (backend caído) | Alerta | Avisar de inmediato que el backend no responde en producción |
+| Correo Gmail — `[ALERTA]` | Job `notify` de `main_paxtech.yml` con algún job en `failure` | Alerta | Avisar de un fallo de build, test o deploy en el pipeline |
+| Correo Gmail — `[OK]` | Job `notify` de `main_paxtech.yml` con todos los jobs en éxito | Notificación | Informar que el despliegue a producción se completó correctamente |
+| Checks de GitHub en el PR | Runs de los workflows de CI/CD | Notificación | Mostrar el estado del pipeline en el flujo de revisión |
 
-**Estado actual y trabajo futuro.** El tejido de notificación se apoya hoy en **correo electrónico** (vía Azure Monitor Action Groups) y en las **notificaciones integradas de GitHub, Vercel y Firebase**. No existe aún integración con Slack ni PagerDuty; de requerirse mayor inmediatez, un Action Group de Azure Monitor puede ampliarse con un webhook hacia Slack, o agregarse un step de notificación a Slack en el workflow de GitHub Actions, sin alterar el resto del pipeline de monitoreo.
+**Estado actual y trabajo futuro.** El tejido de notificación está **implementado y es demostrable**: los correos se envían desde GitHub Actions a través de Gmail SMTP tanto ante caídas del backend como ante el resultado del pipeline de despliegue. No existe aún integración con Slack ni PagerDuty; de requerirse mayor inmediatez, basta con añadir un step de notificación a Slack en los mismos workflows o ampliar un Action Group de Azure Monitor con un webhook, sin alterar el resto del pipeline de monitoreo.
+
+El mecanismo de envío vive dentro del job `notify`: la siguiente figura muestra sus dos steps condicionales —*Send FAILURE alert email* (que se omite cuando todo sale bien) y *Send SUCCESS notification email* (que se ejecuta en un despliegue exitoso)— evidenciando la distinción entre alerta y notificación dentro del mismo componente.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Job `notify` en GitHub Actions: el step de notificación de éxito se ejecuta y el de alerta de fallo queda omitido (*skipped*), según el resultado del pipeline.
+
+<img src="./assets/devops/monitoring/notify-job-steps.png" alt="Steps de envío de correo del job notify" width="800">
+
+</div>
+
+El resultado final es el correo entregado al equipo. La siguiente captura muestra la notificación `[OK]` de despliegue exitoso recibida en Gmail, enviada automáticamente por el pipeline desde la cuenta configurada en `MAIL_USERNAME`.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Correo `[OK] Despliegue exitoso a produccion - Web-Services` recibido en Gmail, con el detalle del resultado de los jobs, el commit y el enlace al run.
+
+<img src="./assets/devops/monitoring/email-ok-received.png" alt="Correo de notificación OK recibido en Gmail" width="800">
+
+</div>
+
+De forma análoga, ante una caída del backend o un fallo del pipeline, el equipo recibe un correo de alerta `[ALERTA - CRITICA]` / `[ALERTA]`.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+
+Correo de alerta `[ALERTA - CRITICA] El backend uTime no responde` recibido en Gmail, con el código HTTP recibido (000), la URL monitoreada, la severidad y el enlace al run.
+
+<img src="./assets/devops/monitoring/email-alert-received.png" alt="Correo de alerta recibido en Gmail" width="800">
+
+</div>
 
 <div class="page"></div>
 
@@ -6307,11 +6388,11 @@ El backlog se organiza como una lista priorizada de preguntas de investigación.
 | Pregunta | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? |
 | Razón | Consideramos que es necesario dado que la mayor parte de los problemas o mal entendidos en cuanto a la realización de servicios en los salones de belleza se da precisamente debido a la falta de visibilidad y coordinación. Así, la implementación de una herreminta digital de gestión probablemente ayudaría a los salones a darse a conocer y a organizar mejor las citas agendadas y las necesidades de cada una, mas esta idea debe ser validada. |
 | Hipótesis | Creemos que, al probar un flujo básico de agenda digital en uTime, al menos el 60% de los salones de belleza y barberías manifestará disposición a usarla para gestionar reservas. |
-| Simplest Useful Thing | La funciondalidad mínima y usable más sencilla a implementar sería, por el lado del usuario, la selección del salón o barbería, estilista deseado, servicio y hora del mismo de acuerdo a disponibilidad. Con esta información, se gurdaría su reserva, miemntras que, al confirmar los datos, esta misma se vería reflejada en el calendario del salón seleccionado. |
+| Simplest Useful Thing | La funciondalidad mínima y usable más sencilla a implementar sería, por el lado del usuario, la selección del salón o barbería, estilista deseado, servicio y hora del mismo de acuerdo a disponibilidad. Con esta información, se gurdaría su reserva, mientras que, al confirmar los datos, esta misma se vería reflejada en el calendario del salón seleccionado. |
 | Lado posterior |
 | Medidas | Analizar las puntuaciones en una encuesta de satisfacción dirigida hacia los salones y barberías antes y después de la implementación del flujo de reservaciones y calendario en las aplicaciones durante un periodo de 30 días. |
 | Condiciones | Experimental --> Los salones de belleza, barberías y sus clientes empiezan a usar uTime para la gestión de sus reservas - Control --> Las reservas se siguen registrando mediantes llamadas y aplicaciones de mensajería |
-| Escala | Implementar y mantener el flujo de reservas dentro de la aplicación si más de la mitad de los salones de belleza y barbería manifiestan una lat satisfacción en cuanto al uso de esta funcionalidad. |  
+| Escala | Implementar y mantener el flujo de reservas dentro de la aplicación si más de la mitad de los salones de belleza y barbería manifiestan una alta satisfacción en cuanto al uso de esta funcionalidad. |  
 
 | Campo | Detalle |
 |-------|---------|
@@ -6644,7 +6725,7 @@ Artefactos de la sesión de shareback.
 
 ## Conclusiones y recomendaciones
 
-A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las dos entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); y el **AV2/TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices) del informe.
+A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); el **TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices); y el **AV2**, que abarcó el Capítulo VIII (Experiment-Driven Development), con el cual el equipo cierra el ciclo trasladando el producto desde la implementación y validación hacia un enfoque de experimentación con usuarios reales.
 
 ### Conclusiones
 
@@ -6663,6 +6744,9 @@ El AV1 permitió consolidar la base estratégica, de producto y de diseño de uT
 - En el **Capítulo V (Product Implementation)** el equipo configuró un entorno multi-stack coherente (Angular para web, Flutter para la app del cliente, Kotlin nativo para la app del negocio y Spring Boot con PostgreSQL en Neon para el backend), aplicó **GitFlow + Conventional Commits + Semantic Versioning** sobre los siete repositorios de la organización `paxtech-2026-10` y entregó el Sprint #1 con la landing page desplegada en GitHub Pages junto con el Acuerdo de Servicio SaaS (uptime objetivo 99.5%, soporte, seguridad TLS + Ley 29733, planes Free/Pro/Business).
 - En el **Capítulo VI (Product Verification & Validation)** se ejecutaron pruebas unitarias y de integración por bounded context (IAM, Profiles, Workers, Services, Reservations, Reviews) sobre los cuatro codebases del producto (Spring Boot, Flutter, Kotlin nativo, Angular), se automatizaron seis escenarios BDD con Cucumber + Playwright y se consolidó la suite de nueve **system tests** Playwright (SYS-01 a SYS-09) pasando contra la app web; además, las **entrevistas de validación** y las evaluaciones según **heurísticas de Nielsen** confirmaron empíricamente las hipótesis Lean UX definidas en el Capítulo II.
 - En el **Capítulo VII (DevOps Practices)** se formalizó la cadena de Continuous Integration con los workflows `main_paxtech.yml` y `frontend-ci.yml`, el Continuous Delivery hacia el slot de staging en Azure, el Continuous Deployment a producción con cada push a `main` y un esquema inicial de Continuous Monitoring con alertas y notificaciones, cerrando el ciclo de feedback entre código, despliegue y operación.
+- En el **Capítulo VIII (Experiment-Driven Development)** el equipo dejó de proponer funcionalidades por intuición y partió del material bruto disponible (entrevistas, As-Is Scenario Maps, hipótesis Lean UX y estado del MVP) para reunir suposiciones, brechas de conocimiento, ideas y afirmaciones, y transformarlas en **Experiment-Ready Questions** priorizadas mediante un puntaje de Confidence, Risk, Impact e Interest, consolidado en un **Question Backlog**.
+- Las cinco **Experiment Cards** (EXP01–EXP05: agenda digital centralizada, recordatorios automáticos, confirmación/pago digital, flujo directo vs. WhatsApp y perfiles con reseñas y portafolio) tradujeron las preguntas más críticas en **hipótesis falsables** con su Simplest Useful Thing, medidas, condiciones experimentales y escalas de decisión, evitando presentar como validado aquello que aún debe comprobarse empíricamente.
+- El **Experiment Design** (hipótesis con su hipótesis nula, Domain Business Metrics, measures, conditions y scale calculations) junto con las **To-Be User Stories** y el To-Be Product Backlog priorizado por Story Points conectaron cada experimento con una métrica de negocio y un entregable de software trazable, garantizando que la experimentación sirva para decidir qué escalar y no solo para construir.
 
 ### Recomendaciones
 
@@ -6684,6 +6768,10 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 - Documentar **runbooks operativos** para la rotación de secretos JWT, claves de Stripe y restauración de backups de PostgreSQL en Neon, evitando que la respuesta a incidentes dependa de una sola persona del equipo.
 - Endurecer el **Continuous Monitoring** con alertas accionables sobre latencia P95 del API, tasa de errores 5xx y disponibilidad del Azure App Service, conectadas al canal de Discord del equipo para reducir el tiempo medio de detección.
 - Avanzar la integración de **Stripe** desde la modalidad sandbox a producción tras cerrar la Spike Story 1 del backlog, asegurando la firma del webhook `checkout.session.completed` que ya está implementado en el backend y reforzando las pruebas de idempotencia para reintentos del proveedor de pagos.
+- Ejecutar los cinco experimentos priorizados (**EXP01–EXP05**) con usuarios reales de ambos segmentos, completando las secciones pendientes de **To-Be Validation Interviews** y **Experiment Aftermath & Analysis**, de modo que las preguntas del Question Backlog pasen de estado *Pendiente* a confirmadas o refutadas con evidencia.
+- Instrumentar las **Domain Business Metrics** en Firebase Analytics y en los logs del backend desde el arranque de cada experimento (intención de reserva, tasa de cancelaciones, confianza percibida), para no depender únicamente de encuestas y poder comparar condición experimental contra condición de control.
+- Respetar las **escalas de decisión** definidas en cada Experiment Card (umbrales del 40%, 20%, 15%, etc.) como criterio objetivo para escalar, iterar o descartar una funcionalidad, manteniendo el principio de ser *data informed, not data driven* y evitando dejarse llevar por métricas de vanidad.
+- Mantener el **entendimiento compartido** durante la fase experimental mediante kick-offs por experimento, asegurando que todo el equipo (no solo quien diseña la Experiment Card) acuerde qué se quiere aprender, por qué y cómo se medirá antes de lanzar cada prueba.
 
 <div class="page"></div>
 
