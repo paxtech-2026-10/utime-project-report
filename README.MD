@@ -205,7 +205,23 @@ Actividad de commits en el tiempo para el AV2.
 - [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores) 
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+      - [Afrontando las fortalezas de nuestros competidores:](#afrontando-las-fortalezas-de-nuestros-competidores)
+      - [Comprendemos que nuestras fortalezas son:](#comprendemos-que-nuestras-fortalezas-son)
+      - [Estrategias](#estrategias)
+      - [Tácticas](#tácticas)
+      - [Afrontando las debilidades de nuestros competidores:](#afrontando-las-debilidades-de-nuestros-competidores)
+      - [Comprendemos que nuestras debilidades son:](#comprendemos-que-nuestras-debilidades-son)
+      - [Estrategias](#estrategias-1)
+      - [Tácticas](#tácticas-1)
+      - [Afrontando las oportunidades de nuestros competidores:](#afrontando-las-oportunidades-de-nuestros-competidores)
+      - [Comprendemos que nuestras oportunidades son:](#comprendemos-que-nuestras-oportunidades-son)
+      - [Estrategias](#estrategias-2)
+      - [Tácticas](#tácticas-2)
+      - [Afrontando las amenazas de nuestros competidores:](#afrontando-las-amenazas-de-nuestros-competidores)
+      - [Comprendemos que nuestras amenazas son:](#comprendemos-que-nuestras-amenazas-son)
+      - [Estrategias](#estrategias-3)
+      - [Tácticas](#tácticas-3)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
@@ -236,6 +252,7 @@ Actividad de commits en el tiempo para el AV2.
 - [Capítulo IV: Product Design](#capítulo-iv-product-design)
   - [4.1. Style Guidelines](#41-style-guidelines)
     - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
+      - [**Branding**](#branding)
     - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
     - [4.1.3. Mobile Style Guidelines](#413-mobile-style-guidelines)
       - [4.1.3.1. iOS Mobile Style Guidelines](#4131-ios-mobile-style-guidelines)
@@ -7160,24 +7177,7 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
-**Sprint #[N] (To-Be)**
-
-**Sprint Planning Background**
-
-| Campo | Detalle |
-|-------|---------|
-| Date | [Fecha] |
-| Time | [Hora] |
-| Location | [Ubicación / modalidad] |
-| Prepared By | [APELLIDOS Y NOMBRES] |
-| Attendees | [Lista] |
-| Sprint Review Summary | [Contenido pendiente] |
-| Sprint Retrospective Summary | [Contenido pendiente] |
-| Sprint Goal & User Stories | [Contenido pendiente] |
-| Sprint Velocity | [Story Points] |
-| Sum of Story Points | [Total] |
-
-**Sprint Backlog**
+**Sprint #1 (To-Be)**
 
 <table>
   <thead>
@@ -7193,9 +7193,26 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
+    <tr><td rowspan="4">UE01</td><td rowspan="4">Agenda digital centralizada</td><td>WI01</td><td>Modelo de agenda y disponibilidad</td><td>Definir la estructura de reservas, horarios disponibles, trabajador asignado, servicio y estado de la cita para centralizar la agenda del negocio.</td><td>3</td><td>Jorge Yum</td><td>Planned</td></tr>
+    <tr><td>WI02</td><td>API de consulta de reservas</td><td>Implementar el endpoint que permita obtener reservas filtradas por fecha, servicio, trabajador y estado para alimentar la agenda digital.</td><td>5</td><td>Alejandro Oroncoy</td><td>Planned</td></tr>
+    <tr><td>WI03</td><td>Vista de agenda para negocios</td><td>Construir la interfaz donde el administrador pueda visualizar citas ordenadas, espacios libres y cambios sin depender de WhatsApp o registros manuales.</td><td>6</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI04</td><td>Tracking de uso de agenda</td><td>Registrar eventos como calendar_viewed y reservations_visible_count para medir adopción de la agenda digital durante el experimento.</td><td>2</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE02</td><td rowspan="4">Recordatorios automáticos de citas</td><td>WI05</td><td>Regla de recordatorio automático</td><td>Definir el momento de envío, destinatarios y contenido mínimo del recordatorio para clientes y negocios antes de la cita.</td><td>2</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td>WI06</td><td>Servicio de envío de recordatorios</td><td>Implementar la lógica backend que identifique citas próximas, genere el recordatorio y registre el resultado del intento de envío.</td><td>5</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI07</td><td>Registro del evento reminder_sent</td><td>Guardar el evento reminder_sent con identificador de reserva, canal de envío y fecha para analizar cancelaciones o reprogramaciones posteriores.</td><td>2</td><td>Jorge Yum</td><td>Planned</td></tr>
+    <tr><td>WI08</td><td>Estado de recordatorio en la cita</td><td>Mostrar en la vista de reserva si el recordatorio fue programado o enviado, de modo que el negocio pueda revisar la trazabilidad de cada cita.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE03</td><td rowspan="4">Confirmación o pago digital de reserva</td><td>WI09</td><td>Diseño del flujo de confirmación</td><td>Definir los pasos de confirmación y pago digital, incluyendo estados de reserva, constancia mostrada al usuario y datos necesarios para la medición.</td><td>3</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td>WI10</td><td>Backend de reserva confirmada</td><td>Implementar el cambio de estado de reserva a confirmada, persistiendo fecha de confirmación, método utilizado y datos básicos de auditoría.</td><td>5</td><td>Alejandro Oroncoy</td><td>Planned</td></tr>
+    <tr><td>WI11</td><td>Interfaz de confirmación o pago</td><td>Agregar el botón de confirmar o pagar reserva y la constancia visible para cliente y negocio luego de completar el flujo.</td><td>5</td><td>Jorge Yum</td><td>Planned</td></tr>
+    <tr><td>WI12</td><td>Tracking de confirmación y pago</td><td>Registrar eventos como reservation_confirmed, payment_started y payment_completed para medir el compromiso generado por el flujo digital.</td><td>2</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE04</td><td rowspan="4">Flujo directo de reserva en la app</td><td>WI13</td><td>Flujo de selección de reserva</td><td>Implementar la selección de salón, servicio, trabajador, fecha y hora desde la app sin iniciar una conversación previa por WhatsApp.</td><td>3</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI14</td><td>Creación de reserva con disponibilidad</td><td>Validar disponibilidad antes de crear la reserva y registrar la intención de reserva como una cita pendiente o confirmada según corresponda.</td><td>5</td><td>Alejandro Oroncoy</td><td>Planned</td></tr>
+    <tr><td>WI15</td><td>Eventos de conversión app vs WhatsApp</td><td>Instrumentar book_in_app_started, book_in_app_completed y contact_whatsapp_initiated para comparar la conversión del flujo directo frente al canal externo.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td>WI16</td><td>Reporte de fricción del flujo</td><td>Preparar la lectura de métricas de abandono, finalización y preferencia declarada para evaluar si la reserva directa reduce fricción.</td><td>2</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE05</td><td rowspan="4">Perfil con reseñas y portafolio visual</td><td>WI17</td><td>Datos de perfil enriquecido</td><td>Definir los campos necesarios para calificación promedio, reseñas visibles, imágenes de portafolio y relación con el salón o profesional.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td>WI18</td><td>Vista de perfil con evidencia visual</td><td>Construir la interfaz del perfil mostrando reseñas, calificación promedio y portafolio para aumentar la confianza antes de reservar.</td><td>4</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI19</td><td>Componentes de reseñas y portafolio</td><td>Implementar los componentes reutilizables para listar reseñas, mostrar calificaciones y renderizar trabajos previos del salón o estilista.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td>WI20</td><td>Tracking de confianza del perfil</td><td>Registrar profile_view con atributos has_reviews y has_portfolio para relacionar la visualización del perfil con la intención de reserva.</td><td>2</td><td>Jorge Yum</td><td>Planned</td></tr>
   </tbody>
 </table>
 
@@ -7221,22 +7238,117 @@ Frontend Web To-Be desplegado.
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La evidencia que sigue documenta cada feature del To-Be Sprint Backlog funcionando de extremo a extremo contra el backend real desplegado en Azure (`paxtech-ashgghgnf7fpfxe9.canadacentral-01.azurewebsites.net`), capturado directamente desde las aplicaciones móviles ejecutándose en un dispositivo Android.
 
-Aplicación Mobile To-Be.
+El producto móvil de uTime se compone de **dos aplicaciones nativas** que atienden a los dos segmentos del backlog:
 
-<img src="./assets/ux-ui/evidences/mobile/mobile-tobe.png" alt="Mobile To-Be" width="800">
+- **App de Proveedor (Flutter):** dirigida a salones y barberías para gestionar servicios, equipo y su agenda de reservas.
+- **App de Cliente (Android / Kotlin):** dirigida a los clientes finales para descubrir salones, reservar, pagar y reseñar.
 
-</div>
+Ambas comparten el mismo backend y base de datos, por lo que las acciones de un segmento se reflejan en el otro (por ejemplo, una reserva creada por el cliente aparece en la agenda del proveedor).
+
+**UE01 — Agenda digital centralizada (App de Proveedor)**
+
+El proveedor gestiona sus servicios y su equipo, y visualiza las reservas entrantes ordenadas por fecha y hora en una agenda digital centralizada, eliminando la coordinación manual por canales externos.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_provider_servicios.png" width="240"><br><em>Gestión de servicios del salón</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_provider_trabajadores.png" width="240"><br><em>Gestión del equipo de trabajo</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_provider_ue01_calendario.png" width="240"><br><em>Agenda con la reserva del cliente reflejada automáticamente</em></td>
+  </tr>
+</table>
+
+**UE04 — Flujo directo de reserva en la app (App de Cliente)**
+
+El cliente completa una reserva íntegramente desde la aplicación —descubre el salón, selecciona profesional y elige fecha y hora disponible— sin depender de una conversación inicial por WhatsApp.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_home.png" width="240"><br><em>Descubrimiento de salones</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue04_profesional.png" width="240"><br><em>Selección de profesional</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue04_fechahora.png" width="240"><br><em>Selección de fecha y hora</em></td>
+  </tr>
+</table>
+
+**UE03 — Confirmación o pago digital de reserva (App de Cliente)**
+
+El cliente confirma y paga digitalmente su reserva mediante la pasarela de pago integrada (Stripe). Al completarse el pago, la reserva queda registrada y visible tanto para el cliente como para el negocio.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue03_resumen.png" width="240"><br><em>Resumen de la cita a confirmar</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue03_pago_stripe.png" width="240"><br><em>Pago digital (pasarela Stripe)</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue03_pago_exitoso.png" width="240"><br><em>Confirmación de pago exitoso</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue04_mis_reservas.png" width="240"><br><em>Reserva registrada en "Mis reservas"</em></td>
+  </tr>
+</table>
+
+**UE05 — Perfil con reseñas y portafolio visual (App de Cliente)**
+
+El cliente consulta el perfil del salón, su calificación promedio y las reseñas de otros clientes antes de reservar, reforzando la confianza en su elección.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue05_salon_perfil.png" width="240"><br><em>Perfil del salón con calificación</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue05_resena.png" width="240"><br><em>Reseña y calificación del cliente</em></td>
+  </tr>
+</table>
+
+**UE02 — Recordatorios automáticos de citas (App de Proveedor)**
+
+Un trabajo programado en el backend revisa las reservas cuya cita comienza dentro de las próximas 24 horas y genera automáticamente un recordatorio para el cliente y para el negocio. El proveedor visualiza estos recordatorios, con datos reales de la reserva, en su pantalla de notificaciones dentro de la app.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_provider_ue02_notificaciones.png" width="240"><br><em>Recordatorio automático de una cita próxima, generado por el backend y mostrado al proveedor</em></td>
+  </tr>
+</table>
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
+El backend Spring Boot está desplegado en **Azure App Service** y expone una API REST documentada con **OpenAPI / Swagger UI** (`/swagger-ui/index.html`). A continuación se muestra la documentación viva de los endpoints que dan soporte a cada feature del To-Be backlog.
+
+**Vista general de la API**
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_overview.png" alt="Swagger API overview" width="360">
+</div>
 
-Backend To-Be desplegado.
+**Reservations y Time Slots — UE01 (agenda) y UE04 (flujo de reserva)**
 
-<img src="./assets/ux-ui/evidences/backend/backend-tobe.png" alt="Backend To-Be" width="800">
+Endpoints para crear y consultar reservas y la disponibilidad de horarios que alimentan la agenda del proveedor y el flujo de reserva del cliente.
 
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_reservations.png" alt="Reservations endpoints" width="820">
+<br><br>
+<img src="./assets/cap8/backend_swagger_time-slots.png" alt="Time Slots endpoints" width="820">
+</div>
+
+**Payments — UE03 (confirmación o pago digital)**
+
+Endpoints de pago, incluyendo la creación del enlace de pago (Stripe) y el webhook de confirmación.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_payments.png" alt="Payments endpoints" width="820">
+</div>
+
+**Notifications — UE02 (recordatorios automáticos)**
+
+Endpoints que exponen los recordatorios generados automáticamente por el job programado del backend, para proveedor y cliente.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_notifications.png" alt="Notifications endpoints" width="820">
+</div>
+
+**Reviews — UE05 (perfil con reseñas)**
+
+Endpoints para crear y consultar las reseñas que se muestran en el perfil del salón.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_reviews.png" alt="Reviews endpoints" width="820">
 </div>
 
 #### 8.3.3.6. Team Collaboration Insights
