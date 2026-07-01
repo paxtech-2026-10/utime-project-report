@@ -49,7 +49,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Abril 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
 
 <div class="page"></div>
 
@@ -145,8 +145,8 @@ Para el desarrollo del AV2, se registran las siguientes tareas asignadas:
 | Integrantes                | Tarea asignada |
 |----------------------------|----------------|
 | Jorge Suin Yum Gonzales    | Capítulo VIII: Experiment-Driven Development — As-Is Summary (8.1.1), Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims (8.1.2), Experiment-Ready Questions (8.1.3), Question Backlog (8.1.4), Hypotheses (8.2.1), Data Analytics: Goals, KPIs and Metrics Selection (8.2.7), To-Be User Stories (8.3.1) y To-Be Product Backlog (8.3.2) |
-| Eduardo Gael Rivera Sosa   | |
-| Gabriel Sánchez Gonzales   | |
+| Eduardo Gael Rivera Sosa   | Capítulo VI: Validation Interviews — Diseño de Entrevistas (6.3.1) y Registro de Entrevistas (6.3.2); Capítulo VII: Continuous Monitoring — Monitoring Pipeline Components (7.4.2), Alerting Pipeline Components (7.4.3) y Notification Pipeline Components (7.4.4) |
+| Gabriel Sánchez Gonzales   | Elaboración de evaluaciones según heuristicas|
 | Natalia Bertha Roman Cruz  | Elaboración de las Experiment Cards, Domain Business Metrics, Measures, Conditions, Scale Calculations and Decisions, Methods selection y data analytics |
 | Alejandro Daniel Oroncoy Almeyda | Capítulo VI: Static Testing & Verification — Coding Standards & Code Conventions (6.2.1.1), Code Quality & Code Security con SonarCloud (6.2.1.2) y Reviews por Pull Requests (6.2.2) |
 
@@ -156,11 +156,11 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
-Gráfico de red (*network graph*) de ramas en el repositorio de GitHub para el TB1.
+Gráfico de red (*network graph*) de ramas en el repositorio de GitHub para el AV2.
 
 ![Insights TB1 - Network Graph](./assets/tb1/insights/networkgraph-tb1.png)
 
-Actividad de commits en el tiempo para el TB1.
+Actividad de commits en el tiempo para el AV2.
 
 ![Insights TB1 - Commits Over Time](./assets/tb1/insights/commits-over-time-tb1.png)
 
@@ -280,6 +280,7 @@ Actividad de commits en el tiempo para el TB1.
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
   - [5.2. Product Implementation \& Deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
+      - [Sprint #1](#sprint-1)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
@@ -293,24 +294,67 @@ Actividad de commits en el tiempo para el TB1.
   - [6.1. Testing Suites \& Validation](#61-testing-suites--validation)
     - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
       - [6.1.1.1. Services Bounded Context](#6111-services-bounded-context)
+        - [6.1.1.1.1. Backend — Spring Boot](#61111-backend--spring-boot)
+        - [6.1.1.1.2. Mobile App — Flutter (iOS Mobile App)](#61112-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.1.3. Mobile App — Android (Kotlin)](#61113-mobile-app--android-kotlin)
+        - [6.1.1.1.4. Frontend Web — Angular](#61114-frontend-web--angular)
+        - [6.1.1.1.5. Resumen agregado (Services)](#61115-resumen-agregado-services)
       - [6.1.1.2. Workers Bounded Context](#6112-workers-bounded-context)
+        - [6.1.1.2.1. Backend — Spring Boot](#61121-backend--spring-boot)
+        - [6.1.1.2.2. Mobile App — Flutter (iOS Mobile App)](#61122-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.2.3. Mobile App — Android (Kotlin)](#61123-mobile-app--android-kotlin)
+        - [6.1.1.2.4. Frontend Web — Angular](#61124-frontend-web--angular)
+        - [6.1.1.2.5. Resumen agregado (Workers)](#61125-resumen-agregado-workers)
       - [6.1.1.3. IAM Bounded Context](#6113-iam-bounded-context)
+        - [6.1.1.3.1. Backend — Spring Boot](#61131-backend--spring-boot)
+        - [6.1.1.3.2. Mobile App — Flutter (iOS Mobile App)](#61132-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.3.3. Mobile App — Android (Kotlin)](#61133-mobile-app--android-kotlin)
+        - [6.1.1.3.4. Frontend Web — Angular](#61134-frontend-web--angular)
+        - [6.1.1.3.5. Resumen agregado (IAM)](#61135-resumen-agregado-iam)
       - [6.1.1.4. Profiles Bounded Context](#6114-profiles-bounded-context)
+        - [6.1.1.4.1. Backend — Spring Boot](#61141-backend--spring-boot)
+        - [6.1.1.4.2. Mobile App — Flutter (iOS Mobile App)](#61142-mobile-app--flutter-ios-mobile-app)
+        - [6.1.1.4.3. Mobile App — Android (Kotlin)](#61143-mobile-app--android-kotlin)
+        - [6.1.1.4.4. Frontend Web — Angular](#61144-frontend-web--angular)
+        - [6.1.1.4.5. Resumen agregado (Profiles)](#61145-resumen-agregado-profiles)
       - [6.1.1.5 Reviews Bounded Context](#6115-reviews-bounded-context)
+        - [6.1.1.5.1. Backend - Spring Boot](#61151-backend---spring-boot)
+        - [6.1.1.5.3. Frontend Web — Angular](#61153-frontend-web--angular)
+        - [6.1.1.5.4. Resumen agregado (Reviews)](#61154-resumen-agregado-reviews)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
       - [Bounded Context: Services](#bounded-context-services)
       - [Bounded Context: Workers](#bounded-context-workers)
       - [Bounded Context: Reviews](#bounded-context-reviews)
       - [Comandos de ejecución:](#comandos-de-ejecución)
       - [Evidencia de ejecución](#evidencia-de-ejecución)
+        - [Backend (Spring Boot)](#backend-spring-boot)
       - [Frontend Web (Angular)](#frontend-web-angular)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
+      - [Feature file: Services](#feature-file-services)
+      - [Step definition example](#step-definition-example)
+      - [Execution evidence](#execution-evidence)
       - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
+      - [Feature file: IAM](#feature-file-iam)
+      - [Step definition example](#step-definition-example-1)
+      - [Execution evidence](#execution-evidence-1)
       - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
+      - [Feature file: Profiles](#feature-file-profiles)
+      - [Step definition example](#step-definition-example-2)
+      - [Execution evidence](#execution-evidence-2)
       - [6.1.3.4. Workers Bounded Context](#6134-workers-bounded-context)
+      - [Feature file: Workers](#feature-file-workers)
+      - [Step definition example](#step-definition-example-3)
+      - [Execution evidence](#execution-evidence-3)
       - [6.1.3.5. Reviews Bounded Context](#6135-reviews-bounded-context)
+        - [Feature file: Reviews](#feature-file-reviews)
+        - [Step definitions](#step-definitions)
+        - [Execution evidence](#execution-evidence-4)
+        - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
       - [6.1.3.6. Reservations Bounded Context](#6136-reservations-bounded-context)
+      - [Feature file: Reservations](#feature-file-reservations)
+      - [Step definition example](#step-definition-example-4)
+      - [Execution evidence](#execution-evidence-5)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
@@ -322,16 +366,53 @@ Actividad de commits en el tiempo para el TB1.
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías-1)
+        - [Datos del Entrevistado #1](#datos-del-entrevistado-1-2)
+        - [Datos del Entrevistado #2](#datos-del-entrevistado-2-2)
+    - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza-1)
+      - [Datos del Entrevistado #1](#datos-del-entrevistado-1-3)
+      - [Datos del Entrevistado #2](#datos-del-entrevistado-2-3)
     - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
     - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
       - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
       - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
       - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+        - [SITE o APP A EVALUAR](#site-o-app-a-evaluar)
+        - [TAREAS A EVALUAR](#tareas-a-evaluar)
+        - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas)
+        - [ESCALA DE SEVERIDAD](#escala-de-severidad)
+        - [TABLA RESUMEN](#tabla-resumen)
+        - [DESCRIPCIÓN DE PROBLEMAS](#descripción-de-problemas)
+          - [PROBLEMA #1: Falta de contexto en la asignación de técnicos y maquinaria](#problema-1-falta-de-contexto-en-la-asignación-de-técnicos-y-maquinaria)
+          - [PROBLEMA #2: Ausencia de mecanismos visibles para agilizar tareas repetitivas](#problema-2-ausencia-de-mecanismos-visibles-para-agilizar-tareas-repetitivas)
+          - [PROBLEMA #3: Navegación basada únicamente en iconos](#problema-3-navegación-basada-únicamente-en-iconos)
+          - [PROBLEMA #4: Tarjetas con métricas sin facilidad de identificación](#problema-4-tarjetas-con-métricas-sin-facilidad-de-identificación)
+          - [PROBLEMA #5: Bajo contraste visual que afecta la legibilidad](#problema-5-bajo-contraste-visual-que-afecta-la-legibilidad)
+          - [PROBLEMA #6: Inconsistencia en la jerarquía y ubicación de acciones principales](#problema-6-inconsistencia-en-la-jerarquía-y-ubicación-de-acciones-principales)
+        - [OBSERVACIONES GENERALES](#observaciones-generales)
     - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
       - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
       - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
       - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+- [SITE o APP A EVALUAR](#site-o-app-a-evaluar-1)
+        - [TAREAS A EVALUAR](#tareas-a-evaluar-1)
+        - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas-1)
+        - [ESCALA DE SEVERIDAD](#escala-de-severidad-1)
+        - [TABLA RESUMEN](#tabla-resumen-1)
+        - [DESCRIPCIÓN DE PROBLEMAS](#descripción-de-problemas-1)
+          - [PROBLEMA #1: Uso contraintuitivo del color verde para horarios bloqueados](#problema-1-uso-contraintuitivo-del-color-verde-para-horarios-bloqueados)
+          - [PROBLEMA #2: Errores críticos de mapeo de datos e inconsistencia de moneda](#problema-2-errores-críticos-de-mapeo-de-datos-e-inconsistencia-de-moneda)
+          - [PROBLEMA #3: Inconsistencia de idioma en flujos principales](#problema-3-inconsistencia-de-idioma-en-flujos-principales)
+          - [PROBLEMA #4: Acción destructiva instantánea y confusión visual por color primario](#problema-4-acción-destructiva-instantánea-y-confusión-visual-por-color-primario)
+          - [PROBLEMA #5: Falta de affordance en la solicitud de permisos de ubicación](#problema-5-falta-de-affordance-en-la-solicitud-de-permisos-de-ubicación)
+          - [PROBLEMA #6: Confirmación de reserva mediante alerta nativa del navegador](#problema-6-confirmación-de-reserva-mediante-alerta-nativa-del-navegador)
+          - [PROBLEMA #7: Errores de mapeo de datos y exposición de valores del sistema](#problema-7-errores-de-mapeo-de-datos-y-exposición-de-valores-del-sistema)
+          - [PROBLEMA #8: Inconsistencia de idioma (Spanglish) en componentes principales](#problema-8-inconsistencia-de-idioma-spanglish-en-componentes-principales)
+          - [PROBLEMA #9: Falta de visibilidad del estado en los planes de suscripción](#problema-9-falta-de-visibilidad-del-estado-en-los-planes-de-suscripción)
+          - [PROBLEMA #10: Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN)](#problema-10-exposición-de-jerga-del-sistema-por-ausencia-de-un-estado-vacío-nan)
+        - [CONCLUSIONES](#conclusiones)
+        - [OBSERVACIONES GENERALES](#observaciones-generales-1)
       - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
 - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
   - [7.1. Continuous Integration](#71-continuous-integration)
@@ -385,15 +466,14 @@ Actividad de commits en el tiempo para el TB1.
     - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
   - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
     - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
-- [Conclusiones](#conclusiones)
+- [Conclusiones](#conclusiones-1)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Conclusiones](#conclusiones-1)
+    - [Conclusiones](#conclusiones-2)
     - [Recomendaciones](#recomendaciones)
 - [Video App Validation](#video-app-validation)
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
-  - [AV1](#av1-1)
 
 <div class="page"></div>
 
@@ -411,17 +491,16 @@ Actividad de commits en el tiempo para el TB1.
     <tr>
       <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
       <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios. En todos estos pasos, me esforcé por seguir los principios éticos y profesionales de la ingeniería de software acorde con la situación. <br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de utilizar la información con responsabilidad y solo aplicarla en proyectos o prácticas éticas que vayan acorde con el bienestar del equipo y los usuarios planteados. <br><b>AV2:</b> Para la entrega del segundo avance, estuve a cargo de gran parte de la elaboración del proceso de Expriment-Driven Development, para el cual comencé investigando sobre su aplicación y propósito con el objetivo de lograr que este no solo estuviera correctamente planteado sino que también sirivera para mejorar el producto creado. Así, pude desarrollar y analizar elementos como las experiment cards, scale calculations and decisions, domain business metrics, entre otros.</td>
-      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).<br><b>TB1:</b> En el TB1, el equipo reconoció su responsabilidad ética y profesional al trasladar el producto del diseño a una implementación verificable: se configuró el entorno multi-stack (Angular para web, Flutter y Kotlin nativo para móvil, y Spring Boot con PostgreSQL en Neon para el backend) bajo GitFlow, Conventional Commits y Semantic Versioning, y se construyó una suite de pruebas unitarias, de integración, BDD (Cucumber + Playwright) y system tests por bounded context, además de formalizar el pipeline de CI/CD en GitHub Actions y Azure. Esto evidenció que entregar software confiable y trazable —y no solo funcional— es una obligación profesional con el equipo, el cliente y los usuarios finales.<br><b>AV2:</b> En el AV2, el equipo asumió su responsabilidad ética y profesional al adoptar un enfoque Experiment-Driven Development en el Capítulo VIII, transformando suposiciones y afirmaciones en preguntas y experimentos falsables (EXP01–EXP05) para no presentar como validado aquello que aún debe comprobarse con usuarios reales. Esta responsabilidad se reforzó con las Validation Interviews del Capítulo VI —registradas de forma fiel y sin inducir respuestas—, el análisis estático con SonarCloud que trató los hallazgos de seguridad como deuda a corregir y no a ocultar, y el Continuous Monitoring del Capítulo VII, que vigila la disponibilidad del servicio en producción para proteger a quienes dependen de la plataforma.</td>
     </tr>
     <tr>
       <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context Services. Diseñé y documenté pruebas unitarias para backend Spring Boot, Flutter, Android Kotlin y Angular, alcanzando 47 tests en 6 archivos. Además, implementé integration tests con Spring Boot Test, MockMvc y H2 para validar la integración entre controlador, servicios, repositorio y persistencia. También elaboré escenarios BDD para la US22 - Administración de servicios ofrecidos con Gherkin, Cucumber.js y Playwright, y participé en Core System Tests para verificar flujos reales como la creación y eliminación de servicios.<br><b>AV2:</b> Para el AV2 trabajé en el Capítulo VIII aplicando Experiment-Driven Development a uTime. Elaboré el As-Is Summary, organicé assumptions, knowledge gaps, ideas y claims, convertí estos elementos en Experiment-Ready Questions y Question Backlog, y formulé hipótesis, métricas, To-Be User Stories y To-Be Product Backlog. En estas actividades procuré diferenciar evidencia, suposiciones e hipótesis para no presentar como validado aquello que aún debe comprobarse experimentalmente.</td>
     </tr>
     <tr>
-      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Durante este avance desarrollé múltiples entregables como Style Guidelines (web y mobile), Information Architecture (organization, labeling, navigation y searching systems), diseño UX/UI (wireframes, mockups, prototipos) tanto para web como mobile (iOS y Android), además de artefactos de arquitectura de software como Domain-Driven Design, diagramas de contexto, contenedores y componentes, junto con diseño orientado a objetos y modelado de base de datos.
- <b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad del sistema mediante pruebas bien estructuradas. Diseñé y documenté pruebas unitarias para el backend en Spring Boot, validando la lógica de negocio y el correcto comportamiento de los servicios, con el objetivo de garantizar consistencia y confiabilidad en las funcionalidades relacionadas al módulo de reseñas.</td></td>
+      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Durante este avance desarrollé múltiples entregables como Style Guidelines (web y mobile), Information Architecture (organization, labeling, navigation y searching systems), diseño UX/UI (wireframes, mockups, prototipos) tanto para web como mobile (iOS y Android), además de artefactos de arquitectura de software como Domain-Driven Design, diagramas de contexto, contenedores y componentes, junto con diseño orientado a objetos y modelado de base de datos.<br><b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad del sistema mediante pruebas bien estructuradas. Diseñé y documenté pruebas unitarias para el backend en Spring Boot, validando la lógica de negocio y el correcto comportamiento de los servicios, con el objetivo de garantizar consistencia y confiabilidad en las funcionalidades relacionadas al módulo de reseñas. <b>AV2:</b> Durante el AV2 reconocí mi responsabilidad ética y profesional al realizar evaluaciones basadas en heurísticas de usabilidad, identificando oportunidades de mejora para ofrecer una experiencia más accesible, eficiente y centrada en el usuario.</td>
     </tr>
     <tr>
-      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en los bounded contexts IAM y Profiles, y documenté la integración continua del producto. Diseñé pruebas unitarias para los cuatro stacks (Spring Boot con JUnit 5, Angular con Karma + Jasmine, Android Kotlin con JUnit 4 y Flutter con flutter_test), totalizando 25 tests para IAM y 66 tests para Profiles distribuidos en 21 archivos. Elaboré escenarios BDD con Gherkin, Cucumber.js y Playwright en TypeScript para las US01 (registro de cliente), US03 (inicio de sesión) y US06 (personalización del perfil del salón), reutilizando los helpers de <code>e2e/support</code> ya existentes. Finalmente documenté la sección 7.1 del Capítulo VII describiendo el workflow de GitHub Actions del backend que compila con Maven y despliega a Azure App Service, detallando sus triggers, jobs, steps y prácticas de aislamiento, fail-fast y reproducibilidad.</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en los bounded contexts IAM y Profiles, y documenté la integración continua del producto. Diseñé pruebas unitarias para los cuatro stacks (Spring Boot con JUnit 5, Angular con Karma + Jasmine, Android Kotlin con JUnit 4 y Flutter con flutter_test), totalizando 25 tests para IAM y 66 tests para Profiles distribuidos en 21 archivos. Elaboré escenarios BDD con Gherkin, Cucumber.js y Playwright en TypeScript para las US01 (registro de cliente), US03 (inicio de sesión) y US06 (personalización del perfil del salón), reutilizando los helpers de <code>e2e/support</code> ya existentes. Finalmente documenté la sección 7.1 del Capítulo VII describiendo el workflow de GitHub Actions del backend que compila con Maven y despliega a Azure App Service, detallando sus triggers, jobs, steps y prácticas de aislamiento, fail-fast y reproducibilidad.<br><b>AV2:</b> Durante el AV2 asumí mi responsabilidad ética y profesional en dos frentes del informe. En las Validation Interviews del Capítulo VI (6.3.1 y 6.3.2) diseñé una guía de entrevista neutral —con preguntas introductorias y bloques diferenciados por segmento objetivo tras mostrar la Landing Page y la app móvil— y registré la retroalimentación de cada entrevistado de forma fiel, sin inducir respuestas ni omitir las críticas recibidas, para no presentar como validado aquello que los usuarios no respaldaron. En el Continuous Monitoring del Capítulo VII (7.4.2, 7.4.3 y 7.4.4) implementé un pipeline de monitoreo real sobre GitHub Actions —health-check programado con `curl`, alertas ante caída del backend o fallo de despliegue y notificaciones por Gmail SMTP— reconociendo que vigilar la disponibilidad del servicio en producción y avisar oportunamente al equipo es una obligación profesional con los usuarios que dependen de la plataforma.</td>
     </tr>
     <tr>
       <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conceptos de ingeniería de software relacionados con la implementación, despliegue y configuración del producto en el Capítulo V. Apliqué Software Configuration Management con el conjunto de herramientas del ciclo de vida (Pivotal Tracker, Discord, Figma, UXPressia, Trello, WebStorm, IntelliJ IDEA, Android Studio, Git, GitKraken, Render, GitHub Pages, Azure y Firebase), formalicé el flujo GitFlow y las convenciones de Conventional Commits, y documenté las guías de estilo por tecnología (HTML, CSS, JavaScript/Bootstrap, TypeScript/Angular, Dart/Flutter, Java/Spring Boot y Gherkin). Estructuré el Sprint #1 con su Sprint Planning Background, matriz LACX, Sprint Backlog (US01, US03, US29–US35, TS06), Development y Execution Evidence, y los Team Collaboration Insights, y articulé el Acuerdo de Servicio SaaS (SLA) entre PaxTech y el Cliente. Asimismo, alineé la decisión de persistencia de §4.10.1 a PostgreSQL desplegado en Neon, conforme al diagrama de despliegue del producto. <br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context <strong>Reservations</strong>. Diseñé y documenté pruebas unitarias y de integración para la lógica de agendamiento, y elaboré escenarios BDD para la <strong>US18 — Creación de citas</strong> con Gherkin, Cucumber.js y Playwright, cubriendo los criterios de aceptación "Registro correcto de cita nueva" y "Verificación de disponibilidad antes de agendar". Reutilicé los helpers de fixtures del proyecto y alineé las pruebas con el system test SYS-04 para reproducir el flujo real end-to-end. Trabajé con responsabilidad profesional, asegurando que cada prueba reflejara el comportamiento verdadero del sistema y no un resultado forzado. <br><b>AV2:</b> Para el AV2 asumí la responsabilidad del aseguramiento de la calidad y la seguridad del código en el Capítulo VI. Documenté las convenciones de codificación por tecnología, formalicé el uso de Conventional Commits y la revisión por pares mediante Pull Requests, e integré <strong>SonarCloud</strong> a la organización de GitHub para medir fiabilidad, mantenibilidad, duplicación y seguridad. Traté los hallazgos de seguridad —como posibles credenciales embebidas y la ausencia de Subresource Integrity— como deuda técnica a corregir y no a ocultar, reconociendo que entregar software confiable es también una obligación ética con los usuarios. </td>
@@ -429,17 +508,16 @@ Actividad de commits en el tiempo para el TB1.
     <tr>
       <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
       <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir. De esta manera, pude emitir un juicio informado conforme a lo investigado, lo planteado en el proyecto y el contexto actual dado.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible de forma en que pudiera emitir un juicio informado en cuanto a que pruebas debían ser implementadas y porqué ofreciendo una mejor calidad en la solución implementada. <br><b>AV2:</b> Al desarrollar la tercera entrega, me aseguré de informarme antes de realizar el Experiment-Driven Development y debatirlo junto a mis compañeros. Considero que se llegó al resultado esperado, puesto que este nos permite experimentar directamente con nuestro público objetivo tocando los puntos clave y que servirán como impulso para mejorar nuestro producto.</td>
-      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).<br><b>TB1:</b> En el TB1, el equipo emitió juicios informados al definir la estrategia de verificación y validación de un producto multiplataforma: seleccionó frameworks de testing apropiados para cada stack (JUnit 5, Karma + Jasmine, JUnit 4 y flutter_test), priorizó los escenarios BDD más críticos por bounded context y decidió la arquitectura del pipeline de CI/CD sobre GitHub Actions y Azure. Estas decisiones, sustentadas en evidencia técnica y no en suposiciones, evidenciaron que el aprendizaje continuo sobre herramientas de calidad y DevOps es indispensable para tomar decisiones proporcionadas al impacto del producto.<br><b>AV2:</b> En el AV2, el equipo emitió juicios informados al priorizar qué hipótesis experimentar y escalar (adopción de agenda digital, recordatorios, pagos digitales, reserva directa y confianza por reseñas), ponderando el impacto económico para los negocios y la experiencia social de los clientes antes de invertir en cada funcionalidad. Asimismo, la validación con usuarios reales, la interpretación de las métricas de SonarCloud y la elección de una observabilidad gratuita y de baja huella operativa (GitHub Actions, Azure App Service y Gmail SMTP) frente a APM externos costosos evidenciaron que el aprendizaje continuo permite tomar decisiones fundamentadas y sostenibles para una startup en fase de validación.</td>
     </tr>
     <tr>
       <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al profundizar en distintos niveles de testing para un producto multiplataforma. Para completar las pruebas de Services fue necesario aplicar JUnit 5, Mockito, AssertJ, Spring Boot Test, MockMvc, H2, flutter_test, JUnit 4, Karma, Jasmine, Cucumber.js, Gherkin y Playwright. Este trabajo me permitió comprender la importancia de validar unidades, integración entre capas, comportamiento BDD y flujos completos de usuario, además de reforzar la mejora continua a partir de hallazgos como errores de validación del provider y manejo de excepciones.<br><b>AV2:</b> En el AV2 emití juicios informados al transformar los problemas detectados en entrevistas y needfinding en preguntas experimentales medibles. Prioricé experimentos sobre adopción de agenda digital, recordatorios, pagos digitales, reserva directa y confianza mediante perfiles con reseñas, considerando su impacto económico para los negocios, la experiencia social de los clientes y la viabilidad técnica de medir los resultados antes de escalar funcionalidades.</td>
     </tr>
     <tr>
-      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.</td>
- <b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad y confiabilidad del sistema mediante pruebas bien estructuradas. Esto permitió emitir soluciones más seguras y consistentes, considerando el impacto que un software estable y correctamente validado tiene en la experiencia de los usuarios y en el correcto funcionamiento de la plataforma dentro de un contexto tecnológico y social.</td>
+      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.<br><b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad y confiabilidad del sistema mediante pruebas bien estructuradas. Esto permitió emitir soluciones más seguras y consistentes, considerando el impacto que un software estable y correctamente validado tiene en la experiencia de los usuarios y en el correcto funcionamiento de la plataforma dentro de un contexto tecnológico y social. <b>AV2:</b> Durante el AV2 analicé la interfaz mediante evaluaciones heurísticas, consideré el efecto que las decisiones de diseño pueden tener en los usuarios y en la calidad de la solución, proponiendo mejoras orientadas a generar una experiencia más eficiente y accesible.</td>
     </tr>
     <tr>
-      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al cubrir los cuatro stacks del producto en una misma entrega de testing y al documentar el pipeline de CI/CD. Para los unit tests fue necesario aplicar JUnit 5, Karma + Jasmine sobre Angular 19, JUnit 4 sobre Kotlin/Compose y flutter_test, además de patrones DDD aplicados a aggregates (User, Client, Provider, ProviderProfile, Discount, PortfolioImage, Social) y value objects (FullName, CompanyName). Para BDD profundicé en Cucumber.js, Gherkin en español, Playwright y la convención de step definitions reutilizables que ya seguía el bounded context Services. Para CI estudié los triggers de GitHub Actions, la autenticación OIDC contra Azure y el flujo de artifacts entre jobs. Este trabajo evidenció que mantener consistencia entre cuatro stacks distintos exige aprender de forma continua las particularidades de cada herramienta y converger en una misma convención de testing, naming y trazabilidad.</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al cubrir los cuatro stacks del producto en una misma entrega de testing y al documentar el pipeline de CI/CD. Para los unit tests fue necesario aplicar JUnit 5, Karma + Jasmine sobre Angular 19, JUnit 4 sobre Kotlin/Compose y flutter_test, además de patrones DDD aplicados a aggregates (User, Client, Provider, ProviderProfile, Discount, PortfolioImage, Social) y value objects (FullName, CompanyName). Para BDD profundicé en Cucumber.js, Gherkin en español, Playwright y la convención de step definitions reutilizables que ya seguía el bounded context Services. Para CI estudié los triggers de GitHub Actions, la autenticación OIDC contra Azure y el flujo de artifacts entre jobs. Este trabajo evidenció que mantener consistencia entre cuatro stacks distintos exige aprender de forma continua las particularidades de cada herramienta y converger en una misma convención de testing, naming y trazabilidad.<br><b>AV2:</b> En el AV2 emití juicios informados al elegir cómo validar el producto y cómo observarlo en producción. Para las Validation Interviews del Capítulo VI prioricé contrastar la propuesta directamente con dueños de salones y clientes finales, ponderando el impacto económico (disposición a pagar por los planes) y social (confianza y facilidad de uso frente a coordinar por WhatsApp) de las decisiones de producto antes de darlas por buenas. Para el Continuous Monitoring del Capítulo VII evalué alternativas de observabilidad y, en lugar de incorporar un APM externo (Jenkins, Datadog, New Relic o Grafana), decidí apoyarme en GitHub Actions, la observabilidad nativa del Azure App Service y Gmail SMTP, una solución gratuita y sin infraestructura adicional que mantener; este juicio consideró el costo económico para una startup en fase de validación y la menor huella operativa, evidenciando que el aprendizaje continuo sobre herramientas DevOps es indispensable para tomar decisiones fundamentadas y proporcionadas al contexto del proyecto.</td>
     </tr>
     <tr>
       <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al construir el Capítulo V partiendo de dos reportes base (UPC-PaxTech/uTime y PaxTech-1807/Final-Report), lo que exigió comparar arquitecturas, decisiones de stack y patrones de despliegue distintos para destilar la solución más coherente con nuestro producto. Investigué y verifiqué el diagrama de despliegue real (Flutter Cliente + Kotlin Negocio sobre Android, Spring Boot en Azure App Service, PostgreSQL en Neon y Stripe para pagos), prácticas de GitFlow y Conventional Commits, configuración de GitHub Pages, automatización con GitHub Actions, distribución de builds con Firebase App Distribution, documentación de APIs con springdoc-openapi y bounded contexts (IAM, Profiles, Reservations, Services, Reviews, Workers). Este proceso evidenció que la implementación de un producto digital exige actualización continua de tecnologías, mejor gestión de la trazabilidad entre artefactos del informe y disciplina para alinear decisiones técnicas entre capítulos. <br><b>TB1:</b> En el TB1 reconocí la importancia del aprendizaje permanente al profundizar en distintos niveles de testing para el bounded context Reservations. Para completar las pruebas fue necesario aplicar frameworks de pruebas unitarias y de integración junto con BDD mediante Gherkin, Cucumber.js y Playwright. Este trabajo me permitió emitir juicios informados sobre qué escenarios validar —el registro de una cita y la verificación de disponibilidad— y comprender la importancia de probar tanto unidades como flujos completos de usuario antes de dar una funcionalidad por terminada. <br><b>AV2:</b> Para el AV2 profundicé en herramientas modernas de análisis estático que no había usado antes: aprendí a interpretar las calificaciones A–E de SonarCloud y métricas como la duplicación de código y los <em>security hotspots</em> para decidir, con criterio, qué corregir primero. Comprendí que una calificación de seguridad baja no es un fracaso sino la señal de que el análisis funciona y revela deuda real, y tomé decisiones fundamentadas en evidencia —no en suposiciones— considerando el impacto que un sistema seguro y mantenible tiene en la confianza de los usuarios. </td>
@@ -1394,8 +1472,6 @@ Para el segmento de los salones estilistas o barberos se consideró el momento d
 
 <div class="page"></div>
 
-</div>
-
 ### 2.3.4. Empathy Mapping
 
 
@@ -2232,8 +2308,6 @@ Los diagramas de flujo de usuario mapean el camino completo que sigue una person
 ## 4.7. Web Applications Prototyping
 
 [Ver prototipo interactivo en Figma](https://www.figma.com/proto/2RXg2e7OWrAbqYfNcw2EVP/UTIME?node-id=159-4024&t=7a0gTd0f0bacMsU5-1)
-
-</div>
 
 ## 4.8. Domain-Driven Software Architecture
 
@@ -5698,18 +5772,12 @@ Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expr
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-| # | Heurística de Nielsen | Hallazgo | Severidad (0-4) | Recomendación |
-|---|-----------------------|----------|-----------------|---------------|
-| 1 | Visibilidad del estado del sistema |          |                 |               |
-| 2 | Correspondencia sistema-mundo real |          |                 |               |
-| 3 | Control y libertad del usuario |              |                 |               |
-| 4 | Consistencia y estándares |                   |                 |               |
-| 5 | Prevención de errores |                       |                 |               |
-| 6 | Reconocer antes que recordar |                |                 |               |
-| 7 | Flexibilidad y eficiencia de uso |            |                 |               |
-| 8 | Diseño estético y minimalista |               |                 |               |
-| 9 | Ayudar a reconocer y recuperarse de errores | |                 |               |
-| 10 | Ayuda y documentación |                      |                 |               |
+| # | Heurística de Nielsen              | Hallazgo                                                             | Severidad (0-4) | Recomendación                                                |
+| - | ---------------------------------- | -------------------------------------------------------------------- | --------------- | ------------------------------------------------------------ |
+| 1 | Consistencia y estándares          | Inconsistencias en la traducción al inglés de la aplicación móvil.   | 2               | Corregir textos y revisar el sistema de traducciones.        |
+| 2 | Flexibilidad y eficiencia de uso   | Falta de un historial o registro de servicios realizados a clientes. | 2               | Incorporar notas e historial de atención por cliente.        |
+| 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas.    | 2               | Permitir sincronización automática con calendarios externos. |
+                |                 |               |
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -5717,64 +5785,607 @@ Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expr
 
 #### 6.4.1.1. Información del grupo auditado
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre del grupo / Startup | [Grupo auditado] |
-| Producto | [Producto auditado] |
-| Integrantes | [Lista] |
-| Repositorio | [URL] |
+| Campo | Valor |
+|---------|---------|
+| CARRERA | Ingeniería de Software |
+| CURSO | Diseño de Experimentos de Ingeniería de Software |
+| NRC | 10253 |
+| PROFESORES | Juan Carlos Tinoco Licas |
+| AUDITOR | Paxtech |
+| CLIENTE(S) | awawaTech |
 
 #### 6.4.1.2. Cronograma de auditoría realizada
 
-| Fecha | Actividad | Responsable | Observaciones |
-|-------|-----------|-------------|---------------|
-|       |           |             |               |
+| Fecha | Actividad | Responsable | Duración Estimada |
+| :---- | :---- | :---- | :---- |
+| 03/06/2026 | Recepción de Contendio para Auditoría | Gabriel Sanchez | 10 minutos |
+| 03/06/2026 | Definición de alcance  y tareas a evaluar  | Gabriel Sanchez | 1 hora |
+| 04/06/2026 | Realización de Auditoría Mobile | Gabriel Sanchez | 1 hora |
+| 04/06/2026 | Realización de Auditoría Web | Gabriel Sanchez | 1 hora |
+| 04/06/2026 | Clasificación de problemas encontrados | Gabriel Sanchez | 30 minutos |
+| 04/06/2026 | Redacción de Conclusiones y Mejoras | Gabriel Sanchez | 1 hora |
+| 05/06/2026 | Envío de Auditoría a Grupo Auditado | Gabriel Sanchez | 10 minutos |
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
-[Contenido pendiente — hallazgos, evidencias, recomendaciones.]
+##### SITE o APP A EVALUAR
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Nombre de la aplicación:** Mecanaut
 
-Evidencias de la auditoría realizada.
+---
 
-<img src="./assets/audit/performed/audit-performed.png" alt="Auditoría realizada" width="800">
+##### TAREAS A EVALUAR
 
-</div>
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Asignar técnicos a órdenes de trabajo.
+2. Gestionar activos y maquinarias.
+3. Navegar entre los módulos del sistema mediante el menú lateral.
+4. Crear nuevas órdenes de trabajo mediante formularios modales.
+5. Consultar información y detalles de órdenes de trabajo.
+
+##### No están incluidas en esta evaluación las siguientes tareas:
+
+1. Consulta del dashboard principal.
+2. Ejecución completa de órdenes de trabajo.
+3. Finalización de tareas de mantenimiento.
+4. Creación completa de planes de mantenimiento.
+5. Registro detallado de planes de mantenimiento.
+6. Registro y gestión completa de maquinarias y activos.
+7. Gestión de usuarios y permisos.
+8. Configuración general del sistema.
+9. Reportes y análisis.
+10. Notificaciones del sistema.
+11. Integraciones externas.
+12. Cualquier funcionalidad no representada visualmente en las pantallas evaluadas.
+---
+
+##### ESCALA DE SEVERIDAD
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción |
+|---------|---------|
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| **2** | Problema menor: puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+##### TABLA RESUMEN
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|---|---:|---|
+| 1 | Falta de contexto en la asignación de técnicos y maquinaria | 3 | Reconocimiento antes que recuerdo |
+| 2 | Ausencia de mecanismos visibles para agilizar tareas repetitivas | 2 | Flexibilidad y eficiencia de uso |
+| 3 | Navegación basada únicamente en iconos | 4 | Reconocimiento antes que recuerdo |
+| 4 | Distribución ineficiente del espacio visual y baja densidad informativa | 2 | Diseño estético y minimalista |
+| 5 | Bajo contraste visual que afecta la legibilidad | 3 | Diseño estético y minimalista |
+| 6 | Inconsistencia en la jerarquía y ubicación de acciones principales | 3 | Consistencia y estándares |
+
+---
+
+##### DESCRIPCIÓN DE PROBLEMAS
+
+---
+
+###### PROBLEMA #1: Falta de contexto en la asignación de técnicos y maquinaria
+
+**Severidad:** 3
+
+**Heurística violada:** Reconocimiento antes que recuerdo
+
+**Problema**
+
+Durante el proceso de asignación de técnicos a una orden de trabajo, el sistema presenta listas desplegables con identificadores de maquinaria (por ejemplo, MT-430, MT-450) sin información contextual adicional que permita diferenciarlas rápidamente. El usuario debe recordar previamente características relevantes de cada máquina, como su ubicación, estado o prioridad, para realizar la asignación correcta.
+
+Este diseño incrementa la carga cognitiva y aumenta la probabilidad de errores, especialmente cuando existen múltiples máquinas con nomenclaturas similares. La situación resulta más crítica para usuarios nuevos o para quienes gestionan un gran volumen de activos diariamente.
+
+![](assets/auditoria/web/userflow-registrar-maquinaria.png)
+
+**Recomendación**
+
+Complementar los identificadores de maquinaria con información descriptiva relevante, como ubicación, estado operativo, prioridad o nombre del activo. También se recomienda incorporar búsquedas inteligentes o vistas resumidas que permitan al usuario reconocer rápidamente la opción adecuada sin depender de la memoria.
+
+---
+
+###### PROBLEMA #2: Ausencia de mecanismos visibles para agilizar tareas repetitivas
+
+**Severidad:** 2
+
+**Heurística violada:** Flexibilidad y eficiencia de uso
+
+**Problema**
+
+Los flujos observados para registrar maquinaria, crear planes de mantenimiento y asignar técnicos muestran formularios que requieren ingresar información manualmente campo por campo. En las capturas no se evidencian mecanismos que permitan acelerar tareas frecuentes, como plantillas predefinidas, autocompletado, sugerencias automáticas o reutilización de configuraciones previas.
+
+Aunque este enfoque puede ser suficiente para usuarios ocasionales, los usuarios frecuentes que realizan estas tareas de manera repetitiva podrían invertir más tiempo del necesario en completar procesos administrativos similares.
+
+![](assets/auditoria/web/registrarmaquina.png)
+
+**Recomendación**
+
+Incorporar funcionalidades orientadas a mejorar la eficiencia de usuarios recurrentes, tales como:
+
+- Plantillas reutilizables para planes de mantenimiento.
+- Autocompletado de información frecuente.
+- Valores predeterminados según el tipo de maquinaria.
+- Copia de configuraciones existentes.
+- Atajos o acciones rápidas para tareas repetitivas.
+
+---
+
+###### PROBLEMA #3: Navegación basada únicamente en iconos
+
+**Severidad:** 4
+
+**Heurística violada:** Reconocimiento antes que recuerdo
+
+**Problema**
+
+El menú lateral de navegación está compuesto principalmente por iconos sin etiquetas textuales visibles. Aunque algunos iconos pueden resultar familiares para usuarios experimentados, otros pueden ser ambiguos o difíciles de interpretar sin conocimiento previo del sistema.
+
+La ausencia de texto obliga al usuario a memorizar el significado de cada icono o explorar distintas secciones hasta encontrar la funcionalidad deseada. Este problema afecta especialmente a usuarios nuevos y aumenta la curva de aprendizaje de la aplicación.
+
+
+<img src="assets/auditoria/web/Frame%20254.png" style="height: 500px">
+
+**Recomendación**
+
+Incorporar etiquetas de texto visibles junto a los iconos o mostrar tooltips descriptivos al pasar el cursor. Además, se recomienda resaltar claramente la sección activa para mejorar la orientación durante la navegación.
+
+---
+
+###### PROBLEMA #4: Tarjetas con métricas sin facilidad de identificación
+
+**Severidad:** 2
+
+**Heurística violada:** Visibilidad del estado del sistema
+
+**Problema**
+
+En el dashboard, las tarjetas de métricas "MTBF Promedio" y "MTTR Promedio" no indican a qué período corresponden ni si los valores son favorables o desfavorables. El usuario no sabe si 320h o 4.5h son valores buenos, malos o dentro del rango esperado.
+Las tarjetas muestran únicamente el valor numérico y la etiqueta de la métrica. No hay indicadores visuales (semáforos, flechas de tendencia, rangos objetivo) que contextualicen el dato. Por ende, un supervisor o técnico sin conocimiento profundo de los KPIs no puede interpretar si el estado actual requiere acción inmediata o es satisfactorio, reduciendo la utilidad del dashboard como herramienta de toma de decisiones.
+
+<img src="assets/auditoria/movil/kpi.png" style="height: 500px">
+
+
+
+**Recomendación**
+
+Agregar indicadores de tendencia (↑↓), colores semafóricos (verde/ámbar/rojo) y un rango objetivo visible en cada tarjeta métrica. Por ejemplo: "Meta: > 300h" junto al valor de MTBF. Una tarjeta informativa tambien que ayude a usuarios sin conocimiento extenso a entender las metricas presentadas
+
+---
+
+###### PROBLEMA #5: Bajo contraste visual que afecta la legibilidad
+
+**Severidad:** 3
+
+**Heurística violada:** Diseño estético y minimalista
+
+**Problema**
+
+La interfaz utiliza múltiples elementos visuales con bajo contraste, dificultando la lectura y diferenciación entre componentes interactivos y contenido informativo.
+
+Se observan placeholders muy tenues, etiquetas secundarias en tonos grises claros, botones deshabilitados prácticamente invisibles y textos con poca separación visual respecto al fondo. Esto puede generar dificultades de lectura, especialmente en dispositivos móviles, ambientes con iluminación variable o usuarios con limitaciones visuales.
+
+La reducción de contraste disminuye la accesibilidad y puede incrementar el esfuerzo necesario para completar tareas simples.
+
+<img src="assets/auditoria/movil/Orden%20de%20Compra.png" style="height: 500px">
+<img src="assets/auditoria/movil/Orden%20de%20Trabajo.png" style="height: 500px">
+
+**Recomendación**
+
+Incrementar el contraste entre texto, fondo y componentes interactivos utilizando combinaciones de colores que cumplan estándares de accesibilidad. También se recomienda diferenciar estados deshabilitados mediante cambios adicionales además del color.
+
+
+---
+
+###### PROBLEMA #6: Inconsistencia en la jerarquía y ubicación de acciones principales
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+Las acciones principales y secundarias no mantienen una estructura consistente entre distintas pantallas y modales, generando cambios innecesarios en los patrones de interacción.
+
+Se observa que algunos modales presentan el botón principal en una posición distinta respecto a otros, mientras que ciertas acciones secundarias aparecen arriba, abajo o con diferentes estilos visuales (relleno, borde, color). Esta inconsistencia obliga al usuario a reaprender la ubicación y jerarquía de acciones cada vez que cambia de contexto.
+
+La falta de consistencia aumenta la carga cognitiva y puede incrementar la probabilidad de errores de interacción.
+
+
+<img src="assets/auditoria/movil/Nueva%20Orden%20de%20Trabajo%20(Modal).png" style="height: 500px">
+<img src="assets/auditoria/movil/Nuevo%20Repuesto%20(Modal).png" style="height: 500px">
+
+---
+
+##### OBSERVACIONES GENERALES
+
+- Los problemas identificados afectan principalmente la eficiencia y facilidad de uso para usuarios nuevos.
+- La incorporación de contexto visual y una mejor jerarquización de la información mejoraría significativamente la experiencia de uso.
+- Se recomienda complementar la evaluación heurística con pruebas de usuario para validar el impacto real de estos hallazgos.
+
 
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre del grupo / Startup | [Grupo auditor] |
-| Integrantes | [Lista] |
-| Contacto | [URL / correo] |
+| Campo      | Valor                                            |
+| ---------- | ------------------------------------------------ |
+| CARRERA    | Ingeniería de Software                           |
+| CURSO      | Diseño de Experimentos de Ingeniería de Software |
+| NRC        | 10253                                            |
+| PROFESORES | Juan Carlos Tinoco Licas                         |
+| AUDITOR    | awawaTech                                        |
+| CLIENTE(S) | Paxtech                                          |
 
 #### 6.4.2.2. Cronograma de auditoría recibida
 
-| Fecha | Actividad | Responsable | Observaciones |
-|-------|-----------|-------------|---------------|
-|       |           |             |               |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left; width: 45%;">Actividad</th>
+      <th style="text-align: left; width: 15%;">Fecha</th>
+      <th style="text-align: left; width: 25%;">Responsable</th>
+      <th style="text-align: left; width: 15%;">Duración estimada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Recepción de accesos y material a evaluar</td>
+      <td>06/06/2026</td>
+      <td>Mauricio Elera, Ariana Agreda</td>
+      <td>10 minutos</td>
+    </tr>
+    <tr>
+      <td>Definición del alcance y selección de tareas principales</td>
+      <td>10/06/2026</td>
+      <td>Mauricio Elera, Ariana Agreda</td>
+      <td>1 hora</td>
+    </tr>
+    <tr>
+      <td>Ejecución de auditoría heurística (Entorno Web)</td>
+      <td>11/06/2026</td>
+      <td>Mauricio Elera</td>
+      <td>2 horas</td>
+    </tr>
+    <tr>
+      <td>Ejecución de auditoría heurística (Entorno Móvil)</td>
+      <td>11/06/2026</td>
+      <td>Ariana Agreda</td>
+      <td>2 horas</td>
+    </tr>
+    <tr>
+      <td>Evaluación de severidad y clasificación de hallazgos</td>
+      <td>12/06/2026</td>
+      <td>Ariana Agreda, Mauricio Elera</td>
+      <td>1 hora</td>
+    </tr>
+    <tr>
+      <td>Consolidación, redacción de conclusiones y cierre de informe</td>
+      <td>12/06/2026</td>
+      <td>Mauricio Elera, Ariana Agreda</td>
+      <td>1 hora</td>
+    </tr>
+  </tbody>
+</table>
+
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
-[Contenido pendiente — hallazgos reportados por el auditor.]
+# SITE o APP A EVALUAR
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+**Nombre de la aplicación:** uTime
 
-Evidencias de la auditoría recibida.
+---
 
-<img src="./assets/audit/received/audit-received.png" alt="Auditoría recibida" width="800">
+##### TAREAS A EVALUAR
 
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas principales (abarcando los entornos Móvil y Web):
+
+1. Explorar salones cercanos en la pantalla de inicio y gestionar permisos de ubicación.
+2. Realizar el flujo completo de programación de una cita (selección de profesional, fecha, hora y revisión del resumen de pago).
+3. Consultar el historial de citas programadas y ejecutar acciones sobre ellas (cancelación).
+4. Visualizar y analizar planes de suscripción para proveedores (Web).
+5. Consultar el listado de servicios ofrecidos y sus detalles (Web).
+6. Revisar el panel de calificaciones y reseñas del establecimiento (Web).
+
+##### No están incluidas en esta evaluación las siguientes tareas:
+
+1. Proceso de registro de usuario (Sign Up), inicio de sesión (Login) y recuperación de contraseñas.
+2. Visualizar y editar datos en el perfil de usuario.
+3. Ejecución y procesamiento real de pagos en pasarelas externas (ej. Stripe).
+4. Creación, edición y eliminación de nuevos servicios en el panel de proveedor.
+5. Gestión avanzada y exportación de la base de datos de clientes.
+6. Configuración de métodos de pago y facturación.
+7. Recepción e interacción con notificaciones push o correos electrónicos del sistema.
+8. Flujo de redacción y publicación de una nueva reseña por parte del cliente.
+9. Uso del buscador avanzado y aplicación de filtros para encontrar salones.
+10. Cualquier funcionalidad o configuración interna no representada visualmente en las pantallas proporcionadas.
+
+---
+
+##### ESCALA DE SEVERIDAD
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
+
+| Nivel | Descripción                                                                                                                                                                                    |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1** | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo.                   |
+| **2** | Problema menor: puede ocurrir con mayor frecuencia o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja para resolverlo de cara al siguiente release. |
+| **3** | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sean corregidos y se les debe asignar una prioridad alta.                                 |
+| **4** | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.                              |
+
+---
+
+##### TABLA RESUMEN
+
+| #   | Problema                                                                | Escala de severidad | Heurística/Principio violada(o)                                                |
+| --- | ----------------------------------------------------------------------- | ------------------: | ------------------------------------------------------------------------------ |
+| 1   | Uso contraintuitivo del color verde para horarios bloqueados            |                   3 | Relación entre el sistema y el mundo real / Consistencia y estándares          |
+| 2   | Errores críticos de mapeo de datos e inconsistencia de moneda           |                   4 | Prevención de errores / Consistencia y estándares                              |
+| 3   | Inconsistencia de idioma en flujos principales                          |                   3 | Consistencia y estándares                                                      |
+| 4   | Acción destructiva instantánea y confusión visual por color primario    |                   4 | Prevención de errores / Control y libertad del usuario                         |
+| 5   | Falta de affordance en la solicitud de permisos de ubicación            |                   3 | Consistencia y estándares                                                      |
+| 6   | Confirmación de reserva mediante alerta nativa del navegador            |                   4 | Consistencia y estándares / Diseño estético y minimalista                      |
+| 7   | Errores de mapeo de datos y exposición de valores del sistema           |                   3 | Relación entre el sistema y el mundo real                                      |
+| 8   | Inconsistencia de idioma (Spanglish) en componentes principales         |                   3 | Consistencia y estándares                                                      |
+| 9   | Falta de visibilidad del estado en los planes de suscripción            |                   3 | Visibilidad del estado del sistema / Prevención de errores                     |
+| 10  | Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN) |                   3 | Relación entre el sistema y el mundo real / Visibilidad del estado del sistema |
+
+---
+
+##### DESCRIPCIÓN DE PROBLEMAS
+
+---
+
+###### PROBLEMA #1: Uso contraintuitivo del color verde para horarios bloqueados
+
+**Severidad:** 3
+
+**Heurística violada:** Relación entre el sistema y el mundo real / Consistencia y estándares
+
+**Problema**
+
+En la leyenda y en la cuadrícula de horas, el estado "Booked" (Reservado/Bloqueado) utiliza un color verde claro. Universalmente, el color verde indica "Disponible", "Éxito" o "Avanzar". Esto provoca un choque mental inmediato; los usuarios intentarán presionar los botones verdes asumiendo que están libres, lo que generará frustración al no obtener respuesta del sistema.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile1.png" width="250" alt="Reserva de horarios">
 </div>
+
+**Recomendación**
+
+Alinear los colores con los modelos mentales establecidos. Se recomienda usar gris o un color de baja opacidad para los horarios bloqueados (indicando que están deshabilitados), y dejar el color de fondo normal (blanco o claro) para los horarios disponibles.
+
+---
+
+###### PROBLEMA #2: Errores críticos de mapeo de datos e inconsistencia de moneda
+
+**Severidad:** 4
+
+**Heurística violada:** Prevención de errores / Consistencia y estándares
+
+**Problema**
+
+En la pantalla de resumen de la reserva hemos identificado dos problemas que impactan directamente la experiencia del usuario antes del pago. Primero, el nombre del profesional se muestra bajo una etiqueta incorrecta ("Gender Type: jose"). Segundo, el costo individual del servicio aparece en Soles (S/10.00), mientras que el Subtotal y Total figuran en Dólares ($10.00). Esta inconsistencia en los símbolos de moneda puede generar confusión y provocar que el usuario abandone la reserva por temor a un cobro erróneo.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile2.png" width="250" alt="Resumen de reserva">
+</div>
+
+**Recomendación**
+
+Corregir el mapeo de variables desde el backend para que la etiqueta indique "Profesional" o "Especialista". Unificar y forzar el formato de moneda en toda la aplicación para que todos los montos se muestren en la moneda local correspondiente.
+
+---
+
+###### PROBLEMA #3: Inconsistencia de idioma en flujos principales
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+A lo largo del flujo de reserva y en el historial de citas, la aplicación mezcla constantemente español e inglés. Se observan títulos como "Your Appointment" o "My Appointment Booking" junto a servicios como "Masaje", y botones que alternan entre "Confirmar", "Rebook" o estados como "Completed". Esta falta de consistencia en el idioma puede desorientar al usuario y afectar la percepción de calidad de la plataforma.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile2.png" width="250" alt="Resumen de Reserva">
+   
+  <img src="assets/auditoria/movil/audit-mobile3.png" width="250" alt="Mis Reservas">
+</div>
+
+**Recomendación**
+
+Se recomienda implementar un sistema de internacionalización (i18n). Es importante asegurar que todo el texto estático de la interfaz (títulos, etiquetas, botones, formatos de fecha) se renderice de manera uniforme en un solo idioma, basado en la configuración del dispositivo o la cuenta del usuario.
+
+---
+
+###### PROBLEMA #4: Acción destructiva instantánea y confusión visual por color primario
+
+**Severidad:** 4
+
+**Heurística violada:** Prevención de errores / Control y libertad del usuario
+
+**Problema**
+
+En la pantalla de detalle de cita, la opción "Cancelar cita" se muestra como un texto simple, sin apariencia de botón. El problema se agrava porque utiliza el color morado, que es el color principal de la plataforma destinado a acciones positivas o de avance. Esta presentación visual puede inducir al usuario a error al no identificar claramente el elemento como una acción destructiva. Dado que al presionarlo la cita se elimina de forma inmediata, el riesgo de que el usuario borre una reserva importante por un toque accidental es muy alto.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile4.png" width="250" alt="Detalles de Reserva">
+</div>
+
+**Recomendación**
+
+Recomendamos modificar el diseño visual de "Cancelar cita" para que cuente con un estilo de un botón y utilizar un color que se diferencie del primario (como texto rojo o un estilo de botón secundario) para advertir que es una acción destructiva. Asimismo, es necesario implementar un diálogo de confirmación (Modal) que pregunte "¿Estás seguro de que deseas cancelar tu cita?" antes de procesar la eliminación.
+
+---
+
+###### PROBLEMA #5: Falta de affordance en la solicitud de permisos de ubicación
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+En la pantalla de inicio, el texto "Permitir acceso a ubicación" funciona como un disparador para abrir el modal de permisos del sistema operativo. Sin embargo, visualmente es idéntico a un texto descriptivo o subtítulo. Los usuarios no tienen forma intuitiva de saber que pueden interactuar con él, lo que impide que la función principal de "Salones Cercanos" opere correctamente.
+
+<div align="center">
+  <img src="assets/auditoria/movil/audit-mobile5.png" width="250" alt="Inicio">
+</div>
+
+**Recomendación**
+
+Transformar el texto estático en un elemento claramente accionable. Se puede utilizar el color principal (morado), añadir un subrayado, usar un ícono de botón nativo o, como mejor práctica, mostrar una tarjeta contextual vacía en la sección de "Salones Cercanos" que invite al usuario a habilitar la ubicación mediante un botón claro.
+
+---
+
+###### PROBLEMA #6: Confirmación de reserva mediante alerta nativa del navegador
+
+**Severidad:** 4
+
+**Heurística violada:** Consistencia y estándares / Diseño estético y minimalista
+
+**Problema**
+
+El problema más crítico de todo el flujo sucede al intentar seleccionar el bloque de tiempo. Exactamente en la pantalla de "Elegir Horario", el sistema utiliza un cuadro de diálogo nativo del sistema/navegador (window.confirm) para solicitar la confirmación de la reserva.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web1.png" width="600" alt="Confirmación con alerta nativa del navegador">
+</div>
+
+**Recomendación**
+
+Se debe reemplazar de inmediato la alerta nativa del navegador por un componente "Modal" (ventana emergente) diseñado a medida (Custom UI). Este modal debe integrarse visualmente con el diseño de la aplicación web, respetando la identidad visual (tipografía, colores de la marca), mostrando de forma clara el resumen de la fecha y hora seleccionada, y utilizando botones propios para "Confirmar" o "Cancelar".
+
+---
+
+###### PROBLEMA #7: Errores de mapeo de datos y exposición de valores del sistema
+
+**Severidad:** 3
+
+**Heurística violada:** Relación entre el sistema y el mundo real
+
+**Problema**
+
+Al revisar las tarjetas de detalle en la sección "Tus Citas", se evidencia que la interfaz está renderizando datos crudos de la base de datos o mapeando variables incorrectas en lugar de mostrar información contextualizada. Específicamente, el título de la cita y el nombre del "Salón" muestran un correo electrónico (julia@gmail.com), mientras que el campo "Cliente" expone un ID numérico (1) en lugar de un nombre.
+
+El sistema debe hablar el lenguaje del usuario, no el del backend. Mostrar identificadores numéricos o correos genéricos en lugar de nombres comerciales o personales genera confusión inmediata, ya que el usuario no puede reconocer a simple vista con quién o en dónde es su cita exactamente.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web2.png" width="600" alt="Errores de mapeo de datos en tarjetas de citas">
+</div>
+
+**Recomendación**
+
+Se sugiere auditar los _endpoints_ del backend que alimentan esta vista para asegurar que el frontend esté consumiendo las propiedades correctas del objeto. El campo "Salón" debe apuntar al nombre comercial del establecimiento (ej. "Julia Barber"), el campo "Cliente" debe mostrar el nombre y apellido del usuario, y el título principal de la tarjeta debería reflejar el nombre del servicio reservado (ej. "Masaje").
+
+---
+
+###### PROBLEMA #8: Inconsistencia de idioma (Spanglish) en componentes principales
+
+**Severidad:** 3
+
+**Heurística violada:** Consistencia y estándares
+
+**Problema**
+
+En la vista de gestión de "Services", se evidencia una falla en la aplicación de las traducciones. A pesar de que el usuario ha seleccionado explícitamente el idioma inglés ("English") en el menú de navegación superior, elementos clave de la interfaz permanecen codificados de forma rígida en español. El caso más notorio es el botón de acción principal para crear un registro, el cual muestra el texto "Nuevo servicio".
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web3.png" width="800" alt="Inconsistencia de idioma en la vista de servicios">
+</div>
+
+**Recomendación**
+
+Revisar el sistema de internacionalización (i18n) para garantizar que absolutamente todos los textos estáticos, en especial los botones y llamadas a la acción (CTAs), estén correctamente mapeados a sus respectivos archivos de traducción. Asimismo, se recomienda añadir la medida de tiempo en la columna de duración (ej. "50 min") para mejorar la legibilidad de los datos.
+
+---
+
+###### PROBLEMA #9: Falta de visibilidad del estado en los planes de suscripción
+
+**Severidad:** 3
+
+**Heurística violada:** Visibilidad del estado del sistema / Prevención de errores
+
+**Problema**
+
+En la vista de Suscripción, el sistema indica correctamente en la parte superior que el plan activo del usuario es "ProStyle". Sin embargo, al observar las tarjetas de precios en la parte inferior, la tarjeta correspondiente a dicho plan sigue mostrando un botón habilitado con el texto "Choose", viéndose idéntico al resto de las opciones no adquiridas. Esta desconexión entre el estado real de la cuenta y las acciones presentadas en pantalla genera ambigüedad, y podría inducir al usuario al error de intentar adquirir o procesar el pago de un plan que ya posee.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web4.png" width="800" alt="Botón habilitado incorrectamente en el plan de suscripción actual">
+</div>
+
+**Recomendación**
+
+Implementar una validación visual en el _frontend_ que reconozca el plan activo del proveedor y actualice el estado de su tarjeta correspondiente. El botón del plan actual debe cambiar de estado (por ejemplo, deshabilitarse) y modificar su texto por un indicador claro como "Plan Actual" (o "Current Plan"), diferenciándose claramente de los planes que sí están disponibles para un _upgrade_.
+
+---
+
+###### PROBLEMA #10: Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN)
+
+**Severidad:** 3
+
+**Heurística violada:** Relación entre el sistema y el mundo real / Visibilidad del estado del sistema
+
+**Problema**
+
+En la vista principal de "Reviews", hemos detectado un error técnico expuesto directamente en la interfaz: el puntaje general muestra el valor "NaN" (_Not a Number_) junto al ícono de la estrella.
+
+Este es un detalle muy común en el desarrollo que ocurre cuando el sistema intenta calcular el promedio de calificaciones pero se encuentra con un divisor de cero (dado que actualmente hay "0 Reviews"). Mostrar términos de error de programación como "NaN" viola la regla de hablar en el lenguaje del usuario y del mundo real. Esto puede desconcertar al proveedor y darle la impresión de que la plataforma está "rota" o presenta fallos de programación.
+
+<div align="center">
+  <img src="assets/auditoria/web/audit-web5.png" width="800" alt="Exposición del error NaN en el puntaje de reseñas por falta de estado vacío">
+</div>
+
+**Recomendación**
+
+Sugerimos implementar un manejo adecuado de "Estados Vacíos" (_Empty States_). A nivel de código, se debe agregar una pequeña validación antes de calcular el promedio general: si el contador de reseñas es igual a 0, el sistema debe evitar la operación matemática y renderizar en pantalla un valor amigable, como "0", un guion ("-"), o un mensaje constructivo como "Aún no tienes calificaciones".
+
+---
+
+##### CONCLUSIONES
+
+**Aplicación Web**
+
+1. La interfaz expone frecuentemente lógica y variables del sistema (uso de alertas nativas del navegador, errores "NaN", exposición de IDs y correos en lugar de nombres), lo que rompe la relación con el mundo real y disminuye drásticamente la confianza del usuario.
+2. Existen fallas en la visibilidad del estado actual del sistema (como botones habilitados en planes de suscripción ya activos), lo que incrementa la carga cognitiva y obliga al usuario a recordar su contexto para evitar errores o pagos redundantes.
+3. La falta de un sistema de internacionalización (i18n) sólido en componentes clave (vistas de servicios y suscripciones) genera inconsistencias visuales y de comunicación que afectan la percepción de calidad del producto final.
+
+**Aplicación Móvil**
+
+1. Existen inconsistencias estructurales en el manejo del idioma, el mapeo de datos y los formatos (como la moneda), las cuales impactan negativamente en la percepción de calidad y la confianza del usuario durante los flujos de pago.
+2. Algunas decisiones de diseño visual limitan la interactividad (falta de _affordance_ en botones y enlaces) y contradicen modelos mentales universales, dificultando que los usuarios reconozcan acciones clave.
+3. La arquitectura de interacción presenta vulnerabilidades en la prevención de errores, careciendo de fricción positiva (confirmaciones) ante acciones destructivas, lo que eleva el riesgo de equivocaciones por parte del usuario.
+
+---
+
+##### OBSERVACIONES GENERALES
+
+- **Impacto directo en la credibilidad y conversión:** Gran parte de los problemas de severidad alta (inconsistencias de moneda, mezcla de idiomas y exposición de jerga técnica como "NaN" o datos crudos) afectan la percepción de seguridad de la plataforma. En un entorno de reservas y pagos, estos detalles pueden traducirse en una alta tasa de abandono por desconfianza del usuario.
+- **Vulnerabilidades en la prevención de errores:** Se identificó un patrón de riesgo crítico relacionado con la falta de "fricción positiva". Acciones destructivas (como cancelar una cita) ocurren de forma instantánea, y las confirmaciones web dependen de alertas nativas del navegador. Implementar Modales de confirmación personalizados reducirá drásticamente la frustración por errores accidentales.
+- **Brechas en los modelos mentales y affordance:** Existen decisiones visuales que contradicen la intuición del usuario (ej. usar color verde para horarios bloqueados o botones visualmente idénticos para planes de suscripción ya adquiridos). Aclarar estos estados visuales mejorará la curva de aprendizaje de los usuarios nuevos.
+- **Necesidad de estandarización omnicanal:** Se recomienda consolidar los componentes bajo un único Sistema de Diseño y centralizar la internacionalización (i18n). Esto garantizará que tanto el cliente (en la app móvil) como el proveedor (en la plataforma web) experimenten coherencia visual, de lenguaje y de formatos (como el uso estricto de la moneda local).
+
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
-| # | Hallazgo | Severidad | Acción correctiva | Responsable | Estado |
-|---|----------|-----------|-------------------|-------------|--------|
-|   |          |           |                   |             |        |
+| \# | Hallazgo | Severidad | Acción correctiva | Responsable | Estado |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| 1 | Uso contraintuitivo del color verde para horarios bloqueados (Móvil) | 3 | Cambiar el color de los horarios "Booked" a gris o baja opacidad (deshabilitado) y reservar el fondo claro/blanco para los disponibles, alineando con los modelos mentales del usuario. | Jorge | Resuelto |
+| 2 | Errores críticos de mapeo de datos e inconsistencia de moneda (Móvil) | 4 | Corregir el mapeo de variables en backend para que la etiqueta muestre "Profesional/Especialista"; unificar y forzar el formato de moneda local en toda la app. | Jorge | Resuelto |
+| 3 | Inconsistencia de idioma (español/inglés) en flujos principales (Móvil) | 3 | Renderizar todo el texto estático en un solo idioma según la configuración del dispositivo o cuenta con i18n. | Jorge | Resuelto |
+| 4 | Acción destructiva instantánea y confusión visual por color primario "Cancelar cita" (Móvil) | 4 | Rediseñar "Cancelar cita" como botón con estilo destructivo (rojo/secundario) y añadir modal de confirmación antes de eliminar la reserva. | Jorge | Resuelto |
+| 5 | Falta de affordance en la solicitud de permisos de ubicación (Móvil) | 3 | Convertir el texto en un elemento accionable claro (color primario, subrayado, ícono o tarjeta contextual vacía con botón "Habilitar ubicación"). | Jorge | Resuelto |
+| 6 | Confirmación de reserva mediante alerta nativa del navegador (window.confirm) (Web) | 4 | Reemplazar la alerta nativa por un modal personalizado (Custom UI) alineado a la identidad visual, con resumen de fecha/hora y botones propios "Confirmar/Cancelar". | Jorge | Resuelto |
+| 7 | Errores de mapeo de datos y exposición de valores del sistema (correos, IDs) en "Tus Citas" (Web) | 3 | Auditar endpoints para consumir las propiedades correctas: "Salón" → nombre comercial, "Cliente" → nombre y apellido, título → nombre del servicio. | Jorge | Resuelto |
+| 8 | Inconsistencia de idioma (español/inglés) (Web) | 3 | Mapear todos los textos estáticos y CTAs a los archivos de traducción del i18n; añadir unidad de tiempo a la columna de duración (ej. "50 min"). | Jorge | Resuelto |
+| 9 | Falta de visibilidad del estado en los planes de suscripción (botón "Choose" en plan activo) (Web) | 3 | Validar el plan activo en frontend y deshabilitar/etiquetar su tarjeta como "Plan Actual / Current Plan", diferenciándola de los planes disponibles para upgrade. | Jorge | Resuelto |
+| 10 | Exposición de jerga del sistema por ausencia de "estado vacío" ("NaN" en Reviews) (Web) | 3 | Validar el contador de reseñas antes de calcular el promedio: si es 0, evitar la operación y mostrar un valor amigable ("0", "-" o "Aún no tienes calificaciones"). | Jorge | Resuelto |
 
 <div class="page"></div>
 
