@@ -7365,10 +7365,31 @@ Actividad de colaboración durante la fase experimental.
 
 #### 8.3.4.1. Diseño de Entrevistas
 
-**Preguntas para validación To-Be — [Segmento 1]:**
+**Segmento 1 (Salones de Belleza y Barberías):**
 
-1. [Pregunta 1]
-2. [Pregunta 2]
+1. ¿Consideras que el usar la agenda digital centralizada que ayudó a visualizar mejor tus citas? ¿Qué ventajas ves frente a usar aplicaciones de mensajería?
+2. ¿En que medida la agenda digital te ayudó a identificar huecos disponibles o cambios de horario con mayor claridad que tu método actual de gestión?
+3. ¿Qué tan dispuesto estarías a usar uTime como herramienta principal para gestionar las reservas de tu negocio después de esta prueba?
+4. ¿Los recordatorios automáticos recibidos 24 horas antes de cada cita te resultaron útiles para prepararte y reducir olvidos o cambios de último momento? ¿De qué forma?
+5. ¿Consideras que los recordatorios enviados también a tus clientes mejoraron la puntualidad y la asistencia a las citas agendadas?
+6. Cuando un cliente reserva desde la app, ¿te resulta claro ver la cita reflejada en tu panel y distinguir si está confirmada o pendiente de pago? ¿Qué cambiarías de la presentación?
+7. ¿Te genera confianza que el cliente pueda confirmar o pagar digitalmente su reserva antes de asistir? ¿Crees que esto reduciría cancelaciones o ausencias?
+8. ¿Percibes que aparecer en el listado de salones de uTime y recibir reservas directas desde la app aumenta la visibilidad de tu negocio frente a depender solo de redes sociales, mensajería o difusión voca a voca?
+9. ¿El flujo para revisar las reservas entrantes desde la aplicación es suficientemente simple como para incorporarlo a tu rutina diaria de trabajo?
+10. ¿Cuál crees que sería tu beneficio principal al adoptar de forma permanente la aplicación con las mejores realizadas?
+
+**Segmento 2 (Clientes de servicios de belleza):**
+
+1. ¿En qué medida te resultó sencillo encontrar un salón o barbería en el listado de uTime y filtrar opciones según el servicio que buscabas? ¿Qué dificultades encontraste, si las hubo?
+2. Al completar la reserva directamente en la app, ¿qué pasos del flujo te resultaron más claros y cuáles generaron mayor fricción frente a coordinar por WhatsApp o llamada?
+3. ¿Cómo compararías la velocidad y claridad del flujo de reserva en uTime con tu experiencia habitual de agendar citas por mensajería? ¿Qué ventajas o desventajas identificas en cada canal?
+4. ¿Los recordatorios automáticos recibidos antes de tu cita contribuyeron a que te organices mejor? ¿De qué forma te ayudarían a evitar olvidos o reprogramaciones de último momento?
+5. Al confirmar tu reserva con un botón o al pagar digitalmente desde la app, ¿qué nivel de comodidad y confianza experimentaste y qué aspecto del proceso te generó mayor o menor seguridad?
+6. ¿En qué medida la opción de confirmación o pago digital refuerza tu compromiso con la cita reservada? ¿Crees que esto reduciría la probabilidad de cancelar o no asistir?
+7. Al visitar el perfil de un salón o estilista, ¿qué elementos influyeron más en tu nivel de confianza antes de reservar?
+8. ¿Qué información adicional del perfil te habría resultado útil para tomar la decisión?
+9. ¿Qué tan probable es que uses uTime para tu próxima cita de belleza o barbería en lugar de contactar al negocio por WhatsApp? ¿Qué factores influenciarían en esa decisión?
+10. ¿Cuál consideras que sería tu beneficio principal al adoptar de forma permanente el uso de la aplicación uTime con las mejoras aplicadas?
 
 #### 8.3.4.2. Registro de Entrevistas
 
