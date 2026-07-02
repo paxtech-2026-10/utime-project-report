@@ -5789,12 +5789,19 @@ Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expr
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-| # | Heurística de Nielsen              | Hallazgo                                                             | Severidad (0-4) | Recomendación                                                |
-| - | ---------------------------------- | -------------------------------------------------------------------- | --------------- | ------------------------------------------------------------ |
-| 1 | Consistencia y estándares          | Inconsistencias en la traducción al inglés de la aplicación móvil.   | 2               | Corregir textos y revisar el sistema de traducciones.        |
-| 2 | Flexibilidad y eficiencia de uso   | Falta de un historial o registro de servicios realizados a clientes. | 2               | Incorporar notas e historial de atención por cliente.        |
-| 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas.    | 2               | Permitir sincronización automática con calendarios externos. |
-                |                 |               |
+| \# | Heurística de Nielsen | Hallazgo | Severidad (0-4) | Recomendación |
+| ----- | ----- | ----- | ----- | ----- |
+| 1 | Consistencia y estándares | Inconsistencias en la traducción al inglés de la aplicación móvil. | 2 | Corregir textos y revisar el sistema de traducciones. |
+| 2 | Flexibilidad y eficiencia de uso | Falta de un historial o registro de servicios realizados a clientes. | 2 | Incorporar notas e historial de atención por cliente. |
+| 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas. | 2 | Permitir sincronización automática con calendarios externos. |
+| 4 | Visibilidad del estado del sistema | El plan de suscripción activo no se diferencia claramente de las demás opciones disponibles, generando incertidumbre sobre el estado actual del usuario. | 3 | Identificar visualmente el plan vigente y deshabilitar la opción de volver a seleccionarlo. |
+| 5 | Prevención de errores | La cancelación de una cita se ejecuta de forma inmediata, sin solicitar una confirmación previa al usuario. | 4 | Incorporar un cuadro de confirmación antes de realizar acciones irreversibles como cancelar una cita. |
+| 6 | Reconocimiento antes que recuerdo | La solicitud para habilitar la ubicación no presenta un elemento visual que indique claramente que es interactivo. | 3 | Mostrar un botón o enlace claramente identificable para facilitar la activación de los permisos de ubicación. |
+| 7 | Control y libertad del usuario | El proceso de confirmación de reservas utiliza una ventana emergente nativa con opciones limitadas y poca integración con la interfaz. | 4 | Sustituir la alerta nativa por un cuadro de diálogo personalizado que permita confirmar o cancelar la acción de forma clara. |
+| 8 | Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores | En la sección de reseñas se muestran valores no válidos como "NaN", dificultando la comprensión del problema por parte del usuario. | 3 | Validar los datos antes de mostrarlos y presentar mensajes comprensibles cuando no existan calificaciones disponibles. |
+| 9 | Diseño estético y minimalista | La visualización de información técnica, como identificadores internos o datos del sistema, genera una interfaz poco clara para el usuario final. | 3 | Mostrar únicamente información relevante y reemplazar datos técnicos por nombres descriptivos y comprensibles. |
+| 10 | Ayuda y documentación | No se ofrecen mensajes de apoyo o explicaciones cuando existen inconsistencias en datos, traducciones o funcionalidades, dificultando la resolución de dudas. | 2 | Incorporar mensajes informativos y ayudas contextuales que orienten al usuario durante el uso de la aplicación. |
+
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
