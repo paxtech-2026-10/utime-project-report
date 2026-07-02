@@ -7452,5 +7452,5 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 
 **Multimedia**
 
-- Video *About-the-Product*: <https://youtu.be/7odg_s3aRbs>
+- Video *About-the-Product*: <https://youtu.be/C829XXwDKn0>
 - Video de la entrega (Microsoft SharePoint): <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210838_upc_edu_pe/IQCf_9RqgPZqT6tgUNt9jBhDAbTk8TlPAJZuQAQFchZ2Y-Q?e=Xr7bMm>
