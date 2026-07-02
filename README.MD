@@ -496,6 +496,11 @@ Actividad de commits en el tiempo para el AV2.
 
 # Student Outcome
 
+ABET – EAC - Student Outcome 4: La capacidad de reconocer responsabilidades éticas y
+profesionales en situaciones de ingeniería y hacer juicios informados, que deben
+considerar el impacto de las soluciones de ingeniería en contextos globales, económicos,
+ambientales y sociales.
+
 <table>
   <thead>
     <tr>
