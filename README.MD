@@ -7152,12 +7152,97 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La Landing Page To-Be se encuentra desplegada y accesible públicamente en GitHub
+Pages, actualizada para comunicar las mejoras del ciclo experimental (agenda
+digital en tiempo real, recordatorios automáticos, pagos y perfiles con
+reseñas) y para diferenciar los dos segmentos objetivo (clientes y
+proveedores/barberías).
 
-Landing Page To-Be desplegada.
+- **URL de despliegue:** [https://paxtech-2026-10.github.io/Landing-Page/](https://paxtech-2026-10.github.io/Landing-Page/)
 
-<img src="./assets/ux-ui/evidences/landing/landing-tobe.png" alt="Landing To-Be" width="800">
+A continuación se presenta la evidencia por sección, en el orden en que aparecen
+en la página: *Hero*, *Features*, *How it Works*, *Testimonials*, *Pricing*,
+*FAQ* y *Call to Action*.
 
+**Hero**
+
+La sección principal presenta la propuesta de valor "Skip the Calls, Book in
+Real Time" con un llamado a la acción "Start for Free" y accesos directos a las
+aplicaciones (Android para clientes e iOS para proveedores/barberos).
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/hero.png" alt="Landing To-Be — Hero" width="800">
+</div>
+
+**Features**
+
+La sección de características resalta los tres pilares del producto To-Be: la
+gestión de citas en tiempo real, los pagos con gestión integral del servicio y
+el control total mediante perfiles personalizables, cada uno acompañado de
+mockups reales de la aplicación.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/feature-1.png" alt="Feature — Smart Appointment Management in Real Time" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/feature-2.png" alt="Feature — Payments & Full Service Management" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/feature-3.png" alt="Feature — Full Control with Custom Profiles" width="800">
+</div>
+
+**How it Works**
+
+El flujo "How it works for providers" explica en cuatro pasos cómo un negocio
+adopta uTime: crear la cuenta, agregar y gestionar a los trabajadores, definir
+los servicios y personalizar el perfil, y finalmente visualizar el calendario.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-1.png" alt="How it Works — Create your account" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-2.png" alt="How it Works — Add and manage your workers" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-3.png" alt="How it Works — Define your services and customize your profile" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-4.png" alt="How it Works — View your calendar" width="800">
+</div>
+
+**Testimonials**
+
+La sección de testimonios refuerza la confianza con reseñas de cinco estrellas
+de dueños y managers de salones y barberías, bajo el mensaje "Trusted by more
+than 100+ beauty businesses".
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/testimonials.png" alt="Landing To-Be — Testimonials" width="800">
+</div>
+
+**Pricing**
+
+La sección de precios presenta los tres planes de suscripción —Essential
+(gratuito), ProStyle (S/69.9/mes, marcado como el más popular) y Deluxe Studio
+(S/129.9/mes)— con sus beneficios diferenciados y su respectivo llamado a la
+acción.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/pricing.png" alt="Landing To-Be — Pricing" width="800">
+</div>
+
+**FAQ**
+
+La sección de preguntas frecuentes ("Clear Your Doubts About uTime") resuelve
+las dudas más comunes sobre la plataforma mediante un acordeón interactivo.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/faq.png" alt="Landing To-Be — FAQ" width="800">
+</div>
+
+**Call to Action**
+
+La sección final de llamado a la acción ("Ready to transform your daily
+operations?") invita a comenzar gratis y a descargar las aplicaciones, e incluye
+el footer con enlaces rápidos, soporte, datos de contacto y redes sociales.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/call-to-action.png" alt="Landing To-Be — Call to Action y footer" width="800">
 </div>
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
