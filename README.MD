@@ -7393,38 +7393,104 @@ Actividad de colaboración durante la fase experimental.
 
 #### 8.3.4.2. Registro de Entrevistas
 
-**Segmento 1 — Entrevista 1**
+### Segmento Objetivo 2 (Clientes de servicios de belleza)
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre | [Nombre del entrevistado] |
-| Edad | [Edad] |
-| Ocupación | [Ocupación] |
-| Fecha | [Fecha] |
-| Entrevistador | [APELLIDOS Y NOMBRES] |
-| URL del video | [URL] |
-| Resumen | [Contenido pendiente] |
+#### Datos del Entrevistado #1
+
+- **Nombre completo:** Emily Juliette Arroyo Gonzales
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 20 años
+- **Distrito:** Santiago de Surco
+- **Inicio de la entrevista:** [Pendiente]
+- **Entrevistador:** Roman Cruz, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Entrevista Emily Arroyo Gonzales](./assets/validation/interviews/emily.png)
+
+- **URL del video (Microsoft Stream):**
+
+[Pendiente]
+
+**Resumen:**
+
+Emily Arroyo, estudiante de Ingeniería de Software, participó en la validación To-Be de uTime tras probar la aplicación con las nuevas funcionalidades implementadas. Sobre el **listado y filtros**, indicó que encontrar salones y barberías fue sencillo y que los filtros le permitieron comparar opciones de forma rápida y organizada. Aquí, su +unica recomendación fue incorporar más filtros de búsqueda. En el **flujo de reserva directa**, destacó como pasos claros la elección del servicio, del profesional y del horario, comparó favorablemente la experiencia frente a WhatsApp al no depender de esperar confirmación y poder completar la reserva en pocos minutos. Respecto a la **velocidad y claridad** del canal, calificó uTime como más rápido y eficiente que la mensajería porque toda la información está disponible de inmediato. Los **recordatorios automáticos** los consideró muy útiles para organizar su agenda, recordar la fecha y hora de su cita con anticipación y reprogramar con tiempo si es que surge un imprevisto. Sobre **confirmación y pago digital**, expresó confianza y seguridad en el proceso dado que la confirmación inmediata le daba certeza de que la cita quedó registrada y el pago digital le aportó comodidad al evitar coordinar el cobro por otros medios. Emily considera que confirmar o pagar refuerza su **compromiso** con la cita y reduciría cancelaciones de último momento. Al revisar el **perfil del salón o estilista**, las calificaciones, reseñas, fotografías de trabajos, horarios y precios fueron los elementos que más influyeron en su confianza; sugirió añadir opiniones más recientes, descripción del estilista, tiempo estimado por servicio y paquetes especiales. Manifestó que es **muy probable** que use uTime para su próxima cita en lugar de aplicaciones de mensajería por la rapidez y organización del flujo. Considera su **beneficio principal** al adoptar la app de forma permanente el ahorrar tiempo y tener una experiencia de reserva más organizada, con consulta de horarios, comparación de opciones, confirmación y recordatorios integrados.
+
+#### Datos del Entrevistado #2
+
+- **Nombre completo:** Anedyib Villar Bisso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 21 años
+- **Distrito:** San Isidro
+- **Inicio de la entrevista:** [Pendiente]
+- **Entrevistador:** Roman Cruz, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Anedyib Villar Bisso](./assets/validation/interviews/ane.png)
+
+- **URL del video (Microsoft Stream):**
+
+[Pendiente]
+
+**Resumen:**
+
+Anedyib Villar, estudiante de Marketing de 21 años, participó en la validación To-Be de uTime tras probar la aplicación con las mejoras del Capítulo VIII. Sobre el **listado y filtros**, indicó que le resultó muy fácil navegar el listado y usar los filtros por servicio, al estar acostumbrada al uso de aplicaciones digitales. En el **flujo de reserva directa**, no reportó fricción puesto que la página web guió sus pasos de forma clara y completó la reserva sin dificultad frente a los problemas de coordinación por lo que pasó antes a través de aplicación de mensajería o llamadas. Al **comparar canales**, mencionó que es su primera experiencia con este tipo de plataforma, valoró la ventaja de reservar en línea desde cualquier lugar con internet y contrastó favorablemente con su hábito previo de agendar solo por teléfono, donde bastaba con fijar la cita y era fácil olvidarla. Los **recordatorios automáticos** le ayudaron mucho dado que se considera olvidadiza. Respecto a la **confirmación y pago digital**, como estudiante de marketing digital expresó confianza en operaciones en línea, aunque reconoció que otros públicos podrían sentir desconfianza según su perfil. Considera que pagar por adelantado **refuerza el compromiso** con la cita frente a un acuerdo verbal por teléfono sin consecuencia económica. En cuandto al **perfil del salón o estilista**, las imágenes del local y del trabajo realizado fueron el factor que más influyó en su confianza. Sobre información adicional, indicó que, al ser su primera vez con este tipo de app, la información mostrada le resultó suficiente. Manifestó que **sí usaría uTime** para su próxima cita de belleza y que el **recordatorio** es el factor que más influiría en su decisión. Su **beneficio principal** sería asistir con mayor puntualidad a las citas programadas y evitar olvidarlas.
+
+#### Datos del Entrevistado #3
+
+- **Nombre completo:** Diego Vilca Saboya
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 19 años
+- **Distrito:** Villa El Salvador
+- **Inicio de la entrevista:** [Pendiente]
+- **Entrevistador:** Roman Cruz, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Diego Vilca Saboya](./assets/validation/interviews/diego.png)
+
+- **URL del video (Microsoft Stream):**
+
+[Pendiente]
+
+**Resumen:**
+
+Diego Vilca, estudiante de Ingeniería de Software de 19 años, evaluó la versión To-Be de uTime centrándose en las mejoras orientadas a la experiencia del cliente. Al explorar el **catálogo de negocios**, describió la búsqueda y el filtrado por tipo de servicio como intuitivos y sin obstáculos. Durante la **reserva en la aplicación**, resaltó que definir fecha y hora resultó más directo que negociar disponibilidad por chat o llamada, donde suele haber contrapropuestas del barbero y es más difícil llegar a un acuerdo. Frente a su método habitual por **mensajería**, valoró que uTime elimina la espera de respuesta, puesto que al estar automatizado el proceso, agenda y confirma en un solo recorrido. En cuanto al **cobro en línea**, manifestó comodidad al usar una pasarela conocida, lo que le transmitió la mayor sensación de respaldo durante el flujo. Además, entiende que **confirmar la asistencia** no solo fija su propio compromiso, sino que permite al negocio anticipar una inasistencia. Al analizar el **perfil del establecimiento**, las imágenes de un local limpio y ordenado fueron decisivas para generarle confianza. Por otro lado, propuso complementar la ficha con testimonios de clientes y la trayectoria del profesional. Planea **recurrir a uTime** en su próximo servicio, sobre todo si se traslada a una zona donde no tenga referencias ya que podría conocer barberías, estilos de corte y condiciones del local sin depender de recomendaciones previas. Para él, el **valor más alto** al adoptar la plataforma de forma continua es agendar con rapidez y consultar de antemano qué días tienen cupo, evitando llegar a un local saturado sin haber verificado disponibilidad.
+
 
 ## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
 
-**Experimento EXP01**
+Tras ejecutar las entrevistas de validación To-Be del **Segmento Objetivo 2 (Clientes de servicios de belleza)**, el equipo consolidó la evidencia cualitativa de los participantes, quienes probaron la versión de uTime con las mejoras implementadas. El análisis siguiente sigue contrasta los hallazgos con las Experiment Cards **EXP02–EXP05** que cubren las funcionalidades evaluadas desde el lado del cliente.
 
-| Aspecto | Resultado |
-|---------|-----------|
-| Hipótesis | [H01] |
-| Método | [Método] |
-| Muestra | [Tamaño] |
-| Resultado cuantitativo | [Dato] |
-| Resultado cualitativo | [Insight] |
-| Conclusión | [Contenido pendiente — validada / refutada / parcial] |
+**Análisis del Segmento Objetivo 02 — Validación To-Be**
+
+- **Características objetivas de la muestra:**
+  - Edades entre 19 y 21 años; residentes en distritos de Lima Metropolitana.
+  - Perfil digital alto: los tres se identifican como usuarios cómodos con aplicaciones y plataformas en línea.
+  - Métodos previos de agendamiento: WhatsApp, llamadas y/o mensajería.
+  - Los tres completaron el flujo de reserva en la aplicación y manifestaron intención de usar uTime en su próxima cita.
+
+- **Hallazgos por funcionalidad validada:**
+
+  - **Listado de salones y filtros.** Los tres entrevistados describieron la búsqueda y el filtrado por servicio como sencillos e intuitivos. Emily sugirió ampliar los criterios de filtrado, mientras que los demás no reportaron fricción en esta etapa.
+  - **Flujo directo de reserva.** Los tres compararon favorablemente uTime frente a WhatsApp, llamadas o chat, destacando la eliminación de la espera de respuesta, la visibilidad inmediata de horarios y la posibilidad de cerrar la reserva en un solo recorrido. Diego resaltó que elegir fecha y hora evita el ida y vuelta con el barbero. Por otro lado, Anedyib valoró reservar desde cualquier lugar con internet frente a acordar por teléfono y olvidar la cita.
+  - **Recordatorios automáticos.** Emily y Anedyib evaluaron positivamente los recordatorios, pues les ayudan a organizarse, recordar la cita con anticipación y reprogramar si surge un imprevisto. Anedyib identificó el recordatorio como el factor que más influiría en su decisión de uso futuro.
+  - **Confirmación y pago digital.** Los tres asociaron la confirmación o el pago en línea con mayor compromiso y seguridad respecto a un acuerdo verbal por mensajería o llamada. Emily y Diego expresaron comodidad con el paso de pago. Anedyib, desde su formación en marketing digital, confía en operaciones en línea pero advirtió que otros públicos podrían percibir fricción o desconfianza.
+  - **Perfil enriquecido del negocio.** Los tres indicaron que el contenido del perfil influye en su confianza antes de reservar. Emily priorizó reseñas, calificaciones, fotografías, horarios y precios. Anedyib y Diego enfatizaron las imágenes de un local cuidado y ordenado. Como mejoras, se mencionaron opiniones recientes, descripción del estilista, duración estimada del servicio, paquetes especiales, testimonios de clientes y años de experiencia del profesional.
+
+- **Características subjetivas recurrentes:**
+  - **Valor percibido principal:** Ahorro de tiempo y mayor organización del proceso de reserva.
+  - **Barrera histórica:** Demora o dependencia de la respuesta del negocio por canales manuales.
+  - **Disposición de adopción:** Los tres declararon que usarían uTime para su próxima cita de belleza o barbería en lugar de contactar por WhatsApp.
+  - **Oportunidad de descubrimiento:** Diego destacó el valor de la plataforma al mudarse a una zona sin referencias locales, pudiendo evaluar barberías, estilos y disponibilidad sin depender del boca a boca.
+
+**Síntesis general**
+
+Las entrevistas To-Be del segmento cliente aportan evidencia cualitativa **consistente y favorable** hacia las mejoras implementadas en uTime. El flujo directo de reserva y la visibilidad del catálogo de negocios (EXP04) obtuvieron la señal más uniforme el que los tres participantes preferirían uTime frente a aplicaciones de mensajería para su próxima cita. Los recordatorios (EXP02), la confirmación o pago digital (EXP03) y los perfiles enriquecidos (EXP05) también recibieron valoración positiva de parte de los entevistados, indicando que mejorarían su experiencia y se sentirían más dispuestos a usarla en el día a día.
 
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
-| # Orden | Question ID | Pregunta | Score inicial | Score final | Justificación |
-|---------|-------------|----------|---------------|-------------|---------------|
-| 1       | Q01         |          |               |             |               |
+| # Orden | Question ID | Pregunta |
+|---------|-------------|----------|
+| 1 | Q04 | ¿Qué canal genera mayor intención de reserva inicial: flujo directo en la app o contacto por WhatsApp? |
+| 2 | Q02 | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? |
+| 3 | Q03 | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? |
+| 4 | Q01 | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? |
+| 5 | Q05 | ¿Qué elementos del perfil generan mayor confianza antes de reservar: reseñas, calificaciones, precios visibles o portafolio visual? |
 
 ## 8.5. Continuous Learning
 
