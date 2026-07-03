@@ -7373,6 +7373,24 @@ Renso, administrador de un salón de belleza a cargo de coordinar los servicios 
 
 Fabián, administrador de una barbería encargado de gestionar al equipo de barberos y la agenda del local, probó la **aplicación de proveedor To-Be** sobre la cuenta de demostración "SalonSpaMaria". Sobre la **agenda digital centralizada**, destacó tener en un mismo panel a los trabajadores, los servicios ofrecidos, las reservas del día y el calendario por horas, lo que le permite identificar rápidamente huecos disponibles y evitar cruces de citas sin depender de anotaciones en papel o mensajería. Encontró clara la organización del panel de **configuración** (Perfil del negocio, Notificaciones y Suscripción) y consideró intuitiva la navegación entre Inicio, Servicios, Trabajadores, Calendario y Perfil. Respecto a los **recordatorios automáticos**, coincidió en que ayudan a mejorar la puntualidad y a reducir ausencias. Sobre la **confirmación y el pago digital**, comentó que dar certeza de la reserva antes de la cita reforzaría el compromiso del cliente y reduciría cancelaciones. Valoró además el **panel de reseñas** como un elemento que aumenta la confianza y la visibilidad del negocio dentro de la plataforma. Consideró que el flujo para revisar las reservas entrantes es lo suficientemente simple como para incorporarlo a su rutina diaria, y ubicó su **beneficio principal** en poder administrar a todos los barberos y sus horarios desde un solo lugar. Como oportunidad de mejora sugirió reforzar la vista de asignación de servicios por barbero y mantener el idioma consistente en español.
 
+###### Datos del Entrevistado #3
+
+- **Nombre completo:** Maria Ysabel Sosa Rodriguez
+- **Segmento Objetivo:** Dueña de un Salón de belleza
+- **Edad:** 45 años
+- **Distrito:** San Juan de Lurigancho
+- **Inicio de la entrevista:** 14:30 minutos
+- **Entrevistador:** RIVERA SOSA, Eduardo Gael
+- **Screenshot del cuadro de video:** ![Entrevista Maria Ysabel Sosa](./assets/images/photos/segmento-objetivo1-2.png)
+
+- **URL del video (Google Drive):**
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+
+**Resumen:**
+
+María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de experiencia. Actualmente gestiona sus reservas solo por WhatsApp, lo cual le dificulta manejar los tiempos entre un servicio y otro. Calificó la aplicación móvil con un 10 en probabilidad de uso, describiéndola como organizada y con las herramientas necesarias, y confirmó que se sentiría cómoda pagando un plan para evitar cruces de clientes. Como crítica constructiva o mejora, solicitó añadir un espacio de "notas" o historial para registrar qué servicio se hizo el cliente y la fecha, evitando así que esa información se pierda en papeles.
+
 ##### Segmento Objetivo 2 (Clientes de servicios de belleza)
 
 ###### Datos del Entrevistado #1
