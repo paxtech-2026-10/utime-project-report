@@ -473,6 +473,10 @@ Actividad de commits en el tiempo para el AV2.
       - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
       - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
       - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
+        - [Web Services](#web-services)
+        - [IoS Mobile](#ios-mobile)
+        - [Mobile App](#mobile-app)
+        - [FrontEnd](#frontend)
     - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
       - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevistas)
       - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
@@ -7270,13 +7274,20 @@ Backend To-Be desplegado.
 
 #### 8.3.3.6. Team Collaboration Insights
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
 Actividad de colaboración durante la fase experimental.
 
-![Experiments Collaboration](./assets/images/screenshots/experiments-collaboration.png)
+##### Web Services
+![alt text](assets/colab/webs.png)
 
-</div>
+##### IoS Mobile
+![alt text](assets/colab/ios.png)
+
+##### Mobile App
+![alt text](assets/colab/image.png)
+
+##### FrontEnd
+![alt text](assets/colab/image.png)
 
 ### 8.3.4. To-Be Validation Interviews
 
@@ -7340,7 +7351,7 @@ Artefactos de la sesión de shareback.
 
 ### 8.6.1. About-the-Product Intro Video
 
-[URL del video intro del producto To-Be]([URL-VIDEO-INTRO])
+[URL del video intro del producto To-Be](https://youtu.be/C829XXwDKn0)
 
 <div class="page"></div>
 
