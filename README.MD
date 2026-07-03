@@ -184,21 +184,9 @@ Actividad de commits en el tiempo para el AV2.
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
-      - [What (¿Qué?)](#what-qué)
-      - [Who (¿Quién?)](#who-quién)
-      - [Where (¿Dónde?)](#where-dónde)
-      - [When (¿Cuándo?)](#when-cuándo)
-      - [Why (¿Por qué?)](#why-por-qué)
-      - [How (¿Cómo?)](#how-cómo)
-      - [How much (¿Cuánto?)](#how-much-cuánto)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-        - [Features](#features)
-        - [Business Outcomes](#business-outcomes)
-        - [User Benefits](#user-benefits)
-        - [Business Assumptions](#business-assumptions)
-        - [User Assumptions](#user-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
@@ -206,33 +194,9 @@ Actividad de commits en el tiempo para el AV2.
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-      - [Afrontando las fortalezas de nuestros competidores:](#afrontando-las-fortalezas-de-nuestros-competidores)
-      - [Comprendemos que nuestras fortalezas son:](#comprendemos-que-nuestras-fortalezas-son)
-      - [Estrategias](#estrategias)
-      - [Tácticas](#tácticas)
-      - [Afrontando las debilidades de nuestros competidores:](#afrontando-las-debilidades-de-nuestros-competidores)
-      - [Comprendemos que nuestras debilidades son:](#comprendemos-que-nuestras-debilidades-son)
-      - [Estrategias](#estrategias-1)
-      - [Tácticas](#tácticas-1)
-      - [Afrontando las oportunidades de nuestros competidores:](#afrontando-las-oportunidades-de-nuestros-competidores)
-      - [Comprendemos que nuestras oportunidades son:](#comprendemos-que-nuestras-oportunidades-son)
-      - [Estrategias](#estrategias-2)
-      - [Tácticas](#tácticas-2)
-      - [Afrontando las amenazas de nuestros competidores:](#afrontando-las-amenazas-de-nuestros-competidores)
-      - [Comprendemos que nuestras amenazas son:](#comprendemos-que-nuestras-amenazas-son)
-      - [Estrategias](#estrategias-3)
-      - [Tácticas](#tácticas-3)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-    - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías)
-        - [Datos del Entrevistado #1](#datos-del-entrevistado-1)
-        - [Datos del Entrevistado #2](#datos-del-entrevistado-2)
-        - [Datos del Entrevistado #3](#datos-del-entrevistado-3)
-    - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza)
-      - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
-      - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
-      - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
@@ -252,7 +216,6 @@ Actividad de commits en el tiempo para el AV2.
 - [Capítulo IV: Product Design](#capítulo-iv-product-design)
   - [4.1. Style Guidelines](#41-style-guidelines)
     - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
-      - [**Branding**](#branding)
     - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
     - [4.1.3. Mobile Style Guidelines](#413-mobile-style-guidelines)
       - [4.1.3.1. iOS Mobile Style Guidelines](#4131-ios-mobile-style-guidelines)
@@ -297,7 +260,6 @@ Actividad de commits en el tiempo para el AV2.
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
   - [5.2. Product Implementation \& Deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
-      - [Sprint #1](#sprint-1)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
     - [5.2.4. Acuerdo de Servicio - SaaS](#524-acuerdo-de-servicio---saas)
@@ -339,39 +301,13 @@ Actividad de commits en el tiempo para el AV2.
         - [6.1.1.5.3. Frontend Web — Angular](#61153-frontend-web--angular)
         - [6.1.1.5.4. Resumen agregado (Reviews)](#61154-resumen-agregado-reviews)
     - [6.1.2. Core Integration Tests](#612-core-integration-tests)
-      - [Bounded Context: Services](#bounded-context-services)
-      - [Bounded Context: Workers](#bounded-context-workers)
-      - [Bounded Context: Reviews](#bounded-context-reviews)
-      - [Comandos de ejecución:](#comandos-de-ejecución)
-      - [Evidencia de ejecución](#evidencia-de-ejecución)
-        - [Backend (Spring Boot)](#backend-spring-boot)
-      - [Frontend Web (Angular)](#frontend-web-angular)
     - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
       - [6.1.3.1. Services Bounded Context](#6131-services-bounded-context)
-      - [Feature file: Services](#feature-file-services)
-      - [Step definition example](#step-definition-example)
-      - [Execution evidence](#execution-evidence)
       - [6.1.3.2. IAM Bounded Context](#6132-iam-bounded-context)
-      - [Feature file: IAM](#feature-file-iam)
-      - [Step definition example](#step-definition-example-1)
-      - [Execution evidence](#execution-evidence-1)
       - [6.1.3.3. Profiles Bounded Context](#6133-profiles-bounded-context)
-      - [Feature file: Profiles](#feature-file-profiles)
-      - [Step definition example](#step-definition-example-2)
-      - [Execution evidence](#execution-evidence-2)
       - [6.1.3.4. Workers Bounded Context](#6134-workers-bounded-context)
-      - [Feature file: Workers](#feature-file-workers)
-      - [Step definition example](#step-definition-example-3)
-      - [Execution evidence](#execution-evidence-3)
       - [6.1.3.5. Reviews Bounded Context](#6135-reviews-bounded-context)
-        - [Feature file: Reviews](#feature-file-reviews)
-        - [Step definitions](#step-definitions)
-        - [Execution evidence](#execution-evidence-4)
-        - [Traceabilidad de pruebas](#traceabilidad-de-pruebas)
       - [6.1.3.6. Reservations Bounded Context](#6136-reservations-bounded-context)
-      - [Feature file: Reservations](#feature-file-reservations)
-      - [Step definition example](#step-definition-example-4)
-      - [Execution evidence](#execution-evidence-5)
     - [6.1.4. Core System Tests](#614-core-system-tests)
       - [6.1.4.1. Aplicación Web (Playwright)](#6141-aplicación-web-playwright)
       - [6.1.4.2. Aplicación Móvil Flutter (integration\_test)](#6142-aplicación-móvil-flutter-integration_test)
@@ -383,53 +319,16 @@ Actividad de commits en el tiempo para el AV2.
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
-    - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías-1)
-        - [Datos del Entrevistado #1](#datos-del-entrevistado-1-2)
-        - [Datos del Entrevistado #2](#datos-del-entrevistado-2-2)
-    - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza-1)
-      - [Datos del Entrevistado #1](#datos-del-entrevistado-1-3)
-      - [Datos del Entrevistado #2](#datos-del-entrevistado-2-3)
     - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
     - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
       - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
       - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
       - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
-        - [SITE o APP A EVALUAR](#site-o-app-a-evaluar)
-        - [TAREAS A EVALUAR](#tareas-a-evaluar)
-        - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas)
-        - [ESCALA DE SEVERIDAD](#escala-de-severidad)
-        - [TABLA RESUMEN](#tabla-resumen)
-        - [DESCRIPCIÓN DE PROBLEMAS](#descripción-de-problemas)
-          - [PROBLEMA #1: Falta de contexto en la asignación de técnicos y maquinaria](#problema-1-falta-de-contexto-en-la-asignación-de-técnicos-y-maquinaria)
-          - [PROBLEMA #2: Ausencia de mecanismos visibles para agilizar tareas repetitivas](#problema-2-ausencia-de-mecanismos-visibles-para-agilizar-tareas-repetitivas)
-          - [PROBLEMA #3: Navegación basada únicamente en iconos](#problema-3-navegación-basada-únicamente-en-iconos)
-          - [PROBLEMA #4: Tarjetas con métricas sin facilidad de identificación](#problema-4-tarjetas-con-métricas-sin-facilidad-de-identificación)
-          - [PROBLEMA #5: Bajo contraste visual que afecta la legibilidad](#problema-5-bajo-contraste-visual-que-afecta-la-legibilidad)
-          - [PROBLEMA #6: Inconsistencia en la jerarquía y ubicación de acciones principales](#problema-6-inconsistencia-en-la-jerarquía-y-ubicación-de-acciones-principales)
-        - [OBSERVACIONES GENERALES](#observaciones-generales)
     - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
       - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
       - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
       - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
-- [SITE o APP A EVALUAR](#site-o-app-a-evaluar-1)
-        - [TAREAS A EVALUAR](#tareas-a-evaluar-1)
-        - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas-1)
-        - [ESCALA DE SEVERIDAD](#escala-de-severidad-1)
-        - [TABLA RESUMEN](#tabla-resumen-1)
-        - [DESCRIPCIÓN DE PROBLEMAS](#descripción-de-problemas-1)
-          - [PROBLEMA #1: Uso contraintuitivo del color verde para horarios bloqueados](#problema-1-uso-contraintuitivo-del-color-verde-para-horarios-bloqueados)
-          - [PROBLEMA #2: Errores críticos de mapeo de datos e inconsistencia de moneda](#problema-2-errores-críticos-de-mapeo-de-datos-e-inconsistencia-de-moneda)
-          - [PROBLEMA #3: Inconsistencia de idioma en flujos principales](#problema-3-inconsistencia-de-idioma-en-flujos-principales)
-          - [PROBLEMA #4: Acción destructiva instantánea y confusión visual por color primario](#problema-4-acción-destructiva-instantánea-y-confusión-visual-por-color-primario)
-          - [PROBLEMA #5: Falta de affordance en la solicitud de permisos de ubicación](#problema-5-falta-de-affordance-en-la-solicitud-de-permisos-de-ubicación)
-          - [PROBLEMA #6: Confirmación de reserva mediante alerta nativa del navegador](#problema-6-confirmación-de-reserva-mediante-alerta-nativa-del-navegador)
-          - [PROBLEMA #7: Errores de mapeo de datos y exposición de valores del sistema](#problema-7-errores-de-mapeo-de-datos-y-exposición-de-valores-del-sistema)
-          - [PROBLEMA #8: Inconsistencia de idioma (Spanglish) en componentes principales](#problema-8-inconsistencia-de-idioma-spanglish-en-componentes-principales)
-          - [PROBLEMA #9: Falta de visibilidad del estado en los planes de suscripción](#problema-9-falta-de-visibilidad-del-estado-en-los-planes-de-suscripción)
-          - [PROBLEMA #10: Exposición de jerga del sistema por ausencia de un "estado vacío" (NaN)](#problema-10-exposición-de-jerga-del-sistema-por-ausencia-de-un-estado-vacío-nan)
-        - [CONCLUSIONES](#conclusiones)
-        - [OBSERVACIONES GENERALES](#observaciones-generales-1)
       - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
 - [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
   - [7.1. Continuous Integration](#71-continuous-integration)
@@ -484,9 +383,6 @@ Actividad de commits en el tiempo para el AV2.
   - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
     - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
 - [Conclusiones](#conclusiones-1)
-  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Conclusiones](#conclusiones-2)
-    - [Recomendaciones](#recomendaciones)
 - [Video App Validation](#video-app-validation)
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
@@ -7365,45 +7261,132 @@ Actividad de colaboración durante la fase experimental.
 
 #### 8.3.4.1. Diseño de Entrevistas
 
-**Preguntas para validación To-Be — [Segmento 1]:**
+**Segmento 1 (Salones de Belleza y Barberías):**
 
-1. [Pregunta 1]
-2. [Pregunta 2]
+1. ¿Consideras que el usar la agenda digital centralizada que ayudó a visualizar mejor tus citas? ¿Qué ventajas ves frente a usar aplicaciones de mensajería?
+2. ¿En que medida la agenda digital te ayudó a identificar huecos disponibles o cambios de horario con mayor claridad que tu método actual de gestión?
+3. ¿Qué tan dispuesto estarías a usar uTime como herramienta principal para gestionar las reservas de tu negocio después de esta prueba?
+4. ¿Los recordatorios automáticos recibidos 24 horas antes de cada cita te resultaron útiles para prepararte y reducir olvidos o cambios de último momento? ¿De qué forma?
+5. ¿Consideras que los recordatorios enviados también a tus clientes mejoraron la puntualidad y la asistencia a las citas agendadas?
+6. Cuando un cliente reserva desde la app, ¿te resulta claro ver la cita reflejada en tu panel y distinguir si está confirmada o pendiente de pago? ¿Qué cambiarías de la presentación?
+7. ¿Te genera confianza que el cliente pueda confirmar o pagar digitalmente su reserva antes de asistir? ¿Crees que esto reduciría cancelaciones o ausencias?
+8. ¿Percibes que aparecer en el listado de salones de uTime y recibir reservas directas desde la app aumenta la visibilidad de tu negocio frente a depender solo de redes sociales, mensajería o difusión voca a voca?
+9. ¿El flujo para revisar las reservas entrantes desde la aplicación es suficientemente simple como para incorporarlo a tu rutina diaria de trabajo?
+10. ¿Cuál crees que sería tu beneficio principal al adoptar de forma permanente la aplicación con las mejores realizadas?
+
+**Segmento 2 (Clientes de servicios de belleza):**
+
+1. ¿En qué medida te resultó sencillo encontrar un salón o barbería en el listado de uTime y filtrar opciones según el servicio que buscabas? ¿Qué dificultades encontraste, si las hubo?
+2. Al completar la reserva directamente en la app, ¿qué pasos del flujo te resultaron más claros y cuáles generaron mayor fricción frente a coordinar por WhatsApp o llamada?
+3. ¿Cómo compararías la velocidad y claridad del flujo de reserva en uTime con tu experiencia habitual de agendar citas por mensajería? ¿Qué ventajas o desventajas identificas en cada canal?
+4. ¿Los recordatorios automáticos recibidos antes de tu cita contribuyeron a que te organices mejor? ¿De qué forma te ayudarían a evitar olvidos o reprogramaciones de último momento?
+5. Al confirmar tu reserva con un botón o al pagar digitalmente desde la app, ¿qué nivel de comodidad y confianza experimentaste y qué aspecto del proceso te generó mayor o menor seguridad?
+6. ¿En qué medida la opción de confirmación o pago digital refuerza tu compromiso con la cita reservada? ¿Crees que esto reduciría la probabilidad de cancelar o no asistir?
+7. Al visitar el perfil de un salón o estilista, ¿qué elementos influyeron más en tu nivel de confianza antes de reservar?
+8. ¿Qué información adicional del perfil te habría resultado útil para tomar la decisión?
+9. ¿Qué tan probable es que uses uTime para tu próxima cita de belleza o barbería en lugar de contactar al negocio por WhatsApp? ¿Qué factores influenciarían en esa decisión?
+10. ¿Cuál consideras que sería tu beneficio principal al adoptar de forma permanente el uso de la aplicación uTime con las mejoras aplicadas?
 
 #### 8.3.4.2. Registro de Entrevistas
 
-**Segmento 1 — Entrevista 1**
+### Segmento Objetivo 2 (Clientes de servicios de belleza)
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre | [Nombre del entrevistado] |
-| Edad | [Edad] |
-| Ocupación | [Ocupación] |
-| Fecha | [Fecha] |
-| Entrevistador | [APELLIDOS Y NOMBRES] |
-| URL del video | [URL] |
-| Resumen | [Contenido pendiente] |
+#### Datos del Entrevistado #1
+
+- **Nombre completo:** Emily Juliette Arroyo Gonzales
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 20 años
+- **Distrito:** Santiago de Surco
+- **Inicio de la entrevista:** [Pendiente]
+- **Entrevistador:** Roman Cruz, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Entrevista Emily Arroyo Gonzales](./assets/validation/interviews/emily.png)
+
+- **URL del video (Microsoft Stream):**
+
+[Pendiente]
+
+**Resumen:**
+
+Emily Arroyo, estudiante de Ingeniería de Software, participó en la validación To-Be de uTime tras probar la aplicación con las nuevas funcionalidades implementadas. Sobre el **listado y filtros**, indicó que encontrar salones y barberías fue sencillo y que los filtros le permitieron comparar opciones de forma rápida y organizada. Aquí, su +unica recomendación fue incorporar más filtros de búsqueda. En el **flujo de reserva directa**, destacó como pasos claros la elección del servicio, del profesional y del horario, comparó favorablemente la experiencia frente a WhatsApp al no depender de esperar confirmación y poder completar la reserva en pocos minutos. Respecto a la **velocidad y claridad** del canal, calificó uTime como más rápido y eficiente que la mensajería porque toda la información está disponible de inmediato. Los **recordatorios automáticos** los consideró muy útiles para organizar su agenda, recordar la fecha y hora de su cita con anticipación y reprogramar con tiempo si es que surge un imprevisto. Sobre **confirmación y pago digital**, expresó confianza y seguridad en el proceso dado que la confirmación inmediata le daba certeza de que la cita quedó registrada y el pago digital le aportó comodidad al evitar coordinar el cobro por otros medios. Emily considera que confirmar o pagar refuerza su **compromiso** con la cita y reduciría cancelaciones de último momento. Al revisar el **perfil del salón o estilista**, las calificaciones, reseñas, fotografías de trabajos, horarios y precios fueron los elementos que más influyeron en su confianza; sugirió añadir opiniones más recientes, descripción del estilista, tiempo estimado por servicio y paquetes especiales. Manifestó que es **muy probable** que use uTime para su próxima cita en lugar de aplicaciones de mensajería por la rapidez y organización del flujo. Considera su **beneficio principal** al adoptar la app de forma permanente el ahorrar tiempo y tener una experiencia de reserva más organizada, con consulta de horarios, comparación de opciones, confirmación y recordatorios integrados.
+
+#### Datos del Entrevistado #2
+
+- **Nombre completo:** Anedyib Villar Bisso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 21 años
+- **Distrito:** San Isidro
+- **Inicio de la entrevista:** [Pendiente]
+- **Entrevistador:** Roman Cruz, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Anedyib Villar Bisso](./assets/validation/interviews/ane.png)
+
+- **URL del video (Microsoft Stream):**
+
+[Pendiente]
+
+**Resumen:**
+
+Anedyib Villar, estudiante de Marketing de 21 años, participó en la validación To-Be de uTime tras probar la aplicación con las mejoras del Capítulo VIII. Sobre el **listado y filtros**, indicó que le resultó muy fácil navegar el listado y usar los filtros por servicio, al estar acostumbrada al uso de aplicaciones digitales. En el **flujo de reserva directa**, no reportó fricción puesto que la página web guió sus pasos de forma clara y completó la reserva sin dificultad frente a los problemas de coordinación por lo que pasó antes a través de aplicación de mensajería o llamadas. Al **comparar canales**, mencionó que es su primera experiencia con este tipo de plataforma, valoró la ventaja de reservar en línea desde cualquier lugar con internet y contrastó favorablemente con su hábito previo de agendar solo por teléfono, donde bastaba con fijar la cita y era fácil olvidarla. Los **recordatorios automáticos** le ayudaron mucho dado que se considera olvidadiza. Respecto a la **confirmación y pago digital**, como estudiante de marketing digital expresó confianza en operaciones en línea, aunque reconoció que otros públicos podrían sentir desconfianza según su perfil. Considera que pagar por adelantado **refuerza el compromiso** con la cita frente a un acuerdo verbal por teléfono sin consecuencia económica. En cuandto al **perfil del salón o estilista**, las imágenes del local y del trabajo realizado fueron el factor que más influyó en su confianza. Sobre información adicional, indicó que, al ser su primera vez con este tipo de app, la información mostrada le resultó suficiente. Manifestó que **sí usaría uTime** para su próxima cita de belleza y que el **recordatorio** es el factor que más influiría en su decisión. Su **beneficio principal** sería asistir con mayor puntualidad a las citas programadas y evitar olvidarlas.
+
+#### Datos del Entrevistado #3
+
+- **Nombre completo:** Diego Vilca Saboya
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 19 años
+- **Distrito:** Villa El Salvador
+- **Inicio de la entrevista:** [Pendiente]
+- **Entrevistador:** Roman Cruz, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Diego Vilca Saboya](./assets/validation/interviews/diego.png)
+
+- **URL del video (Microsoft Stream):**
+
+[Pendiente]
+
+**Resumen:**
+
+Diego Vilca, estudiante de Ingeniería de Software de 19 años, evaluó la versión To-Be de uTime centrándose en las mejoras orientadas a la experiencia del cliente. Al explorar el **catálogo de negocios**, describió la búsqueda y el filtrado por tipo de servicio como intuitivos y sin obstáculos. Durante la **reserva en la aplicación**, resaltó que definir fecha y hora resultó más directo que negociar disponibilidad por chat o llamada, donde suele haber contrapropuestas del barbero y es más difícil llegar a un acuerdo. Frente a su método habitual por **mensajería**, valoró que uTime elimina la espera de respuesta, puesto que al estar automatizado el proceso, agenda y confirma en un solo recorrido. En cuanto al **cobro en línea**, manifestó comodidad al usar una pasarela conocida, lo que le transmitió la mayor sensación de respaldo durante el flujo. Además, entiende que **confirmar la asistencia** no solo fija su propio compromiso, sino que permite al negocio anticipar una inasistencia. Al analizar el **perfil del establecimiento**, las imágenes de un local limpio y ordenado fueron decisivas para generarle confianza. Por otro lado, propuso complementar la ficha con testimonios de clientes y la trayectoria del profesional. Planea **recurrir a uTime** en su próximo servicio, sobre todo si se traslada a una zona donde no tenga referencias ya que podría conocer barberías, estilos de corte y condiciones del local sin depender de recomendaciones previas. Para él, el **valor más alto** al adoptar la plataforma de forma continua es agendar con rapidez y consultar de antemano qué días tienen cupo, evitando llegar a un local saturado sin haber verificado disponibilidad.
+
 
 ## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
 
-**Experimento EXP01**
+Tras ejecutar las entrevistas de validación To-Be del **Segmento Objetivo 2 (Clientes de servicios de belleza)**, el equipo consolidó la evidencia cualitativa de los participantes, quienes probaron la versión de uTime con las mejoras implementadas. El análisis siguiente sigue contrasta los hallazgos con las Experiment Cards **EXP02–EXP05** que cubren las funcionalidades evaluadas desde el lado del cliente.
 
-| Aspecto | Resultado |
-|---------|-----------|
-| Hipótesis | [H01] |
-| Método | [Método] |
-| Muestra | [Tamaño] |
-| Resultado cuantitativo | [Dato] |
-| Resultado cualitativo | [Insight] |
-| Conclusión | [Contenido pendiente — validada / refutada / parcial] |
+**Análisis del Segmento Objetivo 02 — Validación To-Be**
+
+- **Características objetivas de la muestra:**
+  - Edades entre 19 y 21 años; residentes en distritos de Lima Metropolitana.
+  - Perfil digital alto: los tres se identifican como usuarios cómodos con aplicaciones y plataformas en línea.
+  - Métodos previos de agendamiento: WhatsApp, llamadas y/o mensajería.
+  - Los tres completaron el flujo de reserva en la aplicación y manifestaron intención de usar uTime en su próxima cita.
+
+- **Hallazgos por funcionalidad validada:**
+
+  - **Listado de salones y filtros.** Los tres entrevistados describieron la búsqueda y el filtrado por servicio como sencillos e intuitivos. Emily sugirió ampliar los criterios de filtrado, mientras que los demás no reportaron fricción en esta etapa.
+  - **Flujo directo de reserva.** Los tres compararon favorablemente uTime frente a WhatsApp, llamadas o chat, destacando la eliminación de la espera de respuesta, la visibilidad inmediata de horarios y la posibilidad de cerrar la reserva en un solo recorrido. Diego resaltó que elegir fecha y hora evita el ida y vuelta con el barbero. Por otro lado, Anedyib valoró reservar desde cualquier lugar con internet frente a acordar por teléfono y olvidar la cita.
+  - **Recordatorios automáticos.** Emily y Anedyib evaluaron positivamente los recordatorios, pues les ayudan a organizarse, recordar la cita con anticipación y reprogramar si surge un imprevisto. Anedyib identificó el recordatorio como el factor que más influiría en su decisión de uso futuro.
+  - **Confirmación y pago digital.** Los tres asociaron la confirmación o el pago en línea con mayor compromiso y seguridad respecto a un acuerdo verbal por mensajería o llamada. Emily y Diego expresaron comodidad con el paso de pago. Anedyib, desde su formación en marketing digital, confía en operaciones en línea pero advirtió que otros públicos podrían percibir fricción o desconfianza.
+  - **Perfil enriquecido del negocio.** Los tres indicaron que el contenido del perfil influye en su confianza antes de reservar. Emily priorizó reseñas, calificaciones, fotografías, horarios y precios. Anedyib y Diego enfatizaron las imágenes de un local cuidado y ordenado. Como mejoras, se mencionaron opiniones recientes, descripción del estilista, duración estimada del servicio, paquetes especiales, testimonios de clientes y años de experiencia del profesional.
+
+- **Características subjetivas recurrentes:**
+  - **Valor percibido principal:** Ahorro de tiempo y mayor organización del proceso de reserva.
+  - **Barrera histórica:** Demora o dependencia de la respuesta del negocio por canales manuales.
+  - **Disposición de adopción:** Los tres declararon que usarían uTime para su próxima cita de belleza o barbería en lugar de contactar por WhatsApp.
+  - **Oportunidad de descubrimiento:** Diego destacó el valor de la plataforma al mudarse a una zona sin referencias locales, pudiendo evaluar barberías, estilos y disponibilidad sin depender del boca a boca.
+
+**Síntesis general**
+
+Las entrevistas To-Be del segmento cliente aportan evidencia cualitativa **consistente y favorable** hacia las mejoras implementadas en uTime. El flujo directo de reserva y la visibilidad del catálogo de negocios (EXP04) obtuvieron la señal más uniforme el que los tres participantes preferirían uTime frente a aplicaciones de mensajería para su próxima cita. Los recordatorios (EXP02), la confirmación o pago digital (EXP03) y los perfiles enriquecidos (EXP05) también recibieron valoración positiva de parte de los entevistados, indicando que mejorarían su experiencia y se sentirían más dispuestos a usarla en el día a día.
 
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
-| # Orden | Question ID | Pregunta | Score inicial | Score final | Justificación |
-|---------|-------------|----------|---------------|-------------|---------------|
-| 1       | Q01         |          |               |             |               |
+| # Orden | Question ID | Pregunta |
+|---------|-------------|----------|
+| 1 | Q04 | ¿Qué canal genera mayor intención de reserva inicial: flujo directo en la app o contacto por WhatsApp? |
+| 2 | Q02 | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? |
+| 3 | Q03 | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? |
+| 4 | Q01 | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? |
+| 5 | Q05 | ¿Qué elementos del perfil generan mayor confianza antes de reservar: reseñas, calificaciones, precios visibles o portafolio visual? |
 
 ## 8.5. Continuous Learning
 
