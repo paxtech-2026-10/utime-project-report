@@ -5607,7 +5607,12 @@ Preguntas finales (cierre):
 
 ### 6.3.2. Registro de Entrevistas
 
-### Segmento Objetivo 1 (Salones de Belleza y Barberías)
+Se ejecutaron **seis entrevistas de validación**, **tres por cada segmento
+objetivo**: dueños o administradores de salones de belleza y barberías, y
+clientes de servicios de belleza. A cada participante se le mostró la Landing
+Page y la aplicación de uTime, registrando su retroalimentación de forma fiel.
+
+#### Segmento Objetivo 1 (Salones de Belleza y Barberías)
 
 ##### Datos del Entrevistado #1
 
@@ -5643,9 +5648,25 @@ Mileydi Patricia, esteticista con 5 años de experiencia en Estados Unidos. Ve l
 **Resumen:**
 María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de experiencia. Actualmente gestiona sus reservas solo por WhatsApp, lo cual le dificulta manejar los tiempos entre un servicio y otro. Calificó la aplicación móvil con un 10 en probabilidad de uso, describiéndola como organizada y con las herramientas necesarias, y confirmó que se sentiría cómoda pagando un plan para evitar cruces de clientes. Como crítica constructiva o mejora, solicitó añadir un espacio de "notas" o historial para registrar qué servicio se hizo el cliente y la fecha, evitando así que esa información se pierda en papeles.
 
-### Segmento Objetivo 2 (Clientes de servicios de belleza)
+##### Datos del Entrevistado #3
 
-#### Datos del Entrevistado #1
+- **Nombre completo:** Fabián
+- **Segmento Objetivo:** Administrador de barbería
+- **Distrito:** Lima
+- **Inicio de la entrevista:** 9:51 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Fabián](./assets/images/photos/segmento-objetivo1-3.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Fabián, administrador de una barbería encargado de coordinar la agenda y a los barberos del local. Al revisar la landing page valoró el mensaje "Skip the Calls, Book in Real Time", pues refleja su principal dolor: la pérdida de tiempo respondiendo llamadas y mensajes para agendar. Considera que la propuesta y los planes se entienden con claridad. Sobre la aplicación destacó la utilidad de administrar la disponibilidad en tiempo real y de tener a todos los barberos y sus horarios en un solo panel, evitando cruces de citas. Como oportunidad de mejora sugirió reforzar la vista de asignación de servicios por barbero y mantener el idioma consistente en español dentro de la app.
+
+#### Segmento Objetivo 2 (Clientes de servicios de belleza)
+
+##### Datos del Entrevistado #1
 
 - **Nombre completo:** Anedyib Villar Bisso
 - **Segmento Objetivo:** Clientes de servicio de belleza
@@ -5662,7 +5683,7 @@ María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de ex
 **Resumen:**
 Anedyib Villar, cliente que solicita servicios de belleza una vez al mes. Menciona que lo que más le cuesta actualmente es la demora en las respuestas de los salones vía WhatsApp. Opinó que la landing page es bonita y completa, destacando la sección de "features" y el calendario interactivo, lo cual le genera más confianza que el método tradicional. Sobre la aplicación, reportó que el flujo de registro, elección de horario y método de pago fue muy sencillo, afirmando que la descargaría y usaría siempre si saliera en la Play Store. No encontró puntos confusos y valoró la opción de historial y salones favoritos.
 
-#### Datos del Entrevistado #2
+##### Datos del Entrevistado #2
 
 - **Nombre completo:** Edward Rodriguez
 - **Segmento Objetivo:** Clientes de servicio de belleza
@@ -5679,6 +5700,22 @@ Anedyib Villar, cliente que solicita servicios de belleza una vez al mes. Mencio
 **Resumen:**
 Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expresa frustración por tener que ajustarse siempre a la disponibilidad de las barberías en lugar de poder elegir según su propia conveniencia. Considera que el diseño de la landing page está bien trabajado y le inspira confianza para reservar. Respecto a la aplicación móvil, destacó principalmente la función de geolocalización para encontrar salones cercanos y la rapidez del proceso. Como sugerencia clave, indicó que le gustaría que la aplicación pudiera sincronizar las citas directamente con Google Calendar para unificar sus notificaciones.
 
+##### Datos del Entrevistado #3
+
+- **Nombre completo:** Renso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Distrito:** Lima
+- **Inicio de la entrevista:** 16:49 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Renso](./assets/images/photos/segmento-objetivo2-3.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Renso, cliente que reserva servicios de belleza de forma periódica y coordina la mayoría de sus citas por redes sociales y WhatsApp. Navegó la aplicación web del cliente y encontró intuitivo el menú lateral (Home, Appointments, My favorites y My profile) para moverse entre secciones. Valoró especialmente poder guardar salones en "My favorites" y ver sus "Upcoming appointments" en un mismo lugar, algo que hoy pierde de vista al gestionarlo por chat. Consideró sencillo buscar un salón y agendar, y afirmó que usaría la plataforma para no depender de las respuestas por mensaje. Como mejora sugirió unificar el idioma de la interfaz a español y reforzar la visibilidad del estado de cada cita agendada.
+
 > **Nota:** Todos los videos de validación se encuentran consolidados en un único
 > archivo. Los campos "Inicio de la entrevista" indican el minuto de inicio de
 > cada entrevistado dentro de ese video compartido.
@@ -5690,7 +5727,8 @@ Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expr
 | 1 | Consistencia y estándares          | Inconsistencias en la traducción al inglés de la aplicación móvil.   | 2               | Corregir textos y revisar el sistema de traducciones.        |
 | 2 | Flexibilidad y eficiencia de uso   | Falta de un historial o registro de servicios realizados a clientes. | 2               | Incorporar notas e historial de atención por cliente.        |
 | 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas.    | 2               | Permitir sincronización automática con calendarios externos. |
-                |                 |               |
+| 4 | Consistencia y estándares          | Mezcla de idiomas (español/inglés) en pantallas principales de la app y la web. | 2   | Unificar la interfaz a un solo idioma según la preferencia del usuario. |
+| 5 | Visibilidad del estado del sistema | Poca claridad sobre el estado de cada cita agendada (confirmada, pendiente, próxima). | 2 | Mostrar de forma destacada el estado y los próximos turnos del usuario. |
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
