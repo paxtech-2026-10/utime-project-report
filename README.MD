@@ -7334,7 +7334,8 @@ versión de uTime con las mejoras implementadas en el Capítulo VIII (agenda
 digital centralizada, recordatorios automáticos, confirmación y pago digital,
 reserva directa y perfiles con reseñas), registrando su retroalimentación de
 forma fiel. Todos los videos se encuentran en la siguiente carpeta compartida:
-[Ver carpeta de videos en Google Drive](https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing)
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
 
 ##### Segmento Objetivo 1 (Salones de Belleza y Barberías)
 
@@ -7347,7 +7348,9 @@ forma fiel. Todos los videos se encuentran en la siguiente carpeta compartida:
 - **Entrevistador:** RIVERA SOSA, Eduardo Gael
 - **Screenshot del cuadro de video:** ![Entrevista Renso](./assets/validation/interviews/tobe-salon-1-renso.png)
 
-- **URL del video (Google Drive):** [Ver carpeta de videos](https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing)
+- **URL del video (Google Drive):**
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
 
 **Resumen:**
 
@@ -7362,7 +7365,9 @@ Renso, administrador de un salón de belleza a cargo de coordinar los servicios 
 - **Entrevistador:** RIVERA SOSA, Eduardo Gael
 - **Screenshot del cuadro de video:** ![Entrevista Fabián](./assets/validation/interviews/tobe-salon-2-fabian.png)
 
-- **URL del video (Google Drive):** [Ver carpeta de videos](https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing)
+- **URL del video (Google Drive):**
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
 
 **Resumen:**
 
@@ -7380,7 +7385,9 @@ Fabián, administrador de una barbería encargado de gestionar al equipo de barb
 - **Entrevistador:** ROMAN CRUZ, Natalia Bertha
 - **Screenshot del cuadro de video:** ![Entrevista Anedyib Villar Bisso](./assets/validation/interviews/tobe-cliente-1-ane.png)
 
-- **URL del video (Google Drive):** [Ver carpeta de videos](https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing)
+- **URL del video (Google Drive):**
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
 
 **Resumen:**
 
@@ -7396,7 +7403,9 @@ Anedyib Villar, estudiante de Marketing de 21 años, participó en la validació
 - **Entrevistador:** ROMAN CRUZ, Natalia Bertha
 - **Screenshot del cuadro de video:** ![Entrevista Emily Arroyo Gonzales](./assets/validation/interviews/tobe-cliente-2-emily.png)
 
-- **URL del video (Google Drive):** [Ver carpeta de videos](https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing)
+- **URL del video (Google Drive):**
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
 
 **Resumen:**
 
@@ -7412,7 +7421,9 @@ Emily Arroyo, estudiante de Ingeniería de Software, participó en la validació
 - **Entrevistador:** ROMAN CRUZ, Natalia Bertha
 - **Screenshot del cuadro de video:** ![Entrevista Diego Vilca Saboya](./assets/validation/interviews/tobe-cliente-3-diego.png)
 
-- **URL del video (Google Drive):** [Ver carpeta de videos](https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing)
+- **URL del video (Google Drive):**
+
+`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
 
 **Resumen:**
 
