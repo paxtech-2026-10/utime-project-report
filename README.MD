@@ -7247,12 +7247,96 @@ el footer con enlaces rápidos, soporte, datos de contacto y redes sociales.
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La aplicación web To-Be se encuentra desplegada y accesible públicamente en
+GitHub Pages, ejecutándose contra el backend real. Implementa el flujo completo
+del cliente con las mejoras del ciclo experimental: acceso y registro
+diferenciado por rol, descubrimiento de salones, reserva directa con selección
+de profesional y horario, pago y reseñas, además de la gestión de favoritos y
+perfil.
 
-Frontend Web To-Be desplegado.
+- **URL de despliegue:** [https://paxtech-2026-10.github.io/Frontend-Web-Application/iam/login](https://paxtech-2026-10.github.io/Frontend-Web-Application/iam/login)
 
-<img src="./assets/ux-ui/evidences/frontend-web/frontend-tobe.png" alt="Frontend To-Be" width="800">
+A continuación se presenta la evidencia de cada pantalla implementada, en el
+orden del recorrido de usuario.
 
+**Login (IAM)**
+
+Pantalla de acceso "Access Your Account" (`/iam/login`), con validación de
+correo y contraseña, selector de idioma y enlace directo al registro.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/login.png" alt="Frontend Web To-Be — Login" width="800">
+</div>
+
+**Registro (IAM)**
+
+Pantalla "Create an account" (`/iam/register`) con selector de rol **Client /
+Provider**, que permite registrar tanto a clientes finales como a
+proveedores/barberías desde la web.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/register.png" alt="Frontend Web To-Be — Registro" width="800">
+</div>
+
+**Home del cliente**
+
+Panel principal del cliente (`/client/homeClient`) con el menú lateral (Home,
+Appointments, My favorites, My profile), la sección "Upcoming appointments" con
+el estado de la reserva (por ejemplo, "No pagado") y el listado de salones
+disponibles con dirección y distancia.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/dashboard-home.png" alt="Frontend Web To-Be — Home del cliente" width="800">
+</div>
+
+**Mis citas**
+
+Pantalla "Your Appointments" (`/client/appointment`) que muestra la cita con su
+salón, servicio, hora y cliente, con acciones para **pagar, reprogramar o
+cancelar**, y un panel para **calificar la experiencia** con estrellas y dejar
+una reseña.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/appointments.png" alt="Frontend Web To-Be — Mis citas" width="800">
+</div>
+
+**Favoritos**
+
+Pantalla "My favorites" (`/client/favorites`) con los salones guardados por el
+cliente, mostrando su calificación promedio, número de reseñas y un acceso
+directo "Book Now".
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/favorites.png" alt="Frontend Web To-Be — Favoritos" width="800">
+</div>
+
+**Mi perfil**
+
+Pantalla "Your Profile" (`/client/profile`) donde el cliente mantiene
+actualizada su información personal (nombre, apellido y correo) y su cuenta.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/my-profile.png" alt="Frontend Web To-Be — Mi perfil" width="800">
+</div>
+
+**Detalle del salón**
+
+Vista del perfil del salón (`/client/homeClient/salon/1`) con su dirección,
+redes sociales (Instagram, TikTok), calificación y reseñas, y el listado de
+servicios con duración, precio y el botón "Reservar ahora".
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/salon-detail.png" alt="Frontend Web To-Be — Detalle del salón" width="800">
+</div>
+
+**Reserva directa**
+
+Pantalla de agendamiento (`/client/appointment-maker/1`) donde el cliente
+selecciona al profesional ("Our Staff") y elige la fecha y hora disponibles
+sobre un calendario semanal, completando la reserva directa desde la web.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/reservation.png" alt="Frontend Web To-Be — Reserva directa" width="800">
 </div>
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
