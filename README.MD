@@ -7502,9 +7502,11 @@ tres clientes de servicios de belleza. A cada participante se le mostró la
 versión de uTime con las mejoras implementadas en el Capítulo VIII (agenda
 digital centralizada, recordatorios automáticos, confirmación y pago digital,
 reserva directa y perfiles con reseñas), registrando su retroalimentación de
-forma fiel. Todos los videos se encuentran en la siguiente carpeta compartida:
+forma fiel. Todas las entrevistas se encuentran consolidadas en un único video;
+los campos "Inicio de la entrevista" indican el minuto de inicio de cada
+participante dentro de ese archivo compartido:
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 ##### Segmento Objetivo 1 (Salones de Belleza y Barberías)
 
@@ -7513,13 +7515,13 @@ forma fiel. Todos los videos se encuentran en la siguiente carpeta compartida:
 - **Nombre completo:** Renso
 - **Segmento Objetivo:** Administrador de salón / barbería
 - **Distrito:** Lima
-- **Inicio de la entrevista:** 0:20 minutos
+- **Inicio de la entrevista:** 18:14 minutos
 - **Entrevistador:** RIVERA SOSA, Eduardo Gael
 - **Screenshot del cuadro de video:** ![Entrevista Renso](./assets/validation/interviews/tobe-salon-1-renso.png)
 
-- **URL del video (Google Drive):**
+- **URL del video (Microsoft Stream):**
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 **Resumen:**
 
@@ -7530,13 +7532,13 @@ Renso, administrador de un salón de belleza a cargo de coordinar los servicios 
 - **Nombre completo:** Fabián
 - **Segmento Objetivo:** Administrador de barbería
 - **Distrito:** Lima
-- **Inicio de la entrevista:** 7:45 minutos
+- **Inicio de la entrevista:** 26:03 minutos
 - **Entrevistador:** RIVERA SOSA, Eduardo Gael
 - **Screenshot del cuadro de video:** ![Entrevista Fabián](./assets/validation/interviews/tobe-salon-2-fabian.png)
 
-- **URL del video (Google Drive):**
+- **URL del video (Microsoft Stream):**
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 **Resumen:**
 
@@ -7548,13 +7550,13 @@ Fabián, administrador de una barbería encargado de gestionar al equipo de barb
 - **Segmento Objetivo:** Dueña de un Salón de belleza
 - **Edad:** 45 años
 - **Distrito:** San Juan de Lurigancho
-- **Inicio de la entrevista:** 14:30 minutos
+- **Inicio de la entrevista:** 31:38 minutos
 - **Entrevistador:** RIVERA SOSA, Eduardo Gael
 - **Screenshot del cuadro de video:** ![Entrevista Maria Ysabel Sosa](./assets/images/photos/segmento-objetivo1-2.png)
 
-- **URL del video (Google Drive):**
+- **URL del video (Microsoft Stream):**
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 **Resumen:**
 
@@ -7568,13 +7570,13 @@ María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de ex
 - **Segmento Objetivo:** Clientes de servicio de belleza
 - **Edad:** 21 años
 - **Distrito:** San Isidro
-- **Inicio de la entrevista:** 0:15 minutos
+- **Inicio de la entrevista:** 00:00 minutos
 - **Entrevistador:** ROMAN CRUZ, Natalia Bertha
 - **Screenshot del cuadro de video:** ![Entrevista Anedyib Villar Bisso](./assets/validation/interviews/tobe-cliente-1-ane.png)
 
-- **URL del video (Google Drive):**
+- **URL del video (Microsoft Stream):**
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 **Resumen:**
 
@@ -7586,13 +7588,13 @@ Anedyib Villar, estudiante de Marketing de 21 años, participó en la validació
 - **Segmento Objetivo:** Clientes de servicio de belleza
 - **Edad:** 20 años
 - **Distrito:** Santiago de Surco
-- **Inicio de la entrevista:** 6:32 minutos
+- **Inicio de la entrevista:** 5:25 minutos
 - **Entrevistador:** ROMAN CRUZ, Natalia Bertha
 - **Screenshot del cuadro de video:** ![Entrevista Emily Arroyo Gonzales](./assets/validation/interviews/tobe-cliente-2-emily.png)
 
-- **URL del video (Google Drive):**
+- **URL del video (Microsoft Stream):**
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 **Resumen:**
 
@@ -7604,13 +7606,13 @@ Emily Arroyo, estudiante de Ingeniería de Software, participó en la validació
 - **Segmento Objetivo:** Clientes de servicio de belleza
 - **Edad:** 19 años
 - **Distrito:** Villa El Salvador
-- **Inicio de la entrevista:** 12:58 minutos
+- **Inicio de la entrevista:** 11:42 minutos
 - **Entrevistador:** ROMAN CRUZ, Natalia Bertha
 - **Screenshot del cuadro de video:** ![Entrevista Diego Vilca Saboya](./assets/validation/interviews/tobe-cliente-3-diego.png)
 
-- **URL del video (Google Drive):**
+- **URL del video (Microsoft Stream):**
 
-`https://drive.google.com/drive/folders/1401yUc3hta_XmOK5GjQgsfZP_srHPTWm?usp=sharing`
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
 
 **Resumen:**
 
