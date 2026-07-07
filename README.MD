@@ -7665,7 +7665,28 @@ Las entrevistas To-Be del segmento cliente aportan evidencia cualitativa **consi
 
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
-[Contenido pendiente — relato del workflow de aprendizaje compartido al equipo / stakeholders.]
+Tras consolidar el análisis de las To-Be Validation Interviews (8.3.4.2) y el Re-scored Question Backlog (8.4.2), el equipo realizó una **sesión de shareback** en una reunión virtual por Discord, con la participación de todo el equipo. El objetivo fue compartir la evidencia recogida para cada Experiment Card (EXP01–EXP05), contrastarla contra el umbral de **Escala** definido en 8.1.5, y decidir en conjunto si cada funcionalidad se **persevera** (se mantiene e integra de forma permanente), se **itera** (se mantiene pero con ajustes) o se **descarta**.
+
+**Learning Workflow aplicado en la sesión**
+
+1. **Share (Compartir):** cada responsable de experimento expuso al resto del equipo los hallazgos recogidos en las entrevistas To-Be, citando evidencia textual de los participantes de ambos segmentos.
+2. **Discuss (Discutir):** el equipo contrastó los resultados frente a la hipótesis y el umbral de escala originalmente definidos para cada experimento, identificando además oportunidades de mejora mencionadas por los entrevistados.
+3. **Decide (Decidir):** se tomó una decisión explícita por experimento (Persevera / Itera / Descarta), registrada en la tabla siguiente.
+4. **Document (Documentar):** las decisiones alimentan el Re-scored Question Backlog (8.4.2) y el Pipeline-supported To-Be Software Platform Lifecycle (8.3.3), cerrando el ciclo Build–Measure–Learn para esta iteración.
+
+**Decisiones por experimento**
+
+| ID | Funcionalidad | Umbral de escala (8.1.5) | Evidencia observada | Decisión |
+|----|---------------|--------------------------|----------------------|----------|
+| EXP01 | Agenda digital centralizada | Implementar si >50% de salones manifiesta alta satisfacción | Los 3 representantes de salones/barberías entrevistados (Renso, Fabián y María Isabel) mostraron disposición alta; María Isabel calificó la app con 10/10 en probabilidad de uso y manifestó estar dispuesta a pagar un plan | **Persevera** — se mantiene como funcionalidad core |
+| EXP02 | Recordatorios automáticos | Escalar si reduce >20% las citas canceladas/reprogramadas tardíamente | Ambos segmentos valoraron los recordatorios como útiles para reducir olvidos y mejorar la puntualidad (Emily, Anedyib, Renso, Fabián, María Isabel) | **Persevera** — se mantiene sin cambios |
+| EXP03 | Confirmación o pago digital | Integrar si ≥40% de clientes prefiere confirmar/pagar digital y reduce ≥15% cancelaciones | Los 3 clientes asociaron la confirmación/pago con mayor compromiso y seguridad; los salones coincidieron en que reduce cancelaciones y "huecos" en la agenda | **Persevera** — se mantiene, priorizando la opción de confirmación sin fricción para clientes que aún no desean pagar |
+| EXP04 | Flujo directo de reserva vs. contacto inicial por WhatsApp | Priorizar si genera ≥20% más intención de reserva que WhatsApp | Señal más uniforme de todo el experimento: los 3 clientes prefirieron uTime frente a WhatsApp/llamadas para su próxima cita | **Persevera** — funcionalidad de mayor prioridad, sin cambios |
+| EXP05 | Perfil con reseñas y portafolio visual | Mantener si aumenta ≥20% la confianza percibida y correlaciona con ≥10% más reservas | Los 3 clientes valoraron positivamente el perfil enriquecido, pero sugirieron agregar reseñas recientes, descripción del estilista, duración estimada del servicio y años de experiencia | **Itera** — se mantiene la funcionalidad y se prioriza en el backlog la incorporación de los campos sugeridos |
+
+**Aprendizaje clave de la sesión**
+
+El equipo concluyó que las cinco funcionalidades evaluadas cuentan con evidencia suficiente para pasar de hipótesis a **aprendizaje validado**, cerrando la brecha entre las suposiciones iniciales del As-Is Summary (8.1.1) y el comportamiento real observado en ambos segmentos objetivo. Únicamente el perfil enriquecido (EXP05) requiere una iteración adicional antes de considerarse cerrado, la cual queda reflejada como ítem priorizado en el Re-scored Question Backlog (8.4.2).
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
