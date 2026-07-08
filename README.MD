@@ -7623,9 +7623,9 @@ Diego Vilca, estudiante de Ingeniería de Software de 19 años, evaluó la versi
 
 ### 8.4.1. Analysis and Interpretation of Results
 
-Tras ejecutar las entrevistas de validación To-Be del **Segmento Objetivo 2 (Clientes de servicios de belleza)**, el equipo consolidó la evidencia cualitativa de los participantes, quienes probaron la versión de uTime con las mejoras implementadas. El análisis siguiente sigue contrasta los hallazgos con las Experiment Cards **EXP02–EXP05** que cubren las funcionalidades evaluadas desde el lado del cliente.
+Tras ejecutar las entrevistas de validación To-Be, el equipo consolidó la evidencia cualitativa de los participantes, quienes probaron la versión de uTime con las mejoras implementadas. El análisis siguiente sigue contrasta los hallazgos con las Experiment Cards **EXP02–EXP05** que cubren las funcionalidades evaluadas desde el lado del cliente.
 
-**Análisis del Segmento Objetivo 02 — Validación To-Be**
+**Análisis del Validación To-Be**
 
 - **Características objetivas de la muestra:**
   - Edades entre 19 y 21 años; residentes en distritos de Lima Metropolitana.
