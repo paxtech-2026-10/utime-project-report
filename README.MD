@@ -7608,8 +7608,8 @@ Actividad de colaboración durante la fase experimental.
 
 #### 8.3.4.2. Registro de Entrevistas
 
-Se ejecutaron **cinco entrevistas de validación To-Be**, cubriendo los dos
-segmentos objetivo del producto: dos representantes de salones y barberías, y
+Se ejecutaron **seis entrevistas de validación To-Be**, cubriendo los dos
+segmentos objetivo del producto: tres representantes de salones y barberías, y
 tres clientes de servicios de belleza. A cada participante se le mostró la
 versión de uTime con las mejoras implementadas en el Capítulo VIII (agenda
 digital centralizada, recordatorios automáticos, confirmación y pago digital,
@@ -7777,7 +7777,28 @@ Las entrevistas To-Be del segmento cliente aportan evidencia cualitativa **consi
 
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
-[Contenido pendiente — relato del workflow de aprendizaje compartido al equipo / stakeholders.]
+Tras consolidar el análisis de las To-Be Validation Interviews (8.3.4.2) y el Re-scored Question Backlog (8.4.2), el equipo realizó una **sesión de shareback** en una reunión virtual por Discord, con la participación de todo el equipo. El objetivo fue compartir la evidencia recogida para cada Experiment Card (EXP01–EXP05), contrastarla contra el umbral de **Escala** definido en 8.1.5, y decidir en conjunto si cada funcionalidad se **persevera** (se mantiene e integra de forma permanente), se **itera** (se mantiene pero con ajustes) o se **descarta**.
+
+**Learning Workflow aplicado en la sesión**
+
+1. **Share (Compartir):** cada responsable de experimento expuso al resto del equipo los hallazgos recogidos en las entrevistas To-Be, citando evidencia textual de los participantes de ambos segmentos.
+2. **Discuss (Discutir):** el equipo contrastó los resultados frente a la hipótesis y el umbral de escala originalmente definidos para cada experimento, identificando además oportunidades de mejora mencionadas por los entrevistados.
+3. **Decide (Decidir):** se tomó una decisión explícita por experimento (Persevera / Itera / Descarta), registrada en la tabla siguiente.
+4. **Document (Documentar):** las decisiones alimentan el Re-scored Question Backlog (8.4.2) y el Pipeline-supported To-Be Software Platform Lifecycle (8.3.3), cerrando el ciclo Build–Measure–Learn para esta iteración.
+
+**Decisiones por experimento**
+
+| ID | Funcionalidad | Umbral de escala (8.1.5) | Evidencia observada | Decisión |
+|----|---------------|--------------------------|----------------------|----------|
+| EXP01 | Agenda digital centralizada | Implementar si más del 50% de salones manifiesta alta satisfacción | Los 3 representantes de salones/barberías entrevistados (Renso, Fabián y María Isabel) mostraron disposición alta; María Isabel calificó la app con 10/10 en probabilidad de uso y manifestó estar dispuesta a pagar un plan | **Persevera** — se mantiene como funcionalidad core |
+| EXP02 | Recordatorios automáticos | Escalar si reduce más del 20% las citas canceladas o reprogramadas tardíamente | Ambos segmentos valoraron los recordatorios como útiles para reducir olvidos y mejorar la puntualidad (Emily, Anedyib, Renso, Fabián, María Isabel) | **Persevera** — se mantiene sin cambios |
+| EXP03 | Confirmación o pago digital | Integrar si al menos el 40% de clientes prefiere confirmar o pagar digital y reduce al menos 15% las cancelaciones | Los 3 clientes asociaron la confirmación/pago con mayor compromiso y seguridad; los salones coincidieron en que reduce cancelaciones y "huecos" en la agenda | **Persevera** — se mantiene, priorizando la opción de confirmación sin fricción para clientes que aún no desean pagar |
+| EXP04 | Flujo directo de reserva vs. contacto inicial por WhatsApp | Priorizar si genera al menos 20% más intención de reserva que WhatsApp | Señal más uniforme de todo el experimento: los 3 clientes prefirieron uTime frente a WhatsApp/llamadas para su próxima cita | **Persevera** — funcionalidad de mayor prioridad, sin cambios |
+| EXP05 | Perfil con reseñas y portafolio visual | Mantener si aumenta al menos 20% la confianza percibida y correlaciona con al menos 10% más reservas | Los 3 clientes valoraron positivamente el perfil enriquecido, pero sugirieron agregar reseñas recientes, descripción del estilista, duración estimada del servicio y años de experiencia | **Itera** — se mantiene la funcionalidad y se prioriza en el backlog la incorporación de los campos sugeridos |
+
+**Aprendizaje clave de la sesión**
+
+El equipo concluyó que las cinco funcionalidades evaluadas cuentan con evidencia suficiente para pasar de hipótesis a **aprendizaje validado**, cerrando la brecha entre las suposiciones iniciales del As-Is Summary (8.1.1) y el comportamiento real observado en ambos segmentos objetivo. Únicamente el perfil enriquecido (EXP05) requiere una iteración adicional antes de considerarse cerrado, la cual queda reflejada como ítem priorizado en el Re-scored Question Backlog (8.4.2).
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
@@ -7799,7 +7820,7 @@ Artefactos de la sesión de shareback.
 
 ## Conclusiones y recomendaciones
 
-A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); el **TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices); y el **AV2**, que abarcó el Capítulo VIII (Experiment-Driven Development), con el cual el equipo cierra el ciclo trasladando el producto desde la implementación y validación hacia un enfoque de experimentación con usuarios reales.
+A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); el **TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices); el **AV2**, que abarcó la planificación y el diseño del Capítulo VIII (Experiment-Driven Development), trasladando el producto desde la implementación y validación hacia un enfoque de experimentación con usuarios reales; y el **TB2**, en el que el equipo ejecutó los experimentos diseñados, completó las To-Be Validation Interviews y cerró el ciclo Build-Measure-Learn con una sesión de shareback que tradujo la evidencia recogida en decisiones concretas sobre el producto.
 
 ### Conclusiones
 
@@ -7822,9 +7843,16 @@ El AV1 permitió consolidar la base estratégica, de producto y de diseño de uT
 - Las cinco **Experiment Cards** (EXP01–EXP05: agenda digital centralizada, recordatorios automáticos, confirmación/pago digital, flujo directo vs. WhatsApp y perfiles con reseñas y portafolio) tradujeron las preguntas más críticas en **hipótesis falsables** con su Simplest Useful Thing, medidas, condiciones experimentales y escalas de decisión, evitando presentar como validado aquello que aún debe comprobarse empíricamente.
 - El **Experiment Design** (hipótesis con su hipótesis nula, Domain Business Metrics, measures, conditions y scale calculations) junto con las **To-Be User Stories** y el To-Be Product Backlog priorizado por Story Points conectaron cada experimento con una métrica de negocio y un entregable de software trazable, garantizando que la experimentación sirva para decidir qué escalar y no solo para construir.
 
+El TB2 permitió cerrar el ciclo Build-Measure-Learn del Capítulo VIII, pasando de experimentos diseñados a decisiones de producto respaldadas por evidencia real.
+
+- En la fase de **Experimentation** (8.3) el equipo tradujo las Experiment Cards priorizadas en To-Be User Stories y un To-Be Product Backlog implementado sobre el **Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle**, con evidencia real de la Landing Page, la aplicación web Frontend, la aplicación nativa móvil y el backend RESTful actualizados conforme a las historias UE01–UE05.
+- Las **To-Be Validation Interviews** (8.3.4) confirmaron con usuarios reales de ambos segmentos objetivo que las mejoras implementadas —agenda digital centralizada, recordatorios, confirmación/pago digital, flujo directo de reserva y perfiles enriquecidos— resuelven los puntos de dolor identificados desde el Capítulo II, con una señal especialmente uniforme a favor del flujo directo de reserva (EXP04) frente a la coordinación por WhatsApp.
+- El **Experiment Aftermath & Analysis** (8.4) evidenció que las cinco funcionalidades evaluadas cuentan con evidencia cualitativa suficiente para pasar de hipótesis a aprendizaje validado, y el Re-scored Question Backlog reordenó las preguntas de investigación según la fuerza de la señal observada en cada segmento.
+- La sesión de **Shareback** (8.5.1) cerró el ciclo con decisiones explícitas por experimento: **EXP01–EXP04 perseveran** sin cambios como funcionalidades core del producto, mientras que **EXP05** (perfil con reseñas y portafolio) **itera** incorporando las mejoras sugeridas por los propios clientes antes de darse por cerrado, demostrando que el equipo prioriza la evidencia real por encima de la intuición al decidir qué escalar.
+
 ### Recomendaciones
 
-Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas posteriores, el equipo recomienda las siguientes acciones para las próximas fases del proyecto.
+A lo largo de las cuatro entregas el equipo acumuló recomendaciones para mantener la calidad del producto y del proceso. Con el cierre del Capítulo VIII (Experiment-Driven Development) en el AV2, algunas de estas recomendaciones ya fueron atendidas por el propio ciclo de experimentación; se mantienen a continuación como aprendizaje documentado, junto con las recomendaciones vigentes para la evolución del producto más allá del curso.
 
 - Validar empíricamente las **Hypothesis Statements** de Lean UX mediante experimentos cortos durante la implementación, en lugar de asumirlas resueltas con el diseño.
 - Ampliar la muestra de **entrevistas** con segmentos adicionales (estilistas independientes sin local, clientes ocasionales) para reducir sesgo y reforzar las personas existentes.
@@ -7842,7 +7870,7 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 - Documentar **runbooks operativos** para la rotación de secretos JWT, claves de Stripe y restauración de backups de PostgreSQL en Neon, evitando que la respuesta a incidentes dependa de una sola persona del equipo.
 - Endurecer el **Continuous Monitoring** con alertas accionables sobre latencia P95 del API, tasa de errores 5xx y disponibilidad del Azure App Service, conectadas al canal de Discord del equipo para reducir el tiempo medio de detección.
 - Avanzar la integración de **Stripe** desde la modalidad sandbox a producción tras cerrar la Spike Story 1 del backlog, asegurando la firma del webhook `checkout.session.completed` que ya está implementado en el backend y reforzando las pruebas de idempotencia para reintentos del proveedor de pagos.
-- Ejecutar los cinco experimentos priorizados (**EXP01–EXP05**) con usuarios reales de ambos segmentos, completando las secciones pendientes de **To-Be Validation Interviews** y **Experiment Aftermath & Analysis**, de modo que las preguntas del Question Backlog pasen de estado *Pendiente* a confirmadas o refutadas con evidencia.
+- Escalar a producción las cuatro funcionalidades ya validadas y perseveradas en la sesión de shareback (**EXP01–EXP04**: agenda digital centralizada, recordatorios automáticos, confirmación/pago digital y flujo directo de reserva), que cuentan con evidencia cualitativa favorable de ambos segmentos objetivo en las To-Be Validation Interviews (8.3.4.2), y cerrar la iteración pendiente del perfil enriquecido (**EXP05**) incorporando las mejoras priorizadas en el Re-scored Question Backlog (reseñas recientes, descripción del estilista, duración estimada del servicio y años de experiencia) antes de considerarlo un aprendizaje validado.
 - Instrumentar las **Domain Business Metrics** en Firebase Analytics y en los logs del backend desde el arranque de cada experimento (intención de reserva, tasa de cancelaciones, confianza percibida), para no depender únicamente de encuestas y poder comparar condición experimental contra condición de control.
 - Respetar las **escalas de decisión** definidas en cada Experiment Card (umbrales del 40%, 20%, 15%, etc.) como criterio objetivo para escalar, iterar o descartar una funcionalidad, manteniendo el principio de ser *data informed, not data driven* y evitando dejarse llevar por métricas de vanidad.
 - Mantener el **entendimiento compartido** durante la fase experimental mediante kick-offs por experimento, asegurando que todo el equipo (no solo quien diseña la Experiment Card) acuerde qué se quiere aprender, por qué y cómo se medirá antes de lanzar cada prueba.
