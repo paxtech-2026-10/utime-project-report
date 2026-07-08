@@ -7496,8 +7496,8 @@ Actividad de colaboración durante la fase experimental.
 
 #### 8.3.4.2. Registro de Entrevistas
 
-Se ejecutaron **cinco entrevistas de validación To-Be**, cubriendo los dos
-segmentos objetivo del producto: dos representantes de salones y barberías, y
+Se ejecutaron **seis entrevistas de validación To-Be**, cubriendo los dos
+segmentos objetivo del producto: tres representantes de salones y barberías, y
 tres clientes de servicios de belleza. A cada participante se le mostró la
 versión de uTime con las mejoras implementadas en el Capítulo VIII (agenda
 digital centralizada, recordatorios automáticos, confirmación y pago digital,
