@@ -7984,6 +7984,7 @@ Domain-Driven Design for Microservices: An Evidence-Based Investigation. (2024).
 - Video *About-the-Product*: <https://youtu.be/C829XXwDKn0>
 - Video de la entrega (Microsoft SharePoint): <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202210838_upc_edu_pe/IQCf_9RqgPZqT6tgUNt9jBhDAbTk8TlPAJZuQAQFchZ2Y-Q?e=Xr7bMm>
 - [Link a Video App Validation](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310609_upc_edu_pe/IQBzjbvbQsEXRK6UEtELIQrZAaxPDc2Npvn-5nuf4P4R-Qg?e=BCThUz&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+- Video About The Team: https://youtu.be/oD6lw0ago9M
 
 
 ## Matriz de Evaluación Ética y de Impacto
