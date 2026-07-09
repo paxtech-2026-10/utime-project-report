@@ -25,8 +25,8 @@
 <div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
-         <th>U202210838</th>
-         <th>Yum Gonzales, Jorge Suin</th>
+         <td>U202210838</td>
+         <td>Yum Gonzales, Jorge Suin</td>
       </tr>
       <tr>
          <td>U202312222</td>
@@ -383,12 +383,14 @@ Actividad de commits en el tiempo para el AV2.
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
-    - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías-1)
+      - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías-1)
         - [Datos del Entrevistado #1](#datos-del-entrevistado-1-2)
         - [Datos del Entrevistado #2](#datos-del-entrevistado-2-2)
-    - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza-1)
-      - [Datos del Entrevistado #1](#datos-del-entrevistado-1-3)
-      - [Datos del Entrevistado #2](#datos-del-entrevistado-2-3)
+        - [Datos del Entrevistado #3](#datos-del-entrevistado-3-2)
+      - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza-1)
+        - [Datos del Entrevistado #1](#datos-del-entrevistado-1-3)
+        - [Datos del Entrevistado #2](#datos-del-entrevistado-2-3)
+        - [Datos del Entrevistado #3](#datos-del-entrevistado-3-3)
     - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
     - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
@@ -480,6 +482,14 @@ Actividad de commits en el tiempo para el AV2.
     - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
       - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevistas)
       - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
+        - [Segmento Objetivo 1 (Salones de Belleza y Barberías)](#segmento-objetivo-1-salones-de-belleza-y-barberías-2)
+          - [Datos del Entrevistado #1](#datos-del-entrevistado-1-4)
+          - [Datos del Entrevistado #2](#datos-del-entrevistado-2-4)
+          - [Datos del Entrevistado #3](#datos-del-entrevistado-3-4)
+        - [Segmento Objetivo 2 (Clientes de servicios de belleza)](#segmento-objetivo-2-clientes-de-servicios-de-belleza-2)
+          - [Datos del Entrevistado #1](#datos-del-entrevistado-1-5)
+          - [Datos del Entrevistado #2](#datos-del-entrevistado-2-5)
+          - [Datos del Entrevistado #3](#datos-del-entrevistado-3-5)
   - [8.4. Experiment Aftermath \& Analysis](#84-experiment-aftermath--analysis)
     - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
     - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
@@ -517,37 +527,37 @@ ambientales y sociales.
   <tbody>
     <tr>
       <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios. En todos estos pasos, me esforcé por seguir los principios éticos y profesionales de la ingeniería de software acorde con la situación. <br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de utilizar la información con responsabilidad y solo aplicarla en proyectos o prácticas éticas que vayan acorde con el bienestar del equipo y los usuarios planteados. <br><b>AV2:</b> Para la entrega del segundo avance, estuve a cargo de gran parte de la elaboración del proceso de Expriment-Driven Development, para el cual comencé investigando sobre su aplicación y propósito con el objetivo de lograr que este no solo estuviera correctamente planteado sino que también sirivera para mejorar el producto creado. Así, pude desarrollar y analizar elementos como las experiment cards, scale calculations and decisions, domain business metrics, entre otros.</td>
-      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).<br><b>TB1:</b> En el TB1, el equipo reconoció su responsabilidad ética y profesional al trasladar el producto del diseño a una implementación verificable: se configuró el entorno multi-stack (Angular para web, Flutter y Kotlin nativo para móvil, y Spring Boot con PostgreSQL en Neon para el backend) bajo GitFlow, Conventional Commits y Semantic Versioning, y se construyó una suite de pruebas unitarias, de integración, BDD (Cucumber + Playwright) y system tests por bounded context, además de formalizar el pipeline de CI/CD en GitHub Actions y Azure. Esto evidenció que entregar software confiable y trazable —y no solo funcional— es una obligación profesional con el equipo, el cliente y los usuarios finales.<br><b>AV2:</b> En el AV2, el equipo asumió su responsabilidad ética y profesional al adoptar un enfoque Experiment-Driven Development en el Capítulo VIII, transformando suposiciones y afirmaciones en preguntas y experimentos falsables (EXP01–EXP05) para no presentar como validado aquello que aún debe comprobarse con usuarios reales. Esta responsabilidad se reforzó con las Validation Interviews del Capítulo VI —registradas de forma fiel y sin inducir respuestas—, el análisis estático con SonarCloud que trató los hallazgos de seguridad como deuda a corregir y no a ocultar, y el Continuous Monitoring del Capítulo VII, que vigila la disponibilidad del servicio en producción para proteger a quienes dependen de la plataforma.</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Para el desarrollo del primer avance, y dado que el equipo continuará con el desarrollo de un proyecto trabajado en cursos anteriores, me dediqué a leer y actualizar el planteamiento del capítulo II. Así, me encargué de realizar el análisis competitivo y de plantear las estrategias y tácticas frente a competidores. Asimismo, revisé las entrevistas que realizamos anteriormente y las conclusiones a las que llegamos. Por último, realicé el needfinding, para lo que apliqué los cambios necesarios a los user personas, user matrix, user journey maps, empathy maps y as-is scenarios. En todos estos pasos, me esforcé por seguir los principios éticos y profesionales de la ingeniería de software acorde con la situación. <br><b>TB1:</b> Para el desarrollo de esta segunda entrega, dedique tiempo a actualizar mi conocimientos sobre el desarrollo de frontend y backend para asegurarme de que el proyecto estuviera cumpliendo con buenas prácticas, así como investigué sobre algunas técnicas y recomendaciones en cuanto al testing para aplicar las pruebas necesarias y más relevantes. Así, noté la importancia de utilizar la información con responsabilidad y solo aplicarla en proyectos o prácticas éticas que vayan acorde con el bienestar del equipo y los usuarios planteados. <br><b>AV2:</b> Para la entrega del segundo avance, estuve a cargo de gran parte de la elaboración del proceso de Expriment-Driven Development, para el cual comencé investigando sobre su aplicación y propósito con el objetivo de lograr que este no solo estuviera correctamente planteado sino que también sirivera para mejorar el producto creado. Así, pude desarrollar y analizar elementos como las experiment cards, scale calculations and decisions, domain business metrics, entre otros.<br><b>TF:</b> Durante el TF asumí la responsabilidad ética y profesional de estructurar la validación To-Be y el análisis de resultados del Capítulo VIII. Diseñé la guía de entrevistas de la sección 8.3.4.1 con preguntas neutrales para ambos segmentos, y documenté el análisis e interpretación de resultados junto con el Re-scored and Re-prioritized Question Backlog en 8.4.1 y 8.4.2. En estas actividades cuidé que las conclusiones se apoyaran en evidencia de usuarios reales, sin presentar como aceptadas funcionalidades que todavía requerían ajustes.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo actualizó y aplicó conceptos vigentes de ingeniería de software orientados a la fase de descubrimiento de producto, logrando <b>identificar el Startup Business Model</b> de uTime mediante el Startup Profile (descripción de PaxTech, misión, visión y perfiles del equipo), el Project/Solution Profile (con antecedentes y problemática estructurados bajo el framework 5W+2H) y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Asimismo, se sentaron las bases del Needfinding al definir los segmentos objetivo con criterios demográficos, geográficos y psicográficos, y se incorporó la decisión de soportar la solución como aplicación móvil y web complementarias. Estos conocimientos —metodologías Lean UX, segmentación de mercado y formulación de hipótesis con criterios de éxito medibles— quedaron evidenciados en el Capítulo I del informe y constituyen la base sobre la que se construirán los siguientes entregables (Needfinding completo, Product Design e Implementación).<br><b>TB1:</b> En el TB1, el equipo reconoció su responsabilidad ética y profesional al trasladar el producto del diseño a una implementación verificable: se configuró el entorno multi-stack (Angular para web, Flutter y Kotlin nativo para móvil, y Spring Boot con PostgreSQL en Neon para el backend) bajo GitFlow, Conventional Commits y Semantic Versioning, y se construyó una suite de pruebas unitarias, de integración, BDD (Cucumber + Playwright) y system tests por bounded context, además de formalizar el pipeline de CI/CD en GitHub Actions y Azure. Esto evidenció que entregar software confiable y trazable —y no solo funcional— es una obligación profesional con el equipo, el cliente y los usuarios finales.<br><b>AV2:</b> En el AV2, el equipo asumió su responsabilidad ética y profesional al adoptar un enfoque Experiment-Driven Development en el Capítulo VIII, transformando suposiciones y afirmaciones en preguntas y experimentos falsables (EXP01–EXP05) para no presentar como validado aquello que aún debe comprobarse con usuarios reales. Esta responsabilidad se reforzó con las Validation Interviews del Capítulo VI —registradas de forma fiel y sin inducir respuestas—, el análisis estático con SonarCloud que trató los hallazgos de seguridad como deuda a corregir y no a ocultar, y el Continuous Monitoring del Capítulo VII, que vigila la disponibilidad del servicio en producción para proteger a quienes dependen de la plataforma.<br><b>TB2:</b> En el TB2, me encargué de realizar las entrevistas para la validación de las nuevas funcionalidades implementadas. Para ello, tuve reuniones con los entrevistados en donde mostré estas funcionalidades y los acompañé mientras explotaban más de la aplicación. Estas pruebas de la aplicación fueron realizadas con ética y responsabilidad para asegurar que el usuario comprenda la aplicación y que a esta se le de un uso correcto y beneficioso.</td>
     </tr>
     <tr>
-      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context Services. Diseñé y documenté pruebas unitarias para backend Spring Boot, Flutter, Android Kotlin y Angular, alcanzando 47 tests en 6 archivos. Además, implementé integration tests con Spring Boot Test, MockMvc y H2 para validar la integración entre controlador, servicios, repositorio y persistencia. También elaboré escenarios BDD para la US22 - Administración de servicios ofrecidos con Gherkin, Cucumber.js y Playwright, y participé en Core System Tests para verificar flujos reales como la creación y eliminación de servicios.<br><b>AV2:</b> Para el AV2 trabajé en el Capítulo VIII aplicando Experiment-Driven Development a uTime. Elaboré el As-Is Summary, organicé assumptions, knowledge gaps, ideas y claims, convertí estos elementos en Experiment-Ready Questions y Question Backlog, y formulé hipótesis, métricas, To-Be User Stories y To-Be Product Backlog. En estas actividades procuré diferenciar evidencia, suposiciones e hipótesis para no presentar como validado aquello que aún debe comprobarse experimentalmente.</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> Durante el desarrollo del AV1, actualicé y apliqué conocimientos relacionados con la especificación y priorización de requisitos de software. Elaboré el To-Be Scenario Mapping para representar el escenario objetivo de interacción entre usuarios y la plataforma, redacté User Stories alineadas a las necesidades identificadas, organicé el Product Backlog para priorizar funcionalidades del producto y desarrollé el Impact Mapping para conectar objetivos, actores, impactos esperados y entregables.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context Services. Diseñé y documenté pruebas unitarias para backend Spring Boot, Flutter, Android Kotlin y Angular, alcanzando 47 tests en 6 archivos. Además, implementé integration tests con Spring Boot Test, MockMvc y H2 para validar la integración entre controlador, servicios, repositorio y persistencia. También elaboré escenarios BDD para la US22 - Administración de servicios ofrecidos con Gherkin, Cucumber.js y Playwright, y participé en Core System Tests para verificar flujos reales como la creación y eliminación de servicios.<br><b>AV2:</b> Para el AV2 trabajé en el Capítulo VIII aplicando Experiment-Driven Development a uTime. Elaboré el As-Is Summary, organicé assumptions, knowledge gaps, ideas y claims, convertí estos elementos en Experiment-Ready Questions y Question Backlog, y formulé hipótesis, métricas, To-Be User Stories y To-Be Product Backlog. En estas actividades procuré diferenciar evidencia, suposiciones e hipótesis para no presentar como validado aquello que aún debe comprobarse experimentalmente.<br><b>TF:</b> En el TF completé la documentación del ciclo To-Be de la plataforma. Organicé los To-Be Sprint Backlogs para las historias UE01 a UE05, definiendo work-items, responsables, estimaciones y estado de avance. Además, documenté la evidencia de la aplicación frontend web y del backend RESTful desplegado en Azure, cuidando que cada captura, endpoint y flujo mostrado se vincule con una funcionalidad experimental concreta. Este trabajo reforzó mi responsabilidad profesional de presentar evidencia verificable y trazable, especialmente en funciones sensibles como reservas, pagos digitales, recordatorios y reseñas, porque influyen directamente en la confianza de clientes y negocios.</td>
     </tr>
     <tr>
-      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Durante este avance desarrollé múltiples entregables como Style Guidelines (web y mobile), Information Architecture (organization, labeling, navigation y searching systems), diseño UX/UI (wireframes, mockups, prototipos) tanto para web como mobile (iOS y Android), además de artefactos de arquitectura de software como Domain-Driven Design, diagramas de contexto, contenedores y componentes, junto con diseño orientado a objetos y modelado de base de datos.<br><b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad del sistema mediante pruebas bien estructuradas. Diseñé y documenté pruebas unitarias para el backend en Spring Boot, validando la lógica de negocio y el correcto comportamiento de los servicios, con el objetivo de garantizar consistencia y confiabilidad en las funcionalidades relacionadas al módulo de reseñas. <b>AV2:</b> Durante el AV2 reconocí mi responsabilidad ética y profesional al realizar evaluaciones basadas en heurísticas de usabilidad, identificando oportunidades de mejora para ofrecer una experiencia más accesible, eficiente y centrada en el usuario.<b>TF:</b> Durante el desarrollo del proyecto, reconocí la importancia de la responsabilidad ética y profesional al colaborar de manera efectiva con el equipo y presentar el funcionamiento real de la solución mediante los videos de validación y presentación del producto. Esto fortaleció mi compromiso con la transparencia, la comunicación y la calidad del trabajo realizado.</td>
+      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Durante este avance desarrollé múltiples entregables como Style Guidelines (web y mobile), Information Architecture (organization, labeling, navigation y searching systems), diseño UX/UI (wireframes, mockups, prototipos) tanto para web como mobile (iOS y Android), además de artefactos de arquitectura de software como Domain-Driven Design, diagramas de contexto, contenedores y componentes, junto con diseño orientado a objetos y modelado de base de datos.<br><b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad del sistema mediante pruebas bien estructuradas. Diseñé y documenté pruebas unitarias para el backend en Spring Boot, validando la lógica de negocio y el correcto comportamiento de los servicios, con el objetivo de garantizar consistencia y confiabilidad en las funcionalidades relacionadas al módulo de reseñas. <b>AV2:</b> Durante el AV2 reconocí mi responsabilidad ética y profesional al realizar evaluaciones basadas en heurísticas de usabilidad, identificando oportunidades de mejora para ofrecer una experiencia más accesible, eficiente y centrada en el usuario.<br><b>TF:</b> Durante el TF asumí mi responsabilidad profesional al documentar la colaboración del equipo y preparar las evidencias audiovisuales de validación. Trabajé en los Team Collaboration Insights de la sección 8.3.3.6 y en los videos de About-the-Product, App Validation y About-the-Team, procurando que la comunicación del avance fuera fiel a lo realmente implementado y validado. Esto permitió presentar el producto con trazabilidad, sin exagerar funcionalidades ni ocultar limitaciones detectadas durante la validación.</td>
     </tr>
     <tr>
-      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en los bounded contexts IAM y Profiles, y documenté la integración continua del producto. Diseñé pruebas unitarias para los cuatro stacks (Spring Boot con JUnit 5, Angular con Karma + Jasmine, Android Kotlin con JUnit 4 y Flutter con flutter_test), totalizando 25 tests para IAM y 66 tests para Profiles distribuidos en 21 archivos. Elaboré escenarios BDD con Gherkin, Cucumber.js y Playwright en TypeScript para las US01 (registro de cliente), US03 (inicio de sesión) y US06 (personalización del perfil del salón), reutilizando los helpers de <code>e2e/support</code> ya existentes. Finalmente documenté la sección 7.1 del Capítulo VII describiendo el workflow de GitHub Actions del backend que compila con Maven y despliega a Azure App Service, detallando sus triggers, jobs, steps y prácticas de aislamiento, fail-fast y reproducibilidad.<br><b>AV2:</b> Durante el AV2 asumí mi responsabilidad ética y profesional en dos frentes del informe. En las Validation Interviews del Capítulo VI (6.3.1 y 6.3.2) diseñé una guía de entrevista neutral —con preguntas introductorias y bloques diferenciados por segmento objetivo tras mostrar la Landing Page y la app móvil— y registré la retroalimentación de cada entrevistado de forma fiel, sin inducir respuestas ni omitir las críticas recibidas, para no presentar como validado aquello que los usuarios no respaldaron. En el Continuous Monitoring del Capítulo VII (7.4.2, 7.4.3 y 7.4.4) implementé un pipeline de monitoreo real sobre GitHub Actions —health-check programado con `curl`, alertas ante caída del backend o fallo de despliegue y notificaciones por Gmail SMTP— reconociendo que vigilar la disponibilidad del servicio en producción y avisar oportunamente al equipo es una obligación profesional con los usuarios que dependen de la plataforma.</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conocimientos sobre las primeras etapas del descubrimiento de producto en el Capítulo I del informe. Elaboré la descripción de la startup PaxTech con su misión y visión, redacté los perfiles del equipo y construí el Solution Profile de uTime aplicando el framework 5W+2H para enmarcar antecedentes y problemática sustentados con datos estadísticos del sector de la belleza. Sobre esa base apliqué el proceso Lean UX: redacté el Lean UX Problem Statement, formulé las Lean UX Assumptions (features, business outcomes, user benefits, business assumptions y user assumptions), planteé los Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (salones/barberías y clientes finales) con sus aspectos demográficos, geográficos y psicográficos, incorporando la decisión de soportar la solución como aplicación móvil y web complementarias.<br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en los bounded contexts IAM y Profiles, y documenté la integración continua del producto. Diseñé pruebas unitarias para los cuatro stacks (Spring Boot con JUnit 5, Angular con Karma + Jasmine, Android Kotlin con JUnit 4 y Flutter con flutter_test), totalizando 25 tests para IAM y 66 tests para Profiles distribuidos en 21 archivos. Elaboré escenarios BDD con Gherkin, Cucumber.js y Playwright en TypeScript para las US01 (registro de cliente), US03 (inicio de sesión) y US06 (personalización del perfil del salón), reutilizando los helpers de <code>e2e/support</code> ya existentes. Finalmente documenté la sección 7.1 del Capítulo VII describiendo el workflow de GitHub Actions del backend que compila con Maven y despliega a Azure App Service, detallando sus triggers, jobs, steps y prácticas de aislamiento, fail-fast y reproducibilidad.<br><b>AV2:</b> Durante el AV2 asumí mi responsabilidad ética y profesional en dos frentes del informe. En las Validation Interviews del Capítulo VI (6.3.1 y 6.3.2) diseñé una guía de entrevista neutral —con preguntas introductorias y bloques diferenciados por segmento objetivo tras mostrar la Landing Page y la app móvil— y registré la retroalimentación de cada entrevistado de forma fiel, sin inducir respuestas ni omitir las críticas recibidas, para no presentar como validado aquello que los usuarios no respaldaron. En el Continuous Monitoring del Capítulo VII (7.4.2, 7.4.3 y 7.4.4) implementé un pipeline de monitoreo real sobre GitHub Actions —health-check programado con `curl`, alertas ante caída del backend o fallo de despliegue y notificaciones por Gmail SMTP— reconociendo que vigilar la disponibilidad del servicio en producción y avisar oportunamente al equipo es una obligación profesional con los usuarios que dependen de la plataforma.<br><b>TB2:</b> Durante el TB2 asumí mi responsabilidad ética y profesional al cerrar el ciclo de validación con usuarios reales. Completé las Validation Interviews del Capítulo VI (6.3.2) incorporando una tercera entrevista por segmento —subsanando la observación del docente— en las que se mostró la Landing Page y la aplicación móvil a dueños y administradores de salones y barberías y a clientes finales, registrando su retroalimentación de forma fiel, con evidencia audiovisual y sin omitir las críticas recibidas. Asimismo, elaboré las To-Be Validation Interviews del Capítulo VIII (8.3.4.2), documentando la validación de la versión mejorada de uTime con ambos segmentos objetivo tras las mejoras experiment-driven, apoyándome en las capturas de cada sesión y en el video de respaldo compartido. Con ello reconocí que presentar hallazgos verificables y trazables —y no dar por validado aquello que los usuarios no respaldaron— es una obligación profesional con el equipo y con quienes usarán la plataforma.<br><b>TF:</b> Durante el TF documenté la evidencia de la Landing Page To-Be y de la aplicación móvil nativa en las secciones 8.3.3.2 y 8.3.3.4, además de apoyar el registro de entrevistas To-Be en 8.3.4.2. En estas actividades mantuve la trazabilidad entre capturas, flujos implementados y retroalimentación de usuarios, cuidando que la evidencia presentada reflejara el estado real de la solución y no solo una intención de diseño.</td>
     </tr>
     <tr>
-      <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conceptos de ingeniería de software relacionados con la implementación, despliegue y configuración del producto en el Capítulo V. Apliqué Software Configuration Management con el conjunto de herramientas del ciclo de vida (Pivotal Tracker, Discord, Figma, UXPressia, Trello, WebStorm, IntelliJ IDEA, Android Studio, Git, GitKraken, Render, GitHub Pages, Azure y Firebase), formalicé el flujo GitFlow y las convenciones de Conventional Commits, y documenté las guías de estilo por tecnología (HTML, CSS, JavaScript/Bootstrap, TypeScript/Angular, Dart/Flutter, Java/Spring Boot y Gherkin). Estructuré el Sprint #1 con su Sprint Planning Background, matriz LACX, Sprint Backlog (US01, US03, US29–US35, TS06), Development y Execution Evidence, y los Team Collaboration Insights, y articulé el Acuerdo de Servicio SaaS (SLA) entre PaxTech y el Cliente. Asimismo, alineé la decisión de persistencia de §4.10.1 a PostgreSQL desplegado en Neon, conforme al diagrama de despliegue del producto. <br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context <strong>Reservations</strong>. Diseñé y documenté pruebas unitarias y de integración para la lógica de agendamiento, y elaboré escenarios BDD para la <strong>US18 — Creación de citas</strong> con Gherkin, Cucumber.js y Playwright, cubriendo los criterios de aceptación "Registro correcto de cita nueva" y "Verificación de disponibilidad antes de agendar". Reutilicé los helpers de fixtures del proyecto y alineé las pruebas con el system test SYS-04 para reproducir el flujo real end-to-end. Trabajé con responsabilidad profesional, asegurando que cada prueba reflejara el comportamiento verdadero del sistema y no un resultado forzado. <br><b>AV2:</b> Para el AV2 asumí la responsabilidad del aseguramiento de la calidad y la seguridad del código en el Capítulo VI. Documenté las convenciones de codificación por tecnología, formalicé el uso de Conventional Commits y la revisión por pares mediante Pull Requests, e integré <strong>SonarCloud</strong> a la organización de GitHub para medir fiabilidad, mantenibilidad, duplicación y seguridad. Traté los hallazgos de seguridad —como posibles credenciales embebidas y la ausencia de Subresource Integrity— como deuda técnica a corregir y no a ocultar, reconociendo que entregar software confiable es también una obligación ética con los usuarios. </td>
+      <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Durante el AV1 actualicé y apliqué conceptos de ingeniería de software relacionados con la implementación, despliegue y configuración del producto en el Capítulo V. Apliqué Software Configuration Management con el conjunto de herramientas del ciclo de vida (Pivotal Tracker, Discord, Figma, UXPressia, Trello, WebStorm, IntelliJ IDEA, Android Studio, Git, GitKraken, Render, GitHub Pages, Azure y Firebase), formalicé el flujo GitFlow y las convenciones de Conventional Commits, y documenté las guías de estilo por tecnología (HTML, CSS, JavaScript/Bootstrap, TypeScript/Angular, Dart/Flutter, Java/Spring Boot y Gherkin). Estructuré el Sprint #1 con su Sprint Planning Background, matriz LACX, Sprint Backlog (US01, US03, US29–US35, TS06), Development y Execution Evidence, y los Team Collaboration Insights, y articulé el Acuerdo de Servicio SaaS (SLA) entre PaxTech y el Cliente. Asimismo, alineé la decisión de persistencia de §4.10.1 a PostgreSQL desplegado en Neon, conforme al diagrama de despliegue del producto. <br><b>TB1:</b> Durante el TB1 actualicé y apliqué conocimientos de verificación y validación de software en el bounded context <strong>Reservations</strong>. Diseñé y documenté pruebas unitarias y de integración para la lógica de agendamiento, y elaboré escenarios BDD para la <strong>US18 — Creación de citas</strong> con Gherkin, Cucumber.js y Playwright, cubriendo los criterios de aceptación "Registro correcto de cita nueva" y "Verificación de disponibilidad antes de agendar". Reutilicé los helpers de fixtures del proyecto y alineé las pruebas con el system test SYS-04 para reproducir el flujo real end-to-end. Trabajé con responsabilidad profesional, asegurando que cada prueba reflejara el comportamiento verdadero del sistema y no un resultado forzado. <br><b>AV2:</b> Para el AV2 asumí la responsabilidad del aseguramiento de la calidad y la seguridad del código en el Capítulo VI. Documenté las convenciones de codificación por tecnología, formalicé el uso de Conventional Commits y la revisión por pares mediante Pull Requests, e integré <strong>SonarCloud</strong> a la organización de GitHub para medir fiabilidad, mantenibilidad, duplicación y seguridad. Traté los hallazgos de seguridad —como posibles credenciales embebidas y la ausencia de Subresource Integrity— como deuda técnica a corregir y no a ocultar, reconociendo que entregar software confiable es también una obligación ética con los usuarios.<br><b>TF:</b> Durante el TF asumí la responsabilidad de cerrar el aprendizaje del proyecto mediante la sección 8.5.1 Shareback Session Artifacts: Learning Workflow, así como las conclusiones y recomendaciones finales. Organicé los aprendizajes obtenidos de los experimentos y los convertí en decisiones explícitas sobre qué funcionalidades perseverar o iterar, manteniendo una comunicación transparente sobre los resultados y las mejoras pendientes del producto. </td>
     </tr>
     <tr>
       <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
-      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir. De esta manera, pude emitir un juicio informado conforme a lo investigado, lo planteado en el proyecto y el contexto actual dado.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible de forma en que pudiera emitir un juicio informado en cuanto a que pruebas debían ser implementadas y porqué ofreciendo una mejor calidad en la solución implementada. <br><b>AV2:</b> Al desarrollar la tercera entrega, me aseguré de informarme antes de realizar el Experiment-Driven Development y debatirlo junto a mis compañeros. Considero que se llegó al resultado esperado, puesto que este nos permite experimentar directamente con nuestro público objetivo tocando los puntos clave y que servirán como impulso para mejorar nuestro producto.</td>
-      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).<br><b>TB1:</b> En el TB1, el equipo emitió juicios informados al definir la estrategia de verificación y validación de un producto multiplataforma: seleccionó frameworks de testing apropiados para cada stack (JUnit 5, Karma + Jasmine, JUnit 4 y flutter_test), priorizó los escenarios BDD más críticos por bounded context y decidió la arquitectura del pipeline de CI/CD sobre GitHub Actions y Azure. Estas decisiones, sustentadas en evidencia técnica y no en suposiciones, evidenciaron que el aprendizaje continuo sobre herramientas de calidad y DevOps es indispensable para tomar decisiones proporcionadas al impacto del producto.<br><b>AV2:</b> En el AV2, el equipo emitió juicios informados al priorizar qué hipótesis experimentar y escalar (adopción de agenda digital, recordatorios, pagos digitales, reserva directa y confianza por reseñas), ponderando el impacto económico para los negocios y la experiencia social de los clientes antes de invertir en cada funcionalidad. Asimismo, la validación con usuarios reales, la interpretación de las métricas de SonarCloud y la elección de una observabilidad gratuita y de baja huella operativa (GitHub Actions, Azure App Service y Gmail SMTP) frente a APM externos costosos evidenciaron que el aprendizaje continuo permite tomar decisiones fundamentadas y sostenibles para una startup en fase de validación.</td>
+      <td><strong>Natalia Bertha Roman Cruz</strong><br><b>AV1:</b> Reconozco que lo más importante para el desarrollo de esta primera parte fue revisar la información antes planteada, de forma que pudiéramos actualizar y mejorar lo antes realizado. Así, fue importante nutrirnos de conocimientos con el paso del tiempo para poder presentar una mejor versión. En cuanto a la sección que realicé, noté los ajustes que era necesario aplicar al ya poseer una mayor experiencia tanto para el needfinding como para el reconocimiento de funcionalidades a implementar o necesidades a cubrir. De esta manera, pude emitir un juicio informado conforme a lo investigado, lo planteado en el proyecto y el contexto actual dado.<br><b>TB1:</b>Durante el desarrollo de la segunda entrega, me dediqué principalemente a la implementación de las pruebas unitarias, de integración y funcionales en el Bounded Context Workers. Durante el desarrolló me di cuenta de la existencia y uso de ciertas herramientas que podían ayudarme a mejorar la calidad de mis pruebas. Así, concluí que era necesario continuar investigando y aprendiendo para lograr el mejor resultado posible de forma en que pudiera emitir un juicio informado en cuanto a que pruebas debían ser implementadas y porqué ofreciendo una mejor calidad en la solución implementada. <br><b>AV2:</b> Al desarrollar la tercera entrega, me aseguré de informarme antes de realizar el Experiment-Driven Development y debatirlo junto a mis compañeros. Considero que se llegó al resultado esperado, puesto que este nos permite experimentar directamente con nuestro público objetivo tocando los puntos clave y que servirán como impulso para mejorar nuestro producto.<br><b>TF:</b> Durante el TF emití juicios informados al analizar la evidencia obtenida en las entrevistas To-Be y al reordenar el Question Backlog según impacto, aprendizaje y viabilidad. Al trabajar las secciones 8.4.1 y 8.4.2, evalué cómo la agenda digital, los recordatorios, pagos, reserva directa y perfiles con reseñas afectan la operación económica de los negocios y la experiencia social de los clientes, priorizando decisiones que aporten valor real antes de escalar el producto.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció la necesidad del aprendizaje permanente al abordar la identificación del Startup Business Model con técnicas que requirieron estudio activo: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, y los criterios de segmentación de mercado para perfilar a salones/barberías y clientes finales. Para sustentar las afirmaciones del Capítulo I se revisaron fuentes académicas y de industria recientes, evidenciando que el descubrimiento de producto y la definición del Startup Profile, Project Profile y Lean UX Process exigen actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Adicionalmente, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas y será clave en las próximas fases del proyecto (Needfinding, Product Design e Implementación).<br><b>TB1:</b> En el TB1, el equipo emitió juicios informados al definir la estrategia de verificación y validación de un producto multiplataforma: seleccionó frameworks de testing apropiados para cada stack (JUnit 5, Karma + Jasmine, JUnit 4 y flutter_test), priorizó los escenarios BDD más críticos por bounded context y decidió la arquitectura del pipeline de CI/CD sobre GitHub Actions y Azure. Estas decisiones, sustentadas en evidencia técnica y no en suposiciones, evidenciaron que el aprendizaje continuo sobre herramientas de calidad y DevOps es indispensable para tomar decisiones proporcionadas al impacto del producto.<br><b>AV2:</b> En el AV2, el equipo emitió juicios informados al priorizar qué hipótesis experimentar y escalar (adopción de agenda digital, recordatorios, pagos digitales, reserva directa y confianza por reseñas), ponderando el impacto económico para los negocios y la experiencia social de los clientes antes de invertir en cada funcionalidad. Asimismo, la validación con usuarios reales, la interpretación de las métricas de SonarCloud y la elección de una observabilidad gratuita y de baja huella operativa (GitHub Actions, Azure App Service y Gmail SMTP) frente a APM externos costosos evidenciaron que el aprendizaje continuo permite tomar decisiones fundamentadas y sostenibles para una startup en fase de validación.<br><b>TB2:</b>Para la elaboración de las entrevistas, me centré en usar un juicio crítico para definir las preguntas que se les podían realizar a nuestros entrevistados durante la validación de las nuevas funcionalidades implementadas. A la vez, el equipo se centró en evaluar el impacto que se lograría para nuestros dos segmentos con las nuevas funcionalidades, y en lograr que estos sean beneficiosos y aporten un alto valor.</td>
     </tr>
     <tr>
-      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al profundizar en distintos niveles de testing para un producto multiplataforma. Para completar las pruebas de Services fue necesario aplicar JUnit 5, Mockito, AssertJ, Spring Boot Test, MockMvc, H2, flutter_test, JUnit 4, Karma, Jasmine, Cucumber.js, Gherkin y Playwright. Este trabajo me permitió comprender la importancia de validar unidades, integración entre capas, comportamiento BDD y flujos completos de usuario, además de reforzar la mejora continua a partir de hallazgos como errores de validación del provider y manejo de excepciones.<br><b>AV2:</b> En el AV2 emití juicios informados al transformar los problemas detectados en entrevistas y needfinding en preguntas experimentales medibles. Prioricé experimentos sobre adopción de agenda digital, recordatorios, pagos digitales, reserva directa y confianza mediante perfiles con reseñas, considerando su impacto económico para los negocios, la experiencia social de los clientes y la viabilidad técnica de medir los resultados antes de escalar funcionalidades.</td>
+      <td><strong>Jorge Suin Yum Gonzales</strong><br><b>AV1:</b> En esta entrega reconocí la importancia del aprendizaje permanente al trabajar con técnicas como To-Be Scenario Mapping, User Stories, Product Backlog e Impact Mapping. Para completar estos artefactos fue necesario revisar criterios de redacción de historias de usuario, priorización de backlog y relación entre objetivos de negocio e impactos esperados. Este proceso evidenció que el análisis de requisitos requiere actualización constante, retroalimentación del equipo y mejora continua para asegurar que las decisiones del producto respondan a necesidades reales de los usuarios y del negocio.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al profundizar en distintos niveles de testing para un producto multiplataforma. Para completar las pruebas de Services fue necesario aplicar JUnit 5, Mockito, AssertJ, Spring Boot Test, MockMvc, H2, flutter_test, JUnit 4, Karma, Jasmine, Cucumber.js, Gherkin y Playwright. Este trabajo me permitió comprender la importancia de validar unidades, integración entre capas, comportamiento BDD y flujos completos de usuario, además de reforzar la mejora continua a partir de hallazgos como errores de validación del provider y manejo de excepciones.<br><b>AV2:</b> En el AV2 emití juicios informados al transformar los problemas detectados en entrevistas y needfinding en preguntas experimentales medibles. Prioricé experimentos sobre adopción de agenda digital, recordatorios, pagos digitales, reserva directa y confianza mediante perfiles con reseñas, considerando su impacto económico para los negocios, la experiencia social de los clientes y la viabilidad técnica de medir los resultados antes de escalar funcionalidades.<br><b>TF:</b> En el TF emití juicios informados al relacionar los To-Be Sprint Backlogs con el impacto económico y social de las funcionalidades implementadas. Al documentar la evidencia frontend web y la API RESTful, evalué qué funcionalidades debían mostrarse como soporte real de las hipótesis: agenda centralizada para reducir desorden operativo, reserva directa para disminuir dependencia de WhatsApp, pagos digitales para aumentar compromiso, recordatorios para reducir cancelaciones y perfiles con reseñas para mejorar la confianza. Estas decisiones consideraron la viabilidad técnica del backend en Azure, la experiencia de ambos segmentos y el impacto en salones pequeños antes de escalar el producto.</td>
     </tr>
     <tr>
-      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.<br><b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad y confiabilidad del sistema mediante pruebas bien estructuradas. Esto permitió emitir soluciones más seguras y consistentes, considerando el impacto que un software estable y correctamente validado tiene en la experiencia de los usuarios y en el correcto funcionamiento de la plataforma dentro de un contexto tecnológico y social. <b>AV2:</b> Durante el AV2 analicé la interfaz mediante evaluaciones heurísticas, consideré el efecto que las decisiones de diseño pueden tener en los usuarios y en la calidad de la solución, proponiendo mejoras orientadas a generar una experiencia más eficiente y accesible.<b>TF:</b> Durante el desarrollo del proyecto, evalué el impacto de la solución al comunicar de forma clara sus beneficios, funcionalidades y proceso de validación mediante los materiales presentados. Esto permitió valorar cómo la propuesta responde a las necesidades de los usuarios y aporta valor en un contexto real desde una perspectiva técnica y profesional.</td>
+      <td><strong>Gabriel Sánchez Gonzales</strong><br><b>AV1:</b> Para poder completar este avance fue necesario investigar y aprender continuamente sobre estándares de diseño (web, iOS, Android), herramientas de prototipado, principios de arquitectura como DDD y estructuración de sistemas, así como buenas prácticas en diseño de bases de datos y experiencia de usuario.<br><b>TB1:</b> Durante el TB1 reforcé mis conocimientos en verificación y validación de software dentro del bounded context Reviews, enfocándome en asegurar la calidad y confiabilidad del sistema mediante pruebas bien estructuradas. Esto permitió emitir soluciones más seguras y consistentes, considerando el impacto que un software estable y correctamente validado tiene en la experiencia de los usuarios y en el correcto funcionamiento de la plataforma dentro de un contexto tecnológico y social. <b>AV2:</b> Durante el AV2 analicé la interfaz mediante evaluaciones heurísticas, consideré el efecto que las decisiones de diseño pueden tener en los usuarios y en la calidad de la solución, proponiendo mejoras orientadas a generar una experiencia más eficiente y accesible.<br><b>TF:</b> Durante el TF emití juicios informados al seleccionar y organizar las evidencias de colaboración y los videos finales del producto. Al preparar los Team Collaboration Insights, el video About-the-Product, el video de validación de la app y el video About-the-Team, evalué qué flujos y resultados debían mostrarse para comunicar el impacto real de uTime en clientes y negocios, considerando claridad, utilidad, confianza y responsabilidad en la presentación pública del proyecto.</td>
     </tr>
     <tr>
-      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al cubrir los cuatro stacks del producto en una misma entrega de testing y al documentar el pipeline de CI/CD. Para los unit tests fue necesario aplicar JUnit 5, Karma + Jasmine sobre Angular 19, JUnit 4 sobre Kotlin/Compose y flutter_test, además de patrones DDD aplicados a aggregates (User, Client, Provider, ProviderProfile, Discount, PortfolioImage, Social) y value objects (FullName, CompanyName). Para BDD profundicé en Cucumber.js, Gherkin en español, Playwright y la convención de step definitions reutilizables que ya seguía el bounded context Services. Para CI estudié los triggers de GitHub Actions, la autenticación OIDC contra Azure y el flujo de artifacts entre jobs. Este trabajo evidenció que mantener consistencia entre cuatro stacks distintos exige aprender de forma continua las particularidades de cada herramienta y converger en una misma convención de testing, naming y trazabilidad.<br><b>AV2:</b> En el AV2 emití juicios informados al elegir cómo validar el producto y cómo observarlo en producción. Para las Validation Interviews del Capítulo VI prioricé contrastar la propuesta directamente con dueños de salones y clientes finales, ponderando el impacto económico (disposición a pagar por los planes) y social (confianza y facilidad de uso frente a coordinar por WhatsApp) de las decisiones de producto antes de darlas por buenas. Para el Continuous Monitoring del Capítulo VII evalué alternativas de observabilidad y, en lugar de incorporar un APM externo (Jenkins, Datadog, New Relic o Grafana), decidí apoyarme en GitHub Actions, la observabilidad nativa del Azure App Service y Gmail SMTP, una solución gratuita y sin infraestructura adicional que mantener; este juicio consideró el costo económico para una startup en fase de validación y la menor huella operativa, evidenciando que el aprendizaje continuo sobre herramientas DevOps es indispensable para tomar decisiones fundamentadas y proporcionadas al contexto del proyecto.</td>
+      <td><strong>Eduardo Gael Rivera Sosa</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al desarrollar el Capítulo I del informe, ya que tuve que estudiar y aplicar técnicas que no había usado antes: el framework 5W+2H para estructurar la problemática, la metodología Lean UX para articular Problem Statement, Assumptions, Hypothesis Statements y Canvas, y los criterios de segmentación de mercado (demográficos, geográficos y psicográficos). Para sustentar el contenido revisé fuentes académicas y de industria, lo que evidenció que el descubrimiento de producto exige actualización constante en metodologías UX, comportamiento del usuario y tendencias del sector. Asimismo, la decisión de soportar la solución en móvil y web obligó a profundizar en consideraciones de experiencia multiplataforma, reforzando que el aprendizaje continuo es indispensable para tomar decisiones de producto fundamentadas.<br><b>TB1:</b> En el TB1 reconocí la necesidad del aprendizaje permanente al cubrir los cuatro stacks del producto en una misma entrega de testing y al documentar el pipeline de CI/CD. Para los unit tests fue necesario aplicar JUnit 5, Karma + Jasmine sobre Angular 19, JUnit 4 sobre Kotlin/Compose y flutter_test, además de patrones DDD aplicados a aggregates (User, Client, Provider, ProviderProfile, Discount, PortfolioImage, Social) y value objects (FullName, CompanyName). Para BDD profundicé en Cucumber.js, Gherkin en español, Playwright y la convención de step definitions reutilizables que ya seguía el bounded context Services. Para CI estudié los triggers de GitHub Actions, la autenticación OIDC contra Azure y el flujo de artifacts entre jobs. Este trabajo evidenció que mantener consistencia entre cuatro stacks distintos exige aprender de forma continua las particularidades de cada herramienta y converger en una misma convención de testing, naming y trazabilidad.<br><b>AV2:</b> En el AV2 emití juicios informados al elegir cómo validar el producto y cómo observarlo en producción. Para las Validation Interviews del Capítulo VI prioricé contrastar la propuesta directamente con dueños de salones y clientes finales, ponderando el impacto económico (disposición a pagar por los planes) y social (confianza y facilidad de uso frente a coordinar por WhatsApp) de las decisiones de producto antes de darlas por buenas. Para el Continuous Monitoring del Capítulo VII evalué alternativas de observabilidad y, en lugar de incorporar un APM externo (Jenkins, Datadog, New Relic o Grafana), decidí apoyarme en GitHub Actions, la observabilidad nativa del Azure App Service y Gmail SMTP, una solución gratuita y sin infraestructura adicional que mantener; este juicio consideró el costo económico para una startup en fase de validación y la menor huella operativa, evidenciando que el aprendizaje continuo sobre herramientas DevOps es indispensable para tomar decisiones fundamentadas y proporcionadas al contexto del proyecto.<br><b>TB2:</b> En el TB2 emití juicios informados al contrastar las mejoras del producto directamente con dueños y administradores de salones y barberías y con clientes finales. Al completar las Validation Interviews (6.3.2) —con la validación de la Landing Page y la aplicación móvil— y las To-Be Validation Interviews (8.3.4.2), ponderé el impacto económico (disposición a pagar por los planes y reducción de cancelaciones mediante la confirmación y el pago digital) y social (confianza, puntualidad y facilidad de uso frente a coordinar por WhatsApp) de cada funcionalidad antes de darla por buena, evitando escalar supuestos que los usuarios no respaldaron. Este proceso exigió seguir aprendiendo sobre técnicas de validación cualitativa y análisis de retroalimentación, evidenciando que el aprendizaje continuo permite tomar decisiones fundamentadas y proporcionadas al contexto de una startup en fase de validación.<br><b>TF:</b> Durante el TF emití juicios informados al seleccionar qué evidencias de Landing Page, aplicación móvil nativa y entrevistas To-Be debían mostrarse para sustentar el aprendizaje del experimento. Evalué si los flujos de reserva, confirmación, perfil y experiencia móvil aportaban confianza, usabilidad y valor económico/social para clientes y negocios antes de incorporarlos como evidencia final del producto.</td>
     </tr>
     <tr>
-      <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al construir el Capítulo V partiendo de dos reportes base (UPC-PaxTech/uTime y PaxTech-1807/Final-Report), lo que exigió comparar arquitecturas, decisiones de stack y patrones de despliegue distintos para destilar la solución más coherente con nuestro producto. Investigué y verifiqué el diagrama de despliegue real (Flutter Cliente + Kotlin Negocio sobre Android, Spring Boot en Azure App Service, PostgreSQL en Neon y Stripe para pagos), prácticas de GitFlow y Conventional Commits, configuración de GitHub Pages, automatización con GitHub Actions, distribución de builds con Firebase App Distribution, documentación de APIs con springdoc-openapi y bounded contexts (IAM, Profiles, Reservations, Services, Reviews, Workers). Este proceso evidenció que la implementación de un producto digital exige actualización continua de tecnologías, mejor gestión de la trazabilidad entre artefactos del informe y disciplina para alinear decisiones técnicas entre capítulos. <br><b>TB1:</b> En el TB1 reconocí la importancia del aprendizaje permanente al profundizar en distintos niveles de testing para el bounded context Reservations. Para completar las pruebas fue necesario aplicar frameworks de pruebas unitarias y de integración junto con BDD mediante Gherkin, Cucumber.js y Playwright. Este trabajo me permitió emitir juicios informados sobre qué escenarios validar —el registro de una cita y la verificación de disponibilidad— y comprender la importancia de probar tanto unidades como flujos completos de usuario antes de dar una funcionalidad por terminada. <br><b>AV2:</b> Para el AV2 profundicé en herramientas modernas de análisis estático que no había usado antes: aprendí a interpretar las calificaciones A–E de SonarCloud y métricas como la duplicación de código y los <em>security hotspots</em> para decidir, con criterio, qué corregir primero. Comprendí que una calificación de seguridad baja no es un fracaso sino la señal de que el análisis funciona y revela deuda real, y tomé decisiones fundamentadas en evidencia —no en suposiciones— considerando el impacto que un sistema seguro y mantenible tiene en la confianza de los usuarios. </td>
+      <td><strong>Alejandro Daniel Oroncoy Almeyda</strong><br><b>AV1:</b> Reconocí la necesidad del aprendizaje permanente al construir el Capítulo V partiendo de dos reportes base (UPC-PaxTech/uTime y PaxTech-1807/Final-Report), lo que exigió comparar arquitecturas, decisiones de stack y patrones de despliegue distintos para destilar la solución más coherente con nuestro producto. Investigué y verifiqué el diagrama de despliegue real (Flutter Cliente + Kotlin Negocio sobre Android, Spring Boot en Azure App Service, PostgreSQL en Neon y Stripe para pagos), prácticas de GitFlow y Conventional Commits, configuración de GitHub Pages, automatización con GitHub Actions, distribución de builds con Firebase App Distribution, documentación de APIs con springdoc-openapi y bounded contexts (IAM, Profiles, Reservations, Services, Reviews, Workers). Este proceso evidenció que la implementación de un producto digital exige actualización continua de tecnologías, mejor gestión de la trazabilidad entre artefactos del informe y disciplina para alinear decisiones técnicas entre capítulos. <br><b>TB1:</b> En el TB1 reconocí la importancia del aprendizaje permanente al profundizar en distintos niveles de testing para el bounded context Reservations. Para completar las pruebas fue necesario aplicar frameworks de pruebas unitarias y de integración junto con BDD mediante Gherkin, Cucumber.js y Playwright. Este trabajo me permitió emitir juicios informados sobre qué escenarios validar —el registro de una cita y la verificación de disponibilidad— y comprender la importancia de probar tanto unidades como flujos completos de usuario antes de dar una funcionalidad por terminada. <br><b>AV2:</b> Para el AV2 profundicé en herramientas modernas de análisis estático que no había usado antes: aprendí a interpretar las calificaciones A–E de SonarCloud y métricas como la duplicación de código y los <em>security hotspots</em> para decidir, con criterio, qué corregir primero. Comprendí que una calificación de seguridad baja no es un fracaso sino la señal de que el análisis funciona y revela deuda real, y tomé decisiones fundamentadas en evidencia —no en suposiciones— considerando el impacto que un sistema seguro y mantenible tiene en la confianza de los usuarios.<br><b>TF:</b> Durante el TF emití juicios informados al sintetizar los resultados del shareback, las conclusiones y las recomendaciones finales del informe. Al trabajar la sección 8.5.1 y el cierre del documento, evalué qué decisiones debían priorizarse según evidencia experimental, impacto económico para los negocios, experiencia de los clientes, sostenibilidad técnica y capacidad del equipo para seguir iterando el producto. </td>
     </tr>
   </tbody>
 </table>
@@ -1817,8 +1827,6 @@ A continuación, se presentará el diseño que hemos planteado tanto para la pá
 ### 4.1.1. General Style Guidelines
 
 #### **Branding**
-
-[Contenido pendiente — incluir marca, slogan, logos.]
 
 **Logo:**
 
@@ -5721,7 +5729,12 @@ Preguntas finales (cierre):
 
 ### 6.3.2. Registro de Entrevistas
 
-### Segmento Objetivo 1 (Salones de Belleza y Barberías)
+Se ejecutaron **seis entrevistas de validación**, **tres por cada segmento
+objetivo**: dueños o administradores de salones de belleza y barberías, y
+clientes de servicios de belleza. A cada participante se le mostró la Landing
+Page y la aplicación de uTime, registrando su retroalimentación de forma fiel.
+
+#### Segmento Objetivo 1 (Salones de Belleza y Barberías)
 
 ##### Datos del Entrevistado #1
 
@@ -5757,9 +5770,25 @@ Mileydi Patricia, esteticista con 5 años de experiencia en Estados Unidos. Ve l
 **Resumen:**
 María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de experiencia. Actualmente gestiona sus reservas solo por WhatsApp, lo cual le dificulta manejar los tiempos entre un servicio y otro. Calificó la aplicación móvil con un 10 en probabilidad de uso, describiéndola como organizada y con las herramientas necesarias, y confirmó que se sentiría cómoda pagando un plan para evitar cruces de clientes. Como crítica constructiva o mejora, solicitó añadir un espacio de "notas" o historial para registrar qué servicio se hizo el cliente y la fecha, evitando así que esa información se pierda en papeles.
 
-### Segmento Objetivo 2 (Clientes de servicios de belleza)
+##### Datos del Entrevistado #3
 
-#### Datos del Entrevistado #1
+- **Nombre completo:** Fabián
+- **Segmento Objetivo:** Administrador de barbería
+- **Distrito:** Lima
+- **Inicio de la entrevista:** 9:51 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Fabián](./assets/images/photos/segmento-objetivo1-3.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Fabián, administrador de una barbería encargado de coordinar la agenda y a los barberos del local. Al revisar la landing page valoró el mensaje "Skip the Calls, Book in Real Time", pues refleja su principal dolor: la pérdida de tiempo respondiendo llamadas y mensajes para agendar. Considera que la propuesta y los planes se entienden con claridad. Sobre la aplicación destacó la utilidad de administrar la disponibilidad en tiempo real y de tener a todos los barberos y sus horarios en un solo panel, evitando cruces de citas. Como oportunidad de mejora sugirió reforzar la vista de asignación de servicios por barbero y mantener el idioma consistente en español dentro de la app.
+
+#### Segmento Objetivo 2 (Clientes de servicios de belleza)
+
+##### Datos del Entrevistado #1
 
 - **Nombre completo:** Anedyib Villar Bisso
 - **Segmento Objetivo:** Clientes de servicio de belleza
@@ -5776,7 +5805,7 @@ María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de ex
 **Resumen:**
 Anedyib Villar, cliente que solicita servicios de belleza una vez al mes. Menciona que lo que más le cuesta actualmente es la demora en las respuestas de los salones vía WhatsApp. Opinó que la landing page es bonita y completa, destacando la sección de "features" y el calendario interactivo, lo cual le genera más confianza que el método tradicional. Sobre la aplicación, reportó que el flujo de registro, elección de horario y método de pago fue muy sencillo, afirmando que la descargaría y usaría siempre si saliera en la Play Store. No encontró puntos confusos y valoró la opción de historial y salones favoritos.
 
-#### Datos del Entrevistado #2
+##### Datos del Entrevistado #2
 
 - **Nombre completo:** Edward Rodriguez
 - **Segmento Objetivo:** Clientes de servicio de belleza
@@ -5793,25 +5822,42 @@ Anedyib Villar, cliente que solicita servicios de belleza una vez al mes. Mencio
 **Resumen:**
 Edward Rodríguez, cliente frecuente que asiste a barberías cada 15 días. Expresa frustración por tener que ajustarse siempre a la disponibilidad de las barberías en lugar de poder elegir según su propia conveniencia. Considera que el diseño de la landing page está bien trabajado y le inspira confianza para reservar. Respecto a la aplicación móvil, destacó principalmente la función de geolocalización para encontrar salones cercanos y la rapidez del proceso. Como sugerencia clave, indicó que le gustaría que la aplicación pudiera sincronizar las citas directamente con Google Calendar para unificar sus notificaciones.
 
+##### Datos del Entrevistado #3
+
+- **Nombre completo:** Renso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Distrito:** Lima
+- **Inicio de la entrevista:** 16:49 minutos
+- **Entrevistador:** RUIZ SÁNCHEZ, Gael
+- **Screenshot del cuadro de video:** ![Entrevista Renso](./assets/images/photos/segmento-objetivo2-3.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/personal/u20211g671_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20211g671%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202502%2Dcc238%2D1807%2DPaxTech%2Dvalidation%2Dsprint%2D3%2Emp4`
+
+**Resumen:**
+Renso, cliente que reserva servicios de belleza de forma periódica y coordina la mayoría de sus citas por redes sociales y WhatsApp. Navegó la aplicación web del cliente y encontró intuitivo el menú lateral (Home, Appointments, My favorites y My profile) para moverse entre secciones. Valoró especialmente poder guardar salones en "My favorites" y ver sus "Upcoming appointments" en un mismo lugar, algo que hoy pierde de vista al gestionarlo por chat. Consideró sencillo buscar un salón y agendar, y afirmó que usaría la plataforma para no depender de las respuestas por mensaje. Como mejora sugirió unificar el idioma de la interfaz a español y reforzar la visibilidad del estado de cada cita agendada.
+
 > **Nota:** Todos los videos de validación se encuentran consolidados en un único
 > archivo. Los campos "Inicio de la entrevista" indican el minuto de inicio de
 > cada entrevistado dentro de ese video compartido.
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-| \# | Heurística de Nielsen | Hallazgo | Severidad (0-4) | Recomendación |
-| ----- | ----- | ----- | ----- | ----- |
-| 1 | Consistencia y estándares | Inconsistencias en la traducción al inglés de la aplicación móvil. | 2 | Corregir textos y revisar el sistema de traducciones. |
-| 2 | Flexibilidad y eficiencia de uso | Falta de un historial o registro de servicios realizados a clientes. | 2 | Incorporar notas e historial de atención por cliente. |
-| 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas. | 2 | Permitir sincronización automática con calendarios externos. |
-| 4 | Visibilidad del estado del sistema | El plan de suscripción activo no se diferencia claramente de las demás opciones disponibles, generando incertidumbre sobre el estado actual del usuario. | 3 | Identificar visualmente el plan vigente y deshabilitar la opción de volver a seleccionarlo. |
-| 5 | Prevención de errores | La cancelación de una cita se ejecuta de forma inmediata, sin solicitar una confirmación previa al usuario. | 4 | Incorporar un cuadro de confirmación antes de realizar acciones irreversibles como cancelar una cita. |
-| 6 | Reconocimiento antes que recuerdo | La solicitud para habilitar la ubicación no presenta un elemento visual que indique claramente que es interactivo. | 3 | Mostrar un botón o enlace claramente identificable para facilitar la activación de los permisos de ubicación. |
-| 7 | Control y libertad del usuario | El proceso de confirmación de reservas utiliza una ventana emergente nativa con opciones limitadas y poca integración con la interfaz. | 4 | Sustituir la alerta nativa por un cuadro de diálogo personalizado que permita confirmar o cancelar la acción de forma clara. |
-| 8 | Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores | En la sección de reseñas se muestran valores no válidos como "NaN", dificultando la comprensión del problema por parte del usuario. | 3 | Validar los datos antes de mostrarlos y presentar mensajes comprensibles cuando no existan calificaciones disponibles. |
-| 9 | Diseño estético y minimalista | La visualización de información técnica, como identificadores internos o datos del sistema, genera una interfaz poco clara para el usuario final. | 3 | Mostrar únicamente información relevante y reemplazar datos técnicos por nombres descriptivos y comprensibles. |
-| 10 | Ayuda y documentación | No se ofrecen mensajes de apoyo o explicaciones cuando existen inconsistencias en datos, traducciones o funcionalidades, dificultando la resolución de dudas. | 2 | Incorporar mensajes informativos y ayudas contextuales que orienten al usuario durante el uso de la aplicación. |
-
+| # | Heurística de Nielsen              | Hallazgo                                                             | Severidad (0-4) | Recomendación                                                |
+| - | ---------------------------------- | -------------------------------------------------------------------- | --------------- | ------------------------------------------------------------ |
+| 1 | Consistencia y estándares          | Inconsistencias en la traducción al inglés de la aplicación móvil.   | 2               | Corregir textos y revisar el sistema de traducciones.        |
+| 2 | Flexibilidad y eficiencia de uso   | Falta de un historial o registro de servicios realizados a clientes. | 2               | Incorporar notas e historial de atención por cliente.        |
+| 3 | Correspondencia sistema-mundo real | Ausencia de integración con Google Calendar para gestionar citas.    | 2               | Permitir sincronización automática con calendarios externos. |
+| 4 | Consistencia y estándares | Mezcla de idiomas (español/inglés) en pantallas principales de la app y la web. | 2 | Unificar la interfaz a un solo idioma según la preferencia del usuario. |
+| 5 | Visibilidad del estado del sistema | Poca claridad sobre el estado de cada cita agendada (confirmada, pendiente, próxima). | 2 | Mostrar de forma destacada el estado y los próximos turnos del usuario. |
+| 6 | Visibilidad del estado del sistema | El plan de suscripción activo no se diferencia claramente de las demás opciones disponibles, generando incertidumbre sobre el estado actual del usuario. | 3 | Identificar visualmente el plan vigente y deshabilitar la opción de volver a seleccionarlo. |
+| 7 | Prevención de errores | La cancelación de una cita se ejecuta de forma inmediata, sin solicitar una confirmación previa al usuario. | 4 | Incorporar un cuadro de confirmación antes de realizar acciones irreversibles como cancelar una cita. |
+| 8 | Reconocimiento antes que recuerdo | La solicitud para habilitar la ubicación no presenta un elemento visual que indique claramente que es interactivo. | 3 | Mostrar un botón o enlace claramente identificable para facilitar la activación de los permisos de ubicación. |
+| 9 | Control y libertad del usuario | El proceso de confirmación de reservas utiliza una ventana emergente nativa con opciones limitadas y poca integración con la interfaz. | 4 | Sustituir la alerta nativa por un cuadro de diálogo personalizado que permita confirmar o cancelar la acción de forma clara. |
+| 10 | Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores | En la sección de reseñas se muestran valores no válidos como "NaN", dificultando la comprensión del problema por parte del usuario. | 3 | Validar los datos antes de mostrarlos y presentar mensajes comprensibles cuando no existan calificaciones disponibles. |
+| 11 | Diseño estético y minimalista | La visualización de información técnica, como identificadores internos o datos del sistema, genera una interfaz poco clara para el usuario final. | 3 | Mostrar únicamente información relevante y reemplazar datos técnicos por nombres descriptivos y comprensibles. |
+| 12 | Ayuda y documentación | No se ofrecen mensajes de apoyo o explicaciones cuando existen inconsistencias en datos, traducciones o funcionalidades, dificultando la resolución de dudas. | 2 | Incorporar mensajes informativos y ayudas contextuales que orienten al usuario durante el uso de la aplicación. |
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -7194,24 +7240,7 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
-**Sprint #[N] (To-Be)**
-
-**Sprint Planning Background**
-
-| Campo | Detalle |
-|-------|---------|
-| Date | [Fecha] |
-| Time | [Hora] |
-| Location | [Ubicación / modalidad] |
-| Prepared By | [APELLIDOS Y NOMBRES] |
-| Attendees | [Lista] |
-| Sprint Review Summary | [Contenido pendiente] |
-| Sprint Retrospective Summary | [Contenido pendiente] |
-| Sprint Goal & User Stories | [Contenido pendiente] |
-| Sprint Velocity | [Story Points] |
-| Sum of Story Points | [Total] |
-
-**Sprint Backlog**
+**Sprint #1 (To-Be)**
 
 <table>
   <thead>
@@ -7227,50 +7256,331 @@ Las hipótesis se formulan para las preguntas de tipo **Belief-led**, ya que par
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>
+    <tr><td rowspan="4">UE01</td><td rowspan="4">Agenda digital centralizada</td><td>WI01</td><td>Modelo de agenda y disponibilidad</td><td>Definir la estructura de reservas, horarios disponibles, trabajador asignado, servicio y estado de la cita para centralizar la agenda del negocio.</td><td>3</td><td>Jorge Yum</td><td>Planned</td></tr>
+    <tr><td>WI02</td><td>API de consulta de reservas</td><td>Implementar el endpoint que permita obtener reservas filtradas por fecha, servicio, trabajador y estado para alimentar la agenda digital.</td><td>5</td><td>Alejandro Oroncoy</td><td>Planned</td></tr>
+    <tr><td>WI03</td><td>Vista de agenda para negocios</td><td>Construir la interfaz donde el administrador pueda visualizar citas ordenadas, espacios libres y cambios sin depender de WhatsApp o registros manuales.</td><td>6</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI04</td><td>Tracking de uso de agenda</td><td>Registrar eventos como calendar_viewed y reservations_visible_count para medir adopción de la agenda digital durante el experimento.</td><td>2</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE02</td><td rowspan="4">Recordatorios automáticos de citas</td><td>WI05</td><td>Regla de recordatorio automático</td><td>Definir el momento de envío, destinatarios y contenido mínimo del recordatorio para clientes y negocios antes de la cita.</td><td>2</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td>WI06</td><td>Servicio de envío de recordatorios</td><td>Implementar la lógica backend que identifique citas próximas, genere el recordatorio y registre el resultado del intento de envío.</td><td>5</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI07</td><td>Registro del evento reminder_sent</td><td>Guardar el evento reminder_sent con identificador de reserva, canal de envío y fecha para analizar cancelaciones o reprogramaciones posteriores.</td><td>2</td><td>Jorge Yum</td><td>Planned</td></tr>
+    <tr><td>WI08</td><td>Estado de recordatorio en la cita</td><td>Mostrar en la vista de reserva si el recordatorio fue programado o enviado, de modo que el negocio pueda revisar la trazabilidad de cada cita.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE03</td><td rowspan="4">Confirmación o pago digital de reserva</td><td>WI09</td><td>Diseño del flujo de confirmación</td><td>Definir los pasos de confirmación y pago digital, incluyendo estados de reserva, constancia mostrada al usuario y datos necesarios para la medición.</td><td>3</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td>WI10</td><td>Backend de reserva confirmada</td><td>Implementar el cambio de estado de reserva a confirmada, persistiendo fecha de confirmación, método utilizado y datos básicos de auditoría.</td><td>5</td><td>Alejandro Oroncoy</td><td>Planned</td></tr>
+    <tr><td>WI11</td><td>Interfaz de confirmación o pago</td><td>Agregar el botón de confirmar o pagar reserva y la constancia visible para cliente y negocio luego de completar el flujo.</td><td>5</td><td>Jorge Yum</td><td>Planned</td></tr>
+    <tr><td>WI12</td><td>Tracking de confirmación y pago</td><td>Registrar eventos como reservation_confirmed, payment_started y payment_completed para medir el compromiso generado por el flujo digital.</td><td>2</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE04</td><td rowspan="4">Flujo directo de reserva en la app</td><td>WI13</td><td>Flujo de selección de reserva</td><td>Implementar la selección de salón, servicio, trabajador, fecha y hora desde la app sin iniciar una conversación previa por WhatsApp.</td><td>3</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI14</td><td>Creación de reserva con disponibilidad</td><td>Validar disponibilidad antes de crear la reserva y registrar la intención de reserva como una cita pendiente o confirmada según corresponda.</td><td>5</td><td>Alejandro Oroncoy</td><td>Planned</td></tr>
+    <tr><td>WI15</td><td>Eventos de conversión app vs WhatsApp</td><td>Instrumentar book_in_app_started, book_in_app_completed y contact_whatsapp_initiated para comparar la conversión del flujo directo frente al canal externo.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td>WI16</td><td>Reporte de fricción del flujo</td><td>Preparar la lectura de métricas de abandono, finalización y preferencia declarada para evaluar si la reserva directa reduce fricción.</td><td>2</td><td>Natalia Roman</td><td>Planned</td></tr>
+    <tr><td rowspan="4">UE05</td><td rowspan="4">Perfil con reseñas y portafolio visual</td><td>WI17</td><td>Datos de perfil enriquecido</td><td>Definir los campos necesarios para calificación promedio, reseñas visibles, imágenes de portafolio y relación con el salón o profesional.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td>WI18</td><td>Vista de perfil con evidencia visual</td><td>Construir la interfaz del perfil mostrando reseñas, calificación promedio y portafolio para aumentar la confianza antes de reservar.</td><td>4</td><td>Gabriel Sánchez</td><td>Planned</td></tr>
+    <tr><td>WI19</td><td>Componentes de reseñas y portafolio</td><td>Implementar los componentes reutilizables para listar reseñas, mostrar calificaciones y renderizar trabajos previos del salón o estilista.</td><td>3</td><td>Gael Rivera</td><td>Planned</td></tr>
+    <tr><td>WI20</td><td>Tracking de confianza del perfil</td><td>Registrar profile_view con atributos has_reviews y has_portfolio para relacionar la visualización del perfil con la intención de reserva.</td><td>2</td><td>Jorge Yum</td><td>Planned</td></tr>
   </tbody>
 </table>
 
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La Landing Page To-Be se encuentra desplegada y accesible públicamente en GitHub
+Pages, actualizada para comunicar las mejoras del ciclo experimental (agenda
+digital en tiempo real, recordatorios automáticos, pagos y perfiles con
+reseñas) y para diferenciar los dos segmentos objetivo (clientes y
+proveedores/barberías).
 
-Landing Page To-Be desplegada.
+- **URL de despliegue:** [https://paxtech-2026-10.github.io/Landing-Page/](https://paxtech-2026-10.github.io/Landing-Page/)
 
-<img src="./assets/ux-ui/evidences/landing/landing-tobe.png" alt="Landing To-Be" width="800">
+A continuación se presenta la evidencia por sección, en el orden en que aparecen
+en la página: *Hero*, *Features*, *How it Works*, *Testimonials*, *Pricing*,
+*FAQ* y *Call to Action*.
 
+**Hero**
+
+La sección principal presenta la propuesta de valor "Skip the Calls, Book in
+Real Time" con un llamado a la acción "Start for Free" y accesos directos a las
+aplicaciones (Android para clientes e iOS para proveedores/barberos).
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/hero.png" alt="Landing To-Be — Hero" width="800">
+</div>
+
+**Features**
+
+La sección de características resalta los tres pilares del producto To-Be: la
+gestión de citas en tiempo real, los pagos con gestión integral del servicio y
+el control total mediante perfiles personalizables, cada uno acompañado de
+mockups reales de la aplicación.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/feature-1.png" alt="Feature — Smart Appointment Management in Real Time" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/feature-2.png" alt="Feature — Payments & Full Service Management" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/feature-3.png" alt="Feature — Full Control with Custom Profiles" width="800">
+</div>
+
+**How it Works**
+
+El flujo "How it works for providers" explica en cuatro pasos cómo un negocio
+adopta uTime: crear la cuenta, agregar y gestionar a los trabajadores, definir
+los servicios y personalizar el perfil, y finalmente visualizar el calendario.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-1.png" alt="How it Works — Create your account" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-2.png" alt="How it Works — Add and manage your workers" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-3.png" alt="How it Works — Define your services and customize your profile" width="800">
+  <br><br>
+  <img src="./assets/ux-ui/evidences/landing/tobe/how-it-works-4.png" alt="How it Works — View your calendar" width="800">
+</div>
+
+**Testimonials**
+
+La sección de testimonios refuerza la confianza con reseñas de cinco estrellas
+de dueños y managers de salones y barberías, bajo el mensaje "Trusted by more
+than 100+ beauty businesses".
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/testimonials.png" alt="Landing To-Be — Testimonials" width="800">
+</div>
+
+**Pricing**
+
+La sección de precios presenta los tres planes de suscripción —Essential
+(gratuito), ProStyle (S/69.9/mes, marcado como el más popular) y Deluxe Studio
+(S/129.9/mes)— con sus beneficios diferenciados y su respectivo llamado a la
+acción.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/pricing.png" alt="Landing To-Be — Pricing" width="800">
+</div>
+
+**FAQ**
+
+La sección de preguntas frecuentes ("Clear Your Doubts About uTime") resuelve
+las dudas más comunes sobre la plataforma mediante un acordeón interactivo.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/faq.png" alt="Landing To-Be — FAQ" width="800">
+</div>
+
+**Call to Action**
+
+La sección final de llamado a la acción ("Ready to transform your daily
+operations?") invita a comenzar gratis y a descargar las aplicaciones, e incluye
+el footer con enlaces rápidos, soporte, datos de contacto y redes sociales.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/landing/tobe/call-to-action.png" alt="Landing To-Be — Call to Action y footer" width="800">
 </div>
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La aplicación web To-Be se encuentra desplegada y accesible públicamente en
+GitHub Pages, ejecutándose contra el backend real. Implementa el flujo completo
+del cliente con las mejoras del ciclo experimental: acceso y registro
+diferenciado por rol, descubrimiento de salones, reserva directa con selección
+de profesional y horario, pago y reseñas, además de la gestión de favoritos y
+perfil.
 
-Frontend Web To-Be desplegado.
+- **URL de despliegue:** [https://paxtech-2026-10.github.io/Frontend-Web-Application/iam/login](https://paxtech-2026-10.github.io/Frontend-Web-Application/iam/login)
 
-<img src="./assets/ux-ui/evidences/frontend-web/frontend-tobe.png" alt="Frontend To-Be" width="800">
+A continuación se presenta la evidencia de cada pantalla implementada, en el
+orden del recorrido de usuario.
 
+**Login (IAM)**
+
+Pantalla de acceso "Access Your Account" (`/iam/login`), con validación de
+correo y contraseña, selector de idioma y enlace directo al registro.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/login.png" alt="Frontend Web To-Be — Login" width="800">
+</div>
+
+**Registro (IAM)**
+
+Pantalla "Create an account" (`/iam/register`) con selector de rol **Client /
+Provider**, que permite registrar tanto a clientes finales como a
+proveedores/barberías desde la web.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/register.png" alt="Frontend Web To-Be — Registro" width="800">
+</div>
+
+**Home del cliente**
+
+Panel principal del cliente (`/client/homeClient`) con el menú lateral (Home,
+Appointments, My favorites, My profile), la sección "Upcoming appointments" con
+el estado de la reserva (por ejemplo, "No pagado") y el listado de salones
+disponibles con dirección y distancia.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/dashboard-home.png" alt="Frontend Web To-Be — Home del cliente" width="800">
+</div>
+
+**Mis citas**
+
+Pantalla "Your Appointments" (`/client/appointment`) que muestra la cita con su
+salón, servicio, hora y cliente, con acciones para **pagar, reprogramar o
+cancelar**, y un panel para **calificar la experiencia** con estrellas y dejar
+una reseña.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/appointments.png" alt="Frontend Web To-Be — Mis citas" width="800">
+</div>
+
+**Favoritos**
+
+Pantalla "My favorites" (`/client/favorites`) con los salones guardados por el
+cliente, mostrando su calificación promedio, número de reseñas y un acceso
+directo "Book Now".
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/favorites.png" alt="Frontend Web To-Be — Favoritos" width="800">
+</div>
+
+**Mi perfil**
+
+Pantalla "Your Profile" (`/client/profile`) donde el cliente mantiene
+actualizada su información personal (nombre, apellido y correo) y su cuenta.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/my-profile.png" alt="Frontend Web To-Be — Mi perfil" width="800">
+</div>
+
+**Detalle del salón**
+
+Vista del perfil del salón (`/client/homeClient/salon/1`) con su dirección,
+redes sociales (Instagram, TikTok), calificación y reseñas, y el listado de
+servicios con duración, precio y el botón "Reservar ahora".
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/salon-detail.png" alt="Frontend Web To-Be — Detalle del salón" width="800">
+</div>
+
+**Reserva directa**
+
+Pantalla de agendamiento (`/client/appointment-maker/1`) donde el cliente
+selecciona al profesional ("Our Staff") y elige la fecha y hora disponibles
+sobre un calendario semanal, completando la reserva directa desde la web.
+
+<div align="center">
+  <img src="./assets/ux-ui/evidences/frontend-web/tobe/reservation.png" alt="Frontend Web To-Be — Reserva directa" width="800">
 </div>
 
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+La evidencia que sigue documenta cada feature del To-Be Sprint Backlog funcionando de extremo a extremo contra el backend real desplegado en Azure (`paxtech-ashgghgnf7fpfxe9.canadacentral-01.azurewebsites.net`), capturado directamente desde las aplicaciones móviles ejecutándose en un dispositivo Android.
 
-Aplicación Mobile To-Be.
+El producto móvil de uTime se compone de **dos aplicaciones nativas** que atienden a los dos segmentos del backlog:
 
-<img src="./assets/ux-ui/evidences/mobile/mobile-tobe.png" alt="Mobile To-Be" width="800">
+- **App de Proveedor (Flutter):** dirigida a salones y barberías para gestionar servicios, equipo y su agenda de reservas.
+- **App de Cliente (Android / Kotlin):** dirigida a los clientes finales para descubrir salones, reservar, pagar y reseñar.
 
-</div>
+Ambas comparten el mismo backend y base de datos, por lo que las acciones de un segmento se reflejan en el otro (por ejemplo, una reserva creada por el cliente aparece en la agenda del proveedor).
+
+**UE01 — Agenda digital centralizada (App de Proveedor)**
+
+El proveedor gestiona sus servicios y su equipo, y visualiza las reservas entrantes ordenadas por fecha y hora en una agenda digital centralizada, eliminando la coordinación manual por canales externos.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_provider_servicios.png" width="240"><br><em>Gestión de servicios del salón</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_provider_trabajadores.png" width="240"><br><em>Gestión del equipo de trabajo</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_provider_ue01_calendario.png" width="240"><br><em>Agenda con la reserva del cliente reflejada automáticamente</em></td>
+  </tr>
+</table>
+
+**UE04 — Flujo directo de reserva en la app (App de Cliente)**
+
+El cliente completa una reserva íntegramente desde la aplicación —descubre el salón, selecciona profesional y elige fecha y hora disponible— sin depender de una conversación inicial por WhatsApp.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_home.png" width="240"><br><em>Descubrimiento de salones</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue04_profesional.png" width="240"><br><em>Selección de profesional</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue04_fechahora.png" width="240"><br><em>Selección de fecha y hora</em></td>
+  </tr>
+</table>
+
+**UE03 — Confirmación o pago digital de reserva (App de Cliente)**
+
+El cliente confirma y paga digitalmente su reserva mediante la pasarela de pago integrada (Stripe). Al completarse el pago, la reserva queda registrada y visible tanto para el cliente como para el negocio.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue03_resumen.png" width="240"><br><em>Resumen de la cita a confirmar</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue03_pago_stripe.png" width="240"><br><em>Pago digital (pasarela Stripe)</em></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue03_pago_exitoso.png" width="240"><br><em>Confirmación de pago exitoso</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue04_mis_reservas.png" width="240"><br><em>Reserva registrada en "Mis reservas"</em></td>
+  </tr>
+</table>
+
+**UE05 — Perfil con reseñas y portafolio visual (App de Cliente)**
+
+El cliente consulta el perfil del salón, su calificación promedio y las reseñas de otros clientes antes de reservar, reforzando la confianza en su elección.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue05_salon_perfil.png" width="240"><br><em>Perfil del salón con calificación</em></td>
+    <td align="center"><img src="./assets/cap8/mobile_client_ue05_resena.png" width="240"><br><em>Reseña y calificación del cliente</em></td>
+  </tr>
+</table>
+
+**UE02 — Recordatorios automáticos de citas (App de Proveedor)**
+
+Un trabajo programado en el backend revisa las reservas cuya cita comienza dentro de las próximas 24 horas y genera automáticamente un recordatorio para el cliente y para el negocio. El proveedor visualiza estos recordatorios, con datos reales de la reserva, en su pantalla de notificaciones dentro de la app.
+
+<table>
+  <tr>
+    <td align="center"><img src="./assets/cap8/mobile_provider_ue02_notificaciones.png" width="240"><br><em>Recordatorio automático de una cita próxima, generado por el backend y mostrado al proveedor</em></td>
+  </tr>
+</table>
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
+El backend Spring Boot está desplegado en **Azure App Service** y expone una API REST documentada con **OpenAPI / Swagger UI** (`/swagger-ui/index.html`). A continuación se muestra la documentación viva de los endpoints que dan soporte a cada feature del To-Be backlog.
+
+**Vista general de la API**
+
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_overview.png" alt="Swagger API overview" width="360">
+</div>
 
-Backend To-Be desplegado.
+**Reservations y Time Slots — UE01 (agenda) y UE04 (flujo de reserva)**
 
-<img src="./assets/ux-ui/evidences/backend/backend-tobe.png" alt="Backend To-Be" width="800">
+Endpoints para crear y consultar reservas y la disponibilidad de horarios que alimentan la agenda del proveedor y el flujo de reserva del cliente.
 
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_reservations.png" alt="Reservations endpoints" width="820">
+<br><br>
+<img src="./assets/cap8/backend_swagger_time-slots.png" alt="Time Slots endpoints" width="820">
+</div>
+
+**Payments — UE03 (confirmación o pago digital)**
+
+Endpoints de pago, incluyendo la creación del enlace de pago (Stripe) y el webhook de confirmación.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_payments.png" alt="Payments endpoints" width="820">
+</div>
+
+**Notifications — UE02 (recordatorios automáticos)**
+
+Endpoints que exponen los recordatorios generados automáticamente por el job programado del backend, para proveedor y cliente.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_notifications.png" alt="Notifications endpoints" width="820">
+</div>
+
+**Reviews — UE05 (perfil con reseñas)**
+
+Endpoints para crear y consultar las reseñas que se muestran en el perfil del salón.
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+<img src="./assets/cap8/backend_swagger_reviews.png" alt="Reviews endpoints" width="820">
 </div>
 
 #### 8.3.3.6. Team Collaboration Insights
@@ -7294,51 +7604,237 @@ Actividad de colaboración durante la fase experimental.
 
 #### 8.3.4.1. Diseño de Entrevistas
 
-**Preguntas para validación To-Be — [Segmento 1]:**
+**Segmento 1 (Salones de Belleza y Barberías):**
 
-1. [Pregunta 1]
-2. [Pregunta 2]
+1. ¿Consideras que el usar la agenda digital centralizada que ayudó a visualizar mejor tus citas? ¿Qué ventajas ves frente a usar aplicaciones de mensajería?
+2. ¿En que medida la agenda digital te ayudó a identificar huecos disponibles o cambios de horario con mayor claridad que tu método actual de gestión?
+3. ¿Qué tan dispuesto estarías a usar uTime como herramienta principal para gestionar las reservas de tu negocio después de esta prueba?
+4. ¿Los recordatorios automáticos recibidos 24 horas antes de cada cita te resultaron útiles para prepararte y reducir olvidos o cambios de último momento? ¿De qué forma?
+5. ¿Consideras que los recordatorios enviados también a tus clientes mejoraron la puntualidad y la asistencia a las citas agendadas?
+6. Cuando un cliente reserva desde la app, ¿te resulta claro ver la cita reflejada en tu panel y distinguir si está confirmada o pendiente de pago? ¿Qué cambiarías de la presentación?
+7. ¿Te genera confianza que el cliente pueda confirmar o pagar digitalmente su reserva antes de asistir? ¿Crees que esto reduciría cancelaciones o ausencias?
+8. ¿Percibes que aparecer en el listado de salones de uTime y recibir reservas directas desde la app aumenta la visibilidad de tu negocio frente a depender solo de redes sociales, mensajería o difusión voca a voca?
+9. ¿El flujo para revisar las reservas entrantes desde la aplicación es suficientemente simple como para incorporarlo a tu rutina diaria de trabajo?
+10. ¿Cuál crees que sería tu beneficio principal al adoptar de forma permanente la aplicación con las mejores realizadas?
+
+**Segmento 2 (Clientes de servicios de belleza):**
+
+1. ¿En qué medida te resultó sencillo encontrar un salón o barbería en el listado de uTime y filtrar opciones según el servicio que buscabas? ¿Qué dificultades encontraste, si las hubo?
+2. Al completar la reserva directamente en la app, ¿qué pasos del flujo te resultaron más claros y cuáles generaron mayor fricción frente a coordinar por WhatsApp o llamada?
+3. ¿Cómo compararías la velocidad y claridad del flujo de reserva en uTime con tu experiencia habitual de agendar citas por mensajería? ¿Qué ventajas o desventajas identificas en cada canal?
+4. ¿Los recordatorios automáticos recibidos antes de tu cita contribuyeron a que te organices mejor? ¿De qué forma te ayudarían a evitar olvidos o reprogramaciones de último momento?
+5. Al confirmar tu reserva con un botón o al pagar digitalmente desde la app, ¿qué nivel de comodidad y confianza experimentaste y qué aspecto del proceso te generó mayor o menor seguridad?
+6. ¿En qué medida la opción de confirmación o pago digital refuerza tu compromiso con la cita reservada? ¿Crees que esto reduciría la probabilidad de cancelar o no asistir?
+7. Al visitar el perfil de un salón o estilista, ¿qué elementos influyeron más en tu nivel de confianza antes de reservar?
+8. ¿Qué información adicional del perfil te habría resultado útil para tomar la decisión?
+9. ¿Qué tan probable es que uses uTime para tu próxima cita de belleza o barbería en lugar de contactar al negocio por WhatsApp? ¿Qué factores influenciarían en esa decisión?
+10. ¿Cuál consideras que sería tu beneficio principal al adoptar de forma permanente el uso de la aplicación uTime con las mejoras aplicadas?
 
 #### 8.3.4.2. Registro de Entrevistas
 
-**Segmento 1 — Entrevista 1**
+Se ejecutaron **seis entrevistas de validación To-Be**, cubriendo los dos
+segmentos objetivo del producto: tres representantes de salones y barberías, y
+tres clientes de servicios de belleza. A cada participante se le mostró la
+versión de uTime con las mejoras implementadas en el Capítulo VIII (agenda
+digital centralizada, recordatorios automáticos, confirmación y pago digital,
+reserva directa y perfiles con reseñas), registrando su retroalimentación de
+forma fiel. Todas las entrevistas se encuentran consolidadas en un único video;
+los campos "Inicio de la entrevista" indican el minuto de inicio de cada
+participante dentro de ese archivo compartido:
 
-| Campo | Detalle |
-|-------|---------|
-| Nombre | [Nombre del entrevistado] |
-| Edad | [Edad] |
-| Ocupación | [Ocupación] |
-| Fecha | [Fecha] |
-| Entrevistador | [APELLIDOS Y NOMBRES] |
-| URL del video | [URL] |
-| Resumen | [Contenido pendiente] |
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+##### Segmento Objetivo 1 (Salones de Belleza y Barberías)
+
+###### Datos del Entrevistado #1
+
+- **Nombre completo:** Renso
+- **Segmento Objetivo:** Administrador de salón / barbería
+- **Distrito:** Lima
+- **Inicio de la entrevista:** 18:14 minutos
+- **Entrevistador:** RIVERA SOSA, Eduardo Gael
+- **Screenshot del cuadro de video:** ![Entrevista Renso](./assets/validation/interviews/tobe-salon-1-renso.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+**Resumen:**
+
+Renso, administrador de un salón de belleza a cargo de coordinar los servicios y la agenda del local, evaluó la versión To-Be de uTime partiendo de la Landing Page. Sobre la **agenda digital centralizada**, valoró poder ver todas las citas en un solo lugar y en tiempo real, en contraste con su método actual basado en mensajería, donde pierde tiempo respondiendo mensajes y es fácil que se crucen dos reservas. Consideró que el mensaje "Skip the Calls, Book in Real Time" resume bien su principal dolor y que los planes ofrecidos se entienden con claridad. Respecto a los **recordatorios automáticos** enviados 24 horas antes, los calificó como útiles tanto para el negocio como para el cliente, pues reducen olvidos y ausencias de último momento. Sobre la **confirmación y pago digital**, indicó que le genera confianza que el cliente pueda pagar o confirmar antes de asistir, ya que esto disminuiría cancelaciones y "huecos" muertos en la agenda. En cuanto a la **visibilidad del negocio**, señaló que aparecer en el listado de uTime y recibir reservas directas amplía su alcance frente a depender solo de redes sociales y recomendaciones. Manifestó estar **dispuesto a usar uTime** como herramienta principal de gestión, y ubicó su **beneficio principal** en el ahorro de tiempo y la reducción de coordinación manual. Como oportunidad de mejora sugirió mantener la interfaz de la aplicación de forma consistente en español.
+
+###### Datos del Entrevistado #2
+
+- **Nombre completo:** Fabián
+- **Segmento Objetivo:** Administrador de barbería
+- **Distrito:** Lima
+- **Inicio de la entrevista:** 26:03 minutos
+- **Entrevistador:** RIVERA SOSA, Eduardo Gael
+- **Screenshot del cuadro de video:** ![Entrevista Fabián](./assets/validation/interviews/tobe-salon-2-fabian.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+**Resumen:**
+
+Fabián, administrador de una barbería encargado de gestionar al equipo de barberos y la agenda del local, probó la **aplicación de proveedor To-Be** sobre la cuenta de demostración "SalonSpaMaria". Sobre la **agenda digital centralizada**, destacó tener en un mismo panel a los trabajadores, los servicios ofrecidos, las reservas del día y el calendario por horas, lo que le permite identificar rápidamente huecos disponibles y evitar cruces de citas sin depender de anotaciones en papel o mensajería. Encontró clara la organización del panel de **configuración** (Perfil del negocio, Notificaciones y Suscripción) y consideró intuitiva la navegación entre Inicio, Servicios, Trabajadores, Calendario y Perfil. Respecto a los **recordatorios automáticos**, coincidió en que ayudan a mejorar la puntualidad y a reducir ausencias. Sobre la **confirmación y el pago digital**, comentó que dar certeza de la reserva antes de la cita reforzaría el compromiso del cliente y reduciría cancelaciones. Valoró además el **panel de reseñas** como un elemento que aumenta la confianza y la visibilidad del negocio dentro de la plataforma. Consideró que el flujo para revisar las reservas entrantes es lo suficientemente simple como para incorporarlo a su rutina diaria, y ubicó su **beneficio principal** en poder administrar a todos los barberos y sus horarios desde un solo lugar. Como oportunidad de mejora sugirió reforzar la vista de asignación de servicios por barbero y mantener el idioma consistente en español.
+
+###### Datos del Entrevistado #3
+
+- **Nombre completo:** Maria Ysabel Sosa Rodriguez
+- **Segmento Objetivo:** Dueña de un Salón de belleza
+- **Edad:** 45 años
+- **Distrito:** San Juan de Lurigancho
+- **Inicio de la entrevista:** 31:38 minutos
+- **Entrevistador:** RIVERA SOSA, Eduardo Gael
+- **Screenshot del cuadro de video:** ![Entrevista Maria Ysabel Sosa](./assets/images/photos/segmento-objetivo1-2.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+**Resumen:**
+
+María Isabel Sosa Rodríguez, dueña de un salón de belleza con 20 años de experiencia, participó en la validación To-Be tras probar uTime con las mejoras implementadas. Hoy gestiona sus reservas solo por WhatsApp, lo que le dificulta manejar los tiempos entre un servicio y otro; por ello, sobre la **agenda digital centralizada** valoró poder ver todas las citas ordenadas y en un solo panel, evitando cruces de clientes. Calificó la aplicación con un **10 en probabilidad de uso**, describiéndola como organizada y con las herramientas necesarias, y confirmó que se sentiría cómoda **pagando un plan** para mantener su agenda bajo control. Consideró que los **recordatorios automáticos** ayudarían a reducir ausencias y que la **confirmación o el pago digital** por parte del cliente daría mayor certeza a cada reserva. Como oportunidad de mejora —su principal aporte— solicitó añadir un espacio de **"notas" o historial** por cliente para registrar qué servicio se le hizo y en qué fecha, evitando que esa información se pierda en papeles.
+
+##### Segmento Objetivo 2 (Clientes de servicios de belleza)
+
+###### Datos del Entrevistado #1
+
+- **Nombre completo:** Anedyib Raymi Villar Bisso
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 21 años
+- **Distrito:** San Isidro
+- **Inicio de la entrevista:** 00:00 minutos
+- **Entrevistador:** ROMAN CRUZ, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Entrevista Anedyib Villar Bisso](./assets/validation/interviews/tobe-cliente-1-ane.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+**Resumen:**
+
+Anedyib Villar, estudiante de Marketing de 21 años, participó en la validación To-Be de uTime tras probar la aplicación con las mejoras del Capítulo VIII. Sobre el **listado y filtros**, indicó que le resultó muy fácil navegar el listado y usar los filtros por servicio, al estar acostumbrada al uso de aplicaciones digitales. En el **flujo de reserva directa**, no reportó fricción puesto que la página web guió sus pasos de forma clara y completó la reserva sin dificultad frente a los problemas de coordinación que antes tenía a través de aplicaciones de mensajería o llamadas. Al **comparar canales**, mencionó que es su primera experiencia con este tipo de plataforma, valoró la ventaja de reservar en línea desde cualquier lugar con internet y contrastó favorablemente con su hábito previo de agendar solo por teléfono, donde bastaba con fijar la cita y era fácil olvidarla. Los **recordatorios automáticos** le ayudaron mucho dado que se considera olvidadiza. Respecto a la **confirmación y pago digital**, como estudiante de marketing digital expresó confianza en operaciones en línea, aunque reconoció que otros públicos podrían sentir desconfianza según su perfil. Considera que pagar por adelantado **refuerza el compromiso** con la cita frente a un acuerdo verbal por teléfono sin consecuencia económica. En cuanto al **perfil del salón o estilista**, las imágenes del local y del trabajo realizado fueron el factor que más influyó en su confianza. Sobre información adicional, indicó que, al ser su primera vez con este tipo de app, la información mostrada le resultó suficiente. Manifestó que **sí usaría uTime** para su próxima cita de belleza y que el **recordatorio** es el factor que más influiría en su decisión. Su **beneficio principal** sería asistir con mayor puntualidad a las citas programadas y evitar olvidarlas.
+
+###### Datos del Entrevistado #2
+
+- **Nombre completo:** Emily Juliette Arroyo Gonzales
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 20 años
+- **Distrito:** Santiago de Surco
+- **Inicio de la entrevista:** 5:25 minutos
+- **Entrevistador:** ROMAN CRUZ, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Entrevista Emily Arroyo Gonzales](./assets/validation/interviews/tobe-cliente-2-emily.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+**Resumen:**
+
+Emily Arroyo, estudiante de Ingeniería de Software, participó en la validación To-Be de uTime tras probar la aplicación con las nuevas funcionalidades implementadas. Sobre el **listado y filtros**, indicó que encontrar salones y barberías fue sencillo y que los filtros le permitieron comparar opciones de forma rápida y organizada; su única recomendación fue incorporar más filtros de búsqueda. En el **flujo de reserva directa**, destacó como pasos claros la elección del servicio, del profesional y del horario, y comparó favorablemente la experiencia frente a WhatsApp al no depender de esperar confirmación y poder completar la reserva en pocos minutos. Respecto a la **velocidad y claridad** del canal, calificó uTime como más rápido y eficiente que la mensajería porque toda la información está disponible de inmediato. Los **recordatorios automáticos** los consideró muy útiles para organizar su agenda, recordar la fecha y hora de su cita con anticipación y reprogramar con tiempo si surge un imprevisto. Sobre **confirmación y pago digital**, expresó confianza y seguridad en el proceso dado que la confirmación inmediata le daba certeza de que la cita quedó registrada y el pago digital le aportó comodidad al evitar coordinar el cobro por otros medios. Emily considera que confirmar o pagar refuerza su **compromiso** con la cita y reduciría cancelaciones de último momento. Al revisar el **perfil del salón o estilista**, las calificaciones, reseñas, fotografías de trabajos, horarios y precios fueron los elementos que más influyeron en su confianza; sugirió añadir opiniones más recientes, descripción del estilista, tiempo estimado por servicio y paquetes especiales. Manifestó que es **muy probable** que use uTime para su próxima cita en lugar de aplicaciones de mensajería por la rapidez y organización del flujo. Considera su **beneficio principal** al adoptar la app de forma permanente el ahorrar tiempo y tener una experiencia de reserva más organizada, con consulta de horarios, comparación de opciones, confirmación y recordatorios integrados.
+
+###### Datos del Entrevistado #3
+
+- **Nombre completo:** Diego Vilca Saboya
+- **Segmento Objetivo:** Clientes de servicio de belleza
+- **Edad:** 19 años
+- **Distrito:** Villa El Salvador
+- **Inicio de la entrevista:** 11:42 minutos
+- **Entrevistador:** ROMAN CRUZ, Natalia Bertha
+- **Screenshot del cuadro de video:** ![Entrevista Diego Vilca Saboya](./assets/validation/interviews/tobe-cliente-3-diego.png)
+
+- **URL del video (Microsoft Stream):**
+
+`https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312222_upc_edu_pe/IQDgJ7Le-MukQ667YK2yOanYAeBYeO-HpD1uE5jbTEecN4k?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nt2xkW`
+
+**Resumen:**
+
+Diego Vilca, estudiante de Ingeniería de Software de 19 años, evaluó la versión To-Be de uTime centrándose en las mejoras orientadas a la experiencia del cliente. Al explorar el **catálogo de negocios**, describió la búsqueda y el filtrado por tipo de servicio como intuitivos y sin obstáculos. Durante la **reserva en la aplicación**, resaltó que definir fecha y hora resultó más directo que negociar disponibilidad por chat o llamada, donde suele haber contrapropuestas del barbero y es más difícil llegar a un acuerdo. Frente a su método habitual por **mensajería**, valoró que uTime elimina la espera de respuesta, puesto que al estar automatizado el proceso, agenda y confirma en un solo recorrido. En cuanto al **cobro en línea**, manifestó comodidad al usar una pasarela conocida, lo que le transmitió la mayor sensación de respaldo durante el flujo. Además, entiende que **confirmar la asistencia** no solo fija su propio compromiso, sino que permite al negocio anticipar una inasistencia. Al analizar el **perfil del establecimiento**, las imágenes de un local limpio y ordenado fueron decisivas para generarle confianza; propuso complementar la ficha con testimonios de clientes y la trayectoria del profesional. Planea **recurrir a uTime** en su próximo servicio, sobre todo si se traslada a una zona donde no tenga referencias, ya que podría conocer barberías, estilos de corte y condiciones del local sin depender de recomendaciones previas. Para él, el **valor más alto** al adoptar la plataforma de forma continua es agendar con rapidez y consultar de antemano qué días tienen cupo, evitando llegar a un local saturado sin haber verificado disponibilidad.
+
 
 ## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
 
-**Experimento EXP01**
+Tras ejecutar las seis entrevistas de validación To-Be descritas en §8.3.4.2, el equipo consolidó la evidencia cualitativa de tres representantes de salones y barberías y tres clientes de servicios de belleza, quienes probaron la versión de uTime con las mejoras del Capítulo VIII. El análisis siguiente contrasta los hallazgos de cada segmento con las Experiment Cards **EXP01–EXP05**.
 
-| Aspecto | Resultado |
-|---------|-----------|
-| Hipótesis | [H01] |
-| Método | [Método] |
-| Muestra | [Tamaño] |
-| Resultado cuantitativo | [Dato] |
-| Resultado cualitativo | [Insight] |
-| Conclusión | [Contenido pendiente — validada / refutada / parcial] |
+**Análisis del Segmento Objetivo 1 — Salones de Belleza y Barberías**
+
+- **Características objetivas de la muestra:**
+  - Tres administradores o dueños de salones y barberías en Lima Metropolitana, con experiencia en gestión de equipos y coordinación de citas.
+  - Método actual predominante de agendamiento mediante WhatsApp, mensajería o anotaciones manuales.
+  - Los tres valoraron la agenda digital centralizada y manifestaron disposición a usar uTime como herramienta de gestión.
+
+- **Hallazgos por funcionalidad validada:**
+
+  - **Agenda digital centralizada.** Los tres entrevistados destacaron poder visualizar citas, trabajadores y horarios en un solo panel, frente a la coordinación manual que genera cruces de reservas y pérdida de tiempo. Renso y María Isabel contrastaron favorablemente la experiencia con WhatsApp. Fabián resaltó la claridad del calendario por horas y la vista de servicios y trabajadores en la app de proveedor.
+  - **Recordatorios automáticos.** Los tres consideraron útiles los recordatorios enviados 24 horas antes de la cita, tanto para el negocio como para el cliente, al reducir olvidos, ausencias y cambios de último momento.
+  - **Confirmación y pago digital.** Los tres asociaron la confirmación o el pago anticipado del cliente con mayor certeza de asistencia y menor cantidad de cancelaciones o huecos en la agenda.
+  - **Visibilidad y reservas directas.** Renso y Fabián valoraron aparecer en uTime y recibir reservas desde la app como una forma de ampliar el alcance del negocio frente a depender solo de redes sociales o recomendaciones.
+  - **Panel de reseñas y gestión del negocio.** Fabián destacó el panel de reseñas como elemento que aumenta la confianza y visibilidad del local. María Isabel calificó la aplicación con 10 en probabilidad de uso y manifestó disposición a pagar un plan. Como mejoras se mencionaron un espacio de notas o historial por cliente, reforzar la asignación de servicios por barbero y mantener la interfaz consistente en español.
+
+
+**Análisis del Segmento Objetivo 2 — Clientes de servicios de belleza**
+
+- **Características objetivas de la muestra:**
+  - Edades entre 19 y 21 años, residentes en distritos de Lima Metropolitana.
+  - Perfil digital alto, con experiencia previa en agendamiento por WhatsApp, llamadas o mensajería.
+  - Los tres completaron el flujo de reserva en la aplicación y manifestaron intención de usar uTime en su próxima cita.
+
+- **Hallazgos por funcionalidad validada:**
+
+  - **Listado de salones y filtros.** Los tres entrevistados describieron la búsqueda y el filtrado por servicio como sencillos e intuitivos. Emily sugirió ampliar los criterios de filtrado, mientras que los demás no reportaron fricción en esta etapa.
+  - **Flujo directo de reserva.** Los tres compararon favorablemente uTime frente a WhatsApp, llamadas o chat, destacando la eliminación de la espera de respuesta, la visibilidad inmediata de horarios y la posibilidad de cerrar la reserva en un solo recorrido. Diego resaltó que elegir fecha y hora evita el ida y vuelta con el barbero. Por otro lado, Anedyib valoró reservar desde cualquier lugar con internet frente a acordar por teléfono y olvidar la cita.
+  - **Recordatorios automáticos.** Emily y Anedyib evaluaron positivamente los recordatorios, pues les ayudan a organizarse, recordar la cita con anticipación y reprogramar si surge un imprevisto. Anedyib identificó el recordatorio como el factor que más influiría en su decisión de uso futuro.
+  - **Confirmación y pago digital.** Los tres asociaron la confirmación o el pago en línea con mayor compromiso y seguridad respecto a un acuerdo verbal por mensajería o llamada. Emily y Diego expresaron comodidad con el paso de pago. Anedyib, desde su formación en marketing digital, confía en operaciones en línea pero advirtió que otros públicos podrían percibir fricción o desconfianza.
+  - **Perfil enriquecido del negocio.** Los tres indicaron que el contenido del perfil influye en su confianza antes de reservar. Emily priorizó reseñas, calificaciones, fotografías, horarios y precios. Anedyib y Diego enfatizaron las imágenes de un local cuidado y ordenado. Como mejoras, se mencionaron opiniones recientes, descripción del estilista, duración estimada del servicio, paquetes especiales, testimonios de clientes y años de experiencia del profesional.
+
+
+**Síntesis final**
+
+Las entrevistas To-Be aportan evidencia cualitativa **consistente y favorable** hacia las mejoras implementadas en uTime en ambos segmentos. Desde el lado del negocio, la **agenda digital centralizada** obtuvo la señal más relevante para **EXP01**, ya que los tres administradores mostraron disposición a adoptar la herramienta y reconocieron beneficios frente a WhatsApp y registros manuales. Desde el lado del cliente, el **flujo directo de reserva** y la visibilidad del catálogo de negocios obtuvieron la señal más uniforme para **EXP04**, pues los tres participantes preferirían uTime frente a aplicaciones de mensajería para su próxima cita.
+
+Al mismo tiempo, los **recordatorios automáticos**, la **confirmación o pago digital** y los **perfiles enriquecidos** también recibieron valoración positiva en ambos segmentos, aunque con matices. Los negocios los asocian con menor ausentismo y mejor organización, mientras que los clientes los vinculan con compromiso, confianza y decisión de reserva. Las principales oportunidades de mejora convergen en enriquecer el perfil del negocio, incorporar historial o notas por cliente y mantener consistencia del idioma en la interfaz.
 
 ### 8.4.2. Re-scored and Re-prioritized Question Backlog
 
-| # Orden | Question ID | Pregunta | Score inicial | Score final | Justificación |
-|---------|-------------|----------|---------------|-------------|---------------|
-| 1       | Q01         |          |               |             |               |
+| # Orden | Question ID | Pregunta |
+|---------|-------------|----------|
+| 1 | Q04 | ¿Qué canal genera mayor intención de reserva inicial: flujo directo en la app o contacto por WhatsApp? |
+| 2 | Q02 | ¿Reducirán los recordatorios automáticos los olvidos, cancelaciones tardías o reprogramaciones de citas? |
+| 3 | Q03 | ¿Incrementará la confirmación o pago digital de una reserva el compromiso del cliente con la cita? |
+| 4 | Q01 | ¿Ayudará una agenda digital centralizada a aumentar la disposición de los salones y barberías para gestionar reservas desde uTime? |
+| 5 | Q05 | ¿Qué elementos del perfil generan mayor confianza antes de reservar: reseñas, calificaciones, precios visibles o portafolio visual? |
 
 ## 8.5. Continuous Learning
 
 ### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
-[Contenido pendiente — relato del workflow de aprendizaje compartido al equipo / stakeholders.]
+Tras consolidar el análisis de las To-Be Validation Interviews (8.3.4.2) y el Re-scored Question Backlog (8.4.2), el equipo realizó una **sesión de shareback** en una reunión virtual por Discord, con la participación de todo el equipo. El objetivo fue compartir la evidencia recogida para cada Experiment Card (EXP01–EXP05), contrastarla contra el umbral de **Escala** definido en 8.1.5, y decidir en conjunto si cada funcionalidad se **persevera** (se mantiene e integra de forma permanente), se **itera** (se mantiene pero con ajustes) o se **descarta**.
+
+**Learning Workflow aplicado en la sesión**
+
+1. **Share (Compartir):** cada responsable de experimento expuso al resto del equipo los hallazgos recogidos en las entrevistas To-Be, citando evidencia textual de los participantes de ambos segmentos.
+2. **Discuss (Discutir):** el equipo contrastó los resultados frente a la hipótesis y el umbral de escala originalmente definidos para cada experimento, identificando además oportunidades de mejora mencionadas por los entrevistados.
+3. **Decide (Decidir):** se tomó una decisión explícita por experimento (Persevera / Itera / Descarta), registrada en la tabla siguiente.
+4. **Document (Documentar):** las decisiones alimentan el Re-scored Question Backlog (8.4.2) y el Pipeline-supported To-Be Software Platform Lifecycle (8.3.3), cerrando el ciclo Build–Measure–Learn para esta iteración.
+
+**Decisiones por experimento**
+
+| ID | Funcionalidad | Umbral de escala (8.1.5) | Evidencia observada | Decisión |
+|----|---------------|--------------------------|----------------------|----------|
+| EXP01 | Agenda digital centralizada | Implementar si más del 50% de salones manifiesta alta satisfacción | Los 3 representantes de salones/barberías entrevistados (Renso, Fabián y María Isabel) mostraron disposición alta; María Isabel calificó la app con 10/10 en probabilidad de uso y manifestó estar dispuesta a pagar un plan | **Persevera** — se mantiene como funcionalidad core |
+| EXP02 | Recordatorios automáticos | Escalar si reduce más del 20% las citas canceladas o reprogramadas tardíamente | Ambos segmentos valoraron los recordatorios como útiles para reducir olvidos y mejorar la puntualidad (Emily, Anedyib, Renso, Fabián, María Isabel) | **Persevera** — se mantiene sin cambios |
+| EXP03 | Confirmación o pago digital | Integrar si al menos el 40% de clientes prefiere confirmar o pagar digital y reduce al menos 15% las cancelaciones | Los 3 clientes asociaron la confirmación/pago con mayor compromiso y seguridad; los salones coincidieron en que reduce cancelaciones y "huecos" en la agenda | **Persevera** — se mantiene, priorizando la opción de confirmación sin fricción para clientes que aún no desean pagar |
+| EXP04 | Flujo directo de reserva vs. contacto inicial por WhatsApp | Priorizar si genera al menos 20% más intención de reserva que WhatsApp | Señal más uniforme de todo el experimento: los 3 clientes prefirieron uTime frente a WhatsApp/llamadas para su próxima cita | **Persevera** — funcionalidad de mayor prioridad, sin cambios |
+| EXP05 | Perfil con reseñas y portafolio visual | Mantener si aumenta al menos 20% la confianza percibida y correlaciona con al menos 10% más reservas | Los 3 clientes valoraron positivamente el perfil enriquecido, pero sugirieron agregar reseñas recientes, descripción del estilista, duración estimada del servicio y años de experiencia | **Itera** — se mantiene la funcionalidad y se prioriza en el backlog la incorporación de los campos sugeridos |
+
+**Aprendizaje clave de la sesión**
+
+El equipo concluyó que las cinco funcionalidades evaluadas cuentan con evidencia suficiente para pasar de hipótesis a **aprendizaje validado**, cerrando la brecha entre las suposiciones iniciales del As-Is Summary (8.1.1) y el comportamiento real observado en ambos segmentos objetivo. Únicamente el perfil enriquecido (EXP05) requiere una iteración adicional antes de considerarse cerrado, la cual queda reflejada como ítem priorizado en el Re-scored Question Backlog (8.4.2).
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
 
@@ -7360,7 +7856,7 @@ Artefactos de la sesión de shareback.
 
 ## Conclusiones y recomendaciones
 
-A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); el **TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices); y el **AV2**, que abarcó el Capítulo VIII (Experiment-Driven Development), con el cual el equipo cierra el ciclo trasladando el producto desde la implementación y validación hacia un enfoque de experimentación con usuarios reales.
+A continuación se presentan las conclusiones y recomendaciones derivadas del trabajo realizado a lo largo de las entregas evaluadas: el **AV1**, que abarcó los Capítulos I (Startup y Solution Profile), II (Requirements Elicitation & Analysis), III (Requirements Specification) y IV (Product Design); el **TB1**, que abarcó los Capítulos V (Product Implementation), VI (Product Verification & Validation) y VII (DevOps Practices); el **AV2**, que abarcó la planificación y el diseño del Capítulo VIII (Experiment-Driven Development), trasladando el producto desde la implementación y validación hacia un enfoque de experimentación con usuarios reales; y el **TB2**, en el que el equipo ejecutó los experimentos diseñados, completó las To-Be Validation Interviews y cerró el ciclo Build-Measure-Learn con una sesión de shareback que tradujo la evidencia recogida en decisiones concretas sobre el producto.
 
 ### Conclusiones
 
@@ -7383,9 +7879,16 @@ El AV1 permitió consolidar la base estratégica, de producto y de diseño de uT
 - Las cinco **Experiment Cards** (EXP01–EXP05: agenda digital centralizada, recordatorios automáticos, confirmación/pago digital, flujo directo vs. WhatsApp y perfiles con reseñas y portafolio) tradujeron las preguntas más críticas en **hipótesis falsables** con su Simplest Useful Thing, medidas, condiciones experimentales y escalas de decisión, evitando presentar como validado aquello que aún debe comprobarse empíricamente.
 - El **Experiment Design** (hipótesis con su hipótesis nula, Domain Business Metrics, measures, conditions y scale calculations) junto con las **To-Be User Stories** y el To-Be Product Backlog priorizado por Story Points conectaron cada experimento con una métrica de negocio y un entregable de software trazable, garantizando que la experimentación sirva para decidir qué escalar y no solo para construir.
 
+El TB2 permitió cerrar el ciclo Build-Measure-Learn del Capítulo VIII, pasando de experimentos diseñados a decisiones de producto respaldadas por evidencia real.
+
+- En la fase de **Experimentation** (8.3) el equipo tradujo las Experiment Cards priorizadas en To-Be User Stories y un To-Be Product Backlog implementado sobre el **Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle**, con evidencia real de la Landing Page, la aplicación web Frontend, la aplicación nativa móvil y el backend RESTful actualizados conforme a las historias UE01–UE05.
+- Las **To-Be Validation Interviews** (8.3.4) confirmaron con usuarios reales de ambos segmentos objetivo que las mejoras implementadas —agenda digital centralizada, recordatorios, confirmación/pago digital, flujo directo de reserva y perfiles enriquecidos— resuelven los puntos de dolor identificados desde el Capítulo II, con una señal especialmente uniforme a favor del flujo directo de reserva (EXP04) frente a la coordinación por WhatsApp.
+- El **Experiment Aftermath & Analysis** (8.4) evidenció que las cinco funcionalidades evaluadas cuentan con evidencia cualitativa suficiente para pasar de hipótesis a aprendizaje validado, y el Re-scored Question Backlog reordenó las preguntas de investigación según la fuerza de la señal observada en cada segmento.
+- La sesión de **Shareback** (8.5.1) cerró el ciclo con decisiones explícitas por experimento: **EXP01–EXP04 perseveran** sin cambios como funcionalidades core del producto, mientras que **EXP05** (perfil con reseñas y portafolio) **itera** incorporando las mejoras sugeridas por los propios clientes antes de darse por cerrado, demostrando que el equipo prioriza la evidencia real por encima de la intuición al decidir qué escalar.
+
 ### Recomendaciones
 
-Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas posteriores, el equipo recomienda las siguientes acciones para las próximas fases del proyecto.
+A lo largo de las cuatro entregas el equipo acumuló recomendaciones para mantener la calidad del producto y del proceso. Con el cierre del Capítulo VIII (Experiment-Driven Development) en el AV2, algunas de estas recomendaciones ya fueron atendidas por el propio ciclo de experimentación; se mantienen a continuación como aprendizaje documentado, junto con las recomendaciones vigentes para la evolución del producto más allá del curso.
 
 - Validar empíricamente las **Hypothesis Statements** de Lean UX mediante experimentos cortos durante la implementación, en lugar de asumirlas resueltas con el diseño.
 - Ampliar la muestra de **entrevistas** con segmentos adicionales (estilistas independientes sin local, clientes ocasionales) para reducir sesgo y reforzar las personas existentes.
@@ -7403,7 +7906,7 @@ Para mantener la calidad alcanzada en el AV1 y minimizar riesgos en las entregas
 - Documentar **runbooks operativos** para la rotación de secretos JWT, claves de Stripe y restauración de backups de PostgreSQL en Neon, evitando que la respuesta a incidentes dependa de una sola persona del equipo.
 - Endurecer el **Continuous Monitoring** con alertas accionables sobre latencia P95 del API, tasa de errores 5xx y disponibilidad del Azure App Service, conectadas al canal de Discord del equipo para reducir el tiempo medio de detección.
 - Avanzar la integración de **Stripe** desde la modalidad sandbox a producción tras cerrar la Spike Story 1 del backlog, asegurando la firma del webhook `checkout.session.completed` que ya está implementado en el backend y reforzando las pruebas de idempotencia para reintentos del proveedor de pagos.
-- Ejecutar los cinco experimentos priorizados (**EXP01–EXP05**) con usuarios reales de ambos segmentos, completando las secciones pendientes de **To-Be Validation Interviews** y **Experiment Aftermath & Analysis**, de modo que las preguntas del Question Backlog pasen de estado *Pendiente* a confirmadas o refutadas con evidencia.
+- Escalar a producción las cuatro funcionalidades ya validadas y perseveradas en la sesión de shareback (**EXP01–EXP04**: agenda digital centralizada, recordatorios automáticos, confirmación/pago digital y flujo directo de reserva), que cuentan con evidencia cualitativa favorable de ambos segmentos objetivo en las To-Be Validation Interviews (8.3.4.2), y cerrar la iteración pendiente del perfil enriquecido (**EXP05**) incorporando las mejoras priorizadas en el Re-scored Question Backlog (reseñas recientes, descripción del estilista, duración estimada del servicio y años de experiencia) antes de considerarlo un aprendizaje validado.
 - Instrumentar las **Domain Business Metrics** en Firebase Analytics y en los logs del backend desde el arranque de cada experimento (intención de reserva, tasa de cancelaciones, confianza percibida), para no depender únicamente de encuestas y poder comparar condición experimental contra condición de control.
 - Respetar las **escalas de decisión** definidas en cada Experiment Card (umbrales del 40%, 20%, 15%, etc.) como criterio objetivo para escalar, iterar o descartar una funcionalidad, manteniendo el principio de ser *data informed, not data driven* y evitando dejarse llevar por métricas de vanidad.
 - Mantener el **entendimiento compartido** durante la fase experimental mediante kick-offs por experimento, asegurando que todo el equipo (no solo quien diseña la Experiment Card) acuerde qué se quiere aprender, por qué y cómo se medirá antes de lanzar cada prueba.
