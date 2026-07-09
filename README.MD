@@ -414,7 +414,7 @@ Actividad de commits en el tiempo para el AV2.
       - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
       - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
       - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
-- [SITE o APP A EVALUAR](#site-o-app-a-evaluar-1)
+        - [SITE o APP A EVALUAR](#site-o-app-a-evaluar-1)
         - [TAREAS A EVALUAR](#tareas-a-evaluar-1)
         - [No están incluidas en esta evaluación las siguientes tareas:](#no-están-incluidas-en-esta-evaluación-las-siguientes-tareas-1)
         - [ESCALA DE SEVERIDAD](#escala-de-severidad-1)
@@ -3278,8 +3278,6 @@ En el video *About-the-Product* se presenta **uTime** mostrando sus característ
 <div class="page"></div>
 
 # Part II: Verification, Validation & Pipeline
-
-<div class="page"></div>
 
 # Capítulo VI: Product Verification & Validation
 
@@ -6156,7 +6154,7 @@ La falta de consistencia aumenta la carga cognitiva y puede incrementar la proba
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
-# SITE o APP A EVALUAR
+##### SITE o APP A EVALUAR
 
 **Nombre de la aplicación:** uTime
 
@@ -6984,8 +6982,6 @@ Correo de alerta `[ALERTA - CRITICA] El backend uTime no responde` recibido en G
 
 # Part III: Experiment-Driven Lifecycle
 
-<div class="page"></div>
-
 # Capítulo VIII: Experiment-Driven Development
 
 ## 8.1. Experiment Planning
@@ -7564,7 +7560,13 @@ Endpoints para crear y consultar reservas y la disponibilidad de horarios que al
 Endpoints de pago, incluyendo la creación del enlace de pago (Stripe) y el webhook de confirmación.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-<img src="./assets/cap8/backend_swagger_payments.png" alt="Payments endpoints" width="820">
+<img src="./assets/cap8/backend_swagger_payments_01.png" alt="Payments endpoints part 1" width="760">
+<br><br>
+<img src="./assets/cap8/backend_swagger_payments_02.png" alt="Payments endpoints part 2" width="760">
+<br><br>
+<img src="./assets/cap8/backend_swagger_payments_03.png" alt="Payments endpoints part 3" width="760">
+<br><br>
+<img src="./assets/cap8/backend_swagger_payments_04.png" alt="Payments endpoints part 4" width="760">
 </div>
 
 **Notifications — UE02 (recordatorios automáticos)**
@@ -7572,7 +7574,9 @@ Endpoints de pago, incluyendo la creación del enlace de pago (Stripe) y el webh
 Endpoints que exponen los recordatorios generados automáticamente por el job programado del backend, para proveedor y cliente.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-<img src="./assets/cap8/backend_swagger_notifications.png" alt="Notifications endpoints" width="820">
+<img src="./assets/cap8/backend_swagger_notifications_01.png" alt="Notifications endpoints part 1" width="760">
+<br><br>
+<img src="./assets/cap8/backend_swagger_notifications_02.png" alt="Notifications endpoints part 2" width="760">
 </div>
 
 **Reviews — UE05 (perfil con reseñas)**
@@ -7580,7 +7584,11 @@ Endpoints que exponen los recordatorios generados automáticamente por el job pr
 Endpoints para crear y consultar las reseñas que se muestran en el perfil del salón.
 
 <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
-<img src="./assets/cap8/backend_swagger_reviews.png" alt="Reviews endpoints" width="820">
+<img src="./assets/cap8/backend_swagger_reviews_01.png" alt="Reviews endpoints part 1" width="760">
+<br><br>
+<img src="./assets/cap8/backend_swagger_reviews_02.png" alt="Reviews endpoints part 2" width="760">
+<br><br>
+<img src="./assets/cap8/backend_swagger_reviews_03.png" alt="Reviews endpoints part 3" width="760">
 </div>
 
 #### 8.3.3.6. Team Collaboration Insights
